@@ -1,0 +1,18 @@
+//
+// Color Utility Classes
+// --------------------------------------------------
+
+// Color Fills
+// -------------------------
+
+.fill-gray-light {  background-color: $gray-light !important; }
+.fill-gray-dark {   background-color: $gray-dark  !important; }
+.fill-brand {       background-color: $brand      !important; }
+
+
+// Text Colors
+// -------------------------
+
+.text-gray-light {  color: $gray-light !important; }
+.text-gray-dark {   color: $gray-dark  !important; }
+.text-brand {       color: $brand      !important; }
