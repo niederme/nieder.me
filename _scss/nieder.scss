@@ -1,16 +1,13 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
 @charset "utf-8";
 
 //
-// Imports!
+// Imports
 // --------------------------------------------------
 
-@import "normalize.css";
-@import "variables";
-@import "typography";
 @import "mixins";
+@import "variables";
+@import "reset";
+@import "typography";
 @import "colors";
 @import "layout";
 @import "grid";
@@ -18,10 +15,18 @@
 
 
 //
-// App Specific
+// App-Specific
 // --------------------------------------------------
 
 .container {
   max-width: 1440px;
   min-width: 300px;
+}
+
+a:hover .icon-social-twitter path,
+a:hover .icon-social-instagram path,
+a:hover .icon-social-facebook path
+a:hover .icon-social-github path {
+  fill: lighten($brand, 10%);
+  transition: color .15s ease 0s;
 }
