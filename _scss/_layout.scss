@@ -36,6 +36,7 @@
 // -------------------------
 
 @include generate-breakpoint-prefixes {
+
   &m0 {  margin: 0        !important; }
   &mt0 { margin-top: 0    !important; }
   &mr0 { margin-right: 0  !important; }
@@ -109,6 +110,16 @@
   &my7 { margin-top:    $space-7 !important; margin-bottom: $space-7 !important;}
 
   &mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+  // Negative margin-top!
+  &neg-mt1 { margin-top:  (-$space-1) !important; }
+  &neg-mt2 { margin-top:  (-$space-2) !important; }
+  &neg-mt3 { margin-top:  (-$space-3) !important; }
+  &neg-mt4 { margin-top:  (-$space-4) !important; }
+  &neg-mt5 { margin-top:  (-$space-5) !important; }
+  &neg-mt6 { margin-top:  (-$space-6) !important; }
+  &neg-mt7 { margin-top:  (-$space-7) !important; }
+
 }
 
 

@@ -17,12 +17,6 @@
   &border-bottom { border-bottom: $border !important; }
   &border-left   { border-left: $border   !important; }
 
-  &border-dark        { border: $border-dark        !important; }
-  &border-top-dark    { border-top: $border-dark    !important; }
-  &border-right-dark  { border-right: $border-dark  !important; }
-  &border-bottom-dark { border-bottom: $border-dark !important; }
-  &border-left-dark   { border-left: $border-dark   !important; }
-
   &border-thick        { border: $border-thick        !important; }
   &border-top-thick    { border-top: $border-thick    !important; }
   &border-right-thick  { border-right: $border-thick  !important; }
@@ -36,13 +30,3 @@
   &border-left-none   { border-left: none   !important; }
 
 }
-
-// Rounded Corners, Circles
-// -------------------------
-
-.rounded {        border-radius: $border-radius                       !important; }
-.rounded-top {    border-radius: $border-radius $border-radius 0 0    !important; }
-.rounded-right {  border-radius: 0 $border-radius $border-radius 0    !important; }
-.rounded-bottom { border-radius: 0 0 $border-radius $border-radius    !important; }
-.rounded-left {   border-radius: $border-radius 0 0 $border-radius    !important; }
-.circle {         border-radius: 50%                                  !important; }
