@@ -129,11 +129,9 @@ a {
   color: #F3504B; }
   a:hover {
     color: #f67e7b;
-    -webkit-transition: color .15s ease 0s;
     transition: color .15s ease 0s; }
   a:active {
     color: #F3504B;
-    -webkit-transition: color .15s ease 0s;
     transition: color .15s ease 0s; }
 
 .link-gray-dark {
@@ -2642,85 +2640,40 @@ img {
     padding: 0 0.5rem !important; }
 
 .xs-flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex; }
 .xs-flex-wrap {
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+  flex-wrap: wrap; }
 .xs-items-center {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-              -ms-grid-row-align: center;
-          align-items: center; }
+  align-items: center; }
 
 @media (min-width: 40rem) {
   .sm-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex; }
   .sm-flex-wrap {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    flex-wrap: wrap; }
   .sm-items-center {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-                -ms-grid-row-align: center;
-            align-items: center; } }
+    align-items: center; } }
 @media (min-width: 52rem) {
   .md-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex; }
   .md-flex-wrap {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    flex-wrap: wrap; }
   .md-items-center {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-                -ms-grid-row-align: center;
-            align-items: center; } }
+    align-items: center; } }
 @media (min-width: 64rem) {
   .lg-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex; }
   .lg-flex-wrap {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    flex-wrap: wrap; }
   .lg-items-center {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-                -ms-grid-row-align: center;
-            align-items: center; } }
+    align-items: center; } }
 @media (min-width: 80rem) {
   .xl-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex; }
   .xl-flex-wrap {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    flex-wrap: wrap; }
   .xl-items-center {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-                -ms-grid-row-align: center;
-            align-items: center; } }
+    align-items: center; } }
 .xs-border {
   border: 1px solid rgba(243, 80, 75, 0.4) !important; }
 .xs-border-top {
@@ -2950,26 +2903,23 @@ img {
 
 .section-view {
   height: 95vh;
-  min-height: 37.5rem; }
+  min-height: 48rem;
+  max-height: 64rem; }
 
 a:hover .icon-social-twitter path,
 a:hover .icon-social-instagram path,
 a:hover .icon-social-facebook path
 a:hover .icon-social-github path {
   fill: #f67e7b;
-  -webkit-transition: color .15s ease 0s;
   transition: color .15s ease 0s; }
 
 .cover {
   background-size: 100% auto, cover; }
 
 .cover--9kisses {
-  background: url("/images/nyt-9kisses.png") no-repeat center bottom fixed; }
+  background: url("/images/nyt-9kisses-05.png") no-repeat center center fixed; }
 
 .cover--summer-drinks {
-  background: url("/images/nyt-summer-drinks.jpg") no-repeat center bottom fixed; }
-
-.cover--dasani {
-  background: url("/images/nyt-dasani.jpg") no-repeat center bottom fixed; }
+  background: url("/images/nyt-summer-drinks.jpg") no-repeat center center fixed; }
 
 /*# sourceMappingURL=nieder.css.map */

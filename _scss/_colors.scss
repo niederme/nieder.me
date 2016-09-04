@@ -6,6 +6,7 @@
 // -------------------------
 
 .fill-gray-light {  background-color: $gray-light !important; }
+.fill-gray {        background-color: $gray       !important; }
 .fill-gray-dark {   background-color: $gray-dark  !important; }
 .fill-brand {       background-color: $brand      !important; }
 
@@ -14,5 +15,6 @@
 // -------------------------
 
 .text-gray-light {  color: $gray-light !important; }
-.text-gray-dark {   color: $gray-dark  !important; }
-.text-brand {       color: $brand      !important; }
+.text-gray       {  color: $gray       !important; }
+.text-gray-dark  {  color: $gray-dark  !important; }
+.text-brand      {  color: $brand      !important; }
