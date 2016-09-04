@@ -39,6 +39,7 @@ img { max-width: 100%; height: auto; }
   &col-11 { width: percentage(11/12) !important; }
   &col-12 { width: percentage(12/12) !important; }
 
+  &offset-0  { margin-left: 0                 !important; }
   &offset-1  { margin-left: percentage(1/12)  !important; }
   &offset-2  { margin-left: percentage(2/12)  !important; }
   &offset-3  { margin-left: percentage(3/12)  !important; }

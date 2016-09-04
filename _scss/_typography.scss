@@ -49,6 +49,7 @@
 html {
   font-size: $base-font-size;
   font-family: $sans-light;
+  line-height: $line-height-body;
   font-weight: $light;
   color: $gray;
   -webkit-font-feature-settings: "liga", "kern" !important;
@@ -58,8 +59,6 @@ html {
 }
 
 body {
-  font-size:   $text-3;
-  line-height: $line-height-3;
 }
 
 
@@ -70,7 +69,7 @@ h1 {
   font-family: $sans-light;
   font-weight: $light;
   font-size:   $text-1;
-  line-height: $line-height-1;
+  line-height: $line-height-hed;
 
   strong,
   b,
@@ -83,7 +82,7 @@ h1 {
 
 h2 {
   font-size:   $text-2;
-  line-height: $line-height-1;
+  line-height: $line-height-hed;
 
   strong,
   b,
@@ -96,7 +95,7 @@ h2 {
 
 h3 {
   font-size:   $text-3;
-  line-height: $line-height-1;
+  line-height: $line-height-hed;
 
   strong,
   b,
@@ -109,17 +108,17 @@ h3 {
 
 h4 {
   font-size:   $text-4;
-  line-height: $line-height-2;
+  line-height: $line-height-hed;
 }
 
 h5 {
   font-size:   $text-5;
-  line-height: $line-height-2;
+  line-height: $line-height-hed;
 }
 
 h6 {
   font-size:   $text-6;
-  line-height: $line-height-2;
+  line-height: $line-height-hed;
 }
 
 a {
@@ -180,38 +179,57 @@ ul {
 
   &text-1 {
     font-size: $text-1          !important;
-    line-height: $line-height-1 !important;
+    line-height: $line-height-hed;
   }
 
   &text-2 {
     font-size: $text-2          !important;
-    line-height: $line-height-1 !important;
+    line-height: $line-height-hed;
   }
 
   &text-3 {
     font-size: $text-3          !important;
-    line-height: $line-height-1 !important;
+    line-height: $line-height-hed;
   }
 
   &text-4 {
     font-size: $text-4          !important;
-    line-height: $line-height-2 !important;
+    line-height: $line-height-body;
   }
 
   &text-5 {
     font-size: $text-5          !important;
-    line-height: $line-height-2 !important;
+    line-height: $line-height-body;
   }
 
   &text-6 {
     font-size: $text-6          !important;
-    line-height: $line-height-2 !important;
+    line-height: $line-height-body;
   }
+
+  &line-height-hed {
+    line-height: $line-height-hed !important;
+  }
+
+  &line-height-body {
+    line-height: $line-height-body !important;
+  }
+
+}
+
+
+// Ordered and unordered list,
+// list items are block level
+// -------------------------
+ol,
+ul {
+  padding-left: $space-4;
 }
 
 
 // Unstyled keeps list items block level,
 // just removes default browser padding and list-style
+// -------------------------
 
 .list-unstyled {
   margin-left:  0    !important;

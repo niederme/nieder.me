@@ -1,0 +1,19 @@
+//
+// Animation Classes
+// --------------------------------------------------
+
+
+// woo
+// -------------------------
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+	opacity:0;  /* make things invisible upon start */
+	animation:fadeIn ease-in 1;
+	animation-fill-mode:forwards;
+	animation-duration:1s;
+}
+.fade-in--delay {
+  animation-delay: 1s;
+}
