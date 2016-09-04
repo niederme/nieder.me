@@ -31,6 +31,7 @@
 
 }
 
+
 // Margin
 // -------------------------
 
@@ -99,8 +100,17 @@
   &mx6 { margin-left:   $space-6 !important; margin-right: $space-6  !important;}
   &my6 { margin-top:    $space-6 !important; margin-bottom: $space-6 !important;}
 
+  &m7  { margin:        $space-7 !important; }
+  &mt7 { margin-top:    $space-7 !important; }
+  &mr7 { margin-right:  $space-7 !important; }
+  &mb7 { margin-bottom: $space-7 !important; }
+  &ml7 { margin-left:   $space-7 !important; }
+  &mx7 { margin-left:   $space-7 !important; margin-right: $space-7  !important;}
+  &my7 { margin-top:    $space-7 !important; margin-bottom: $space-7 !important;}
+
   &mx-auto { margin-left: auto !important; margin-right: auto !important; }
 }
+
 
 // Padding
 // -------------------------
@@ -169,7 +179,16 @@
   &pl6 { padding-left:   $space-6 !important; }
   &px6 { padding-left:   $space-6 !important; padding-right: $space-6  !important;}
   &py6 { padding-top:    $space-6 !important; padding-bottom: $space-6 !important;}
+
+  &p7  { padding:        $space-7 !important; }
+  &pt7 { padding-top:    $space-7 !important; }
+  &pr7 { padding-right:  $space-7 !important; }
+  &pb7 { padding-bottom: $space-7 !important; }
+  &pl7 { padding-left:   $space-7 !important; }
+  &px7 { padding-left:   $space-7 !important; padding-right: $space-7  !important;}
+  &py7 { padding-top:    $space-7 !important; padding-bottom: $space-7 !important;}
 }
+
 
 // Positioning
 // -------------------------
@@ -224,6 +243,11 @@
   &r6 { right:  $space-6 !important; }
   &b6 { bottom: $space-6 !important; }
   &l6 { left:   $space-6 !important; }
+
+  &t7 { top:    $space-7 !important; }
+  &r7 { right:  $space-7 !important; }
+  &b7 { bottom: $space-7 !important; }
+  &l7 { left:   $space-7 !important; }
 }
 
 // Vertical Align

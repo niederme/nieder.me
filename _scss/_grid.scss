@@ -7,6 +7,12 @@
 
 $gutter: $space-1;
 
+// Responsive Images!
+// -------------------------
+img { max-width: 100%; height: auto; }
+.full-width { width: 100%; height: auto;}
+
+
 // Base Column Float
 // -------------------------
 // must be applied to every column

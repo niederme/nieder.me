@@ -11,6 +11,7 @@
 @import "colors";
 @import "layout";
 @import "grid";
+@import "flex";
 @import "borders";
 
 
@@ -18,10 +19,22 @@
 // App-Specific
 // --------------------------------------------------
 
+// Scaffolding
+// -------------------------
+
 .container {
   max-width: 1440px;
   min-width: 300px;
 }
+
+.section-view {
+  height: 95vh;
+  min-height: 37.5rem;
+}
+
+
+// Social Icons
+// -------------------------
 
 a:hover .icon-social-twitter path,
 a:hover .icon-social-instagram path,
@@ -29,4 +42,23 @@ a:hover .icon-social-facebook path
 a:hover .icon-social-github path {
   fill: lighten($brand, 10%);
   transition: color .15s ease 0s;
+}
+
+// Covers
+// -------------------------
+
+.cover {
+  background-size: 100% auto, cover;
+}
+
+.cover--9kisses {
+  background: url("/images/nyt-9kisses.png") no-repeat center bottom fixed;
+}
+
+.cover--summer-drinks {
+  background: url("/images/nyt-summer-drinks.jpg") no-repeat center bottom fixed;
+}
+
+.cover--dasani {
+  background: url("/images/nyt-dasani.jpg") no-repeat center bottom fixed;
 }
