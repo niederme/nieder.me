@@ -135,10 +135,11 @@ a {
   }
 }
 
-.link-gray-dark {
-  color: $gray-dark !important;
+.link-gray {
+  color: $gray !important;
+  text-decoration: underline;
   &:hover {
-    color: darken($gray-dark, 20%) !important;
+    color: darken($gray, 20%) !important;
   }
 }
 
@@ -178,32 +179,32 @@ ul {
 @include generate-breakpoint-prefixes {
 
   &text-1 {
-    font-size: $text-1          !important;
+    font-size:   $text-1 !important;
     line-height: $line-height-hed;
   }
 
   &text-2 {
-    font-size: $text-2          !important;
+    font-size:   $text-2 !important;
     line-height: $line-height-hed;
   }
 
   &text-3 {
-    font-size: $text-3          !important;
+    font-size:   $text-3 !important;
     line-height: $line-height-hed;
   }
 
   &text-4 {
-    font-size: $text-4          !important;
+    font-size:   $text-4 !important;
     line-height: $line-height-body;
   }
 
   &text-5 {
-    font-size: $text-5          !important;
+    font-size:   $text-5 !important;
     line-height: $line-height-body;
   }
 
   &text-6 {
-    font-size: $text-6          !important;
+    font-size:   $text-6 !important;
     line-height: $line-height-body;
   }
 

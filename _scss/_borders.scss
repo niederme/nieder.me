@@ -17,6 +17,12 @@
   &border-bottom { border-bottom: $border !important; }
   &border-left   { border-left: $border   !important; }
 
+  &border-dark        { border: $border-dark        !important; }
+  &border-top-dark    { border-top: $border-dark    !important; }
+  &border-right-dark  { border-right: $border-dark  !important; }
+  &border-bottom-dark { border-bottom: $border-dark !important; }
+  &border-left-dark   { border-left: $border-dark   !important; }
+
   &border-thick        { border: $border-thick        !important; }
   &border-top-thick    { border-top: $border-thick    !important; }
   &border-right-thick  { border-right: $border-thick  !important; }
