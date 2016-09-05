@@ -383,10 +383,11 @@ a {
     -webkit-transition: color .15s ease 0s;
     transition: color .15s ease 0s; }
 
-.link-gray-dark {
-  color: #212121 !important; }
-  .link-gray-dark:hover {
-    color: black !important; }
+.link-gray {
+  color: #585558 !important;
+  text-decoration: underline; }
+  .link-gray:hover {
+    color: #242324 !important; }
 
 .bold,
 strong,
@@ -3187,6 +3188,16 @@ img {
   border-bottom: 1px solid rgba(243, 80, 75, 0.4) !important; }
 .xs-border-left {
   border-left: 1px solid rgba(243, 80, 75, 0.4) !important; }
+.xs-border-dark {
+  border: 1px solid rgba(85, 88, 85, 0.4) !important; }
+.xs-border-top-dark {
+  border-top: 1px solid rgba(85, 88, 85, 0.4) !important; }
+.xs-border-right-dark {
+  border-right: 1px solid rgba(85, 88, 85, 0.4) !important; }
+.xs-border-bottom-dark {
+  border-bottom: 1px solid rgba(85, 88, 85, 0.4) !important; }
+.xs-border-left-dark {
+  border-left: 1px solid rgba(85, 88, 85, 0.4) !important; }
 .xs-border-thick {
   border: 2px solid #f3504b !important; }
 .xs-border-top-thick {
@@ -3219,6 +3230,16 @@ img {
     border-bottom: 1px solid rgba(243, 80, 75, 0.4) !important; }
   .sm-border-left {
     border-left: 1px solid rgba(243, 80, 75, 0.4) !important; }
+  .sm-border-dark {
+    border: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .sm-border-top-dark {
+    border-top: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .sm-border-right-dark {
+    border-right: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .sm-border-bottom-dark {
+    border-bottom: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .sm-border-left-dark {
+    border-left: 1px solid rgba(85, 88, 85, 0.4) !important; }
   .sm-border-thick {
     border: 2px solid #f3504b !important; }
   .sm-border-top-thick {
@@ -3250,6 +3271,16 @@ img {
     border-bottom: 1px solid rgba(243, 80, 75, 0.4) !important; }
   .md-border-left {
     border-left: 1px solid rgba(243, 80, 75, 0.4) !important; }
+  .md-border-dark {
+    border: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .md-border-top-dark {
+    border-top: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .md-border-right-dark {
+    border-right: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .md-border-bottom-dark {
+    border-bottom: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .md-border-left-dark {
+    border-left: 1px solid rgba(85, 88, 85, 0.4) !important; }
   .md-border-thick {
     border: 2px solid #f3504b !important; }
   .md-border-top-thick {
@@ -3281,6 +3312,16 @@ img {
     border-bottom: 1px solid rgba(243, 80, 75, 0.4) !important; }
   .lg-border-left {
     border-left: 1px solid rgba(243, 80, 75, 0.4) !important; }
+  .lg-border-dark {
+    border: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .lg-border-top-dark {
+    border-top: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .lg-border-right-dark {
+    border-right: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .lg-border-bottom-dark {
+    border-bottom: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .lg-border-left-dark {
+    border-left: 1px solid rgba(85, 88, 85, 0.4) !important; }
   .lg-border-thick {
     border: 2px solid #f3504b !important; }
   .lg-border-top-thick {
@@ -3312,6 +3353,16 @@ img {
     border-bottom: 1px solid rgba(243, 80, 75, 0.4) !important; }
   .xl-border-left {
     border-left: 1px solid rgba(243, 80, 75, 0.4) !important; }
+  .xl-border-dark {
+    border: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .xl-border-top-dark {
+    border-top: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .xl-border-right-dark {
+    border-right: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .xl-border-bottom-dark {
+    border-bottom: 1px solid rgba(85, 88, 85, 0.4) !important; }
+  .xl-border-left-dark {
+    border-left: 1px solid rgba(85, 88, 85, 0.4) !important; }
   .xl-border-thick {
     border: 2px solid #f3504b !important; }
   .xl-border-top-thick {
@@ -3338,39 +3389,39 @@ img {
 
 .xs-section-view-tall {
   height: 95vh;
-  min-height: 37.5rem; }
+  min-height: 51rem; }
 .xs-section-view-short {
-  height: 25vh;
-  min-height: 10rem; }
+  height: 40vh;
+  min-height: 30rem; }
 
 @media (min-width: 40rem) {
   .sm-section-view-tall {
     height: 95vh;
-    min-height: 37.5rem; }
+    min-height: 51rem; }
   .sm-section-view-short {
-    height: 25vh;
-    min-height: 10rem; } }
+    height: 40vh;
+    min-height: 30rem; } }
 @media (min-width: 48rem) {
   .md-section-view-tall {
     height: 95vh;
-    min-height: 37.5rem; }
+    min-height: 51rem; }
   .md-section-view-short {
-    height: 25vh;
-    min-height: 10rem; } }
+    height: 40vh;
+    min-height: 30rem; } }
 @media (min-width: 64rem) {
   .lg-section-view-tall {
     height: 95vh;
-    min-height: 37.5rem; }
+    min-height: 51rem; }
   .lg-section-view-short {
-    height: 25vh;
-    min-height: 10rem; } }
+    height: 40vh;
+    min-height: 30rem; } }
 @media (min-width: 90rem) {
   .xl-section-view-tall {
     height: 95vh;
-    min-height: 37.5rem; }
+    min-height: 51rem; }
   .xl-section-view-short {
-    height: 25vh;
-    min-height: 10rem; } }
+    height: 40vh;
+    min-height: 30rem; } }
 .icon:hover g,
 .icon:hover path {
   fill: #f67e7b;
@@ -3378,59 +3429,104 @@ img {
   transition: color .15s ease 0s; }
 
 .xs-cover {
-  background-size: cover !important;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; }
+.xs-cover--bf-roles {
+  background-image: -webkit-linear-gradient(top, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif");
+  background-image: linear-gradient(to bottom, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif"); }
 .xs-cover--9kisses {
-  background-image: url("../images/nyt-9kisses.jpg"); }
+  background-image: url("../images/nyt-9kisses-desktop.jpg"); }
+.xs-cover--9kisses-mobile {
+  background-image: url("../images/nyt-9kisses-mobile.jpg"); }
 .xs-cover--summer-drinks {
-  background-image: url("../images/nyt-summer-drinks.jpg"); }
+  background-image: url("../images/nyt-summer-drinks-desktop.jpg"); }
+.xs-cover--summer-drinks-mobile {
+  background-image: url("../images/nyt-summer-drinks-mobile.jpg"); }
 .xs-cover--dasani {
-  background-image: url("../images/nyt-dasani.jpg"); }
+  background-image: url("../images/nyt-dasani-desktop.jpg"); }
+.xs-cover--dasani-mobile {
+  background-image: url("../images/nyt-dasani-mobile.jpg"); }
 
 @media (min-width: 40rem) {
   .sm-cover {
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; }
+  .sm-cover--bf-roles {
+    background-image: -webkit-linear-gradient(top, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif");
+    background-image: linear-gradient(to bottom, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif"); }
   .sm-cover--9kisses {
-    background-image: url("../images/nyt-9kisses.jpg"); }
+    background-image: url("../images/nyt-9kisses-desktop.jpg"); }
+  .sm-cover--9kisses-mobile {
+    background-image: url("../images/nyt-9kisses-mobile.jpg"); }
   .sm-cover--summer-drinks {
-    background-image: url("../images/nyt-summer-drinks.jpg"); }
+    background-image: url("../images/nyt-summer-drinks-desktop.jpg"); }
+  .sm-cover--summer-drinks-mobile {
+    background-image: url("../images/nyt-summer-drinks-mobile.jpg"); }
   .sm-cover--dasani {
-    background-image: url("../images/nyt-dasani.jpg"); } }
+    background-image: url("../images/nyt-dasani-desktop.jpg"); }
+  .sm-cover--dasani-mobile {
+    background-image: url("../images/nyt-dasani-mobile.jpg"); } }
 @media (min-width: 48rem) {
   .md-cover {
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; }
+  .md-cover--bf-roles {
+    background-image: -webkit-linear-gradient(top, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif");
+    background-image: linear-gradient(to bottom, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif"); }
   .md-cover--9kisses {
-    background-image: url("../images/nyt-9kisses.jpg"); }
+    background-image: url("../images/nyt-9kisses-desktop.jpg"); }
+  .md-cover--9kisses-mobile {
+    background-image: url("../images/nyt-9kisses-mobile.jpg"); }
   .md-cover--summer-drinks {
-    background-image: url("../images/nyt-summer-drinks.jpg"); }
+    background-image: url("../images/nyt-summer-drinks-desktop.jpg"); }
+  .md-cover--summer-drinks-mobile {
+    background-image: url("../images/nyt-summer-drinks-mobile.jpg"); }
   .md-cover--dasani {
-    background-image: url("../images/nyt-dasani.jpg"); } }
+    background-image: url("../images/nyt-dasani-desktop.jpg"); }
+  .md-cover--dasani-mobile {
+    background-image: url("../images/nyt-dasani-mobile.jpg"); } }
 @media (min-width: 64rem) {
   .lg-cover {
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; }
+  .lg-cover--bf-roles {
+    background-image: -webkit-linear-gradient(top, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif");
+    background-image: linear-gradient(to bottom, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif"); }
   .lg-cover--9kisses {
-    background-image: url("../images/nyt-9kisses.jpg"); }
+    background-image: url("../images/nyt-9kisses-desktop.jpg"); }
+  .lg-cover--9kisses-mobile {
+    background-image: url("../images/nyt-9kisses-mobile.jpg"); }
   .lg-cover--summer-drinks {
-    background-image: url("../images/nyt-summer-drinks.jpg"); }
+    background-image: url("../images/nyt-summer-drinks-desktop.jpg"); }
+  .lg-cover--summer-drinks-mobile {
+    background-image: url("../images/nyt-summer-drinks-mobile.jpg"); }
   .lg-cover--dasani {
-    background-image: url("../images/nyt-dasani.jpg"); } }
+    background-image: url("../images/nyt-dasani-desktop.jpg"); }
+  .lg-cover--dasani-mobile {
+    background-image: url("../images/nyt-dasani-mobile.jpg"); } }
 @media (min-width: 90rem) {
   .xl-cover {
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; }
+  .xl-cover--bf-roles {
+    background-image: -webkit-linear-gradient(top, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif");
+    background-image: linear-gradient(to bottom, #212121 0%, rgba(33, 33, 33, 0) 100%), url("../images/bf-roles.gif"); }
   .xl-cover--9kisses {
-    background-image: url("../images/nyt-9kisses.jpg"); }
+    background-image: url("../images/nyt-9kisses-desktop.jpg"); }
+  .xl-cover--9kisses-mobile {
+    background-image: url("../images/nyt-9kisses-mobile.jpg"); }
   .xl-cover--summer-drinks {
-    background-image: url("../images/nyt-summer-drinks.jpg"); }
+    background-image: url("../images/nyt-summer-drinks-desktop.jpg"); }
+  .xl-cover--summer-drinks-mobile {
+    background-image: url("../images/nyt-summer-drinks-mobile.jpg"); }
   .xl-cover--dasani {
-    background-image: url("../images/nyt-dasani.jpg"); } }
+    background-image: url("../images/nyt-dasani-desktop.jpg"); }
+  .xl-cover--dasani-mobile {
+    background-image: url("../images/nyt-dasani-mobile.jpg"); } }
 
 /*# sourceMappingURL=nieder.css.map */

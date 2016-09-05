@@ -30,13 +30,20 @@
 
   &section-view-tall {
     height: 95vh;
-    min-height: 37.5rem;
+    min-height: 51rem;
   }
 
   &section-view-short {
-    height: 25vh;
-    min-height: 10rem;
+    height: 40vh;
+    min-height: 30rem;
   }
+
+}
+
+// Not proud of this, but hey, it’s gotta fit in the MacBook One viewport
+@media (min-width: 47.9375rem) and (max-height: 47.9375rem) {
+
+
 
 }
 
@@ -56,21 +63,37 @@
 @include generate-breakpoint-prefixes {
 
   &cover {
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
 
+  &cover--bf-roles {
+    background-image: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(33,33,33,0) 100%), url("../images/bf-roles.gif");
+  }
+
   &cover--9kisses {
-    background-image: url("../images/nyt-9kisses.jpg");
+    background-image: url("../images/nyt-9kisses-desktop.jpg");
+  }
+
+  &cover--9kisses-mobile {
+    background-image: url("../images/nyt-9kisses-mobile.jpg");
   }
 
   &cover--summer-drinks {
-    background-image: url("../images/nyt-summer-drinks.jpg");
+    background-image: url("../images/nyt-summer-drinks-desktop.jpg");
+  }
+
+  &cover--summer-drinks-mobile {
+    background-image: url("../images/nyt-summer-drinks-mobile.jpg");
   }
 
   &cover--dasani {
-    background-image: url("../images/nyt-dasani.jpg");
+    background-image: url("../images/nyt-dasani-desktop.jpg");
+  }
+
+  &cover--dasani-mobile {
+    background-image: url("../images/nyt-dasani-mobile.jpg");
   }
 
 }

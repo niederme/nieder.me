@@ -1049,6 +1049,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/nyt-9kisses-desktop.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/nyt-9kisses-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/nyt-9kisses-desktop.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/nyt-9kisses-mobile.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1060,13 +1071,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/nyt-9kisses.jpg": {
+	"\/images\/nyt-dasani-desktop.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/images\/nyt-9kisses.jpg",
-		"outputAbbreviatedPath": "\/images\/nyt-9kisses.jpg",
+		"initialSize": 690231,
+		"inputAbbreviatedPath": "\/images\/nyt-dasani-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/nyt-dasani-desktop.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1082,13 +1093,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/nyt-dasani.jpg": {
+	"\/images\/nyt-summer-drinks-desktop.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 690231,
-		"inputAbbreviatedPath": "\/images\/nyt-dasani.jpg",
-		"outputAbbreviatedPath": "\/images\/nyt-dasani.jpg",
+		"initialSize": 328419,
+		"inputAbbreviatedPath": "\/images\/nyt-summer-drinks-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/nyt-summer-drinks-desktop.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1100,17 +1111,6 @@
 		"initialSize": 218025,
 		"inputAbbreviatedPath": "\/images\/nyt-summer-drinks-mobile.jpg",
 		"outputAbbreviatedPath": "\/images\/nyt-summer-drinks-mobile.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/nyt-summer-drinks.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 328419,
-		"inputAbbreviatedPath": "\/images\/nyt-summer-drinks.jpg",
-		"outputAbbreviatedPath": "\/images\/nyt-summer-drinks.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
