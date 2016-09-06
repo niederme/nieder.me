@@ -64,12 +64,17 @@
 
   &cover {
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
 
   &cover--bf-roles {
-    background-image: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(33,33,33,0) 100%), url("../images/bf-roles.gif");
+    background-image: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(33,33,33,0) 100%), url("../images/bf-roles-desktop.gif");
+  }
+
+  &cover--bf-roles-mobile {
+    background-image: url("../images/bf-roles-mobile.gif");
   }
 
   &cover--9kisses {
@@ -94,6 +99,30 @@
 
   &cover--dasani-mobile {
     background-image: url("../images/nyt-dasani-mobile.jpg");
+  }
+
+  &cover--smc {
+    background-image: url("../images/bf-smc-desktop.jpg");
+  }
+
+  &cover--smc-mobile {
+    background-image: url("../images/bf-smc-mobile.jpg");
+  }
+
+  &cover--scoop {
+    background-image: url("../images/nyt-scoop-desktop.jpg");
+  }
+
+  &cover--scoop-mobile {
+    background-image: url("../images/nyt-scoop-mobile.jpg");
+  }
+
+  &cover--innovations {
+    background-image: url("../images/nyt-innovations-desktop.jpg");
+  }
+
+  &cover--innovations-mobile {
+    background-image: url("../images/nyt-innovations-mobile.jpg");
   }
 
 }

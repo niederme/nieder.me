@@ -485,6 +485,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/bf-smc-desktop.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 432407,
+		"inputAbbreviatedPath": "\/images\/bf-smc-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/bf-smc-desktop.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/bf-smc-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 485945,
+		"inputAbbreviatedPath": "\/images\/bf-smc-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/bf-smc-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/nyt-9kisses-desktop.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -529,6 +551,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/nyt-innovations-desktop.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 589680,
+		"inputAbbreviatedPath": "\/images\/nyt-innovations-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/nyt-innovations-desktop.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nyt-innovations-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 669564,
+		"inputAbbreviatedPath": "\/images\/nyt-innovations-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/nyt-innovations-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nyt-scoop-desktop.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 143299,
+		"inputAbbreviatedPath": "\/images\/nyt-scoop-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/nyt-scoop-desktop.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nyt-scoop-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 124052,
+		"inputAbbreviatedPath": "\/images\/nyt-scoop-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/nyt-scoop-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/nyt-summer-drinks-desktop.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -558,6 +624,17 @@
 		"initialSize": 38252,
 		"inputAbbreviatedPath": "\/images\/promo.png",
 		"outputAbbreviatedPath": "\/images\/promo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/work-desktop.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 475531,
+		"inputAbbreviatedPath": "\/images\/work-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/work-desktop.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
