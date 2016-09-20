@@ -101,6 +101,14 @@
     background-image: url("../images/nyt-dasani-mobile.jpg");
   }
 
+  &cover--solid {
+    background-image: url("../images/bf-solid-desktop.jpg");
+  }
+
+  &cover--solid-mobile {
+    background-image: url("../images/bf-solid-mobile.jpg");
+  }
+
   &cover--smc {
     background-image: url("../images/bf-smc-desktop.jpg");
     background-position: top center !important;

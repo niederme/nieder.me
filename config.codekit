@@ -507,6 +507,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/bf-solid-desktop.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/bf-solid-desktop.jpg",
+		"outputAbbreviatedPath": "\/images\/bf-solid-desktop.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/bf-solid-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 55032,
+		"inputAbbreviatedPath": "\/images\/bf-solid-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/bf-solid-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/nyt-9kisses-desktop.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
