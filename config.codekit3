@@ -15,10 +15,10 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
-	"\/_PSDs\/20160829.sketch": {
+	"\/_PSDs\/20161103.sketch": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/_PSDs\/20160829.sketch",
+		"oAP": "\/_PSDs\/20161103.sketch",
 		"oF": 0
 		},
 	"\/_PSDs\/work-desktop.psd": {
@@ -999,7 +999,7 @@
 		"oA": 0,
 		"oAP": "\/images\/bf-socialmc-promo.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/images\/bf-solid-desktop.jpg": {
 		"ft": 16384,
