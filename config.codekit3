@@ -7,7 +7,7 @@
 		"uuidString": "E0FA2607-7EB7-487B-8615-BD952D86F64A"
 		}
 	],
-"creatorBuild": "25428",
+"creatorBuild": "25444",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -955,6 +955,14 @@
 		"oAP": "\/fonts\/geomanist_webfont_license.pdf",
 		"oF": 0
 		},
+	"\/images\/bf-branded-video-promo.png": {
+		"ft": 32768,
+		"iS": 191226,
+		"oA": 0,
+		"oAP": "\/images\/bf-branded-video-promo.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/images\/bf-roles-desktop.gif": {
 		"ft": 4194304,
 		"iS": 620493,
@@ -986,20 +994,6 @@
 		"oAP": "\/images\/bf-smc-mobile.jpg",
 		"oF": 0,
 		"opt": 0
-		},
-	"\/images\/bf-social-mission-control.m4v": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/images\/bf-social-mission-control.m4v",
-		"oF": 0
-		},
-	"\/images\/bf-socialmc-promo.png": {
-		"ft": 32768,
-		"iS": 467396,
-		"oA": 0,
-		"oAP": "\/images\/bf-socialmc-promo.png",
-		"oF": 0,
-		"opt": 1
 		},
 	"\/images\/bf-solid-desktop.jpg": {
 		"ft": 16384,
@@ -1199,10 +1193,32 @@
 		"oAP": "\/index.html",
 		"oF": 0
 		},
+	"\/video\/bf-socialmc-poster.png": {
+		"ft": 32768,
+		"iS": 467396,
+		"oA": 0,
+		"oAP": "\/video\/bf-socialmc-poster.png",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/video\/bf-socialmc-promo.png": {
+		"ft": 32768,
+		"iS": 929153,
+		"oA": 0,
+		"oAP": "\/video\/bf-socialmc-promo.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/video\/bf-socialmc.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/video\/bf-socialmc.html",
+		"oF": 0
+		},
+	"\/video\/bf-socialmc.m4v": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/video\/bf-socialmc.m4v",
 		"oF": 0
 		}
 	},
