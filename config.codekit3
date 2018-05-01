@@ -7,249 +7,440 @@
 		"uuidString": "E0FA2607-7EB7-487B-8615-BD952D86F64A"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "26680",
 "files": {
 	"\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
 	"\/_PSDs\/20161103.sketch": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_PSDs\/20161103.sketch",
 		"oF": 0
 		},
+	"\/_PSDs\/Screencaps\/20170126\/01.png": {
+		"ft": 32768,
+		"iS": 90793,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/01.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/02.png": {
+		"ft": 32768,
+		"iS": 118491,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/02.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/03.png": {
+		"ft": 32768,
+		"iS": 164737,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/03.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/04.png": {
+		"ft": 32768,
+		"iS": 970196,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/04.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/05.png": {
+		"ft": 32768,
+		"iS": 2028381,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/05.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/06.png": {
+		"ft": 32768,
+		"iS": 2028609,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/06.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/07.png": {
+		"ft": 32768,
+		"iS": 1336020,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/07.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/08.png": {
+		"ft": 32768,
+		"iS": 1981218,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/08.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/09.png": {
+		"ft": 32768,
+		"iS": 552587,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/09.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/10.png": {
+		"ft": 32768,
+		"iS": 845398,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/10.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/11.png": {
+		"ft": 32768,
+		"iS": 260297,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/11.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/12.png": {
+		"ft": 32768,
+		"iS": 1497143,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/12.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/13.png": {
+		"ft": 32768,
+		"iS": 703889,
+		"oA": 0,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/13.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/_PSDs\/Screencaps\/20170126\/20170126.m4v": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_PSDs\/Screencaps\/20170126\/20170126.m4v",
+		"oF": 0
+		},
 	"\/_PSDs\/work-desktop.psd": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_PSDs\/work-desktop.psd",
 		"oF": 0
 		},
 	"\/_PSDs\/work-mobile.psd": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_PSDs\/work-mobile.psd",
 		"oF": 0
 		},
 	"\/_PSDs\/~old\/20160825.sketch": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_PSDs\/~old\/20160825.sketch",
 		"oF": 0
 		},
 	"\/_PSDs\/~old\/9kisses.psd": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_PSDs\/~old\/9kisses.psd",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_borders.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_borders.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_colors.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_colors.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_grid.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_grid.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_layout.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_layout.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_mixins.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_mixins.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_normalize.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_normalize.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_typography.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_typography.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_variables.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_variables.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/nieder.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/nieder.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_animation.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_animation.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_base.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_base.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_borders.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_borders.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_colors.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_colors.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_flex.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_flex.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_grid.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_grid.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_layout.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_layout.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_mixins.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_mixins.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_normalize.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_normalize.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_reset.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_reset.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_typography.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_typography.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_variables.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_variables.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/nieder.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/nieder.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_animation.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_animation.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_base.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_base.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_borders.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_borders.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_colors.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_colors.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_flex.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_flex.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_grid.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_grid.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_layout.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_layout.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_mixins.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_mixins.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_normalize.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_normalize.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_reset.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_reset.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_typography.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_typography.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_variables.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_variables.scssc",
 		"oF": 0
 		},
 	"\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/nieder.scssc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/nieder.scssc",
@@ -422,30 +613,35 @@
 		"oS": 0
 		},
 	"\/css\/nieder.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/css\/nieder.css.map",
 		"oF": 0
 		},
 	"\/favicon.ico": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/favicon.ico",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_Italic_webfontkit\/generator_config.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_Italic_webfontkit\/generator_config.txt",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-demo.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-demo.html",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.eot",
@@ -462,18 +658,21 @@
 		"prP": 0
 		},
 	"\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.ttf",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_Italic_webfontkit\/geomanist-light-italic-webfont.woff2",
@@ -481,6 +680,7 @@
 		},
 	"\/fonts\/03.Geomanist_Light_Italic_webfontkit\/specimen_files\/easytabs.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/fonts\/03.Geomanist_Light_Italic_webfontkit\/specimen_files\/min\/easytabs-min.js",
@@ -519,18 +719,21 @@
 		"oS": 0
 		},
 	"\/fonts\/03.Geomanist_Light_webfontkit\/generator_config.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_webfontkit\/generator_config.txt",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-demo.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-demo.html",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.eot",
@@ -547,18 +750,21 @@
 		"prP": 0
 		},
 	"\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.ttf",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/03.Geomanist_Light_webfontkit\/geomanist-light-webfont.woff2",
@@ -566,6 +772,7 @@
 		},
 	"\/fonts\/03.Geomanist_Light_webfontkit\/specimen_files\/easytabs.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/fonts\/03.Geomanist_Light_webfontkit\/specimen_files\/min\/easytabs-min.js",
@@ -604,18 +811,21 @@
 		"oS": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/generator_config.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/generator_config.txt",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-demo.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-demo.html",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.eot",
@@ -632,18 +842,21 @@
 		"prP": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.ttf",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/geomanist-medium-italic-webfont.woff2",
@@ -651,6 +864,7 @@
 		},
 	"\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/specimen_files\/easytabs.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/fonts\/06.Geomanist_Medium_Italic_webfontkit\/specimen_files\/min\/easytabs-min.js",
@@ -689,18 +903,21 @@
 		"oS": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_webfontkit\/generator_config.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_webfontkit\/generator_config.txt",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-demo.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-demo.html",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.eot",
@@ -717,18 +934,21 @@
 		"prP": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.ttf",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/06.Geomanist_Medium_webfontkit\/geomanist-medium-webfont.woff2",
@@ -736,6 +956,7 @@
 		},
 	"\/fonts\/06.Geomanist_Medium_webfontkit\/specimen_files\/easytabs.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/fonts\/06.Geomanist_Medium_webfontkit\/specimen_files\/min\/easytabs-min.js",
@@ -774,18 +995,21 @@
 		"oS": 0
 		},
 	"\/fonts\/08.Geomanist_Black_Italic_webfontkit\/generator_config.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_Italic_webfontkit\/generator_config.txt",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-demo.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-demo.html",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.eot",
@@ -802,18 +1026,21 @@
 		"prP": 0
 		},
 	"\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.ttf",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_Italic_webfontkit\/geomanist-black-italic-webfont.woff2",
@@ -821,6 +1048,7 @@
 		},
 	"\/fonts\/08.Geomanist_Black_Italic_webfontkit\/specimen_files\/easytabs.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/fonts\/08.Geomanist_Black_Italic_webfontkit\/specimen_files\/min\/easytabs-min.js",
@@ -859,18 +1087,21 @@
 		"oS": 0
 		},
 	"\/fonts\/08.Geomanist_Black_webfontkit\/generator_config.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_webfontkit\/generator_config.txt",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-demo.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-demo.html",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.eot",
@@ -887,18 +1118,21 @@
 		"prP": 0
 		},
 	"\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.ttf",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/08.Geomanist_Black_webfontkit\/geomanist-black-webfont.woff2",
@@ -906,6 +1140,7 @@
 		},
 	"\/fonts\/08.Geomanist_Black_webfontkit\/specimen_files\/easytabs.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/fonts\/08.Geomanist_Black_webfontkit\/specimen_files\/min\/easytabs-min.js",
@@ -944,12 +1179,14 @@
 		"oS": 0
 		},
 	"\/fonts\/geomanist_webfont_license 2.pdf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/geomanist_webfont_license 2.pdf",
 		"oF": 0
 		},
 	"\/fonts\/geomanist_webfont_license.pdf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/geomanist_webfont_license.pdf",
@@ -961,7 +1198,10 @@
 		"oA": 0,
 		"oAP": "\/images\/bf-branded-video-promo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/images\/bf-roles-desktop.gif": {
 		"ft": 4194304,
@@ -982,34 +1222,46 @@
 	"\/images\/bf-smc-desktop.jpg": {
 		"ft": 16384,
 		"iS": 432407,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/bf-smc-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/bf-smc-mobile.jpg": {
 		"ft": 16384,
 		"iS": 485945,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/bf-smc-mobile.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/bf-solid-desktop.jpg": {
 		"ft": 16384,
 		"iS": 0,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/bf-solid-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/bf-solid-mobile.jpg": {
 		"ft": 16384,
 		"iS": 55032,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/bf-solid-mobile.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/hamburger.svg": {
 		"ft": 2097152,
@@ -1094,82 +1346,112 @@
 	"\/images\/nyt-9kisses-desktop.jpg": {
 		"ft": 16384,
 		"iS": 0,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-9kisses-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-9kisses-mobile.jpg": {
 		"ft": 16384,
 		"iS": 511729,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-9kisses-mobile.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-dasani-desktop.jpg": {
 		"ft": 16384,
 		"iS": 690231,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-dasani-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-dasani-mobile.jpg": {
 		"ft": 16384,
 		"iS": 487027,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-dasani-mobile.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-innovations-desktop.jpg": {
 		"ft": 16384,
 		"iS": 589680,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-innovations-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-innovations-mobile.jpg": {
 		"ft": 16384,
 		"iS": 669564,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-innovations-mobile.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-scoop-desktop.jpg": {
 		"ft": 16384,
 		"iS": 143299,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-scoop-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-scoop-mobile.jpg": {
 		"ft": 16384,
 		"iS": 124052,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-scoop-mobile.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-summer-drinks-desktop.jpg": {
 		"ft": 16384,
 		"iS": 328419,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-summer-drinks-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/nyt-summer-drinks-mobile.jpg": {
 		"ft": 16384,
 		"iS": 218025,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-summer-drinks-mobile.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/images\/promo.png": {
 		"ft": 32768,
@@ -1177,7 +1459,10 @@
 		"oA": 0,
 		"oAP": "\/images\/promo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/images\/social-facebook.svg": {
 		"ft": 2097152,
@@ -1212,12 +1497,16 @@
 	"\/images\/work-desktop.jpg": {
 		"ft": 16384,
 		"iS": 475531,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/work-desktop.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/index.html",
@@ -1229,7 +1518,10 @@
 		"oA": 0,
 		"oAP": "\/video\/bf-socialmc-poster.png",
 		"oF": 0,
-		"opt": 1
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"\/video\/bf-socialmc-promo.png": {
 		"ft": 32768,
@@ -1237,15 +1529,20 @@
 		"oA": 0,
 		"oAP": "\/video\/bf-socialmc-promo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/video\/bf-socialmc.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/video\/bf-socialmc.html",
 		"oF": 0
 		},
 	"\/video\/bf-socialmc.m4v": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/video\/bf-socialmc.m4v",
@@ -1260,7 +1557,8 @@
 	"creationDate": 499891252,
 	"displayValue": "2016",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "brackets_gray"
+	"iconImageName": "brackets_gray",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -1268,6 +1566,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -1664,6 +1963,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -1671,6 +1974,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -1703,6 +2010,10 @@
 		"camelcase": {
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
+			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
 			},
 		"class-methods-use-this": {
 			"active": 0,
@@ -1764,6 +2075,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -1780,9 +2095,17 @@
 			"active": 0,
 			"optionString": "'expression'"
 			},
+		"function-paren-newline": {
+			"active": 0,
+			"optionString": "'multiline'"
+			},
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -1807,6 +2130,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
@@ -1840,9 +2167,9 @@
 			"active": 0,
 			"optionString": "{'beforeBlockComment': true}"
 			},
-		"lines-around-directive": {
+		"lines-between-class-members": {
 			"active": 0,
-			"optionString": "{'before': 'always', 'after': 'always'}"
+			"optionString": "'always', {exceptAfterSingleLine: false}"
 			},
 		"max-depth": {
 			"active": 0,
@@ -1868,6 +2195,14 @@
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
 			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
+			},
+		"multiline-comment-style": {
+			"active": 0,
+			"optionString": "'starred-block'"
+			},
 		"multiline-ternary": {
 			"active": 0,
 			"optionString": "'always'"
@@ -1877,14 +2212,6 @@
 			"optionString": "{'newIsCap': true, 'capIsNew': true, 'newIsCapExceptions': [], 'capIsNewExceptions': ['Array', 'Boolean', 'Date', 'Error', 'Function', 'Number', 'Object', 'RegExp', 'String', 'Symbol'], 'properties': true}"
 			},
 		"new-parens": {
-			"active": 0,
-			"optionString": ""
-			},
-		"newline-after-var": {
-			"active": 0,
-			"optionString": "'always'"
-			},
-		"newline-before-return": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -1900,9 +2227,17 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -1918,6 +2253,10 @@
 			},
 		"no-class-assign": {
 			"active": 1,
+			"optionString": ""
+			},
+		"no-compare-neg-zero": {
+			"active": 0,
 			"optionString": ""
 			},
 		"no-cond-assign": {
@@ -2120,6 +2459,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-multi-assign": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-multi-spaces": {
 			"active": 0,
 			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
@@ -2200,6 +2543,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-prototype-builtins": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-redeclare": {
 			"active": 1,
 			"optionString": "{'builtinGlobals': false}"
@@ -2231,6 +2578,10 @@
 		"no-return-assign": {
 			"active": 0,
 			"optionString": "'except-parens'"
+			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-script-url": {
 			"active": 0,
@@ -2392,6 +2743,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
 		"object-curly-newline": {
 			"active": 0,
 			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
@@ -2428,6 +2783,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -2436,9 +2795,17 @@
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
 			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -2464,6 +2831,10 @@
 			"active": 0,
 			"optionString": "'always'"
 			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"require-jsdoc": {
 			"active": 0,
 			"optionString": "{'require': {'FunctionDeclaration': true, 'MethodDefinition': false, 'ClassDeclaration': false}}"
@@ -2483,6 +2854,10 @@
 		"semi-spacing": {
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
+			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
 			},
 		"sort-imports": {
 			"active": 0,
@@ -2524,11 +2899,19 @@
 			"active": 0,
 			"optionString": "'safe'"
 			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
+			},
 		"symbol-description": {
 			"active": 0,
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},
@@ -2932,7 +3315,8 @@
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 1,
+		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {
 		"autoOutputAction": 2,
@@ -2965,6 +3349,7 @@
 		"noEscapeInAttributes": 0,
 		"outputFormat": 2,
 		"outputStyle": 0,
+		"shouldRunCacheBuster": 0,
 		"useCDATA": 0,
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
@@ -2975,7 +3360,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -2999,21 +3386,14 @@
 		"orderOutput": 0,
 		"outputStyle": 1
 		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
-		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.html",
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsLESS": {
 		"allowInsecureImports": 0,
@@ -3045,13 +3425,13 @@
 		"enableFootnotes": 1,
 		"enableLabels": 1,
 		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
 		"maskEmailAddresses": 1,
 		"outputFormat": 0,
 		"outputStyle": 0,
 		"parseMetadata": 1,
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
+		"shouldRunCacheBuster": 0,
 		"useCompatibilityMode": 0
 		},
 	"languageDefaultsOTHER": {
@@ -3060,7 +3440,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsPNG": {
 		"autoOutputAction": 0,
@@ -3068,7 +3449,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"optimizerType": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,
@@ -3078,7 +3461,8 @@
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"compileDebug": 1,
-		"outputStyle": 0
+		"outputStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
@@ -3106,7 +3490,8 @@
 		"logicless": 0,
 		"outputFormat": 0,
 		"outputStyle": 1,
-		"railsCompatible": 0
+		"railsCompatible": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSTYLUS": {
 		"autoOutputAction": 0,
@@ -3153,9 +3538,11 @@
 		},
 	"languageDefaultsUserDefined": [
 		],
+	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {
@@ -3296,6 +3683,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {
