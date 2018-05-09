@@ -23,6 +23,27 @@
 		"oAP": "\/_PSDs\/20161103.sketch",
 		"oF": 0
 		},
+	"\/_PSDs\/20180509-work-desktop copy.psd": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_PSDs\/20180509-work-desktop copy.psd",
+		"oF": 0
+		},
+	"\/_PSDs\/20180509-work-desktop.psd": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_PSDs\/20180509-work-desktop.psd",
+		"oF": 0
+		},
+	"\/_PSDs\/20180509-work-mobile.psd": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_PSDs\/20180509-work-mobile.psd",
+		"oF": 0
+		},
 	"\/_PSDs\/Screencaps\/20170126\/01.png": {
 		"ft": 32768,
 		"iS": 90793,
@@ -173,25 +194,25 @@
 		"oAP": "\/_PSDs\/Screencaps\/20170126\/20170126.m4v",
 		"oF": 0
 		},
-	"\/_PSDs\/work-desktop.psd": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_PSDs\/work-desktop.psd",
-		"oF": 0
-		},
-	"\/_PSDs\/work-mobile.psd": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_PSDs\/work-mobile.psd",
-		"oF": 0
-		},
 	"\/_PSDs\/~old\/20160825.sketch": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/_PSDs\/~old\/20160825.sketch",
+		"oF": 0
+		},
+	"\/_PSDs\/~old\/20170916-work-desktop.psd": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_PSDs\/~old\/20170916-work-desktop.psd",
+		"oF": 0
+		},
+	"\/_PSDs\/~old\/20170916-work-mobile.psd": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_PSDs\/~old\/20170916-work-mobile.psd",
 		"oF": 0
 		},
 	"\/_PSDs\/~old\/9kisses.psd": {
@@ -1238,7 +1259,7 @@
 		"oAP": "\/images\/bf-smc-mobile.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/images\/bf-solid-desktop.jpg": {
@@ -1444,7 +1465,7 @@
 		},
 	"\/images\/nyt-summer-drinks-mobile.jpg": {
 		"ft": 16384,
-		"iS": 218025,
+		"iS": 200407,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/nyt-summer-drinks-mobile.jpg",
@@ -1462,6 +1483,28 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"\/images\/resy-resyweb-mobile.jpg": {
+		"ft": 16384,
+		"iS": 428351,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/images\/resy-resyweb-mobile.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/resy-resyweb.jpg": {
+		"ft": 16384,
+		"iS": 529373,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/images\/resy-resyweb.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/images\/social-facebook.svg": {

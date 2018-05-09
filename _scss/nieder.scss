@@ -121,6 +121,15 @@
     background-image: url("../images/bf-smc-mobile.jpg");
   }
 
+  &cover--resyweb {
+    background-image: url("../images/resy-resyweb.jpg");
+    background-position: top center !important;
+  }
+
+  &cover--resyweb-mobile {
+    background-image: url("../images/resy-resyweb-mobile.jpg");
+  }
+
   &cover--scoop {
     background-image: url("../images/nyt-scoop-desktop.jpg");
     background-position: top center !important;
