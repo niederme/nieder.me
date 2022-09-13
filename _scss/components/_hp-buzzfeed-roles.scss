@@ -1,0 +1,85 @@
+//
+// HP Section - BuzzFeed Roles
+// --------------------------------------------------
+
+.section-buzzfeed-roles {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  article {
+    position: relative;
+    left: 50%;
+    width: 55vw;
+    height: auto;
+
+    .highlight {
+      padding: 1.5vw 1.5vw 8vw 12vw;
+      background: $yellow;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+    .story {
+      position: absolute;
+      bottom: -9vw;
+      left: 2vw;
+
+      h3 {
+        margin-bottom: 1rem;
+        font-family: $sans-bold;
+        font-weight: $weight-bold;
+        text-align: center;
+      }
+
+      p {
+        margin-left: 8vw;
+      }
+
+      i {
+        display: block;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .section-buzzfeed-roles {
+    article {
+      width: 100vw;
+      height: auto;
+      .highlight {
+        padding: 40vw 4vw 0 8vw;
+
+        img {
+          margin-left: 20%;
+          width: 100%;
+        }
+      }
+      .story {
+        h3 {
+          margin-bottom: 0.25rem;
+        }
+        top: 8vw;
+        bottom: auto;
+        left: 18vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .section-buzzfeed-roles {
+    article {
+      .highlight {
+      }
+      .story {
+        bottom: -9vw;
+        left: 2vw;
+      }
+    }
+  }
+}

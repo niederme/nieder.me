@@ -1,0 +1,67 @@
+//
+// HP-Topper
+// --------------------------------------------------
+
+.hp-topper {
+  min-height: 100vh;
+  background-color: $black;
+  color: $white;
+
+  h1 {
+    line-height: $leading-body;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: lighten($white, 20%);
+      transition: color 0.15s ease 0s;
+    }
+  }
+  
+  i {
+    display: block;
+    font-style: normal;
+  }
+}
+
+@media (min-width: 480px) {
+  .hp-topper {
+  }
+}
+
+@media (min-width: 640px) {
+  .hp-topper {
+  }
+}
+
+@media (min-width: 768px) {
+  .hp-topper {
+  }
+}
+
+@media (min-width: 1024px) {
+  .hp-topper {
+  }
+}
+
+@media (min-width: 1280px) {
+  .hp-topper {
+  }
+}
+
+@media (min-width: 1440px) {
+  .hp-topper {
+  }
+}
+
+@media (min-width: 1600px) {
+  .hp-topper {
+  }
+}
+
+@media (min-width: 1900px) {
+  .hp-topper {
+  }
+}

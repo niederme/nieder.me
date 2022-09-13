@@ -1,0 +1,85 @@
+//
+// HP Section - Resy Web
+// --------------------------------------------------
+
+.section-resy-web {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: $space-10;
+  overflow: hidden;
+
+  article {
+    position: relative;
+    width: 55vw;
+    height: auto;
+
+    .highlight {
+      padding: 4vw 4vw 0 8vw;
+      background: $red;
+      overflow: hidden;
+
+      img {
+        margin-left: 20%;
+        width: 100%;
+      }
+    }
+    .story {
+      position: absolute;
+      bottom: 8vw;
+      left: -18vw;
+
+      h3 {
+        margin-bottom: 1rem;
+        font-family: $sans-bold;
+        font-weight: $weight-bold;
+      }
+
+      p {
+        margin-left: 4vw;
+      }
+
+      i {
+        display: block;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .section-resy-web {
+    article {
+      width: 100vw;
+      height: auto;
+      .highlight {
+        padding: 40vw 4vw 0 8vw;
+
+        img {
+          margin-left: 20%;
+          width: 100%;
+        }
+      }
+      .story {
+        h3 {
+          margin-bottom: 0.25rem;
+        }
+        top: 8vw;
+        bottom: auto;
+        left: 18vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .section-resy-web {
+    article {
+      .highlight {
+      }
+      .story {
+        bottom: 5vw;
+        left: -25vw;
+      }
+    }
+  }
+}
