@@ -4,7 +4,11 @@
 
 .hp-topper {
   min-height: 100vh;
-  background-color: $black;
+  background: url(../images/bg-white.png) no-repeat center center fixed $black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: $white;
 
   h1 {

@@ -476,25 +476,21 @@
       "dP" : 10,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 0,
+      "ma" : 1,
       "oA" : 0,
-      "oAP" : "\/_scss\/nieder.css",
-      "oF" : 0,
+      "oAP" : "\/css\/nieder.css",
+      "oF" : 2,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
     },
-    "\/css\/nieder (RESY-C02ZL2Z9LVDR's conflicted copy 2020-11-24).css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
+    "\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/nieder (RESY-C02ZL2Z9LVDR's conflicted copy 2020-11-24)-min.css",
-      "oF" : 0,
-      "pg" : 0
+      "oAP" : "\/.gitignore",
+      "oF" : 0
     },
     "\/css\/nieder.css" : {
       "aP" : 1,
@@ -507,14 +503,6 @@
       "oAP" : "\/css\/nieder-min.css",
       "oF" : 0,
       "pg" : 0
-    },
-    "\/css\/nieder.css (RESY-C02ZL2Z9LVDR's conflicted copy 2020-11-24).map" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/css\/nieder.css (RESY-C02ZL2Z9LVDR's conflicted copy 2020-11-24).map",
-      "oF" : 0
     },
     "\/css\/nieder.css.map" : {
       "cB" : 0,
@@ -724,6 +712,32 @@
       "oAP" : "\/fonts\/F-Grotesk-Thin.woff2",
       "oF" : 0
     },
+    "\/images\/bg-black.png" : {
+      "ft" : 32768,
+      "iS" : 141655,
+      "oA" : 0,
+      "oAP" : "\/images\/bg-black.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/bg-white.png" : {
+      "ft" : 32768,
+      "iS" : 202008,
+      "oA" : 0,
+      "oAP" : "\/images\/bg-white.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/images\/Buzzfeed-Roles-Eggs.gif" : {
       "ft" : 4194304,
       "iS" : 620493,
@@ -875,97 +889,6 @@
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
-    },
-    "\/images\/Splatter-01-Black.png" : {
-      "ft" : 32768,
-      "iS" : 1033176,
-      "oA" : 0,
-      "oAP" : "\/images\/Splatter-01-Black.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/Splatter-01-Blue.png" : {
-      "ft" : 32768,
-      "iS" : 1153224,
-      "oA" : 0,
-      "oAP" : "\/images\/Splatter-01-Blue.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/Splatter-01-Brand-Red.png" : {
-      "ft" : 32768,
-      "iS" : 1149072,
-      "oA" : 0,
-      "oAP" : "\/images\/Splatter-01-Brand-Red.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/Splatter-01-Greens.png" : {
-      "ft" : 32768,
-      "iS" : 1151921,
-      "oA" : 0,
-      "oAP" : "\/images\/Splatter-01-Greens.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/Splatter-01-Water.png" : {
-      "ft" : 32768,
-      "iS" : 1152367,
-      "oA" : 0,
-      "oAP" : "\/images\/Splatter-01-Water.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/Splatter-01-White.png" : {
-      "ft" : 32768,
-      "iS" : 1141970,
-      "oA" : 0,
-      "oAP" : "\/images\/Splatter-01-White.png",
-      "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/Splatter-01-Yolk.png" : {
-      "ft" : 32768,
-      "iS" : 1147683,
-      "oA" : 0,
-      "oAP" : "\/images\/Splatter-01-Yolk.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
     },
     "\/index.html" : {
       "cB" : 0,
