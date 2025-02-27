@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 //
 // Border Utility Classes
 // --------------------------------------------------
@@ -9,25 +12,25 @@
 // Borders
 // -------------------------
 
-@include generate-breakpoint-prefixes {
+@include mixins.generate-breakpoint-prefixes {
 
-  &border        { border: $border        !important; }
-  &border-top    { border-top: $border    !important; }
-  &border-right  { border-right: $border  !important; }
-  &border-bottom { border-bottom: $border !important; }
-  &border-left   { border-left: $border   !important; }
+  &border        { border: variables.$border        !important; }
+  &border-top    { border-top: variables.$border    !important; }
+  &border-right  { border-right: variables.$border  !important; }
+  &border-bottom { border-bottom: variables.$border !important; }
+  &border-left   { border-left: variables.$border   !important; }
 
-  &border-dark        { border: $border-dark        !important; }
-  &border-top-dark    { border-top: $border-dark    !important; }
-  &border-right-dark  { border-right: $border-dark  !important; }
-  &border-bottom-dark { border-bottom: $border-dark !important; }
-  &border-left-dark   { border-left: $border-dark   !important; }
+  &border-dark        { border: variables.$border-dark        !important; }
+  &border-top-dark    { border-top: variables.$border-dark    !important; }
+  &border-right-dark  { border-right: variables.$border-dark  !important; }
+  &border-bottom-dark { border-bottom: variables.$border-dark !important; }
+  &border-left-dark   { border-left: variables.$border-dark   !important; }
 
-  &border-thick        { border: $border-thick        !important; }
-  &border-top-thick    { border-top: $border-thick    !important; }
-  &border-right-thick  { border-right: $border-thick  !important; }
-  &border-bottom-thick { border-bottom: $border-thick !important; }
-  &border-left-thick   { border-left: $border-thick   !important; }
+  &border-thick        { border: variables.$border-thick        !important; }
+  &border-top-thick    { border-top: variables.$border-thick    !important; }
+  &border-right-thick  { border-right: variables.$border-thick  !important; }
+  &border-bottom-thick { border-bottom: variables.$border-thick !important; }
+  &border-left-thick   { border-left: variables.$border-thick   !important; }
 
   &border-none        { border: none        !important; }
   &border-top-none    { border-top: none    !important; }

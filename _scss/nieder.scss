@@ -4,17 +4,18 @@
 // Imports
 // --------------------------------------------------
 
-@import "mixins";
-@import "variables";
-@import "normalize";
-@import "base";
-@import "typography";
-@import "colors";
-@import "layout";
-@import "grid";
-@import "flex";
-@import "animation";
-@import "borders";
+@use "sass:color";
+@use "mixins";
+@use "variables";
+@use "normalize";
+@use "base";
+@use "typography";
+@use "colors";
+@use "layout";
+@use "grid";
+@use "flex";
+@use "animation";
+@use "borders";
 
 
 // Scaffolding
@@ -26,7 +27,7 @@
 }
 
 
-@include generate-breakpoint-prefixes {
+@include mixins.generate-breakpoint-prefixes {
 
   &section-view-tall {
     height: 95vh;
@@ -53,7 +54,7 @@
 
 .icon:hover g,
 .icon:hover path {
-  fill: lighten($brand, 10%);
+  fill: color.adjust(variables.$brand, $lightness: 10%);
   transition: color .15s ease 0s;
 }
 
@@ -63,7 +64,7 @@
 // Covers
 // -------------------------
 
-@include generate-breakpoint-prefixes {
+@include mixins.generate-breakpoint-prefixes {
 
   &cover {
     background-size: cover;

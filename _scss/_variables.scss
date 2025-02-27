@@ -14,9 +14,9 @@ $generate-responsive-classes: true !default;
 // Fonts
 // -------------------------
 
-$sans-light:  geomanistlight, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$sans-bold:   geomanistmedium, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$sans-black:  geomanistblack, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-light:  nudica-light, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-bold:   nudica-medium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-bold:  nudica-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 // Spacing
@@ -43,10 +43,11 @@ $z4: 400;
 // Colors
 // -------------------------
 
-$brand:      #F3504B;
-$gray-light: #f4f4f4;
-$gray:       #585558;
-$gray-dark:  #212121;
+$brand:      #FF453A;
+$gray-light: #2C2C2E;
+$gray:       rgba(235,235,245,0.6);
+$gray-dark:  black;
+$gray-mid:   #1C1C1E;
 $white:      #fff;
 
 
@@ -55,7 +56,7 @@ $white:      #fff;
 
 $base-font-size: 16px;
 
-$text-1: 3.5rem;    // 56px
+$text-1: 5rem;    // 56px
 $text-2: 3rem;      // 48px
 $text-3: 2.25rem;   // 36px
 $text-4: 2rem;      // 32px
@@ -64,19 +65,19 @@ $text-6: 1.125rem;  // 18px
 
 $light: 300;
 $bold: 700;
-$black: 900;
+$bold: 900;
 
 
 // Line height
 // -------------------------
 
-$line-height-hed: 1.1;
-$line-height-body: 1.5;
+$line-height-hed: 1;
+$line-height-body: 1.3;
 
 
 // Borders
 // -------------------------
 
-$border: 1px solid rgba(243, 80, 75, .4);
-$border-thick: 2px solid rgba(243, 80, 75, 1);
-$border-dark: 1px solid rgba(85, 88, 85, .4);
+$border: 1px solid rgba($brand, 0.4);
+$border-thick: 2px solid rgba($brand, $alpha: 1);
+$border-dark: 1px solid rgba($gray-mid, $alpha: 0.6);
