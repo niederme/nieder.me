@@ -6,16 +6,16 @@
 
 @font-face {
     font-family: 'nudica-light';
-    src:  url('nudica-light-webfont.woff2') format('woff2'), 
-          url('nudica-light-webfont.woff') format('woff');
+    src:  url('../fonts/nudica-light-webfont.woff2') format('woff2'), 
+          url('../fonts/nudica-light-webfont.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'nudica-medium';
-    src:  url('nudica-meduim-webfont.woff2') format('woff2'), 
-          url('nudica-medium-webfont.woff') format('woff');
+    src:  url('../fonts/nudica-meduim-webfont.woff2') format('woff2'), 
+          url('../fonts/nudica-medium-webfont.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     }
@@ -23,8 +23,8 @@
 
 @font-face {
   font-family: 'nudica-bold';
-  src:  url('nudica-bold-webfont.woff2') format('woff2'), 
-        url('nudica-bold-webfont.woff') format('woff');
+  src:  url('../fonts/nudica-bold-webfont.woff2') format('woff2'), 
+        url('../fonts/nudica-bold-webfont.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
