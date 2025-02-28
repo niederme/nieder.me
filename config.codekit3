@@ -7,12 +7,13 @@
       "uuidString" : "E0FA2607-7EB7-487B-8615-BD952D86F64A"
     }
   ],
-  "creatorBuild" : "34680",
+  "creatorBuild" : "34365",
   "files" : {
     "\/_scss\/_animation.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -20,12 +21,14 @@
       "oAP" : "\/css\/_animation.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_base.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -33,12 +36,14 @@
       "oAP" : "\/css\/_base.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_borders.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -46,12 +51,14 @@
       "oAP" : "\/css\/_borders.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_colors.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -59,12 +66,14 @@
       "oAP" : "\/css\/_colors.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_flex.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -72,12 +81,14 @@
       "oAP" : "\/css\/_flex.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_grid.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -85,12 +96,14 @@
       "oAP" : "\/css\/_grid.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_layout.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -98,12 +111,14 @@
       "oAP" : "\/css\/_layout.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_mixins.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -111,12 +126,14 @@
       "oAP" : "\/css\/_mixins.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_normalize.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -124,12 +141,14 @@
       "oAP" : "\/css\/_normalize.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_typography.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -137,12 +156,14 @@
       "oAP" : "\/css\/_typography.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/_scss\/_variables.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -150,12 +171,294 @@
       "oAP" : "\/css\/_variables.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_animation.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_animation.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_base.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_base.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_borders.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_borders.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_colors.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_colors.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_flex.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_flex.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_grid.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_grid.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_layout.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_layout.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_mixins.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_mixins.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_normalize.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_normalize.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_reset.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_reset.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_typography.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_typography.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_variables.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_variables.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/nieder.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/nieder.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_animation.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_animation.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_base.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_base.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_borders.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_borders.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_colors.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_colors.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_flex.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_flex.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_grid.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_grid.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_layout.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_layout.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_mixins.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_mixins.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_normalize.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_normalize.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_reset.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_reset.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_typography.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_typography.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_variables.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/_variables.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/nieder.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_scss\/.sass-cache\/67f673782154950ba5338284b23049f0cd7d6fcb\/nieder.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_borders.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_borders.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_colors.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_colors.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_grid.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_grid.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_layout.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_layout.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_mixins.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_mixins.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_normalize.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_normalize.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_typography.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_typography.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_variables.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/_variables.scssc",
+      "oF" : 0
+    },
+    "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/nieder.scssc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_scss\/.sass-cache\/104a362c353efedac2020a5b86be9a84b503d23b\/nieder.scssc",
+      "oF" : 0
     },
     "\/_scss\/nieder.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
+      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -163,7 +466,8 @@
       "oAP" : "\/css\/nieder.css",
       "oF" : 0,
       "oS" : 3,
-      "pg" : 0
+      "pg" : 0,
+      "sct" : 0
     },
     "\/.gitignore" : {
       "cB" : 0,
@@ -180,7 +484,7 @@
       "co" : 0,
       "ft" : 16,
       "ma" : 0,
-      "oA" : 1,
+      "oA" : 2,
       "oAP" : "\/css\/nieder-ck.css",
       "oF" : 0,
       "pg" : 0
@@ -311,8 +615,8 @@
       "oA" : 0,
       "oAP" : "\/images\/bf-branded-video-promo.png",
       "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -324,7 +628,7 @@
       "oA" : 0,
       "oAP" : "\/images\/bf-roles-desktop.gif",
       "oF" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "rq" : 75
     },
@@ -334,26 +638,26 @@
       "oA" : 0,
       "oAP" : "\/images\/bf-roles-mobile.gif",
       "oF" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "rq" : 75
     },
     "\/images\/bf-smc-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 432407,
+      "iS" : 454149,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/bf-smc-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/bf-smc-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 485945,
+      "iS" : 411892,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/bf-smc-mobile.jpg",
@@ -372,14 +676,14 @@
       "oAP" : "\/images\/bf-solid-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/bf-solid-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 55032,
+      "iS" : 241490,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/bf-solid-mobile.jpg",
@@ -519,27 +823,27 @@
       "oAP" : "\/images\/nyt-9kisses-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-9kisses-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 511729,
+      "iS" : 561538,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-9kisses-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-dasani-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 690231,
+      "iS" : 577611,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-dasani-desktop.jpg",
@@ -552,78 +856,78 @@
     },
     "\/images\/nyt-dasani-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 487027,
+      "iS" : 494529,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-dasani-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-innovations-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 589680,
+      "iS" : 699798,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-innovations-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-innovations-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 669564,
+      "iS" : 749187,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-innovations-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-scoop-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 143299,
+      "iS" : 142250,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-scoop-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-scoop-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 124052,
+      "iS" : 118193,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-scoop-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-summer-drinks-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 328419,
+      "iS" : 258227,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-summer-drinks-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -636,14 +940,14 @@
       "oAP" : "\/images\/nyt-summer-drinks-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/promo.png" : {
       "ft" : 32768,
-      "iS" : 38252,
+      "iS" : 37970,
       "oA" : 0,
       "oAP" : "\/images\/promo.png",
       "oF" : 0,
@@ -669,7 +973,7 @@
     },
     "\/images\/resy-resyweb.jpg" : {
       "ft" : 16384,
-      "iS" : 529373,
+      "iS" : 503731,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/resy-resyweb.jpg",
@@ -731,7 +1035,7 @@
       "oAP" : "\/images\/work-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -746,11 +1050,11 @@
     },
     "\/video\/bf-socialmc-poster.png" : {
       "ft" : 32768,
-      "iS" : 467396,
+      "iS" : 699841,
       "oA" : 0,
       "oAP" : "\/video\/bf-socialmc-poster.png",
       "oF" : 0,
-      "oIPL" : 0,
+      "oIPL" : 1,
       "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
@@ -763,8 +1067,8 @@
       "oA" : 0,
       "oAP" : "\/video\/bf-socialmc-promo.png",
       "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -1298,6 +1602,10 @@
         "active" : 0,
         "optionString" : "{'before': true, 'after': true, 'overrides': {}}"
       },
+      "line-comment-position" : {
+        "active" : 0,
+        "optionString" : "{'position': 'above'}"
+      },
       "linebreak-style" : {
         "active" : 0,
         "optionString" : "'unix'"
@@ -1309,10 +1617,6 @@
       "lines-between-class-members" : {
         "active" : 0,
         "optionString" : "'always', {exceptAfterSingleLine: false}"
-      },
-      "logical-assignment-operators" : {
-        "active" : 0,
-        "optionString" : "'always',  {'enforceForIfStatements': false}"
       },
       "max-classes-per-file" : {
         "active" : 0,
@@ -1349,6 +1653,10 @@
       "max-statements-per-line" : {
         "active" : 0,
         "optionString" : "{'max': 1}"
+      },
+      "multiline-comment-style" : {
+        "active" : 0,
+        "optionString" : "'starred-block'"
       },
       "multiline-ternary" : {
         "active" : 0,
@@ -1470,9 +1778,6 @@
       "no-empty-pattern" : {
         "active" : 1
       },
-      "no-empty-static-block" : {
-        "active" : 0
-      },
       "no-eq-null" : {
         "active" : 0
       },
@@ -1491,8 +1796,7 @@
         "active" : 0
       },
       "no-extra-boolean-cast" : {
-        "active" : 1,
-        "optionString" : "{'enforceForInnerExpressions': false}"
+        "active" : 1
       },
       "no-extra-label" : {
         "active" : 0
@@ -1505,8 +1809,7 @@
         "active" : 1
       },
       "no-fallthrough" : {
-        "active" : 1,
-        "optionString" : ""
+        "active" : 1
       },
       "no-floating-decimal" : {
         "active" : 0
@@ -1577,8 +1880,7 @@
         "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
       },
       "no-misleading-character-class" : {
-        "active" : 1,
-        "optionString" : "{'allowEscape': false}"
+        "active" : 1
       },
       "no-mixed-operators" : {
         "active" : 0,
@@ -1615,7 +1917,7 @@
       "no-new-func" : {
         "active" : 0
       },
-      "no-new-native-nonconstructor" : {
+      "no-new-object" : {
         "active" : 0
       },
       "no-new-symbol" : {
@@ -1629,9 +1931,6 @@
       },
       "no-obj-calls" : {
         "active" : 1
-      },
-      "no-object-constructor" : {
-        "active" : 0
       },
       "no-octal" : {
         "active" : 1
@@ -1672,8 +1971,7 @@
         "optionString" : "'event', 'fdescribe'"
       },
       "no-restricted-imports" : {
-        "active" : 0,
-        "optionString" : ""
+        "active" : 0
       },
       "no-restricted-properties" : {
         "active" : 0,
@@ -1686,6 +1984,9 @@
       "no-return-assign" : {
         "active" : 0,
         "optionString" : "'except-parens'"
+      },
+      "no-return-await" : {
+        "active" : 0
       },
       "no-script-url" : {
         "active" : 0
@@ -1946,8 +2247,7 @@
         "active" : 0
       },
       "require-unicode-regexp" : {
-        "active" : 0,
-        "optionString" : "{'requireFlag': 'u'}"
+        "active" : 0
       },
       "require-yield" : {
         "active" : 0
@@ -2238,7 +2538,9 @@
       "autoOutputPathReplace1" : "sass",
       "autoOutputPathReplace2" : "css",
       "autoOutputPathStyle" : 2,
+      "compilerType" : 0,
       "cssoStyle" : 0,
+      "decimalPrecision" : 10,
       "emitCharset" : 1,
       "outputStyle" : 1,
       "purgeCSSStyle" : 0,
@@ -2297,7 +2599,6 @@
       "createDeclarationFile" : 0,
       "jsxMode" : 0,
       "minifierStyle" : 0,
-      "moduleDetectionType" : 0,
       "moduleResolutionType" : 0,
       "moduleType" : 2,
       "removeComments" : 0,
@@ -2354,15 +2655,10 @@
       "ENVIRONMENT:::$NODE_ENV"
     ],
     "rollupTreeshakingEnabled" : 1,
-    "rollupTreeshakingModuleSideEffects" : 1,
-    "sassWarningStyle" : 1,
     "skippedFoldersString" : "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
-    "tsAllowArbitraryExtensions" : 0,
-    "tsAllowImportingTSExtensions" : 0,
     "tsAllowSyntheticDefaultImports" : 0,
-    "tsAllowUMDGlobalAccess" : 0,
     "tsAllowUnreachableCode" : 0,
     "tsAllowUnusedLabels" : 0,
     "tsAlwaysStrict" : 0,
@@ -2371,37 +2667,36 @@
     "tsEmitDecoratorMetadata" : 0,
     "tsESModuleInterop" : 0,
     "tsExactOptionalPropertyTypes" : 0,
-    "tsExperimentalDecorators" : 0,
     "tsForceConsistentCasingInFileNames" : 1,
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
-    "tsJSXFragmentFactory" : "Fragment",
+    "tsKeyofStringsOnly" : 0,
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,
     "tsNoImplicitOverride" : 0,
     "tsNoImplicitReturns" : 0,
     "tsNoImplicitThis" : 0,
+    "tsNoImplicitUseStrict" : 0,
     "tsNoLib" : 0,
     "tsNoPropertyAccessFromIndexSignature" : 0,
     "tsNoResolve" : 0,
+    "tsNoStrictGenericChecks" : 0,
     "tsNoUncheckedIndexAccess" : 0,
     "tsNoUnusedLocals" : 0,
     "tsNoUnusedParameters" : 0,
     "tsPreserveConstEnums" : 0,
     "tsPreserveSymlinks" : 0,
     "tsResolveJsonModule" : 0,
-    "tsSkipDefaultLibCheck" : 0,
     "tsSkipLibCheck" : 0,
-    "tsStrictBindCallApply" : 0,
     "tsStrictFunctionTypes" : 0,
     "tsStrictNullChecks" : 0,
     "tsStrictPropertyInitialization" : 0,
     "tsStripInternal" : 0,
-    "tsUseDefineForClassFields" : 0,
+    "tsSuppressExcessPropertyErrors" : 0,
+    "tsSuppressImplicitAnyIndexErrors" : 0,
     "tsUseUnknownInCatchVariables" : 0,
-    "tsVerbatimModuleSyntax" : 0,
     "uglifyDefinesString" : "",
     "uglifyFlags2" : {
       "arguments" : {
