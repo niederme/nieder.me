@@ -4,150 +4,150 @@
     {
       "name" : "Process All Remaining Files and Folders",
       "stepType" : 1,
-      "uuidString" : "E0FA2607-7EB7-487B-8615-BD952D86F64A"
+      "uuidString" : "B738B94D-9836-4C78-BDFC-DE8B56F7FCB0"
     }
   ],
   "creatorBuild" : "34680",
   "files" : {
     "\/_scss\/_animation.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_animation.css",
+      "oAP" : "\/_scss\/_animation.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_base.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_base.css",
+      "oAP" : "\/_scss\/_base.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_borders.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_borders.css",
+      "oAP" : "\/_scss\/_borders.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_colors.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_colors.css",
+      "oAP" : "\/_scss\/_colors.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_flex.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_flex.css",
+      "oAP" : "\/_scss\/_flex.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_grid.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_grid.css",
+      "oAP" : "\/_scss\/_grid.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_layout.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_layout.css",
+      "oAP" : "\/_scss\/_layout.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_mixins.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_mixins.css",
+      "oAP" : "\/_scss\/_mixins.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_normalize.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_normalize.css",
+      "oAP" : "\/_scss\/_normalize.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_typography.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_typography.css",
+      "oAP" : "\/_scss\/_typography.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
     "\/_scss\/_variables.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/css\/_variables.css",
+      "oAP" : "\/_scss\/_variables.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
@@ -433,14 +433,14 @@
       "oF" : 0
     },
     "\/_scss\/nieder.scss" : {
-      "aP" : 1,
-      "bl" : 1,
+      "aP" : 0,
+      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/nieder.css",
+      "oAP" : "\/_scss\/nieder.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0
@@ -449,19 +449,19 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
     "\/css\/nieder.css" : {
-      "aP" : 0,
+      "aP" : 1,
       "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
       "ma" : 0,
-      "oA" : 2,
-      "oAP" : "\/css\/nieder-ck.css",
+      "oA" : 0,
+      "oAP" : "\/css\/nieder-min.css",
       "oF" : 0,
       "pg" : 0
     },
@@ -469,7 +469,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/css\/nieder.css.map",
       "oF" : 0
     },
@@ -477,7 +477,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/favicon.ico",
       "oF" : 0
     },
@@ -485,7 +485,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/Nudica_webfont_license.pdf",
       "oF" : 0
     },
@@ -493,7 +493,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-bold-webfont.woff",
       "oF" : 0
     },
@@ -501,7 +501,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-bold-webfont.woff2",
       "oF" : 0
     },
@@ -509,7 +509,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-bolditalic-webfont.woff",
       "oF" : 0
     },
@@ -517,7 +517,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-bolditalic-webfont.woff2",
       "oF" : 0
     },
@@ -525,7 +525,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-light-webfont.woff",
       "oF" : 0
     },
@@ -533,7 +533,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-light-webfont.woff2",
       "oF" : 0
     },
@@ -541,7 +541,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-lightitalic-webfont.woff",
       "oF" : 0
     },
@@ -549,7 +549,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-lightitalic-webfont.woff2",
       "oF" : 0
     },
@@ -557,7 +557,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-medium-webfont.woff",
       "oF" : 0
     },
@@ -565,7 +565,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-medium-webfont.woff2",
       "oF" : 0
     },
@@ -573,7 +573,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-mediumitalic-webfont.woff",
       "oF" : 0
     },
@@ -581,18 +581,18 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/fonts\/nudica-mediumitalic-webfont.woff2",
       "oF" : 0
     },
     "\/images\/bf-branded-video-promo.png" : {
       "ft" : 32768,
-      "iS" : 191226,
+      "iS" : 60835,
       "oA" : 0,
       "oAP" : "\/images\/bf-branded-video-promo.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -600,33 +600,33 @@
     },
     "\/images\/bf-roles-desktop.gif" : {
       "ft" : 4194304,
-      "iS" : 620493,
+      "iS" : 561237,
       "oA" : 0,
       "oAP" : "\/images\/bf-roles-desktop.gif",
       "oF" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "rq" : 75
     },
     "\/images\/bf-roles-mobile.gif" : {
       "ft" : 4194304,
-      "iS" : 306660,
+      "iS" : 306253,
       "oA" : 0,
       "oAP" : "\/images\/bf-roles-mobile.gif",
       "oF" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "rq" : 75
     },
     "\/images\/bf-smc-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 454149,
+      "iS" : 452900,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/bf-smc-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -639,20 +639,20 @@
       "oAP" : "\/images\/bf-smc-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/bf-solid-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 235533,
+      "iS" : 234530,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/bf-solid-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -677,17 +677,17 @@
       "oAP" : "\/images\/favicon.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/Google Apps Logo.png" : {
       "ft" : 32768,
-      "iS" : 5418,
+      "iS" : 2459,
       "oA" : 0,
       "oAP" : "\/images\/Google Apps Logo.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -700,7 +700,7 @@
       "oAP" : "\/images\/hamburger.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/icon-social-email.svg" : {
@@ -710,7 +710,7 @@
       "oAP" : "\/images\/icon-social-email.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/icon-social-facebook.svg" : {
@@ -720,7 +720,7 @@
       "oAP" : "\/images\/icon-social-facebook.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/icon-social-github.svg" : {
@@ -730,7 +730,7 @@
       "oAP" : "\/images\/icon-social-github.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/icon-social-instagram.svg" : {
@@ -740,7 +740,7 @@
       "oAP" : "\/images\/icon-social-instagram.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/icon-social-linkedin.svg" : {
@@ -750,7 +750,7 @@
       "oAP" : "\/images\/icon-social-linkedin.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/icon-social-mastodon.svg" : {
@@ -760,7 +760,7 @@
       "oAP" : "\/images\/icon-social-mastodon.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/icon-social-twitter.svg" : {
@@ -770,14 +770,14 @@
       "oAP" : "\/images\/icon-social-twitter.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/images\/index.html",
       "oF" : 0
     },
@@ -788,31 +788,31 @@
       "oAP" : "\/images\/logo.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/nyt-9kisses-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 634239,
+      "iS" : 633279,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-9kisses-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-9kisses-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 561538,
+      "iS" : 560549,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-9kisses-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -832,103 +832,103 @@
     },
     "\/images\/nyt-dasani-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 494529,
+      "iS" : 493641,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-dasani-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-innovations-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 699798,
+      "iS" : 698479,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-innovations-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-innovations-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 749187,
+      "iS" : 748192,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-innovations-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-scoop-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 142250,
+      "iS" : 141281,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-scoop-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-scoop-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 118193,
+      "iS" : 117196,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-scoop-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-summer-drinks-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 258227,
+      "iS" : 257182,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-summer-drinks-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/nyt-summer-drinks-mobile.jpg" : {
       "ft" : 16384,
-      "iS" : 200407,
+      "iS" : 200348,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/nyt-summer-drinks-mobile.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
     },
     "\/images\/promo.png" : {
       "ft" : 32768,
-      "iS" : 37970,
+      "iS" : 38128,
       "oA" : 0,
       "oAP" : "\/images\/promo.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -949,13 +949,13 @@
     },
     "\/images\/resy-resyweb.jpg" : {
       "ft" : 16384,
-      "iS" : 503731,
+      "iS" : 502529,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/resy-resyweb.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -967,7 +967,7 @@
       "oAP" : "\/images\/social-facebook.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/social-instagram.svg" : {
@@ -977,7 +977,7 @@
       "oAP" : "\/images\/social-instagram.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/social-twitter.svg" : {
@@ -987,17 +987,17 @@
       "oAP" : "\/images\/social-twitter.svg",
       "oF" : 0,
       "opt" : 0,
-      "plM" : 3758088159,
+      "plM" : 52780316221407,
       "prP" : 0
     },
     "\/images\/The Firmlist.png" : {
       "ft" : 32768,
-      "iS" : 2953,
+      "iS" : 1598,
       "oA" : 0,
       "oAP" : "\/images\/The Firmlist.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -1005,13 +1005,13 @@
     },
     "\/images\/work-desktop.jpg" : {
       "ft" : 16384,
-      "iS" : 475531,
+      "iS" : 474345,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/images\/work-desktop.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -1020,7 +1020,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/index.html",
       "oF" : 0
     },
@@ -1030,8 +1030,8 @@
       "oA" : 0,
       "oAP" : "\/video\/bf-socialmc-poster.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -1043,8 +1043,8 @@
       "oA" : 0,
       "oAP" : "\/video\/bf-socialmc-promo.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -1054,7 +1054,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/video\/bf-socialmc.html",
       "oF" : 0
     },
@@ -1062,7 +1062,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/video\/bf-socialmc.m4v",
       "oF" : 0
     }
@@ -1074,10 +1074,10 @@
 
   },
   "projectAttributes" : {
-    "creationDate" : 499891252,
+    "creationDate" : 616789457.90691197,
     "displayValue" : "nieder.me",
     "displayValueWasSetByUser" : 0,
-    "iconImageName" : "brackets_gray",
+    "iconImageName" : "brackets-unblue",
     "iconImageWasSetByUser" : 0
   },
   "projectSettings" : {
@@ -1383,11 +1383,11 @@
     ],
     "esLintConfigFileHandlingType" : 0,
     "esLintECMAVersion" : 7,
-    "esLintEnvironmentsMask" : 8193,
+    "esLintEnvironmentsMask" : 1,
     "esLintRules" : {
       "accessor-pairs" : {
         "active" : 0,
-        "optionString" : "{'setWithoutGet': true, 'getWithoutSet': false}"
+        "optionString" : "{'setWithoutGet': true, 'getWithoutSet': false, 'enforceForClassMembers': true}"
       },
       "array-bracket-newline" : {
         "active" : 0,
@@ -1399,7 +1399,7 @@
       },
       "array-callback-return" : {
         "active" : 0,
-        "optionString" : ""
+        "optionString" : "{'allowImplicit': false}"
       },
       "array-element-newline" : {
         "active" : 0,
@@ -1430,7 +1430,7 @@
       },
       "camelcase" : {
         "active" : 0,
-        "optionString" : "{'properties': 'always'}"
+        "optionString" : "{'properties': 'always', 'ignoreDestructuring': false, 'ignoreImports': false}"
       },
       "capitalized-comments" : {
         "active" : 0,
@@ -1458,7 +1458,7 @@
       },
       "computed-property-spacing" : {
         "active" : 0,
-        "optionString" : "'never'"
+        "optionString" : "'never', {'enforceForClassMembers': true}"
       },
       "consistent-return" : {
         "active" : 0,
@@ -1509,11 +1509,11 @@
       },
       "func-name-matching" : {
         "active" : 0,
-        "optionString" : "'always', {'includeCommonJSModuleExports': false}"
+        "optionString" : "'always', {'considerPropertyDescriptor': false, 'includeCommonJSModuleExports': false}"
       },
       "func-names" : {
         "active" : 0,
-        "optionString" : "'always'"
+        "optionString" : "'always', {'generators': 'always'}"
       },
       "func-style" : {
         "active" : 0,
@@ -1552,7 +1552,7 @@
       },
       "id-match" : {
         "active" : 0,
-        "optionString" : "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+        "optionString" : "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true, 'ignoreDestructuring': false}"
       },
       "implicit-arrow-linebreak" : {
         "active" : 0,
@@ -1560,7 +1560,7 @@
       },
       "indent" : {
         "active" : 0,
-        "optionString" : "4, {'SwitchCase': 0, 'VariableDeclarator': 1, 'outerIIFEBody': 1, }"
+        "optionString" : "4, {'SwitchCase': 0, 'VariableDeclarator': 1, 'outerIIFEBody': 1 }"
       },
       "init-declarations" : {
         "active" : 0,
@@ -1596,7 +1596,7 @@
       },
       "max-classes-per-file" : {
         "active" : 0,
-        "optionString" : "{'ignoreExpressions': false, 'max': 1}"
+        "optionString" : "1"
       },
       "max-depth" : {
         "active" : 0,
@@ -1640,7 +1640,7 @@
       },
       "new-parens" : {
         "active" : 0,
-        "optionString" : ""
+        "optionString" : "'always'"
       },
       "newline-per-chained-call" : {
         "active" : 0,
@@ -1653,7 +1653,7 @@
         "active" : 0
       },
       "no-async-promise-executor" : {
-        "active" : 1
+        "active" : 0
       },
       "no-await-in-loop" : {
         "active" : 0
@@ -1680,7 +1680,7 @@
       },
       "no-confusing-arrow" : {
         "active" : 0,
-        "optionString" : "{'allowParens': false}"
+        "optionString" : "{'allowParens': true}"
       },
       "no-console" : {
         "active" : 1,
@@ -1778,8 +1778,8 @@
         "active" : 0
       },
       "no-extra-parens" : {
-        "active" : 1,
-        "optionString" : "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false}"
+        "active" : 0,
+        "optionString" : "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none', 'enforceForArrowConditionals': false, 'enforceForSequenceExpressions': false, 'enforceForNewInMemberExpressions': false}"
       },
       "no-extra-semi" : {
         "active" : 1
@@ -1795,7 +1795,7 @@
         "active" : 1
       },
       "no-global-assign" : {
-        "active" : 0,
+        "active" : 1,
         "optionString" : "{'exceptions': []}"
       },
       "no-implicit-coercion" : {
@@ -1824,7 +1824,7 @@
       },
       "no-invalid-this" : {
         "active" : 0,
-        "optionString" : ""
+        "optionString" : "{'capIsConstructor': true}"
       },
       "no-irregular-whitespace" : {
         "active" : 1,
@@ -1850,14 +1850,14 @@
         "active" : 0
       },
       "no-loss-of-precision" : {
-        "active" : 1
+        "active" : 0
       },
       "no-magic-numbers" : {
         "active" : 0,
         "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
       },
       "no-misleading-character-class" : {
-        "active" : 1,
+        "active" : 0,
         "optionString" : "{'allowEscape': false}"
       },
       "no-mixed-operators" : {
@@ -1870,7 +1870,7 @@
       },
       "no-multi-assign" : {
         "active" : 0,
-        "optionString" : ""
+        "optionString" : "{'ignoreNonDeclaration': false}"
       },
       "no-multi-spaces" : {
         "active" : 0,
@@ -1905,7 +1905,7 @@
         "active" : 0
       },
       "no-nonoctal-decimal-escape" : {
-        "active" : 1
+        "active" : 0
       },
       "no-obj-calls" : {
         "active" : 1
@@ -1972,14 +1972,14 @@
       },
       "no-self-assign" : {
         "active" : 1,
-        "optionString" : "{'props': false}"
+        "optionString" : "{'props': true}"
       },
       "no-self-compare" : {
-        "active" : 1
+        "active" : 0
       },
       "no-sequences" : {
         "active" : 0,
-        "optionString" : ""
+        "optionString" : "{'allowInParentheses': true}"
       },
       "no-setter-return" : {
         "active" : 1
@@ -1996,10 +1996,10 @@
       },
       "no-tabs" : {
         "active" : 0,
-        "optionString" : ""
+        "optionString" : "{allowIndentationTabs: false}"
       },
       "no-template-curly-in-string" : {
-        "active" : 1
+        "active" : 0
       },
       "no-ternary" : {
         "active" : 0
@@ -2012,7 +2012,7 @@
       },
       "no-trailing-spaces" : {
         "active" : 0,
-        "optionString" : "{'skipBlankLines': false}"
+        "optionString" : "{'skipBlankLines': false, 'ignoreComments': false}"
       },
       "no-undef" : {
         "active" : 1,
@@ -2026,7 +2026,7 @@
       },
       "no-underscore-dangle" : {
         "active" : 0,
-        "optionString" : "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false}"
+        "optionString" : "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'allowAfterThisConstructor': false, 'enforceInMethodNames': false}"
       },
       "no-unexpected-multiline" : {
         "active" : 1
@@ -2049,16 +2049,16 @@
         "active" : 1
       },
       "no-unsafe-negation" : {
-        "active" : 0,
-        "optionString" : ""
+        "active" : 1,
+        "optionString" : "{'enforceForOrderingRelations': false}"
       },
       "no-unsafe-optional-chaining" : {
-        "active" : 1,
+        "active" : 0,
         "optionString" : "{'disallowArithmeticOperators': false}"
       },
       "no-unused-expressions" : {
         "active" : 0,
-        "optionString" : "{'allowShortCircuit': false, 'allowTernary': false}"
+        "optionString" : "{'allowShortCircuit': false, 'allowTernary': false, 'allowTaggedTemplates': false}"
       },
       "no-unused-labels" : {
         "active" : 1
@@ -2068,24 +2068,24 @@
       },
       "no-unused-vars" : {
         "active" : 1,
-        "optionString" : "{'vars': 'all', 'args': 'after-used', 'caughtErrors': 'none'}"
+        "optionString" : "{'vars': 'all', 'args': 'after-used', 'caughtErrors': 'none', 'ignoreRestSiblings': false}"
       },
       "no-use-before-define" : {
         "active" : 0,
-        "optionString" : "{'functions': true, 'classes': true}"
+        "optionString" : "{'functions': true, 'classes': true, 'variables': true}"
       },
       "no-useless-backreference" : {
-        "active" : 1
+        "active" : 0
       },
       "no-useless-call" : {
         "active" : 0
       },
       "no-useless-catch" : {
-        "active" : 1
+        "active" : 0
       },
       "no-useless-computed-key" : {
-        "active" : 1,
-        "optionString" : ""
+        "active" : 0,
+        "optionString" : "{'enforceForClassMembers': false}"
       },
       "no-useless-concat" : {
         "active" : 0
@@ -2108,7 +2108,7 @@
       },
       "no-void" : {
         "active" : 0,
-        "optionString" : ""
+        "optionString" : "{'allowAsStatement': false}"
       },
       "no-warning-comments" : {
         "active" : 0,
@@ -2126,7 +2126,7 @@
       },
       "object-curly-newline" : {
         "active" : 0,
-        "optionString" : "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
+        "optionString" : "{'ObjectExpression': {'multiline': true, 'consistent': true}, 'ObjectPattern': {'multiline': true, 'consistent': true}}"
       },
       "object-curly-spacing" : {
         "active" : 0,
@@ -2134,7 +2134,7 @@
       },
       "object-property-newline" : {
         "active" : 0,
-        "optionString" : "{'allowMultiplePropertiesPerLine': true}"
+        "optionString" : "{'allowAllPropertiesOnSameLine': true}"
       },
       "object-shorthand" : {
         "active" : 0,
@@ -2212,7 +2212,7 @@
       },
       "quotes" : {
         "active" : 0,
-        "optionString" : "'double', 'avoid-escape'"
+        "optionString" : "'double', {'avoidEscape': true, 'allowTemplateLiterals': true}"
       },
       "radix" : {
         "active" : 0,
@@ -2230,7 +2230,7 @@
         "optionString" : "{'requireFlag': 'u'}"
       },
       "require-yield" : {
-        "active" : 0
+        "active" : 1
       },
       "rest-spread-spacing" : {
         "active" : 0,
@@ -2254,7 +2254,7 @@
       },
       "sort-keys" : {
         "active" : 0,
-        "optionString" : "'asc', {'caseSensitive': true, 'natural': false}"
+        "optionString" : "'asc', {'caseSensitive': true, 'natural': false, 'minKeys': 2}"
       },
       "sort-vars" : {
         "active" : 0,
@@ -2309,7 +2309,7 @@
       },
       "use-isnan" : {
         "active" : 1,
-        "optionString" : ""
+        "optionString" : "{'enforceForSwitchCase': true, 'enforceForIndexOf': false}"
       },
       "valid-typeof" : {
         "active" : 1,
@@ -2338,7 +2338,7 @@
     "externalServerAddress" : "http:\/\/localhost:8888",
     "gitIgnoreBuildFolder" : 1,
     "hideConfigFile" : 0,
-    "jsCheckerReservedNamesString" : "jquery",
+    "jsCheckerReservedNamesString" : "",
     "languageDefaultsCOFFEE" : {
       "autoOutputAction" : 0,
       "autoOutputPathFilenamePattern" : "*.js",
@@ -2352,8 +2352,8 @@
       "transpilerStyle" : 1
     },
     "languageDefaultsCSS" : {
-      "autoOutputAction" : 2,
-      "autoOutputPathFilenamePattern" : "*-ck.css",
+      "autoOutputAction" : 0,
+      "autoOutputPathFilenamePattern" : "*-min.css",
       "autoOutputPathRelativePath" : "",
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
@@ -2361,7 +2361,7 @@
       "combineImports" : 0,
       "cssoStyle" : 0,
       "purgeCSSStyle" : 0,
-      "shouldRunAutoprefixer" : 0,
+      "shouldRunAutoprefixer" : 1,
       "shouldRunBless" : 0,
       "sourceMapStyle" : 0
     },
@@ -2409,7 +2409,7 @@
       "autoOutputPathRelativePath" : "\/min",
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
-      "autoOutputPathStyle" : 2,
+      "autoOutputPathStyle" : 0,
       "bundleFormat" : 0,
       "minifierStyle" : 1,
       "sourceMapStyle" : 0,
@@ -2430,8 +2430,8 @@
       "autoOutputAction" : 0,
       "autoOutputPathFilenamePattern" : "*.html",
       "autoOutputPathRelativePath" : "",
-      "autoOutputPathReplace1" : "",
-      "autoOutputPathReplace2" : "",
+      "autoOutputPathReplace1" : "kit",
+      "autoOutputPathReplace2" : "html",
       "autoOutputPathStyle" : 0,
       "htmlMinifierStyle" : 0,
       "shouldRunCacheBuster" : 0
@@ -2443,7 +2443,7 @@
       "autoOutputPathRelativePath" : "..\/css",
       "autoOutputPathReplace1" : "less",
       "autoOutputPathReplace2" : "css",
-      "autoOutputPathStyle" : 2,
+      "autoOutputPathStyle" : 0,
       "cssoStyle" : 0,
       "enableJavascript" : 0,
       "mathStyle" : 0,
@@ -2452,7 +2452,7 @@
       "rewriteURLStyle" : 0,
       "shouldRunAutoprefixer" : 0,
       "shouldRunBless" : 0,
-      "sourceMapStyle" : 0,
+      "sourceMapStyle" : 1,
       "strictImports" : 0,
       "strictUnits" : 0
     },
@@ -2478,7 +2478,7 @@
       "useCompatibilityMode" : 0
     },
     "languageDefaultsOTHER" : {
-      "autoOutputAction" : 2,
+      "autoOutputAction" : 0,
       "autoOutputPathFilenamePattern" : "*.*",
       "autoOutputPathRelativePath" : "",
       "autoOutputPathReplace1" : "",
@@ -2517,14 +2517,14 @@
       "autoOutputPathRelativePath" : "..\/css",
       "autoOutputPathReplace1" : "sass",
       "autoOutputPathReplace2" : "css",
-      "autoOutputPathStyle" : 2,
+      "autoOutputPathStyle" : 0,
       "cssoStyle" : 0,
       "emitCharset" : 1,
       "outputStyle" : 1,
       "purgeCSSStyle" : 0,
-      "shouldRunAutoprefixer" : 1,
-      "shouldRunBless" : 1,
-      "sourceMapStyle" : 1
+      "shouldRunAutoprefixer" : 0,
+      "shouldRunBless" : 0,
+      "sourceMapStyle" : 0
     },
     "languageDefaultsSLIM" : {
       "autoOutputAction" : 0,
@@ -2547,7 +2547,7 @@
       "autoOutputPathRelativePath" : "..\/css",
       "autoOutputPathReplace1" : "stylus",
       "autoOutputPathReplace2" : "css",
-      "autoOutputPathStyle" : 2,
+      "autoOutputPathStyle" : 0,
       "cssoStyle" : 0,
       "debugStyle" : 0,
       "importCSS" : 0,
@@ -2565,7 +2565,7 @@
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
-      "pluginMask" : 3758088159
+      "pluginMask" : 52780316221407
     },
     "languageDefaultsTS" : {
       "autoOutputAction" : 0,
@@ -2573,7 +2573,7 @@
       "autoOutputPathRelativePath" : "\/js",
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
-      "autoOutputPathStyle" : 2,
+      "autoOutputPathStyle" : 0,
       "createDeclarationFile" : 0,
       "jsxMode" : 0,
       "minifierStyle" : 0,
@@ -2636,7 +2636,7 @@
     "rollupTreeshakingEnabled" : 1,
     "rollupTreeshakingModuleSideEffects" : 1,
     "sassWarningStyle" : 1,
-    "skippedFoldersString" : "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
+    "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
     "tsAllowArbitraryExtensions" : 0,
@@ -2652,7 +2652,7 @@
     "tsESModuleInterop" : 0,
     "tsExactOptionalPropertyTypes" : 0,
     "tsExperimentalDecorators" : 0,
-    "tsForceConsistentCasingInFileNames" : 1,
+    "tsForceConsistentCasingInFileNames" : 0,
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
@@ -2729,7 +2729,7 @@
         "flagValue" : -1
       },
       "dead_code" : {
-        "active" : 0,
+        "active" : 1,
         "flagValue" : -1
       },
       "directives" : {
@@ -2761,7 +2761,7 @@
         "flagValue" : -1
       },
       "hoist_funs" : {
-        "active" : 1,
+        "active" : 0,
         "flagValue" : -1
       },
       "hoist_props" : {
@@ -2805,7 +2805,7 @@
         "flagValue" : -1
       },
       "keep_fargs" : {
-        "active" : 0,
+        "active" : 1,
         "flagValue" : -1
       },
       "keep_fnames" : {
@@ -2941,7 +2941,7 @@
         "flagValue" : -1
       },
       "unused" : {
-        "active" : 0,
+        "active" : 1,
         "flagValue" : -1
       },
       "warnings" : {
@@ -2962,7 +2962,7 @@
       }
     },
     "uglifyMangleNames" : 1,
-    "uglifyReservedNamesString" : "$",
+    "uglifyReservedNamesString" : "$,exports,require",
     "webpPresets" : {
 
     },
