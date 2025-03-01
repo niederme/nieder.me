@@ -188,7 +188,7 @@ small {
 // list items are block level
 ol,
 ul {
-  padding-left: variables.$space-4;
+  padding-left: -(variables.$space-4);
 }
 
 

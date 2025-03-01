@@ -7,13 +7,12 @@
       "uuidString" : "E0FA2607-7EB7-487B-8615-BD952D86F64A"
     }
   ],
-  "creatorBuild" : "34365",
+  "creatorBuild" : "34680",
   "files" : {
     "\/_scss\/_animation.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -21,14 +20,12 @@
       "oAP" : "\/css\/_animation.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_base.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -36,14 +33,12 @@
       "oAP" : "\/css\/_base.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_borders.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -51,14 +46,12 @@
       "oAP" : "\/css\/_borders.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_colors.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -66,14 +59,12 @@
       "oAP" : "\/css\/_colors.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_flex.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -81,14 +72,12 @@
       "oAP" : "\/css\/_flex.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_grid.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -96,14 +85,12 @@
       "oAP" : "\/css\/_grid.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_layout.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -111,14 +98,12 @@
       "oAP" : "\/css\/_layout.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_mixins.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -126,14 +111,12 @@
       "oAP" : "\/css\/_mixins.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_normalize.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -141,14 +124,12 @@
       "oAP" : "\/css\/_normalize.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_typography.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -156,14 +137,12 @@
       "oAP" : "\/css\/_typography.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/_variables.scss" : {
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
@@ -171,8 +150,7 @@
       "oAP" : "\/css\/_variables.css",
       "oF" : 0,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
     },
     "\/_scss\/.sass-cache\/7cf753c48890cd0521c56a06441df6a66849c1dc\/_animation.scssc" : {
       "cB" : 0,
@@ -458,16 +436,14 @@
       "aP" : 1,
       "bl" : 1,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 1,
       "oA" : 0,
       "oAP" : "\/css\/nieder.css",
       "oF" : 0,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
+      "oS" : 1,
+      "pg" : 0
     },
     "\/.gitignore" : {
       "cB" : 0,
@@ -1044,7 +1020,7 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 2,
       "oAP" : "\/index.html",
       "oF" : 0
     },
@@ -1602,10 +1578,6 @@
         "active" : 0,
         "optionString" : "{'before': true, 'after': true, 'overrides': {}}"
       },
-      "line-comment-position" : {
-        "active" : 0,
-        "optionString" : "{'position': 'above'}"
-      },
       "linebreak-style" : {
         "active" : 0,
         "optionString" : "'unix'"
@@ -1617,6 +1589,10 @@
       "lines-between-class-members" : {
         "active" : 0,
         "optionString" : "'always', {exceptAfterSingleLine: false}"
+      },
+      "logical-assignment-operators" : {
+        "active" : 0,
+        "optionString" : "'always',  {'enforceForIfStatements': false}"
       },
       "max-classes-per-file" : {
         "active" : 0,
@@ -1653,10 +1629,6 @@
       "max-statements-per-line" : {
         "active" : 0,
         "optionString" : "{'max': 1}"
-      },
-      "multiline-comment-style" : {
-        "active" : 0,
-        "optionString" : "'starred-block'"
       },
       "multiline-ternary" : {
         "active" : 0,
@@ -1778,6 +1750,9 @@
       "no-empty-pattern" : {
         "active" : 1
       },
+      "no-empty-static-block" : {
+        "active" : 1
+      },
       "no-eq-null" : {
         "active" : 0
       },
@@ -1796,7 +1771,8 @@
         "active" : 0
       },
       "no-extra-boolean-cast" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'enforceForInnerExpressions': false}"
       },
       "no-extra-label" : {
         "active" : 0
@@ -1809,7 +1785,8 @@
         "active" : 1
       },
       "no-fallthrough" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'allowEmptyCase': false}"
       },
       "no-floating-decimal" : {
         "active" : 0
@@ -1880,7 +1857,8 @@
         "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
       },
       "no-misleading-character-class" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'allowEscape': false}"
       },
       "no-mixed-operators" : {
         "active" : 0,
@@ -1917,8 +1895,8 @@
       "no-new-func" : {
         "active" : 0
       },
-      "no-new-object" : {
-        "active" : 0
+      "no-new-native-nonconstructor" : {
+        "active" : 1
       },
       "no-new-symbol" : {
         "active" : 1
@@ -1931,6 +1909,9 @@
       },
       "no-obj-calls" : {
         "active" : 1
+      },
+      "no-object-constructor" : {
+        "active" : 0
       },
       "no-octal" : {
         "active" : 1
@@ -1971,7 +1952,8 @@
         "optionString" : "'event', 'fdescribe'"
       },
       "no-restricted-imports" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : ""
       },
       "no-restricted-properties" : {
         "active" : 0,
@@ -1984,9 +1966,6 @@
       "no-return-assign" : {
         "active" : 0,
         "optionString" : "'except-parens'"
-      },
-      "no-return-await" : {
-        "active" : 0
       },
       "no-script-url" : {
         "active" : 0
@@ -2247,7 +2226,8 @@
         "active" : 0
       },
       "require-unicode-regexp" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'requireFlag': 'u'}"
       },
       "require-yield" : {
         "active" : 0
@@ -2538,9 +2518,7 @@
       "autoOutputPathReplace1" : "sass",
       "autoOutputPathReplace2" : "css",
       "autoOutputPathStyle" : 2,
-      "compilerType" : 0,
       "cssoStyle" : 0,
-      "decimalPrecision" : 10,
       "emitCharset" : 1,
       "outputStyle" : 1,
       "purgeCSSStyle" : 0,
@@ -2599,6 +2577,7 @@
       "createDeclarationFile" : 0,
       "jsxMode" : 0,
       "minifierStyle" : 0,
+      "moduleDetectionType" : 0,
       "moduleResolutionType" : 0,
       "moduleType" : 2,
       "removeComments" : 0,
@@ -2655,10 +2634,15 @@
       "ENVIRONMENT:::$NODE_ENV"
     ],
     "rollupTreeshakingEnabled" : 1,
+    "rollupTreeshakingModuleSideEffects" : 1,
+    "sassWarningStyle" : 1,
     "skippedFoldersString" : "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
+    "tsAllowArbitraryExtensions" : 0,
+    "tsAllowImportingTSExtensions" : 0,
     "tsAllowSyntheticDefaultImports" : 0,
+    "tsAllowUMDGlobalAccess" : 0,
     "tsAllowUnreachableCode" : 0,
     "tsAllowUnusedLabels" : 0,
     "tsAlwaysStrict" : 0,
@@ -2667,36 +2651,37 @@
     "tsEmitDecoratorMetadata" : 0,
     "tsESModuleInterop" : 0,
     "tsExactOptionalPropertyTypes" : 0,
+    "tsExperimentalDecorators" : 0,
     "tsForceConsistentCasingInFileNames" : 1,
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
-    "tsKeyofStringsOnly" : 0,
+    "tsJSXFragmentFactory" : "Fragment",
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,
     "tsNoImplicitOverride" : 0,
     "tsNoImplicitReturns" : 0,
     "tsNoImplicitThis" : 0,
-    "tsNoImplicitUseStrict" : 0,
     "tsNoLib" : 0,
     "tsNoPropertyAccessFromIndexSignature" : 0,
     "tsNoResolve" : 0,
-    "tsNoStrictGenericChecks" : 0,
     "tsNoUncheckedIndexAccess" : 0,
     "tsNoUnusedLocals" : 0,
     "tsNoUnusedParameters" : 0,
     "tsPreserveConstEnums" : 0,
     "tsPreserveSymlinks" : 0,
     "tsResolveJsonModule" : 0,
+    "tsSkipDefaultLibCheck" : 0,
     "tsSkipLibCheck" : 0,
+    "tsStrictBindCallApply" : 0,
     "tsStrictFunctionTypes" : 0,
     "tsStrictNullChecks" : 0,
     "tsStrictPropertyInitialization" : 0,
     "tsStripInternal" : 0,
-    "tsSuppressExcessPropertyErrors" : 0,
-    "tsSuppressImplicitAnyIndexErrors" : 0,
+    "tsUseDefineForClassFields" : 0,
     "tsUseUnknownInCatchVariables" : 0,
+    "tsVerbatimModuleSyntax" : 0,
     "uglifyDefinesString" : "",
     "uglifyFlags2" : {
       "arguments" : {
