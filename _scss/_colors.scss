@@ -10,7 +10,7 @@
 
 @include mixins.generate-breakpoint-prefixes {
 
-  &fill-white {       background-color: variables.$gray-mid      !important; }
+  &fill-gray-mid {    background-color: variables.$gray-mid   !important; }
   &fill-gray-light {  background-color: variables.$gray-light !important; }
   &fill-gray {        background-color: variables.$gray       !important; }
   &fill-gray-dark {   background-color: variables.$gray-dark  !important; }
