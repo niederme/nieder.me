@@ -1024,11 +1024,11 @@
       "oAP" : "\/index.html",
       "oF" : 0
     },
-    "\/video\/bf-socialmc-poster.png" : {
+    "\/portfolio\/buzzfeed-social-mission-control\/bf-socialmc-poster.png" : {
       "ft" : 32768,
       "iS" : 699841,
       "oA" : 0,
-      "oAP" : "\/video\/bf-socialmc-poster.png",
+      "oAP" : "\/portfolio\/buzzfeed-social-mission-control\/bf-socialmc-poster.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -1037,11 +1037,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/video\/bf-socialmc-promo.png" : {
+    "\/portfolio\/buzzfeed-social-mission-control\/bf-socialmc-promo.png" : {
       "ft" : 32768,
       "iS" : 929153,
       "oA" : 0,
-      "oAP" : "\/video\/bf-socialmc-promo.png",
+      "oAP" : "\/portfolio\/buzzfeed-social-mission-control\/bf-socialmc-promo.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -1050,20 +1050,62 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/video\/bf-socialmc.html" : {
+    "\/portfolio\/buzzfeed-social-mission-control\/bf-socialmc.mp4" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/video\/bf-socialmc.html",
+      "oAP" : "\/portfolio\/buzzfeed-social-mission-control\/bf-socialmc.mp4",
       "oF" : 0
     },
-    "\/video\/bf-socialmc.m4v" : {
+    "\/portfolio\/buzzfeed-social-mission-control\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/video\/bf-socialmc.m4v",
+      "oAP" : "\/portfolio\/buzzfeed-social-mission-control\/index.html",
+      "oF" : 0
+    },
+    "\/portfolio\/nyt-invisible-child\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/portfolio\/nyt-invisible-child\/index.html",
+      "oF" : 0
+    },
+    "\/portfolio\/nyt-invisible-child\/nyt-dasani-poster.jpg" : {
+      "ft" : 16384,
+      "iS" : 346710,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/portfolio\/nyt-invisible-child\/nyt-dasani-poster.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/portfolio\/nyt-invisible-child\/nyt-dasani-promo.jpg" : {
+      "ft" : 16384,
+      "iS" : 410428,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/portfolio\/nyt-invisible-child\/nyt-dasani-promo.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/portfolio\/nyt-invisible-child\/nyt-dasani.mp4" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/portfolio\/nyt-invisible-child\/nyt-dasani.mp4",
       "oF" : 0
     }
   },
