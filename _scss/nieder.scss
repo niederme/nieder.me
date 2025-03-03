@@ -59,7 +59,7 @@
 }
 
 
-// WW Tattoo
+// Decorators
 // -------------------------
 
 .ww-tattoo {
@@ -96,6 +96,12 @@
   .ww-tattoo {
     right: (variables.$space-6 * 2);
   }
+}
+
+.bf-lol {
+  position: absolute;
+  top: variables.$space-3;
+  left: -24px;
 }
   
 

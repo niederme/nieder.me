@@ -4979,6 +4979,12 @@ img {
     right: 9rem;
   }
 }
+.bf-lol {
+  position: absolute;
+  top: 1.5rem;
+  left: -24px;
+}
+
 .xs-cover {
   background-size: cover;
   background-position: center center;
