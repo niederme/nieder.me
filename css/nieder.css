@@ -56,8 +56,7 @@ a:hover {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b,
@@ -295,6 +294,7 @@ html {
 *,
 *:before,
 *:after {
+  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -379,6 +379,7 @@ html {
   font-weight: 300;
   color: #fff;
   letter-spacing: -0.05rem;
+  -webkit-font-feature-settings: "liga", "kern" !important;
   font-feature-settings: "liga", "kern" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -4946,6 +4947,38 @@ img {
   transition: color 0.15s ease 0s;
 }
 
+.ww-tattoo {
+  position: absolute;
+  top: -4.5rem;
+  right: -1.5rem;
+  width: 150px;
+  height: auto;
+}
+
+@media (min-width: 40rem) {
+  .ww-tattoo {
+    top: -2rem;
+    right: -0.5rem;
+  }
+}
+@media (min-width: 48rem) {
+  .ww-tattoo {
+    width: 203px;
+    top: -2rem;
+    right: 1rem;
+  }
+}
+@media (min-width: 64rem) {
+  .ww-tattoo {
+    right: 4.5rem;
+    top: 4.5rem;
+  }
+}
+@media (min-width: 90rem) {
+  .ww-tattoo {
+    right: 9rem;
+  }
+}
 .xs-cover {
   background-size: cover;
   background-position: center center;

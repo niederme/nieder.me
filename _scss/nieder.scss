@@ -59,7 +59,45 @@
 }
 
 
+// WW Tattoo
+// -------------------------
 
+.ww-tattoo {
+  position: absolute;
+  top: (- variables.$space-6);
+  right: (- variables.$space-3);
+  width: 150px;
+  height: auto;
+}
+
+@media (min-width: 40rem) {
+  .ww-tattoo {
+    top: (- variables.$space-4);
+    right: (- variables.$space-1);
+  }
+}
+
+@media (min-width: 48rem) {
+  .ww-tattoo {
+    width: 203px;
+    top: (- variables.$space-4);
+    right: variables.$space-2;
+  }
+}
+
+@media (min-width: 64rem) {
+  .ww-tattoo {
+    right: variables.$space-6;
+    top: variables.$space-6;
+  }
+}
+  
+@media (min-width: 90rem) {
+  .ww-tattoo {
+    right: (variables.$space-6 * 2);
+  }
+}
+  
 
 // Covers
 // -------------------------

@@ -438,10 +438,10 @@
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 0,
+      "ma" : 1,
       "oA" : 0,
-      "oAP" : "\/_scss\/nieder.css",
-      "oF" : 0,
+      "oAP" : "\/css\/nieder.css",
+      "oF" : 2,
       "oS" : 1,
       "pg" : 0
     },
@@ -1015,6 +1015,16 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
+    },
+    "\/images\/ww-tattoo.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/images\/ww-tattoo.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
     },
     "\/index.html" : {
       "cB" : 0,
