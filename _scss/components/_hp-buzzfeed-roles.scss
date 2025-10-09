@@ -1,3 +1,5 @@
+@use "../variables";
+
 //
 // HP Section - BuzzFeed Roles
 // --------------------------------------------------
@@ -15,7 +17,7 @@
 
     .highlight {
       padding: 1.5vw 1.5vw 8vw 12vw;
-      background: $yellow;
+      background: variables.$yellow;
       overflow: hidden;
 
       img {
@@ -29,8 +31,8 @@
 
       h3 {
         margin-bottom: 1rem;
-        font-family: $sans-bold;
-        font-weight: $weight-bold;
+        font-family: variables.$sans-bold;
+        font-weight: variables.$weight-bold;
         text-align: center;
       }
 

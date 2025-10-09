@@ -406,6 +406,230 @@
       "oAP" : "\/fonts\/F-Grotesk-Thin.woff2",
       "oF" : 0
     },
+    "\/fonts\/GT-Era-Display-Black-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Black-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Black-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Black-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Bold-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Bold-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Bold-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Bold-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Heavy-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Heavy-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Heavy-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Heavy-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Light-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Light-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Light-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Light-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Medium-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Medium-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Medium-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Medium-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Regular-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Regular-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Regular-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Regular-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Thin-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Thin-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Display-Thin-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Display-Thin-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Black-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Black-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Black-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Black-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Bold-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Bold-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Bold-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Bold-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Heavy-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Heavy-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Heavy-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Heavy-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Light-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Light-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Light-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Light-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Medium-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Medium-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Medium-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Medium-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Regular-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Regular-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Regular-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Regular-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Thin-Oblique-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Thin-Oblique-Trial.woff2",
+      "oF" : 0
+    },
+    "\/fonts\/GT-Era-Text-Thin-Trial.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/GT-Era-Text-Thin-Trial.woff2",
+      "oF" : 0
+    },
     "\/images\/bg-black.png" : {
       "ft" : 32768,
       "iS" : 141655,

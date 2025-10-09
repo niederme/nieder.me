@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../variables";
+
 //
 // Nav & Branding
 // --------------------------------------------------
@@ -12,7 +15,7 @@
     position: fixed;
     width: clamp(50px, 7vw, 800px);
     height: 100vh;
-    border-right: 1px solid $white;
+    border-right: 1px solid variables.$white;
 
     .nav--social {
       position: fixed;
@@ -30,7 +33,7 @@
     top: 0;
     width: clamp(50px, 7vw, 800px);
     height: 10.5vw;
-    border-right: 2px solid $black;
+    border-right: 2px solid variables.$black;
   }
 
   .nav--right {
@@ -59,10 +62,10 @@
       a {
         padding: 5px;
         text-decoration: none;
-        color: $white;
+        color: variables.$white;
 
         &:hover {
-          color: lighten($white, 20%);
+          color: color.adjust(variables.$white, $lightness: 20%);
           transition: color 0.15s ease 0s;
         }
       }
@@ -74,7 +77,7 @@
 
 .branding {
   position: fixed;
-  color: $black;
+  color: variables.$black;
   mix-blend-mode: difference;
 
   & img {

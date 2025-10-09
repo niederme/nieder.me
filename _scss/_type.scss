@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 //
 // Type
 // --------------------------------------------------
@@ -6,36 +9,32 @@
 // -------------------------
 
 @font-face {
-  font-family: "F Grotesk Thin";
-  src: url("../fonts/F-Grotesk-Thin.woff2") format("woff2"),
-    url("../fonts/F-Grotesk-Thin.woff1") format("woff");
+  font-family: "GT-Era-Display-Thin-Trial";
+  src: url("../fonts/GT-Era-Display-Thin-Trial.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "F Grotesk Book";
-  src: url("../fonts/F-Grotesk-Book.woff2") format("woff2"),
-    url("../fonts/F-Grotesk-Thin.woff") format("woff");
+  font-family: "GT-Era-Text-Regular-Trial";
+  src: url("../fonts/GT-Era-Text-Regular-Trial.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "F Grotesk Demi";
-  src: url("../fonts/F-Grotesk-Demi.woff2") format("woff2"),
-    url("../fonts/F-Grotesk-Thin.woff") format("woff");
+  font-family: "GT-Era-Display-Medium-Trial";
+  src: url("../fonts/GT-Era-Display-Medium-Trial.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "F Grotesk Bold";
-  src: url("../fonts/F-Grotesk-Bold.woff2") format("woff2"),
-    url("../fonts/F-Grotesk-Thin.woff") format("woff");
+  font-family: "GT-Era-Display-Bold-Trial";
+  src: url("../fonts/GT-Era-Display-Bold-Trial.woff2") format("woff2");
 }
 
 // Base Type
 // -------------------------
 
 body {
-  font-family: $sans-book;
-  font-weight: $weight-book;
-  line-height: $leading-body;
+  font-family: variables.$sans-book;
+  font-weight: variables.$weight-book;
+  line-height: variables.$leading-body;
   text-rendering: optimizeLegibility;
 }
 
@@ -46,70 +45,70 @@ h4,
 h5,
 h6 {
   margin: 0;
-  line-height: $leading-headline;
+  line-height: variables.$leading-headline;
 }
 
 h1,
 .text-1 {
-  font-family: $sans-thin;
-  font-size: $text-1;
-  font-weight: $weight-thin;
-  letter-spacing: -2px;
+  font-family: variables.$sans-thin;
+  font-size: variables.$text-1;
+  font-weight: variables.$weight-thin;
+  // letter-spacing: -2px;
 }
 
 h2,
 .text-2 {
-  font-family: $sans-thin;
-  font-size: $text-2;
-  font-weight: $weight-thin;
-  letter-spacing: -1.5px;
+  font-family: variables.$sans-thin;
+  font-size: variables.$text-2;
+  font-weight: variables.$weight-thin;
+  // letter-spacing: -1.5px;
 }
 
 h3,
 .text-3 {
-  font-family: $sans-book;
-  font-size: $text-3;
-  font-weight: $weight-book;
-  letter-spacing: -1px;
+  font-family: variables.$sans-book;
+  font-size: variables.$text-3;
+  font-weight: variables.$weight-book;
+  // letter-spacing: -1px;
 }
 
 h4,
 .text-4 {
-  font-family: $sans-book;
-  font-size: $text-4;
-  font-weight: $weight-book;
-  letter-spacing: -0.5px;
+  font-family: variables.$sans-book;
+  font-size: variables.$text-4;
+  font-weight: variables.$weight-book;
+  // letter-spacing: -0.5px;
 }
 
 h5,
 .text-5 {
-  font-family: $sans-book;
-  font-size: $text-5;
-  font-weight: $weight-book;
-  letter-spacing: -0.5px;
+  font-family: variables.$sans-book;
+  font-size: variables.$text-5;
+  font-weight: variables.$weight-book;
+  // letter-spacing: -0.5px;
 }
 
 h6,
 .text-6 {
-  font-family: $sans-book;
-  font-weight: $weight-book;
-  font-size: $text-6;
-  letter-spacing: -0.25px;
+  font-family: variables.$sans-book;
+  font-weight: variables.$weight-book;
+  font-size: variables.$text-6;
+  // letter-spacing: -0.25px;
 }
 
 // Typography Emphasis and Styling
 // -------------------------
 
 .weight-thin {
-  font-weight: $weight-thin;
+  font-weight: variables.$weight-thin;
 }
 
 .weight-book {
-  font-weight: $weight-book;
+  font-weight: variables.$weight-book;
 }
 
 .weight-bold {
-  font-weight: $weight-bold;
+  font-weight: variables.$weight-bold;
 }
 
 .italic {
@@ -123,7 +122,7 @@ h6,
 // Text Alignment + Responsive Prefixes
 // -------------------------
 
-@include generate-breakpoint-prefixes {
+@include mixins.generate-breakpoint-prefixes {
   &text-left {
     text-align: left !important;
   }
@@ -174,13 +173,13 @@ h6,
 a,
 .link-black {
   text-decoration: none;
-  color: $black;
-  font-family: $sans-demi;
-  font-weight: $weight-demi;
+  color: variables.$black;
+  font-family: variables.$sans-demi;
+  font-weight: variables.$weight-demi;
 
   &:hover {
     text-decoration: none;
-    color: $black;
+    color: variables.$black;
   }
 }
 
@@ -198,7 +197,7 @@ a,
     height: 75%;
     left: -0.5vw;
     top: -0.5vw;
-    background: $red;
+    background: variables.$red;
   }
   &:hover::before {
     filter: saturate(10);
@@ -219,7 +218,7 @@ a,
     height: 75%;
     left: -0.5vw;
     top: -0.5vw;
-    background: $green;
+    background: variables.$green;
   }
   &:hover::before {
     filter: saturate(10);
