@@ -349,11 +349,7 @@ body {
 
 .page-wrap {
   min-height: 100%;
-  background: url(../images/bg.svg) no-repeat center center fixed #fff;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #fff;
   mix-blend-mode: difference;
 }
 
@@ -393,6 +389,7 @@ body {
   font-family: "F Grotesk Book", "Times New Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.2;
+  font-size: 16px;
   text-rendering: optimizeLegibility;
 }
 
@@ -702,7 +699,7 @@ a:hover,
   color: #fff;
 }
 .nav .nav--right .nav--pages a:hover {
-  color: white;
+  color: hsl(0, 0%, 120%);
   transition: color 0.15s ease 0s;
 }
 
@@ -729,11 +726,7 @@ a:hover,
 
 .hp-topper {
   min-height: 100vh;
-  background: url(../images/bg-white.svg) no-repeat center center fixed #000;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #000;
   color: #fff;
 }
 .hp-topper h1 {
@@ -743,7 +736,7 @@ a:hover,
   color: #fff;
 }
 .hp-topper a:hover {
-  color: white;
+  color: hsl(0, 0%, 120%);
   transition: color 0.15s ease 0s;
 }
 .hp-topper i {

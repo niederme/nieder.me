@@ -7,7 +7,7 @@
       "uuidString" : "B738B94D-9836-4C78-BDFC-DE8B56F7FCB0"
     }
   ],
-  "creatorBuild" : "34680",
+  "creatorBuild" : "34892",
   "files" : {
     "\/_scss\/_accessibility.scss" : {
       "aP" : 0,
@@ -1254,8 +1254,6 @@
     "buildFolderActive" : 0,
     "buildFolderName" : "build",
     "cleanBuild" : 1,
-    "cssoForceMediaMerge" : 0,
-    "cssoRestructure" : 1,
     "environmentVariableEntries" : [
       "NODE_ENV:::production"
     ],
@@ -1892,6 +1890,9 @@
         "active" : 0,
         "optionString" : "{'skipBlankLines': false, 'ignoreComments': false}"
       },
+      "no-unassigned-vars" : {
+        "active" : 0
+      },
       "no-undef" : {
         "active" : 1,
         "optionString" : "{'typeof': false}"
@@ -1972,7 +1973,8 @@
         "active" : 0
       },
       "no-useless-escape" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'allowRegexCharacters': []}"
       },
       "no-useless-rename" : {
         "active" : 0,

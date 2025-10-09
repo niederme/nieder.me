@@ -4,15 +4,15 @@
 // Imports
 // --------------------------------------------------
 
-@import "variables";
-@import "reboot";
-@import "accessibility";
-@import "mixins";
-@import "layout";
-@import "type";
-@import "components/nav";
-@import "components/hp-topper";
-@import "components/_hp-links.scss";
-@import "components/_hp-resy-web.scss";
-@import "components/_hp-resy-app.scss";
-@import "components/_hp-buzzfeed-roles.scss";
+@use "variables";
+@use "reboot";
+@use "accessibility";
+@use "mixins";
+@use "layout";
+@use "type";
+@use "components/nav";
+@use "components/hp-topper";
+@use "components/_hp-links.scss";
+@use "components/_hp-resy-web.scss";
+@use "components/_hp-resy-app.scss";
+@use "components/_hp-buzzfeed-roles.scss";

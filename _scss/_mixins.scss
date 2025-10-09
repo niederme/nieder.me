@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "variables";
+
 //
 // Mixins
 // --------------------------------------------------
@@ -27,10 +30,10 @@ $breakpoints: (
 // returns the appropriate media query
 // for the given breakpoint name
 @mixin media-query($breakpoint) {
-  @if (map-get($breakpoints, $breakpoint)) == null {
+  @if (map.get($breakpoints, $breakpoint)) == null {
     @content;
   } @else {
-    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+    @media (min-width: #{map.get($breakpoints, $breakpoint)}) {
       @content;
     }
   }
@@ -39,7 +42,7 @@ $breakpoints: (
 // nest content inside breakpoint prefix classes
 // in the appropriate media query block
 @mixin generate-breakpoint-prefixes {
-  @if ($generate-responsive-classes == true) {
+  @if (variables.$generate-responsive-classes == true) {
     // generate prefixed classes
     @each $breakpoint-name, $breakpoint-value in $breakpoints {
       $breakpoint-prefix: "#{$breakpoint-name}-";

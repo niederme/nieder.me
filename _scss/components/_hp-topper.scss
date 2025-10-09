@@ -1,25 +1,24 @@
+@use "sass:color";
+@use "../variables";
+
 //
 // HP-Topper
 // --------------------------------------------------
 
 .hp-topper {
   min-height: 100vh;
-  background: url(../images/bg-white.svg) no-repeat center center fixed $black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: $white;
+  background: variables.$black;
+  color: variables.$white;
 
   h1 {
-    line-height: $leading-body;
+    line-height: variables.$leading-body;
   }
 
   a {
-    color: $white;
+    color: variables.$white;
 
     &:hover {
-      color: lighten($white, 20%);
+      color: color.adjust(variables.$white, $lightness: 20%);
       transition: color 0.15s ease 0s;
     }
   }

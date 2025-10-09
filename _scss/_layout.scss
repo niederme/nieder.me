@@ -1,26 +1,25 @@
+@use "mixins";
+@use "variables";
+
 //
 // Layout
 // --------------------------------------------------
 
 html {
   height: 100%;
-  background-color: $black;
+  background-color: variables.$black;
   scroll-behavior: smooth;
 }
 
 body {
   height: 100%;
   margin: 0 auto;
-  background-color: $black;
+  background-color: variables.$black;
 }
 
 .page-wrap {
   min-height: 100%;
-  background: url(../images/bg.svg) no-repeat center center fixed $white;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  background-size: cover;
+  background: variables.$white;
   mix-blend-mode: difference;
 }
 
@@ -32,7 +31,7 @@ body {
 section {
   display: flex;
   align-items: center;
-  padding-bottom: $space-10;
+  padding-bottom: variables.$space-10;
 }
 
 .container {
