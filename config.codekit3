@@ -158,10 +158,10 @@
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/nieder.css",
-      "oF" : 2,
+      "oAP" : "\/_scss\/nieder.css",
+      "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
