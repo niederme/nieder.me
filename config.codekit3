@@ -7,7 +7,7 @@
       "uuidString" : "B738B94D-9836-4C78-BDFC-DE8B56F7FCB0"
     }
   ],
-  "creatorBuild" : "34680",
+  "creatorBuild" : "34892",
   "files" : {
     "\/_scss\/_accessibility.scss" : {
       "aP" : 0,
@@ -451,10 +451,10 @@
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/nieder.css",
-      "oF" : 2,
+      "oAP" : "\/_scss\/nieder.css",
+      "oF" : 0,
       "oS" : 1,
       "pg" : 0
     },
@@ -688,12 +688,12 @@
     },
     "\/images\/bg-black.png" : {
       "ft" : 32768,
-      "iS" : 141655,
+      "iS" : 79988,
       "oA" : 0,
       "oAP" : "\/images\/bg-black.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -701,12 +701,12 @@
     },
     "\/images\/bg-white.png" : {
       "ft" : 32768,
-      "iS" : 202008,
+      "iS" : 79967,
       "oA" : 0,
       "oAP" : "\/images\/bg-white.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -824,12 +824,12 @@
     },
     "\/images\/Resy-App-01-Questionnaire.png" : {
       "ft" : 32768,
-      "iS" : 177797,
+      "iS" : 57593,
       "oA" : 0,
       "oAP" : "\/images\/Resy-App-01-Questionnaire.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -837,12 +837,12 @@
     },
     "\/images\/Resy-App-01-Questionnaire@2x.png" : {
       "ft" : 32768,
-      "iS" : 527758,
+      "iS" : 185659,
       "oA" : 0,
       "oAP" : "\/images\/Resy-App-01-Questionnaire@2x.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -850,12 +850,12 @@
     },
     "\/images\/Resy-Web-01-HP.png" : {
       "ft" : 32768,
-      "iS" : 1962570,
+      "iS" : 339333,
       "oA" : 0,
       "oAP" : "\/images\/Resy-Web-01-HP.png",
       "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
+      "oIPL" : 0,
+      "opt" : 0,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -863,7 +863,7 @@
     },
     "\/images\/Resy-Web-01-HP@2x.png" : {
       "ft" : 32768,
-      "iS" : 1484196,
+      "iS" : 1144177,
       "oA" : 0,
       "oAP" : "\/images\/Resy-Web-01-HP@2x.png",
       "oF" : 0,
@@ -1254,8 +1254,6 @@
     "buildFolderActive" : 0,
     "buildFolderName" : "build",
     "cleanBuild" : 1,
-    "cssoForceMediaMerge" : 0,
-    "cssoRestructure" : 1,
     "environmentVariableEntries" : [
       "NODE_ENV:::production"
     ],
@@ -1892,6 +1890,9 @@
         "active" : 0,
         "optionString" : "{'skipBlankLines': false, 'ignoreComments': false}"
       },
+      "no-unassigned-vars" : {
+        "active" : 0
+      },
       "no-undef" : {
         "active" : 1,
         "optionString" : "{'typeof': false}"
@@ -1972,7 +1973,8 @@
         "active" : 0
       },
       "no-useless-escape" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'allowRegexCharacters': []}"
       },
       "no-useless-rename" : {
         "active" : 0,
