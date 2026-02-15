@@ -111,10 +111,48 @@
 @include mixins.generate-breakpoint-prefixes {
 
   &cover {
+    position: relative;
+    z-index: 0;                 // establishes stacking context
+    // IMPORTANT: do NOT set overflow:hidden; here
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    background-attachment: scroll;  // iOS-safe default
+  }
+  
+  &cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;                // puts the bg behind the card/content
+    
+    // inherit only what you need
+    background-image: inherit;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: inherit;
+    
+    pointer-events: none;
+    transform: translateZ(0);
+  }
+  
+  // Desktop-only enhancement (optional)
+  @media (hover: hover) and (pointer: fine) {
+    &cover {
+      background-attachment: fixed;
+    }
+    &cover::before {
+      // if you keep fixed on desktop, the pseudo doesn't need it
+      background-attachment: fixed;
+    }
+  }
+  
+  // iOS hard-disable fixed (belt + suspenders)
+  @supports (-webkit-touch-callout: none) {
+    &cover,
+    &cover::before {
+      background-attachment: scroll;
+    }
   }
 
   &cover--bf-roles {
