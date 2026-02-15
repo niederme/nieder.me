@@ -205,12 +205,21 @@
   }
 
   &cover--resyweb {
-    background-image: url("../images/resy-resyweb.jpg");
+    background-image: url("../images/resy-resyweb-desktop.jpg");
     background-position: top center !important;
   }
 
   &cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
+  }
+  
+  &cover--discovery {
+    background-image: url("../images/Resy-Discovery-desktop.jpg");
+    background-position: top center !important;
+  }
+  
+  &cover--discovery-mobile {
+    background-image: url("../images/Resy-Discovery-mobile.jpg");
   }
 
   &cover--scoop {

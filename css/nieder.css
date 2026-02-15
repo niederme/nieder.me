@@ -5056,11 +5056,18 @@ img {
   background-image: url("../images/bf-smc-mobile.jpg");
 }
 .xs-cover--resyweb {
-  background-image: url("../images/resy-resyweb.jpg");
+  background-image: url("../images/resy-resyweb-desktop.jpg");
   background-position: top center !important;
 }
 .xs-cover--resyweb-mobile {
   background-image: url("../images/resy-resyweb-mobile.jpg");
+}
+.xs-cover--discovery {
+  background-image: url("../images/Resy-Discovery-desktop.jpg");
+  background-position: top center !important;
+}
+.xs-cover--discovery-mobile {
+  background-image: url("../images/Resy-Discovery-mobile.jpg");
 }
 .xs-cover--scoop {
   background-image: url("../images/nyt-scoop-desktop.jpg");
@@ -5150,11 +5157,18 @@ img {
     background-image: url("../images/bf-smc-mobile.jpg");
   }
   .sm-cover--resyweb {
-    background-image: url("../images/resy-resyweb.jpg");
+    background-image: url("../images/resy-resyweb-desktop.jpg");
     background-position: top center !important;
   }
   .sm-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
+  }
+  .sm-cover--discovery {
+    background-image: url("../images/Resy-Discovery-desktop.jpg");
+    background-position: top center !important;
+  }
+  .sm-cover--discovery-mobile {
+    background-image: url("../images/Resy-Discovery-mobile.jpg");
   }
   .sm-cover--scoop {
     background-image: url("../images/nyt-scoop-desktop.jpg");
@@ -5244,11 +5258,18 @@ img {
     background-image: url("../images/bf-smc-mobile.jpg");
   }
   .md-cover--resyweb {
-    background-image: url("../images/resy-resyweb.jpg");
+    background-image: url("../images/resy-resyweb-desktop.jpg");
     background-position: top center !important;
   }
   .md-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
+  }
+  .md-cover--discovery {
+    background-image: url("../images/Resy-Discovery-desktop.jpg");
+    background-position: top center !important;
+  }
+  .md-cover--discovery-mobile {
+    background-image: url("../images/Resy-Discovery-mobile.jpg");
   }
   .md-cover--scoop {
     background-image: url("../images/nyt-scoop-desktop.jpg");
@@ -5338,11 +5359,18 @@ img {
     background-image: url("../images/bf-smc-mobile.jpg");
   }
   .lg-cover--resyweb {
-    background-image: url("../images/resy-resyweb.jpg");
+    background-image: url("../images/resy-resyweb-desktop.jpg");
     background-position: top center !important;
   }
   .lg-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
+  }
+  .lg-cover--discovery {
+    background-image: url("../images/Resy-Discovery-desktop.jpg");
+    background-position: top center !important;
+  }
+  .lg-cover--discovery-mobile {
+    background-image: url("../images/Resy-Discovery-mobile.jpg");
   }
   .lg-cover--scoop {
     background-image: url("../images/nyt-scoop-desktop.jpg");
@@ -5432,11 +5460,18 @@ img {
     background-image: url("../images/bf-smc-mobile.jpg");
   }
   .xl-cover--resyweb {
-    background-image: url("../images/resy-resyweb.jpg");
+    background-image: url("../images/resy-resyweb-desktop.jpg");
     background-position: top center !important;
   }
   .xl-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
+  }
+  .xl-cover--discovery {
+    background-image: url("../images/Resy-Discovery-desktop.jpg");
+    background-position: top center !important;
+  }
+  .xl-cover--discovery-mobile {
+    background-image: url("../images/Resy-Discovery-mobile.jpg");
   }
   .xl-cover--scoop {
     background-image: url("../images/nyt-scoop-desktop.jpg");
