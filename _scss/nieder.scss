@@ -42,10 +42,13 @@
 }
 
 // Not proud of this, but hey, it’s gotta fit in the MacBook One viewport
-@media (min-width: 47.9375rem) and (max-height: 47.9375rem) {
+  @media (min-width: 47.9375rem) and (max-height: 47.9375rem) {
+}
 
-
-
+.js-nav-rotor {
+  transform-origin: 50% 50%;
+  will-change: transform;
+  display: block; /* avoids odd inline-SVG transform quirks */
 }
 
 
@@ -116,7 +119,7 @@
     // IMPORTANT: do NOT set overflow:hidden; here
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: right top;
     background-attachment: scroll;  // iOS-safe default
   }
   
@@ -206,7 +209,6 @@
 
   &cover--resyweb {
     background-image: url("../images/resy-resyweb-desktop.jpg");
-    background-position: top center !important;
   }
 
   &cover--resyweb-mobile {
@@ -215,7 +217,6 @@
   
   &cover--discovery {
     background-image: url("../images/Resy-Discovery-desktop.jpg");
-    background-position: top center !important;
   }
   
   &cover--discovery-mobile {

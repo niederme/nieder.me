@@ -4941,6 +4941,12 @@ img {
     min-height: 30rem;
   }
 }
+.js-nav-rotor {
+  transform-origin: 50% 50%;
+  will-change: transform;
+  display: block; /* avoids odd inline-SVG transform quirks */
+}
+
 .icon:hover g,
 .icon:hover path {
   fill: rgb(255, 117.152284264, 109);
@@ -4990,7 +4996,7 @@ img {
   z-index: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: right top;
   background-attachment: scroll;
 }
 .xs-cover::before {
@@ -5057,14 +5063,12 @@ img {
 }
 .xs-cover--resyweb {
   background-image: url("../images/resy-resyweb-desktop.jpg");
-  background-position: top center !important;
 }
 .xs-cover--resyweb-mobile {
   background-image: url("../images/resy-resyweb-mobile.jpg");
 }
 .xs-cover--discovery {
   background-image: url("../images/Resy-Discovery-desktop.jpg");
-  background-position: top center !important;
 }
 .xs-cover--discovery-mobile {
   background-image: url("../images/Resy-Discovery-mobile.jpg");
@@ -5089,7 +5093,7 @@ img {
     z-index: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: right top;
     background-attachment: scroll;
   }
   .sm-cover::before {
@@ -5158,14 +5162,12 @@ img {
   }
   .sm-cover--resyweb {
     background-image: url("../images/resy-resyweb-desktop.jpg");
-    background-position: top center !important;
   }
   .sm-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
   }
   .sm-cover--discovery {
     background-image: url("../images/Resy-Discovery-desktop.jpg");
-    background-position: top center !important;
   }
   .sm-cover--discovery-mobile {
     background-image: url("../images/Resy-Discovery-mobile.jpg");
@@ -5190,7 +5192,7 @@ img {
     z-index: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: right top;
     background-attachment: scroll;
   }
   .md-cover::before {
@@ -5259,14 +5261,12 @@ img {
   }
   .md-cover--resyweb {
     background-image: url("../images/resy-resyweb-desktop.jpg");
-    background-position: top center !important;
   }
   .md-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
   }
   .md-cover--discovery {
     background-image: url("../images/Resy-Discovery-desktop.jpg");
-    background-position: top center !important;
   }
   .md-cover--discovery-mobile {
     background-image: url("../images/Resy-Discovery-mobile.jpg");
@@ -5291,7 +5291,7 @@ img {
     z-index: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: right top;
     background-attachment: scroll;
   }
   .lg-cover::before {
@@ -5360,14 +5360,12 @@ img {
   }
   .lg-cover--resyweb {
     background-image: url("../images/resy-resyweb-desktop.jpg");
-    background-position: top center !important;
   }
   .lg-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
   }
   .lg-cover--discovery {
     background-image: url("../images/Resy-Discovery-desktop.jpg");
-    background-position: top center !important;
   }
   .lg-cover--discovery-mobile {
     background-image: url("../images/Resy-Discovery-mobile.jpg");
@@ -5392,7 +5390,7 @@ img {
     z-index: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: right top;
     background-attachment: scroll;
   }
   .xl-cover::before {
@@ -5461,14 +5459,12 @@ img {
   }
   .xl-cover--resyweb {
     background-image: url("../images/resy-resyweb-desktop.jpg");
-    background-position: top center !important;
   }
   .xl-cover--resyweb-mobile {
     background-image: url("../images/resy-resyweb-mobile.jpg");
   }
   .xl-cover--discovery {
     background-image: url("../images/Resy-Discovery-desktop.jpg");
-    background-position: top center !important;
   }
   .xl-cover--discovery-mobile {
     background-image: url("../images/Resy-Discovery-mobile.jpg");
