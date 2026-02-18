@@ -536,6 +536,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .case-visual-open {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -544,14 +545,18 @@ body.grid-hidden .grid-overlay > span {
   margin: 0;
   background: transparent;
   cursor: zoom-in;
+  overflow: hidden;
   touch-action: pan-y;
   user-select: none;
 }
 
 .case-visual-image {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: opacity 0.24s ease;
   -webkit-user-drag: none;
