@@ -4,31 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>John Niedermeyer</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260217-004" />
   </head>
   <body>
     <div class="page">
       <aside class="rail" aria-label="Section navigation">
-        <img class="logo-mark" src="icons/logo-mark.svg" alt="JN monogram" />
+        <img class="logo-mark" src="assets/icons/logo-mark.svg" alt="JN monogram" />
       </aside>
 
       <nav class="case-nav" aria-label="Case study anchors" data-lock-start="1049">
         <a class="case-anchor is-active" href="#home-hero" aria-label="Jump to top">
-          <img class="icon-off" src="icons/sidebar/home-off.svg" alt="" />
-          <img class="icon-on" src="icons/sidebar/home-on.svg" alt="" />
+          <img class="icon-off" src="assets/icons/sidebar/home-off.svg" alt="" />
+          <img class="icon-on" src="assets/icons/sidebar/home-on.svg" alt="" />
         </a>
         <a class="case-anchor" href="#resy-header" aria-label="Jump to Resy">
-          <img src="icons/sidebar/logo-resy-r.svg" alt="" />
+          <img src="assets/icons/sidebar/logo-resy-r.svg" alt="" />
         </a>
         <a class="case-anchor" href="#legacy-start" aria-label="Jump to legacy case study">
-          <img src="icons/sidebar/logo-resy-legacy-r.svg" alt="" />
+          <img src="assets/icons/sidebar/logo-resy-legacy-r.svg" alt="" />
         </a>
         <a class="case-anchor" href="#buzzfeed-start" aria-label="Jump to BuzzFeed case study">
-          <img src="icons/sidebar/logo-buzzfeed.svg" alt="" />
+          <img src="assets/icons/sidebar/logo-buzzfeed.svg" alt="" />
         </a>
         <a class="case-anchor" href="#nyt-start" aria-label="Jump to New York Times case study">
-          <img src="icons/sidebar/logo-nyt.svg" alt="" />
+          <img src="assets/icons/sidebar/logo-nyt.svg" alt="" />
         </a>
+        <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
+          <span class="cols-toggle-switch" aria-hidden="true"></span>
+          <span class="cols-toggle-label">cols</span>
+          <span class="cols-toggle-state" aria-live="polite">On</span>
+        </button>
       </nav>
 
       <main class="content">
@@ -38,11 +43,11 @@
         </div>
         <section class="hero" id="home-hero">
           <nav class="social-links" aria-label="Social links">
-            <a href="#" aria-label="Twitter"><img src="icons/twitter.svg" alt="" /></a>
-            <a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt="" /></a>
-            <a href="#" aria-label="LinkedIn"><img src="icons/linkedin.svg" alt="" /></a>
-            <a href="#" aria-label="GitHub"><img src="icons/github.svg" alt="" /></a>
-            <a href="#" aria-label="Email"><img src="icons/email.svg" alt="" /></a>
+            <a href="#" aria-label="Twitter"><img src="assets/icons/twitter.svg" alt="" /></a>
+            <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="" /></a>
+            <a href="#" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" /></a>
+            <a href="#" aria-label="GitHub"><img src="assets/icons/github.svg" alt="" /></a>
+            <a href="#" aria-label="Email"><img src="assets/icons/email.svg" alt="" /></a>
           </nav>
           <div class="rule"></div>
           <h1>John Niedermeyer</h1>
@@ -126,12 +131,61 @@
               </p>
             </article>
 
-            <figure class="case-visual">
-              <div class="visual-placeholder"></div>
+            <figure class="case-visual" data-carousel>
+              <button class="case-visual-open" type="button" aria-label="Open case study image in lightbox">
+                <img
+                  class="case-visual-image"
+                  src="assets/images/case-studies/resy-discover-tab/resy-discover-tab-01.png"
+                  alt="Resy consumer app visual"
+                  loading="lazy"
+                />
+              </button>
+              <div class="case-visual-controls" aria-label="Image carousel controls">
+                <button class="case-visual-nav prev" type="button" aria-label="Previous slide">
+                  <img src="assets/icons/arrow-prev.svg" alt="" />
+                </button>
+                <button class="case-visual-nav next" type="button" aria-label="Next slide">
+                  <img src="assets/icons/arrow-next.svg" alt="" />
+                </button>
+              </div>
               <figcaption>
-                <p>Fig. 1</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.</p>
+                <p class="case-visual-fig">Fig. 1</p>
+                <p class="case-visual-caption">Resy consumer app discovery surface, showing editorial-first browsing inside the locked visual frame.</p>
               </figcaption>
+              <script class="case-visual-data" type="application/json">
+                [
+                  {
+                    "src": "assets/images/case-studies/resy-discover-tab/resy-discover-tab-01.png",
+                    "fig": "Fig. 1",
+                    "caption": "Resy Discover Tab exploration, slide 1.",
+                    "alt": "Resy Discover Tab placeholder image one"
+                  },
+                  {
+                    "src": "assets/images/case-studies/resy-discover-tab/resy-discover-tab-02.png",
+                    "fig": "Fig. 2",
+                    "caption": "Resy Discover Tab exploration, slide 2.",
+                    "alt": "Resy Discover Tab placeholder image two"
+                  },
+                  {
+                    "src": "assets/images/case-studies/resy-discover-tab/resy-discover-tab-03.png",
+                    "fig": "Fig. 3",
+                    "caption": "Resy Discover Tab exploration, slide 3.",
+                    "alt": "Resy Discover Tab placeholder image three"
+                  },
+                  {
+                    "src": "assets/images/case-studies/resy-discover-tab/resy-discover-tab-04.png",
+                    "fig": "Fig. 4",
+                    "caption": "Resy Discover Tab exploration, slide 4.",
+                    "alt": "Resy Discover Tab placeholder image four"
+                  },
+                  {
+                    "src": "assets/images/case-studies/resy-discover-tab/resy-discover-tab-05.png",
+                    "fig": "Fig. 5",
+                    "caption": "Resy Discover Tab exploration, slide 5.",
+                    "alt": "Resy Discover Tab placeholder image five"
+                  }
+                ]
+              </script>
             </figure>
           </div>
         </section>
@@ -178,12 +232,43 @@
               </p>
             </article>
 
-            <figure class="case-visual">
-              <div class="visual-placeholder"></div>
+            <figure class="case-visual" data-carousel>
+              <button class="case-visual-open" type="button" aria-label="Open case study image in lightbox">
+                <img
+                  class="case-visual-image"
+                  src="assets/images/case-studies/resy-legacy/hero-01.png"
+                  alt="Resy legacy project visual"
+                  loading="lazy"
+                />
+              </button>
+              <div class="case-visual-controls" aria-label="Image carousel controls">
+                <button class="case-visual-nav prev" type="button" aria-label="Previous slide">
+                  <img src="assets/icons/arrow-prev.svg" alt="" />
+                </button>
+                <button class="case-visual-nav next" type="button" aria-label="Next slide">
+                  <img src="assets/icons/arrow-next.svg" alt="" />
+                </button>
+              </div>
               <figcaption>
-                <p>Fig. 2</p>
-                <p>Second case-study placeholder for validating sticky visual lock and release behavior across longer scrolling content.</p>
+                <p class="case-visual-fig">Fig. 1</p>
+                <p class="case-visual-caption">Legacy Resy surface showing system continuity work across mature product patterns.</p>
               </figcaption>
+              <script class="case-visual-data" type="application/json">
+                [
+                  {
+                    "src": "assets/images/case-studies/resy-legacy/hero-01.png",
+                    "fig": "Fig. 1",
+                    "caption": "Legacy Resy surface showing system continuity work across mature product patterns.",
+                    "alt": "Resy legacy visual one"
+                  },
+                  {
+                    "src": "assets/images/case-studies/resy-legacy/hero-02.png",
+                    "fig": "Fig. 2",
+                    "caption": "Alternate legacy screen demonstrating consistent hierarchy and reusable interaction blocks.",
+                    "alt": "Resy legacy visual two"
+                  }
+                ]
+              </script>
             </figure>
           </div>
         </section>
@@ -243,17 +328,61 @@
               </p>
             </article>
 
-            <figure class="case-visual">
-              <div class="visual-placeholder"></div>
+            <figure class="case-visual" data-carousel>
+              <button class="case-visual-open" type="button" aria-label="Open case study image in lightbox">
+                <img
+                  class="case-visual-image"
+                  src="assets/images/case-studies/resy-web/hero-01.png"
+                  alt="Resy.com consumer website visual"
+                  loading="lazy"
+                />
+              </button>
+              <div class="case-visual-controls" aria-label="Image carousel controls">
+                <button class="case-visual-nav prev" type="button" aria-label="Previous slide">
+                  <img src="assets/icons/arrow-prev.svg" alt="" />
+                </button>
+                <button class="case-visual-nav next" type="button" aria-label="Next slide">
+                  <img src="assets/icons/arrow-next.svg" alt="" />
+                </button>
+              </div>
               <figcaption>
-                <p>Fig. 3</p>
-                <p>Resy.com consumer website case study placeholder for reviewing multi-case anchor behavior and sticky visual sequencing.</p>
+                <p class="case-visual-fig">Fig. 1</p>
+                <p class="case-visual-caption">Resy.com visual placeholder for web discovery pathways and merchandising surfaces.</p>
               </figcaption>
+              <script class="case-visual-data" type="application/json">
+                [
+                  {
+                    "src": "assets/images/case-studies/resy-web/hero-01.png",
+                    "fig": "Fig. 1",
+                    "caption": "Resy.com visual placeholder for web discovery pathways and merchandising surfaces.",
+                    "alt": "Resy web case study visual one"
+                  },
+                  {
+                    "src": "assets/images/case-studies/resy-web/hero-02.png",
+                    "fig": "Fig. 2",
+                    "caption": "Second web visual for carousel testing, caption transitions, and lightbox parity.",
+                    "alt": "Resy web case study visual two"
+                  }
+                ]
+              </script>
             </figure>
           </div>
         </section>
       </main>
     </div>
-    <script src="js/main.js"></script>
+    <div class="lightbox" hidden aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close image lightbox">Close</button>
+      <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Case study image viewer">
+        <button class="lightbox-nav prev" type="button" aria-label="Previous slide">
+          <img src="assets/icons/arrow-prev.svg" alt="" />
+        </button>
+        <img class="lightbox-image" src="" alt="" />
+        <button class="lightbox-nav next" type="button" aria-label="Next slide">
+          <img src="assets/icons/arrow-next.svg" alt="" />
+        </button>
+      </div>
+      <p class="lightbox-caption"></p>
+    </div>
+    <script src="assets/js/main.js?v=20260217-004"></script>
   </body>
 </html>
