@@ -41,7 +41,6 @@ if (colsToggle) {
 }
 
 if (caseNav) {
-  const lockTop = 140;
   const lockTarget = document.querySelector("#resy-header");
   const anchors = Array.from(caseNav.querySelectorAll(".case-anchor"));
   const sections = anchors
@@ -50,8 +49,16 @@ if (caseNav) {
       return href ? document.querySelector(href) : null;
     })
     .filter(Boolean);
+  let lockTop = 140;
+
+  const updateLockTop = () => {
+    const safeTopRaw = getComputedStyle(document.documentElement).getPropertyValue("--safe-top");
+    const safeTop = Number.parseFloat(safeTopRaw);
+    lockTop = 140 + (Number.isFinite(safeTop) ? safeTop : 0);
+  };
 
   const setLockStart = () => {
+    updateLockTop();
     const lockStart = lockTarget
       ? Math.round(lockTarget.offsetTop)
       : Number(caseNav.dataset.lockStart || 1049);
@@ -91,6 +98,61 @@ if (caseNav) {
     updateRailNav();
   });
   updateRailNav();
+}
+
+{
+  const body = document.body;
+  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+
+  if (body && isCoarsePointer) {
+    let startY = 0;
+    let pulling = false;
+
+    const clearPullingState = () => {
+      if (!pulling) return;
+      pulling = false;
+      body.classList.remove("is-pulling-refresh");
+    };
+
+    window.addEventListener(
+      "touchstart",
+      (event) => {
+        if (event.touches.length !== 1) return;
+        startY = event.touches[0].clientY;
+      },
+      { passive: true }
+    );
+
+    window.addEventListener(
+      "touchmove",
+      (event) => {
+        if (event.touches.length !== 1) return;
+        const deltaY = event.touches[0].clientY - startY;
+        const shouldHideMask = window.scrollY <= 0 && deltaY > 8;
+
+        if (shouldHideMask && !pulling) {
+          pulling = true;
+          body.classList.add("is-pulling-refresh");
+          return;
+        }
+
+        if (!shouldHideMask) {
+          clearPullingState();
+        }
+      },
+      { passive: true }
+    );
+
+    window.addEventListener("touchend", clearPullingState, { passive: true });
+    window.addEventListener("touchcancel", clearPullingState, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 0) clearPullingState();
+      },
+      { passive: true }
+    );
+  }
 }
 
 if (logoMark) {
