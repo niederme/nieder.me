@@ -3,6 +3,7 @@
   --fg: #ffffff;
   --line: #2e2e2e;
   --muted: #ebebf5;
+  --safe-top: env(safe-area-inset-top, 0px);
   --grid-cols: 12;
   --grid-col-width: 69px;
   --grid-gutter: 40px;
@@ -12,7 +13,7 @@
 
 @font-face {
   font-family: "Sohne";
-  src: url("../fonts/Sohne-Leicht.ttf") format("truetype");
+  src: url("../fonts/soehne-leicht.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -20,7 +21,7 @@
 
 @font-face {
   font-family: "Sohne";
-  src: url("../fonts/Sohne-Buch.ttf") format("truetype");
+  src: url("../fonts/soehne-buch.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -28,7 +29,7 @@
 
 @font-face {
   font-family: "Sohne";
-  src: url("../fonts/Sohne-Dreiviertelfett.ttf") format("truetype");
+  src: url("../fonts/soehne-dreiviertelfett.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -63,7 +64,7 @@ body {
   content: "";
   position: fixed;
   left: 90px;
-  top: 135px;
+  top: calc(135px + var(--safe-top));
   bottom: 0;
   width: 1px;
   background: var(--line);
@@ -86,16 +87,20 @@ body {
   left: 0;
   top: 0;
   width: 90px;
-  height: 135px;
+  height: calc(135px + var(--safe-top));
   background: var(--bg);
   z-index: 24;
   pointer-events: none;
 }
 
+body.is-pulling-refresh .rail::after {
+  opacity: 0;
+}
+
 .logo-mark {
   position: fixed;
   left: 43.5px;
-  top: 20px;
+  top: calc(20px + var(--safe-top));
   width: 93.832px;
   height: 93.832px;
   transform: rotate(-72.79deg);
@@ -122,7 +127,7 @@ body {
 .case-nav.is-locked {
   position: fixed;
   left: 0;
-  top: 140px;
+  top: calc(140px + var(--safe-top));
 }
 
 .cols-toggle {
@@ -568,8 +573,8 @@ body.grid-hidden .grid-overlay > span {
 
 .case-visual-controls {
   position: absolute;
-  right: 25px;
-  bottom: 37px;
+  right: 30px;
+  bottom: 34px;
   display: flex;
   gap: 15px;
   z-index: 3;
@@ -601,33 +606,27 @@ body.grid-hidden .grid-overlay > span {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 14px 25px 30px;
+  padding: 22px 156px 24px 30px;
   font-size: 14px;
   line-height: 1.35;
   color: var(--muted);
   font-weight: 300;
-}
-
-.case-visual figcaption::before {
-  content: "";
-  position: absolute;
-  left: 25px;
-  right: 25px;
-  top: 0;
-  height: 1px;
-  background: var(--line);
+  background: rgba(0, 0, 0, 0.0001);
+  -webkit-backdrop-filter: blur(12px) saturate(115%);
+  backdrop-filter: blur(12px) saturate(115%);
 }
 
 .case-visual figcaption p {
-  margin: 0 0 12px;
+  margin: 0;
 }
 
 .case-visual-caption {
-  max-width: 638px;
+  max-width: 620px;
 }
 
 .case-visual-fig {
   color: var(--fg);
+  margin-bottom: 12px;
 }
 
 .lightbox {
@@ -704,6 +703,65 @@ body.grid-hidden .grid-overlay > span {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.35;
+}
+
+@media (min-width: 1501px) {
+  :root {
+    --grid-width: min(1700px, calc(100vw - 220px));
+    --grid-gutter: 48px;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: clamp(112px, 7.9vw, 152px);
+  }
+
+  .hero-columns p,
+  .hero-lead,
+  .hero-lead-body {
+    font-size: clamp(18px, 1.15vw, 22px);
+  }
+
+  .hero-lead-strong {
+    font-size: clamp(24px, 1.55vw, 30px);
+  }
+
+  .job-meta,
+  .job-summary {
+    font-size: clamp(24px, 1.55vw, 30px);
+    max-width: 960px;
+  }
+
+  .case-copy {
+    font-size: clamp(16px, 0.92vw, 18px);
+  }
+
+  .case-copy h4 {
+    font-size: clamp(30px, 1.95vw, 38px);
+  }
+
+  .case-visual figcaption,
+  .lightbox-caption {
+    font-size: 15px;
+  }
+
+  .lightbox-inner {
+    width: min(1800px, 100%);
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1500px) {
+  .content {
+    width: calc(100vw - 130px);
+    margin-left: 110px;
+    margin-right: 20px;
+  }
+
+  .social-links {
+    left: -110px;
+    top: auto;
+    bottom: 40px;
+  }
 }
 
 @media (max-width: 1100px) {
