@@ -43,6 +43,7 @@ if (colsToggle) {
 if (caseNav) {
   const lockTarget = document.querySelector("#resy-header");
   const anchors = Array.from(caseNav.querySelectorAll(".case-anchor"));
+  const topAnchor = anchors[0] || null;
   const sections = anchors
     .map((anchor) => {
       const href = anchor.getAttribute("href");
@@ -50,6 +51,21 @@ if (caseNav) {
     })
     .filter(Boolean);
   let lockTop = 140;
+
+  if (topAnchor) {
+    topAnchor.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      if (window.location.hash) {
+        history.replaceState(
+          null,
+          "",
+          `${window.location.pathname}${window.location.search}`
+        );
+      }
+    });
+  }
 
   const updateLockTop = () => {
     const safeTopRaw = getComputedStyle(document.documentElement).getPropertyValue("--safe-top");
