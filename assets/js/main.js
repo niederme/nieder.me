@@ -2,7 +2,15 @@ const caseNav = document.querySelector(".case-nav");
 const logoMark = document.querySelector(".logo-mark");
 const colsToggle = document.querySelector(".cols-toggle");
 const colsToggleState = colsToggle?.querySelector(".cols-toggle-state");
+const emailLink = document.querySelector("[data-email-link]");
 const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";
+
+if (emailLink) {
+  const emailAddress = String.fromCharCode(
+    106, 111, 104, 110, 64, 110, 105, 101, 100, 101, 114, 46, 109, 101
+  );
+  emailLink.href = `mailto:${emailAddress}`;
+}
 
 if (colsToggle) {
   const applyGridVisibility = (visible, persist = true) => {
@@ -25,13 +33,13 @@ if (colsToggle) {
     }
   };
 
-  let isVisible = true;
+  let isVisible = false;
   try {
     const stored = window.localStorage.getItem(COLS_TOGGLE_STORAGE_KEY);
     if (stored === "0") isVisible = false;
     if (stored === "1") isVisible = true;
   } catch (error) {
-    // Ignore storage access failures and keep default visible state.
+    // Ignore storage access failures and keep default hidden state.
   }
 
   applyGridVisibility(isVisible, false);
