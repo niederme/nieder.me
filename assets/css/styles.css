@@ -250,25 +250,50 @@ body.is-pulling-refresh .rail::after {
 }
 
 .social-links {
-  position: absolute;
-  left: calc((100vw - var(--grid-width)) / -2);
-  top: 360px;
-  width: 90px;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 28px;
-  z-index: 18;
-  transition: opacity 0.2s ease;
+  gap: 0;
+  width: fit-content;
+  margin-top: 100px;
+  z-index: 2;
 }
 
 .social-links a {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  margin-right: 40px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 .social-links img {
   width: 26px;
   height: 26px;
+  display: block;
+}
+
+.social-links a:last-child {
+  margin-right: 0;
+}
+
+.social-links a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 1px;
+  height: 40px;
+  background: var(--line);
+  transform: translateY(-50%);
+}
+
+.social-links a:hover {
+  opacity: 0.8;
 }
 
 .content {
@@ -326,7 +351,8 @@ body.grid-hidden .grid-overlay > span {
 
 .topper {
   position: relative;
-  margin-top: 110px;
+  margin-top: 96px;
+  padding-bottom: 22px;
 }
 
 .topper h1,
@@ -339,14 +365,14 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .topper h1 {
-  margin-top: 12px;
+  margin-top: 8px;
   font-size: clamp(52px, 7.7vw, 120px);
   font-weight: 700;
 }
 
 .topper h2 {
   font-size: clamp(52px, 7.7vw, 120px);
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .topper-columns {
@@ -404,7 +430,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .job-header {
-  margin-top: 188px;
+  margin-top: 200px;
 }
 
 .job-header h3 {
@@ -718,7 +744,16 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .social-links {
-    left: calc((100vw - var(--grid-width)) / -2 - 50px);
+    gap: 0;
+    margin-top: 110px;
+  }
+
+  .topper {
+    padding-bottom: 24px;
+  }
+
+  .job-header {
+    margin-top: 220px;
   }
 
   .topper h1,
@@ -768,9 +803,11 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .social-links {
-    left: -160px;
-    top: auto;
-    bottom: 40px;
+    margin-top: 92px;
+  }
+
+  .job-header {
+    margin-top: 190px;
   }
 }
 
@@ -788,7 +825,6 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .case-nav,
-  .social-links,
   .cols-toggle {
     display: none;
   }
@@ -808,6 +844,28 @@ body.grid-hidden .grid-overlay > span {
   .topper-columns {
     grid-template-columns: 1fr;
     row-gap: 18px;
+    padding-top: 16px;
+  }
+
+  .social-links {
+    gap: 0;
+    margin-top: 24px;
+  }
+
+  .social-links a {
+    width: 22px;
+    height: 22px;
+    margin-right: 28px;
+  }
+
+  .social-links img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .social-links a:not(:last-child)::after {
+    right: -14px;
+    height: 30px;
   }
 
   .topper-columns > p:nth-child(1),
@@ -817,7 +875,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .job-header {
-    margin-top: 100px;
+    margin-top: 112px;
   }
 
   .job-meta,
@@ -887,7 +945,29 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .topper {
-    margin-top: 36px;
+    margin-top: 28px;
+    padding-bottom: 12px;
+  }
+
+  .social-links {
+    gap: 0;
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    width: 20px;
+    height: 20px;
+    margin-right: 24px;
+  }
+
+  .social-links img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-links a:not(:last-child)::after {
+    right: -12px;
+    height: 28px;
   }
 
   .topper h1,
@@ -912,7 +992,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .job-header {
-    margin-top: 72px;
+    margin-top: 84px;
   }
 
   .job-header h3 {
