@@ -269,18 +269,21 @@ if (visualCarousels.length > 0) {
         const image = figure.querySelector(".case-visual-image");
         const fig = figure.querySelector(".case-visual-fig");
         const caption = figure.querySelector(".case-visual-caption");
+        const figcaption = figure.querySelector("figcaption");
         const prev = figure.querySelector(".case-visual-nav.prev");
         const next = figure.querySelector(".case-visual-nav.next");
         const open = figure.querySelector(".case-visual-open");
 
-        if (!image || !fig || !caption || !prev || !next || !open) return null;
+        if (!image || !fig || !caption || !figcaption || !prev || !next || !open) return null;
 
         return {
           figure,
+          section: figure.closest(".case-study"),
           slides,
           image,
           fig,
           caption,
+          figcaption,
           prev,
           next,
           open,
@@ -291,6 +294,75 @@ if (visualCarousels.length > 0) {
       }
     })
     .filter(Boolean);
+
+  {
+    let activeCaptionState = null;
+    let captionTicking = false;
+
+    const clearPinnedCaption = () => {
+      if (activeCaptionState) {
+        activeCaptionState.figcaption.classList.remove("is-viewport-pinned");
+      }
+      activeCaptionState = null;
+      document.body.classList.remove("has-active-case-caption");
+      document.documentElement.style.removeProperty("--case-caption-left");
+      document.documentElement.style.removeProperty("--case-caption-width");
+      document.documentElement.style.removeProperty("--case-caption-bottom");
+    };
+
+    const updatePinnedCaption = () => {
+      captionTicking = false;
+
+      if (window.innerWidth <= 1100) {
+        clearPinnedCaption();
+        return;
+      }
+
+      const ENGAGE_OFFSET = -8;
+      const RELEASE_OFFSET = 16;
+      const nextState = carouselStates.find((state) => {
+        const visualRect = state.figure.getBoundingClientRect();
+        const isActiveState = activeCaptionState === state;
+        const isStickyEngaged = isActiveState
+          ? visualRect.top <= RELEASE_OFFSET && visualRect.bottom > 0
+          : visualRect.top <= ENGAGE_OFFSET && visualRect.bottom > 0;
+        return isStickyEngaged;
+      });
+
+      if (!nextState) {
+        clearPinnedCaption();
+        return;
+      }
+
+      if (activeCaptionState && activeCaptionState !== nextState) {
+        activeCaptionState.figcaption.classList.remove("is-viewport-pinned");
+      }
+
+      const visualRect = nextState.figure.getBoundingClientRect();
+      document.body.classList.add("has-active-case-caption");
+      document.documentElement.style.setProperty("--case-caption-left", `${Math.max(0, visualRect.left)}px`);
+      document.documentElement.style.setProperty("--case-caption-width", `${Math.max(0, visualRect.width)}px`);
+      document.documentElement.style.setProperty(
+        "--case-caption-bottom",
+        `${Math.max(0, window.innerHeight - visualRect.bottom)}px`
+      );
+      nextState.figcaption.classList.add("is-viewport-pinned");
+      activeCaptionState = nextState;
+    };
+
+    const queuePinnedCaptionUpdate = () => {
+      if (captionTicking) return;
+      captionTicking = true;
+      window.requestAnimationFrame(updatePinnedCaption);
+    };
+
+    window.addEventListener("scroll", queuePinnedCaptionUpdate, { passive: true });
+    window.addEventListener("resize", queuePinnedCaptionUpdate);
+    carouselStates.forEach((state) => {
+      state.image.addEventListener("load", queuePinnedCaptionUpdate);
+    });
+    queuePinnedCaptionUpdate();
+  }
 
   const applySlide = (state, index, animated) => {
     const nextIndex = Math.max(0, Math.min(index, state.slides.length - 1));
@@ -314,16 +386,29 @@ if (visualCarousels.length > 0) {
     }
 
     state.image.classList.add("is-fading");
+    updateSlideContent();
     window.setTimeout(() => {
-      updateSlideContent();
       state.image.classList.remove("is-fading");
     }, 140);
   };
 
   carouselStates.forEach((state) => {
+    state.slides.slice(1).forEach((slide) => {
+      const preload = new Image();
+      preload.src = slide.src;
+    });
+
     applySlide(state, 0, false);
-    state.prev.addEventListener("click", () => applySlide(state, state.index - 1, true));
-    state.next.addEventListener("click", () => applySlide(state, state.index + 1, true));
+    state.prev.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      applySlide(state, state.index - 1, true);
+    });
+    state.next.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      applySlide(state, state.index + 1, true);
+    });
     attachSwipe(
       state.open,
       () => applySlide(state, state.index - 1, true),
