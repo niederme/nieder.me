@@ -599,28 +599,60 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .case-visual-controls {
-  position: absolute;
-  right: 30px;
-  bottom: 34px;
+  position: relative;
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  width: 128px;
+  height: 72px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: end;
   z-index: 3;
 }
 
+.case-visual-controls::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  transform: translateX(-0.5px);
+  background: rgba(255, 255, 255, 0.16);
+  pointer-events: none;
+}
+
 .case-visual-nav {
-  width: 41px;
-  height: 41px;
+  position: relative;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 72px;
+  min-width: 36px;
+  min-height: 36px;
   border: 0;
   background: transparent;
   display: grid;
   place-items: center;
   padding: 0;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.case-visual-nav.prev {
+  justify-items: center;
+}
+
+.case-visual-nav.next {
+  justify-items: center;
 }
 
 .case-visual-nav img {
-  width: 41px;
-  height: 41px;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
 }
 
 .case-visual-nav:disabled {
@@ -633,7 +665,11 @@ body.grid-hidden .grid-overlay > span {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 22px 156px 24px 30px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 24px;
+  align-items: center;
+  padding: 22px 30px 24px;
   font-size: 14px;
   line-height: 1.35;
   color: var(--muted);
@@ -643,17 +679,30 @@ body.grid-hidden .grid-overlay > span {
   backdrop-filter: blur(12px) saturate(115%);
 }
 
+.case-visual figcaption.is-viewport-pinned {
+  position: fixed;
+  left: var(--case-caption-left, 0);
+  width: var(--case-caption-width, 100%);
+  right: auto;
+  bottom: var(--case-caption-bottom, 0);
+  z-index: 6;
+}
+
 .case-visual figcaption p {
   margin: 0;
 }
 
 .case-visual-caption {
+  grid-column: 1;
   max-width: 620px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.34), 0 0 10px rgba(0, 0, 0, 0.22);
 }
 
 .case-visual-fig {
+  grid-column: 1;
   color: var(--fg);
   margin-bottom: 12px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.34), 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .lightbox {
@@ -913,12 +962,31 @@ body.grid-hidden .grid-overlay > span {
     left: auto;
     right: auto;
     bottom: auto;
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+
+  .case-visual figcaption.is-viewport-pinned {
+    position: relative;
+    left: auto;
+    width: auto;
+    right: auto;
+    bottom: auto;
   }
 
   .case-visual-controls {
-    right: 16px;
-    bottom: 30px;
-    gap: 15px;
+    width: 120px;
+    height: 64px;
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    align-self: end;
+  }
+
+  .case-visual-nav {
+    flex-basis: 60px;
+    width: 60px;
+    height: 64px;
   }
 
   .lightbox {
@@ -1010,6 +1078,22 @@ body.grid-hidden .grid-overlay > span {
 
   .case-visual-open {
     height: min(132vw, 560px);
+  }
+
+  .case-visual-controls {
+    width: 112px;
+    height: 58px;
+  }
+
+  .case-visual-nav {
+    flex-basis: 56px;
+    width: 56px;
+    height: 58px;
+  }
+
+  .case-visual-nav img {
+    width: 26px;
+    height: 26px;
   }
 
   .lightbox-inner {
