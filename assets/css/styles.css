@@ -669,7 +669,7 @@ body.grid-hidden .grid-overlay > span {
   grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 24px;
   align-items: center;
-  padding: 22px 30px 24px;
+  padding: 22px 0 24px 30px;
   font-size: 14px;
   line-height: 1.35;
   color: var(--muted);
