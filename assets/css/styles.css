@@ -1,6 +1,7 @@
 :root {
   --bg: #000000;
   --fg: #ffffff;
+  --accent: #ff453a;
   --line: #2e2e2e;
   --muted: #ebebf5;
   --safe-top: env(safe-area-inset-top, 0px);
@@ -29,7 +30,7 @@
 
 @font-face {
   font-family: "Sohne";
-  src: url("../fonts/soehne-dreiviertelfett.woff2") format("woff2");
+  src: url("../fonts/soehne-halbfett.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -50,9 +51,24 @@ body {
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: "Sohne", "Helvetica Neue", "Arial Nova", "Arial", sans-serif;
+  font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Arial Nova", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+a:visited {
+  color: var(--accent);
+}
+
+a:hover,
+a:focus-visible {
+  color: #ff6a60;
 }
 
 .page {
@@ -373,6 +389,8 @@ body.grid-hidden .grid-overlay > span {
 .topper h2 {
   font-size: clamp(52px, 7.7vw, 120px);
   margin-bottom: 28px;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .topper-columns {
@@ -425,7 +443,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .topper-columns strong {
-  color: var(--fg);
+  color: var(--accent);
   font-weight: 700;
 }
 
