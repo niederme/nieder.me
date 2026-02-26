@@ -202,6 +202,68 @@ if (logoMark) {
   );
 }
 
+{
+  const pageDotGroups = Array.from(
+    document.querySelectorAll(".mobile-page-dots[data-scroll-target]")
+  );
+
+  pageDotGroups.forEach((dotGroup) => {
+    const selector = dotGroup.dataset.scrollTarget;
+    if (!selector) return;
+
+    const scroller = document.querySelector(selector);
+    if (!scroller) return;
+
+    const items = Array.from(scroller.children).filter(
+      (child) => child instanceof HTMLElement
+    );
+    if (items.length < 2) return;
+
+    const dots = items.map((_, index) => {
+      const dot = document.createElement("span");
+      dot.className = "mobile-page-dots-dot";
+      if (index === 0) dot.classList.add("is-active");
+      dot.setAttribute("aria-hidden", "true");
+      dotGroup.appendChild(dot);
+      return dot;
+    });
+
+    const updateActiveDot = () => {
+      const scrollerRect = scroller.getBoundingClientRect();
+      let activeIndex = 0;
+      let bestDistance = Number.POSITIVE_INFINITY;
+
+      items.forEach((item, index) => {
+        const distance = Math.abs(
+          item.getBoundingClientRect().left - scrollerRect.left
+        );
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+      });
+    };
+
+    let dotTicking = false;
+    const queueDotUpdate = () => {
+      if (dotTicking) return;
+      dotTicking = true;
+      window.requestAnimationFrame(() => {
+        updateActiveDot();
+        dotTicking = false;
+      });
+    };
+
+    scroller.addEventListener("scroll", queueDotUpdate, { passive: true });
+    window.addEventListener("resize", queueDotUpdate);
+    queueDotUpdate();
+  });
+}
+
 const visualCarousels = Array.from(document.querySelectorAll(".case-visual[data-carousel]"));
 const lightbox = document.querySelector(".lightbox");
 
@@ -276,6 +338,19 @@ if (visualCarousels.length > 0) {
 
         if (!image || !fig || !caption || !figcaption || !prev || !next || !open) return null;
 
+        const pageDots = document.createElement("div");
+        pageDots.className = "case-visual-page-dots";
+        const pageDotNodes = slides.map((_, index) => {
+          const dot = document.createElement("span");
+          dot.className = "case-visual-page-dot";
+          if (index === 0) dot.classList.add("is-active");
+          dot.setAttribute("aria-hidden", "true");
+          pageDots.appendChild(dot);
+          return dot;
+        });
+        if (pageDotNodes.length < 2) pageDots.hidden = true;
+        figcaption.prepend(pageDots);
+
         return {
           figure,
           section: figure.closest(".case-study"),
@@ -287,6 +362,8 @@ if (visualCarousels.length > 0) {
           prev,
           next,
           open,
+          pageDots,
+          pageDotNodes,
           index: 0,
         };
       } catch (error) {
@@ -374,6 +451,9 @@ if (visualCarousels.length > 0) {
       state.image.alt = slide.alt || "";
       state.fig.textContent = slide.fig || "";
       state.caption.textContent = slide.caption || "";
+      state.pageDotNodes?.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === nextIndex);
+      });
       state.prev.disabled = state.index === 0;
       state.next.disabled = state.index === state.slides.length - 1;
       state.prev.setAttribute("aria-disabled", String(state.prev.disabled));
