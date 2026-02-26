@@ -1,9 +1,18 @@
 const caseNav = document.querySelector(".case-nav");
-const logoMark = document.querySelector(".logo-mark");
-const colsToggle = document.querySelector(".cols-toggle");
-const colsToggleState = colsToggle?.querySelector(".cols-toggle-state");
+const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
+const colsToggles = Array.from(document.querySelectorAll(".cols-toggle, .mobile-cols-toggle"));
 const emailLink = document.querySelector("[data-email-link]");
 const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";
+const scrollToPageTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (window.location.hash) {
+    history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}`
+    );
+  }
+};
 
 if (emailLink) {
   const emailAddress = String.fromCharCode(
@@ -12,17 +21,20 @@ if (emailLink) {
   emailLink.href = `mailto:${emailAddress}`;
 }
 
-if (colsToggle) {
+if (colsToggles.length > 0) {
   const applyGridVisibility = (visible, persist = true) => {
     document.body.classList.toggle("grid-hidden", !visible);
-    colsToggle.classList.toggle("is-on", visible);
-    colsToggle.classList.toggle("is-off", !visible);
-    colsToggle.setAttribute("aria-pressed", String(visible));
-    colsToggle.setAttribute(
-      "aria-label",
-      visible ? "Hide column grid" : "Show column grid"
-    );
-    if (colsToggleState) colsToggleState.textContent = visible ? "On" : "Off";
+    colsToggles.forEach((toggle) => {
+      toggle.classList.toggle("is-on", visible);
+      toggle.classList.toggle("is-off", !visible);
+      toggle.setAttribute("aria-pressed", String(visible));
+      toggle.setAttribute(
+        "aria-label",
+        visible ? "Hide column grid" : "Show column grid"
+      );
+      const state = toggle.querySelector(".cols-toggle-state");
+      if (state) state.textContent = visible ? "On" : "Off";
+    });
 
     if (persist) {
       try {
@@ -43,8 +55,10 @@ if (colsToggle) {
   }
 
   applyGridVisibility(isVisible, false);
-  colsToggle.addEventListener("click", () => {
-    applyGridVisibility(document.body.classList.contains("grid-hidden"));
+  colsToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      applyGridVisibility(document.body.classList.contains("grid-hidden"));
+    });
   });
 }
 
@@ -63,15 +77,7 @@ if (caseNav) {
   if (topAnchor) {
     topAnchor.addEventListener("click", (event) => {
       event.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-
-      if (window.location.hash) {
-        history.replaceState(
-          null,
-          "",
-          `${window.location.pathname}${window.location.search}`
-        );
-      }
+      scrollToPageTop();
     });
   }
 
@@ -122,6 +128,94 @@ if (caseNav) {
     updateRailNav();
   });
   updateRailNav();
+}
+
+if (logoMarks.length > 0) {
+  logoMarks.forEach((mark) => {
+    mark.setAttribute("role", "button");
+    mark.setAttribute("tabindex", "0");
+    mark.setAttribute("aria-label", "Scroll to top");
+    mark.addEventListener("click", () => {
+      scrollToPageTop();
+    });
+    mark.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      scrollToPageTop();
+    });
+  });
+}
+
+{
+  const mobileCaseNav = document.querySelector(".mobile-case-nav");
+  if (mobileCaseNav) {
+    const anchors = Array.from(mobileCaseNav.querySelectorAll(".mobile-case-anchor"));
+    const resyHeader = document.querySelector("#resy-header");
+    const mobileLogo = document.querySelector(".mobile-logo-mark");
+    const sections = anchors
+      .map((anchor) => {
+        const href = anchor.getAttribute("href");
+        return href ? document.querySelector(href) : null;
+      })
+      .filter(Boolean);
+
+    const getSafeTop = () => {
+      const safeTopRaw = getComputedStyle(document.documentElement).getPropertyValue("--safe-top");
+      const safeTop = Number.parseFloat(safeTopRaw);
+      return Number.isFinite(safeTop) ? safeTop : 0;
+    };
+
+    const updateActive = () => {
+      if (window.innerWidth > 430 || sections.length === 0) return;
+      const navHeight = mobileCaseNav.getBoundingClientRect().height;
+      const safeTop = getSafeTop();
+      const offset = window.scrollY + navHeight + safeTop + 18;
+      let activeIndex = 0;
+      for (let i = 0; i < sections.length; i += 1) {
+        if (offset >= sections[i].offsetTop) {
+          activeIndex = i;
+        }
+      }
+      anchors.forEach((anchor, index) => {
+        anchor.classList.toggle("is-active", index === activeIndex);
+      });
+
+      if (mobileLogo && resyHeader) {
+        const hideLogo = window.scrollY >= resyHeader.offsetTop - 40;
+        document.body.classList.toggle("mobile-logo-hidden", hideLogo);
+      }
+    };
+
+    anchors.forEach((anchor) => {
+      anchor.addEventListener("click", (event) => {
+        const href = anchor.getAttribute("href");
+        if (!href || !href.startsWith("#")) return;
+        event.preventDefault();
+        if (href === "#top") {
+          scrollToPageTop();
+          return;
+        }
+        const target = document.querySelector(href);
+        if (!target) return;
+        const navHeight = mobileCaseNav.getBoundingClientRect().height;
+        const safeTop = getSafeTop();
+        const targetTop =
+          target.getBoundingClientRect().top +
+          window.scrollY -
+          navHeight -
+          safeTop -
+          8;
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: "smooth",
+        });
+      });
+    });
+
+    window.addEventListener("scroll", updateActive, { passive: true });
+    window.addEventListener("resize", updateActive);
+    updateActive();
+  }
 }
 
 {
@@ -179,14 +273,16 @@ if (caseNav) {
   }
 }
 
-if (logoMark) {
+if (logoMarks.length > 0) {
   const baseRotationDeg = -72.79;
   const rotationRate = 0.08;
   let ticking = false;
 
   const updateLogoRotation = () => {
     const rotation = baseRotationDeg + window.scrollY * rotationRate;
-    logoMark.style.transform = `rotate(${rotation}deg)`;
+    logoMarks.forEach((mark) => {
+      mark.style.transform = `rotate(${rotation}deg)`;
+    });
     ticking = false;
   };
 
@@ -260,6 +356,15 @@ if (logoMark) {
 
     scroller.addEventListener("scroll", queueDotUpdate, { passive: true });
     window.addEventListener("resize", queueDotUpdate);
+    window.addEventListener("pageshow", () => {
+      if (window.innerWidth <= 430) {
+        scroller.scrollLeft = 0;
+        queueDotUpdate();
+      }
+    });
+    if (window.innerWidth <= 430) {
+      scroller.scrollLeft = 0;
+    }
     queueDotUpdate();
   });
 }
