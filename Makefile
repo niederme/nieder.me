@@ -1,12 +1,22 @@
-.PHONY: dev dev-lan dev-local
+.PHONY: dev dev-lan dev-local site-url site-url-stage site-url-prod
 
 PORT ?= 8000
 BIND ?= 0.0.0.0
 LOCAL_HOST ?= localhost
 PORT_AUTO ?= 1
 PORT_SCAN_LIMIT ?= 25
+SITE_URL ?= https://nieder.me/2026
 
 .DEFAULT_GOAL := dev
+
+site-url:
+	@./scripts/set-site-url.sh "$(SITE_URL)"
+
+site-url-stage: SITE_URL := https://nieder.me/2026
+site-url-stage: site-url
+
+site-url-prod: SITE_URL := https://nieder.me
+site-url-prod: site-url
 
 dev:
 	@PORT_TO_USE="$(PORT)"; \
