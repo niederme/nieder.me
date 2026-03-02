@@ -9,6 +9,7 @@ set -euo pipefail
 # Optional env vars:
 #   DEPLOY_PORT   e.g. 22 (default: 22)
 #   DRY_RUN       set to 1 for preview mode
+#   SITE_URL      defaults to https://nieder.me/2026
 
 DEPLOY_HOST="${DEPLOY_HOST:-suckahs.org}"
 DEPLOY_USER="${DEPLOY_USER:-suckahs}"
@@ -16,6 +17,7 @@ DEPLOY_PATH="${DEPLOY_PATH:-/home/suckahs/public_html/nieder/2026}"
 
 DEPLOY_PORT="${DEPLOY_PORT:-22}"
 DRY_RUN="${DRY_RUN:-0}"
+SITE_URL="${SITE_URL:-https://nieder.me/2026}"
 
 RSYNC_ARGS=(
   -avz
@@ -27,6 +29,8 @@ RSYNC_ARGS=(
 if [[ "$DRY_RUN" == "1" ]]; then
   RSYNC_ARGS+=(--dry-run)
 fi
+
+./scripts/set-site-url.sh "$SITE_URL"
 
 # Auto-bump asset cache-bust query string in index.html:
 # assets/css/styles.css?v=YYYYMMDD-###
