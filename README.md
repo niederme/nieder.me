@@ -35,3 +35,9 @@ make dev-local
 That binds to localhost only.
 
 `make dev-local` also auto-selects the next available port when the requested one is already in use.
+
+## Current mobile behavior
+
+- The homepage includes a mobile-specific case-study nav that appears after the topper and tracks the active section.
+- The mobile topper and case-study stack now use responsive width rules between narrower and wider phone viewports instead of a fixed 375px-only layout.
+- CSS and JS assets use cache-busting query params in `index.html`; if Safari looks stale after changes, do a hard refresh.
