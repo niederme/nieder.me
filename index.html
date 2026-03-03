@@ -36,7 +36,7 @@
     <meta name="twitter:url" content="https://nieder.me/2026/" />
     <meta name="twitter:image" content="https://nieder.me/2026/assets/images/share/og-image-1200x630.png" />
     <meta name="twitter:image:alt" content="Preview of John Niedermeyer's product design portfolio." />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260302-002" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260303-012" />
   </head>
   <body id="top">
     <div class="page">
@@ -113,25 +113,90 @@
           </nav>
         </section>
 
-        <nav class="mobile-case-nav" aria-label="Case study navigation">
-          <a class="mobile-case-anchor is-active" href="#top" aria-label="Jump to top">
-            <img class="icon-off" src="assets/icons/side-nav/home-off.svg" alt="" />
-            <img class="icon-on" src="assets/icons/side-nav/home-on.svg" alt="" />
-          </a>
-          <a class="mobile-case-anchor" href="#resy-header" aria-label="Jump to Resy">
-            <img src="assets/icons/side-nav/logo-resy-r.svg" alt="" />
-          </a>
-          <a class="mobile-case-anchor" href="#case-study-2" aria-label="Jump to legacy case study">
-            <img src="assets/icons/side-nav/logo-resy-legacy-r.svg" alt="" />
-          </a>
-          <a class="mobile-case-anchor" href="#legacy-start" aria-label="Jump to web case study">
-            <img src="assets/icons/side-nav/logo-nyt.svg" alt="" />
-          </a>
-          <button class="mobile-cols-toggle" type="button" aria-pressed="false" aria-label="Show column grid">
-            <span class="cols-toggle-switch" aria-hidden="true"></span>
-            <span class="mobile-cols-label">cols</span>
-            <span class="cols-toggle-state" aria-live="polite">Off</span>
-          </button>
+        <nav class="mobile-section-nav" aria-label="Case study navigation" aria-hidden="true">
+          <button class="mobile-section-nav-scrim" type="button" aria-label="Close case study navigation" hidden></button>
+          <div class="mobile-section-nav-shell">
+            <button
+              class="mobile-section-nav-current is-top"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-section-nav-list"
+              aria-label="Open case study navigation"
+              tabindex="-1"
+            >
+              <img class="mobile-section-nav-current-icon" src="assets/icons/side-nav/home-off.svg" alt="" />
+              <span class="mobile-section-nav-divider" aria-hidden="true"></span>
+              <span class="mobile-section-nav-current-copy">
+                <span class="mobile-section-nav-current-eyebrow"></span>
+                <span class="mobile-section-nav-current-title">Top</span>
+              </span>
+              <span class="mobile-section-nav-toggle-icon" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-section-nav-list" id="mobile-section-nav-list" hidden>
+              <a
+                class="mobile-section-nav-item is-active is-top"
+                href="#top"
+                aria-label="Jump to top"
+                aria-current="true"
+                data-nav-icon="assets/icons/side-nav/home-off.svg"
+                data-nav-eyebrow=""
+                data-nav-title="Top"
+              >
+                <img class="mobile-section-nav-item-icon" src="assets/icons/side-nav/home-off.svg" alt="" />
+                <span class="mobile-section-nav-divider" aria-hidden="true"></span>
+                <span class="mobile-section-nav-item-copy">
+                  <span class="mobile-section-nav-item-eyebrow"></span>
+                  <span class="mobile-section-nav-item-title">Top</span>
+                </span>
+              </a>
+              <a
+                class="mobile-section-nav-item"
+                href="#resy-header"
+                aria-label="Jump to Resy"
+                data-nav-icon="assets/icons/side-nav/logo-resy-r.svg"
+                data-nav-eyebrow="Resy Consumer App"
+                data-nav-title="Evolving in-App Restaurant Discovery"
+              >
+                <img class="mobile-section-nav-item-icon" src="assets/icons/side-nav/logo-resy-r.svg" alt="" />
+                <span class="mobile-section-nav-divider" aria-hidden="true"></span>
+                <span class="mobile-section-nav-item-copy">
+                  <span class="mobile-section-nav-item-eyebrow">Resy Consumer App</span>
+                  <span class="mobile-section-nav-item-title">Evolving in-App Restaurant Discovery</span>
+                </span>
+              </a>
+              <a
+                class="mobile-section-nav-item"
+                href="#case-study-2"
+                aria-label="Jump to Resy legacy case study"
+                data-nav-icon="assets/icons/side-nav/logo-resy-legacy-r.svg"
+                data-nav-eyebrow="Resy Legacy Project"
+                data-nav-title="Scaling a Mature Discovery System"
+              >
+                <img class="mobile-section-nav-item-icon" src="assets/icons/side-nav/logo-resy-legacy-r.svg" alt="" />
+                <span class="mobile-section-nav-divider" aria-hidden="true"></span>
+                <span class="mobile-section-nav-item-copy">
+                  <span class="mobile-section-nav-item-eyebrow">Resy Legacy Project</span>
+                  <span class="mobile-section-nav-item-title">Scaling a Mature Discovery System</span>
+                </span>
+              </a>
+              <a
+                class="mobile-section-nav-item"
+                href="#legacy-start"
+                aria-label="Jump to Resy web case study"
+                data-nav-icon="assets/icons/side-nav/logo-nyt.svg"
+                data-nav-eyebrow="Resy.com Consumer Website"
+                data-nav-title="Building and Evolving Web Discovery Over Time"
+              >
+                <img class="mobile-section-nav-item-icon" src="assets/icons/side-nav/logo-nyt.svg" alt="" />
+                <span class="mobile-section-nav-divider" aria-hidden="true"></span>
+                <span class="mobile-section-nav-item-copy">
+                  <span class="mobile-section-nav-item-eyebrow">Resy.com Consumer Website</span>
+                  <span class="mobile-section-nav-item-title">Building and Evolving Web Discovery Over Time</span>
+                </span>
+              </a>
+            </div>
+          </div>
         </nav>
 
         <section class="job-header" id="resy-header">
@@ -450,6 +515,6 @@
       </div>
       <p class="lightbox-caption"></p>
     </div>
-    <script src="assets/js/main.js?v=20260302-002"></script>
+    <script src="assets/js/main.js?v=20260303-005"></script>
   </body>
 </html>
