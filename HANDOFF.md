@@ -4,6 +4,7 @@
 - `main`
 
 ## Last Pushed
+- `fa259d6` `Polish MailMoi marketing page and launch-state badges`
 - `a5f7106` `Tighten mobile topper responsiveness`
 - `4f0247e` `Polish mobile Figma layout and nav`
 - `30e9b83` `Refresh OG image and bump asset versions`
@@ -28,6 +29,10 @@
   - tighter hero spacing and typography rhythm
   - better badge readability and disabled-state feel
   - annotation placement adjusted to sit closer to badges on narrow viewports
+- Updated hero video behavior on `/mailmoi/`:
+  - honors `prefers-reduced-motion` (no autoplay when reduced motion is requested)
+  - click/keyboard toggles play and pause
+  - paused state visibly dims the video
 - Added media/assets used by the marketing page:
   - app icon
   - App Store badge lockups (flat asset structure)
