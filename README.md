@@ -36,6 +36,19 @@ That binds to localhost only.
 
 `make dev-local` also auto-selects the next available port when the requested one is already in use.
 
+## MailMoi pages
+
+- `/mailmoi/` is the standalone MailMoi marketing page (system light/dark, hero product video, feature grid, and temporary `Coming soon` App Store treatment).
+- `/mailmoi/privacy/` is the MailMoi privacy policy page.
+- `/mailmoi/terms/` is the MailMoi terms page.
+- The homepage `index.html` also includes a MailMoi case-study section after the `Resy.com Consumer Website` block.
+
+## MailMoi launch-state notes
+
+- App Store badges on `/mailmoi/` are intentionally disabled and overlaid with hand-drawn `Coming soon` SVG assets.
+- When launch links are ready, remove the `store-actions--coming-soon` treatment in `mailmoi/index.html` and replace `href="#"` on badge links with the real App Store URLs.
+- MailMoi feature art lives in `assets/images/mailmoi/features/` with paired `*-Light.png` / `*-Dark.png` variants.
+
 ## Current mobile behavior
 
 - The homepage includes a mobile-specific case-study nav that appears after the topper and tracks the active section.

@@ -36,7 +36,7 @@
     <meta name="twitter:url" content="https://nieder.me/2026/" />
     <meta name="twitter:image" content="https://nieder.me/2026/assets/images/share/og-image-1200x630.png" />
     <meta name="twitter:image:alt" content="Preview of John Niedermeyer's product design portfolio." />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260303-017" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260303-018" />
   </head>
   <body id="top">
     <div class="page">
@@ -60,6 +60,9 @@
         </a>
         <a class="case-anchor" href="#nyt-start" aria-label="Jump to New York Times case study">
           <img src="assets/icons/side-nav/logo-nyt.svg" alt="" />
+        </a>
+        <a class="case-anchor" href="#mailmoi-start" aria-label="Jump to MailMoi case study">
+          <img src="assets/images/mailmoi/app-icon.png" alt="" />
         </a>
         <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
           <span class="cols-toggle-switch" aria-hidden="true"></span>
@@ -193,6 +196,21 @@
                 <span class="mobile-section-nav-item-copy">
                   <span class="mobile-section-nav-item-eyebrow">Resy.com Consumer Website</span>
                   <span class="mobile-section-nav-item-title">Building and Evolving Web Discovery Over Time</span>
+                </span>
+              </a>
+              <a
+                class="mobile-section-nav-item"
+                href="#mailmoi-start"
+                aria-label="Jump to MailMoi case study"
+                data-nav-icon="assets/images/mailmoi/app-icon.png"
+                data-nav-eyebrow="MailMoi"
+                data-nav-title="Designing a Durable Send-to-Self Utility"
+              >
+                <img class="mobile-section-nav-item-icon" src="assets/images/mailmoi/app-icon.png" alt="" />
+                <span class="mobile-section-nav-divider" aria-hidden="true"></span>
+                <span class="mobile-section-nav-item-copy">
+                  <span class="mobile-section-nav-item-eyebrow">MailMoi</span>
+                  <span class="mobile-section-nav-item-title">Designing a Durable Send-to-Self Utility</span>
                 </span>
               </a>
             </div>
@@ -500,6 +518,108 @@
             </figure>
           </div>
         </section>
+
+        <section class="case-study" id="mailmoi-start">
+          <div class="rule"></div>
+          <div class="case-grid">
+            <article class="case-copy">
+              <header>
+                <p class="eyebrow">MailMoi</p>
+                <h4>Designing a Durable Send-to-Self Utility</h4>
+              </header>
+              <div class="rule short"></div>
+
+              <p class="case-section-title"><strong>The Challenge</strong></p>
+              <p>
+                "Email this to myself later" is a tiny behavior, but the tooling around it is usually unreliable. The common flow breaks across app switches, weak connectivity, and inconsistent share-sheet payloads, leaving users to wonder whether the send actually happened.
+              </p>
+              <p>
+                MailMoi needed to make that habit feel dependable on iPhone, iPad, and macOS without turning into a full mail client. The product had to stay narrow, remove setup friction, and protect the send when the network or share extension could not finish immediately.
+              </p>
+
+              <p class="case-section-title"><strong>The Strategy</strong></p>
+              <ul>
+                <li>
+                  <strong>Queue-First Delivery:</strong>
+                  Treated every outbound message as durable work by saving it locally before network delivery, so failed sends could retry later instead of disappearing.
+                </li>
+                <li>
+                  <strong>Native Share Surface:</strong>
+                  Built the Share Extension as a first-class part of the product, allowing links, text, images, and app-provided metadata to be captured where the user already is.
+                </li>
+                <li>
+                  <strong>Fast Repeat Use:</strong>
+                  Simplified the repeat workflow with Gmail OAuth, a dedicated default-recipient setting, and an optional auto-send path for the common "send this to myself" case.
+                </li>
+                <li>
+                  <strong>Content Cleanup:</strong>
+                  Normalized noisy share formats, improved metadata extraction, and rendered the final email as a polished responsive card instead of a raw pasted link.
+                </li>
+              </ul>
+
+              <p class="case-section-title"><strong>The Outcome</strong></p>
+              <p>
+                The finished product behaves more like dependable infrastructure than a lightweight utility. Users can share once, dismiss the sheet quickly, and trust that MailMoi will either deliver immediately or preserve the send for retry when the app becomes active again or connectivity returns.
+              </p>
+              <p>
+                By keeping the scope intentionally tight, the app delivers a focused workflow across Apple platforms without requiring a custom backend, while still supporting richer email formatting, image-only shares, and state shared cleanly between the main app and extension.
+              </p>
+
+              <p class="case-section-title"><strong>Key Learnings</strong></p>
+              <p>
+                Small utility products earn their value through trust. The technical details here, including App Group state sharing, queue persistence, and careful share-sheet behavior, are not invisible implementation work; they are the product experience.
+              </p>
+              <p>
+                The project reinforced the value of a narrow brief handled rigorously: when the promise is simple and the edge cases are respected, even a tiny workflow can feel essential.
+              </p>
+            </article>
+
+            <figure class="case-visual" data-carousel>
+              <button class="case-visual-open" type="button" aria-label="Open case study image in lightbox">
+                <img
+                  class="case-visual-image"
+                  src="assets/images/mailmoi/turn-links-into-email.png"
+                  alt="MailMoi visual showing the main compose flow"
+                  loading="lazy"
+                />
+              </button>
+              <figcaption>
+                <p class="case-visual-fig">Fig. 1</p>
+                <p class="case-visual-caption">MailMoi main app flow for turning a shared link into a polished email draft.</p>
+                <div class="case-visual-controls" aria-label="Image carousel controls">
+                  <button class="case-visual-nav prev" type="button" aria-label="Previous slide">
+                    <img src="assets/icons/arrow-prev.svg?v=20260220-003" alt="" />
+                  </button>
+                  <button class="case-visual-nav next" type="button" aria-label="Next slide">
+                    <img src="assets/icons/arrow-next.svg?v=20260220-003" alt="" />
+                  </button>
+                </div>
+              </figcaption>
+              <script class="case-visual-data" type="application/json">
+                [
+                  {
+                    "src": "assets/images/mailmoi/turn-links-into-email.png",
+                    "fig": "Fig. 1",
+                    "caption": "MailMoi main app flow for turning a shared link into a polished email draft.",
+                    "alt": "MailMoi case study visual one"
+                  },
+                  {
+                    "src": "assets/images/mailmoi/offline-queue.png",
+                    "fig": "Fig. 2",
+                    "caption": "Queue-first delivery keeps outbound mail safe when immediate network delivery fails.",
+                    "alt": "MailMoi case study visual two"
+                  },
+                  {
+                    "src": "assets/images/mailmoi/arrives-as-a-rich-email.png",
+                    "fig": "Fig. 3",
+                    "caption": "Final emails arrive as richer, more readable artifacts with structure and preview content.",
+                    "alt": "MailMoi case study visual three"
+                  }
+                ]
+              </script>
+            </figure>
+          </div>
+        </section>
       </main>
     </div>
     <div class="lightbox" hidden aria-hidden="true">
@@ -515,6 +635,6 @@
       </div>
       <p class="lightbox-caption"></p>
     </div>
-    <script src="assets/js/main.js?v=20260303-017"></script>
+    <script src="assets/js/main.js?v=20260303-018"></script>
   </body>
 </html>

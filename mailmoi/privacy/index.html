@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#ebe9e3" />
     <title>MailMoi Privacy Policy</title>
-    <meta
-      name="description"
-      content="Privacy Policy for MailMoi by John Niedermeyer."
-    />
+    <meta name="description" content="Privacy Policy for MailMoi by John Niedermeyer." />
     <link rel="canonical" href="https://nieder.me/mailmoi/privacy" />
     <style>
       @font-face {
@@ -36,11 +33,15 @@
       }
 
       :root {
-        --bg: #000000;
-        --fg: #ffffff;
-        --muted: #c9c9d1;
-        --line: #2e2e2e;
-        --accent: #ff453a;
+        --bg: #ebe9e3;
+        --ink: #090909;
+        --muted: #5d606a;
+        --line: rgba(12, 14, 22, 0.1);
+        --line-strong: rgba(12, 14, 22, 0.16);
+        --card: rgba(255, 255, 255, 0.84);
+        --accent: #1f6dff;
+        --accent-soft: rgba(31, 109, 255, 0.1);
+        --shadow: 0 18px 45px rgba(34, 39, 63, 0.12);
       }
 
       * {
@@ -51,11 +52,14 @@
       body {
         margin: 0;
         min-height: 100%;
-        background: var(--bg);
+        background:
+          radial-gradient(circle at 16% 14%, rgba(255, 255, 255, 0.9), transparent 24%),
+          radial-gradient(circle at 58% 18%, rgba(255, 255, 255, 0.65), transparent 16%),
+          linear-gradient(180deg, #f0eee9 0%, #ebe9e3 100%);
       }
 
       body {
-        color: var(--fg);
+        color: var(--ink);
         font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
           "Arial Nova", "Arial", sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -66,46 +70,127 @@
         color: var(--accent);
       }
 
-      .page {
-        width: min(840px, calc(100vw - 48px));
-        margin: 0 auto;
-        padding: 40px 0 80px;
+      img {
+        display: block;
+        max-width: 100%;
       }
 
-      .rule {
-        height: 1px;
-        background: var(--line);
-        margin: 0 0 24px;
+      .page {
+        width: min(940px, calc(100vw - 40px));
+        margin: 0 auto;
+        padding: 24px 0 72px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        margin-top: 8px;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+
+      .hero,
+      .doc-shell {
+        border: 1px solid rgba(255, 255, 255, 0.76);
+        border-radius: 30px;
+        background: var(--card);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 18px;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 18px;
+      }
+
+      .hero-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        height: 72px;
+        padding: 8px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 14px 28px rgba(34, 39, 63, 0.1);
+      }
+
+      .hero-icon img {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+      }
+
+      .eyebrow {
+        margin: 0 0 6px;
+        color: var(--accent);
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
       h1 {
-        margin: 0 0 12px;
-        font-size: clamp(40px, 8vw, 72px);
+        margin: 0 0 8px;
+        font-size: clamp(38px, 8vw, 72px);
         line-height: 0.92;
         font-weight: 700;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.04em;
       }
 
       .subhead {
-        margin: 0 0 36px;
+        margin: 0;
         color: var(--muted);
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.4;
       }
 
+      .doc-shell {
+        padding: 22px;
+      }
+
+      .lede {
+        margin: 0 0 18px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.62);
+      }
+
       h2 {
-        margin: 40px 0 12px;
+        margin: 28px 0 12px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
         font-size: 24px;
-        line-height: 1.15;
+        line-height: 1.1;
         font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
       }
 
       p,
       li {
         margin: 0 0 14px;
         color: var(--muted);
-        font-size: 18px;
-        line-height: 1.45;
+        font-size: 17px;
+        line-height: 1.5;
         font-weight: 300;
       }
 
@@ -115,129 +200,181 @@
       }
 
       strong {
-        color: var(--fg);
+        color: var(--ink);
         font-weight: 700;
       }
 
       .footer {
-        margin-top: 48px;
-        padding-top: 24px;
+        margin-top: 28px;
+        padding-top: 18px;
         border-top: 1px solid var(--line);
+      }
+
+      .footer-meta {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .footer-meta p {
+        margin: 0;
+      }
+
+      .footer-meta a {
+        color: inherit;
+        text-decoration: none;
       }
 
       @media (max-width: 700px) {
         .page {
-          width: min(840px, calc(100vw - 32px));
-          padding-top: 28px;
+          width: min(940px, calc(100vw - 24px));
+          padding-top: 18px;
           padding-bottom: 56px;
         }
 
-        .subhead,
+        .hero,
+        .doc-shell {
+          border-radius: 24px;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding: 16px;
+        }
+
+        .hero-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 18px;
+        }
+
+        .doc-shell {
+          padding: 16px;
+        }
+
+        .lede,
         p,
-        li {
-          font-size: 16px;
+        li,
+        .subhead {
+          font-size: 15px;
         }
 
         h2 {
-          font-size: 22px;
+          font-size: 21px;
         }
       }
     </style>
   </head>
   <body>
     <main class="page">
-      <div class="rule"></div>
-      <h1>MailMoi Privacy Policy</h1>
-      <p class="subhead">
-        Effective date: March 1, 2026
-      </p>
+      <section class="hero" aria-labelledby="privacy-title">
+        <div class="hero-icon">
+          <img src="../../assets/images/mailmoi/app-icon.png" alt="MailMoi app icon" width="1024" height="1024" />
+        </div>
+        <div>
+          <p class="eyebrow">MailMoi legal</p>
+          <h1 id="privacy-title">Privacy Policy</h1>
+          <p class="subhead">Effective date: March 1, 2026</p>
+        </div>
+      </section>
 
-      <p>
-        This Privacy Policy explains how <strong>MailMoi</strong> handles information when you use the app.
-      </p>
+      <section class="doc-shell">
+        <p class="lede">
+          This Privacy Policy explains how <strong>MailMoi</strong> handles information when you use the app.
+        </p>
 
-      <h2>Information MailMoi Handles</h2>
-      <p>
-        MailMoi is designed to keep your data on your device whenever possible.
-      </p>
-      <ul>
-        <li>
-          <strong>Gmail account information:</strong> When you sign in with Google, MailMoi receives your Gmail email address and the OAuth tokens needed to keep you signed in and send email through your Gmail account.
-        </li>
-        <li>
-          <strong>Content you provide:</strong> MailMoi handles the recipient, title, excerpt, and URL you enter in the app or share into the app through the Share Extension.
-        </li>
-        <li>
-          <strong>Queued email data:</strong> If an email cannot be sent immediately, MailMoi stores the queued email locally on your device until it can retry.
-        </li>
-        <li>
-          <strong>Saved preferences:</strong> MailMoi stores your default recipient and recent recipients locally so the app and Share Extension can reuse them.
-        </li>
-        <li>
-          <strong>Support communications:</strong> If you contact us directly, we may receive your name, email address, and any information you include in your message.
-        </li>
-      </ul>
+        <h2>Information MailMoi Handles</h2>
+        <p>
+          MailMoi is designed to keep your data on your device whenever possible.
+        </p>
+        <ul>
+          <li>
+            <strong>Gmail account information:</strong> When you sign in with Google, MailMoi receives your Gmail email address and the OAuth tokens needed to keep you signed in and send email through your Gmail account.
+          </li>
+          <li>
+            <strong>Content you provide:</strong> MailMoi handles the recipient, title, excerpt, and URL you enter in the app or share into the app through the Share Extension.
+          </li>
+          <li>
+            <strong>Queued email data:</strong> If an email cannot be sent immediately, MailMoi stores the queued email locally on your device until it can retry.
+          </li>
+          <li>
+            <strong>Saved preferences:</strong> MailMoi stores your default recipient and recent recipients locally so the app and Share Extension can reuse them.
+          </li>
+          <li>
+            <strong>Support communications:</strong> If you contact us directly, we may receive your name, email address, and any information you include in your message.
+          </li>
+        </ul>
 
-      <h2>How Information Is Used</h2>
-      <p>
-        Any information handled by MailMoi is used only to:
-      </p>
-      <ul>
-        <li>sign you in with Google,</li>
-        <li>send email through the Gmail API on your behalf,</li>
-        <li>save and retry queued emails,</li>
-        <li>remember your default and recent recipients,</li>
-        <li>fetch page metadata or preview images for links you choose to share,</li>
-        <li>respond to support requests,</li>
-        <li>diagnose app issues when you report them, and</li>
-        <li>meet legal obligations if required.</li>
-      </ul>
+        <h2>How Information Is Used</h2>
+        <p>
+          Any information handled by MailMoi is used only to:
+        </p>
+        <ul>
+          <li>sign you in with Google,</li>
+          <li>send email through the Gmail API on your behalf,</li>
+          <li>save and retry queued emails,</li>
+          <li>remember your default and recent recipients,</li>
+          <li>fetch page metadata or preview images for links you choose to share,</li>
+          <li>respond to support requests,</li>
+          <li>diagnose app issues when you report them, and</li>
+          <li>meet legal obligations if required.</li>
+        </ul>
 
-      <h2>Where Data Is Stored</h2>
-      <p>
-        MailMoi stores app data locally on your device. Depending on the feature, this may include the system keychain, app storage, and shared app-group storage used by the MailMoi Share Extension.
-      </p>
-      <p>
-        MailMoi does not run its own backend service for account storage, syncing, analytics, or email delivery.
-      </p>
+        <h2>Where Data Is Stored</h2>
+        <p>
+          MailMoi stores app data locally on your device. Depending on the feature, this may include the system keychain, app storage, and shared app-group storage used by the MailMoi Share Extension.
+        </p>
+        <p>
+          MailMoi does not run its own backend service for account storage, syncing, analytics, or email delivery.
+        </p>
 
-      <h2>What Is Sent Off Your Device</h2>
-      <p>
-        When MailMoi makes network requests, they are sent directly from your device to the services required for the feature you are using.
-      </p>
-      <ul>
-        <li><strong>Google:</strong> Used for authentication and Gmail delivery.</li>
-        <li><strong>Websites you share:</strong> If you share a link, MailMoi may request that page and its preview image to improve the email content.</li>
-        <li><strong>Apple platform services:</strong> MailMoi may use Apple system frameworks to run the app and, where available on your device, generate an on-device summary of shared article content.</li>
-      </ul>
+        <h2>What Is Sent Off Your Device</h2>
+        <p>
+          When MailMoi makes network requests, they are sent directly from your device to the services required for the feature you are using.
+        </p>
+        <ul>
+          <li><strong>Google:</strong> Used for authentication and Gmail delivery.</li>
+          <li><strong>Websites you share:</strong> If you share a link, MailMoi may request that page and its preview image to improve the email content.</li>
+          <li><strong>Apple platform services:</strong> MailMoi may use Apple system frameworks to run the app and, where available on your device, generate an on-device summary of shared article content.</li>
+        </ul>
 
-      <p>
-        MailMoi does not sell your personal information and does not use your data for advertising or user profiling.
-      </p>
+        <p>
+          MailMoi does not sell your personal information and does not use your data for advertising or user profiling.
+        </p>
 
-      <h2>Your Choices</h2>
-      <p>
-        You may stop using the app at any time. You can also sign out of Gmail inside the app, delete queued emails before they are sent, and change or clear your saved default recipient at any time. If you want to request deletion of support communications, contact us using the email address below.
-      </p>
+        <h2>Your Choices</h2>
+        <p>
+          You may stop using the app at any time. You can also sign out of Gmail inside the app, delete queued emails before they are sent, and change or clear your saved default recipient at any time. If you want to request deletion of support communications, contact us using the email address below.
+        </p>
 
-      <h2>Children’s Privacy</h2>
-      <p>
-        MailMoi is not intended for children under 13, and we do not knowingly collect personal information from children under 13.
-      </p>
+        <h2>Children’s Privacy</h2>
+        <p>
+          MailMoi is not intended for children under 13, and we do not knowingly collect personal information from children under 13.
+        </p>
 
-      <h2>Changes to This Policy</h2>
-      <p>
-        This policy may be updated from time to time. When it changes, the effective date at the top of this page will be updated.
-      </p>
+        <h2>Changes to This Policy</h2>
+        <p>
+          This policy may be updated from time to time. When it changes, the effective date at the top of this page will be updated.
+        </p>
 
-      <h2>Contact</h2>
-      <p>
-        For privacy questions, contact <a href="mailto:john@nieder.me">john@nieder.me</a>.
-      </p>
+        <h2>Contact</h2>
+        <p>
+          For privacy questions, contact <a href="mailto:&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;">&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;</a>.
+        </p>
 
-      <p class="footer">
-        <a href="https://nieder.me/">Back to nieder.me</a>
-      </p>
+        <div class="footer">
+          <div class="footer-meta">
+            <p>Need help? Email <a href="mailto:&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;">&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;</a>.</p>
+            <p>&copy; John Niedermeyer</p>
+          </div>
+          <div class="footer-links">
+            <a href="https://nieder.me/">Back to nieder.me</a>
+            <a href="/mailmoi/">Back to MailMoi</a>
+            <a href="/mailmoi/terms/">Terms of Service</a>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
