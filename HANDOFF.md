@@ -4,6 +4,7 @@
 - `main`
 
 ## Last Pushed
+- `a5f7106` `Tighten mobile topper responsiveness`
 - `4f0247e` `Polish mobile Figma layout and nav`
 - `30e9b83` `Refresh OG image and bump asset versions`
 - `89f4711` `Add configurable site URL metadata switch`
@@ -26,6 +27,10 @@
   - centered the mobile logo against the responsive content column instead of the raw viewport
   - removed the stale `#resy-case` mobile ordering override so the shared mobile stack controls ordering consistently
   - relaxed horizontal scroller touch handling from `pan-x` to default touch behavior to reduce non-responsive vertical scroll lock
+- Tightened the very top mobile spacing again:
+  - reduced the overall top inset at the mobile breakpoint
+  - reduced the gap between the logo and the heading block
+  - slightly pulled the first heading line upward
 - Repeatedly bumped CSS/JS cache-busting query params in `index.html` so Safari picks up mobile CSS/JS changes reliably.
 
 ## Open Items
