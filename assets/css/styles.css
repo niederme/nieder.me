@@ -1088,14 +1088,6 @@ body.grid-hidden .grid-overlay > span {
     width: calc(100vw - 32px);
   }
 
-  #resy-case .case-copy {
-    order: 1;
-  }
-
-  #resy-case .case-visual {
-    order: 2;
-  }
-
   .topper {
     margin-top: 28px;
     padding-bottom: 12px;
@@ -1235,7 +1227,8 @@ body.grid-hidden .grid-overlay > span {
     position: relative;
     width: 55px;
     height: 55px;
-    margin: 0 0 53px 0;
+    margin: 0 0 53px;
+    margin-left: calc((100% - var(--mobile-content-width)) / 2);
     transform: rotate(-72.79deg);
     transform-origin: 50% 50%;
     will-change: transform;
@@ -1558,7 +1551,7 @@ body.grid-hidden .grid-overlay > span {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
-    touch-action: pan-x;
+    touch-action: auto;
     scrollbar-width: none;
   }
 
@@ -1751,7 +1744,7 @@ body.grid-hidden .grid-overlay > span {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
-    touch-action: pan-x;
+    touch-action: auto;
     scrollbar-width: none;
   }
 

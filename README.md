@@ -40,4 +40,5 @@ That binds to localhost only.
 
 - The homepage includes a mobile-specific case-study nav that appears after the topper and tracks the active section.
 - The mobile topper and case-study stack now use responsive width rules between narrower and wider phone viewports instead of a fixed 375px-only layout.
+- The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - CSS and JS assets use cache-busting query params in `index.html`; if Safari looks stale after changes, do a hard refresh.
