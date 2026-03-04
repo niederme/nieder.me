@@ -48,6 +48,7 @@ That binds to localhost only.
 - App Store badges on `/mailmoi/` are intentionally disabled and overlaid with hand-drawn `Coming soon` SVG assets.
 - When launch links are ready, remove the `store-actions--coming-soon` treatment in `mailmoi/index.html` and replace `href="#"` on badge links with the real App Store URLs.
 - MailMoi feature art lives in `assets/images/mailmoi/features/` with paired `*-Light.png` / `*-Dark.png` variants.
+- The hero video on `/mailmoi/` respects `prefers-reduced-motion`, supports click/keyboard play-pause toggling, and dims while paused.
 
 ## Current mobile behavior
 

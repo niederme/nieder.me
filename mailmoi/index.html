@@ -415,6 +415,17 @@
         object-position: center top;
         border-radius: inherit;
         background: #000;
+        cursor: pointer;
+        transition: filter 0.24s ease;
+      }
+
+      .video-player.is-paused {
+        filter: brightness(0.66) saturate(0.88);
+      }
+
+      .video-player:focus-visible {
+        outline: 2px solid rgba(61, 108, 255, 0.9);
+        outline-offset: 3px;
       }
 
       .value-strip {
@@ -1031,11 +1042,11 @@
                   <video
                     class="video-player"
                     src="../assets/videos/mailmoi/mailmoi-demo-hero.mp4"
-                    autoplay
                     muted
                     playsinline
                     preload="auto"
-                    aria-label="MailMoi product demo video"
+                    aria-label="MailMoi product demo video. Tap to play or pause."
+                    tabindex="0"
                     data-demo-video
                   >
                     Your browser does not support embedded video.
@@ -1217,8 +1228,10 @@
         const label = document.querySelector("[data-theme-label]");
         const themeColorMeta = document.querySelector('meta[name="theme-color"]');
         const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         const demoVideo = document.querySelector("[data-demo-video]");
         let demoRestartTimer = null;
+        let reducedMotion = motionQuery.matches;
 
         function systemTheme() {
           return darkQuery.matches ? "dark" : "light";
@@ -1286,23 +1299,81 @@
         });
 
         if (demoVideo) {
-          const restartDemo = () => {
+          const clearDemoRestart = () => {
             window.clearTimeout(demoRestartTimer);
+          };
+
+          const syncPausedState = () => {
+            demoVideo.classList.toggle("is-paused", demoVideo.paused);
+          };
+
+          const playDemo = () => {
+            const playback = demoVideo.play();
+
+            if (playback && typeof playback.catch === "function") {
+              playback.catch(() => {});
+            }
+          };
+
+          const restartDemo = () => {
+            if (reducedMotion || demoVideo.paused) {
+              return;
+            }
+
+            clearDemoRestart();
             demoRestartTimer = window.setTimeout(() => {
               demoVideo.currentTime = 0;
-              const playback = demoVideo.play();
-
-              if (playback && typeof playback.catch === "function") {
-                playback.catch(() => {});
-              }
+              playDemo();
             }, 5000);
           };
 
+          const toggleDemoPlayback = () => {
+            if (demoVideo.paused) {
+              playDemo();
+              return;
+            }
+
+            clearDemoRestart();
+            demoVideo.pause();
+          };
+
           demoVideo.addEventListener("play", () => {
-            window.clearTimeout(demoRestartTimer);
+            clearDemoRestart();
+            syncPausedState();
+          });
+
+          demoVideo.addEventListener("pause", syncPausedState);
+
+          demoVideo.addEventListener("click", toggleDemoPlayback);
+          demoVideo.addEventListener("keydown", (event) => {
+            if (event.key !== " " && event.key !== "Enter") {
+              return;
+            }
+
+            event.preventDefault();
+            toggleDemoPlayback();
           });
 
           demoVideo.addEventListener("ended", restartDemo);
+
+          if (!reducedMotion) {
+            playDemo();
+          }
+
+          syncPausedState();
+
+          motionQuery.addEventListener("change", (event) => {
+            reducedMotion = event.matches;
+
+            if (reducedMotion) {
+              clearDemoRestart();
+              return;
+            }
+
+            if (demoVideo.paused && demoVideo.currentTime === 0) {
+              playDemo();
+            }
+          });
         }
       })();
     </script>
