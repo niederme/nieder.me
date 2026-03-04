@@ -4,6 +4,7 @@
 - `main`
 
 ## Last Pushed
+- `4f0247e` `Polish mobile Figma layout and nav`
 - `30e9b83` `Refresh OG image and bump asset versions`
 - `89f4711` `Add configurable site URL metadata switch`
 
@@ -21,6 +22,10 @@
   - restored full-height page-control spacing
   - responsive content widths between narrower and wider phone viewports
   - larger intentional gap between the social row and the `Resy` header
+- Applied follow-up responsive cleanup after device testing:
+  - centered the mobile logo against the responsive content column instead of the raw viewport
+  - removed the stale `#resy-case` mobile ordering override so the shared mobile stack controls ordering consistently
+  - relaxed horizontal scroller touch handling from `pan-x` to default touch behavior to reduce non-responsive vertical scroll lock
 - Repeatedly bumped CSS/JS cache-busting query params in `index.html` so Safari picks up mobile CSS/JS changes reliably.
 
 ## Open Items
