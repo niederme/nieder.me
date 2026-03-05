@@ -14,6 +14,7 @@
 - MailMoi standalone marketing page polish under `/mailmoi/`
 - Mobile rhythm and annotation placement tuning for the hero badge area
 - Temporary launch-state App Store treatment (`Coming soon`) until live links are available
+- Local development workflow improvements (live reload + dynamic `.local` host detection)
 
 ## What Changed
 - Built and iterated a standalone `/mailmoi/` marketing page with:
@@ -42,6 +43,10 @@
   - `mailmoi/privacy/index.html`
   - `mailmoi/terms/index.html`
   - homepage MailMoi case-study section in `index.html`
+- Added BrowserSync live-reload local dev target:
+  - `make dev-live` for auto-refresh on HTML/CSS/JS edits
+  - explicit Node runtime guard/help text for older Node 14 setups (`node:path` support)
+- Updated local URL host detection in Make targets to derive `<this-mac>.local` from macOS `LocalHostName` automatically across machines.
 
 ## Open Items
 - Replace temporary App Store `href="#"` targets with real iOS/macOS App Store URLs at launch time.
@@ -52,6 +57,8 @@
 ## Local Run
 - Network + localhost:
   - `make`
+- Network + localhost with live reload:
+  - `make dev-live`
 - Localhost-only:
   - `make dev-local`
 
