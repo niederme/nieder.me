@@ -10,6 +10,8 @@
       content="MailMoi makes it easy to send links to yourself without losing them in tabs, bookmarks, or chats."
     />
     <link rel="canonical" href="https://nieder.me/mailmoi/" />
+    <link rel="icon" type="image/png" href="../assets/images/mailmoi/app-icon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/mailmoi/app-icon.png" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
@@ -400,6 +402,71 @@
         display: none;
       }
 
+      .video-frame::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(31, 109, 255, 0.14) 8%,
+          rgba(45, 114, 255, 0.13) 34%,
+          rgba(70, 101, 255, 0.12) 62%,
+          rgba(107, 89, 255, 0.13) 78%,
+          rgba(166, 72, 255, 0.14) 90%,
+          rgba(255, 88, 198, 0.15) 100%
+        );
+        transition: opacity 0.24s ease;
+      }
+
+      .video-frame.is-paused::after {
+        opacity: 1;
+      }
+
+      .video-playhead {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+        width: clamp(56px, 12vw, 72px);
+        aspect-ratio: 1;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        pointer-events: none;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.92);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+        border: 1px solid rgba(214, 230, 255, 0.42);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.08)),
+          linear-gradient(135deg, rgba(31, 109, 255, 0.2), rgba(166, 72, 255, 0.22));
+        backdrop-filter: blur(10px) saturate(128%);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.36),
+          0 10px 26px rgba(7, 10, 20, 0.32);
+      }
+
+      .video-playhead::before {
+        content: "";
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 16px solid rgba(246, 251, 255, 0.95);
+        filter: drop-shadow(0 2px 6px rgba(3, 10, 26, 0.34));
+      }
+
+      .video-frame.is-paused .video-playhead {
+        opacity: 0.92;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
       .video-inner {
         position: relative;
         inset: auto;
@@ -420,7 +487,7 @@
       }
 
       .video-player.is-paused {
-        filter: brightness(0.66) saturate(0.88);
+        filter: brightness(0.62) saturate(0.86);
       }
 
       .video-player:focus-visible {
@@ -854,6 +921,7 @@
 
         .hero-download .store-actions--coming-soon {
           margin-inline: auto;
+          margin-bottom: 40px;
         }
 
         .coming-soon-mark {
@@ -863,8 +931,8 @@
         }
 
         .coming-soon-text {
-          right: -10px;
-          bottom: -56px;
+          right: -6px;
+          bottom: -68px;
           width: clamp(172px, 42%, 236px);
         }
 
@@ -901,7 +969,8 @@
         }
 
         h1 {
-          max-width: 6.9ch;
+          max-width: none;
+          width: 100%;
           font-size: clamp(42px, 13vw, 70px);
         }
 
@@ -913,6 +982,20 @@
 
         .hero-download {
           margin-top: 22px;
+        }
+
+        .hero-download .store-actions--coming-soon {
+          margin-bottom: 52px;
+        }
+
+        .hero-download .coming-soon-text {
+          right: 0;
+          bottom: -68px;
+          width: clamp(186px, 48%, 252px);
+        }
+
+        .video-stage {
+          margin-top: 36px;
         }
 
         .video-stage,
@@ -1052,6 +1135,7 @@
                     Your browser does not support embedded video.
                   </video>
                 </div>
+                <span class="video-playhead" aria-hidden="true"></span>
               </div>
             </div>
           </div>
@@ -1299,12 +1383,16 @@
         });
 
         if (demoVideo) {
+          const demoFrame = demoVideo.closest(".video-frame");
           const clearDemoRestart = () => {
             window.clearTimeout(demoRestartTimer);
           };
 
           const syncPausedState = () => {
             demoVideo.classList.toggle("is-paused", demoVideo.paused);
+            if (demoFrame) {
+              demoFrame.classList.toggle("is-paused", demoVideo.paused);
+            }
           };
 
           const playDemo = () => {
