@@ -138,4 +138,4 @@ dev-live:
 	echo "Live reload on this Mac: http://$$LOCAL_URL_HOST:$$PORT_TO_USE"; \
 	echo "Live reload on your network: http://$$LAN_IP:$$PORT_TO_USE"; \
 	echo "(Ctrl+C to stop)"; \
-	npx browser-sync start --server . --files 'index.html,mailmoi/**/*.html,assets/css/**/*.css,assets/js/**/*.js' --host $(BIND) --port $$PORT_TO_USE
+	npx browser-sync start --server . --files 'index.html,sendmoi/**/*.html,assets/css/**/*.css,assets/js/**/*.js' --host $(BIND) --port $$PORT_TO_USE
