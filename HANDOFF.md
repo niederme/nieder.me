@@ -1,7 +1,7 @@
 # Handoff
 
 ## Branch
-- `main`
+- `codex/preview-port-7777`
 
 ## Last Pushed
 - `fa259d6` `Polish SendMoi marketing page and launch-state badges`
@@ -11,13 +11,13 @@
 - `89f4711` `Add configurable site URL metadata switch`
 
 ## Current Focus
-- SendMoi standalone marketing page polish under `/sendmoi/`
-- Mobile rhythm and annotation placement tuning for the hero badge area
-- Temporary launch-state App Store treatment (`Coming soon`) until live links are available
-- Local development workflow improvements (live reload + dynamic `.local` host detection)
-- Homepage typography polish for multi-line headings and body copy wrapping
+- Local development workflow improvements
+- Default preview port change from `8000` to `7777`
+- Keep docs aligned with the updated preview defaults
 
 ## What Changed
+- Changed the default Make target port from `8000` to `7777` for `make`, `make dev`, `make dev-local`, and `make dev-live`.
+- Updated `README.md` examples and descriptions so the documented preview URLs and fallback-port behavior match the new `7777` default.
 - Built and iterated a standalone `/sendmoi/` marketing page with:
   - responsive two-column hero (copy + device video)
   - system-driven light/dark mode with manual toggle persistence
@@ -54,6 +54,7 @@
   - `text-wrap: pretty` for paragraphs and list items
 
 ## Open Items
+- Run `make` or `make dev-live` once if you want to confirm the updated default port locally.
 - Replace temporary App Store `href="#"` targets with real iOS/macOS App Store URLs at launch time.
 - Remove the temporary `store-actions--coming-soon` overlays once the app is live.
 - Run final visual QA on `/sendmoi/` in iPhone Safari (annotation placement and badge readability) after cache-clear/hard refresh.
@@ -69,7 +70,7 @@
 
 ## Resume Checklist
 1. `git fetch --all`
-2. `git checkout main`
+2. `git checkout codex/preview-port-7777`
 3. `git pull --ff-only`
 4. `make`
-5. Validate `/sendmoi/` in desktop and iPhone Safari, then wire live App Store links when available
+5. Confirm the local preview starts on port `7777` unless that port is already occupied

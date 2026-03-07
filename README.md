@@ -9,12 +9,12 @@ make
 ```
 
 That starts a static server on all interfaces (`0.0.0.0`), prints:
-- `http://<this-mac>.local:8000` for this Mac (derived from macOS `LocalHostName`, for example `http://niederstudio.local:8000`)
-- a LAN URL like `http://192.168.x.x:8000` for other devices on the same network (for example, Niederstudio)
+- `http://<this-mac>.local:7777` for this Mac (derived from macOS `LocalHostName`, for example `http://niederstudio.local:7777`)
+- a LAN URL like `http://192.168.x.x:7777` for other devices on the same network (for example, Niederstudio)
 
 It also opens the `.local` URL on this Mac.
 
-If port `8000` is already in use, `make dev` automatically picks the next available port and prints the exact URLs.
+If port `7777` is already in use, `make dev` automatically picks the next available port and prints the exact URLs.
 
 Use a different port if needed:
 
