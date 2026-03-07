@@ -1,6 +1,6 @@
 .PHONY: dev dev-lan dev-local dev-live site-url site-url-stage site-url-prod
 
-PORT ?= 8000
+PORT ?= 7777
 BIND ?= 0.0.0.0
 LOCAL_HOST ?= localhost
 PORT_AUTO ?= 1
