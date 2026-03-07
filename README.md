@@ -50,20 +50,12 @@ That binds to localhost only.
 
 `make dev-local` also auto-selects the next available port when the requested one is already in use.
 
-## SendMoi pages
+## SendMoi case study
 
-- `/sendmoi/` is the standalone SendMoi marketing page (system light/dark, hero product video, feature grid, and temporary `Coming soon` App Store treatment).
-- `/sendmoi/privacy/` is the SendMoi privacy policy page.
-- `/sendmoi/terms/` is the SendMoi terms page.
-- `/sendmoi/accessibility/` is the SendMoi accessibility statement page.
-- The homepage `index.html` also includes a SendMoi case-study section after the `Resy.com Consumer Website` block.
-
-## SendMoi launch-state notes
-
-- App Store badges on `/sendmoi/` are intentionally disabled and overlaid with hand-drawn `Coming soon` SVG assets.
-- When launch links are ready, remove the `store-actions--coming-soon` treatment in `sendmoi/index.html` and replace `href="#"` on badge links with the real App Store URLs.
-- SendMoi feature art lives in `assets/images/sendmoi/features/` with paired `*-Light.png` / `*-Dark.png` variants.
-- The hero video on `/sendmoi/` respects `prefers-reduced-motion`, supports click/keyboard play-pause toggling, and dims while paused.
+- The homepage `index.html` includes a SendMoi case-study section after the `Resy.com Consumer Website` block.
+- SendMoi imagery for that section lives under `assets/images/sendmoi/`.
+- `assets/images/sendmoi/app-icon.png` is used for the desktop rail icon and mobile case-study nav entry.
+- This repo no longer serves standalone `/sendmoi/*` marketing or policy pages.
 
 ## Current mobile behavior
 
