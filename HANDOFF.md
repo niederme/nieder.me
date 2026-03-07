@@ -15,6 +15,7 @@
 - Mobile rhythm and annotation placement tuning for the hero badge area
 - Temporary launch-state App Store treatment (`Coming soon`) until live links are available
 - Local development workflow improvements (live reload + dynamic `.local` host detection)
+- Homepage typography polish for multi-line headings and body copy wrapping
 
 ## What Changed
 - Built and iterated a standalone `/sendmoi/` marketing page with:
@@ -48,6 +49,9 @@
   - `make dev-live` for auto-refresh on HTML/CSS/JS edits
   - explicit Node runtime guard/help text for older Node 14 setups (`node:path` support)
 - Updated local URL host detection in Make targets to derive `<this-mac>.local` from macOS `LocalHostName` automatically across machines.
+- Added shared text wrapping rules in `assets/css/styles.css`:
+  - `text-wrap: balance` for headings (`h1`-`h6`)
+  - `text-wrap: pretty` for paragraphs and list items
 
 ## Open Items
 - Replace temporary App Store `href="#"` targets with real iOS/macOS App Store URLs at launch time.
