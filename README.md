@@ -9,7 +9,7 @@ make
 ```
 
 That starts a static server on all interfaces (`0.0.0.0`), prints:
-- `http://<this-mac>.local:7777` for this Mac (derived from macOS `LocalHostName`, for example `http://niederstudio.local:7777`)
+- `http://<this-mac>.local:7777` for this Mac (derived from macOS `LocalHostName` with fallbacks to `HostName`, shell hostname, and sanitized `ComputerName` when needed; for example `http://niederstudio.local:7777`)
 - a LAN URL like `http://192.168.x.x:7777` for other devices on the same network (for example, Niederstudio)
 
 It also opens the `.local` URL on this Mac.
@@ -32,7 +32,7 @@ For auto-refresh in the browser on file save, run:
 make dev-live
 ```
 
-This uses BrowserSync to serve the repo and reload when HTML/CSS/JS files change.
+This uses BrowserSync to serve the repo and reload when HTML/CSS/JS files change. It opens the same resolved `<this-mac>.local` URL as `make dev` instead of BrowserSync's default `localhost`.
 
 Requirements:
 - Node.js with `npx` available (recommended: Node 20 via `nvm use 20`)

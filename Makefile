@@ -46,6 +46,23 @@ dev:
 	if [ "$$LOCAL_URL_HOST" = "localhost" ]; then \
 		MAC_LOCAL_NAME="$$(scutil --get LocalHostName 2>/dev/null || true)"; \
 		if [ -n "$$MAC_LOCAL_NAME" ]; then LOCAL_URL_HOST="$$MAC_LOCAL_NAME.local"; fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			MAC_HOST_NAME="$$(scutil --get HostName 2>/dev/null || true)"; \
+			if [ -n "$$MAC_HOST_NAME" ]; then LOCAL_URL_HOST="$$MAC_HOST_NAME"; fi; \
+		fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			SHELL_HOST_NAME="$$(hostname -s 2>/dev/null || hostname 2>/dev/null || true)"; \
+			if [ -n "$$SHELL_HOST_NAME" ]; then LOCAL_URL_HOST="$$SHELL_HOST_NAME"; fi; \
+		fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			MAC_COMPUTER_NAME="$$(scutil --get ComputerName 2>/dev/null || true)"; \
+			if [ -n "$$MAC_COMPUTER_NAME" ]; then LOCAL_URL_HOST="$$(echo "$$MAC_COMPUTER_NAME" | tr ' ' '-')"; fi; \
+		fi; \
+		case "$$LOCAL_URL_HOST" in \
+			""|localhost) LOCAL_URL_HOST="localhost" ;; \
+			*.*) ;; \
+			*) LOCAL_URL_HOST="$$LOCAL_URL_HOST.local" ;; \
+		esac; \
 	fi; \
 	DEFAULT_IFACE="$$(route -n get default 2>/dev/null | awk '/interface:/{print $$2; exit}')"; \
 	LAN_IP="$$( [ -n "$$DEFAULT_IFACE" ] && ipconfig getifaddr "$$DEFAULT_IFACE" 2>/dev/null || true )"; \
@@ -85,6 +102,23 @@ dev-local:
 	if [ "$$LOCAL_URL_HOST" = "localhost" ]; then \
 		MAC_LOCAL_NAME="$$(scutil --get LocalHostName 2>/dev/null || true)"; \
 		if [ -n "$$MAC_LOCAL_NAME" ]; then LOCAL_URL_HOST="$$MAC_LOCAL_NAME.local"; fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			MAC_HOST_NAME="$$(scutil --get HostName 2>/dev/null || true)"; \
+			if [ -n "$$MAC_HOST_NAME" ]; then LOCAL_URL_HOST="$$MAC_HOST_NAME"; fi; \
+		fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			SHELL_HOST_NAME="$$(hostname -s 2>/dev/null || hostname 2>/dev/null || true)"; \
+			if [ -n "$$SHELL_HOST_NAME" ]; then LOCAL_URL_HOST="$$SHELL_HOST_NAME"; fi; \
+		fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			MAC_COMPUTER_NAME="$$(scutil --get ComputerName 2>/dev/null || true)"; \
+			if [ -n "$$MAC_COMPUTER_NAME" ]; then LOCAL_URL_HOST="$$(echo "$$MAC_COMPUTER_NAME" | tr ' ' '-')"; fi; \
+		fi; \
+		case "$$LOCAL_URL_HOST" in \
+			""|localhost) LOCAL_URL_HOST="localhost" ;; \
+			*.*) ;; \
+			*) LOCAL_URL_HOST="$$LOCAL_URL_HOST.local" ;; \
+		esac; \
 	fi; \
 	echo "Serving local-only: http://$$LOCAL_URL_HOST:$$PORT_TO_USE (Ctrl+C to stop)"; \
 	(sleep 0.8; open "http://$$LOCAL_URL_HOST:$$PORT_TO_USE/") >/dev/null 2>&1 & \
@@ -132,6 +166,23 @@ dev-live:
 	if [ "$$LOCAL_URL_HOST" = "localhost" ]; then \
 		MAC_LOCAL_NAME="$$(scutil --get LocalHostName 2>/dev/null || true)"; \
 		if [ -n "$$MAC_LOCAL_NAME" ]; then LOCAL_URL_HOST="$$MAC_LOCAL_NAME.local"; fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			MAC_HOST_NAME="$$(scutil --get HostName 2>/dev/null || true)"; \
+			if [ -n "$$MAC_HOST_NAME" ]; then LOCAL_URL_HOST="$$MAC_HOST_NAME"; fi; \
+		fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			SHELL_HOST_NAME="$$(hostname -s 2>/dev/null || hostname 2>/dev/null || true)"; \
+			if [ -n "$$SHELL_HOST_NAME" ]; then LOCAL_URL_HOST="$$SHELL_HOST_NAME"; fi; \
+		fi; \
+		if [ "$$LOCAL_URL_HOST" = "localhost" ] || [ -z "$$LOCAL_URL_HOST" ]; then \
+			MAC_COMPUTER_NAME="$$(scutil --get ComputerName 2>/dev/null || true)"; \
+			if [ -n "$$MAC_COMPUTER_NAME" ]; then LOCAL_URL_HOST="$$(echo "$$MAC_COMPUTER_NAME" | tr ' ' '-')"; fi; \
+		fi; \
+		case "$$LOCAL_URL_HOST" in \
+			""|localhost) LOCAL_URL_HOST="localhost" ;; \
+			*.*) ;; \
+			*) LOCAL_URL_HOST="$$LOCAL_URL_HOST.local" ;; \
+		esac; \
 	fi; \
 	DEFAULT_IFACE="$$(route -n get default 2>/dev/null | awk '/interface:/{print $$2; exit}')"; \
 	LAN_IP="$$( [ -n "$$DEFAULT_IFACE" ] && ipconfig getifaddr "$$DEFAULT_IFACE" 2>/dev/null || true )"; \
@@ -140,7 +191,8 @@ dev-live:
 	echo "Live reload on this Mac: http://$$LOCAL_URL_HOST:$$PORT_TO_USE"; \
 	echo "Live reload on your network: http://$$LAN_IP:$$PORT_TO_USE"; \
 	echo "(Ctrl+C to stop)"; \
-	npx browser-sync start --server . --files 'index.html,sendmoi/**/*.html,assets/css/**/*.css,assets/js/**/*.js' --host $(BIND) --port $$PORT_TO_USE
+	(sleep 0.8; open "http://$$LOCAL_URL_HOST:$$PORT_TO_USE/") >/dev/null 2>&1 & \
+	npx browser-sync start --server . --files 'index.html,sendmoi/**/*.html,assets/css/**/*.css,assets/js/**/*.js' --host $(BIND) --port $$PORT_TO_USE --no-open
 
 issue-create:
 	@if [ -z "$(ISSUE_TITLE)" ]; then \
