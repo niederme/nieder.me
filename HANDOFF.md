@@ -1,49 +1,33 @@
 # Handoff
 
 ## Branch
-- `codex/minor-tweaks`
-
-## Base
-- `main` at `408011f` (`Add SendMoi case-study promo, standalone page, and rail nav states (#15)`).
+- `main`
 
 ## Current Focus
-- Ship small post-merge polish updates tracked in issue `#16`.
+- Home/work routing polish and article rail consistency updates.
 
-## What Changed (This Branch)
-- Updated `assets/icons/side-nav/icon-work-resy-off.svg` from latest Desktop asset.
-- Added article back-nav icon assets from Desktop:
-  - `assets/icons/side-nav/icon-back-off.svg`
-  - `assets/icons/side-nav/icon-back-on.svg`
-  - `assets/icons/side-nav/icon-back-hover.svg` (red hover variant)
-- Updated work article rails to match home nav structure while keeping static page state:
-  - Added `Back`, `Work Experience`, `Resy`, `SendMoi` rail items on:
-    - `work/resy-discovery/index.html`
-    - `work/sendmoi/index.html`
-  - Active case-study item is white (`.is-active`) per article page.
-  - Hover state uses red `*-hover.svg` assets.
-  - No scroll-based case-nav switching logic on article pages.
-- Extended `assets/css/work-case-study.css` with `work-case-anchor*` rules to support off/on/hover icon states and SendMoi width exception.
+## What Changed
+- Home `Work Experience` section copy was tightened for the NYT role description.
+- Home overflow link now reads `Full Work Experience & Resume →` and routes to `/work`.
+- Added `/work` placeholder page (`work/index.html`) with the same rail/nav treatment and footer as article pages.
+- Updated article rail behavior:
+  - `Back` icon remains slot one on article pages.
+  - `Work Experience` slot now routes to `/work` (not the home anchor).
+  - Active case-study icon remains static per page; no scroll-driven switching on article pages.
+- Added footer layout and styles on work pages for visual consistency (`assets/css/work-case-study.css` + article/footer markup).
+- Refined shared footer structure/style on home (`assets/css/styles.css` + `index.html` footer markup).
 
 ## Verification
-- `node --check assets/js/main.js` passes.
-- Manual visual review completed against provided screenshots.
+- Manual HTML/CSS review of updated pages and link targets.
 
 ## Open Items
-- Open PR from `codex/minor-tweaks` that closes `#16`.
+- None for this polish pass.
 
 ## Resume Checklist
-1. `git fetch --all`
-2. `git checkout codex/minor-tweaks`
-3. `git status --short`
-4. Review:
-   - `assets/icons/side-nav/icon-back-off.svg`
-   - `assets/icons/side-nav/icon-back-on.svg`
-   - `assets/icons/side-nav/icon-back-hover.svg`
-   - `assets/icons/side-nav/icon-work-resy-off.svg`
-   - `assets/css/work-case-study.css`
-   - `work/resy-discovery/index.html`
-   - `work/sendmoi/index.html`
-   - `README.md`
-   - `HANDOFF.md`
-5. Commit and push
-6. Open PR with `Fixes #16`
+1. `git pull`
+2. `git status --short`
+3. Run `make` and verify:
+   - `/`
+   - `/work`
+   - `/work/resy-discovery/`
+   - `/work/sendmoi/`
