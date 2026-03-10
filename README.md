@@ -70,7 +70,21 @@ EOF
 - `/sendmoi/privacy/` is the SendMoi privacy policy page.
 - `/sendmoi/terms/` is the SendMoi terms page.
 - `/sendmoi/accessibility/` is the SendMoi accessibility statement page.
-- The homepage `index.html` also includes a SendMoi case-study section after the `Resy.com Consumer Website` block.
+
+## Home case-study promo and article
+
+- The homepage `index.html` now includes a reusable case-study promo block after `Work Experience`.
+- Current instances are Resy and SendMoi, each with right-anchored background imagery and CTA text `View Case Study`.
+- Promo block configuration uses data attributes for logo, desktop/mobile backgrounds, and image focus anchoring (`left`, `center`, `right`).
+- The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
+- The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
+- Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home nav icon, and `cols` toggle).
+- Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
+- Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, and `SendMoi`, with explicit off/on/hover icon assets.
+
+## Legacy removal
+
+- The old `mailmoi/` pages were removed from this branch as defunct content.
 
 ## SendMoi launch-state notes
 
