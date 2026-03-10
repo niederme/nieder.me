@@ -1,47 +1,34 @@
 # Handoff
 
 ## Branch
-- `codex/fix-gh-issue-quoting`
+- `codex/agents-thread-branch-isolation`
 
 ## Last Pushed
+- `8fd47ed` `Add safe GitHub issue creation workflow (#12)`
 - `265552a` `Merge pull request #9 from niederme/codex/make-hostname-open-fix`
 - `be9e2ab` `Fix dev auto-open host detection across Macs`
-- `4898fd4` `Merge pull request #7 from niederme/codex/work-experience-feature`
 
 ## Current Focus
-- Fix first-attempt `gh issue create` failures caused by shell quoting and backtick substitution in `zsh`.
-- Keep an explicit, repeatable issue-creation path that preserves Markdown as-is.
+- Add explicit repository guardrails to prevent cross-thread branch switching in a shared worktree.
 
 ## What Changed
-- Created tracking issue: [#10](https://github.com/niederme/nieder.me/issues/10) `Fix shell quoting for gh issue create with Markdown backticks`.
-- Added `scripts/create-gh-issue.sh`:
-  - requires `--title`
-  - supports `--body-file`
-  - supports piped stdin (captured to temp file)
-  - always uses `--body-file` when body text is provided
-- Added `make issue-create` with:
-  - required `ISSUE_TITLE`
-  - optional `ISSUE_BODY_FILE`
-- Updated `README.md` with `GitHub issue workflow` examples for file/stdin usage.
-
-## Investigation Notes
-- Root cause reproduced with `zsh` command substitution on backticks inside double-quoted inline body text.
-- Wrapper approach validated: avoids inline `--body "..."` interpolation and preserves literal Markdown backticks.
-- Accidental validation issue `#11` was created during testing and immediately closed.
+- Updated `AGENTS.md` with a new `Thread/Branch Isolation` section.
+- Added requirements to:
+  - verify current branch (`git branch --show-current`) before git operations
+  - stop and ask before switching when branch does not match task expectations
+  - avoid `checkout`/`pull`/`merge` on other branches without explicit user approval
+  - prefer one `git worktree` per active thread/feature branch
 
 ## Open Items
-- Merge PR `#12` after conflict resolution.
-- Use `make issue-create ...` for future issue creation to avoid shell quoting pitfalls.
+- Open PR for `codex/agents-thread-branch-isolation` and merge when approved.
+- Apply the same worktree-per-thread convention to active parallel tasks.
 
 ## Local Run
-- Create issue from file:
-  - `make issue-create ISSUE_TITLE="Fix shell quoting" ISSUE_BODY_FILE=/tmp/issue.md`
-- Create issue from stdin:
-  - `cat /tmp/issue.md | ./scripts/create-gh-issue.sh --title "Fix shell quoting"`
+- N/A (documentation/process-only change)
 
 ## Resume Checklist
 1. `git fetch --all`
-2. `git checkout codex/fix-gh-issue-quoting`
+2. `git checkout codex/agents-thread-branch-isolation`
 3. `git pull --ff-only`
-4. Review issue context in [#10](https://github.com/niederme/nieder.me/issues/10)
-5. Use `make issue-create ...` for new issue creation
+4. Review `AGENTS.md` thread/branch isolation rules
+5. Open/merge PR when ready
