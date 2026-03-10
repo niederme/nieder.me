@@ -390,6 +390,10 @@ body.is-pulling-refresh .rail::after {
   column-gap: var(--grid-gutter);
 }
 
+.content > :not(.grid-overlay) {
+  z-index: 2;
+}
+
 .content > section {
   grid-column: 1 / -1;
   position: relative;
@@ -403,14 +407,14 @@ body.is-pulling-refresh .rail::after {
   grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
   column-gap: var(--grid-gutter);
   pointer-events: none;
-  z-index: 10;
+  z-index: 0;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.28s ease, visibility 0.28s ease;
 }
 
 .grid-overlay > span {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.08);
   opacity: 1;
   transform: translateY(0) scaleY(1);
   transform-origin: top center;
