@@ -146,7 +146,7 @@ body.work-theme-sendmoi {
   z-index: 26;
 }
 
-.work-home-anchor {
+.work-case-anchor {
   position: relative;
   width: 90px;
   height: 76px;
@@ -156,19 +156,49 @@ body.work-theme-sendmoi {
   text-decoration: none;
 }
 
-.work-home-anchor .icon-on,
-.work-home-anchor .icon-off {
+.work-case-anchor img {
   width: 26px;
   height: 26px;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.18s ease;
 }
 
-.work-home-anchor .icon-on {
+.work-case-anchor-sendmoi img {
+  width: 32px;
+}
+
+.work-case-anchor .icon-on,
+.work-case-anchor .icon-hover {
   position: absolute;
+  opacity: 0;
+}
+
+.work-case-anchor .icon-off {
   opacity: 1;
 }
 
-.work-home-anchor .icon-off {
+.work-case-anchor.is-active .icon-off {
   opacity: 0;
+}
+
+.work-case-anchor.is-active .icon-on {
+  opacity: 1;
+}
+
+.work-case-anchor:hover .icon-off,
+.work-case-anchor:focus-visible .icon-off {
+  opacity: 0;
+}
+
+.work-case-anchor:hover .icon-on,
+.work-case-anchor:focus-visible .icon-on {
+  opacity: 0;
+}
+
+.work-case-anchor:hover .icon-hover,
+.work-case-anchor:focus-visible .icon-hover {
+  opacity: 1;
 }
 
 .cols-toggle {

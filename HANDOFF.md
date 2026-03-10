@@ -1,53 +1,42 @@
 # Handoff
 
 ## Branch
-- `codex/enhancement-footer`
+- `codex/minor-tweaks`
 
-## Ticket
-- `#17` Enhancement: Add extensible grid footer with policy links
-  - https://github.com/niederme/nieder.me/issues/17
+## Base
+- `main` at `408011f` (`Add SendMoi case-study promo, standalone page, and rail nav states (#15)`).
 
 ## Current Focus
-- Add and ship a homepage footer that matches the existing Vignelli/Speakerman grid style.
-- Ensure footer link architecture can grow over time without structural refactors.
+- Ship small post-merge polish updates tracked in issue `#16`.
 
-## What Changed
-- Homepage footer added (`index.html`, `assets/css/styles.css`):
-  - Added a new `site-footer` section after case-study promos.
-  - Added grouped, extensible link columns:
-    - `Case Studies` (internal)
-    - `Connect` (external + email)
-    - `Policies` (privacy/terms/accessibility)
-  - Added footer brand/legal copy block.
-  - Kept desktop alignment on the existing 12-column grid; added responsive tablet/mobile collapse behavior.
-- Email-link behavior generalized (`assets/js/main.js`):
-  - Updated `data-email-link` handling from single element to multiple elements so topper + footer can both use obfuscated mailto links.
-- Cache-bust updates:
-  - Updated homepage CSS/JS query params to `v=20260310-020`.
-- Docs:
-  - Updated `README.md` with a new `Homepage footer` section and implementation notes.
+## What Changed (This Branch)
+- Updated `assets/icons/side-nav/icon-work-resy-off.svg` from latest Desktop asset.
+- Updated work article rails to match home nav structure while keeping static page state:
+  - Added `Home`, `Work Experience`, `Resy`, `SendMoi` rail items on:
+    - `work/resy-discovery/index.html`
+    - `work/sendmoi/index.html`
+  - Active case-study item is white (`.is-active`) per article page.
+  - Hover state uses red `*-hover.svg` assets.
+  - No scroll-based case-nav switching logic on article pages.
+- Extended `assets/css/work-case-study.css` with `work-case-anchor*` rules to support off/on/hover icon states and SendMoi width exception.
 
 ## Verification
 - `node --check assets/js/main.js` passes.
-- Manual source review confirms:
-  - Footer is placed after case-study promos.
-  - New footer classes have desktop + responsive mobile rules.
-  - Footer email link uses existing obfuscation setup via `data-email-link`.
+- Manual visual review completed against provided screenshots.
 
 ## Open Items
-- Visual QA in browser at desktop and mobile breakpoints.
-- Commit, push branch, and open PR referencing issue `#17`.
+- Open PR from `codex/minor-tweaks` that closes `#16`.
 
 ## Resume Checklist
 1. `git fetch --all`
-2. `git checkout codex/enhancement-footer`
+2. `git checkout codex/minor-tweaks`
 3. `git status --short`
-4. Review diffs in:
-   - `index.html`
-   - `assets/css/styles.css`
-   - `assets/js/main.js`
+4. Review:
+   - `assets/icons/side-nav/icon-work-resy-off.svg`
+   - `assets/css/work-case-study.css`
+   - `work/resy-discovery/index.html`
+   - `work/sendmoi/index.html`
    - `README.md`
    - `HANDOFF.md`
-5. Run `node --check assets/js/main.js`
-6. Commit + push
-7. Open PR and include `Closes #17`
+5. Commit and push
+6. Open PR with `Fixes #16`
