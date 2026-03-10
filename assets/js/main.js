@@ -1,7 +1,7 @@
 const caseNav = document.querySelector(".case-nav");
 const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
 const colsToggles = Array.from(document.querySelectorAll(".cols-toggle"));
-const emailLink = document.querySelector("[data-email-link]");
+const emailLinks = Array.from(document.querySelectorAll("[data-email-link]"));
 const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";
 const scrollToPageTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -14,11 +14,13 @@ const scrollToPageTop = () => {
   }
 };
 
-if (emailLink) {
+if (emailLinks.length > 0) {
   const emailAddress = String.fromCharCode(
     106, 111, 104, 110, 64, 110, 105, 101, 100, 101, 114, 46, 109, 101
   );
-  emailLink.href = `mailto:${emailAddress}`;
+  emailLinks.forEach((emailLink) => {
+    emailLink.href = `mailto:${emailAddress}`;
+  });
 }
 
 {
