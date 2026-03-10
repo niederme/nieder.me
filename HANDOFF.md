@@ -14,6 +14,7 @@
 - Local development workflow improvements
 - Default preview port change from `8000` to `7777`
 - Keep docs aligned with the updated preview defaults
+- Ensure browser auto-open uses each machine's hostname (not `localhost`) in multi-Mac setups
 
 ## What Changed
 - Changed the default Make target port from `8000` to `7777` for `make`, `make dev`, `make dev-local`, and `make dev-live`.
@@ -49,6 +50,8 @@
   - `make dev-live` for auto-refresh on HTML/CSS/JS edits
   - explicit Node runtime guard/help text for older Node 14 setups (`node:path` support)
 - Updated local URL host detection in Make targets to derive `<this-mac>.local` from macOS `LocalHostName` automatically across machines.
+- Expanded hostname fallback logic in Make targets (`LocalHostName` -> `HostName` -> shell hostname -> sanitized `ComputerName`) so browser auto-open avoids `localhost` when possible.
+- Updated `make dev-live` to open the resolved machine hostname explicitly and disable BrowserSync's default auto-open (`--no-open`).
 - Added shared text wrapping rules in `assets/css/styles.css`:
   - `text-wrap: balance` for headings (`h1`-`h6`)
   - `text-wrap: pretty` for paragraphs and list items
@@ -61,9 +64,9 @@
 - Optionally prune unused temporary SVG files (`coming-soon-note.svg` and `*-stroke.svg`) if they are no longer needed.
 
 ## Local Run
-- Network + localhost:
+- Network + this Mac hostname:
   - `make`
-- Network + localhost with live reload:
+- Network + this Mac hostname with live reload:
   - `make dev-live`
 - Localhost-only:
   - `make dev-local`
