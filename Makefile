@@ -1,4 +1,4 @@
-.PHONY: dev dev-lan dev-local dev-live site-url site-url-stage site-url-prod
+.PHONY: dev dev-lan dev-local dev-live site-url site-url-stage site-url-prod issue-create
 
 PORT ?= 7777
 BIND ?= 0.0.0.0
@@ -6,6 +6,8 @@ LOCAL_HOST ?= localhost
 PORT_AUTO ?= 1
 PORT_SCAN_LIMIT ?= 25
 SITE_URL ?= https://nieder.me/2026
+ISSUE_TITLE ?=
+ISSUE_BODY_FILE ?=
 
 .DEFAULT_GOAL := dev
 
@@ -139,3 +141,15 @@ dev-live:
 	echo "Live reload on your network: http://$$LAN_IP:$$PORT_TO_USE"; \
 	echo "(Ctrl+C to stop)"; \
 	npx browser-sync start --server . --files 'index.html,sendmoi/**/*.html,assets/css/**/*.css,assets/js/**/*.js' --host $(BIND) --port $$PORT_TO_USE
+
+issue-create:
+	@if [ -z "$(ISSUE_TITLE)" ]; then \
+		echo "ISSUE_TITLE is required."; \
+		echo "Example: make issue-create ISSUE_TITLE='Fix login bug' ISSUE_BODY_FILE=/tmp/issue.md"; \
+		exit 1; \
+	fi
+	@if [ -n "$(ISSUE_BODY_FILE)" ]; then \
+		./scripts/create-gh-issue.sh --title "$(ISSUE_TITLE)" --body-file "$(ISSUE_BODY_FILE)"; \
+	else \
+		./scripts/create-gh-issue.sh --title "$(ISSUE_TITLE)"; \
+	fi

@@ -1,76 +1,49 @@
 # Handoff
 
 ## Branch
-- `codex/preview-port-7777`
+- `codex/fix-gh-issue-quoting`
 
 ## Last Pushed
-- `fa259d6` `Polish SendMoi marketing page and launch-state badges`
-- `a5f7106` `Tighten mobile topper responsiveness`
-- `4f0247e` `Polish mobile Figma layout and nav`
-- `30e9b83` `Refresh OG image and bump asset versions`
-- `89f4711` `Add configurable site URL metadata switch`
+- `4898fd4` `Merge pull request #7 from niederme/codex/work-experience-feature`
+- `7c506d9` `Pivot homepage to Work Experience-first architecture`
+- `0d2d949` `Merge pull request #4 from niederme/codex/css-grid-toggle-pr`
 
 ## Current Focus
-- Local development workflow improvements
-- Default preview port change from `8000` to `7777`
-- Keep docs aligned with the updated preview defaults
+- Fix first-attempt `gh issue create` failures caused by shell quoting and backtick substitution in `zsh`.
+- Provide a repeatable local workflow for creating GitHub issues with Markdown safely.
 
 ## What Changed
-- Changed the default Make target port from `8000` to `7777` for `make`, `make dev`, `make dev-local`, and `make dev-live`.
-- Updated `README.md` examples and descriptions so the documented preview URLs and fallback-port behavior match the new `7777` default.
-- Built and iterated a standalone `/sendmoi/` marketing page with:
-  - responsive two-column hero (copy + device video)
-  - system-driven light/dark mode with manual toggle persistence
-  - concise feature grid using paired light/dark feature images from `assets/images/sendmoi/features/`
-  - centered utility footer with legal links and support email
-- Added and refined temporary App Store launch-state treatment:
-  - disabled badge links (`aria-disabled`, no pointer interaction)
-  - sketch-style `Coming soon` overlay (circle + text) sourced from user SVG assets
-  - simplified badge source paths to flat files in `assets/images/sendmoi/app-store-badges/`
-- Tuned mobile styling on `/sendmoi/`:
-  - tighter hero spacing and typography rhythm
-  - better badge readability and disabled-state feel
-  - annotation placement adjusted to sit closer to badges on narrow viewports
-- Updated hero video behavior on `/sendmoi/`:
-  - honors `prefers-reduced-motion` (no autoplay when reduced motion is requested)
-  - click/keyboard toggles play and pause
-  - paused state visibly dims the video
-- Added media/assets used by the marketing page:
-  - app icon
-  - App Store badge lockups (flat asset structure)
-  - hero demo videos
-  - coming-soon SVG overlays
-- Added/updated SendMoi utility pages and homepage references:
-  - `sendmoi/privacy/index.html`
-  - `sendmoi/terms/index.html`
-  - homepage SendMoi case-study section in `index.html`
-  - added legacy route redirects so `/mailmoi/`, `/mailmoi/privacy/`, `/mailmoi/terms/`, and `/mailmoi/accessibility/` forward to `/sendmoi/*`
-- Added BrowserSync live-reload local dev target:
-  - `make dev-live` for auto-refresh on HTML/CSS/JS edits
-  - explicit Node runtime guard/help text for older Node 14 setups (`node:path` support)
-- Updated local URL host detection in Make targets to derive `<this-mac>.local` from macOS `LocalHostName` automatically across machines.
-- Added shared text wrapping rules in `assets/css/styles.css`:
-  - `text-wrap: balance` for headings (`h1`-`h6`)
-  - `text-wrap: pretty` for paragraphs and list items
+- Created tracking issue: [#10](https://github.com/niederme/nieder.me/issues/10) `Fix shell quoting for gh issue create with Markdown backticks`.
+- Added `scripts/create-gh-issue.sh`:
+  - requires `--title`
+  - accepts `--body-file`
+  - accepts piped stdin and writes it to a temp file
+  - always calls `gh issue create` with `--body-file` when body content is provided
+- Added `make issue-create` target with:
+  - `ISSUE_TITLE` required
+  - optional `ISSUE_BODY_FILE`
+- Updated `README.md` with a new `GitHub issue workflow` section showing safe file/stdin usage for Markdown containing backticks.
+
+## Investigation Notes
+- Reproduced root cause:
+  - `zsh -lc 'echo "Use \`code\` formatting in body"'` triggers command substitution for `` `code` ``, which can fail before `gh` receives the intended text.
+- Confirmed the wrapper approach avoids this by bypassing inline `--body "..."` shell interpolation.
+- Accidental validation issue `#11` was created during testing and immediately closed.
 
 ## Open Items
-- Run `make` or `make dev-live` once if you want to confirm the updated default port locally.
-- Replace temporary App Store `href="#"` targets with real iOS/macOS App Store URLs at launch time.
-- Remove the temporary `store-actions--coming-soon` overlays once the app is live.
-- Run final visual QA on `/sendmoi/` in iPhone Safari (annotation placement and badge readability) after cache-clear/hard refresh.
-- Optionally prune unused temporary SVG files (`coming-soon-note.svg` and `*-stroke.svg`) if they are no longer needed.
+- Run the new flow against a real issue body as needed:
+  - `make issue-create ISSUE_TITLE="..." ISSUE_BODY_FILE=/tmp/issue.md`
+- If desired, add a PR checklist item to prefer `--body-file` over inline `--body`.
 
 ## Local Run
-- Network + localhost:
-  - `make`
-- Network + localhost with live reload:
-  - `make dev-live`
-- Localhost-only:
-  - `make dev-local`
+- Create issue from file:
+  - `make issue-create ISSUE_TITLE="Fix shell quoting" ISSUE_BODY_FILE=/tmp/issue.md`
+- Create issue from stdin:
+  - `cat /tmp/issue.md | ./scripts/create-gh-issue.sh --title "Fix shell quoting"`
 
 ## Resume Checklist
 1. `git fetch --all`
-2. `git checkout codex/preview-port-7777`
+2. `git checkout codex/fix-gh-issue-quoting`
 3. `git pull --ff-only`
-4. `make`
-5. Confirm the local preview starts on port `7777` unless that port is already occupied
+4. Review issue context in [#10](https://github.com/niederme/nieder.me/issues/10)
+5. Use `make issue-create ...` for new issue creation to avoid shell quoting pitfalls

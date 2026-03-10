@@ -50,6 +50,20 @@ That binds to localhost only.
 
 `make dev-local` also auto-selects the next available port when the requested one is already in use.
 
+## GitHub issue workflow
+
+To avoid shell-quoting problems with Markdown backticks in issue bodies, create issues with a file or stdin:
+
+```bash
+make issue-create ISSUE_TITLE="Fix shell quoting" ISSUE_BODY_FILE=/tmp/issue.md
+```
+
+```bash
+cat <<'EOF' | ./scripts/create-gh-issue.sh --title "Fix shell quoting"
+Use `code` formatting safely in Markdown without zsh command substitution.
+EOF
+```
+
 ## SendMoi pages
 
 - `/sendmoi/` is the standalone SendMoi marketing page (system light/dark, hero product video, feature grid, and temporary `Coming soon` App Store treatment).
