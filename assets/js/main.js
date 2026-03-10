@@ -63,7 +63,7 @@ if (colsToggles.length > 0) {
 }
 
 if (caseNav) {
-  const lockTarget = document.querySelector("#resy-header");
+  const lockTarget = document.querySelector("#work-experience");
   const anchors = Array.from(caseNav.querySelectorAll(".case-anchor"));
   const topAnchor = anchors[0] || null;
   const sections = anchors
@@ -198,7 +198,7 @@ if (logoMarks.length > 0) {
         currentButton.setAttribute("aria-expanded", String(isOpen));
         currentButton.setAttribute(
           "aria-label",
-          isOpen ? "Close case study navigation" : "Open case study navigation"
+          isOpen ? "Close section navigation" : "Open section navigation"
         );
         list.hidden = !isOpen;
         scrim.hidden = !isOpen;
