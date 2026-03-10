@@ -11,8 +11,12 @@
 
 ## What Changed (This Branch)
 - Updated `assets/icons/side-nav/icon-work-resy-off.svg` from latest Desktop asset.
+- Added article back-nav icon assets from Desktop:
+  - `assets/icons/side-nav/icon-back-off.svg`
+  - `assets/icons/side-nav/icon-back-on.svg`
+  - `assets/icons/side-nav/icon-back-hover.svg` (red hover variant)
 - Updated work article rails to match home nav structure while keeping static page state:
-  - Added `Home`, `Work Experience`, `Resy`, `SendMoi` rail items on:
+  - Added `Back`, `Work Experience`, `Resy`, `SendMoi` rail items on:
     - `work/resy-discovery/index.html`
     - `work/sendmoi/index.html`
   - Active case-study item is white (`.is-active`) per article page.
@@ -32,6 +36,9 @@
 2. `git checkout codex/minor-tweaks`
 3. `git status --short`
 4. Review:
+   - `assets/icons/side-nav/icon-back-off.svg`
+   - `assets/icons/side-nav/icon-back-on.svg`
+   - `assets/icons/side-nav/icon-back-hover.svg`
    - `assets/icons/side-nav/icon-work-resy-off.svg`
    - `assets/css/work-case-study.css`
    - `work/resy-discovery/index.html`
