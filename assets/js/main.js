@@ -21,6 +21,48 @@ if (emailLink) {
   emailLink.href = `mailto:${emailAddress}`;
 }
 
+{
+  const caseStudyPromos = Array.from(document.querySelectorAll(".case-study-promo"));
+
+  const toCssUrl = (value) => {
+    const source = String(value || "").trim();
+    if (!source) return "";
+    const absoluteSource = new URL(source, window.location.href).href;
+    return `url("${absoluteSource.replace(/"/g, '\\"')}")`;
+  };
+
+  const normalizeFocus = (value) => {
+    const token = String(value || "").trim().toLowerCase();
+    if (!token || token === "middle" || token === "center" || token === "centre") {
+      return "center center";
+    }
+    if (token === "left") return "left center";
+    if (token === "right") return "right center";
+    return token;
+  };
+
+  caseStudyPromos.forEach((promo) => {
+    const logo = promo.querySelector(".case-study-promo-logo");
+    const logoSource = String(promo.dataset.logo || "").trim();
+    const desktopBackground = toCssUrl(promo.dataset.bgDesktop);
+    const mobileBackground = toCssUrl(promo.dataset.bgMobile || promo.dataset.bgDesktop);
+    const desktopFocus = normalizeFocus(promo.dataset.focusDesktop);
+    const mobileFocus = normalizeFocus(promo.dataset.focusMobile || promo.dataset.focusDesktop);
+
+    if (logo && logoSource) {
+      logo.setAttribute("src", logoSource);
+    }
+    if (desktopBackground) {
+      promo.style.setProperty("--case-study-promo-bg-desktop", desktopBackground);
+    }
+    if (mobileBackground) {
+      promo.style.setProperty("--case-study-promo-bg-mobile", mobileBackground);
+    }
+    promo.style.setProperty("--case-study-promo-focus-desktop", desktopFocus);
+    promo.style.setProperty("--case-study-promo-focus-mobile", mobileFocus);
+  });
+}
+
 if (colsToggles.length > 0) {
   const applyGridVisibility = (visible, persist = true) => {
     document.body.classList.toggle("grid-hidden", !visible);

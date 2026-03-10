@@ -1,34 +1,64 @@
 # Handoff
 
 ## Branch
-- `codex/agents-thread-branch-isolation`
+- `codex/home-case-study-promo`
 
 ## Last Pushed
-- `8fd47ed` `Add safe GitHub issue creation workflow (#12)`
-- `265552a` `Merge pull request #9 from niederme/codex/make-hostname-open-fix`
-- `be9e2ab` `Fix dev auto-open host detection across Macs`
+- `8fd47ed` `Add safe GitHub issue creation workflow (#12)` (current `main` base before this branch work)
 
 ## Current Focus
-- Add explicit repository guardrails to prevent cross-thread branch switching in a shared worktree.
+- Add and polish a reusable homepage Case Study Promo block (Resy first instance).
+- Restore a dedicated Resy Discovery long-form article route at `/work/resy-discovery/`.
+- Apply typography and spacing refinements requested during review.
+- Remove defunct `mailmoi/` pages.
 
 ## What Changed
-- Updated `AGENTS.md` with a new `Thread/Branch Isolation` section.
-- Added requirements to:
-  - verify current branch (`git branch --show-current`) before git operations
-  - stop and ask before switching when branch does not match task expectations
-  - avoid `checkout`/`pull`/`merge` on other branches without explicit user approval
-  - prefer one `git worktree` per active thread/feature branch
+- Homepage (`index.html`, `assets/css/styles.css`, `assets/js/main.js`):
+  - Added reusable case-study promo section after `Work Experience`.
+  - First promo instance uses Resy assets and right-side image anchoring.
+  - CTA updated to `View Case Study` and now links to `work/resy-discovery/`.
+  - Removed top hero horizontal rule.
+  - Removed promo divider rule above the block.
+  - Set desktop spacing between `Work Experience` and promo block to `200px`.
+  - Updated heading line-height to `1` for Work Experience and promo title type.
+- New homepage promo assets:
+  - `assets/images/home/case-study-promos/bg-Resy-desktop.png`
+  - `assets/images/home/case-study-promos/bg-Resy-mobile.png`
+  - `assets/images/home/case-study-promos/logo-Resy.svg`
+- Added standalone Resy article route:
+  - `work/resy-discovery/index.html`
+  - `assets/css/work-case-study.css`
+  - Uses shared desktop left rail pattern (spinning logo, left vertical rule, home + cols side controls), no `Back to homepage` link.
+- Added article hero source images restored from legacy history:
+  - `assets/images/work/resy-discovery/Resy-Discovery-desktop.jpg`
+  - `assets/images/work/resy-discovery/Resy-Discovery-mobile.jpg`
+- Removed defunct legacy pages:
+  - `mailmoi/index.html`
+  - `mailmoi/privacy/index.html`
+  - `mailmoi/terms/index.html`
+  - `mailmoi/accessibility/index.html`
+
+## Verification
+- Ran `node --check assets/js/main.js` successfully.
+- Captured browser screenshots with Playwright to validate:
+  - homepage promo background visibility and spacing
+  - line-height updates
+  - article route rendering and side rail behavior
 
 ## Open Items
-- Open PR for `codex/agents-thread-branch-isolation` and merge when approved.
-- Apply the same worktree-per-thread convention to active parallel tasks.
-
-## Local Run
-- N/A (documentation/process-only change)
+- Commit and push this branch.
+- Optional follow-up: tune article content/imagery density and add additional work routes (for example, `resy-web-discovery`) if needed.
 
 ## Resume Checklist
 1. `git fetch --all`
-2. `git checkout codex/agents-thread-branch-isolation`
-3. `git pull --ff-only`
-4. Review `AGENTS.md` thread/branch isolation rules
-5. Open/merge PR when ready
+2. `git checkout codex/home-case-study-promo`
+3. `git status --short`
+4. Review diffs for:
+   - `index.html`
+   - `assets/css/styles.css`
+   - `assets/js/main.js`
+   - `work/resy-discovery/index.html`
+   - `assets/css/work-case-study.css`
+   - `README.md`
+   - `HANDOFF.md`
+5. Commit and push branch updates

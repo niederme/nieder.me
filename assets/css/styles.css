@@ -596,7 +596,7 @@ body.grid-hidden .grid-overlay > span {
 .experience-heading h3 {
   margin: 0;
   font-size: 48px;
-  line-height: 0.9;
+  line-height: 1;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -680,6 +680,111 @@ body.grid-hidden .grid-overlay > span {
 
 .resume-link.is-disabled {
   opacity: 0.8;
+}
+
+.case-study-promos {
+  margin-top: 200px;
+}
+
+.case-study-promo {
+  --case-study-promo-bg-desktop: none;
+  --case-study-promo-bg-mobile: var(--case-study-promo-bg-desktop);
+  --case-study-promo-focus-desktop: center center;
+  --case-study-promo-focus-mobile: center center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-image: var(--case-study-promo-bg-desktop);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: var(--case-study-promo-focus-desktop);
+}
+
+.case-study-promo-resy {
+  background-image: url("../images/home/case-study-promos/bg-Resy-desktop.png");
+  background-position: right center;
+}
+
+.case-study-promo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.case-study-promo-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: min(508px, calc(100% - 212px));
+  margin-left: 106px;
+  color: var(--fg);
+}
+
+.case-study-promo-logo {
+  display: block;
+  width: 100px;
+  height: 44px;
+}
+
+.case-study-promo-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 30px 0 20px;
+}
+
+.case-study-promo-eyebrow {
+  margin: 0;
+  color: var(--fg);
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.case-study-promo h3 {
+  margin: 0;
+  color: var(--fg);
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  max-width: 100%;
+}
+
+.case-study-promo-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 178px;
+  min-height: 50px;
+  border-radius: 5px;
+  padding: 12px 50px 14px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.case-study-promo-cta:visited {
+  color: #000000;
+}
+
+.case-study-promo-cta:hover,
+.case-study-promo-cta:focus-visible {
+  color: #000000;
+  opacity: 0.9;
 }
 
 .selected-work,
@@ -1319,6 +1424,23 @@ body.grid-hidden .grid-overlay > span {
     margin-top: 112px;
   }
 
+  .case-study-promos {
+    margin-top: 84px;
+  }
+
+  .case-study-promo-content {
+    width: min(460px, calc(100% - 96px));
+    margin-left: 48px;
+  }
+
+  .case-study-promo-eyebrow {
+    font-size: 20px;
+  }
+
+  .case-study-promo h3 {
+    font-size: clamp(34px, 5.2vw, 44px);
+  }
+
   .experience-grid {
     grid-template-columns: 1fr;
     row-gap: 28px;
@@ -1486,6 +1608,29 @@ body.grid-hidden .grid-overlay > span {
 
   .job-header {
     margin-top: 84px;
+  }
+
+  .case-study-promos {
+    margin-top: 60px;
+  }
+
+  .case-study-promo-content {
+    width: min(360px, calc(100% - 48px));
+    margin-left: 24px;
+  }
+
+  .case-study-promo-eyebrow {
+    font-size: 18px;
+  }
+
+  .case-study-promo h3 {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .case-study-promo-cta {
+    min-height: 42px;
+    padding: 8px 38px 10px;
+    font-size: 16px;
   }
 
   .job-header h3 {
@@ -2009,6 +2154,68 @@ body.grid-hidden .grid-overlay > span {
 
   .work-experience {
     margin-top: 150px;
+  }
+
+  .case-study-promos {
+    margin-top: 54px;
+  }
+
+  .case-study-promo {
+    width: calc(100% + 10px);
+    margin: 0 -5px;
+    align-items: flex-end;
+    aspect-ratio: auto;
+    height: 600px;
+    background-image: var(--case-study-promo-bg-mobile);
+    background-size: auto 100%;
+    background-position: var(--case-study-promo-focus-mobile);
+  }
+
+  .case-study-promo-resy {
+    background-image: url("../images/home/case-study-promos/bg-Resy-mobile.png");
+    background-position: right center;
+  }
+
+  .case-study-promo::after {
+    background-image: linear-gradient(
+      0.03deg,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.75) 27.196%,
+      rgba(0, 0, 0, 0.25) 41.837%,
+      rgba(0, 0, 0, 0) 71.576%
+    );
+  }
+
+  .case-study-promo-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 15px 50px;
+    gap: 10px;
+  }
+
+  .case-study-promo-logo {
+    width: 50px;
+    height: 22px;
+  }
+
+  .case-study-promo-inner {
+    padding: 30px 0 20px;
+  }
+
+  .case-study-promo-eyebrow {
+    font-size: 16px;
+  }
+
+  .case-study-promo h3 {
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .case-study-promo-cta {
+    min-height: 38px;
+    padding: 7px 50px 9px;
+    font-size: 16px;
   }
 
   .experience-heading,
