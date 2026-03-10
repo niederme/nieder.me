@@ -7,58 +7,61 @@
 - `8fd47ed` `Add safe GitHub issue creation workflow (#12)` (current `main` base before this branch work)
 
 ## Current Focus
-- Add and polish a reusable homepage Case Study Promo block (Resy first instance).
-- Restore a dedicated Resy Discovery long-form article route at `/work/resy-discovery/`.
-- Apply typography and spacing refinements requested during review.
-- Remove defunct `mailmoi/` pages.
+- Finalize and ship reusable homepage case-study promo modules (Resy + SendMoi).
+- Restore standalone `/work/...` case-study pages and align rail nav behaviors/states.
+- Prepare PR against issue `#14`.
 
 ## What Changed
-- Homepage (`index.html`, `assets/css/styles.css`, `assets/js/main.js`):
+- Homepage promos (`index.html`, `assets/css/styles.css`, `assets/js/main.js`):
   - Added reusable case-study promo section after `Work Experience`.
-  - First promo instance uses Resy assets and right-side image anchoring.
-  - CTA updated to `View Case Study` and now links to `work/resy-discovery/`.
-  - Removed top hero horizontal rule.
-  - Removed promo divider rule above the block.
-  - Set desktop spacing between `Work Experience` and promo block to `200px`.
-  - Updated heading line-height to `1` for Work Experience and promo title type.
-- New homepage promo assets:
-  - `assets/images/home/case-study-promos/bg-Resy-desktop.png`
-  - `assets/images/home/case-study-promos/bg-Resy-mobile.png`
-  - `assets/images/home/case-study-promos/logo-Resy.svg`
-- Added standalone Resy article route:
-  - `work/resy-discovery/index.html`
-  - `assets/css/work-case-study.css`
-  - Uses shared desktop left rail pattern (spinning logo, left vertical rule, home + cols side controls), no `Back to homepage` link.
-- Added article hero source images restored from legacy history:
-  - `assets/images/work/resy-discovery/Resy-Discovery-desktop.jpg`
-  - `assets/images/work/resy-discovery/Resy-Discovery-mobile.jpg`
-- Removed defunct legacy pages:
-  - `mailmoi/index.html`
-  - `mailmoi/privacy/index.html`
-  - `mailmoi/terms/index.html`
-  - `mailmoi/accessibility/index.html`
+  - Added Resy and SendMoi promo instances with configurable logo/bg/focus data attributes.
+  - Set `200px` spacing above promo section, `50px` spacing between promo cards, and `50px` promo corner radius.
+  - Updated SendMoi promo copy:
+    - Eyebrow: `SendMoi for iOS & MacOS`
+    - Headline: `Designed & built with a little help from AI coding tools.`
+  - Added desktop side-nav anchors for `Resy` and `SendMoi` and linked them to `#case-study-resy` and `#case-study-sendmoi`.
+  - Updated rail active-state calculation to use document-absolute section tops so one nav item stays active while scrolling.
+  - Nav icon state behavior:
+    - Off state uses provided off assets.
+    - On state uses white `*-on.svg` assets.
+    - Hover uses dedicated red `*-hover.svg` assets.
+    - SendMoi nav icon remains width exception at `32px`.
+- New/updated promo assets:
+  - `assets/images/home/case-study-promos/bg-SendMoi-desktop.png`
+  - `assets/images/home/case-study-promos/logo-SendMoi.svg`
+- Standalone work pages:
+  - Existing Resy page kept and updated to shared stylesheet version `20260310-002`.
+  - Added `work/sendmoi/index.html` from legacy content, adapted to standalone article template.
+  - Extended `assets/css/work-case-study.css` with per-page theme variables (hero image/overlay/focus/logo sizing) used by `work-theme-sendmoi`.
+- Desktop rail icon assets:
+  - Updated from Desktop: `home-off/on`, `icon-work-experience-off/on`.
+  - Added: `icon-work-resy-off/on`, `icon-work-sendmoi-off/on`.
+  - Added hover variants: `home-hover`, `icon-work-experience-hover`, `icon-work-resy-hover`, `icon-work-sendmoi-hover`.
+- Existing cleanup retained:
+  - Defunct `mailmoi/` pages removed.
 
 ## Verification
-- Ran `node --check assets/js/main.js` successfully.
-- Captured browser screenshots with Playwright to validate:
-  - homepage promo background visibility and spacing
-  - line-height updates
-  - article route rendering and side rail behavior
+- `node --check assets/js/main.js` passes.
+- Manual visual QA completed iteratively with user-provided screenshots and Desktop icon/background asset replacements.
 
 ## Open Items
-- Commit and push this branch.
-- Optional follow-up: tune article content/imagery density and add additional work routes (for example, `resy-web-discovery`) if needed.
+- Commit all current changes.
+- Push branch and open PR that closes issue `#14`.
 
 ## Resume Checklist
 1. `git fetch --all`
 2. `git checkout codex/home-case-study-promo`
 3. `git status --short`
-4. Review diffs for:
+4. Review diffs in:
    - `index.html`
    - `assets/css/styles.css`
    - `assets/js/main.js`
-   - `work/resy-discovery/index.html`
    - `assets/css/work-case-study.css`
+   - `work/resy-discovery/index.html`
+   - `work/sendmoi/index.html`
+   - `assets/icons/side-nav/*(home|work-*)*`
+   - `assets/images/home/case-study-promos/*SendMoi*`
    - `README.md`
    - `HANDOFF.md`
-5. Commit and push branch updates
+5. Commit + push
+6. Open/update PR for issue `#14`

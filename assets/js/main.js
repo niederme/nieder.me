@@ -115,6 +115,8 @@ if (caseNav) {
     })
     .filter(Boolean);
   let lockTop = 140;
+  const getPageTop = (element) =>
+    Math.round(element.getBoundingClientRect().top + window.scrollY);
 
   if (topAnchor) {
     topAnchor.addEventListener("click", (event) => {
@@ -132,7 +134,7 @@ if (caseNav) {
   const setLockStart = () => {
     updateLockTop();
     const lockStart = lockTarget
-      ? Math.round(lockTarget.offsetTop)
+      ? getPageTop(lockTarget)
       : Number(caseNav.dataset.lockStart || 1049);
     caseNav.dataset.lockStartComputed = String(lockStart);
     caseNav.style.setProperty("--case-nav-start", `${lockStart}px`);
@@ -151,9 +153,10 @@ if (caseNav) {
     const shouldLock = window.scrollY + lockTop >= lockStart;
     caseNav.classList.toggle("is-locked", shouldLock);
 
+    const activationLine = window.scrollY + 240;
     let activeIndex = 0;
     for (let i = 0; i < sections.length; i += 1) {
-      if (window.scrollY + 240 >= sections[i].offsetTop) {
+      if (activationLine >= getPageTop(sections[i])) {
         activeIndex = i;
       }
     }

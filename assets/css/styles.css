@@ -252,8 +252,13 @@ body.is-pulling-refresh .rail::after {
 .case-anchor img {
   width: 26px;
   height: 26px;
-  opacity: 0.55;
-  transition: opacity 0.2s ease;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.18s ease;
+}
+
+.case-anchor-sendmoi img {
+  width: 32px;
 }
 
 .case-anchor .icon-on {
@@ -261,22 +266,35 @@ body.is-pulling-refresh .rail::after {
   opacity: 0;
 }
 
-.case-anchor .icon-off {
-  opacity: 0.55;
-}
-
-.case-anchor.is-active img,
-.case-anchor:hover img {
-  opacity: 1;
-}
-
-.case-anchor.is-active .icon-off,
-.case-anchor:hover .icon-off {
+.case-anchor .icon-hover {
+  position: absolute;
   opacity: 0;
 }
 
-.case-anchor.is-active .icon-on,
-.case-anchor:hover .icon-on {
+.case-anchor .icon-off {
+  opacity: 1;
+}
+
+.case-anchor.is-active .icon-off {
+  opacity: 0;
+}
+
+.case-anchor.is-active .icon-on {
+  opacity: 1;
+}
+
+.case-anchor:hover .icon-off,
+.case-anchor:focus-visible .icon-off {
+  opacity: 0;
+}
+
+.case-anchor:hover .icon-on,
+.case-anchor:focus-visible .icon-on {
+  opacity: 0;
+}
+
+.case-anchor:hover .icon-hover,
+.case-anchor:focus-visible .icon-hover {
   opacity: 1;
 }
 
@@ -302,10 +320,43 @@ body.is-pulling-refresh .rail::after {
   transition: opacity 0.2s ease;
 }
 
-.social-links img {
+.social-icon {
   width: 26px;
   height: 26px;
   display: block;
+  background-color: var(--fg);
+  transition: background-color 0.18s ease;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.social-icon-instagram {
+  -webkit-mask-image: url("../icons/social/instagram.svg");
+  mask-image: url("../icons/social/instagram.svg");
+}
+
+.social-icon-github {
+  -webkit-mask-image: url("../icons/social/github.svg");
+  mask-image: url("../icons/social/github.svg");
+}
+
+.social-icon-linkedin {
+  -webkit-mask-image: url("../icons/social/linkedin.svg");
+  mask-image: url("../icons/social/linkedin.svg");
+}
+
+.social-icon-x {
+  -webkit-mask-image: url("../icons/social/x.svg");
+  mask-image: url("../icons/social/x.svg");
+}
+
+.social-icon-email {
+  -webkit-mask-image: url("../icons/social/email.svg");
+  mask-image: url("../icons/social/email.svg");
 }
 
 .social-links a:last-child {
@@ -323,8 +374,9 @@ body.is-pulling-refresh .rail::after {
   transform: translateY(-50%);
 }
 
-.social-links a:hover {
-  opacity: 0.8;
+.social-links a:hover .social-icon,
+.social-links a:focus-visible .social-icon {
+  background-color: var(--accent);
 }
 
 .mobile-logo-mark {
@@ -697,6 +749,7 @@ body.grid-hidden .grid-overlay > span {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 50px;
   background-image: var(--case-study-promo-bg-desktop);
   background-repeat: no-repeat;
   background-size: cover;
@@ -706,6 +759,23 @@ body.grid-hidden .grid-overlay > span {
 .case-study-promo-resy {
   background-image: url("../images/home/case-study-promos/bg-Resy-desktop.png");
   background-position: right center;
+}
+
+.case-study-promo-sendmoi {
+  background-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+  background-position: right center;
+}
+
+.case-study-promo-sendmoi .case-study-promo-logo {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  object-position: left center;
+  align-self: flex-start;
+}
+
+.case-study-promo + .case-study-promo {
+  margin-top: 50px;
 }
 
 .case-study-promo::after {
@@ -1395,7 +1465,7 @@ body.grid-hidden .grid-overlay > span {
     margin-right: 28px;
   }
 
-  .social-links img {
+  .social-icon {
     width: 22px;
     height: 22px;
   }
@@ -1575,7 +1645,7 @@ body.grid-hidden .grid-overlay > span {
     margin-right: 24px;
   }
 
-  .social-links img {
+  .social-icon {
     width: 20px;
     height: 20px;
   }
@@ -2142,7 +2212,7 @@ body.grid-hidden .grid-overlay > span {
     margin-right: 40px;
   }
 
-  .social-links img {
+  .social-icon {
     width: 26px;
     height: 26px;
   }
@@ -2174,6 +2244,20 @@ body.grid-hidden .grid-overlay > span {
   .case-study-promo-resy {
     background-image: url("../images/home/case-study-promos/bg-Resy-mobile.png");
     background-position: right center;
+  }
+
+  .case-study-promo-sendmoi {
+    background-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+    background-position: right center;
+  }
+
+  .case-study-promo-sendmoi .case-study-promo-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .case-study-promo + .case-study-promo {
+    margin-top: 50px;
   }
 
   .case-study-promo::after {

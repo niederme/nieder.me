@@ -48,10 +48,22 @@
         <a class="case-anchor is-active" href="#top" aria-label="Jump to top">
           <img class="icon-off" src="assets/icons/side-nav/home-off.svg" alt="" />
           <img class="icon-on" src="assets/icons/side-nav/home-on.svg" alt="" />
+          <img class="icon-hover" src="assets/icons/side-nav/home-hover.svg" alt="" />
         </a>
         <a class="case-anchor" href="#work-experience" aria-label="Jump to Work Experience">
           <img class="icon-off" src="assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
           <img class="icon-on" src="assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
+          <img class="icon-hover" src="assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+        </a>
+        <a class="case-anchor" href="#case-study-resy" aria-label="Jump to Resy case study">
+          <img class="icon-off" src="assets/icons/side-nav/icon-work-resy-off.svg" alt="" />
+          <img class="icon-on" src="assets/icons/side-nav/icon-work-resy-on.svg" alt="" />
+          <img class="icon-hover" src="assets/icons/side-nav/icon-work-resy-hover.svg" alt="" />
+        </a>
+        <a class="case-anchor case-anchor-sendmoi" href="#case-study-sendmoi" aria-label="Jump to SendMoi case study">
+          <img class="icon-off" src="assets/icons/side-nav/icon-work-sendmoi-off.svg" alt="" />
+          <img class="icon-on" src="assets/icons/side-nav/icon-work-sendmoi-on.svg" alt="" />
+          <img class="icon-hover" src="assets/icons/side-nav/icon-work-sendmoi-hover.svg" alt="" />
         </a>
         <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
           <span class="cols-toggle-switch" aria-hidden="true"></span>
@@ -91,19 +103,19 @@
 
           <nav class="social-links" aria-label="Social links">
             <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-              <img src="assets/icons/social/instagram.svg" alt="" />
+              <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
             </a>
             <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-              <img src="assets/icons/social/github.svg" alt="" />
+              <span class="social-icon social-icon-github" aria-hidden="true"></span>
             </a>
             <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-              <img src="assets/icons/social/linkedin.svg" alt="" />
+              <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
             </a>
             <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
-              <img src="assets/icons/social/x.svg" alt="" />
+              <span class="social-icon social-icon-x" aria-hidden="true"></span>
             </a>
             <a data-email-link aria-label="Send email">
-              <img src="assets/icons/social/email.svg" alt="" />
+              <span class="social-icon social-icon-email" aria-hidden="true"></span>
             </a>
           </nav>
         </section>
@@ -244,6 +256,7 @@
 
         <section class="case-study-promos" id="case-study-promos" aria-label="Case study promos">
           <article
+            id="case-study-resy"
             class="case-study-promo case-study-promo-resy"
             data-logo="assets/images/home/case-study-promos/logo-Resy.svg"
             data-bg-desktop="assets/images/home/case-study-promos/bg-Resy-desktop.png"
@@ -259,6 +272,25 @@
                 <h3 id="case-study-promo-resy-title">Evolving in-App Restaurant Discovery</h3>
               </div>
               <a class="case-study-promo-cta" href="work/resy-discovery/">View Case Study</a>
+            </div>
+          </article>
+          <article
+            id="case-study-sendmoi"
+            class="case-study-promo case-study-promo-sendmoi"
+            data-logo="assets/images/home/case-study-promos/logo-SendMoi.svg"
+            data-bg-desktop="assets/images/home/case-study-promos/bg-SendMoi-desktop.png"
+            data-bg-mobile="assets/images/home/case-study-promos/bg-SendMoi-desktop.png"
+            data-focus-desktop="right"
+            data-focus-mobile="right"
+            aria-labelledby="case-study-promo-sendmoi-title"
+          >
+            <div class="case-study-promo-content">
+              <img class="case-study-promo-logo" src="assets/images/home/case-study-promos/logo-SendMoi.svg" alt="SendMoi" />
+              <div class="case-study-promo-inner">
+                <p class="case-study-promo-eyebrow">SendMoi for iOS &amp; MacOS</p>
+                <h3 id="case-study-promo-sendmoi-title">Designed &amp; built with a little help from AI coding tools.</h3>
+              </div>
+              <a class="case-study-promo-cta" href="work/sendmoi/">View Case Study</a>
             </div>
           </article>
         </section>

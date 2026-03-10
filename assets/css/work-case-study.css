@@ -31,6 +31,22 @@
   --grid-cols: 12;
   --grid-gutter: 40px;
   --safe-top: env(safe-area-inset-top, 0px);
+  --work-hero-desktop-overlay: linear-gradient(95deg, rgba(0, 0, 0, 0.86) 12%, rgba(0, 0, 0, 0.68) 34%, rgba(0, 0, 0, 0.08) 72%);
+  --work-hero-mobile-overlay: linear-gradient(
+    0.03deg,
+    rgba(0, 0, 0, 0.87) 0%,
+    rgba(0, 0, 0, 0.74) 28%,
+    rgba(0, 0, 0, 0.28) 45%,
+    rgba(0, 0, 0, 0) 74%
+  );
+  --work-hero-desktop-image: url("../images/work/resy-discovery/Resy-Discovery-desktop.jpg");
+  --work-hero-mobile-image: url("../images/work/resy-discovery/Resy-Discovery-mobile.jpg");
+  --work-hero-focus-desktop: right center;
+  --work-hero-focus-mobile: right center;
+  --work-logo-width-desktop: 100px;
+  --work-logo-height-desktop: 44px;
+  --work-logo-width-mobile: 50px;
+  --work-logo-height-mobile: 22px;
 }
 
 * {
@@ -50,6 +66,25 @@ body {
     "Arial Nova", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+body.work-theme-sendmoi {
+  --work-hero-desktop-overlay: linear-gradient(95deg, rgba(0, 0, 0, 0.58) 12%, rgba(0, 0, 0, 0.38) 34%, rgba(0, 0, 0, 0.08) 72%);
+  --work-hero-mobile-overlay: linear-gradient(
+    0.03deg,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.72) 28%,
+    rgba(0, 0, 0, 0.28) 45%,
+    rgba(0, 0, 0, 0) 74%
+  );
+  --work-hero-desktop-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+  --work-hero-mobile-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+  --work-hero-focus-desktop: right center;
+  --work-hero-focus-mobile: right center;
+  --work-logo-width-desktop: 75px;
+  --work-logo-height-desktop: 75px;
+  --work-logo-width-mobile: 56px;
+  --work-logo-height-mobile: 56px;
 }
 
 .work-page {
@@ -267,12 +302,10 @@ body.grid-hidden .work-grid-overlay > span {
   min-height: 0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background-image:
-    linear-gradient(95deg, rgba(0, 0, 0, 0.86) 12%, rgba(0, 0, 0, 0.68) 34%, rgba(0, 0, 0, 0.08) 72%),
-    url("../images/work/resy-discovery/Resy-Discovery-desktop.jpg");
+  background-image: var(--work-hero-desktop-overlay), var(--work-hero-desktop-image);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right center;
+  background-position: var(--work-hero-focus-desktop);
 }
 
 .work-article-hero-content {
@@ -282,8 +315,8 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .work-article-logo {
-  width: 100px;
-  height: 44px;
+  width: var(--work-logo-width-desktop);
+  height: var(--work-logo-height-desktop);
   display: block;
 }
 
@@ -435,11 +468,9 @@ body.grid-hidden .work-grid-overlay > span {
   .work-article-hero {
     aspect-ratio: auto;
     min-height: 560px;
-    background-image:
-      linear-gradient(0.03deg, rgba(0, 0, 0, 0.87) 0%, rgba(0, 0, 0, 0.74) 28%, rgba(0, 0, 0, 0.28) 45%, rgba(0, 0, 0, 0) 74%),
-      url("../images/work/resy-discovery/Resy-Discovery-mobile.jpg");
+    background-image: var(--work-hero-mobile-overlay), var(--work-hero-mobile-image);
     background-size: auto 100%;
-    background-position: right center;
+    background-position: var(--work-hero-focus-mobile);
     display: flex;
     align-items: flex-end;
   }
@@ -451,8 +482,8 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .work-article-logo {
-    width: 50px;
-    height: 22px;
+    width: var(--work-logo-width-mobile);
+    height: var(--work-logo-height-mobile);
   }
 
   .work-article-eyebrow {
