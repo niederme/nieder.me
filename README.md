@@ -82,6 +82,16 @@ EOF
 - Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
 - Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, and `SendMoi`, with explicit off/on/hover icon assets.
 
+## Homepage footer
+
+- The homepage now includes a grid-aligned footer after case-study promos using grouped link columns for long-term growth.
+- Footer groups:
+  - `Case Studies` (internal work links)
+  - `Connect` (social + email)
+  - `Policies` (`/sendmoi/privacy/`, `/sendmoi/terms/`, `/sendmoi/accessibility/`)
+- Footer keeps the same visual system (rules, typography scale, spacing) and collapses responsively for tablet/mobile.
+- `data-email-link` now supports multiple anchors so the obfuscated mailto behavior works in both topper social links and footer links.
+
 ## Legacy removal
 
 - The old `mailmoi/` pages were removed from this branch as defunct content.

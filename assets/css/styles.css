@@ -857,6 +857,99 @@ body.grid-hidden .grid-overlay > span {
   opacity: 0.9;
 }
 
+.site-footer {
+  margin-top: 140px;
+  padding-bottom: 72px;
+}
+
+.site-footer > .rule {
+  margin-bottom: 30px;
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+  row-gap: 30px;
+}
+
+.site-footer-brand {
+  grid-column: 1 / span 4;
+}
+
+.site-footer-column-work {
+  grid-column: 5 / span 3;
+}
+
+.site-footer-column-connect {
+  grid-column: 8 / span 2;
+}
+
+.site-footer-column-policies {
+  grid-column: 10 / span 3;
+}
+
+.site-footer-kicker {
+  margin: 0;
+  color: var(--fg);
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.site-footer-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.site-footer-meta {
+  margin: 26px 0 0;
+  color: #8e8f98;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.site-footer-column h3 {
+  margin: 0;
+  color: var(--fg);
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.site-footer-links {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-footer-links li {
+  margin: 0;
+}
+
+.site-footer-links a {
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.site-footer-links a:visited {
+  color: var(--accent);
+}
+
+.site-footer-links a:hover,
+.site-footer-links a:focus-visible {
+  color: #ff6a60;
+}
+
 .selected-work,
 .how-i-work,
 .contact-cta {
@@ -1511,6 +1604,28 @@ body.grid-hidden .grid-overlay > span {
     font-size: clamp(34px, 5.2vw, 44px);
   }
 
+  .site-footer {
+    margin-top: 92px;
+    padding-bottom: 64px;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 26px;
+  }
+
+  .site-footer-brand,
+  .site-footer-column-work,
+  .site-footer-column-connect,
+  .site-footer-column-policies {
+    grid-column: auto;
+  }
+
+  .site-footer-brand {
+    grid-column: 1 / -1;
+  }
+
   .experience-grid {
     grid-template-columns: 1fr;
     row-gap: 28px;
@@ -1703,6 +1818,20 @@ body.grid-hidden .grid-overlay > span {
     font-size: 16px;
   }
 
+  .site-footer {
+    margin-top: 72px;
+    padding-bottom: 54px;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+  }
+
+  .site-footer-kicker {
+    font-size: 27px;
+  }
+
   .job-header h3 {
     font-size: clamp(48px, 16vw, 84px);
   }
@@ -1835,6 +1964,7 @@ body.grid-hidden .grid-overlay > span {
   .job-header > .rule,
   .case-study > .rule,
   .work-experience > .rule,
+  .site-footer > .rule,
   .selected-work > .rule,
   .how-i-work > .rule,
   .contact-cta > .rule {
@@ -2304,6 +2434,7 @@ body.grid-hidden .grid-overlay > span {
 
   .experience-heading,
   .experience-column,
+  .site-footer-grid,
   .section-head,
   .selected-work-grid,
   .how-i-work-grid,
