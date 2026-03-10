@@ -519,6 +519,23 @@ body.grid-hidden .grid-overlay > span {
   font-weight: 700;
 }
 
+.topper-company-link {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  line-height: 1.08;
+  padding-bottom: 0;
+  transition: border-color 0.18s ease;
+}
+
+.topper-company-link:hover,
+.topper-company-link:focus-visible {
+  color: var(--accent);
+  border-bottom-color: rgba(255, 69, 58, 0.65);
+}
+
 .job-header {
   margin-top: 200px;
 }
@@ -556,6 +573,219 @@ body.grid-hidden .grid-overlay > span {
 .job-summary {
   margin-top: 12px;
   margin-bottom: 58px;
+}
+
+.work-experience {
+  margin-top: 196px;
+}
+
+.work-experience > .rule {
+  margin-bottom: 25px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+}
+
+.experience-heading {
+  grid-column: 1 / span 3;
+}
+
+.experience-heading h3 {
+  margin: 0;
+  font-size: 48px;
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.experience-column {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  color: var(--muted);
+}
+
+.experience-column:first-of-type {
+  grid-column: 4 / span 4;
+}
+
+.experience-column:last-of-type {
+  grid-column: 8 / span 4;
+}
+
+.experience-item h4 {
+  margin: 0;
+  color: var(--fg);
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.experience-item p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.experience-item .experience-company {
+  margin-top: 2px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.experience-item .experience-company a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  line-height: 1.08;
+  padding-bottom: 0;
+  transition: border-color 0.18s ease;
+}
+
+.experience-item .experience-company a:hover,
+.experience-item .experience-company a:focus-visible {
+  color: inherit;
+  border-bottom-color: rgba(255, 69, 58, 0.65);
+}
+
+.experience-item .experience-date {
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+.experience-item-current h4 {
+  margin-bottom: 12px;
+}
+
+.experience-item-current p {
+  font-size: 18px;
+}
+
+.resume-link-wrap {
+  margin: 0;
+  text-align: left;
+}
+
+.resume-link {
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.resume-link.is-disabled {
+  opacity: 0.8;
+}
+
+.selected-work,
+.how-i-work,
+.contact-cta {
+  margin-top: 72px;
+}
+
+.selected-work > .rule,
+.how-i-work > .rule,
+.contact-cta > .rule {
+  margin-bottom: 24px;
+}
+
+.section-head {
+  margin-bottom: 26px;
+}
+
+.section-head .eyebrow {
+  margin-bottom: 8px;
+  color: var(--fg);
+  font-size: 16px;
+}
+
+.section-head h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 300;
+  max-width: 940px;
+}
+
+.selected-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+}
+
+.selected-work-item h4 {
+  margin: 0 0 10px;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.selected-work-item h4 a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.selected-work-item p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.selected-work-item p strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.selected-work-link {
+  margin-top: 16px;
+}
+
+.selected-work-link a,
+.selected-work-link span {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.how-i-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+}
+
+.how-i-work-grid h4 {
+  margin: 0 0 10px;
+  color: var(--fg);
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 300;
+}
+
+.how-i-work-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.contact-cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 30px;
+}
+
+.contact-cta-links a {
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .case-study {
@@ -644,6 +874,20 @@ body.grid-hidden .grid-overlay > span {
 
 .case-copy li {
   margin-bottom: 12px;
+}
+
+.case-article-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.case-article-link::after {
+  content: "->";
+  font-weight: 300;
 }
 
 .case-visual {
@@ -793,6 +1037,55 @@ body.grid-hidden .grid-overlay > span {
   color: var(--fg);
   margin-bottom: 12px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.34), 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.case-visual-static {
+  position: relative;
+  top: auto;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+.case-visual-static .case-visual-open {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+.case-visual-static .case-visual-image {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+}
+
+.case-visual-static figcaption {
+  position: static;
+  display: block;
+  padding: 18px 0 0;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.case-visual-static .case-visual-caption {
+  max-width: 720px;
+  text-shadow: none;
+}
+
+.case-visual-static .case-visual-fig {
+  margin-bottom: 8px;
+  text-shadow: none;
+}
+
+.case-visual-article-link {
+  margin-top: 12px;
+}
+
+.case-visual-article-link a {
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .lightbox {
@@ -1022,6 +1315,39 @@ body.grid-hidden .grid-overlay > span {
     font-size: 20px;
   }
 
+  .work-experience {
+    margin-top: 112px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  .experience-heading,
+  .experience-column:first-of-type,
+  .experience-column:last-of-type {
+    grid-column: 1;
+  }
+
+  .experience-heading h3 {
+    font-size: 42px;
+  }
+
+  .selected-work-grid,
+  .how-i-work-grid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .selected-work-item h4 {
+    font-size: 30px;
+  }
+
+  .section-head h3 {
+    font-size: 22px;
+  }
+
   .case-grid {
     grid-template-columns: 1fr;
     row-gap: 24px;
@@ -1045,6 +1371,11 @@ body.grid-hidden .grid-overlay > span {
 
   .case-visual-open {
     height: min(120vw, 840px);
+  }
+
+  .case-visual-static .case-visual-open {
+    aspect-ratio: 3 / 4;
+    height: auto;
   }
 
   .case-visual figcaption {
@@ -1208,6 +1539,36 @@ body.grid-hidden .grid-overlay > span {
   .lightbox-nav.next {
     justify-self: end;
   }
+
+  .experience-heading h3 {
+    font-size: 38px;
+  }
+
+  .experience-item h4,
+  .experience-item .experience-company {
+    font-size: 17px;
+  }
+
+  .experience-item p {
+    font-size: 15px;
+  }
+
+  .experience-item-current p {
+    font-size: 17px;
+  }
+
+  .selected-work-item h4 {
+    font-size: 27px;
+  }
+
+  .how-i-work-grid h4 {
+    font-size: 22px;
+  }
+
+  .contact-cta-links {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 430px) {
@@ -1257,7 +1618,11 @@ body.grid-hidden .grid-overlay > span {
 
   .topper > .rule,
   .job-header > .rule,
-  .case-study > .rule {
+  .case-study > .rule,
+  .work-experience > .rule,
+  .selected-work > .rule,
+  .how-i-work > .rule,
+  .contact-cta > .rule {
     width: calc(100% + 10px);
     margin-left: -5px;
   }
@@ -1642,6 +2007,32 @@ body.grid-hidden .grid-overlay > span {
     height: 40px;
   }
 
+  .work-experience {
+    margin-top: 150px;
+  }
+
+  .experience-heading,
+  .experience-column,
+  .section-head,
+  .selected-work-grid,
+  .how-i-work-grid,
+  .contact-cta-links {
+    width: var(--mobile-content-width);
+    max-width: var(--mobile-content-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .selected-work,
+  .how-i-work,
+  .contact-cta {
+    margin-top: 54px;
+  }
+
+  .resume-link-wrap {
+    text-align: left;
+  }
+
   .job-header {
     margin-top: 150px;
   }
@@ -1816,5 +2207,9 @@ body.grid-hidden .grid-overlay > span {
     flex-basis: 60px;
     width: 60px;
     height: 44px;
+  }
+
+  .case-visual-static figcaption {
+    padding: 15px 15px 0;
   }
 }
