@@ -24,6 +24,30 @@ make dev PORT=8080
 
 `make dev-lan` is available as an alias of `make dev`.
 
+## Development workflow
+
+Before starting implementation work:
+
+```bash
+git branch --show-current
+```
+
+- If you are on `main`, create or switch to a feature branch before editing files.
+- Do not use `main` as the active development branch.
+- Preferred workflow: use a dedicated `git worktree` per feature branch/thread.
+
+Example:
+
+```bash
+git switch -c codex/my-feature
+```
+
+Or, for isolated parallel work:
+
+```bash
+git worktree add ../nieder-me-my-feature -b codex/my-feature
+```
+
 ## Live reload
 
 For auto-refresh in the browser on file save, run:

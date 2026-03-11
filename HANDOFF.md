@@ -1,35 +1,26 @@
 # Handoff
 
 ## Branch
-- `main`
+- `codex/feature-branch-process`
 
 ## Current Focus
-- Homepage mobile work-experience carousel polish.
+- Make the repo lifecycle docs explicitly require feature-branch work before implementation.
 
 ## What Changed
-- Wrapped the two homepage work-experience columns in a mobile carousel container with mobile page dots.
-- Added mobile-only carousel sizing and scroll-snap rules so the second column peeks in like the topper cards.
-- Corrected the carousel track offset so both columns snap to the same left text edge.
-- Bumped homepage asset query params in `index.html`:
-  - `assets/css/styles.css?v=20260310-030`
-  - `assets/js/main.js?v=20260310-030`
+- Added a `Feature Branch First` section to `AGENTS.md`.
+- Made the rule explicit that implementation work must not begin on `main`.
+- Added a matching `Development workflow` section to `README.md` with branch/worktree examples.
+- Removed the duplicated `Thread/Branch Isolation` section from `AGENTS.md`.
 
 ## Verification
-- `git diff` confirms the homepage work-experience markup/CSS changes plus cache-bust token updates.
+- `git diff` should show doc-only changes in `AGENTS.md`, `README.md`, and `HANDOFF.md`.
 
 ## Open Items
-- Commit and push `main`.
-- Run `./scripts/deploy-2026.sh` from a shell with deploy SSH credentials loaded.
-- Verify the mobile work-experience carousel on iPhone Safari after deploy.
+- Commit and push the docs update branch.
+- If desired, cherry-pick or merge the docs update back after review.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
-3. Commit and push `main`
-4. Run deploy:
-   - `./scripts/deploy-2026.sh`
-5. Verify:
-   - Homepage `Work Experience` carousel behavior on mobile Safari
-   - `https://nieder.me/2026/work/`
-   - `https://nieder.me/2026/work/resy-discovery/`
-   - `https://nieder.me/2026/work/sendmoi/`
+3. Review `AGENTS.md` and `README.md`
+4. Commit and push `codex/feature-branch-process`
