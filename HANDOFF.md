@@ -1,42 +1,25 @@
 # Handoff
 
 ## Branch
-- `codex/fix-deploy-work-sync`
+- `codex/cache-bust-refresh`
 
 ## Current Focus
-- Final homepage/article polish + deploy script sync fix.
+- Publish cache-bust refresh for homepage CSS/JS asset query params.
 
 ## What Changed
-- Updated deploy script `scripts/deploy-2026.sh` so sync includes:
-  - `index.html`
-  - `assets/`
-  - `work/` (if present)
-  - `sendmoi/` (if present)
-- Updated article back links to use directory roots instead of explicit `index.html`.
-- Removed footer `Policies` column/links from:
-  - `/`
-  - `/work`
-  - `/work/resy-discovery/`
-  - `/work/sendmoi/`
-- Removed homepage mobile section nav completely:
-  - removed HTML markup block in `index.html`
-  - removed JS controller block in `assets/js/main.js`
-  - removed related CSS rules in `assets/css/styles.css`
-- Updated README notes for deploy behavior, footer composition, and mobile nav removal.
+- Bumped homepage asset query params in `index.html`:
+  - `assets/css/styles.css?v=20260310-029`
+  - `assets/js/main.js?v=20260310-029`
 
 ## Verification
-- `node --check assets/js/main.js` passes.
-- `rg "mobile-section-nav"` returns no matches in `index.html`, `assets/css/styles.css`, `assets/js/main.js`.
-- `rg 'href="[^"]*index\\.html'` returns no remaining homepage/article nav links.
-- `rg 'href="/sendmoi/'` returns no remaining footer policy links.
+- `git diff` confirms only cache-bust version tokens changed in homepage HTML.
 
 ## Open Items
-- Commit and push this branch.
 - Open PR and merge.
 - Run `./scripts/deploy-2026.sh` from a shell with deploy SSH credentials loaded.
 
 ## Resume Checklist
-1. `git checkout codex/fix-deploy-work-sync`
+1. `git checkout codex/cache-bust-refresh`
 2. `git status --short`
 3. Open/merge PR
 4. Run deploy:
