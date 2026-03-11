@@ -126,6 +126,7 @@ The deploy script now syncs `index.html`, `assets/`, and (when present) `work/` 
 
 - The mobile-specific section dropdown nav has been removed from the homepage.
 - The mobile topper and case-study stack now use responsive width rules between narrower and wider phone viewports instead of a fixed 375px-only layout.
+- The homepage `Work Experience` section now collapses into a two-panel horizontal carousel on phones, with mobile page dots and a partial peek of the next column.
 - The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
-- CSS and JS assets use cache-busting query params in `index.html`; if Safari looks stale after changes, do a hard refresh.
+- CSS and JS assets use cache-busting query params in `index.html` (`v=20260310-030` on the homepage); if Safari looks stale after changes, do a hard refresh.
