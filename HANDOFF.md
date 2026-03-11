@@ -1,33 +1,49 @@
 # Handoff
 
 ## Branch
-- `main`
+- `codex/minor-tweaks`
 
 ## Current Focus
-- Home/work routing polish and article rail consistency updates.
+- Footer refinement across all pages, plus final rail polish.
 
 ## What Changed
-- Home `Work Experience` section copy was tightened for the NYT role description.
-- Home overflow link now reads `Full Work Experience & Resume →` and routes to `/work`.
-- Added `/work` placeholder page (`work/index.html`) with the same rail/nav treatment and footer as article pages.
-- Updated article rail behavior:
-  - `Back` icon remains slot one on article pages.
-  - `Work Experience` slot now routes to `/work` (not the home anchor).
-  - Active case-study icon remains static per page; no scroll-driven switching on article pages.
-- Added footer layout and styles on work pages for visual consistency (`assets/css/work-case-study.css` + article/footer markup).
-- Refined shared footer structure/style on home (`assets/css/styles.css` + `index.html` footer markup).
+- Footer now exists on all key pages:
+  - `/`
+  - `/work`
+  - `/work/resy-discovery/`
+  - `/work/sendmoi/`
+- Footer layout/system updates:
+  - Removed standalone `Connect` text-link column.
+  - Moved social icon row under `John Niedermeyer` + `Product Design & Direction`.
+  - Placed `© 2026 John Niedermeyer` below the icon row.
+  - Rebalanced desktop columns: wider brand block + `Case Studies` + `Policies`.
+  - Footer links use white text with animated underline on hover/focus.
+  - Footer heading color now matches copyright gray.
+- Work-page rail polish:
+  - Removed unintended top divider line above the first rail item (`.work-case-anchor:first-child { border-top: none; }`).
+- Routing/content polish retained in this branch:
+  - Home overflow link now routes to `/work`.
+  - `/work` placeholder page included and uses shared rail/footer language.
+  - Article rail `Work Experience` slot routes to `/work`.
 
 ## Verification
-- Manual HTML/CSS review of updated pages and link targets.
+- `node --check assets/js/main.js` passes.
+- Manual HTML/CSS/link-target review of:
+  - `/`
+  - `/work`
+  - `/work/resy-discovery/`
+  - `/work/sendmoi/`
 
 ## Open Items
-- None for this polish pass.
+- Commit, push branch, and open PR.
 
 ## Resume Checklist
-1. `git pull`
+1. `git checkout codex/minor-tweaks`
 2. `git status --short`
 3. Run `make` and verify:
    - `/`
    - `/work`
    - `/work/resy-discovery/`
    - `/work/sendmoi/`
+4. Commit + push
+5. Open PR

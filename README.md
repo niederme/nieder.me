@@ -89,13 +89,17 @@ EOF
 
 ## Homepage footer
 
-- The homepage now includes a grid-aligned footer after case-study promos using grouped link columns for long-term growth.
-- Footer groups:
-  - `Case Studies` (internal work links)
-  - `Connect` (social + email)
-  - `Policies` (`/sendmoi/privacy/`, `/sendmoi/terms/`, `/sendmoi/accessibility/`)
-- Footer keeps the same visual system (rules, typography scale, spacing) and collapses responsively for tablet/mobile.
-- `data-email-link` now supports multiple anchors so the obfuscated mailto behavior works in both topper social links and footer links.
+- Footer is now present on:
+  - homepage `/`
+  - `/work`
+  - `/work/resy-discovery/`
+  - `/work/sendmoi/`
+- Footer composition:
+  - left block with `John Niedermeyer`, `Product Design & Direction`, icon-based social row, and copyright
+  - `Case Studies` column
+  - `Policies` column (`/sendmoi/privacy/`, `/sendmoi/terms/`, `/sendmoi/accessibility/`)
+- Footer link styling is white with animated underline on hover/focus.
+- Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
 
 ## Legacy removal
 

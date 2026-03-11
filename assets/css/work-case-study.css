@@ -288,6 +288,45 @@ a:focus-visible {
   color: #ff6a60;
 }
 
+.social-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  background-color: var(--fg);
+  transition: background-color 0.18s ease, opacity 0.18s ease;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.social-icon-instagram {
+  -webkit-mask-image: url("../icons/social/instagram.svg");
+  mask-image: url("../icons/social/instagram.svg");
+}
+
+.social-icon-github {
+  -webkit-mask-image: url("../icons/social/github.svg");
+  mask-image: url("../icons/social/github.svg");
+}
+
+.social-icon-linkedin {
+  -webkit-mask-image: url("../icons/social/linkedin.svg");
+  mask-image: url("../icons/social/linkedin.svg");
+}
+
+.social-icon-x {
+  -webkit-mask-image: url("../icons/social/x.svg");
+  mask-image: url("../icons/social/x.svg");
+}
+
+.social-icon-email {
+  -webkit-mask-image: url("../icons/social/email.svg");
+  mask-image: url("../icons/social/email.svg");
+}
+
 .work-article {
   width: min(1268px, calc(100vw - 32px));
   margin: 0 auto;
@@ -493,19 +532,15 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .site-footer-brand {
-  grid-column: 1 / span 6;
+  grid-column: 1 / span 7;
 }
 
 .site-footer-column-work {
-  grid-column: 7 / span 2;
-}
-
-.site-footer-column-connect {
-  grid-column: 9 / span 2;
+  grid-column: 8 / span 2;
 }
 
 .site-footer-column-policies {
-  grid-column: 11 / span 2;
+  grid-column: 10 / span 3;
 }
 
 .site-footer-name,
@@ -524,6 +559,10 @@ body.grid-hidden .work-grid-overlay > span {
 .site-footer-role {
   margin-top: 6px;
   color: var(--accent);
+}
+
+.site-footer-connect {
+  margin-top: 14px;
 }
 
 .site-footer-meta {
@@ -591,6 +630,41 @@ body.grid-hidden .work-grid-overlay > span {
   transform: scaleX(1);
 }
 
+.site-footer-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+}
+
+.site-footer-social li {
+  margin: 0;
+}
+
+.site-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  text-decoration: none;
+}
+
+.site-footer-social .social-icon {
+  width: 22px;
+  height: 22px;
+  background-color: var(--fg);
+}
+
+.site-footer-social a:hover .social-icon,
+.site-footer-social a:focus-visible .social-icon {
+  background-color: var(--fg);
+  opacity: 0.68;
+}
+
 @media (max-width: 1100px) {
   .work-page::before,
   .rail,
@@ -620,7 +694,6 @@ body.grid-hidden .work-grid-overlay > span {
 
   .site-footer-brand,
   .site-footer-column-work,
-  .site-footer-column-connect,
   .site-footer-column-policies {
     grid-column: auto;
   }
