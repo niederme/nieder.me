@@ -1,53 +1,49 @@
 # Handoff
 
 ## Branch
-- `codex/enhancement-footer`
-
-## Ticket
-- `#17` Enhancement: Add extensible grid footer with policy links
-  - https://github.com/niederme/nieder.me/issues/17
+- `codex/minor-tweaks`
 
 ## Current Focus
-- Add and ship a homepage footer that matches the existing Vignelli/Speakerman grid style.
-- Ensure footer link architecture can grow over time without structural refactors.
+- Footer refinement across all pages, plus final rail polish.
 
 ## What Changed
-- Homepage footer added (`index.html`, `assets/css/styles.css`):
-  - Added a new `site-footer` section after case-study promos.
-  - Added grouped, extensible link columns:
-    - `Case Studies` (internal)
-    - `Connect` (external + email)
-    - `Policies` (privacy/terms/accessibility)
-  - Added footer brand/legal copy block.
-  - Kept desktop alignment on the existing 12-column grid; added responsive tablet/mobile collapse behavior.
-- Email-link behavior generalized (`assets/js/main.js`):
-  - Updated `data-email-link` handling from single element to multiple elements so topper + footer can both use obfuscated mailto links.
-- Cache-bust updates:
-  - Updated homepage CSS/JS query params to `v=20260310-020`.
-- Docs:
-  - Updated `README.md` with a new `Homepage footer` section and implementation notes.
+- Footer now exists on all key pages:
+  - `/`
+  - `/work`
+  - `/work/resy-discovery/`
+  - `/work/sendmoi/`
+- Footer layout/system updates:
+  - Removed standalone `Connect` text-link column.
+  - Moved social icon row under `John Niedermeyer` + `Product Design & Direction`.
+  - Placed `© 2026 John Niedermeyer` below the icon row.
+  - Rebalanced desktop columns: wider brand block + `Case Studies` + `Policies`.
+  - Footer links use white text with animated underline on hover/focus.
+  - Footer heading color now matches copyright gray.
+- Work-page rail polish:
+  - Removed unintended top divider line above the first rail item (`.work-case-anchor:first-child { border-top: none; }`).
+- Routing/content polish retained in this branch:
+  - Home overflow link now routes to `/work`.
+  - `/work` placeholder page included and uses shared rail/footer language.
+  - Article rail `Work Experience` slot routes to `/work`.
 
 ## Verification
 - `node --check assets/js/main.js` passes.
-- Manual source review confirms:
-  - Footer is placed after case-study promos.
-  - New footer classes have desktop + responsive mobile rules.
-  - Footer email link uses existing obfuscation setup via `data-email-link`.
+- Manual HTML/CSS/link-target review of:
+  - `/`
+  - `/work`
+  - `/work/resy-discovery/`
+  - `/work/sendmoi/`
 
 ## Open Items
-- Visual QA in browser at desktop and mobile breakpoints.
-- Commit, push branch, and open PR referencing issue `#17`.
+- Commit, push branch, and open PR.
 
 ## Resume Checklist
-1. `git fetch --all`
-2. `git checkout codex/enhancement-footer`
-3. `git status --short`
-4. Review diffs in:
-   - `index.html`
-   - `assets/css/styles.css`
-   - `assets/js/main.js`
-   - `README.md`
-   - `HANDOFF.md`
-5. Run `node --check assets/js/main.js`
-6. Commit + push
-7. Open PR and include `Closes #17`
+1. `git checkout codex/minor-tweaks`
+2. `git status --short`
+3. Run `make` and verify:
+   - `/`
+   - `/work`
+   - `/work/resy-discovery/`
+   - `/work/sendmoi/`
+4. Commit + push
+5. Open PR

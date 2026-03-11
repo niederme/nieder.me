@@ -78,19 +78,28 @@ EOF
 - Promo block configuration uses data attributes for logo, desktop/mobile backgrounds, and image focus anchoring (`left`, `center`, `right`).
 - The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
+- The `Full Work Experience & Resume →` link on home now routes to `/work`.
+- `/work` is a placeholder overflow page for extended work history and project narrative links.
 - Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home nav icon, and `cols` toggle).
+- Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`) now keep the home-style rail nav items (`Home`, `Work Experience`, `Resy`, `SendMoi`) with static active state per page (no scroll-driven switching on child pages).
+- On article pages, the `Work Experience` rail item now links to `/work`.
+- On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
 - Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
 - Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, and `SendMoi`, with explicit off/on/hover icon assets.
 
 ## Homepage footer
 
-- The homepage now includes a grid-aligned footer after case-study promos using grouped link columns for long-term growth.
-- Footer groups:
-  - `Case Studies` (internal work links)
-  - `Connect` (social + email)
-  - `Policies` (`/sendmoi/privacy/`, `/sendmoi/terms/`, `/sendmoi/accessibility/`)
-- Footer keeps the same visual system (rules, typography scale, spacing) and collapses responsively for tablet/mobile.
-- `data-email-link` now supports multiple anchors so the obfuscated mailto behavior works in both topper social links and footer links.
+- Footer is now present on:
+  - homepage `/`
+  - `/work`
+  - `/work/resy-discovery/`
+  - `/work/sendmoi/`
+- Footer composition:
+  - left block with `John Niedermeyer`, `Product Design & Direction`, icon-based social row, and copyright
+  - `Case Studies` column
+  - `Policies` column (`/sendmoi/privacy/`, `/sendmoi/terms/`, `/sendmoi/accessibility/`)
+- Footer link styling is white with animated underline on hover/focus.
+- Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
 
 ## Legacy removal
 
