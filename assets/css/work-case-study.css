@@ -539,10 +539,6 @@ body.grid-hidden .work-grid-overlay > span {
   grid-column: 8 / span 2;
 }
 
-.site-footer-column-policies {
-  grid-column: 10 / span 3;
-}
-
 .site-footer-name,
 .site-footer-role {
   margin: 0;
@@ -693,8 +689,7 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .site-footer-brand,
-  .site-footer-column-work,
-  .site-footer-column-policies {
+  .site-footer-column-work {
     grid-column: auto;
   }
 
