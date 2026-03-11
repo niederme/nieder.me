@@ -64,6 +64,16 @@ Use `code` formatting safely in Markdown without zsh command substitution.
 EOF
 ```
 
+## Deploy (/2026)
+
+Run:
+
+```bash
+./scripts/deploy-2026.sh
+```
+
+The deploy script now syncs `index.html`, `assets/`, and (when present) `work/` and `sendmoi/`, so `/2026/work/...` routes are published alongside homepage updates.
+
 ## SendMoi pages
 
 - `/sendmoi/` is the standalone SendMoi marketing page (system light/dark, hero product video, feature grid, and temporary `Coming soon` App Store treatment).
@@ -98,7 +108,6 @@ EOF
 - Footer composition:
   - left block with `John Niedermeyer`, `Product Design & Direction`, icon-based social row, and copyright
   - `Case Studies` column
-  - `Policies` column (`/sendmoi/privacy/`, `/sendmoi/terms/`, `/sendmoi/accessibility/`)
 - Footer link styling is white with animated underline on hover/focus.
 - Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
 
@@ -115,7 +124,7 @@ EOF
 
 ## Current mobile behavior
 
-- The homepage includes a mobile-specific case-study nav that appears after the topper and tracks the active section.
+- The mobile-specific section dropdown nav has been removed from the homepage.
 - The mobile topper and case-study stack now use responsive width rules between narrower and wider phone viewports instead of a fixed 375px-only layout.
 - The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
