@@ -76,6 +76,7 @@ EOF
 - The homepage `index.html` now includes a reusable case-study promo block after `Work Experience`.
 - Current instances are Resy and SendMoi, each with right-anchored background imagery and CTA text `View Case Study`.
 - Promo block configuration uses data attributes for logo, desktop/mobile backgrounds, and image focus anchoring (`left`, `center`, `right`).
+- Promo image references now use `*-promo.*` filenames to avoid production path mismatches observed on `nieder.me/2026` for earlier asset names.
 - The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.

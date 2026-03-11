@@ -1,49 +1,36 @@
 # Handoff
 
 ## Branch
-- `codex/minor-tweaks`
+- `codex/fix-promo-missing-assets`
 
 ## Current Focus
-- Footer refinement across all pages, plus final rail polish.
+- Hotfix missing homepage case-study promo assets on `https://nieder.me/2026/`.
 
 ## What Changed
-- Footer now exists on all key pages:
-  - `/`
-  - `/work`
-  - `/work/resy-discovery/`
-  - `/work/sendmoi/`
-- Footer layout/system updates:
-  - Removed standalone `Connect` text-link column.
-  - Moved social icon row under `John Niedermeyer` + `Product Design & Direction`.
-  - Placed `© 2026 John Niedermeyer` below the icon row.
-  - Rebalanced desktop columns: wider brand block + `Case Studies` + `Policies`.
-  - Footer links use white text with animated underline on hover/focus.
-  - Footer heading color now matches copyright gray.
-- Work-page rail polish:
-  - Removed unintended top divider line above the first rail item (`.work-case-anchor:first-child { border-top: none; }`).
-- Routing/content polish retained in this branch:
-  - Home overflow link now routes to `/work`.
-  - `/work` placeholder page included and uses shared rail/footer language.
-  - Article rail `Work Experience` slot routes to `/work`.
+- Added new promo asset files with unique names:
+  - `assets/images/home/case-study-promos/logo-resy-promo.svg`
+  - `assets/images/home/case-study-promos/logo-sendmoi-promo.svg`
+  - `assets/images/home/case-study-promos/bg-sendmoi-promo-desktop.png`
+- Updated homepage promo references in `index.html` to point to the new `*-promo.*` assets for both Resy and SendMoi.
+- Bumped homepage asset query params to `v=20260310-023` in `index.html` for CSS/JS cache refresh.
+- Updated docs:
+  - `README.md` with note about promo filename hotfix strategy.
+  - `HANDOFF.md` refreshed for this branch.
 
 ## Verification
-- `node --check assets/js/main.js` passes.
-- Manual HTML/CSS/link-target review of:
-  - `/`
-  - `/work`
-  - `/work/resy-discovery/`
-  - `/work/sendmoi/`
+- Confirmed live 404s before fix:
+  - `/2026/assets/images/home/case-study-promos/logo-SendMoi.svg`
+  - `/2026/assets/images/home/case-study-promos/bg-SendMoi-desktop.png`
+- Confirmed updated `index.html` now references only the new promo filenames.
 
 ## Open Items
-- Commit, push branch, and open PR.
+- Commit, push branch, and merge/deploy.
 
 ## Resume Checklist
-1. `git checkout codex/minor-tweaks`
+1. `git checkout codex/fix-promo-missing-assets`
 2. `git status --short`
-3. Run `make` and verify:
-   - `/`
-   - `/work`
-   - `/work/resy-discovery/`
-   - `/work/sendmoi/`
+3. Verify homepage promos on:
+   - local `make` preview
+   - `https://nieder.me/2026/`
 4. Commit + push
-5. Open PR
+5. Merge to `main`
