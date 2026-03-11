@@ -643,6 +643,10 @@ body.grid-hidden .grid-overlay > span {
   column-gap: var(--grid-gutter);
 }
 
+.experience-columns-carousel {
+  display: contents;
+}
+
 .experience-heading {
   grid-column: 1 / span 3;
 }
@@ -2076,6 +2080,11 @@ body.grid-hidden .grid-overlay > span {
     margin-bottom: 0;
   }
 
+  .mobile-page-dots-experience {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
   .mobile-page-dots-strategy {
     margin-top: 8px;
     margin-bottom: 0;
@@ -2275,6 +2284,58 @@ body.grid-hidden .grid-overlay > span {
 
   .job-header {
     margin-top: 150px;
+  }
+
+  .experience-grid {
+    row-gap: 20px;
+  }
+
+  .experience-columns-carousel {
+    --experience-card-1: min(325px, calc(100vw - 50px));
+    --experience-card-n: min(396px, calc(100vw - 30px));
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: calc(100% + 10px);
+    max-width: none;
+    margin: 0 -5px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 15px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: auto;
+    scrollbar-width: none;
+  }
+
+  .experience-columns-carousel::after {
+    content: "";
+    flex: 0 0 max(0px, calc(100% - var(--experience-card-n)));
+  }
+
+  .experience-columns-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .experience-column {
+    min-width: 0;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+
+  .experience-column:first-child {
+    flex: 0 0 var(--experience-card-1);
+    width: var(--experience-card-1);
+    max-width: var(--experience-card-1);
+  }
+
+  .experience-column:last-child {
+    flex: 0 0 var(--experience-card-n);
+    width: var(--experience-card-n);
+    max-width: var(--experience-card-n);
   }
 
   .job-header h3,
