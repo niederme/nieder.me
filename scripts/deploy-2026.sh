@@ -57,9 +57,17 @@ REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH%/}/"
 # Ensure remote target exists.
 ssh -p "$DEPLOY_PORT" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
 
-# Sync site root file and assets folder.
+# Sync site files and folders needed for /2026.
+SYNC_PATHS=(index.html assets)
+if [[ -d work ]]; then
+  SYNC_PATHS+=(work)
+fi
+if [[ -d sendmoi ]]; then
+  SYNC_PATHS+=(sendmoi)
+fi
+
 rsync "${RSYNC_ARGS[@]}" -e "ssh -p $DEPLOY_PORT" \
-  index.html assets \
+  "${SYNC_PATHS[@]}" \
   "$REMOTE"
 
 echo "Deploy complete -> $REMOTE"

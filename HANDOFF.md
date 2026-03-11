@@ -1,36 +1,47 @@
 # Handoff
 
 ## Branch
-- `codex/fix-promo-missing-assets`
+- `codex/fix-deploy-work-sync`
 
 ## Current Focus
-- Hotfix missing homepage case-study promo assets on `https://nieder.me/2026/`.
+- Final homepage/article polish + deploy script sync fix.
 
 ## What Changed
-- Added new promo asset files with unique names:
-  - `assets/images/home/case-study-promos/logo-resy-promo.svg`
-  - `assets/images/home/case-study-promos/logo-sendmoi-promo.svg`
-  - `assets/images/home/case-study-promos/bg-sendmoi-promo-desktop.png`
-- Updated homepage promo references in `index.html` to point to the new `*-promo.*` assets for both Resy and SendMoi.
-- Bumped homepage asset query params to `v=20260310-023` in `index.html` for CSS/JS cache refresh.
-- Updated docs:
-  - `README.md` with note about promo filename hotfix strategy.
-  - `HANDOFF.md` refreshed for this branch.
+- Updated deploy script `scripts/deploy-2026.sh` so sync includes:
+  - `index.html`
+  - `assets/`
+  - `work/` (if present)
+  - `sendmoi/` (if present)
+- Updated article back links to use directory roots instead of explicit `index.html`.
+- Removed footer `Policies` column/links from:
+  - `/`
+  - `/work`
+  - `/work/resy-discovery/`
+  - `/work/sendmoi/`
+- Removed homepage mobile section nav completely:
+  - removed HTML markup block in `index.html`
+  - removed JS controller block in `assets/js/main.js`
+  - removed related CSS rules in `assets/css/styles.css`
+- Updated README notes for deploy behavior, footer composition, and mobile nav removal.
 
 ## Verification
-- Confirmed live 404s before fix:
-  - `/2026/assets/images/home/case-study-promos/logo-SendMoi.svg`
-  - `/2026/assets/images/home/case-study-promos/bg-SendMoi-desktop.png`
-- Confirmed updated `index.html` now references only the new promo filenames.
+- `node --check assets/js/main.js` passes.
+- `rg "mobile-section-nav"` returns no matches in `index.html`, `assets/css/styles.css`, `assets/js/main.js`.
+- `rg 'href="[^"]*index\\.html'` returns no remaining homepage/article nav links.
+- `rg 'href="/sendmoi/'` returns no remaining footer policy links.
 
 ## Open Items
-- Commit, push branch, and merge/deploy.
+- Commit and push this branch.
+- Open PR and merge.
+- Run `./scripts/deploy-2026.sh` from a shell with deploy SSH credentials loaded.
 
 ## Resume Checklist
-1. `git checkout codex/fix-promo-missing-assets`
+1. `git checkout codex/fix-deploy-work-sync`
 2. `git status --short`
-3. Verify homepage promos on:
-   - local `make` preview
-   - `https://nieder.me/2026/`
-4. Commit + push
-5. Merge to `main`
+3. Open/merge PR
+4. Run deploy:
+   - `./scripts/deploy-2026.sh`
+5. Verify:
+   - `https://nieder.me/2026/work/`
+   - `https://nieder.me/2026/work/resy-discovery/`
+   - `https://nieder.me/2026/work/sendmoi/`
