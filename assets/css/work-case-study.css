@@ -129,6 +129,25 @@ body.work-theme-sendmoi {
   --work-logo-height-mobile: 56px;
 }
 
+body.work-theme-sommai {
+  --work-hero-desktop-overlay: linear-gradient(95deg, rgba(0, 0, 0, 0.66) 12%, rgba(0, 0, 0, 0.34) 34%, rgba(0, 0, 0, 0.02) 72%);
+  --work-hero-mobile-overlay: linear-gradient(
+    0.03deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.76) 28%,
+    rgba(0, 0, 0, 0.24) 45%,
+    rgba(0, 0, 0, 0) 74%
+  );
+  --work-hero-desktop-image: url("../images/work/sommai/sommai-hero.png");
+  --work-hero-mobile-image: url("../images/work/sommai/sommai-hero.png");
+  --work-hero-focus-desktop: right center;
+  --work-hero-focus-mobile: right center;
+  --work-logo-width-desktop: 132px;
+  --work-logo-height-desktop: 42px;
+  --work-logo-width-mobile: 104px;
+  --work-logo-height-mobile: 33px;
+}
+
 .work-page {
   position: relative;
   min-height: 100vh;

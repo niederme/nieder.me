@@ -125,15 +125,16 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 ## Home case-study promo and article
 
 - The homepage `index.html` now includes a reusable case-study promo block after `Work Experience`.
-- Current instances are Resy and SendMoi, each with right-anchored background imagery and CTA text `View Case Study`.
+- Current instances are Resy, SendMoi, and Somm AI, each with CTA text `View Case Study`.
 - Promo block configuration uses data attributes for logo, desktop/mobile backgrounds, and image focus anchoring (`left`, `center`, `right`).
 - Promo image references now use `*-promo.*` filenames to avoid production path mismatches observed on `nieder.me/2026` for earlier asset names.
 - The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
+- The Somm AI CTA routes to `/work/somm-ai/`, an unshipped Resy concept case study about AI-guided search and availability.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.
-- `/work` now acts as a work overview page with a smaller home-style two-line title treatment (`Work Experience` in white, `& Resume` in red), a reserved resume block, and a separate case-study section with a left-aligned `Case Studies` heading and a 2-up grid for the current Resy and SendMoi writeups.
+- `/work` now acts as a work overview page with a smaller home-style two-line title treatment (`Work Experience` in white, `& Resume` in red), a reserved resume block, and a separate case-study section with a left-aligned `Case Studies` heading and a staggered two-column case-study layout for Resy, SendMoi, and Somm AI.
 - Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home/back nav icon set, `light` toggle, and `cols` toggle).
-- Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`) now keep the home-style rail nav items (`Home`, `Work Experience`, `Resy`, `SendMoi`) with static active state per page (no scroll-driven switching on child pages).
+- Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`, `/work/somm-ai/`) now keep the home-style rail/nav treatment, with a second temporary Resy `R` rail item used for `/work/somm-ai/`.
 - On article pages, the `Work Experience` rail item now links to `/work`.
 - On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
 - Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
@@ -146,6 +147,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
   - `/work`
   - `/work/resy-discovery/`
   - `/work/sendmoi/`
+  - `/work/somm-ai/`
 - Footer composition:
   - left block with `John Niedermeyer`, `Product Design & Direction`, icon-based social row, and copyright
   - `Case Studies` column

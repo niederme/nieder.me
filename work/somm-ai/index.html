@@ -5,30 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark" />
-    <title>Resy Consumer App Discovery | John Niedermeyer</title>
+    <title>Somm AI Search Concept | John Niedermeyer</title>
     <meta
       name="description"
-      content="Standalone long-form case study on evolving in-app restaurant discovery for the Resy consumer app."
+      content="Standalone long-form case study on Somm AI, an unshipped Resy proof of concept for AI-guided restaurant search and availability."
     />
-    <script>
-      (() => {
-        try {
-          const storedTheme = window.localStorage.getItem("nieder.theme");
-          if (storedTheme !== "light") return;
-          document.documentElement.dataset.theme = "light";
-          document.documentElement.style.colorScheme = "light";
-          const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-          const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
-          if (themeColorMeta) themeColorMeta.setAttribute("content", "#f5f1e8");
-          if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
-        } catch (error) {
-          // Ignore storage access failures and keep the dark default.
-        }
-      })();
-    </script>
     <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260312-008" />
   </head>
-  <body id="top">
+  <body id="top" class="work-theme-sommai">
     <div class="work-page">
       <aside class="rail" aria-label="Section navigation">
         <img class="logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
@@ -40,12 +24,12 @@
           <img class="icon-on" src="../../assets/icons/side-nav/icon-back-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-back-hover.svg" alt="" />
         </a>
-        <a class="work-case-anchor" href="../../work/" aria-label="Go to Work page">
+        <a class="work-case-anchor is-active" href="../../work/" aria-label="Go to Work page">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
         </a>
-        <a class="work-case-anchor is-active" href="../../work/resy-discovery/" aria-label="Resy case study">
+        <a class="work-case-anchor" href="../../work/resy-discovery/" aria-label="Resy case study">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-work-resy-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-work-resy-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-resy-hover.svg" alt="" />
@@ -55,11 +39,6 @@
           <img class="icon-on" src="../../assets/icons/side-nav/icon-work-sendmoi-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-sendmoi-hover.svg" alt="" />
         </a>
-        <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
-          <span class="theme-toggle-switch" aria-hidden="true"></span>
-          <span class="theme-toggle-label">light</span>
-          <span class="theme-toggle-state" aria-live="polite">Off</span>
-        </button>
         <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
           <span class="cols-toggle-switch" aria-hidden="true"></span>
           <span class="cols-toggle-label">cols</span>
@@ -73,11 +52,11 @@
           <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <section class="work-article-hero" aria-labelledby="resy-discovery-title">
+        <section class="work-article-hero" aria-labelledby="sommai-title">
           <div class="work-article-hero-content">
-            <img class="work-article-logo" src="../../assets/images/home/case-study-promos/logo-Resy.svg" alt="Resy" />
-            <p class="work-article-eyebrow">Resy Consumer App</p>
-            <h1 id="resy-discovery-title">Evolving in-App Restaurant Discovery</h1>
+            <img class="work-article-logo" src="../../assets/images/home/case-study-promos/logo-sommai.svg" alt="Somm AI" />
+            <p class="work-article-eyebrow">Resy Search &amp; Availability</p>
+            <h1 id="sommai-title">Exploring AI-powered search guidance for diners</h1>
           </div>
         </section>
 
@@ -93,11 +72,15 @@
             </div>
             <div class="work-article-meta-card">
               <p class="work-article-meta-label">Timeframe</p>
-              <p class="work-article-meta-value">February 2022 – June 2025</p>
+              <p class="work-article-meta-value">May 2025</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Status</p>
+              <p class="work-article-meta-value">Internal proof of concept; never shipped</p>
             </div>
             <div class="work-article-meta-card">
               <p class="work-article-meta-label">Platforms</p>
-              <p class="work-article-meta-value">iOS, Android, Web</p>
+              <p class="work-article-meta-value">Consumer search concept across mobile and web</p>
             </div>
           </aside>
 
@@ -105,18 +88,26 @@
             <section class="work-article-section">
               <h2>Context</h2>
               <p>
-                The Resy product surface had strong editorial content and a growing set of booking tools, but discovery flows
-                still carried friction between inspiration and action. The objective was to tighten that loop and increase
-                meaningful exploration inside the app.
+                Somm AI was a Resy Search &amp; Availability concept built around a simple question: what happens when diners
+                stop thinking in filters and start asking for help in plain language?
+              </p>
+              <p>
+                By May 2025, Google and other search surfaces were already training users to expect direct, conversational
+                answers. Resy had a different raw material to work with than generic search engines: editorial taste,
+                neighborhood nuance, and real booking inventory.
               </p>
             </section>
 
             <section class="work-article-section">
               <h2>Challenge</h2>
               <p>
-                Discovery had to serve different intents in the same session: browsing editorial stories, finding restaurants
-                fast, and saving options for later. The product needed clearer hierarchy and stronger transitions across those
-                intents without fragmenting the experience.
+                Traditional restaurant discovery leans on list views and granular filters like cuisine, time, and price.
+                That model is powerful, but it breaks down when intent is fuzzy: “tasting menu near me,” “date night but not
+                stuffy,” or “birthday dinner under $100.”
+              </p>
+              <p>
+                A generic AI layer would not have been enough. The experience needed to feel opinionated, trustworthy, and
+                unmistakably Resy while still keeping diners close to real availability and the downstream booking flow.
               </p>
             </section>
 
@@ -124,20 +115,22 @@
               <h2>Strategy</h2>
               <ul>
                 <li>
-                  <strong>Research + journey mapping:</strong> identified breakpoints between discovery, list-making, and
-                  reservation triggers.
+                  <strong>Hybrid search model:</strong> put an AI-generated answer at the top of results, then keep
+                  traditional venue cards directly underneath so users could move from guidance into action without switching
+                  mental models.
                 </li>
                 <li>
-                  <strong>Editorial-first discovery:</strong> structured the top of funnel around Resy editorial surfaces and
-                  algorithmic collections to improve relevance and recirculation.
+                  <strong>Editorial grounding:</strong> shape answers around Resy Guides, Collections, and curated language
+                  instead of generic summaries, so the system could explain not just what matched, but why it matched.
                 </li>
                 <li>
-                  <strong>Navigation re-architecture:</strong> modernized interaction patterns with a more sheet-based,
-                  gesture-forward model to reduce friction.
+                  <strong>Context + follow-ups:</strong> use the answer block to suggest neighborhoods, price tiers,
+                  availability context, and a next prompt that refined the original search instead of forcing users back into
+                  dropdowns.
                 </li>
                 <li>
-                  <strong>Cross-functional operating loop:</strong> aligned product, editorial, and engineering to keep the
-                  system coherent as feature velocity increased.
+                  <strong>Transparent trust cues:</strong> frame the concept as an early beta and explicitly point back to
+                  linked sources, keeping the AI layer assistive rather than authoritative.
                 </li>
               </ul>
             </section>
@@ -145,18 +138,27 @@
             <section class="work-article-section">
               <h2>Outcome</h2>
               <p>
-                The update tightened the path from curiosity to booking and gave content and product teams a shared surface
-                they could evolve together. It also established a durable structure for future discovery iterations as the app
-                scaled.
+                Somm AI never shipped, but the proof of concept clarified a strong product thesis: Resy’s advantage in AI
+                search was never going to be generic language generation on its own. The real opportunity was combining
+                conversational guidance with editorial curation and bookable inventory.
               </p>
               <p>
-                Related coverage:
-                <a
-                  href="https://www.foodandwine.com/resy-updates-app-with-restaurant-inspiration-stories-8663735"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Food &amp; Wine: Resy updates app with restaurant inspiration stories</a
-                >.
+                The work also created a sharper competitive frame. OpenTable still centered filters, Google’s AI layers felt
+                broad and noisy, and Yelp remained reviews-first. Resy could have occupied a warmer middle ground: not just a
+                booking tool, but a dining concierge with real tables behind the answer.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Key Learnings</h2>
+              <p>
+                The most compelling version of AI discovery did not replace search mechanics. It reduced the cost of getting
+                started, then handed users back to familiar cards, availability, and booking actions once intent was clearer.
+              </p>
+              <p>
+                The concept also reinforced an important product lesson: even unshipped experiments can do useful strategic
+                work. Somm AI helped define what an editorially grounded, availability-aware AI surface could look like inside
+                Resy long before that direction became table stakes across consumer products.
               </p>
             </section>
 
@@ -165,43 +167,27 @@
               <div class="work-article-visuals">
                 <figure>
                   <img
-                    src="../../assets/images/case-studies/resy-discover-tab/resy-discover-tab-01.png"
-                    alt="Resy discovery feed with editorial-first modules."
+                    src="../../assets/images/case-studies/sommai/google-ai-overview.png"
+                    alt="Google AI Overview response for a natural-language restaurant query."
                     loading="lazy"
                   />
-                  <figcaption>Discovery feed and editorial module structure.</figcaption>
+                  <figcaption>Google’s AI Overview raised the bar for conversational, intent-first restaurant search.</figcaption>
                 </figure>
                 <figure>
                   <img
-                    src="../../assets/images/case-studies/resy-discover-tab/resy-discover-tab-02.png"
-                    alt="Resy restaurant card and recommendation patterns."
+                    src="../../assets/images/case-studies/sommai/ai-answer-competitor-benchmark.png"
+                    alt="A competitor AI answer for a restaurant recommendation query."
                     loading="lazy"
                   />
-                  <figcaption>Content-to-card transitions inside discovery.</figcaption>
+                  <figcaption>Generic AI answers were useful, but they lacked live booking context and a strong editorial voice.</figcaption>
                 </figure>
                 <figure>
                   <img
-                    src="../../assets/images/case-studies/resy-discover-tab/resy-discover-tab-03.png"
-                    alt="Resy in-app list and booking entry points."
+                    src="../../assets/images/case-studies/sommai/resy-availability-cards.png"
+                    alt="Resy restaurant cards with live availability for tasting menu searches."
                     loading="lazy"
                   />
-                  <figcaption>Add-to-Lists and booking entry points.</figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src="../../assets/images/case-studies/resy-discover-tab/resy-discover-tab-04.png"
-                    alt="Resy curation and recommendation surface."
-                    loading="lazy"
-                  />
-                  <figcaption>Curated collections and recommendation continuity.</figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src="../../assets/images/case-studies/resy-discover-tab/resy-discover-tab-05.png"
-                    alt="Resy discovery detail and booking flow integration."
-                    loading="lazy"
-                  />
-                  <figcaption>Detail surface integrated with downstream actions.</figcaption>
+                  <figcaption>The proposed Resy layer kept bookable venue cards and real inventory close to the answer.</figcaption>
                 </figure>
               </div>
             </section>
@@ -259,6 +245,6 @@
         </footer>
       </main>
     </div>
-    <script src="../../assets/js/main.js?v=20260312-008"></script>
+    <script src="../../assets/js/main.js?v=20260310-020"></script>
   </body>
 </html>

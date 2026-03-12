@@ -1,0 +1,24 @@
+<svg width="240" height="72" viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text
+    x="0"
+    y="38"
+    fill="white"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="38"
+    font-weight="700"
+    letter-spacing="-1.4"
+  >
+    Somm AI
+  </text>
+  <text
+    x="2"
+    y="61"
+    fill="#FFD8D0"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+    letter-spacing="2.6"
+  >
+    RESY POC
+  </text>
+</svg>

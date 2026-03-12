@@ -1,31 +1,38 @@
 # Handoff
 
 ## Branch
-- `codex/worktree-preview-links`
+- `codex/third-case-study`
 
 ## Current Focus
-- Ship the worktree preview workflow update on this branch via PR for issue `#38`.
+- Finish and verify the third case study addition for Somm AI.
+
+## Tracking
+- GitHub issue `#34` tracks the Somm AI case study work.
 
 ## What Changed
-- Opened GitHub issue `#38` to track a predictable preview workflow for concurrent worktree threads.
-- Added `make dev-thread` and `make dev-live-thread` in `Makefile`.
-- Reserved `7777` as the default root-checkout preview port and documented the `7778`, `7779`, `7780`, and upward cascade for worktree previews.
-- Updated `AGENTS.md` so rendered work in a worktree should start or reuse a preview when needed and include the exact preview URL in responses.
-- Updated `README.md` with the new worktree preview commands and the expectation to surface preview URLs for rendered changes.
+- Added a new standalone case study at `/work/somm-ai/` for the unshipped May 2025 Somm AI concept.
+- Wrote deck-derived copy that frames Somm AI as a Resy search-and-availability proof of concept that never shipped.
+- Added supporting visuals for the case study using the provided deck assets and extracted screenshots.
+- Added a Somm AI promo to the homepage case-study stack.
+- Added a third card to the `/work/` index for Somm AI.
+- Added Somm AI to the shared `Case Studies` footer links across home and work pages.
+- Added a small Somm AI wordmark asset plus the new promo/hero CSS hooks in `assets/css/styles.css` and `assets/css/work-case-study.css`.
+- Updated `README.md` to reflect the third case study and the new `/work/somm-ai/` route.
 
 ## Verification
-- `make dev-thread`
-- `git diff --check`
-- Confirmed `make dev-thread` starts from `7778` and prints both the `.local` and LAN preview URLs.
-- Dry-run checked `make dev-live-thread` to confirm it also seeds from `7778`.
+- Confirm the homepage shows a third Somm AI promo beneath Resy and SendMoi.
+- Confirm `/work/` shows the third Somm AI card and the grid still wraps cleanly on smaller screens.
+- Confirm `/work/somm-ai/` loads with the new hero image, metadata, copy sections, and three visuals.
+- Confirm the footer `Case Studies` list now includes Somm AI everywhere it appears.
 
 ## Open Items
-- Push `codex/worktree-preview-links` and open the PR for issue `#38`.
+- Run a final local browser pass on `/`, `/work/`, and `/work/somm-ai/`.
+- Push the branch and open the PR against issue `#34` when ready.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
-4. Run `make dev-thread` or `make dev-live-thread`
-5. Confirm the preview URL uses the expected `7778+` worktree port range
-6. Push/open PR for `codex/worktree-preview-links`
+4. Run the local server and recheck `/`, `/work/`, and `/work/somm-ai/` at desktop and mobile widths
+5. Confirm the third case study reads cleanly and the new imagery loads correctly
+6. Push/open PR for `codex/third-case-study`
