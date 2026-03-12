@@ -96,7 +96,7 @@ Run:
 ./scripts/deploy-2026.sh
 ```
 
-The deploy script now syncs `index.html`, `assets/`, and (when present) `work/` and `sendmoi/`, so `/2026/work/...` routes are published alongside homepage updates.
+The deploy script stages a temporary copy of `index.html`, `assets/`, and (when present) `work/` and `sendmoi/`, rewrites the site metadata and cache-busted asset URLs there, and syncs that staged copy to the server. It does not mutate the tracked source files in your worktree.
 
 ## SendMoi pages
 
@@ -156,4 +156,4 @@ The deploy script now syncs `index.html`, `assets/`, and (when present) `work/` 
 - The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - Homepage company-link hover underlines now only apply on hover-capable devices, avoiding sticky touch hover states on iPhone.
 - The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
-- CSS and JS assets use cache-busting query params in `index.html` (`styles.css?v=20260311-001` on the homepage); if Safari looks stale after changes, do a hard refresh.
+- CSS and JS assets use deploy-time cache-busting query params in the staged homepage HTML; if Safari looks stale locally, do a hard refresh.

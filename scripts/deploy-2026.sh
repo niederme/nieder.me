@@ -30,44 +30,36 @@ if [[ "$DRY_RUN" == "1" ]]; then
   RSYNC_ARGS+=(--dry-run)
 fi
 
-./scripts/set-site-url.sh "$SITE_URL"
+STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/deploy-2026.XXXXXX")"
+cleanup() {
+  rm -rf "$STAGING_DIR"
+}
+trap cleanup EXIT
 
-# Auto-bump asset cache-bust query string in index.html:
-# assets/css/styles.css?v=YYYYMMDD-###
-# assets/js/main.js?v=YYYYMMDD-###
-today="$(date +%Y%m%d)"
-existing_version="$(grep -Eo 'assets/css/styles\.css\?v=[0-9]{8}-[0-9]{3}' index.html | head -n1 | sed -E 's#.*\?v=##' || true)"
-next_seq=1
-
-if [[ "$existing_version" =~ ^([0-9]{8})-([0-9]{3})$ ]]; then
-  existing_date="${BASH_REMATCH[1]}"
-  existing_seq="${BASH_REMATCH[2]}"
-  if [[ "$existing_date" == "$today" ]]; then
-    next_seq=$((10#$existing_seq + 1))
-  fi
+cp index.html "$STAGING_DIR/"
+cp -R assets "$STAGING_DIR/"
+if [[ -d work ]]; then
+  cp -R work "$STAGING_DIR/"
+fi
+if [[ -d sendmoi ]]; then
+  cp -R sendmoi "$STAGING_DIR/"
 fi
 
-new_css_version="$(printf "%s-%03d" "$today" "$next_seq")"
-perl -0pi -e "s#href=\"assets/css/styles\\.css(?:\\?v=[0-9]{8}-[0-9]{3})?\"#href=\"assets/css/styles.css?v=${new_css_version}\"#g" index.html
-perl -0pi -e "s#src=\"assets/js/main\\.js(?:\\?v=[0-9]{8}-[0-9]{3})?\"#src=\"assets/js/main.js?v=${new_css_version}\"#g" index.html
-echo "Using asset cache-bust version: ${new_css_version}"
+./scripts/set-site-url.sh "$SITE_URL" "$STAGING_DIR/index.html"
+
+css_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/css/styles.css" | awk '{print substr($1, 1, 12)}')"
+js_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/js/main.js" | awk '{print substr($1, 1, 12)}')"
+perl -0pi -e "s#href=\"assets/css/styles\\.css(?:\\?v=[^\"]+)?\"#href=\"assets/css/styles.css?v=${css_cache_bust}\"#g" "$STAGING_DIR/index.html"
+perl -0pi -e "s#src=\"assets/js/main\\.js(?:\\?v=[^\"]+)?\"#src=\"assets/js/main.js?v=${js_cache_bust}\"#g" "$STAGING_DIR/index.html"
+echo "Using staged asset cache-bust versions: styles.css?v=${css_cache_bust}, main.js?v=${js_cache_bust}"
 
 REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH%/}/"
 
 # Ensure remote target exists.
 ssh -p "$DEPLOY_PORT" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
 
-# Sync site files and folders needed for /2026.
-SYNC_PATHS=(index.html assets)
-if [[ -d work ]]; then
-  SYNC_PATHS+=(work)
-fi
-if [[ -d sendmoi ]]; then
-  SYNC_PATHS+=(sendmoi)
-fi
-
 rsync "${RSYNC_ARGS[@]}" -e "ssh -p $DEPLOY_PORT" \
-  "${SYNC_PATHS[@]}" \
+  "$STAGING_DIR"/ \
   "$REMOTE"
 
 echo "Deploy complete -> $REMOTE"
