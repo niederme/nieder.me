@@ -949,7 +949,7 @@ body.grid-hidden .grid-overlay > span {
 
 .case-study-promo-sommai {
   background-image: url("../images/home/case-study-promos/bg-sommai-desktop.png");
-  background-position: right center;
+  background-position: center center;
 }
 
 .case-study-promo-sendmoi .case-study-promo-logo {
@@ -958,11 +958,6 @@ body.grid-hidden .grid-overlay > span {
   object-fit: contain;
   object-position: left center;
   align-self: flex-start;
-}
-
-.case-study-promo-sommai .case-study-promo-logo {
-  width: 132px;
-  height: 42px;
 }
 
 .case-study-promo + .case-study-promo {
@@ -2611,17 +2606,12 @@ body.grid-hidden .grid-overlay > span {
 
   .case-study-promo-sommai {
     background-image: url("../images/home/case-study-promos/bg-sommai-mobile.png");
-    background-position: right center;
+    background-position: center center;
   }
 
   .case-study-promo-sendmoi .case-study-promo-logo {
     width: 56px;
     height: 56px;
-  }
-
-  .case-study-promo-sommai .case-study-promo-logo {
-    width: 104px;
-    height: 33px;
   }
 
   .case-study-promo + .case-study-promo {

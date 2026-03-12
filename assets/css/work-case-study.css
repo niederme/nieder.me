@@ -140,12 +140,12 @@ body.work-theme-sommai {
   );
   --work-hero-desktop-image: url("../images/work/sommai/sommai-hero.png");
   --work-hero-mobile-image: url("../images/work/sommai/sommai-hero.png");
-  --work-hero-focus-desktop: right center;
-  --work-hero-focus-mobile: right center;
-  --work-logo-width-desktop: 132px;
-  --work-logo-height-desktop: 42px;
-  --work-logo-width-mobile: 104px;
-  --work-logo-height-mobile: 33px;
+  --work-hero-focus-desktop: center center;
+  --work-hero-focus-mobile: center center;
+  --work-logo-width-desktop: 100px;
+  --work-logo-height-desktop: 44px;
+  --work-logo-width-mobile: 50px;
+  --work-logo-height-mobile: 22px;
 }
 
 .work-page {
