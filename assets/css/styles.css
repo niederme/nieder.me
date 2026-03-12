@@ -2,6 +2,8 @@
   --bg: #000000;
   --fg: #ffffff;
   --accent: #ff453a;
+  --focus-ring: #ffffff;
+  --focus-shadow: rgba(255, 69, 58, 0.34);
   --line: #2e2e2e;
   --muted: #ebebf5;
   --safe-top: env(safe-area-inset-top, 0px);
@@ -80,8 +82,34 @@ a:visited {
   color: var(--accent);
 }
 
+:where(a, button, [role="button"], input, select, textarea, summary):focus {
+  outline: none;
+}
+
+:where(a, button, [role="button"], input, select, textarea, summary):focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+:where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
 a:focus-visible {
   color: #ff6a60;
+}
+
+:where(
+  .logo-mark,
+  .mobile-logo-mark,
+  .case-anchor,
+  .social-links a,
+  .site-footer-social a,
+  .case-study-promo-cta,
+  .cols-toggle
+):focus-visible {
+  border-radius: 8px;
+  box-shadow: 0 0 0 5px var(--focus-shadow);
 }
 
 .page {

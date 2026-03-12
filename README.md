@@ -134,6 +134,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
   - `Case Studies` column
 - Footer link styling is white with animated underline on hover/focus.
 - Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
+- Interactive focus states across home and work pages now use a shared white `:focus-visible` outline, with a subtle brand-red halo on control-style elements like the spinning logo, rail nav items, social icons, cards, CTAs, and the `cols` toggle.
 
 ## Legacy removal
 
