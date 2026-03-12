@@ -1,31 +1,32 @@
 # Handoff
 
 ## Branch
-- `codex/hotfix-deploy-root-sync`
+- `codex/mid-phone-layout-polish`
 
 ## Current Focus
-- Hotfix the deploy script so it does not delete unmanaged root-level server files during staged deploys.
+- Polish the homepage breakpoint for short landscape phone viewports so it behaves more like the tighter small-phone layout.
 
 ## What Changed
-- Updated `scripts/deploy-2026.sh` to keep the staged deploy flow but sync only the managed staged paths (`index.html`, `assets/`, and when present `work/` / `sendmoi`) instead of syncing the entire staged root.
-- This avoids deleting unrelated root-level server files such as host-managed config during `rsync --delete`.
-- Updated `README.md` deploy documentation to clarify that only managed staged paths are synced.
+- Opened GitHub issue `#28` to track the short landscape phone breakpoint polish work.
+- Added a dedicated low-height landscape touch breakpoint in `assets/css/styles.css` so short phone viewports reuse the tighter mobile homepage treatment instead of the stretched tablet-ish layout.
+- The topper and `Work Experience` sections now switch into constrained-width horizontal scrollers with mobile page dots at this breakpoint.
+- Updated `assets/js/main.js` so mobile page-dot carousels reset their scroll position consistently on `pageshow`, including the new landscape-phone treatment.
+- Updated `README.md` to document the new short-landscape-phone homepage behavior.
 
 ## Verification
-- Verified with a mocked deploy run using fake `ssh`/`rsync` wrappers:
-  - deploy still stages `index.html` and computes hashed cache-bust query params
-  - `rsync` now receives explicit staged paths instead of the staged root directory
-  - the command includes staged `index.html`, `assets`, and `work` as expected
+- Verified locally with Playwright screenshots against a local server:
+- `iPhone 14` landscape (`844x390`, WebKit)
+- `iPhone SE` landscape (`667x375`, WebKit)
+- Confirmed the homepage no longer uses the over-wide text layout at these short landscape phone sizes.
 
 ## Open Items
-- Commit and push `codex/hotfix-deploy-root-sync`.
-- Redeploy and verify `https://nieder.me/2026/` no longer returns 403.
-- Open PR and merge after review if desired.
+- Review the visual balance of the landscape-phone carousel peeks on a real device and adjust if needed.
+- Commit, push, and open the PR for issue `#28`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
-4. Run or rerun deploy from `codex/hotfix-deploy-root-sync`
-5. Verify the homepage loads
-6. Commit/push/open PR if we keep the hotfix branch workflow
+4. Run the local server and recheck the homepage in a short landscape phone viewport
+5. Review the Playwright screenshots for topper and `Work Experience`
+6. Commit/push/open PR for `codex/mid-phone-layout-polish`

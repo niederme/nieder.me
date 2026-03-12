@@ -153,6 +153,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The mobile topper carousel now uses responsive snap insets so cards 1, 2, and 3 align to the same left text edge, while the middle card still leaves a visible hint of the next card.
 - The homepage `Work Experience` section now collapses into a two-panel horizontal carousel on phones, with mobile page dots and a partial peek of the next column.
 - The homepage mobile carousels now compute their snap inset from the shared content width instead of a fixed left offset, which keeps alignment consistent across different phone widths.
+- Short landscape phone viewports now reuse the tighter mobile homepage treatment, including constrained text measure, mobile page dots, and horizontal topper / work-experience card scrolling.
 - The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - Homepage company-link hover underlines now only apply on hover-capable devices, avoiding sticky touch hover states on iPhone.
 - The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
