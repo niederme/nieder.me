@@ -1,26 +1,33 @@
 # Handoff
 
 ## Branch
-- `codex/comma-wrap-hotfix`
+- `codex/deploy-staged-cache-bust`
 
 ## Current Focus
-- Hotfix the topper company-link punctuation so commas stay attached to the linked company names on line wrap.
+- Stop deploy from mutating tracked source files when updating site metadata and cache-busted asset URLs.
 
 ## What Changed
-- Moved the commas for `The New York Times`, `BuzzFeed`, and `Resy (at American Express)` inside the linked text in the homepage topper copy.
-- This keeps punctuation from wrapping onto its own line at the start of the next line on narrow mobile screens.
+- Updated `scripts/deploy-2026.sh` to build a temporary staging directory for deploy output instead of rewriting tracked source files in place.
+- Updated `scripts/set-site-url.sh` to accept an optional HTML target path so deploy can rewrite metadata in the staged `index.html`.
+- Switched deploy-time cache busting from date-sequence tokens stored in source to per-file content hashes computed from the staged CSS and JS assets.
+- Updated `README.md` deploy documentation to reflect the staged deploy flow and non-mutating cache-bust behavior.
 
 ## Verification
-- `git diff` shows a single-content hotfix in `index.html`.
+- Verified with a mocked deploy run using fake `ssh`/`rsync` wrappers:
+  - the worktree stayed unchanged before and after the deploy script ran
+  - the staged `index.html` received rewritten site metadata for the provided `SITE_URL`
+  - the staged `index.html` received hashed cache-bust query params for `styles.css` and `main.js`
 
 ## Open Items
-- Commit and push `codex/comma-wrap-hotfix`.
+- GitHub issue: `#25 Stop deploy from mutating tracked index.html`
+- Commit and push `codex/deploy-staged-cache-bust`.
 - Open PR and merge after review.
-- After merge, restore or re-apply the stashed deploy/cache-bust work only if still needed.
+- Decide whether to drop the stale stash after this branch lands.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
-4. Commit and push `codex/comma-wrap-hotfix`
-5. Open PR to `main`
+4. Verify mocked deploy leaves the worktree clean
+5. Commit and push `codex/deploy-staged-cache-bust`
+6. Open PR to `main`
