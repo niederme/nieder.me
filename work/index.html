@@ -6,11 +6,11 @@
     <title>Work | John Niedermeyer</title>
     <meta
       name="description"
-      content="Placeholder page for expanded work experience and case-study overflow."
+      content="Work overview page with room for a fuller resume and current case studies across Resy and SendMoi."
     />
-    <link rel="stylesheet" href="../assets/css/work-case-study.css?v=20260310-003" />
+    <link rel="stylesheet" href="../assets/css/work-case-study.css?v=20260312-007" />
   </head>
-  <body id="top">
+  <body id="top" class="work-index-page">
     <div class="work-page">
       <aside class="rail" aria-label="Section navigation">
         <img class="logo-mark" src="../assets/icons/logo-mark.svg" alt="JN monogram" />
@@ -50,29 +50,61 @@
           <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <section class="work-article-grid">
-          <aside class="work-article-meta" aria-label="Page status">
-            <div class="work-article-meta-card">
-              <p class="work-article-meta-label">Status</p>
-              <p class="work-article-meta-value">Placeholder</p>
-            </div>
-            <div class="work-article-meta-card">
-              <p class="work-article-meta-label">Route</p>
-              <p class="work-article-meta-value">/work/</p>
-            </div>
-          </aside>
+        <section class="work-index-header" aria-labelledby="work-index-title">
+          <h1 id="work-index-title">Work Experience</h1>
+          <h2>&amp; Resume</h2>
+        </section>
 
-          <article class="work-article-body">
-            <section class="work-article-section">
-              <h2>Work Experience Overflow</h2>
-              <p>
-                This page is a placeholder for additional long-form work experience content and archived project narratives.
-              </p>
-              <p>
-                For now, use the side rail to jump directly into the Resy and SendMoi case studies.
-              </p>
-            </section>
-          </article>
+        <section class="work-index-resume-block" aria-labelledby="work-index-resume-title">
+          <h3 id="work-index-resume-title">Resume</h3>
+          <p>
+            This section is reserved for a fuller resume view: roles, timelines, scope, and selected experience.
+          </p>
+        </section>
+
+        <section class="work-index-case-study-block" aria-labelledby="work-index-case-studies-title">
+          <div class="rule"></div>
+          <div class="work-article-grid work-index-case-study-layout">
+            <div class="work-index-case-study-heading">
+              <h2 id="work-index-case-studies-title">Case Studies</h2>
+            </div>
+
+            <div class="work-index-case-studies">
+              <a class="work-index-card" href="../work/resy-discovery/" aria-labelledby="work-index-resy-title">
+                <figure class="work-index-card-media">
+                  <img
+                    src="../assets/images/home/case-study-promos/bg-Resy-desktop.png"
+                    alt="Preview image for the Resy discovery case study"
+                  />
+                </figure>
+                <div class="work-index-card-copy">
+                  <p class="work-index-card-eyebrow">Resy Consumer App</p>
+                  <h4 id="work-index-resy-title">Evolving in-App Restaurant Discovery</h4>
+                  <p class="work-index-card-summary">
+                    Product design leadership across discovery, editorial, and booking flows.
+                  </p>
+                  <span class="work-index-card-cta">View Case Study</span>
+                </div>
+              </a>
+
+              <a class="work-index-card" href="../work/sendmoi/" aria-labelledby="work-index-sendmoi-title">
+                <figure class="work-index-card-media">
+                  <img
+                    src="../assets/images/home/case-study-promos/bg-SendMoi-desktop.png"
+                    alt="Preview image for the SendMoi case study"
+                  />
+                </figure>
+                <div class="work-index-card-copy">
+                  <p class="work-index-card-eyebrow">SendMoi for iOS &amp; MacOS</p>
+                  <h4 id="work-index-sendmoi-title">Designed &amp; built with a little help from AI coding tools.</h4>
+                  <p class="work-index-card-summary">
+                    End-to-end product, brand, and implementation work for a send-to-self utility.
+                  </p>
+                  <span class="work-index-card-cta">View Case Study</span>
+                </div>
+              </a>
+            </div>
+          </div>
         </section>
 
         <footer class="site-footer" aria-label="Site footer">
