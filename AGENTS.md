@@ -15,7 +15,7 @@
   - `git pull --ff-only`
   - `git checkout -b codex/<short-slug>`
 - For concurrent work, use separate branches and prefer separate worktrees:
-  - `git worktree add ../nieder.me-<short-slug> -b codex/<short-slug> main`
+  - `git worktree add ../<repo-name>-<short-slug> -b codex/<short-slug> main`
 - Keep scope tight: branch changes should stay focused on the linked issue.
 
 ### 2) Implement And Commit
