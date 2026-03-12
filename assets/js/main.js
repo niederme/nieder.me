@@ -333,14 +333,10 @@ if (logoMarks.length > 0) {
     scroller.addEventListener("scroll", queueDotUpdate, { passive: true });
     window.addEventListener("resize", queueDotUpdate);
     window.addEventListener("pageshow", () => {
-      if (window.innerWidth <= 430) {
-        scroller.scrollLeft = 0;
-        queueDotUpdate();
-      }
-    });
-    if (window.innerWidth <= 430) {
       scroller.scrollLeft = 0;
-    }
+      queueDotUpdate();
+    });
+    scroller.scrollLeft = 0;
     queueDotUpdate();
   });
 }
