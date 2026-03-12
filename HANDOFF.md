@@ -4,7 +4,7 @@
 - `codex/work-link-layout`
 
 ## Current Focus
-- Resolve the rebase conflict, push the updated branch, and clear the merge conflict on PR `#42` for issue `#41`.
+- Finish rebasing this branch onto `origin/main`, force-push it, and clear the merge conflict on PR `#42` for issue `#41`.
 
 ## Tracking
 - GitHub issue `#41` tracks the homepage `Work Experience` resume-link layout adjustment.
@@ -24,9 +24,9 @@
 - `make dev-local PORT=7788`
 
 ## Open Items
-- Finish the rebase onto `origin/main`.
-- Push the rebased branch with `--force-with-lease`.
-- Confirm PR `#42` is no longer reporting merge conflicts.
+- Complete the rebase onto `origin/main`.
+- Push the rebased branch with `git push --force-with-lease`.
+- Confirm PR `#42` is mergeable.
 
 ## Resume Checklist
 1. `git branch --show-current`
