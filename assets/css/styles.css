@@ -2007,13 +2007,13 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .content {
-    --mobile-content-width: min(520px, calc(100vw - 72px));
+    --mobile-content-width: min(382px, calc(100vw - 30px));
     display: block;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     min-width: 0;
-    padding: max(24px, calc(var(--safe-top) + 8px)) 16px 72px;
+    padding: max(24px, calc(var(--safe-top) + 8px)) 5px 72px;
   }
 
   .topper > .rule,
@@ -2024,8 +2024,8 @@ body.grid-hidden .grid-overlay > span {
   .selected-work > .rule,
   .how-i-work > .rule,
   .contact-cta > .rule {
-    width: calc(100% + 32px);
-    margin-left: -16px;
+    width: calc(100% + 10px);
+    margin-left: -5px;
   }
 
   .topper {
@@ -2041,8 +2041,8 @@ body.grid-hidden .grid-overlay > span {
     margin-right: auto;
     padding-left: 0;
     padding-right: 0;
-    font-size: clamp(42px, 7vw, 64px);
-    line-height: 1;
+    font-size: clamp(36px, 10vw, 42px);
+    line-height: 1.1;
     letter-spacing: -0.02em;
   }
 
@@ -2051,7 +2051,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .topper h2 {
-    margin-bottom: 38px;
+    margin-bottom: 48px;
   }
 
   .mobile-page-dots {
@@ -2074,16 +2074,16 @@ body.grid-hidden .grid-overlay > span {
 
   .topper-columns {
     --topper-track-inset: calc((100vw - var(--mobile-content-width)) / 2);
-    --topper-card-1: min(440px, calc(100vw - 112px));
-    --topper-card-n: min(520px, calc(100vw - 72px));
+    --topper-card-1: min(325px, calc(100vw - 50px));
+    --topper-card-n: min(382px, calc(100vw - 48px));
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    width: calc(100% + 32px);
+    width: calc(100% + 10px);
     max-width: none;
-    margin: 0 -16px;
+    margin: 0 -5px;
     padding: 17px 0 0 var(--topper-track-inset);
-    min-height: 120px;
+    min-height: 131px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -2107,7 +2107,7 @@ body.grid-hidden .grid-overlay > span {
     flex: 0 0 var(--topper-card-1);
     width: var(--topper-card-1);
     max-width: var(--topper-card-1);
-    min-height: 120px;
+    min-height: 131px;
     margin: 0;
     min-width: 0;
     scroll-snap-align: start;
@@ -2139,30 +2139,30 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .social-links {
-    width: min(320px, calc(100vw - 72px));
+    width: min(320px, calc(100vw - 30px));
     max-width: 100%;
     justify-content: flex-start;
-    margin: 24px auto 0;
+    margin: 29px auto 0;
   }
 
   .social-links a {
-    width: 24px;
-    height: 24px;
-    margin-right: 36px;
+    width: 26px;
+    height: 26px;
+    margin-right: 40px;
   }
 
   .social-icon {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
   }
 
   .social-links a:not(:last-child)::after {
-    right: -18px;
-    height: 36px;
+    right: -20px;
+    height: 40px;
   }
 
   .work-experience {
-    margin-top: 96px;
+    margin-top: 120px;
   }
 
   .experience-heading,
@@ -2184,14 +2184,14 @@ body.grid-hidden .grid-overlay > span {
 
   .experience-columns-carousel {
     --experience-track-inset: calc((100vw - var(--mobile-content-width)) / 2);
-    --experience-card-1: min(440px, calc(100vw - 112px));
-    --experience-card-n: min(520px, calc(100vw - 72px));
+    --experience-card-1: min(325px, calc(100vw - 50px));
+    --experience-card-n: min(396px, calc(100vw - 30px));
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    width: calc(100% + 32px);
+    width: calc(100% + 10px);
     max-width: none;
-    margin: 0 -16px;
+    margin: 0 -5px;
     padding-left: var(--experience-track-inset);
     box-sizing: border-box;
     overflow-x: auto;
