@@ -1,6 +1,7 @@
-.PHONY: dev dev-lan dev-local dev-live site-url site-url-stage site-url-prod issue-create
+.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod issue-create
 
 PORT ?= 7777
+THREAD_BASE_PORT ?= 7778
 BIND ?= 0.0.0.0
 LOCAL_HOST ?= localhost
 PORT_AUTO ?= 1
@@ -75,6 +76,9 @@ dev:
 	python3 -m http.server $$PORT_TO_USE --bind $(BIND)
 
 dev-lan: dev
+
+dev-thread: PORT := $(THREAD_BASE_PORT)
+dev-thread: dev
 
 dev-local:
 	@PORT_TO_USE="$(PORT)"; \
@@ -193,6 +197,9 @@ dev-live:
 	echo "(Ctrl+C to stop)"; \
 	(sleep 0.8; open "http://$$LOCAL_URL_HOST:$$PORT_TO_USE/") >/dev/null 2>&1 & \
 	npx browser-sync start --server . --files 'index.html,sendmoi/**/*.html,assets/css/**/*.css,assets/js/**/*.js' --host $(BIND) --port $$PORT_TO_USE --no-open
+
+dev-live-thread: PORT := $(THREAD_BASE_PORT)
+dev-live-thread: dev-live
 
 issue-create:
 	@if [ -z "$(ISSUE_TITLE)" ]; then \
