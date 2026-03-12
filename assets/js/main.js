@@ -1,5 +1,8 @@
 const caseNav = document.querySelector(".case-nav");
 const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
+const topLogoLinks = Array.from(
+  document.querySelectorAll('.logo-link[href="#top"], .mobile-logo-link[href="#top"]')
+);
 const themeToggles = Array.from(document.querySelectorAll(".theme-toggle"));
 const colsToggles = Array.from(document.querySelectorAll(".cols-toggle"));
 const emailLinks = Array.from(document.querySelectorAll("[data-email-link]"));
@@ -235,16 +238,9 @@ if (caseNav) {
   updateRailNav();
 }
 
-if (logoMarks.length > 0) {
-  logoMarks.forEach((mark) => {
-    mark.setAttribute("role", "button");
-    mark.setAttribute("tabindex", "0");
-    mark.setAttribute("aria-label", "Scroll to top");
-    mark.addEventListener("click", () => {
-      scrollToPageTop();
-    });
-    mark.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
+if (topLogoLinks.length > 0) {
+  topLogoLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
       event.preventDefault();
       scrollToPageTop();
     });
