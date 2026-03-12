@@ -1987,7 +1987,7 @@ body.grid-hidden .grid-overlay > span {
   }
 }
 
-@media (hover: none) and (pointer: coarse) and (min-width: 701px) and (max-width: 950px) {
+@media (min-width: 431px) and (max-width: 950px) {
   .page {
     overflow-x: hidden;
     max-width: 100%;
