@@ -1,39 +1,38 @@
 # Handoff
 
 ## Branch
-- `codex/third-case-study`
+- `codex/work-link-layout`
 
 ## Current Focus
-- Finish and verify the third case study addition for Somm AI.
+- Finish rebasing this branch onto `origin/main`, force-push it, and clear the merge conflict on PR `#42` for issue `#41`.
 
 ## Tracking
-- GitHub issue `#34` tracks the Somm AI case study work.
+- GitHub issue `#41` tracks the homepage `Work Experience` resume-link layout adjustment.
+- GitHub PR `#42` contains the branch changes.
 
 ## What Changed
-- Added a new standalone case study at `/work/somm-ai/` for the unshipped May 2025 Somm AI concept.
-- Wrote deck-derived copy that frames Somm AI as a Resy search-and-availability proof of concept that never shipped.
-- Added supporting visuals for the case study using the provided deck assets and extracted screenshots.
-- Added a Somm AI promo to the homepage case-study stack.
-- Added a third card to the `/work/` index for Somm AI.
-- Added Somm AI to the shared `Case Studies` footer links across home and work pages.
-- Updated the homepage and `/work` treatments to match the Figma promo/card designs, including the correct promo background asset and the staggered `/work` card layout.
-- Updated work-page rail nav to include a second temporary Resy `R` item for Somm AI.
-- Updated `README.md` to reflect the third case study and the new `/work/somm-ai/` route.
+- Moved the homepage `Full Work Experience & Resume →` link directly under the `Work Experience` heading.
+- Set the homepage link to render as two explicit lines on desktop and narrow mobile:
+  - `Full Work Experience`
+  - `& Resume →`
+- Added breakpoint-specific behavior for `521px` to `959px` viewports so the same link stays on one line at those widths.
+- Reworked the link hover/focus treatment so it no longer draws an oversized underline artifact.
+- Increased the mobile spacing below the link so the gap below is larger than the gap above.
 
 ## Verification
-- Confirm the homepage shows a third Somm AI promo beneath Resy and SendMoi.
-- Confirm `/work/` shows the third Somm AI card in the staggered two-column layout and still collapses cleanly on smaller screens.
-- Confirm `/work/somm-ai/` loads with the new hero image, metadata, copy sections, and three visuals.
-- Confirm the footer `Case Studies` list now includes Somm AI everywhere it appears.
-- Confirm the work-page rail shows a second Resy `R` item for Somm AI, with the correct active state on each case study page.
+- `git diff --check`
+- `make dev-local PORT=7788`
 
 ## Open Items
-- Push the branch and open the PR against issue `#34` when ready.
+- Complete the rebase onto `origin/main`.
+- Push the rebased branch with `git push --force-with-lease`.
+- Confirm PR `#42` is mergeable.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
-4. Run the local server and recheck `/`, `/work/`, and `/work/somm-ai/` at desktop and mobile widths
-5. Confirm the third case study reads cleanly, the new imagery loads correctly, and the extra Somm AI rail icon is present
-6. Push/open PR for `codex/third-case-study`
+4. Run `git diff --check`
+5. Run `make dev-local PORT=7788`
+6. `git push --force-with-lease`
+7. Confirm PR `#42` is mergeable

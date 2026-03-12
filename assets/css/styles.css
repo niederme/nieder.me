@@ -883,7 +883,10 @@ body.grid-hidden .grid-overlay > span {
 
   .resume-link:hover {
     color: var(--accent);
-    text-decoration-color: rgba(255, 69, 58, 0.65);
+  }
+
+  .resume-link:hover .resume-link-line {
+    border-bottom-color: rgba(255, 69, 58, 0.65);
   }
 }
 
@@ -906,22 +909,32 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .resume-link {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
   color: var(--accent);
   font-size: 18px;
   font-weight: 700;
-  text-decoration-line: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
+  text-decoration: none;
   line-height: 1.08;
-  padding-bottom: 0;
-  transition: text-decoration-color 0.18s ease, color 0.2s ease;
+  gap: 0;
+  transition: color 0.2s ease;
+}
+
+.resume-link-line {
+  display: block;
+  width: fit-content;
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
 }
 
 .resume-link:focus-visible {
   color: var(--accent);
-  text-decoration-color: rgba(255, 69, 58, 0.65);
+}
+
+.resume-link:focus-visible .resume-link-line {
+  border-bottom-color: rgba(255, 69, 58, 0.65);
 }
 
 .resume-link.is-disabled {
@@ -2339,6 +2352,44 @@ body.grid-hidden .grid-overlay > span {
     font-size: 40px;
   }
 
+  .resume-link-wrap {
+    margin: 18px 0 40px;
+  }
+
+  .resume-link {
+    display: inline-block;
+    white-space: nowrap;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.18s ease, color 0.2s ease;
+  }
+
+  .resume-link-line {
+    display: inline;
+    width: auto;
+    white-space: normal;
+    border-bottom: 0;
+  }
+
+  .resume-link-line + .resume-link-line::before {
+    content: " ";
+  }
+
+  .resume-link:focus-visible {
+    border-bottom-color: rgba(255, 69, 58, 0.65);
+  }
+
+  .resume-link:focus-visible .resume-link-line {
+    border-bottom-color: transparent;
+  }
+
+  .resume-link:hover {
+    border-bottom-color: rgba(255, 69, 58, 0.65);
+  }
+
+  .resume-link:hover .resume-link-line {
+    border-bottom-color: transparent;
+  }
+
   .experience-columns-carousel {
     display: grid;
     grid-column: 1 / -1;
@@ -2693,7 +2744,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .resume-link-wrap {
-    margin-top: 24px;
+    margin: 24px 0 40px;
     text-align: left;
   }
 
