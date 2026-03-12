@@ -2007,13 +2007,20 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .content {
-    --mobile-content-width: min(382px, calc(100vw - 30px));
     display: block;
-    width: 100%;
-    max-width: 100%;
+    width: calc(100vw - 32px);
+    max-width: none;
     margin: 0 auto;
     min-width: 0;
-    padding: max(24px, calc(var(--safe-top) + 8px)) 5px 72px;
+    padding: max(24px, calc(var(--safe-top) + 8px)) 0 72px;
+  }
+
+  .mobile-logo-mark {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0 0 22px;
   }
 
   .topper > .rule,
@@ -2024,8 +2031,8 @@ body.grid-hidden .grid-overlay > span {
   .selected-work > .rule,
   .how-i-work > .rule,
   .contact-cta > .rule {
-    width: calc(100% + 10px);
-    margin-left: -5px;
+    width: calc(100% + 32px);
+    margin-left: -16px;
   }
 
   .topper {
@@ -2035,91 +2042,61 @@ body.grid-hidden .grid-overlay > span {
 
   .topper h1,
   .topper h2 {
-    width: var(--mobile-content-width);
-    max-width: var(--mobile-content-width);
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    font-size: clamp(36px, 10vw, 42px);
-    line-height: 1.1;
+    font-size: clamp(40px, 8.2vw, 64px);
+    line-height: 1;
     letter-spacing: -0.02em;
   }
 
   .topper h1 {
-    margin-top: 8px;
+    margin-top: 2px;
   }
 
   .topper h2 {
-    margin-bottom: 48px;
+    margin-bottom: 30px;
   }
 
-  .mobile-page-dots {
-    display: none;
-    height: 44px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    box-sizing: border-box;
-  }
-
+  .mobile-page-dots,
   .mobile-page-dots.has-dots {
-    display: flex;
-  }
-
-  .mobile-page-dots-topper,
-  .mobile-page-dots-experience {
-    margin-top: 8px;
-    margin-bottom: 0;
+    display: none;
   }
 
   .topper-columns {
-    --topper-track-inset: calc((100vw - var(--mobile-content-width)) / 2);
-    --topper-card-1: min(325px, calc(100vw - 50px));
-    --topper-card-n: min(382px, calc(100vw - 48px));
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: flex-start;
-    gap: 15px;
-    width: calc(100% + 10px);
+    gap: 16px 24px;
+    width: 100%;
     max-width: none;
-    margin: 0 -5px;
-    padding: 17px 0 0 var(--topper-track-inset);
-    min-height: 131px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: var(--topper-track-inset);
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
-    touch-action: auto;
-    scrollbar-width: none;
-  }
-
-  .topper-columns::after {
-    content: "";
-    flex: 0 0 max(0px, calc(100% - var(--topper-card-n)));
-  }
-
-  .topper-columns::-webkit-scrollbar {
-    display: none;
+    margin: 0;
+    padding: 16px 0 0;
   }
 
   .topper-columns > p {
-    flex: 0 0 var(--topper-card-1);
-    width: var(--topper-card-1);
-    max-width: var(--topper-card-1);
-    min-height: 131px;
+    width: auto;
+    max-width: none;
+    min-height: 0;
     margin: 0;
     min-width: 0;
-    scroll-snap-align: start;
     overflow-wrap: anywhere;
   }
 
-  .topper-columns > p:nth-child(2),
+  .topper-columns > p:nth-child(1) {
+    grid-column: 1 / -1;
+    max-width: 560px;
+  }
+
+  .topper-columns > p:nth-child(2) {
+    grid-column: 1;
+  }
+
   .topper-columns > p:nth-child(3) {
-    flex-basis: var(--topper-card-n);
-    width: var(--topper-card-n);
-    max-width: var(--topper-card-n);
-    min-height: 110px;
+    grid-column: 2;
   }
 
   .topper-columns p,
@@ -2130,7 +2107,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .topper-lead {
-    gap: 12px;
+    gap: 10px;
   }
 
   .topper-lead-strong {
@@ -2139,96 +2116,86 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .social-links {
-    width: min(320px, calc(100vw - 30px));
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
     justify-content: flex-start;
-    margin: 29px auto 0;
+    margin: 18px 0 0;
   }
 
   .social-links a {
-    width: 26px;
-    height: 26px;
-    margin-right: 40px;
+    width: 24px;
+    height: 24px;
+    margin-right: 28px;
   }
 
   .social-icon {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 
   .social-links a:not(:last-child)::after {
-    right: -20px;
-    height: 40px;
+    right: -14px;
+    height: 30px;
   }
 
   .work-experience {
-    margin-top: 120px;
-  }
-
-  .experience-heading,
-  .experience-column,
-  .site-footer-grid,
-  .section-head,
-  .selected-work-grid,
-  .how-i-work-grid,
-  .contact-cta-links {
-    width: var(--mobile-content-width);
-    max-width: var(--mobile-content-width);
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 88px;
   }
 
   .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
     row-gap: 20px;
   }
 
-  .experience-columns-carousel {
-    --experience-track-inset: calc((100vw - var(--mobile-content-width)) / 2);
-    --experience-card-1: min(325px, calc(100vw - 50px));
-    --experience-card-n: min(396px, calc(100vw - 30px));
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    width: calc(100% + 10px);
+  .experience-heading {
+    grid-column: 1 / -1;
+    width: auto;
     max-width: none;
-    margin: 0 -5px;
-    padding-left: var(--experience-track-inset);
-    box-sizing: border-box;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: var(--experience-track-inset);
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
-    touch-action: auto;
-    scrollbar-width: none;
+    margin: 0;
   }
 
-  .experience-columns-carousel::after {
-    content: "";
-    flex: 0 0 max(0px, calc(100% - var(--experience-card-n)));
+  .experience-heading h3 {
+    font-size: 40px;
   }
 
-  .experience-columns-carousel::-webkit-scrollbar {
-    display: none;
+  .experience-columns-carousel {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
   }
 
   .experience-column {
-    min-width: 0;
+    width: auto;
+    max-width: none;
     margin: 0;
-    scroll-snap-align: start;
+    min-width: 0;
+    gap: 24px;
   }
 
-  .experience-column:first-child {
-    flex: 0 0 var(--experience-card-1);
-    width: var(--experience-card-1);
-    max-width: var(--experience-card-1);
-  }
-
+  .experience-column:first-child,
   .experience-column:last-child {
-    flex: 0 0 var(--experience-card-n);
-    width: var(--experience-card-n);
-    max-width: var(--experience-card-n);
+    width: auto;
+    max-width: none;
+  }
+
+  .experience-item h4,
+  .experience-item .experience-company {
+    font-size: 17px;
+  }
+
+  .experience-item p {
+    font-size: 15px;
+  }
+
+  .experience-item-current p {
+    font-size: 17px;
   }
 }
 
