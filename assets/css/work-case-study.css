@@ -468,7 +468,8 @@ body.grid-hidden .work-grid-overlay > span {
   gap: 64px;
 }
 
-.work-index-section h3 {
+.work-index-section h3,
+.work-index-case-study-block h3 {
   margin: 0 0 18px;
   font-size: 17px;
   line-height: 1.1;
@@ -484,6 +485,14 @@ body.grid-hidden .work-grid-overlay > span {
   font-size: 19px;
   line-height: 1.42;
   color: var(--muted);
+}
+
+.work-index-case-study-block {
+  margin-top: 72px;
+}
+
+.work-index-case-study-block > .rule {
+  margin-bottom: 22px;
 }
 
 .work-index-case-studies {
@@ -876,7 +885,8 @@ body.grid-hidden .work-grid-overlay > span {
     gap: 44px;
   }
 
-  .work-index-section h3 {
+  .work-index-section h3,
+  .work-index-case-study-block h3 {
     margin-bottom: 16px;
     font-size: 16px;
   }
@@ -888,6 +898,10 @@ body.grid-hidden .work-grid-overlay > span {
 
   .work-index-resume p {
     font-size: 17px;
+  }
+
+  .work-index-case-study-block {
+    margin-top: 54px;
   }
 
   .work-index-case-studies {
