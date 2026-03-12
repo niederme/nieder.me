@@ -132,6 +132,19 @@ a:focus-visible {
   color: var(--accent-hover);
 }
 
+.logo-link,
+.mobile-logo-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo-link:focus-visible .logo-mark,
+.mobile-logo-link:focus-visible .mobile-logo-mark {
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px var(--focus-shadow);
+}
+
 :where(
   .logo-mark,
   .mobile-logo-mark,
