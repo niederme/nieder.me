@@ -37,7 +37,23 @@
     <meta name="twitter:url" content="https://nieder.me/2026/" />
     <meta name="twitter:image" content="https://nieder.me/2026/assets/images/share/og-image-1200x630.png" />
     <meta name="twitter:image:alt" content="Preview of John Niedermeyer's product design portfolio." />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260311-001" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("nieder.theme");
+          if (storedTheme !== "light") return;
+          document.documentElement.dataset.theme = "light";
+          document.documentElement.style.colorScheme = "light";
+          const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+          const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+          if (themeColorMeta) themeColorMeta.setAttribute("content", "#f5f1e8");
+          if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
+        } catch (error) {
+          // Ignore storage access failures and keep the dark default.
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260312-008" />
   </head>
   <body id="top">
     <div class="page">
@@ -66,6 +82,11 @@
           <img class="icon-on" src="assets/icons/side-nav/icon-work-sendmoi-on.svg" alt="" />
           <img class="icon-hover" src="assets/icons/side-nav/icon-work-sendmoi-hover.svg" alt="" />
         </a>
+        <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+          <span class="theme-toggle-switch" aria-hidden="true"></span>
+          <span class="theme-toggle-label">light</span>
+          <span class="theme-toggle-state" aria-live="polite">Off</span>
+        </button>
         <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
           <span class="cols-toggle-switch" aria-hidden="true"></span>
           <span class="cols-toggle-label">cols</span>
@@ -126,6 +147,9 @@
           <div class="experience-grid">
             <header class="experience-heading">
               <h3>Work Experience</h3>
+              <p class="resume-link-wrap">
+                <a class="resume-link" href="/work">Full Work<br />Experience<br />&amp; Resume →</a>
+              </p>
             </header>
 
             <div class="experience-columns-carousel">
@@ -192,11 +216,6 @@
                   <p class="experience-date">Nov. 2006 - July 2007</p>
                   <p>Key clients: Microsoft, General Electric, Autodesk, PTC.</p>
                 </article>
-
-                <div class="rule short"></div>
-                <p class="resume-link-wrap">
-                  <a class="resume-link" href="/work">Full Work Experience &amp; Resume →</a>
-                </p>
               </div>
             </div>
           </div>
@@ -237,7 +256,7 @@
               <img class="case-study-promo-logo" src="assets/images/home/case-study-promos/logo-sendmoi-promo.svg" alt="SendMoi" />
               <div class="case-study-promo-inner">
                 <p class="case-study-promo-eyebrow">SendMoi for iOS &amp; MacOS</p>
-                <h3 id="case-study-promo-sendmoi-title">Designed &amp; built with a little help from AI coding tools.</h3>
+                <h3 id="case-study-promo-sendmoi-title">Designed &amp; Built With a Little Help From AI Coding Tools</h3>
               </div>
               <a class="case-study-promo-cta" href="work/sendmoi/">View Case Study</a>
             </div>
@@ -295,6 +314,6 @@
 
       </main>
     </div>
-    <script src="assets/js/main.js?v=20260310-030"></script>
+    <script src="assets/js/main.js?v=20260312-008"></script>
   </body>
 </html>
