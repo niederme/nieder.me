@@ -3,7 +3,6 @@
   --bg: #000000;
   --fg: #ffffff;
   --accent: #ff453a;
-  --overscroll-bg: var(--accent);
   --focus-ring: rgba(255, 69, 58, 0.75);
   --focus-shadow: rgba(255, 69, 58, 0.25);
   --line: #2e2e2e;
@@ -49,11 +48,11 @@ body {
   margin: 0;
   min-height: 100%;
   scroll-behavior: smooth;
-  background: var(--overscroll-bg);
+  background: var(--bg);
 }
 
 body {
-  background: var(--overscroll-bg);
+  background: var(--bg);
   color: var(--fg);
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
@@ -118,7 +117,6 @@ a:focus-visible {
   position: relative;
   min-height: 100vh;
   padding-left: 0;
-  background: var(--bg);
 }
 
 .page::before {

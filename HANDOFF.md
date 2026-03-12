@@ -12,7 +12,7 @@
 - Replaced the browser-default focus treatment with a subdued red `:focus-visible` outline across interactive elements.
 - Added a separate soft red outer glow to control-style elements, including the spinning logo, rail nav controls, social icons, cards, CTA buttons, and the `cols` toggle.
 - Left the existing hover/focus icon swaps and text-color changes intact so the new focus treatment layers on top of current interaction cues.
-- Declared the site dark-only at the document/CSS root level and moved the black fill onto the inner `.page` / `.work-page` shell so Safari overscroll reveals the root page background instead of gray or white; work pages also now declare a black `theme-color`.
+- Declared the site dark-only at the document/CSS root level, and all home/work pages now declare a black `theme-color`.
 - Updated `README.md` to document the shared focus treatment.
 
 ## Verification
@@ -20,7 +20,7 @@
 - Confirm those control-style elements also pick up the subtle red halo without shifting layout.
 - Keyboard through `/work`, `/work/resy-discovery/`, and `/work/sendmoi/` and confirm the same focus treatment appears there.
 - Confirm mouse clicks no longer leave the browser’s default purple focus ring on the logo.
-- On mobile Safari in both light and dark system appearance, pull-to-refresh on `/`, `/work`, `/work/resy-discovery/`, and `/work/sendmoi/` and confirm the exposed overscroll surface now uses the root page color while the inner shell remains black.
+- In mobile Safari light and dark system appearance, confirm the site/browser chrome stays on the dark theme hints (`color-scheme: dark` and black `theme-color`) where Safari honors them.
 
 ## Open Items
 - Add the remaining bundled visual tweaks on this branch before opening the PR for issue `#32`.
