@@ -93,6 +93,7 @@ body.work-theme-sendmoi {
 .work-page {
   position: relative;
   min-height: 100vh;
+  isolation: isolate;
 }
 
 .work-page::before {
@@ -104,6 +105,15 @@ body.work-theme-sendmoi {
   width: 1px;
   background: var(--line);
   z-index: 15;
+}
+
+.work-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .rail {

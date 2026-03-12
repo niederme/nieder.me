@@ -12,7 +12,7 @@
 - Replaced the browser-default focus treatment with a subdued red `:focus-visible` outline across interactive elements.
 - Added a separate soft red outer glow to control-style elements, including the spinning logo, rail nav controls, social icons, cards, CTA buttons, and the `cols` toggle.
 - Left the existing hover/focus icon swaps and text-color changes intact so the new focus treatment layers on top of current interaction cues.
-- Added `theme-color` meta tags to the work pages and filled the shared work-page safe area black so iOS pull-to-refresh no longer exposes a gray top band.
+- Added a fixed black viewport backdrop behind both home and work shells so iOS pull-to-refresh no longer exposes a gray top band; work pages also now declare a black `theme-color`.
 - Updated `README.md` to document the shared focus treatment.
 
 ## Verification
@@ -20,7 +20,7 @@
 - Confirm those control-style elements also pick up the subtle red halo without shifting layout.
 - Keyboard through `/work`, `/work/resy-discovery/`, and `/work/sendmoi/` and confirm the same focus treatment appears there.
 - Confirm mouse clicks no longer leave the browser’s default purple focus ring on the logo.
-- On mobile Safari, open `/work`, `/work/resy-discovery/`, and `/work/sendmoi/` and confirm the top safe area stays black, including during pull-to-refresh.
+- On mobile Safari, pull-to-refresh on `/`, `/work`, `/work/resy-discovery/`, and `/work/sendmoi/` and confirm the exposed top area stays black.
 
 ## Open Items
 - Add the remaining bundled visual tweaks on this branch before opening the PR for issue `#32`.

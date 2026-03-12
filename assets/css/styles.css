@@ -116,6 +116,7 @@ a:focus-visible {
   position: relative;
   min-height: 100vh;
   padding-left: 0;
+  isolation: isolate;
 }
 
 .page::before {
@@ -127,6 +128,15 @@ a:focus-visible {
   width: 1px;
   background: var(--line);
   z-index: 15;
+}
+
+.page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .rail {
