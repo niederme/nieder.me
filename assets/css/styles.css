@@ -948,8 +948,12 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .case-study-promo-sommai {
-  background-image: url("../images/home/case-study-promos/bg-sommai-desktop.png");
-  background-position: center center;
+  display: block;
+  width: min(400px, 100%);
+  aspect-ratio: auto;
+  overflow: visible;
+  border-radius: 0;
+  background: none;
 }
 
 .case-study-promo-sendmoi .case-study-promo-logo {
@@ -962,6 +966,75 @@ body.grid-hidden .grid-overlay > span {
 
 .case-study-promo + .case-study-promo {
   margin-top: 50px;
+}
+
+.case-study-promo-small::after {
+  display: none;
+}
+
+.case-study-promo-small-media {
+  margin: 0;
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.case-study-promo-small-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.case-study-promo-small-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  padding-top: 25px;
+}
+
+.case-study-promo-small-eyebrow {
+  margin: 0;
+  color: var(--fg);
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 300;
+}
+
+.case-study-promo-small h3 {
+  margin: 0;
+  color: var(--fg);
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.case-study-promo-small-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 15px;
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.case-study-promo-small-cta:visited {
+  color: var(--accent);
+}
+
+.case-study-promo-small-cta img {
+  display: block;
+  width: 14.508px;
+  height: 11.844px;
+}
+
+.case-study-promo-small-cta:hover,
+.case-study-promo-small-cta:focus-visible {
+  color: #ff6a60;
 }
 
 .case-study-promo::after {
@@ -2605,8 +2678,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .case-study-promo-sommai {
-    background-image: url("../images/home/case-study-promos/bg-sommai-mobile.png");
-    background-position: center center;
+    width: 100%;
   }
 
   .case-study-promo-sendmoi .case-study-promo-logo {
@@ -2658,6 +2730,14 @@ body.grid-hidden .grid-overlay > span {
     min-height: 38px;
     padding: 7px 50px 9px;
     font-size: 16px;
+  }
+
+  .case-study-promo-small-copy {
+    padding-top: 25px;
+  }
+
+  .case-study-promo-small h3 {
+    font-size: 24px;
   }
 
   .experience-heading,
