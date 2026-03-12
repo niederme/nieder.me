@@ -3,6 +3,7 @@
   --bg: #000000;
   --fg: #ffffff;
   --accent: #ff453a;
+  --overscroll-bg: var(--accent);
   --focus-ring: rgba(255, 69, 58, 0.75);
   --focus-shadow: rgba(255, 69, 58, 0.25);
   --line: #2e2e2e;
@@ -48,11 +49,11 @@ body {
   margin: 0;
   min-height: 100%;
   scroll-behavior: smooth;
-  background: var(--bg);
+  background: var(--overscroll-bg);
 }
 
 body {
-  background: var(--bg);
+  background: var(--overscroll-bg);
   color: var(--fg);
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
@@ -117,7 +118,7 @@ a:focus-visible {
   position: relative;
   min-height: 100vh;
   padding-left: 0;
-  isolation: isolate;
+  background: var(--bg);
 }
 
 .page::before {
@@ -129,15 +130,6 @@ a:focus-visible {
   width: 1px;
   background: var(--line);
   z-index: 15;
-}
-
-.page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: var(--bg);
-  z-index: -1;
-  pointer-events: none;
 }
 
 .rail {

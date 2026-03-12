@@ -159,5 +159,5 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - Homepage company-link hover underlines now only apply on hover-capable devices, avoiding sticky touch hover states on iPhone.
 - The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
-- The site now declares a dark browser color scheme and keeps a fixed black viewport backdrop behind both home and work pages so Safari-owned surfaces and pull-to-refresh reveal black instead of gray or white; work pages also declare a black browser `theme-color`.
+- The site now declares a dark browser color scheme, uses the root page background as the Safari overscroll/reveal color, and keeps the inner `.page` / `.work-page` shell black; work pages also declare a black browser `theme-color`.
 - CSS and JS assets use deploy-time cache-busting query params in the staged homepage HTML; if Safari looks stale locally, do a hard refresh.
