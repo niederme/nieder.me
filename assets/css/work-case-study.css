@@ -28,8 +28,8 @@
   --muted: #ebebf5;
   --line: #2e2e2e;
   --accent: #ff453a;
-  --focus-ring: #ff453a;
-  --focus-shadow: rgba(255, 69, 58, 0.28);
+  --focus-ring: rgba(255, 69, 58, 0.75);
+  --focus-shadow: rgba(255, 69, 58, 0.25);
   --grid-cols: 12;
   --grid-gutter: 40px;
   --safe-top: env(safe-area-inset-top, 0px);
@@ -294,7 +294,7 @@ a {
 }
 
 :where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
-  outline: 2px solid var(--focus-ring);
+  outline: 1px solid var(--focus-ring);
   outline-offset: 4px;
 }
 
@@ -311,8 +311,8 @@ a:focus-visible {
   .work-index-card,
   .cols-toggle
 ):focus-visible {
-  border-radius: 8px;
-  box-shadow: 0 0 0 5px var(--focus-shadow);
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px var(--focus-shadow);
 }
 
 .social-icon {

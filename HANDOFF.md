@@ -9,13 +9,13 @@
 ## What Changed
 - Opened GitHub issue `#32` to track site-wide focus-state cleanup.
 - Added shared focus design tokens in `assets/css/styles.css` and `assets/css/work-case-study.css`.
-- Replaced the browser-default focus treatment with a consistent brand-red `:focus-visible` outline across interactive elements.
-- Added a matching soft red halo to control-style elements, including the spinning logo, rail nav controls, social icons, cards, CTA buttons, and the `cols` toggle.
+- Replaced the browser-default focus treatment with a subdued red `:focus-visible` outline across interactive elements.
+- Added a separate soft red outer glow to control-style elements, including the spinning logo, rail nav controls, social icons, cards, CTA buttons, and the `cols` toggle.
 - Left the existing hover/focus icon swaps and text-color changes intact so the new focus treatment layers on top of current interaction cues.
 - Updated `README.md` to document the shared focus treatment.
 
 ## Verification
-- Keyboard through the homepage and confirm the logo, left rail anchors, social links, CTA buttons, footer links, and `cols` toggle all show the red focus ring.
+- Keyboard through the homepage and confirm the logo, left rail anchors, social links, CTA buttons, footer links, and `cols` toggle all show the subdued red focus ring plus outer glow.
 - Confirm those control-style elements also pick up the subtle red halo without shifting layout.
 - Keyboard through `/work`, `/work/resy-discovery/`, and `/work/sendmoi/` and confirm the same focus treatment appears there.
 - Confirm mouse clicks no longer leave the browser’s default purple focus ring on the logo.
