@@ -1,36 +1,31 @@
 # Handoff
 
 ## Branch
-- `codex/light-mode-toggle`
+- `codex/worktree-preview-links`
 
 ## Current Focus
-- Ship the manual light-mode toggle on this branch via PR for issue `#36`.
+- Ship the worktree preview workflow update on this branch via PR for issue `#38`.
 
 ## What Changed
-- Opened GitHub issue `#36` to track a manual light-mode toggle with a hard dark default.
-- Added a new `light` rail toggle to the homepage, `/work`, `/work/resy-discovery/`, and `/work/sendmoi/`, positioned directly above the existing `cols` toggle.
-- Added theme persistence in `assets/js/main.js` using `localStorage`, with dark mode as the fallback when no explicit preference exists.
-- Added an inline pre-hydration theme bootstrap in each HTML entry point so a stored light preference applies before CSS paints.
-- Updated `assets/css/styles.css` and `assets/css/work-case-study.css` with light-theme tokens, rail toggle styling, and light-mode icon/logo adjustments.
-- Updated `README.md` to describe the new rail toggle and the manual theme behavior.
+- Opened GitHub issue `#38` to track a predictable preview workflow for concurrent worktree threads.
+- Added `make dev-thread` and `make dev-live-thread` in `Makefile`.
+- Reserved `7777` as the default root-checkout preview port and documented the `7778`, `7779`, `7780`, and upward cascade for worktree previews.
+- Updated `AGENTS.md` so rendered work in a worktree should start or reuse a preview when needed and include the exact preview URL in responses.
+- Updated `README.md` with the new worktree preview commands and the expectation to surface preview URLs for rendered changes.
 
 ## Verification
-- `node --check assets/js/main.js`
+- `make dev-thread`
 - `git diff --check`
-- Manual browser pass still needed:
-  - confirm first load stays dark even when the OS/browser is in light mode
-  - confirm the `light` toggle appears before `cols` in the left rail on home and work pages
-  - confirm toggling to light persists across navigation and refresh
-  - confirm browser chrome/theme-color flips between dark and light with the manual selection
-  - confirm the filtered rail logo/icons still read cleanly on the light background
+- Confirmed `make dev-thread` starts from `7778` and prints both the `.local` and LAN preview URLs.
+- Dry-run checked `make dev-live-thread` to confirm it also seeds from `7778`.
 
 ## Open Items
-- Run a visual browser QA pass, then push `codex/light-mode-toggle` and open the PR for issue `#36`.
+- Push `codex/worktree-preview-links` and open the PR for issue `#38`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
-4. Run the local server and click through home and work pages in both dark and light theme states
-5. Confirm the manual theme toggle order, persistence, and browser chrome updates
-6. Push/open PR for `codex/light-mode-toggle`
+4. Run `make dev-thread` or `make dev-live-thread`
+5. Confirm the preview URL uses the expected `7778+` worktree port range
+6. Push/open PR for `codex/worktree-preview-links`

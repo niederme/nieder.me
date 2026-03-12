@@ -8,6 +8,7 @@
 - If you are on `main`, create or switch to a feature branch before making changes.
 - Do not treat `main` as a working branch for active development, unless told explicitly to.
 - Default workflow for non-trivial work: create a dedicated `git worktree` for each active feature branch/thread so multiple branches can stay in progress at once. For trivial one-off changes, a normal branch in the main checkout is fine.
+- For rendered site work in a worktree, start or reuse a preview server from that worktree when needed so in-flight edits can be reviewed there.
 - Do not push directly to `main`; all work happens on a task branch, unless told explicitly to.
 - Work from `main` on short-lived branches named `codex/*`.
 - Start from latest `main`:
@@ -16,6 +17,10 @@
   - `git checkout -b codex/<short-slug>`
 - For concurrent work, use separate branches and prefer separate worktrees:
   - `git worktree add ../<repo-name>-<short-slug> -b codex/<short-slug> main`
+- Port convention for previews:
+  - keep `7777` as the default root-checkout preview port
+  - use `make dev-thread` or `make dev-live-thread` inside worktrees; those start at `7778` and auto-cascade to `7779`, `7780`, and upward as needed
+- When you edit HTML, CSS, JS, or other rendered site files and a preview server is running for that thread, include the exact preview URL in your response.
 - Keep scope tight: branch changes should stay focused on the linked issue.
 
 ### 2) Implement And Commit
