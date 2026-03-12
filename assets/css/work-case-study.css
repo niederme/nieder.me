@@ -23,6 +23,7 @@
 }
 
 :root {
+  color-scheme: dark;
   --bg: #000000;
   --fg: #ffffff;
   --muted: #ebebf5;
