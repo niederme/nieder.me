@@ -1,34 +1,36 @@
 # Handoff
 
 ## Branch
-- `codex/focus-states`
+- `codex/light-mode-toggle`
 
 ## Current Focus
-- Ship the bundled focus/browser-hint tweaks on this branch via PR for issue `#32`.
+- Ship the manual light-mode toggle on this branch via PR for issue `#36`.
 
 ## What Changed
-- Opened GitHub issue `#32` to track site-wide focus-state cleanup.
-- Added shared focus design tokens in `assets/css/styles.css` and `assets/css/work-case-study.css`.
-- Replaced the browser-default focus treatment with a subdued red `:focus-visible` outline across interactive elements.
-- Added a separate soft red outer glow to control-style elements, including the spinning logo, rail nav controls, social icons, cards, CTA buttons, and the `cols` toggle.
-- Left the existing hover/focus icon swaps and text-color changes intact so the new focus treatment layers on top of current interaction cues.
-- Declared the site dark-only at the document/CSS root level, and all home/work pages now declare a black `theme-color`.
-- Updated `README.md` to document the shared focus treatment.
+- Opened GitHub issue `#36` to track a manual light-mode toggle with a hard dark default.
+- Added a new `light` rail toggle to the homepage, `/work`, `/work/resy-discovery/`, and `/work/sendmoi/`, positioned directly above the existing `cols` toggle.
+- Added theme persistence in `assets/js/main.js` using `localStorage`, with dark mode as the fallback when no explicit preference exists.
+- Added an inline pre-hydration theme bootstrap in each HTML entry point so a stored light preference applies before CSS paints.
+- Updated `assets/css/styles.css` and `assets/css/work-case-study.css` with light-theme tokens, rail toggle styling, and light-mode icon/logo adjustments.
+- Updated `README.md` to describe the new rail toggle and the manual theme behavior.
 
 ## Verification
-- Keyboard through the homepage and confirm the logo, left rail anchors, social links, CTA buttons, footer links, and `cols` toggle all show the subdued red focus ring plus outer glow.
-- Confirm those control-style elements also pick up the subtle red halo without shifting layout.
-- Keyboard through `/work`, `/work/resy-discovery/`, and `/work/sendmoi/` and confirm the same focus treatment appears there.
-- Confirm mouse clicks no longer leave the browser’s default purple focus ring on the logo.
-- In mobile Safari light and dark system appearance, confirm the site/browser chrome stays on the dark theme hints (`color-scheme: dark` and black `theme-color`) where Safari honors them.
+- `node --check assets/js/main.js`
+- `git diff --check`
+- Manual browser pass still needed:
+  - confirm first load stays dark even when the OS/browser is in light mode
+  - confirm the `light` toggle appears before `cols` in the left rail on home and work pages
+  - confirm toggling to light persists across navigation and refresh
+  - confirm browser chrome/theme-color flips between dark and light with the manual selection
+  - confirm the filtered rail logo/icons still read cleanly on the light background
 
 ## Open Items
-- Push `codex/focus-states` and open the PR for issue `#32`.
+- Run a visual browser QA pass, then push `codex/light-mode-toggle` and open the PR for issue `#36`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
-4. Run the local server and keyboard through home and work pages
-5. Confirm the focus ring/halo reads clearly on desktop and mobile layouts
-6. Push/open PR for `codex/focus-states`
+4. Run the local server and click through home and work pages in both dark and light theme states
+5. Confirm the manual theme toggle order, persistence, and browser chrome updates
+6. Push/open PR for `codex/light-mode-toggle`

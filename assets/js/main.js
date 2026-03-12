@@ -1,8 +1,14 @@
 const caseNav = document.querySelector(".case-nav");
 const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
+const themeToggles = Array.from(document.querySelectorAll(".theme-toggle"));
 const colsToggles = Array.from(document.querySelectorAll(".cols-toggle"));
 const emailLinks = Array.from(document.querySelectorAll("[data-email-link]"));
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+const THEME_STORAGE_KEY = "nieder.theme";
 const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";
+const LIGHT_THEME_COLOR = "#f5f1e8";
+const DARK_THEME_COLOR = "#000000";
 const scrollToPageTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
   if (window.location.hash) {
@@ -62,6 +68,58 @@ if (emailLinks.length > 0) {
     }
     promo.style.setProperty("--case-study-promo-focus-desktop", desktopFocus);
     promo.style.setProperty("--case-study-promo-focus-mobile", mobileFocus);
+  });
+}
+
+if (themeToggles.length > 0) {
+  const applyTheme = (theme, persist = true) => {
+    const nextTheme = theme === "light" ? "light" : "dark";
+    const isLight = nextTheme === "light";
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
+
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute("content", isLight ? LIGHT_THEME_COLOR : DARK_THEME_COLOR);
+    }
+    if (colorSchemeMeta) {
+      colorSchemeMeta.setAttribute("content", nextTheme);
+    }
+
+    themeToggles.forEach((toggle) => {
+      toggle.classList.toggle("is-on", isLight);
+      toggle.classList.toggle("is-off", !isLight);
+      toggle.setAttribute("aria-pressed", String(isLight));
+      toggle.setAttribute(
+        "aria-label",
+        isLight ? "Switch to dark mode" : "Switch to light mode"
+      );
+      const state = toggle.querySelector(".theme-toggle-state");
+      if (state) state.textContent = isLight ? "On" : "Off";
+    });
+
+    if (persist) {
+      try {
+        window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+      } catch (error) {
+        // Ignore storage access failures (privacy mode, browser restrictions).
+      }
+    }
+  };
+
+  let theme = "dark";
+  try {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (storedTheme === "light") theme = "light";
+  } catch (error) {
+    // Ignore storage access failures and keep the dark default.
+  }
+
+  applyTheme(theme, false);
+  themeToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const isLight = document.documentElement.dataset.theme === "light";
+      applyTheme(isLight ? "dark" : "light");
+    });
   });
 }
 

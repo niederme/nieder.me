@@ -10,7 +10,23 @@
       name="description"
       content="Work overview page with room for a fuller resume and current case studies across Resy and SendMoi."
     />
-    <link rel="stylesheet" href="../assets/css/work-case-study.css?v=20260312-007" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("nieder.theme");
+          if (storedTheme !== "light") return;
+          document.documentElement.dataset.theme = "light";
+          document.documentElement.style.colorScheme = "light";
+          const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+          const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+          if (themeColorMeta) themeColorMeta.setAttribute("content", "#f5f1e8");
+          if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
+        } catch (error) {
+          // Ignore storage access failures and keep the dark default.
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/work-case-study.css?v=20260312-008" />
   </head>
   <body id="top" class="work-index-page">
     <div class="work-page">
@@ -39,6 +55,11 @@
           <img class="icon-on" src="../assets/icons/side-nav/icon-work-sendmoi-on.svg" alt="" />
           <img class="icon-hover" src="../assets/icons/side-nav/icon-work-sendmoi-hover.svg" alt="" />
         </a>
+        <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+          <span class="theme-toggle-switch" aria-hidden="true"></span>
+          <span class="theme-toggle-label">light</span>
+          <span class="theme-toggle-state" aria-live="polite">Off</span>
+        </button>
         <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
           <span class="cols-toggle-switch" aria-hidden="true"></span>
           <span class="cols-toggle-label">cols</span>
@@ -98,7 +119,7 @@
                 </figure>
                 <div class="work-index-card-copy">
                   <p class="work-index-card-eyebrow">SendMoi for iOS &amp; MacOS</p>
-                  <h4 id="work-index-sendmoi-title">Designed &amp; built with a little help from AI coding tools.</h4>
+                  <h4 id="work-index-sendmoi-title">Designed &amp; Built With a Little Help From AI Coding Tools</h4>
                   <p class="work-index-card-summary">
                     End-to-end product, brand, and implementation work for a send-to-self utility.
                   </p>
@@ -159,6 +180,6 @@
         </footer>
       </main>
     </div>
-    <script src="../assets/js/main.js?v=20260310-020"></script>
+    <script src="../assets/js/main.js?v=20260312-008"></script>
   </body>
 </html>

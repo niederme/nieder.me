@@ -24,6 +24,14 @@ make dev PORT=8080
 
 `make dev-lan` is available as an alias of `make dev`.
 
+For worktree-based feature threads, use:
+
+```bash
+make dev-thread
+```
+
+That keeps `7777` available for the main checkout and starts worktree previews at `7778`, auto-cascading to `7779`, `7780`, and upward when other worktree previews are already running.
+
 ## Development workflow
 
 Before starting implementation work:
@@ -35,6 +43,7 @@ git branch --show-current
 - If you are on `main`, create or switch to a feature branch before editing files.
 - Do not use `main` as the active development branch.
 - Preferred workflow: use a dedicated `git worktree` per feature branch/thread.
+- For rendered site work in a worktree, start or reuse a preview there and surface the exact URL with the change.
 
 Example:
 
@@ -57,6 +66,14 @@ make dev-live
 ```
 
 This uses BrowserSync to serve the repo and reload when HTML/CSS/JS files change. It opens the same resolved `<this-mac>.local` URL as `make dev` instead of BrowserSync's default `localhost`.
+
+For live reload from a worktree thread, use:
+
+```bash
+make dev-live-thread
+```
+
+This follows the same `7778+` worktree port cascade as `make dev-thread`.
 
 Requirements:
 - Node.js with `npx` available (recommended: Node 20 via `nvm use 20`)
@@ -115,7 +132,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.
 - `/work` now acts as a work overview page with a smaller home-style two-line title treatment (`Work Experience` in white, `& Resume` in red), a reserved resume block, and a separate case-study section with a left-aligned `Case Studies` heading and a 2-up grid for the current Resy and SendMoi writeups.
-- Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home nav icon, and `cols` toggle).
+- Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home/back nav icon set, `light` toggle, and `cols` toggle).
 - Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`) now keep the home-style rail nav items (`Home`, `Work Experience`, `Resy`, `SendMoi`) with static active state per page (no scroll-driven switching on child pages).
 - On article pages, the `Work Experience` rail item now links to `/work`.
 - On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
@@ -134,7 +151,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
   - `Case Studies` column
 - Footer link styling is white with animated underline on hover/focus.
 - Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
-- Interactive focus states across home and work pages now use a shared subdued red `:focus-visible` outline with a separate soft red outer glow on control-style elements like the spinning logo, rail nav items, social icons, cards, CTAs, and the `cols` toggle.
+- Interactive focus states across home and work pages now use a shared subdued red `:focus-visible` outline with a separate soft red outer glow on control-style elements like the spinning logo, rail nav items, social icons, cards, CTAs, the `light` toggle, and the `cols` toggle.
 
 ## Legacy removal
 
@@ -159,5 +176,6 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - Homepage company-link hover underlines now only apply on hover-capable devices, avoiding sticky touch hover states on iPhone.
 - The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
-- The site now declares a dark browser color scheme, and all home/work pages declare a black browser `theme-color`.
+- Home and work pages now default to dark mode even when the visitor’s OS prefers light, and the left rail includes a persistent `light` toggle for manually switching themes.
+- Browser theme hints (`color-scheme` and `theme-color`) now switch between dark and light to match the active manual theme selection.
 - CSS and JS assets use deploy-time cache-busting query params in the staged homepage HTML; if Safari looks stale locally, do a hard refresh.
