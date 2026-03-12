@@ -130,7 +130,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - Promo image references now use `*-promo.*` filenames to avoid production path mismatches observed on `nieder.me/2026` for earlier asset names.
 - The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
-- The Somm AI CTA routes to `/work/somm-ai/`, an unshipped Resy concept case study about AI-guided search and availability.
+- The Somm AI CTA routes to `/work/somm-ai/`, an unshipped Resy concept case study about intent-led search and AI-guided dining discovery.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.
 - `/work` now acts as a work overview page with a smaller home-style two-line title treatment (`Work Experience` in white, `& Resume` in red), a reserved resume block, and a separate case-study section with a left-aligned `Case Studies` heading and a staggered two-column case-study layout for Resy, SendMoi, and Somm AI.
 - Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home/back nav icon set, `light` toggle, and `cols` toggle).
@@ -138,7 +138,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - On article pages, the `Work Experience` rail item now links to `/work`.
 - On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
 - Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
-- Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, and `SendMoi`, with explicit off/on/hover icon assets.
+- Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, `SendMoi`, and Somm AI, with the Somm AI slot temporarily reusing the Resy `R` icon assets.
 
 ## Homepage footer
 

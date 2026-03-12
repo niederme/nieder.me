@@ -138,8 +138,8 @@ body.work-theme-sommai {
     rgba(0, 0, 0, 0.24) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/work/sommai/sommai-hero.png");
-  --work-hero-mobile-image: url("../images/work/sommai/sommai-hero.png");
+  --work-hero-desktop-image: url("../images/home/case-study-promos/bg-sommai-desktop.png");
+  --work-hero-mobile-image: url("../images/home/case-study-promos/bg-sommai-mobile.png");
   --work-hero-focus-desktop: center center;
   --work-hero-focus-mobile: center center;
   --work-logo-width-desktop: 100px;
@@ -690,8 +690,15 @@ body.grid-hidden .work-grid-overlay > span {
 .work-index-case-studies {
   grid-column: 5 / span 8;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 34px 24px;
+  grid-template-columns: repeat(2, 396px);
+  column-gap: 40px;
+  align-items: start;
+}
+
+.work-index-case-study-column {
+  display: flex;
+  flex-direction: column;
+  gap: 81px;
 }
 
 .work-index-card {
@@ -713,7 +720,8 @@ body.grid-hidden .work-grid-overlay > span {
   margin: 0;
   overflow: hidden;
   background: var(--work-card-bg);
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
+  border-radius: 25px;
 }
 
 .work-index-card-media img {
@@ -725,38 +733,40 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .work-index-card-copy {
-  padding-top: 18px;
+  padding-top: 25px;
 }
 
 .work-index-card-eyebrow {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.35;
-  color: var(--meta-label);
+  color: var(--fg);
+  font-weight: 300;
 }
 
 .work-index-card h4 {
-  margin: 10px 0 0;
-  font-size: clamp(22px, 1.8vw, 28px);
-  line-height: 0.98;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1;
   letter-spacing: -0.02em;
 }
 
-.work-index-card-summary {
-  margin: 14px 0 0;
-  font-size: 17px;
-  line-height: 1.42;
-  color: var(--muted);
-}
-
 .work-index-card-cta {
-  display: inline-block;
-  margin-top: 18px;
-  font-size: 15px;
-  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.35;
   font-weight: 700;
   color: var(--accent);
   transition: color 0.18s ease;
+}
+
+.work-index-card-cta img {
+  display: block;
+  width: 14.508px;
+  height: 11.844px;
 }
 
 .work-index-card:hover .work-index-card-media img,
@@ -1116,16 +1126,16 @@ body.grid-hidden .work-grid-overlay > span {
     gap: 30px;
   }
 
+  .work-index-case-study-column {
+    gap: 30px;
+  }
+
   .work-index-card-copy {
-    padding-top: 16px;
+    padding-top: 25px;
   }
 
   .work-index-card h4 {
     font-size: 24px;
-  }
-
-  .work-index-card-summary {
-    font-size: 16px;
   }
 
   .work-article-visuals {
