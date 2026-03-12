@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <title>Beyond Filters | John Niedermeyer</title>
+    <meta
+      name="description"
+      content="Standalone long-form case study on an unshipped Resy AI recommendations exploration for intent-led restaurant search."
+    />
+    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260312-008" />
+  </head>
+  <body id="top" class="work-theme-sommai">
+    <div class="work-page">
+      <aside class="rail" aria-label="Section navigation">
+        <img class="logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
+      </aside>
+
+      <nav class="work-side-nav" aria-label="Section anchors">
+        <a class="work-case-anchor" href="../../" aria-label="Back to homepage">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-back-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-back-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-back-hover.svg" alt="" />
+        </a>
+        <a class="work-case-anchor" href="../../work/" aria-label="Go to Work page">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+        </a>
+        <a class="work-case-anchor" href="../../work/resy-discovery/" aria-label="Resy case study">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-resy-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-resy-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-resy-hover.svg" alt="" />
+        </a>
+        <a class="work-case-anchor work-case-anchor-sendmoi" href="../../work/sendmoi/" aria-label="SendMoi case study">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-sendmoi-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-sendmoi-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-sendmoi-hover.svg" alt="" />
+        </a>
+        <a class="work-case-anchor is-active" href="../../work/somm-ai/" aria-label="Somm AI case study">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-resy-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-resy-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-resy-hover.svg" alt="" />
+        </a>
+        <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
+          <span class="cols-toggle-switch" aria-hidden="true"></span>
+          <span class="cols-toggle-label">cols</span>
+          <span class="cols-toggle-state" aria-live="polite">On</span>
+        </button>
+      </nav>
+
+      <main class="work-article">
+        <div class="work-grid-overlay" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <section class="work-article-hero" aria-labelledby="sommai-title">
+          <div class="work-article-hero-content">
+            <img class="work-article-logo" src="../../assets/images/home/case-study-promos/logo-Resy.svg" alt="Resy" />
+            <p class="work-article-eyebrow">Resy AI Exploration</p>
+            <h1 id="sommai-title">Beyond Filters: Intent-Led Search</h1>
+          </div>
+        </section>
+
+        <section class="work-article-grid">
+          <aside class="work-article-meta" aria-label="Project metadata">
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Role</p>
+              <p class="work-article-meta-value">Principal Designer</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Organization</p>
+              <p class="work-article-meta-value">Resy (American Express Global Dining Network)</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Timeframe</p>
+              <p class="work-article-meta-value">May 2025</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Status</p>
+              <p class="work-article-meta-value">Internal proof of concept; never shipped</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Platforms</p>
+              <p class="work-article-meta-value">Consumer search concept across mobile and web</p>
+            </div>
+          </aside>
+
+          <article class="work-article-body">
+            <section class="work-article-section">
+              <h2>Context</h2>
+              <p>
+                Somm AI was a Resy Search &amp; Availability concept built around a simple question: what happens when diners
+                stop thinking in filters and start asking for help in plain language?
+              </p>
+              <p>
+                By May 2025, Google and other search surfaces were already training users to expect direct, conversational
+                answers. Resy had a different raw material to work with than generic search engines: editorial taste,
+                neighborhood nuance, and real booking inventory.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Challenge</h2>
+              <p>
+                Traditional restaurant discovery leans on list views and granular filters like cuisine, time, and price.
+                That model is powerful, but it breaks down when intent is fuzzy: “tasting menu near me,” “date night but not
+                stuffy,” or “birthday dinner under $100.”
+              </p>
+              <p>
+                A generic AI layer would not have been enough. The experience needed to feel opinionated, trustworthy, and
+                unmistakably Resy while still keeping diners close to real availability and the downstream booking flow.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Strategy</h2>
+              <ul>
+                <li>
+                  <strong>Hybrid search model:</strong> put an AI-generated answer at the top of results, then keep
+                  traditional venue cards directly underneath so users could move from guidance into action without switching
+                  mental models.
+                </li>
+                <li>
+                  <strong>Editorial grounding:</strong> shape answers around Resy Guides, Collections, and curated language
+                  instead of generic summaries, so the system could explain not just what matched, but why it matched.
+                </li>
+                <li>
+                  <strong>Context + follow-ups:</strong> use the answer block to suggest neighborhoods, price tiers,
+                  availability context, and a next prompt that refined the original search instead of forcing users back into
+                  dropdowns.
+                </li>
+                <li>
+                  <strong>Transparent trust cues:</strong> frame the concept as an early beta and explicitly point back to
+                  linked sources, keeping the AI layer assistive rather than authoritative.
+                </li>
+              </ul>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Outcome</h2>
+              <p>
+                Somm AI never shipped, but the proof of concept clarified a strong product thesis: Resy’s advantage in AI
+                search was never going to be generic language generation on its own. The real opportunity was combining
+                conversational guidance with editorial curation and bookable inventory.
+              </p>
+              <p>
+                The work also created a sharper competitive frame. OpenTable still centered filters, Google’s AI layers felt
+                broad and noisy, and Yelp remained reviews-first. Resy could have occupied a warmer middle ground: not just a
+                booking tool, but a dining concierge with real tables behind the answer.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Key Learnings</h2>
+              <p>
+                The most compelling version of AI discovery did not replace search mechanics. It reduced the cost of getting
+                started, then handed users back to familiar cards, availability, and booking actions once intent was clearer.
+              </p>
+              <p>
+                The concept also reinforced an important product lesson: even unshipped experiments can do useful strategic
+                work. Somm AI helped define what an editorially grounded, availability-aware AI surface could look like inside
+                Resy long before that direction became table stakes across consumer products.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Visuals</h2>
+              <div class="work-article-visuals">
+                <figure>
+                  <img
+                    src="../../assets/images/case-studies/sommai/google-ai-overview.png"
+                    alt="Google AI Overview response for a natural-language restaurant query."
+                    loading="lazy"
+                  />
+                  <figcaption>Google’s AI Overview raised the bar for conversational, intent-first restaurant search.</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="../../assets/images/case-studies/sommai/ai-answer-competitor-benchmark.png"
+                    alt="A competitor AI answer for a restaurant recommendation query."
+                    loading="lazy"
+                  />
+                  <figcaption>Generic AI answers were useful, but they lacked live booking context and a strong editorial voice.</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="../../assets/images/case-studies/sommai/resy-availability-cards.png"
+                    alt="Resy restaurant cards with live availability for tasting menu searches."
+                    loading="lazy"
+                  />
+                  <figcaption>The proposed Resy layer kept bookable venue cards and real inventory close to the answer.</figcaption>
+                </figure>
+              </div>
+            </section>
+          </article>
+        </section>
+
+        <footer class="site-footer" aria-label="Site footer">
+          <div class="rule"></div>
+          <div class="site-footer-grid">
+            <div class="site-footer-brand">
+              <p class="site-footer-name">John Niedermeyer</p>
+              <p class="site-footer-role">Product Design &amp; Direction</p>
+              <nav class="site-footer-connect" aria-label="Connect links">
+                <ul class="site-footer-social">
+                  <li>
+                    <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                      <span class="social-icon social-icon-github" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                      <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                      <span class="social-icon social-icon-x" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                      <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-email-link aria-label="Send email">
+                      <span class="social-icon social-icon-email" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="site-footer-meta">© 2026 John Niedermeyer</p>
+            </div>
+
+            <nav class="site-footer-column site-footer-column-work" aria-label="Case studies">
+              <h3>Case Studies</h3>
+              <ul class="site-footer-links">
+                <li><a href="../../work/resy-discovery/">Resy Discovery</a></li>
+                <li><a href="../../work/sendmoi/">SendMoi</a></li>
+                <li><a href="../../work/somm-ai/">Somm AI</a></li>
+              </ul>
+            </nav>
+
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="../../assets/js/main.js?v=20260310-020"></script>
+  </body>
+</html>
