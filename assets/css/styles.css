@@ -2119,7 +2119,7 @@ body.grid-hidden .grid-overlay > span {
     width: 100%;
     max-width: none;
     justify-content: flex-start;
-    margin: 18px 0 0;
+    margin: 30px 0 0;
   }
 
   .social-links a {
@@ -2172,6 +2172,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .experience-column {
+    grid-column: auto;
     width: auto;
     max-width: none;
     margin: 0;
@@ -2180,7 +2181,10 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .experience-column:first-child,
-  .experience-column:last-child {
+  .experience-column:last-child,
+  .experience-column:first-of-type,
+  .experience-column:last-of-type {
+    grid-column: auto;
     width: auto;
     max-width: none;
   }
