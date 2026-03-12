@@ -80,7 +80,6 @@ a:visited {
   color: var(--accent);
 }
 
-a:hover,
 a:focus-visible {
   color: #ff6a60;
 }
@@ -584,7 +583,6 @@ body.grid-hidden .grid-overlay > span {
   transition: border-color 0.18s ease;
 }
 
-.topper-company-link:hover,
 .topper-company-link:focus-visible {
   color: var(--accent);
   border-bottom-color: rgba(255, 69, 58, 0.65);
@@ -705,10 +703,25 @@ body.grid-hidden .grid-overlay > span {
   transition: border-color 0.18s ease;
 }
 
-.experience-item .experience-company a:hover,
 .experience-item .experience-company a:focus-visible {
   color: inherit;
   border-bottom-color: rgba(255, 69, 58, 0.65);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: #ff6a60;
+  }
+
+  .topper-company-link:hover {
+    color: var(--accent);
+    border-bottom-color: rgba(255, 69, 58, 0.65);
+  }
+
+  .experience-item .experience-company a:hover {
+    color: inherit;
+    border-bottom-color: rgba(255, 69, 58, 0.65);
+  }
 }
 
 .experience-item .experience-date {
@@ -2091,19 +2104,21 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .topper-columns {
+    --topper-track-inset: calc((100vw - var(--mobile-content-width)) / 2);
     --topper-card-1: min(325px, calc(100vw - 50px));
-    --topper-card-n: min(396px, calc(100vw - 30px));
+    --topper-card-n: min(382px, calc(100vw - 48px));
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    width: var(--mobile-topper-width);
-    max-width: var(--mobile-topper-width);
-    margin: 0 -5px 0 10px;
-    padding: 17px 0 0 15px;
+    width: calc(100% + 10px);
+    max-width: none;
+    margin: 0 -5px;
+    padding: 17px 0 0 var(--topper-track-inset);
     min-height: 131px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--topper-track-inset);
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     touch-action: auto;
@@ -2136,8 +2151,6 @@ body.grid-hidden .grid-overlay > span {
     width: var(--topper-card-n);
     max-width: var(--topper-card-n);
     min-height: 110px;
-    padding-left: 24px;
-    box-sizing: border-box;
   }
 
   .topper-columns p,
@@ -2291,6 +2304,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .experience-columns-carousel {
+    --experience-track-inset: calc((100vw - var(--mobile-content-width)) / 2);
     --experience-card-1: min(325px, calc(100vw - 50px));
     --experience-card-n: min(396px, calc(100vw - 30px));
     display: flex;
@@ -2299,12 +2313,12 @@ body.grid-hidden .grid-overlay > span {
     width: calc(100% + 10px);
     max-width: none;
     margin: 0 -5px;
-    padding-left: 15px;
+    padding-left: var(--experience-track-inset);
     box-sizing: border-box;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    scroll-padding-left: 15px;
+    scroll-padding-left: var(--experience-track-inset);
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     touch-action: auto;
