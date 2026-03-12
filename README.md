@@ -134,6 +134,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
   - `Case Studies` column
 - Footer link styling is white with animated underline on hover/focus.
 - Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
+- Interactive focus states across home and work pages now use a shared subdued red `:focus-visible` outline with a separate soft red outer glow on control-style elements like the spinning logo, rail nav items, social icons, cards, CTAs, and the `cols` toggle.
 
 ## Legacy removal
 
@@ -158,4 +159,5 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
 - Homepage company-link hover underlines now only apply on hover-capable devices, avoiding sticky touch hover states on iPhone.
 - The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
+- The site now declares a dark browser color scheme, and all home/work pages declare a black browser `theme-color`.
 - CSS and JS assets use deploy-time cache-busting query params in the staged homepage HTML; if Safari looks stale locally, do a hard refresh.
