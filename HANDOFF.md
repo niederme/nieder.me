@@ -1,33 +1,31 @@
 # Handoff
 
 ## Branch
-- `codex/deploy-staged-cache-bust`
+- `codex/hotfix-deploy-root-sync`
 
 ## Current Focus
-- Stop deploy from mutating tracked source files when updating site metadata and cache-busted asset URLs.
+- Hotfix the deploy script so it does not delete unmanaged root-level server files during staged deploys.
 
 ## What Changed
-- Updated `scripts/deploy-2026.sh` to build a temporary staging directory for deploy output instead of rewriting tracked source files in place.
-- Updated `scripts/set-site-url.sh` to accept an optional HTML target path so deploy can rewrite metadata in the staged `index.html`.
-- Switched deploy-time cache busting from date-sequence tokens stored in source to per-file content hashes computed from the staged CSS and JS assets.
-- Updated `README.md` deploy documentation to reflect the staged deploy flow and non-mutating cache-bust behavior.
+- Updated `scripts/deploy-2026.sh` to keep the staged deploy flow but sync only the managed staged paths (`index.html`, `assets/`, and when present `work/` / `sendmoi`) instead of syncing the entire staged root.
+- This avoids deleting unrelated root-level server files such as host-managed config during `rsync --delete`.
+- Updated `README.md` deploy documentation to clarify that only managed staged paths are synced.
 
 ## Verification
 - Verified with a mocked deploy run using fake `ssh`/`rsync` wrappers:
-  - the worktree stayed unchanged before and after the deploy script ran
-  - the staged `index.html` received rewritten site metadata for the provided `SITE_URL`
-  - the staged `index.html` received hashed cache-bust query params for `styles.css` and `main.js`
+  - deploy still stages `index.html` and computes hashed cache-bust query params
+  - `rsync` now receives explicit staged paths instead of the staged root directory
+  - the command includes staged `index.html`, `assets`, and `work` as expected
 
 ## Open Items
-- GitHub issue: `#25 Stop deploy from mutating tracked index.html`
-- Commit and push `codex/deploy-staged-cache-bust`.
-- Open PR and merge after review.
-- Decide whether to drop the stale stash after this branch lands.
+- Commit and push `codex/hotfix-deploy-root-sync`.
+- Redeploy and verify `https://nieder.me/2026/` no longer returns 403.
+- Open PR and merge after review if desired.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
-4. Verify mocked deploy leaves the worktree clean
-5. Commit and push `codex/deploy-staged-cache-bust`
-6. Open PR to `main`
+4. Run or rerun deploy from `codex/hotfix-deploy-root-sync`
+5. Verify the homepage loads
+6. Commit/push/open PR if we keep the hotfix branch workflow
