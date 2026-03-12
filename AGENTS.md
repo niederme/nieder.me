@@ -60,6 +60,7 @@
 - Treat messages prefixed with `BUG:` or `ISSUE:` as a request to create a GitHub issue directly.
 - Classify issue type and labels based on context (for example: `bug`, `enhancement`, `chore`) unless the user explicitly forces a type.
 - If the user includes a type hint inline (for example: `ISSUE: [bug] ...`), honor it.
+- When an issue is needed and no issue number is provided, do not ask which number to use. Look up the latest existing GitHub issue for this repo, create the next issue directly, and use the number GitHub assigns as the canonical reference.
 - If required details are missing, ask a short follow-up question before creating the issue. Otherwise, create it without an extra confirmation step.
 - If the user provides screenshots/videos, include them in the issue:
   - use existing URLs directly when available
