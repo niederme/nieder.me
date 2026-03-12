@@ -114,7 +114,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.
-- `/work` is a placeholder overflow page for extended work history and project narrative links.
+- `/work` now acts as a work overview page with a smaller home-style two-line title treatment (`Work Experience` in white, `& Resume` in red), a reserved resume block, and a separate case-study section with a left-aligned `Case Studies` heading and a 2-up grid for the current Resy and SendMoi writeups.
 - Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home nav icon, and `cols` toggle).
 - Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`) now keep the home-style rail nav items (`Home`, `Work Experience`, `Resy`, `SendMoi`) with static active state per page (no scroll-driven switching on child pages).
 - On article pages, the `Work Experience` rail item now links to `/work`.
