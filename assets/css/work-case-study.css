@@ -451,6 +451,98 @@ body.grid-hidden .work-grid-overlay > span {
   grid-column: 5 / span 8;
 }
 
+.work-index-rail {
+  grid-column: 1 / span 4;
+}
+
+.work-index-rail h2 {
+  margin: 0;
+  font-size: clamp(34px, 3vw, 48px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.work-index-case-studies {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px 24px;
+}
+
+.work-index-card {
+  display: flex;
+  flex-direction: column;
+  color: var(--fg);
+}
+
+.work-index-card:visited {
+  color: var(--fg);
+}
+
+.work-index-card:hover,
+.work-index-card:focus-visible {
+  color: var(--fg);
+}
+
+.work-index-card-media {
+  margin: 0;
+  overflow: hidden;
+  background: #0d0d0f;
+  aspect-ratio: 16 / 10;
+}
+
+.work-index-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.work-index-card-copy {
+  padding-top: 18px;
+}
+
+.work-index-card-eyebrow {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.35;
+  color: rgba(235, 235, 245, 0.72);
+}
+
+.work-index-card h3 {
+  margin: 10px 0 0;
+  font-size: clamp(26px, 2.2vw, 34px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.work-index-card-summary {
+  margin: 14px 0 0;
+  font-size: 17px;
+  line-height: 1.42;
+  color: var(--muted);
+}
+
+.work-index-card-cta {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--accent);
+  transition: color 0.18s ease;
+}
+
+.work-index-card:hover .work-index-card-media img,
+.work-index-card:focus-visible .work-index-card-media img {
+  transform: scale(1.03);
+}
+
+.work-index-card:hover .work-index-card-cta,
+.work-index-card:focus-visible .work-index-card-cta {
+  color: #ff6a60;
+}
+
 .work-article-section + .work-article-section {
   margin-top: 38px;
   padding-top: 38px;
@@ -678,6 +770,14 @@ body.grid-hidden .work-grid-overlay > span {
     grid-column: 1;
   }
 
+  .work-index-rail {
+    grid-column: 1;
+  }
+
+  .work-index-case-studies {
+    grid-column: 1;
+  }
+
   .site-footer {
     margin-top: 88px;
   }
@@ -744,9 +844,30 @@ body.grid-hidden .work-grid-overlay > span {
     font-size: 30px;
   }
 
+  .work-index-rail h2 {
+    font-size: 30px;
+  }
+
   .work-article-section p,
   .work-article-section li {
     font-size: 17px;
+  }
+
+  .work-index-case-studies {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .work-index-card-copy {
+    padding-top: 16px;
+  }
+
+  .work-index-card h3 {
+    font-size: 28px;
+  }
+
+  .work-index-card-summary {
+    font-size: 16px;
   }
 
   .work-article-visuals {
