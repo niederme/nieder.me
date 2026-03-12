@@ -58,8 +58,18 @@ REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH%/}/"
 # Ensure remote target exists.
 ssh -p "$DEPLOY_PORT" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
 
+# Sync only the managed site paths from staging so deploy does not delete
+# unrelated root-level server files such as host-managed config.
+SYNC_PATHS=("$STAGING_DIR/index.html" "$STAGING_DIR/assets")
+if [[ -d "$STAGING_DIR/work" ]]; then
+  SYNC_PATHS+=("$STAGING_DIR/work")
+fi
+if [[ -d "$STAGING_DIR/sendmoi" ]]; then
+  SYNC_PATHS+=("$STAGING_DIR/sendmoi")
+fi
+
 rsync "${RSYNC_ARGS[@]}" -e "ssh -p $DEPLOY_PORT" \
-  "$STAGING_DIR"/ \
+  "${SYNC_PATHS[@]}" \
   "$REMOTE"
 
 echo "Deploy complete -> $REMOTE"

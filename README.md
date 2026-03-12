@@ -96,7 +96,7 @@ Run:
 ./scripts/deploy-2026.sh
 ```
 
-The deploy script stages a temporary copy of `index.html`, `assets/`, and (when present) `work/` and `sendmoi/`, rewrites the site metadata and cache-busted asset URLs there, and syncs that staged copy to the server. It does not mutate the tracked source files in your worktree.
+The deploy script stages a temporary copy of the managed site paths (`index.html`, `assets/`, and when present `work/` and `sendmoi/`), rewrites the site metadata and cache-busted asset URLs there, and syncs only those staged paths to the server. It does not mutate the tracked source files in your worktree or treat the remote root as fully managed.
 
 ## SendMoi pages
 
