@@ -4,7 +4,7 @@
 - `codex/focus-states`
 
 ## Current Focus
-- Bundle minor visual tweaks on one feature branch, starting with site-wide focus styling.
+- Ship the bundled focus/browser-hint tweaks on this branch via PR for issue `#32`.
 
 ## What Changed
 - Opened GitHub issue `#32` to track site-wide focus-state cleanup.
@@ -23,7 +23,7 @@
 - In mobile Safari light and dark system appearance, confirm the site/browser chrome stays on the dark theme hints (`color-scheme: dark` and black `theme-color`) where Safari honors them.
 
 ## Open Items
-- Add the remaining bundled visual tweaks on this branch before opening the PR for issue `#32`.
+- Push `codex/focus-states` and open the PR for issue `#32`.
 
 ## Resume Checklist
 1. `git branch --show-current`
