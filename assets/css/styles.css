@@ -19,6 +19,9 @@
   --footer-link-underline: rgba(255, 255, 255, 0.92);
   --about-surface: #111111;
   --about-shadow: rgba(0, 0, 0, 0.32);
+  --colophon-surface: #121212;
+  --colophon-outline: rgba(255, 255, 255, 0.24);
+  --colophon-shadow: rgba(0, 0, 0, 0.28);
   --logo-filter: none;
   --nav-icon-filter: none;
   --media-fg: #ffffff;
@@ -47,6 +50,9 @@
   --footer-link-underline: rgba(18, 18, 18, 0.88);
   --about-surface: #f3eee5;
   --about-shadow: rgba(18, 18, 18, 0.1);
+  --colophon-surface: #f5efe5;
+  --colophon-outline: rgba(18, 18, 18, 0.18);
+  --colophon-shadow: rgba(18, 18, 18, 0.08);
   --logo-filter: brightness(0) saturate(100%);
   --nav-icon-filter: brightness(0) saturate(100%);
 }
@@ -72,6 +78,22 @@
   src: url("../fonts/soehne-halbfett.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("../fonts/soehne-buch-kursiv.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("../fonts/soehne-halbfett-kursiv.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -108,6 +130,18 @@ h6 {
 p,
 li {
   text-wrap: pretty;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 a {
@@ -1136,6 +1170,150 @@ body.grid-hidden .grid-overlay > span {
   text-wrap: balance;
 }
 
+.colophon-home {
+  margin-top: 168px;
+}
+
+.colophon-home > .rule {
+  width: 100%;
+  margin-bottom: 38px;
+}
+
+.colophon-home-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+  row-gap: 28px;
+  width: 100%;
+  align-items: start;
+}
+
+.colophon-home-heading {
+  position: relative;
+  grid-column: 1 / span 7;
+  display: grid;
+  align-content: start;
+  gap: 30px;
+  min-height: 0;
+  padding-top: 10px;
+  padding-right: 56px;
+}
+
+.colophon-home-kicker {
+  margin: 0 0 18px 10px;
+  color: var(--footer-heading);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.colophon-home-title {
+  position: relative;
+  display: block;
+  min-height: 328px;
+  margin: 0;
+}
+
+.colophon-home-title-shadow,
+.colophon-home-title-main {
+  font-size: clamp(108px, 12vw, 176px);
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+}
+
+.colophon-home-title-shadow {
+  position: absolute;
+  top: 18px;
+  left: 4px;
+  color: transparent;
+  font-weight: 700;
+  -webkit-text-stroke: 1px var(--colophon-outline);
+  opacity: 0.85;
+}
+
+.colophon-home-title-main {
+  position: relative;
+  display: block;
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.colophon-home-title-accent {
+  position: relative;
+  display: block;
+  margin-top: -18px;
+  margin-left: 126px;
+  color: var(--accent);
+  font-size: clamp(102px, 11vw, 154px);
+  line-height: 0.74;
+  letter-spacing: -0.09em;
+  font-style: italic;
+  font-weight: 400;
+  transform: rotate(-6deg);
+  transform-origin: left center;
+}
+
+.colophon-home-copy {
+  grid-column: 8 / span 5;
+  display: grid;
+  align-content: start;
+  padding-top: 20px;
+}
+
+.colophon-home-intro {
+  margin: 0;
+  color: var(--fg);
+  font-size: 32px;
+  line-height: 1.14;
+  font-weight: 300;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+
+.colophon-home-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.colophon-home-note {
+  min-height: 100%;
+  padding: 20px 22px 22px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0))
+    var(--colophon-surface);
+  box-shadow: 0 18px 48px var(--colophon-shadow);
+}
+
+.colophon-home-note p {
+  margin: 0;
+}
+
+.colophon-home-note-label {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.colophon-home-note p:last-child {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 300;
+}
+
+.colophon-home + .site-footer {
+  margin-top: 168px;
+}
+
 .site-footer {
   margin-top: 220px;
   padding-bottom: 72px;
@@ -1952,6 +2130,64 @@ body.grid-hidden .grid-overlay > span {
 
   .about-home-copy .about-home-lead {
     font-size: 24px;
+  }
+
+  .colophon-home {
+    margin-top: 132px;
+  }
+
+  .colophon-home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 36px;
+    row-gap: 36px;
+  }
+
+  .colophon-home-heading,
+  .colophon-home-copy {
+    grid-column: auto;
+  }
+
+  .colophon-home-heading {
+    padding-top: 0;
+    padding-right: 0;
+    gap: 24px;
+  }
+
+  .colophon-home-kicker {
+    margin-left: 0;
+  }
+
+  .colophon-home-title {
+    min-height: 236px;
+  }
+
+  .colophon-home-title-shadow,
+  .colophon-home-title-main {
+    font-size: clamp(90px, 11vw, 132px);
+  }
+
+  .colophon-home-title-accent {
+    margin-top: -14px;
+    margin-left: 102px;
+    font-size: clamp(82px, 10vw, 118px);
+  }
+
+  .colophon-home-copy {
+    gap: 0;
+    padding-top: 0;
+  }
+
+  .colophon-home-intro {
+    max-width: 26ch;
+    font-size: 26px;
+  }
+
+  .colophon-home-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .colophon-home + .site-footer {
+    margin-top: 152px;
   }
 
   .case-study-promo-content {
@@ -2776,6 +3012,83 @@ body.grid-hidden .grid-overlay > span {
   .about-home-copy .about-home-lead {
     font-size: 22px;
     line-height: 1.2;
+  }
+
+  .colophon-home {
+    width: var(--mobile-content-width);
+    max-width: var(--mobile-content-width);
+    margin: 60px auto 0;
+  }
+
+  .colophon-home-grid {
+    grid-template-columns: 1fr;
+    row-gap: 26px;
+  }
+
+  .colophon-home-heading,
+  .colophon-home-copy {
+    grid-column: 1;
+  }
+
+  .colophon-home-heading {
+    padding-top: 0;
+    gap: 16px;
+    padding-right: 0;
+  }
+
+  .colophon-home-kicker {
+    margin: 0 0 12px;
+    font-size: 12px;
+  }
+
+  .colophon-home-title {
+    min-height: 164px;
+  }
+
+  .colophon-home-title-shadow,
+  .colophon-home-title-main {
+    font-size: clamp(66px, 19vw, 96px);
+  }
+
+  .colophon-home-title-shadow {
+    top: 12px;
+    left: 1px;
+  }
+
+  .colophon-home-title-accent {
+    margin-top: -8px;
+    margin-left: 64px;
+    font-size: clamp(56px, 17vw, 84px);
+  }
+
+  .colophon-home-copy {
+    gap: 0;
+    padding-top: 0;
+  }
+
+  .colophon-home-intro {
+    font-size: 22px;
+    line-height: 1.16;
+    max-width: 26ch;
+  }
+
+  .colophon-home-notes {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .colophon-home-note {
+    padding: 18px 18px 20px;
+    border-radius: 22px;
+  }
+
+  .colophon-home-note p:last-child {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .colophon-home + .site-footer {
+    margin-top: 104px;
   }
 
   .case-study-promo {

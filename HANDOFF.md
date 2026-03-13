@@ -1,19 +1,19 @@
 # Handoff
 
 ## Branch
-- `codex/home-about-section`
+- `codex/home-colophon`
 
 ## Current Focus
-- Open and land the PR for issue `#45`, which adds a homepage About section with portrait treatment and an About rail icon.
+- Push `codex/home-colophon` and open the PR for issue `#48`, which adds a homepage Colophon section below the About block.
 
 ## Tracking
-- GitHub issue `#45` tracks the homepage About section.
+- GitHub issue `#48` tracks the homepage Colophon section.
 
 ## What Changed
-- Added a new homepage `About` section after the case-study promos.
-- Replaced the temporary portrait placeholder with a real black-and-white portrait image.
-- Added an `About` anchor to the desktop rail nav using dedicated off/on/hover icon assets.
-- Refined the About layout spacing and copy column proportions on desktop, tablet, and mobile.
+- Added a new homepage `Colophon` section directly below the About block.
+- Introduced a more expressive split-word `Colophon` heading with outlined and italic layers.
+- Added four note cards covering the site's type choices, static build, local preview setup, and deploy flow.
+- Loaded the italic S&#246;hne cuts needed for the decorative heading treatment and tuned tablet/mobile layout spacing for the new section.
 
 ## Verification
 - `git diff --check`
@@ -21,15 +21,16 @@
 
 ## Open Items
 - Fetch and rebase onto `origin/main`.
-- Push `codex/home-about-section`.
-- Open the PR with `Closes #45`.
+- Push `codex/home-colophon`.
+- Open the PR with `Closes #48`.
 
 ## Resume Checklist
 1. `git branch --show-current`
-2. `git status --short`
-3. Review `README.md` and `HANDOFF.md`
-4. Run `git diff --check`
-5. `git fetch origin`
-6. `git rebase origin/main`
-7. `git push -u origin codex/home-about-section`
-8. Open PR with `Closes #45`
+2. `git status --short --branch`
+3. Open `http://Niederbook-Air-M4.local:7778/` and review the homepage Colophon section
+4. Review `README.md` and `HANDOFF.md`
+5. Run `git diff --check`
+6. `git fetch origin`
+7. `git rebase origin/main`
+8. `git push -u origin codex/home-colophon`
+9. Open the PR with `Closes #48`

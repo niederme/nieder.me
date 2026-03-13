@@ -53,7 +53,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260313-001" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260313-002" />
   </head>
   <body id="top">
     <div class="page">
@@ -336,6 +336,61 @@
                 especially drawn to work that connects business goals, user needs, and strong editorial or brand
                 sensibilities.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="colophon-home" id="colophon-home" aria-labelledby="colophon-home-title">
+          <div class="rule"></div>
+          <div class="colophon-home-grid">
+            <header class="colophon-home-heading">
+              <p class="colophon-home-kicker">Type, code, and other notes</p>
+              <h3 class="colophon-home-title" id="colophon-home-title">
+                <span class="visually-hidden">Colophon</span>
+                <span class="colophon-home-title-shadow" aria-hidden="true">Colophon</span>
+                <span class="colophon-home-title-main" aria-hidden="true">Colo</span>
+                <span class="colophon-home-title-accent" aria-hidden="true">phon</span>
+              </h3>
+              <p class="colophon-home-intro">
+                This site is built more like a small publication than a product shell: hand-tuned, lightweight, and
+                close to the material.
+              </p>
+            </header>
+
+            <div class="colophon-home-copy">
+              <div class="colophon-home-notes" aria-label="Colophon notes">
+                <article class="colophon-home-note">
+                  <p class="colophon-home-note-label">Type</p>
+                  <p>
+                    The site is set in S&#246;hne, mostly in light, book, and halbfett cuts, with italics reserved for
+                    contrast, emphasis, and a little mischief.
+                  </p>
+                </article>
+
+                <article class="colophon-home-note">
+                  <p class="colophon-home-note-label">Build</p>
+                  <p>
+                    It runs as a deliberately simple static site: semantic HTML, bespoke CSS, and just enough
+                    JavaScript to handle theme state, navigation behavior, and a few quality-of-life details.
+                  </p>
+                </article>
+
+                <article class="colophon-home-note">
+                  <p class="colophon-home-note-label">Preview</p>
+                  <p>
+                    Local previews come up through the repo Make targets, which wrap a tiny Python server so the work
+                    can stay inspectable in a browser without adding framework overhead.
+                  </p>
+                </article>
+
+                <article class="colophon-home-note">
+                  <p class="colophon-home-note-label">Deploy</p>
+                  <p>
+                    Shipping goes through a staged shell deploy that syncs the managed site files and refreshes cache
+                    busted asset URLs on the way out, keeping the source tree clean.
+                  </p>
+                </article>
+              </div>
             </div>
           </div>
         </section>
