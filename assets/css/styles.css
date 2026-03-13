@@ -1190,12 +1190,13 @@ body.grid-hidden .grid-overlay > span {
 
 .colophon-home-heading {
   position: relative;
-  grid-column: 1 / span 5;
+  grid-column: 1 / span 6;
   display: grid;
   align-content: start;
   gap: 22px;
   min-height: 0;
   padding-top: 10px;
+  padding-right: 28px;
 }
 
 .colophon-home-kicker {
@@ -1211,7 +1212,7 @@ body.grid-hidden .grid-overlay > span {
 .colophon-home-title {
   position: relative;
   display: block;
-  min-height: 240px;
+  min-height: 276px;
   margin: 0;
 }
 
@@ -1255,7 +1256,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-copy {
-  grid-column: 7 / span 5;
+  grid-column: 8 / span 4;
   display: grid;
   align-content: start;
 }
@@ -1263,10 +1264,10 @@ body.grid-hidden .grid-overlay > span {
 .colophon-home-intro {
   margin: 0;
   color: var(--fg);
-  font-size: 26px;
+  font-size: 28px;
   line-height: 1.18;
   font-weight: 300;
-  max-width: 22ch;
+  max-width: 27ch;
   text-wrap: balance;
 }
 
@@ -2147,6 +2148,7 @@ body.grid-hidden .grid-overlay > span {
 
   .colophon-home-heading {
     padding-top: 0;
+    padding-right: 0;
   }
 
   .colophon-home-kicker {
@@ -2154,7 +2156,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-title {
-    min-height: 196px;
+    min-height: 214px;
   }
 
   .colophon-home-title-shadow,
@@ -2172,7 +2174,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-intro {
-    max-width: 20ch;
+    max-width: 24ch;
     font-size: 24px;
   }
 
@@ -3027,6 +3029,7 @@ body.grid-hidden .grid-overlay > span {
   .colophon-home-heading {
     padding-top: 0;
     gap: 18px;
+    padding-right: 0;
   }
 
   .colophon-home-kicker {
@@ -3035,7 +3038,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-title {
-    min-height: 152px;
+    min-height: 164px;
   }
 
   .colophon-home-title-shadow,
@@ -3061,7 +3064,7 @@ body.grid-hidden .grid-overlay > span {
   .colophon-home-intro {
     font-size: 21px;
     line-height: 1.16;
-    max-width: 18ch;
+    max-width: 24ch;
   }
 
   .colophon-home-notes {
