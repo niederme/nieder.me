@@ -126,6 +126,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 
 - The homepage `index.html` now includes a reusable case-study promo block after `Work Experience`.
 - Current instances are Resy, SendMoi, and Somm AI, each with CTA text `View Case Study`.
+- The homepage now includes an `About` section after the case-study promos with a portrait image and editorial-style bio copy block.
 - Promo block configuration uses data attributes for logo, desktop/mobile backgrounds, and image focus anchoring (`left`, `center`, `right`).
 - Promo image references now use `*-promo.*` filenames to avoid production path mismatches observed on `nieder.me/2026` for earlier asset names.
 - The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
@@ -138,7 +139,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - On article pages, the `Work Experience` rail item now links to `/work`.
 - On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
 - Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
-- Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, `SendMoi`, and Somm AI, with the Somm AI slot temporarily reusing the Resy `R` icon assets.
+- Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, `SendMoi`, Somm AI, and `About`, with the Somm AI slot temporarily reusing the Resy `R` icon assets.
 
 ## Homepage footer
 
