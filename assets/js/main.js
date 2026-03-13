@@ -10,7 +10,7 @@ const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
 const THEME_STORAGE_KEY = "nieder.theme";
 const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";
-const LIGHT_THEME_COLOR = "#f5f1e8";
+const LIGHT_THEME_COLOR = "#ffffff";
 const DARK_THEME_COLOR = "#000000";
 const scrollToPageTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
