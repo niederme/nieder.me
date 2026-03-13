@@ -30,13 +30,13 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #f5f1e8;
+  --bg: #ffffff;
   --fg: #121212;
   --line: #d6d0c6;
   --muted: #474a51;
   --toggle-track-on: #1f2025;
   --toggle-track-off: #d4cec2;
-  --toggle-knob-on: #f5f1e8;
+  --toggle-knob-on: #ffffff;
   --toggle-knob-off: #6f737a;
   --toggle-label: #5f6268;
   --grid-overlay-fill: rgba(18, 18, 18, 0.08);

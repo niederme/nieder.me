@@ -1,38 +1,34 @@
 # Handoff
 
 ## Branch
-- `codex/work-link-layout`
+- `codex/light-mode-white-bg`
 
 ## Current Focus
-- Finish rebasing this branch onto `origin/main`, force-push it, and clear the merge conflict on PR `#42` for issue `#41`.
+- Open and land the PR for issue `#43`, which changes the manual light theme from off-white to pure white while preserving the existing dark-by-default behavior.
 
 ## Tracking
-- GitHub issue `#41` tracks the homepage `Work Experience` resume-link layout adjustment.
-- GitHub PR `#42` contains the branch changes.
+- GitHub issue `#43` tracks the light-mode background adjustment.
 
 ## What Changed
-- Moved the homepage `Full Work Experience & Resume →` link directly under the `Work Experience` heading.
-- Set the homepage link to render as two explicit lines on desktop and narrow mobile:
-  - `Full Work Experience`
-  - `& Resume →`
-- Added breakpoint-specific behavior for `521px` to `959px` viewports so the same link stays on one line at those widths.
-- Reworked the link hover/focus treatment so it no longer draws an oversized underline artifact.
-- Increased the mobile spacing below the link so the gap below is larger than the gap above.
+- Set the shared light-mode background token to `#ffffff`.
+- Updated the case-study light-mode card background to `#ffffff` so article pages do not retain the earlier warm tint.
+- Kept browser `theme-color` metadata aligned with the active light theme from first paint onward.
 
 ## Verification
 - `git diff --check`
-- `make dev-local PORT=7788`
+- Confirmed the local preview serves over `http://localhost:7777`
 
 ## Open Items
-- Complete the rebase onto `origin/main`.
-- Push the rebased branch with `git push --force-with-lease`.
-- Confirm PR `#42` is mergeable.
+- Fetch and rebase onto `origin/main`.
+- Push `codex/light-mode-white-bg`.
+- Open the PR with `Closes #43`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short`
 3. Review `README.md` and `HANDOFF.md`
 4. Run `git diff --check`
-5. Run `make dev-local PORT=7788`
-6. `git push --force-with-lease`
-7. Confirm PR `#42` is mergeable
+5. `git fetch origin`
+6. `git rebase origin/main`
+7. `git push -u origin codex/light-mode-white-bg`
+8. Open PR with `Closes #43`
