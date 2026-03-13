@@ -4,7 +4,7 @@
 - `codex/home-colophon`
 
 ## Current Focus
-- Review and land issue `#48`, which adds a homepage Colophon section below the About block.
+- Push `codex/home-colophon` and open the PR for issue `#48`, which adds a homepage Colophon section below the About block.
 
 ## Tracking
 - GitHub issue `#48` tracks the homepage Colophon section.
@@ -20,15 +20,17 @@
 - Local preview running from this worktree at `http://Niederbook-Air-M4.local:7778/`
 
 ## Open Items
-- Review the new section in the local preview and adjust copy/art direction if desired.
-- Commit and push `codex/home-colophon` when ready.
+- Fetch and rebase onto `origin/main`.
+- Push `codex/home-colophon`.
+- Open the PR with `Closes #48`.
 
 ## Resume Checklist
 1. `git branch --show-current`
-2. `git status --short`
+2. `git status --short --branch`
 3. Open `http://Niederbook-Air-M4.local:7778/` and review the homepage Colophon section
 4. Review `README.md` and `HANDOFF.md`
 5. Run `git diff --check`
-6. `git add index.html assets/css/styles.css README.md HANDOFF.md`
-7. `git commit -m "Add homepage colophon section"`
+6. `git fetch origin`
+7. `git rebase origin/main`
 8. `git push -u origin codex/home-colophon`
+9. Open the PR with `Closes #48`
