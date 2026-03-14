@@ -1239,9 +1239,9 @@ body.grid-hidden .grid-overlay > span {
 .colophon-home-intro {
   margin: 0;
   color: var(--fg);
-  font-size: 30px;
-  line-height: 1.16;
-  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 400;
   max-width: none;
   width: 100%;
 }
@@ -2137,7 +2137,8 @@ body.grid-hidden .grid-overlay > span {
 
   .colophon-home-intro {
     max-width: none;
-    font-size: 24px;
+    font-size: 17px;
+    line-height: 1.45;
   }
 
   .colophon-home-notes {
@@ -3004,8 +3005,8 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-intro {
-    font-size: 21px;
-    line-height: 1.16;
+    font-size: 16px;
+    line-height: 1.4;
     max-width: 16ch;
   }
 
