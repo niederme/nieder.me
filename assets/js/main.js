@@ -1,7 +1,9 @@
 const caseNav = document.querySelector(".case-nav");
 const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
 const topLogoLinks = Array.from(
-  document.querySelectorAll('.logo-link[href="#top"], .mobile-logo-link[href="#top"]')
+  document.querySelectorAll(
+    '.logo-link[href="#top"], .mobile-logo-link[href="#top"], .styleguide-top-anchor[href="#top"]'
+  )
 );
 const themeToggles = Array.from(document.querySelectorAll(".theme-toggle"));
 const colsToggles = Array.from(document.querySelectorAll(".cols-toggle"));
@@ -165,6 +167,58 @@ if (colsToggles.length > 0) {
       applyGridVisibility(document.body.classList.contains("grid-hidden"));
     });
   });
+}
+
+{
+  const styleguideNav = document.querySelector(".styleguide-side-nav");
+
+  if (styleguideNav) {
+    const anchors = Array.from(styleguideNav.querySelectorAll(".styleguide-anchor"));
+    const getPageTop = (element) =>
+      Math.round(element.getBoundingClientRect().top + window.scrollY);
+    const sections = anchors
+      .map((anchor) => {
+        const href = anchor.getAttribute("href");
+        return href ? document.querySelector(href) : null;
+      })
+      .filter(Boolean);
+
+    const setActiveAnchor = (activeIndex) => {
+      anchors.forEach((anchor, index) => {
+        const isActive = index === activeIndex;
+        anchor.classList.toggle("is-active", isActive);
+        if (isActive) {
+          anchor.setAttribute("aria-current", "true");
+        } else {
+          anchor.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const updateStyleguideNav = () => {
+      const activationLine = window.scrollY + 240;
+      let activeIndex = -1;
+
+      for (let i = 0; i < sections.length; i += 1) {
+        if (activationLine >= getPageTop(sections[i])) {
+          activeIndex = i;
+        }
+      }
+
+      setActiveAnchor(activeIndex);
+    };
+
+    anchors.forEach((anchor, index) => {
+      anchor.addEventListener("click", () => {
+        setActiveAnchor(index);
+      });
+    });
+
+    updateStyleguideNav();
+    window.addEventListener("scroll", updateStyleguideNav, { passive: true });
+    window.addEventListener("resize", updateStyleguideNav);
+    window.addEventListener("hashchange", updateStyleguideNav);
+  }
 }
 
 if (caseNav) {
