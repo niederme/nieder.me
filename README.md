@@ -24,6 +24,12 @@ make dev PORT=8080
 
 `make dev-lan` is available as an alias of `make dev`.
 
+To make any preview server use BrowserSync live reload instead of the plain static server, add `LIVE=1`:
+
+```bash
+make dev LIVE=1
+```
+
 For worktree-based feature threads, use:
 
 ```bash
@@ -31,6 +37,12 @@ make dev-thread
 ```
 
 That keeps `7777` available for the main checkout and starts worktree previews at `7778`, auto-cascading to `7779`, `7780`, and upward when other worktree previews are already running.
+
+For a live-reload worktree preview:
+
+```bash
+make dev-thread LIVE=1
+```
 
 ## Development workflow
 
@@ -59,21 +71,38 @@ git worktree add ../nieder-me-my-feature -b codex/my-feature
 
 ## Live reload
 
-For auto-refresh in the browser on file save, run:
+For auto-refresh in the browser on file save, add `LIVE=1` to any preview target:
 
 ```bash
-make dev-live
+make dev LIVE=1
 ```
 
 This uses BrowserSync to serve the repo and reload when HTML/CSS/JS files change. It opens the same resolved `<this-mac>.local` URL as `make dev` instead of BrowserSync's default `localhost`.
 
-For live reload from a worktree thread, use:
+For a worktree thread:
 
 ```bash
+make dev-thread LIVE=1
+```
+
+For a localhost-only preview:
+
+```bash
+make dev-local LIVE=1
+```
+
+Compatibility aliases remain available:
+
+```bash
+make dev-live
 make dev-live-thread
 ```
 
-This follows the same `7778+` worktree port cascade as `make dev-thread`.
+Live reload currently watches:
+- `index.html`
+- `work/**/*.html`
+- `assets/css/**/*.css`
+- `assets/js/**/*.js`
 
 Requirements:
 - Node.js with `npx` available (recommended: Node 20 via `nvm use 20`)
