@@ -1230,7 +1230,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-copy {
-  grid-column: 4 / span 9;
+  grid-column: 4 / span 8;
   display: grid;
   align-content: start;
   padding-top: 6px;
