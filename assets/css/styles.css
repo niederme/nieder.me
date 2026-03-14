@@ -1234,7 +1234,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-copy {
-  grid-column: 4 / span 8;
+  grid-column: 4 / span 9;
   display: grid;
   align-content: start;
   padding-top: 6px;
@@ -1252,7 +1252,7 @@ body.grid-hidden .grid-overlay > span {
 
 .colophon-home-notes {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: 28px;
   row-gap: 26px;
 }
