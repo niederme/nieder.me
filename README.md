@@ -151,6 +151,11 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - `/sendmoi/terms/` is the SendMoi terms page.
 - `/sendmoi/accessibility/` is the SendMoi accessibility statement page.
 
+## Style guide
+
+- `/styleguide/` is a working foundations page for the site, documenting typography, color, grid, spacing, and recurring interface patterns using the same live theme and column-grid controls as the main site.
+- The homepage `Colophon` section now includes a direct link to `/styleguide/`.
+
 ## Home case-study promo and article
 
 - The homepage `index.html` now includes a reusable case-study promo block after `Work Experience`.
