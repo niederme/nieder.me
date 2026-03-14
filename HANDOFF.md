@@ -1,38 +1,38 @@
 # Handoff
 
 ## Branch
-- `codex/work-page-figma`
+- `codex/colophon-blueprint`
 
 ## Current Focus
-- Review and land the `/work` page rebuild for issue `#46`, which brings the page in line with the 2026 portfolio Figma.
+- Finalize and land homepage colophon refinements for issue `#53`, including the simplified text layout, restored hero divider, and the alternate About portrait preview.
 
 ## Tracking
-- GitHub issue `#46` tracks the `/work` page implementation.
+- GitHub issue `#53` tracks the homepage colophon refinement work.
 
 ## What Changed
-- Replaced the `/work` placeholder resume block with the full Figma-driven desktop layout.
-- Added the seeking-status lead, resume download action, detailed experience entries, and the right-side contact/speaking/recognition/education rail.
-- Tuned the date-range typography, hanging punctuation treatment, and full-height sidebar rule to match the Figma layout more closely.
-- Added a local `download-resume.svg` asset and bumped the shared `work-case-study.css` cache-bust query on all work pages.
+- Removed the old split-word colophon treatment and simplified it to a smaller dashed outline heading.
+- Reworked the colophon section into a cleaner text-based layout with a left intro block and two-column note copy on desktop.
+- Tightened desktop spacing and breakpoint behavior to give the colophon more regular vertical rhythm.
+- Restored the missing top horizontal divider in the homepage hero to match the Figma desktop frame more closely.
+- Swapped the About portrait to `assets/images/home/about/portrait_3_4_hp5_2400h.png`, keeping the previous portrait asset in the repo.
 
 ## Verification
 - `git diff --check`
-- Captured browser screenshots of `http://Niederbook-Air-M4.local:7778/work/` with Playwright during review.
-- Local preview running from this worktree at `http://Niederbook-Air-M4.local:7778/work/`
+- Local preview running at `http://Niederbook-Air-M4.local:7779/`
+- Manual browser review against the local homepage preview during iteration
 
 ## Open Items
-- Decide whether `Download PDF Resume` should keep the current mailto fallback or point to a real hosted PDF once one exists.
-- Fetch and rebase onto `origin/main`.
-- Push `codex/work-page-figma`.
-- Open the PR with `Closes #46`.
+- Rebase this branch onto `origin/main`.
+- Push `codex/colophon-blueprint`.
+- Open the PR with `Closes #53`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
-3. Open `http://Niederbook-Air-M4.local:7778/work/` and compare the layout against the Figma frame
+3. Open `http://Niederbook-Air-M4.local:7779/` and review the homepage hero, About section, and colophon
 4. Review `README.md` and `HANDOFF.md`
 5. Run `git diff --check`
 6. `git fetch origin`
 7. `git rebase origin/main`
-8. `git push -u origin codex/work-page-figma`
-9. Open the PR with `Closes #46`
+8. `git push -u origin codex/colophon-blueprint`
+9. Open the PR with `Closes #53`
