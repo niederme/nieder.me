@@ -692,6 +692,10 @@ body.grid-hidden .grid-overlay > span {
   padding-bottom: 22px;
 }
 
+.topper-rule-top {
+  margin-bottom: 18px;
+}
+
 .topper h1,
 .topper h2 {
   margin: 0;
