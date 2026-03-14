@@ -1168,6 +1168,22 @@ body.grid-hidden .grid-overlay > span {
   font-weight: 300;
 }
 
+.about-home-body {
+  display: block;
+}
+
+.about-home-body-column + .about-home-body-column {
+  margin-top: 1em;
+}
+
+.about-home-body p {
+  margin: 0 0 1em;
+}
+
+.about-home-body p:last-child {
+  margin-bottom: 0;
+}
+
 .about-home-copy .about-home-lead {
   color: var(--fg);
   font-size: 30px;
@@ -2003,6 +2019,48 @@ body.grid-hidden .grid-overlay > span {
   .lightbox-inner {
     width: min(1800px, 100%);
   }
+
+  .about-home-grid {
+    grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+    column-gap: var(--grid-gutter);
+    align-items: start;
+  }
+
+  .about-home-portrait {
+    grid-column: 1 / span 3;
+    align-self: start;
+    max-width: none;
+  }
+
+  .about-home-copy {
+    grid-column: 5 / span 8;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: var(--grid-gutter);
+    row-gap: 20px;
+    max-width: none;
+  }
+
+  .about-home-body {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    column-gap: 32px;
+  }
+
+  .about-home-body-column + .about-home-body-column {
+    margin-top: 0;
+  }
+
+  .about-home-copy .about-home-lead {
+    grid-column: 1 / span 6;
+    max-width: none;
+    font-size: clamp(30px, 2vw, 36px);
+  }
+
+  .about-home-copy p {
+    font-size: clamp(18px, 1.05vw, 20px);
+    line-height: 1.45;
+  }
 }
 
 @media (min-width: 960px) and (max-width: 1500px) {
@@ -2089,14 +2147,26 @@ body.grid-hidden .grid-overlay > span {
 
   .about-home-copy {
     grid-column: 5 / span 8;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 32px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: var(--grid-gutter);
+    row-gap: 20px;
     max-width: none;
   }
 
-  .about-home-copy .about-home-lead {
+  .about-home-body {
     grid-column: 1 / -1;
-    max-width: 13ch;
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    column-gap: 32px;
+  }
+
+  .about-home-body-column + .about-home-body-column {
+    margin-top: 0;
+  }
+
+  .about-home-copy .about-home-lead {
+    grid-column: 1 / span 6;
+    max-width: none;
     font-size: clamp(26px, 2.3vw, 30px);
   }
 
@@ -2205,6 +2275,10 @@ body.grid-hidden .grid-overlay > span {
 
   .about-home-copy {
     padding-top: 0;
+  }
+
+  .about-home-body {
+    display: block;
   }
 
   .about-home-copy p {
