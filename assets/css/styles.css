@@ -1147,7 +1147,7 @@ body.grid-hidden .grid-overlay > span {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1313 / 1800;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 
@@ -1237,7 +1237,7 @@ body.grid-hidden .grid-overlay > span {
   grid-column: 4 / span 9;
   display: grid;
   align-content: start;
-  padding-top: 6px;
+  padding-top: 0;
 }
 
 .colophon-home-intro {
@@ -1251,21 +1251,22 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-notes {
-  column-count: 2;
-  column-gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
+  row-gap: 28px;
+  align-items: start;
 }
 
 .colophon-home-note {
-  display: inline-block;
-  width: 100%;
+  display: block;
   min-height: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  break-inside: avoid;
-  margin: 0 0 26px;
+  margin: 0;
 }
 
 .colophon-home-note p {
@@ -1273,7 +1274,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-note-label {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--accent);
   font-size: 12px;
   line-height: 1.2;
@@ -2138,7 +2139,7 @@ body.grid-hidden .grid-overlay > span {
 
   .colophon-home-copy {
     gap: 0;
-    padding-top: 6px;
+    padding-top: 0;
   }
 
   .colophon-home-intro {
@@ -2148,7 +2149,9 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-notes {
-    column-count: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+    row-gap: 24px;
   }
 
   .colophon-home + .site-footer {
@@ -3017,8 +3020,9 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-notes {
-    column-count: 1;
-    gap: 14px;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 18px;
   }
 
   .colophon-home-note {
