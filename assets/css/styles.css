@@ -1202,7 +1202,7 @@ body.grid-hidden .grid-overlay > span {
 .colophon-home-title {
   display: block;
   margin: 0;
-  width: min(420px, 100%);
+  width: min(352px, 100%);
 }
 
 .colophon-home-title-art {
@@ -1220,7 +1220,7 @@ body.grid-hidden .grid-overlay > span {
   stroke-linecap: round;
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
-  font-size: 58px;
+  font-size: 48px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -2127,7 +2127,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-title {
-    width: min(360px, 100%);
+    width: min(320px, 100%);
   }
 
   .colophon-home-copy {
@@ -2995,7 +2995,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-title {
-    width: min(304px, 100%);
+    width: min(272px, 100%);
   }
 
   .colophon-home-copy {
