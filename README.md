@@ -141,6 +141,8 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
 - Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
 - Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, `SendMoi`, Somm AI, and `About`, with the Somm AI slot temporarily reusing the Resy `R` icon assets.
+- Viewports between `960px` and `1500px` now use a compact desktop treatment: the homepage rail remains sticky and on-screen, `Work Experience` reflows into a denser two-column layout, and the `About` section keeps its portrait on the shared grid while widening the two-column copy.
+- At the same compact desktop range, `/work` keeps the side rail within the viewport and tightens the resume layout before the existing sub-`1100px` stacked layout takes over.
 
 ## Homepage footer
 

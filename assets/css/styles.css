@@ -258,7 +258,7 @@ body.is-pulling-refresh .rail::after {
 .rail-nav {
   position: fixed;
   left: 31px;
-  top: 717px;
+  top: clamp(calc(140px + var(--safe-top)), calc(100vh - 664px), 717px);
   width: 26px;
 }
 
@@ -1149,6 +1149,7 @@ body.grid-hidden .grid-overlay > span {
   height: auto;
   aspect-ratio: 2 / 3;
   object-fit: cover;
+  object-position: center top;
 }
 
 .about-home-copy {
@@ -1994,12 +1995,97 @@ body.grid-hidden .grid-overlay > span {
     margin-right: 40px;
   }
 
+  .rail-nav {
+    top: clamp(calc(140px + var(--safe-top)), calc(100vh - 664px), 560px);
+  }
+
   .social-links {
     margin-top: 92px;
   }
 
   .job-header {
     margin-top: 190px;
+  }
+
+  .work-experience {
+    margin-top: 156px;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+    row-gap: 20px;
+  }
+
+  .experience-heading {
+    grid-column: 1 / -1;
+  }
+
+  .experience-heading h3 {
+    font-size: clamp(42px, 4vw, 48px);
+  }
+
+  .resume-link-wrap {
+    margin-top: 24px;
+  }
+
+  .experience-columns-carousel {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .experience-column {
+    gap: 28px;
+  }
+
+  .experience-column:first-of-type,
+  .experience-column:last-of-type {
+    grid-column: auto;
+  }
+
+  .experience-item h4,
+  .experience-item .experience-company {
+    font-size: 17px;
+  }
+
+  .experience-item p {
+    font-size: 15px;
+  }
+
+  .experience-item-current p {
+    font-size: 17px;
+  }
+
+  .about-home-grid {
+    grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+    column-gap: var(--grid-gutter);
+    align-items: start;
+  }
+
+  .about-home-portrait {
+    grid-column: 1 / span 3;
+    align-self: start;
+    max-width: none;
+  }
+
+  .about-home-copy {
+    grid-column: 5 / span 8;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 32px;
+    max-width: none;
+  }
+
+  .about-home-copy .about-home-lead {
+    grid-column: 1 / -1;
+    max-width: 13ch;
+    font-size: clamp(26px, 2.3vw, 30px);
+  }
+
+  .about-home-copy p {
+    font-size: 18px;
+    line-height: 1.45;
   }
 }
 
