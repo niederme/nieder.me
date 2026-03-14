@@ -1150,12 +1150,11 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .site-footer-links a[aria-current="page"] {
-  color: var(--accent);
-  font-weight: 500;
+  color: var(--fg);
 }
 
 .site-footer-links a[aria-current="page"]:visited {
-  color: var(--accent);
+  color: var(--fg);
 }
 
 .site-footer-links a::after {
@@ -1182,7 +1181,7 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .site-footer-links a[aria-current="page"]::after {
-  background: currentColor;
+  opacity: 0.45;
   transform: scaleX(1);
 }
 
