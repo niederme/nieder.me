@@ -1215,7 +1215,9 @@ body.grid-hidden .grid-overlay > span {
 .colophon-home-title-art text {
   fill: none;
   stroke: #ffffff;
-  stroke-width: 1.15;
+  stroke-width: 0.8;
+  stroke-dasharray: 4 3;
+  stroke-linecap: round;
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
   font-size: 58px;
