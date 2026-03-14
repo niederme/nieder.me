@@ -1,38 +1,36 @@
 # Handoff
 
 ## Branch
-- `codex/footer-sitemap`
+- `codex/balance-about-columns`
 
 ## Current Focus
-- Finalize and land the footer sitemap update for issue `#56`, including the expanded footer nav structure, the softer active-page treatment, and the increased spacing before the footer across all affected pages.
+- Land the homepage About-section copy layout refinements under issue `#59`, covering paragraph rhythm, a six-column lead, and deterministic two-column body behavior across compact and wide desktop breakpoints.
 
 ## Tracking
-- GitHub issue `#56` tracks the footer sitemap work.
+- GitHub issue `#59` tracks the About-section column-balance fix.
 
 ## What Changed
-- Replaced the old single-column case-study footer with a sitemap-style footer on `/`, `/work`, `/work/resy-discovery/`, `/work/sendmoi/`, and `/work/somm-ai/`.
-- Added a `Site` column for homepage destinations and a `Work` column for `/work` plus all case-study pages.
-- Added `aria-current="page"` to the current destination in the footer and styled it with a quieter persistent underline instead of the accent-color treatment.
-- Doubled the vertical space above the footer across the shared home/work and case-study stylesheet breakpoints.
-- Updated `README.md` so the documented footer behavior matches the current branch state.
+- Restored explicit paragraph spacing inside the homepage About bio copy.
+- Split the About body copy into explicit left and right stacks instead of relying on browser-driven multicolumn balancing.
+- Kept the lead sentence on a six-column span in desktop layouts.
+- Biased the desktop body layout so the left column is the slightly taller column when the two sides are not perfectly even.
+- Applied the same About layout treatment to the wide-desktop breakpoint (`1501px+`), which previously fell back to the base single-column copy layout.
 
 ## Verification
 - `git diff --check`
-- Manual HTML verification against the local preview for `/`, `/work/`, `/work/resy-discovery/`, `/work/sendmoi/`, and `/work/somm-ai/`
-- Local preview running at `http://localhost:7778/`
+- Local preview running at `http://Niederbook-Air-M4.local:7779/#about-home`
+- Manual browser review of the homepage About section at compact desktop and wide desktop widths with the column grid enabled
+- Playwright screenshots captured during verification and removed after review
 
 ## Open Items
-- Rebase this branch onto `origin/main`.
-- Push `codex/footer-sitemap`.
-- Open the PR with `Closes #56`.
+- Push `codex/balance-about-columns`.
+- Open the PR with `Closes #59`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
-3. Open `http://localhost:7778/` and review the footer on `/`, `/work/`, and the case-study pages
+3. Open `http://Niederbook-Air-M4.local:7779/#about-home` and review the homepage About section at compact desktop and wide desktop widths
 4. Review `README.md` and `HANDOFF.md`
 5. Run `git diff --check`
-6. `git fetch origin`
-7. `git rebase origin/main`
-8. `git push -u origin codex/footer-sitemap`
-9. Open the PR with `Closes #56`
+6. `git push -u origin codex/balance-about-columns`
+7. Open the PR with `Closes #59`
