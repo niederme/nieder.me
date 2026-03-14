@@ -1,38 +1,37 @@
 # Handoff
 
 ## Branch
-- `codex/preview-live-reload`
+- `codex/styleguide`
 
 ## Current Focus
-- Land preview-server live reload support under issue `#62`, so any local preview target can opt into BrowserSync with `LIVE=1`.
+- Finalize and land the first-party `/styleguide/` page and its linked homepage colophon note.
 
 ## Tracking
-- GitHub issue `#62` tracks the preview live-reload workflow update.
+- GitHub issue `#64` tracks the style-guide work.
 
 ## What Changed
-- Added `LIVE=1` support to `make dev`, `make dev-thread`, and `make dev-local`.
-- Kept `make dev-live` and `make dev-live-thread` as compatibility aliases that route through the same live mode.
-- Consolidated the live-reload startup logic into the existing preview targets instead of maintaining a separate command family.
-- Updated the BrowserSync watch list to follow the current site structure, including `work/**/*.html`.
-- Updated `README.md` to document the new `LIVE=1` usage and the current watched paths.
+- Added `/styleguide/` as a working foundations page covering principles, typography, actions, color, grid, spacing, and patterns.
+- Added a dedicated stylesheet at `assets/css/styleguide.css` and reused the shared theme/grid controls so the page matches the live site behavior.
+- Added a style-guide-specific side rail with in-page section icons, back/home and back-to-top controls, and scroll-linked active-state behavior.
+- Added semantic color token documentation with restored large swatches and dark/light value pairs.
+- Tightened the typography section into three paired specimens and documented the primary CTA/button variants in the `Actions` section.
+- Updated the homepage `Colophon` section to link directly to `/styleguide/`.
+- Updated `README.md` so the documented style-guide behavior matches the branch.
 
 ## Verification
 - `git diff --check`
-- `make -n dev LIVE=1 PORT=7788 PORT_AUTO=0`
-- `make -n dev-thread LIVE=1 PORT_AUTO=0`
-- `make -n dev-local LIVE=1 PORT=7789 PORT_AUTO=0`
-- Started `make dev-thread LIVE=1 PORT=7790 PORT_AUTO=0` and confirmed BrowserSync served and watched successfully at `http://Niederbook-Air-M4.local:7790`
+- Manual browser verification against the local preview for `/styleguide/` and `/`
+- Local preview running at `http://Niederbook-Air-M4.local:7780/`
 
 ## Open Items
-- Push `codex/preview-live-reload`.
-- Open the PR with `Closes #62`.
+- Push `codex/styleguide`.
+- Open the PR with `Closes #64`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
 3. Review `README.md` and `HANDOFF.md`
-4. Run `git diff --check`
-5. `git fetch origin`
-6. `git rebase origin/main`
-7. `git push -u origin codex/preview-live-reload`
-8. Open the PR with `Closes #62`
+4. Open `http://Niederbook-Air-M4.local:7780/styleguide/` and `http://Niederbook-Air-M4.local:7780/`
+5. Run `git diff --check`
+6. `git push -u origin codex/styleguide`
+7. Open the PR with `Closes #64`

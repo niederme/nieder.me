@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <title>Style Guide | John Niedermeyer</title>
+    <meta
+      name="description"
+      content="Foundations and UI patterns for nieder.me, covering typography, color, grid, spacing, and interface treatment."
+    />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("nieder.theme");
+          if (storedTheme !== "light") return;
+          document.documentElement.dataset.theme = "light";
+          document.documentElement.style.colorScheme = "light";
+          const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+          const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+          if (themeColorMeta) themeColorMeta.setAttribute("content", "#ffffff");
+          if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
+        } catch (error) {
+          // Ignore storage access failures and keep the dark default.
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/work-case-study.css?v=20260313-001" />
+    <link rel="stylesheet" href="../assets/css/styleguide.css?v=20260314-001" />
+  </head>
+  <body id="top" class="styleguide-page">
+    <div class="work-page">
+      <aside class="rail" aria-label="Primary navigation">
+        <a class="logo-link" href="../" aria-label="Back to homepage">
+          <img class="logo-mark" src="../assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
+      </aside>
+
+      <nav class="work-side-nav styleguide-rail-controls" aria-label="Display controls">
+        <a class="work-case-anchor" href="../" aria-label="Back to homepage">
+          <img class="icon-off" src="../assets/icons/side-nav/icon-back-off.svg" alt="" />
+          <img class="icon-on" src="../assets/icons/side-nav/icon-back-on.svg" alt="" />
+          <img class="icon-hover" src="../assets/icons/side-nav/icon-back-hover.svg" alt="" />
+        </a>
+        <a class="work-case-anchor styleguide-top-anchor" href="#top" aria-label="Back to top">
+          <img class="icon-off" src="../assets/icons/side-nav/icon-back-off.svg" alt="" />
+          <img class="icon-on" src="../assets/icons/side-nav/icon-back-on.svg" alt="" />
+          <img class="icon-hover" src="../assets/icons/side-nav/icon-back-hover.svg" alt="" />
+        </a>
+        <div class="styleguide-side-nav" aria-label="Style guide sections">
+          <a class="styleguide-anchor" href="#principles-point" aria-label="Principles section">
+            <img class="icon-off" src="../assets/icons/styleguide/icon-styleguide-principles-off.svg" alt="" />
+            <img class="icon-on" src="../assets/icons/styleguide/icon-styleguide-principles-on.svg" alt="" />
+          </a>
+          <a class="styleguide-anchor" href="#typography-point" aria-label="Typography section">
+            <img class="icon-off" src="../assets/icons/styleguide/icon-styleguide-typography-off.svg" alt="" />
+            <img class="icon-on" src="../assets/icons/styleguide/icon-styleguide-typography-on.svg" alt="" />
+          </a>
+          <a class="styleguide-anchor" href="#actions-point" aria-label="Actions section">
+            <img class="icon-off" src="../assets/icons/styleguide/icon-styleguide-Elements-off.svg" alt="" />
+            <img class="icon-on" src="../assets/icons/styleguide/icon-styleguide-Elements-on.svg" alt="" />
+          </a>
+          <a class="styleguide-anchor" href="#color-point" aria-label="Color section">
+            <img class="icon-off" src="../assets/icons/styleguide/icon-styleguide-color-off.svg" alt="" />
+            <img class="icon-on" src="../assets/icons/styleguide/icon-styleguide-color-on.svg" alt="" />
+          </a>
+          <a class="styleguide-anchor" href="#grid-point" aria-label="Grid section">
+            <img class="icon-off" src="../assets/icons/styleguide/icon-styleguide-about-off.svg" alt="" />
+            <img class="icon-on" src="../assets/icons/styleguide/icon-styleguide-about-on.svg" alt="" />
+          </a>
+          <a class="styleguide-anchor" href="#spacing-point" aria-label="Spacing section">
+            <img class="icon-off" src="../assets/icons/styleguide/icon-styleguide-spacing-off.svg" alt="" />
+            <img class="icon-on" src="../assets/icons/styleguide/icon-styleguide-spacing-on.svg" alt="" />
+          </a>
+          <a class="styleguide-anchor" href="#patterns-point" aria-label="Patterns section">
+            <img class="icon-off" src="../assets/icons/styleguide/icon-styleguide-patterns-off.svg" alt="" />
+            <img class="icon-on" src="../assets/icons/styleguide/icon-styleguide-patterns-on.svg" alt="" />
+          </a>
+        </div>
+        <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+          <span class="theme-toggle-switch" aria-hidden="true"></span>
+          <span class="theme-toggle-label">light</span>
+          <span class="theme-toggle-state" aria-live="polite">Off</span>
+        </button>
+        <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
+          <span class="cols-toggle-switch" aria-hidden="true"></span>
+          <span class="cols-toggle-label">cols</span>
+          <span class="cols-toggle-state" aria-live="polite">On</span>
+        </button>
+      </nav>
+
+      <main class="work-article styleguide-main">
+        <div class="work-grid-overlay" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <section class="styleguide-hero" aria-labelledby="styleguide-title">
+          <div class="rule"></div>
+          <div class="styleguide-hero-grid">
+            <div class="styleguide-hero-copy">
+              <p class="styleguide-kicker">Foundations</p>
+              <h1 id="styleguide-title">Style Guide</h1>
+              <p class="styleguide-hero-accent">for nieder.me</p>
+              <p class="styleguide-lede">
+                A working reference for the site&rsquo;s editorial voice, visual rhythm, and interface primitives.
+                The aim is consistency without sanding off the site&rsquo;s personality.
+              </p>
+            </div>
+
+            <div class="styleguide-summary" aria-label="Style guide summary">
+              <article class="styleguide-summary-card">
+                <p class="styleguide-summary-label">Type</p>
+                <p class="styleguide-summary-value">S&ouml;hne in light, book, halbfett, and italic cuts.</p>
+              </article>
+              <article class="styleguide-summary-card">
+                <p class="styleguide-summary-label">Grid</p>
+                <p class="styleguide-summary-value">12 columns, 40px gutters, 1268px max content width.</p>
+              </article>
+              <article class="styleguide-summary-card">
+                <p class="styleguide-summary-label">Color</p>
+                <p class="styleguide-summary-value">Near-black and warm white with a restrained red accent.</p>
+              </article>
+              <article class="styleguide-summary-card">
+                <p class="styleguide-summary-label">Motion</p>
+                <p class="styleguide-summary-value">Subtle transitions, clear state change, no ornamental churn.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="styleguide-local-nav" aria-label="Section navigation">
+          <div class="rule"></div>
+          <div class="styleguide-local-nav-links">
+            <a href="#principles">Principles</a>
+            <a href="#typography">Typography</a>
+            <a href="#actions">Actions</a>
+            <a href="#color">Color</a>
+            <a href="#grid">Grid</a>
+            <a href="#spacing">Spacing</a>
+            <a href="#patterns">Patterns</a>
+          </div>
+        </section>
+
+        <div class="styleguide-scroll-point" id="principles-point" aria-hidden="true"></div>
+        <section class="styleguide-section" id="principles" aria-labelledby="principles-title">
+          <div class="rule"></div>
+          <div class="styleguide-section-grid">
+            <header class="styleguide-section-head">
+              <p class="styleguide-section-index">01</p>
+              <h2 id="principles-title">Principles</h2>
+            </header>
+
+            <div class="styleguide-section-body">
+              <div class="styleguide-principles">
+                <article class="styleguide-principle">
+                  <h3>Editorial first</h3>
+                  <p>Pages should read with the confidence of a magazine layout, not a generic template library.</p>
+                </article>
+                <article class="styleguide-principle">
+                  <h3>Structure stays visible</h3>
+                  <p>Grid, rules, alignment, and spacing do real compositional work. They are not decorative afterthoughts.</p>
+                </article>
+                <article class="styleguide-principle">
+                  <h3>Accent with restraint</h3>
+                  <p>Red is used to direct attention, separate hierarchy, and signal interaction. It should remain rare.</p>
+                </article>
+                <article class="styleguide-principle">
+                  <h3>Warm precision</h3>
+                  <p>The site should feel exacting without feeling cold. Human phrasing and tactile surfaces matter.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="styleguide-scroll-point" id="typography-point" aria-hidden="true"></div>
+        <section class="styleguide-section" id="typography" aria-labelledby="typography-title">
+          <div class="rule"></div>
+          <div class="styleguide-section-grid">
+            <header class="styleguide-section-head">
+              <p class="styleguide-section-index">02</p>
+              <h2 id="typography-title">Typography</h2>
+            </header>
+
+            <div class="styleguide-section-body">
+              <p class="styleguide-section-intro">
+                Typography carries most of the site&rsquo;s character. Size shifts are decisive, but weight and tracking stay disciplined.
+              </p>
+
+              <div class="styleguide-type-layout">
+                <article class="styleguide-type-card styleguide-type-card--display-scale">
+                  <p class="styleguide-type-label">Display + heading scale</p>
+                  <h1 class="styleguide-display-specimen">h1. Large type sets the tone before the copy does.</h1>
+                  <p class="styleguide-type-meta">S&ouml;hne 700, large clamp sizing, negative tracking</p>
+                  <div class="styleguide-heading-stack" aria-label="Heading specimens">
+                    <p class="styleguide-element-h2">H2. Section-level anchor</p>
+                    <p class="styleguide-element-h3">H3. Strong subsection heading</p>
+                    <p class="styleguide-element-h4">H4. Supporting subhead</p>
+                    <p class="styleguide-element-h5">H5. Compact label headline</p>
+                    <p class="styleguide-element-h6">H6. Quiet metadata heading</p>
+                  </div>
+                </article>
+
+                <article class="styleguide-type-card">
+                  <p class="styleguide-type-label">Body copy + paragraphs and links</p>
+                  <p class="styleguide-type-meta">300-400 / 17-24px / 1.35 line-height / measured width</p>
+                  <div class="styleguide-copy-stack styleguide-copy-stack--measure">
+                    <p class="styleguide-element-lede">
+                      Lead paragraphs open with a little room and a little confidence.
+                    </p>
+                    <p class="styleguide-element-body">
+                      Standard body copy should stay measured and readable, with enough air to carry longer ideas
+                      across the page. Inline links should feel native to the sentence, like
+                      <a href="../work/resy-discovery/">this case study link</a>.
+                    </p>
+                    <p class="styleguide-element-caption">Caption or meta copy stays smaller, calmer, and lower contrast.</p>
+                  </div>
+                </article>
+
+                <article class="styleguide-type-card">
+                  <p class="styleguide-type-label">Meta and labels + lists and quotes</p>
+                  <p class="styleguide-meta-specimen">EYEBROW / CAPTION / MICROCOPY</p>
+                  <p class="styleguide-type-meta">13px / spaced caps / lower contrast / quiet support text</p>
+                  <div class="styleguide-copy-stack">
+                    <ul class="styleguide-element-list">
+                      <li>Use unordered lists for grouped supporting points.</li>
+                      <li>Keep bullets concise and parallel.</li>
+                      <li>Let spacing separate ideas before decoration does.</li>
+                    </ul>
+                    <blockquote class="styleguide-element-quote">
+                      The site should feel like authored work, not a theme with content poured into it.
+                    </blockquote>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="styleguide-scroll-point" id="actions-point" aria-hidden="true"></div>
+        <section class="styleguide-section" id="actions" aria-labelledby="actions-title">
+          <div class="rule"></div>
+          <div class="styleguide-section-grid">
+            <header class="styleguide-section-head">
+              <p class="styleguide-section-index">03</p>
+              <h2 id="actions-title">Actions</h2>
+            </header>
+
+            <div class="styleguide-section-body">
+              <p class="styleguide-section-intro">
+                Actions should stay sparse and intentional. Most interaction on the site is still link-driven, with button styling reserved for key navigational moments.
+              </p>
+
+              <div class="styleguide-elements-grid">
+                <article class="styleguide-element-card styleguide-element-card--button-scale">
+                  <p class="styleguide-type-label">Primary button</p>
+                  <div class="styleguide-button-scale">
+                    <div class="styleguide-button-scale-copy">
+                      <p class="styleguide-promo-cta-eyebrow">Figma button variants</p>
+                      <p class="styleguide-promo-cta-note">
+                        From a design perspective these are buttons. In code, use links when they navigate and real buttons only for in-place actions.
+                      </p>
+                    </div>
+                    <div class="styleguide-button-scale-actions">
+                      <div class="styleguide-button-specimen">
+                        <p class="styleguide-button-specimen-label">Large</p>
+                        <a class="case-study-promo-cta styleguide-button-lg" href="../work/resy-discovery/">View Case Study</a>
+                      </div>
+                      <div class="styleguide-button-specimen">
+                        <p class="styleguide-button-specimen-label">Medium</p>
+                        <a class="styleguide-button-md" href="../work/">View Work</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="styleguide-scroll-point" id="color-point" aria-hidden="true"></div>
+        <section class="styleguide-section" id="color" aria-labelledby="color-title">
+          <div class="rule"></div>
+          <div class="styleguide-section-grid">
+            <header class="styleguide-section-head">
+              <p class="styleguide-section-index">04</p>
+              <h2 id="color-title">Color</h2>
+            </header>
+
+            <div class="styleguide-section-body">
+              <p class="styleguide-section-intro">
+                The palette is documented as semantic roles, not separate visual systems. Dark is the default identity; light remaps the same token names for a brighter reading environment.
+              </p>
+
+              <div class="styleguide-color-grid" aria-label="Color swatches">
+                <article class="styleguide-swatch-card">
+                  <div class="styleguide-swatch styleguide-swatch-bg" aria-hidden="true"></div>
+                  <p class="styleguide-swatch-name">Background</p>
+                  <p class="styleguide-swatch-token">--bg</p>
+                </article>
+                <article class="styleguide-swatch-card">
+                  <div class="styleguide-swatch styleguide-swatch-fg" aria-hidden="true"></div>
+                  <p class="styleguide-swatch-name">Foreground</p>
+                  <p class="styleguide-swatch-token">--fg</p>
+                </article>
+                <article class="styleguide-swatch-card">
+                  <div class="styleguide-swatch styleguide-swatch-accent" aria-hidden="true"></div>
+                  <p class="styleguide-swatch-name">Accent</p>
+                  <p class="styleguide-swatch-token">--accent</p>
+                </article>
+                <article class="styleguide-swatch-card">
+                  <div class="styleguide-swatch styleguide-swatch-line" aria-hidden="true"></div>
+                  <p class="styleguide-swatch-name">Rule</p>
+                  <p class="styleguide-swatch-token">--line</p>
+                </article>
+                <article class="styleguide-swatch-card">
+                  <div class="styleguide-swatch styleguide-swatch-muted" aria-hidden="true"></div>
+                  <p class="styleguide-swatch-name">Muted</p>
+                  <p class="styleguide-swatch-token">--muted</p>
+                </article>
+                <article class="styleguide-swatch-card">
+                  <div class="styleguide-swatch styleguide-swatch-surface" aria-hidden="true"></div>
+                  <p class="styleguide-swatch-name">Warm surface</p>
+                  <p class="styleguide-swatch-token">--about-surface</p>
+                </article>
+              </div>
+
+              <div class="styleguide-token-table" role="table" aria-label="Theme token values">
+                <div class="styleguide-token-table-head" role="row">
+                  <p class="styleguide-token-head styleguide-token-head--role" role="columnheader">Role</p>
+                  <p class="styleguide-token-head" role="columnheader">Token</p>
+                  <p class="styleguide-token-head" role="columnheader">Dark</p>
+                  <p class="styleguide-token-head" role="columnheader">Light</p>
+                </div>
+
+                <article class="styleguide-token-row" role="row">
+                  <p class="styleguide-token-role" role="cell">Page background</p>
+                  <p class="styleguide-token-name" role="cell">--bg</p>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--bg-dark" aria-hidden="true"></span>
+                    <span>#000000</span>
+                  </div>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--bg-light" aria-hidden="true"></span>
+                    <span>#ffffff</span>
+                  </div>
+                </article>
+
+                <article class="styleguide-token-row" role="row">
+                  <p class="styleguide-token-role" role="cell">Primary text</p>
+                  <p class="styleguide-token-name" role="cell">--fg</p>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--fg-dark" aria-hidden="true"></span>
+                    <span>#ffffff</span>
+                  </div>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--fg-light" aria-hidden="true"></span>
+                    <span>#121212</span>
+                  </div>
+                </article>
+
+                <article class="styleguide-token-row" role="row">
+                  <p class="styleguide-token-role" role="cell">Divider / rule</p>
+                  <p class="styleguide-token-name" role="cell">--line</p>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--line-dark" aria-hidden="true"></span>
+                    <span>rgba(255,255,255,0.2)</span>
+                  </div>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--line-light" aria-hidden="true"></span>
+                    <span>#d6d0c6</span>
+                  </div>
+                </article>
+
+                <article class="styleguide-token-row" role="row">
+                  <p class="styleguide-token-role" role="cell">Muted text</p>
+                  <p class="styleguide-token-name" role="cell">--muted</p>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--muted-dark" aria-hidden="true"></span>
+                    <span>#ebebf5</span>
+                  </div>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--muted-light" aria-hidden="true"></span>
+                    <span>#474a51</span>
+                  </div>
+                </article>
+
+                <article class="styleguide-token-row" role="row">
+                  <p class="styleguide-token-role" role="cell">Accent</p>
+                  <p class="styleguide-token-name" role="cell">--accent</p>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--accent" aria-hidden="true"></span>
+                    <span>#ff453a</span>
+                  </div>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--accent" aria-hidden="true"></span>
+                    <span>#ff453a</span>
+                  </div>
+                </article>
+
+                <article class="styleguide-token-row" role="row">
+                  <p class="styleguide-token-role" role="cell">Warm surface</p>
+                  <p class="styleguide-token-name" role="cell">--about-surface</p>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--surface-dark" aria-hidden="true"></span>
+                    <span>#111111</span>
+                  </div>
+                  <div class="styleguide-token-value" role="cell">
+                    <span class="styleguide-token-swatch styleguide-token-swatch--surface-light" aria-hidden="true"></span>
+                    <span>#f3eee5</span>
+                  </div>
+                </article>
+              </div>
+
+              <div class="styleguide-theme-note">
+                <p class="styleguide-theme-note-label">Theme behavior</p>
+                <p>
+                  Dark mode is the default presentation. Light mode is an explicit alternate theme. Token names stay stable; only the values change.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="styleguide-scroll-point" id="grid-point" aria-hidden="true"></div>
+        <section class="styleguide-section" id="grid" aria-labelledby="grid-title">
+          <div class="rule"></div>
+          <div class="styleguide-section-grid">
+            <header class="styleguide-section-head">
+              <p class="styleguide-section-index">05</p>
+              <h2 id="grid-title">Grid</h2>
+            </header>
+
+            <div class="styleguide-section-body">
+              <p class="styleguide-section-intro">
+                The page grid does heavy lifting. It establishes tension between left rail, content column, and asymmetrical blocks.
+              </p>
+
+              <div class="styleguide-grid-demo" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+
+              <div class="styleguide-layout-recipes">
+                <article class="styleguide-recipe">
+                  <p class="styleguide-recipe-name">3 / 6 / 3 split</p>
+                  <p>Use for resume-style or content + sidebar compositions.</p>
+                </article>
+                <article class="styleguide-recipe">
+                  <p class="styleguide-recipe-name">4 / 8 editorial split</p>
+                  <p>Use for section headers with narrative content or media-led story blocks.</p>
+                </article>
+                <article class="styleguide-recipe">
+                  <p class="styleguide-recipe-name">Full bleed inside frame</p>
+                  <p>Use for hero treatments, specimen rows, or strong visual punctuation.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="styleguide-scroll-point" id="spacing-point" aria-hidden="true"></div>
+        <section class="styleguide-section" id="spacing" aria-labelledby="spacing-title">
+          <div class="rule"></div>
+          <div class="styleguide-section-grid">
+            <header class="styleguide-section-head">
+              <p class="styleguide-section-index">06</p>
+              <h2 id="spacing-title">Spacing</h2>
+            </header>
+
+            <div class="styleguide-section-body">
+              <p class="styleguide-section-intro">
+                Spacing is generous by default. Most sections should feel intentionally paced, with strong vertical breaks and clean internal grouping.
+              </p>
+
+              <div class="styleguide-spacing-stack">
+                <div class="styleguide-spacing-row">
+                  <p class="styleguide-spacing-label">8px</p>
+                  <div class="styleguide-spacing-bar" style="--spacing-bar-width: 8px;"></div>
+                  <p class="styleguide-spacing-use">Micro offsets, icon nudge, tight text pairings</p>
+                </div>
+                <div class="styleguide-spacing-row">
+                  <p class="styleguide-spacing-label">16px</p>
+                  <div class="styleguide-spacing-bar" style="--spacing-bar-width: 16px;"></div>
+                  <p class="styleguide-spacing-use">Small card padding and compact group spacing</p>
+                </div>
+                <div class="styleguide-spacing-row">
+                  <p class="styleguide-spacing-label">24px</p>
+                  <div class="styleguide-spacing-bar" style="--spacing-bar-width: 24px;"></div>
+                  <p class="styleguide-spacing-use">Default rhythm between heading and copy</p>
+                </div>
+                <div class="styleguide-spacing-row">
+                  <p class="styleguide-spacing-label">40px</p>
+                  <div class="styleguide-spacing-bar" style="--spacing-bar-width: 40px;"></div>
+                  <p class="styleguide-spacing-use">Grid gutter and major composition interval</p>
+                </div>
+                <div class="styleguide-spacing-row">
+                  <p class="styleguide-spacing-label">72px+</p>
+                  <div class="styleguide-spacing-bar" style="--spacing-bar-width: 72px;"></div>
+                  <p class="styleguide-spacing-use">Section transitions and large editorial pauses</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="styleguide-scroll-point" id="patterns-point" aria-hidden="true"></div>
+        <section class="styleguide-section" id="patterns" aria-labelledby="patterns-title">
+          <div class="rule"></div>
+          <div class="styleguide-section-grid">
+            <header class="styleguide-section-head">
+              <p class="styleguide-section-index">07</p>
+              <h2 id="patterns-title">Patterns</h2>
+            </header>
+
+            <div class="styleguide-section-body">
+              <p class="styleguide-section-intro">
+                Page patterns do more than decorate. They define how navigation, hierarchy, and movement stay consistent across the site.
+              </p>
+
+              <article class="styleguide-pattern-card styleguide-pattern-card--nav">
+                <p class="styleguide-pattern-label">Navigation</p>
+                <div class="styleguide-nav-specimen">
+                  <div class="styleguide-nav-specimen-rail" aria-hidden="true">
+                    <span class="styleguide-nav-specimen-slot styleguide-nav-specimen-slot--active"></span>
+                    <span class="styleguide-nav-specimen-slot"></span>
+                    <span class="styleguide-nav-specimen-slot"></span>
+                    <span class="styleguide-nav-specimen-slot"></span>
+                  </div>
+                  <div class="styleguide-nav-specimen-copy">
+                    <h3>Rails, local pills, and scroll-linked section icons all describe the same structure.</h3>
+                    <p>Use the left rail for persistent page-level navigation. Use local pills for scanning and jumping within a long page. Active states should follow scroll position, not just click state.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="styleguide-pattern-card styleguide-pattern-card--responsive">
+                <p class="styleguide-pattern-label">Responsive behavior</p>
+                <div class="styleguide-responsive-specimen">
+                  <article class="styleguide-responsive-step">
+                    <p class="styleguide-responsive-range">1501px+</p>
+                    <h3>Widescreen desktop</h3>
+                    <p>The grid opens up, gutters widen, and hero typography scales harder without changing the underlying structure.</p>
+                  </article>
+                  <article class="styleguide-responsive-step">
+                    <p class="styleguide-responsive-range">960-1500px</p>
+                    <h3>Core desktop</h3>
+                    <p>Use the 12-column baseline, persistent rail, and composed promo blocks as the default reading layout.</p>
+                  </article>
+                  <article class="styleguide-responsive-step">
+                    <p class="styleguide-responsive-range">521-959px</p>
+                    <h3>Compact desktop / tablet</h3>
+                    <p>Keep the editorial structure, but tighten spacing and simplify large horizontal compositions into more static arrangements.</p>
+                  </article>
+                  <article class="styleguide-responsive-step">
+                    <p class="styleguide-responsive-range">520px and below</p>
+                    <h3>Phone</h3>
+                    <p>Switch to the mobile treatment: narrower insets, tighter spacing, and horizontal scrollers only where peeking content adds meaning.</p>
+                  </article>
+                </div>
+              </article>
+
+              <div class="styleguide-patterns">
+                <article class="styleguide-pattern-card">
+                  <p class="styleguide-pattern-label">Cards</p>
+                  <h3>Large radius, restrained chrome, image-led hierarchy.</h3>
+                  <p>Cards should feel like editorial objects, not dashboard widgets.</p>
+                </article>
+                <article class="styleguide-pattern-card">
+                  <p class="styleguide-pattern-label">Theme state</p>
+                  <h3>Dark mode is first; light mode is a controlled remapping.</h3>
+                  <p>Do not redesign each component per theme. Preserve hierarchy and only remap token values.</p>
+                </article>
+                <article class="styleguide-pattern-card">
+                  <p class="styleguide-pattern-label">Copy blocks</p>
+                  <h3>Paragraph width stays measured even when the layout gets dramatic.</h3>
+                  <p>Favor readable line lengths over filling every available column.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer" aria-label="Site footer">
+          <div class="rule"></div>
+          <div class="site-footer-grid">
+            <div class="site-footer-brand">
+              <p class="site-footer-name">John Niedermeyer</p>
+              <p class="site-footer-role">Product Design &amp; Direction</p>
+              <nav class="site-footer-connect" aria-label="Connect links">
+                <ul class="site-footer-social">
+                  <li>
+                    <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                      <span class="social-icon social-icon-github" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                      <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                      <span class="social-icon social-icon-x" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                      <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-email-link aria-label="Send email">
+                      <span class="social-icon social-icon-email" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="site-footer-meta">© 2026 John Niedermeyer</p>
+            </div>
+
+            <nav class="site-footer-column site-footer-column-work" aria-label="Site links">
+              <h3>Site</h3>
+              <ul class="site-footer-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../work/">Work</a></li>
+                <li><a href="./">Style Guide</a></li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="../assets/js/main.js?v=20260312-008"></script>
+  </body>
+</html>
