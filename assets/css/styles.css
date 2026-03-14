@@ -1251,19 +1251,21 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-notes {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-count: 2;
   column-gap: 28px;
-  row-gap: 26px;
 }
 
 .colophon-home-note {
+  display: inline-block;
+  width: 100%;
   min-height: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+  break-inside: avoid;
+  margin: 0 0 26px;
 }
 
 .colophon-home-note p {
@@ -2146,7 +2148,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-notes {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 
   .colophon-home + .site-footer {
@@ -3015,7 +3017,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-notes {
-    grid-template-columns: 1fr;
+    column-count: 1;
     gap: 14px;
   }
 
