@@ -154,8 +154,9 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
   - `/work/somm-ai/`
 - Footer composition:
   - left block with `John Niedermeyer`, `Product Design & Direction`, icon-based social row, and copyright
-  - `Case Studies` column
-- Footer link styling is white with animated underline on hover/focus.
+  - `Site` column linking to the homepage, `Work Experience`, `About`, and `Colophon`
+  - `Work` column linking to `/work` plus all case-study pages, with the current page highlighted
+- Footer links are white by default with animated underline on hover/focus; the current page link uses the accent color.
 - Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
 - Interactive focus states across home and work pages now use a shared subdued red `:focus-visible` outline with a separate soft red outer glow on control-style elements like the spinning logo, rail nav items, social icons, cards, CTAs, the `light` toggle, and the `cols` toggle.
 
