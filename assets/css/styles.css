@@ -21,8 +21,6 @@
   --about-shadow: rgba(0, 0, 0, 0.32);
   --colophon-surface: #121212;
   --colophon-outline: rgba(255, 255, 255, 0.24);
-  --colophon-grid-line: rgba(255, 255, 255, 0.07);
-  --colophon-panel-line: rgba(255, 255, 255, 0.2);
   --colophon-shadow: rgba(0, 0, 0, 0.28);
   --logo-filter: none;
   --nav-icon-filter: none;
@@ -52,10 +50,8 @@
   --footer-link-underline: rgba(18, 18, 18, 0.88);
   --about-surface: #f3eee5;
   --about-shadow: rgba(18, 18, 18, 0.1);
-  --colophon-surface: #f4f5f4;
-  --colophon-outline: rgba(87, 100, 116, 0.58);
-  --colophon-grid-line: rgba(87, 100, 116, 0.12);
-  --colophon-panel-line: rgba(87, 100, 116, 0.3);
+  --colophon-surface: #f5efe5;
+  --colophon-outline: #5f6670;
   --colophon-shadow: rgba(18, 18, 18, 0.08);
   --logo-filter: brightness(0) saturate(100%);
   --nav-icon-filter: brightness(0) saturate(100%);
@@ -1194,19 +1190,19 @@ body.grid-hidden .grid-overlay > span {
 
 .colophon-home-heading {
   position: relative;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 4;
   display: grid;
   align-content: start;
   gap: 22px;
   min-height: 0;
   padding-top: 0;
-  padding-right: 28px;
+  padding-right: 12px;
 }
 
 .colophon-home-title {
   display: block;
   margin: 0;
-  width: min(344px, 100%);
+  width: min(420px, 100%);
 }
 
 .colophon-home-title-art {
@@ -1224,67 +1220,41 @@ body.grid-hidden .grid-overlay > span {
   stroke-linecap: round;
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
-  font-size: 50px;
+  font-size: 58px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .colophon-home-copy {
-  grid-column: 4 / span 9;
+  grid-column: 5 / span 8;
   display: grid;
   align-content: start;
-  padding-top: 4px;
+  padding-top: 6px;
 }
 
 .colophon-home-intro {
   margin: 0;
   color: var(--fg);
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.16;
   font-weight: 300;
-  max-width: 15ch;
+  max-width: none;
+  width: 100%;
 }
 
 .colophon-home-notes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .colophon-home-note {
-  position: relative;
   min-height: 100%;
   padding: 22px 24px 24px;
-  border: 1px solid var(--colophon-panel-line);
-  border-radius: 16px;
-  background:
-    linear-gradient(var(--colophon-grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--colophon-grid-line) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
-    var(--colophon-surface);
-  background-size: 100% 34px, 34px 100%, 100% 100%, auto;
-  box-shadow: 0 10px 24px var(--colophon-shadow);
-  overflow: hidden;
-}
-
-.colophon-home-note::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px dashed var(--colophon-panel-line);
-  border-radius: 10px;
-  pointer-events: none;
-}
-
-.colophon-home-note::after {
-  content: "";
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  top: 48px;
-  height: 1px;
-  background: linear-gradient(90deg, var(--colophon-panel-line), transparent 72%);
-  pointer-events: none;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--colophon-surface);
+  box-shadow: 0 14px 34px var(--colophon-shadow);
 }
 
 .colophon-home-note p {
@@ -1292,23 +1262,19 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-note-label {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   color: var(--accent);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.2;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .colophon-home-note p:last-child {
-  position: relative;
-  z-index: 1;
   color: var(--muted);
-  font-size: 16px;
-  line-height: 1.48;
+  font-size: 17px;
+  line-height: 1.45;
   font-weight: 300;
 }
 
@@ -2156,7 +2122,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-title {
-    width: min(304px, 100%);
+    width: min(360px, 100%);
   }
 
   .colophon-home-copy {
@@ -2165,7 +2131,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-intro {
-    max-width: 14ch;
+    max-width: none;
     font-size: 24px;
   }
 
@@ -3024,7 +2990,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-title {
-    width: min(268px, 100%);
+    width: min(304px, 100%);
   }
 
   .colophon-home-copy {
@@ -3045,7 +3011,7 @@ body.grid-hidden .grid-overlay > span {
 
   .colophon-home-note {
     padding: 18px 18px 20px;
-    border-radius: 14px;
+    border-radius: 20px;
   }
 
   .colophon-home-note p:last-child {
