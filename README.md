@@ -127,7 +127,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The homepage `index.html` now includes a reusable case-study promo block after `Work Experience`.
 - Current instances are Resy, SendMoi, and Somm AI, each with CTA text `View Case Study`.
 - The homepage now includes an `About` section after the case-study promos with a portrait image and editorial-style bio copy block.
-- The homepage now includes a `Colophon` section below `About`, with an expressive split-word heading treatment and note cards covering type, build, preview, and deploy details.
+- The homepage now includes a `Colophon` section below `About`, with a dashed outlined heading treatment and blueprint-like note cards covering type, build, preview, and deploy details.
 - Promo block configuration uses data attributes for logo, desktop/mobile backgrounds, and image focus anchoring (`left`, `center`, `right`).
 - Promo image references now use `*-promo.*` filenames to avoid production path mismatches observed on `nieder.me/2026` for earlier asset names.
 - The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.

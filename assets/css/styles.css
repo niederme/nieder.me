@@ -21,6 +21,8 @@
   --about-shadow: rgba(0, 0, 0, 0.32);
   --colophon-surface: #121212;
   --colophon-outline: rgba(255, 255, 255, 0.24);
+  --colophon-grid-line: rgba(255, 255, 255, 0.07);
+  --colophon-panel-line: rgba(255, 255, 255, 0.2);
   --colophon-shadow: rgba(0, 0, 0, 0.28);
   --logo-filter: none;
   --nav-icon-filter: none;
@@ -50,8 +52,10 @@
   --footer-link-underline: rgba(18, 18, 18, 0.88);
   --about-surface: #f3eee5;
   --about-shadow: rgba(18, 18, 18, 0.1);
-  --colophon-surface: #f5efe5;
-  --colophon-outline: rgba(18, 18, 18, 0.18);
+  --colophon-surface: #f4f5f4;
+  --colophon-outline: rgba(87, 100, 116, 0.58);
+  --colophon-grid-line: rgba(87, 100, 116, 0.12);
+  --colophon-panel-line: rgba(87, 100, 116, 0.3);
   --colophon-shadow: rgba(18, 18, 18, 0.08);
   --logo-filter: brightness(0) saturate(100%);
   --nav-icon-filter: brightness(0) saturate(100%);
@@ -1190,103 +1194,97 @@ body.grid-hidden .grid-overlay > span {
 
 .colophon-home-heading {
   position: relative;
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 3;
   display: grid;
   align-content: start;
-  gap: 30px;
+  gap: 22px;
   min-height: 0;
-  padding-top: 10px;
-  padding-right: 56px;
-}
-
-.colophon-home-kicker {
-  margin: 0 0 18px 10px;
-  color: var(--footer-heading);
-  font-size: 13px;
-  line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  padding-top: 0;
+  padding-right: 28px;
 }
 
 .colophon-home-title {
-  position: relative;
   display: block;
-  min-height: 328px;
   margin: 0;
+  width: min(344px, 100%);
 }
 
-.colophon-home-title-shadow,
-.colophon-home-title-main {
-  font-size: clamp(108px, 12vw, 176px);
-  line-height: 0.8;
-  letter-spacing: -0.08em;
-}
-
-.colophon-home-title-shadow {
-  position: absolute;
-  top: 18px;
-  left: 4px;
-  color: transparent;
-  font-weight: 700;
-  -webkit-text-stroke: 1px var(--colophon-outline);
-  opacity: 0.85;
-}
-
-.colophon-home-title-main {
-  position: relative;
+.colophon-home-title-art {
   display: block;
-  color: var(--fg);
-  font-weight: 700;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 
-.colophon-home-title-accent {
-  position: relative;
-  display: block;
-  margin-top: -18px;
-  margin-left: 126px;
-  color: var(--accent);
-  font-size: clamp(102px, 11vw, 154px);
-  line-height: 0.74;
-  letter-spacing: -0.09em;
-  font-style: italic;
-  font-weight: 400;
-  transform: rotate(-6deg);
-  transform-origin: left center;
+.colophon-home-title-art text {
+  fill: none;
+  stroke: var(--colophon-outline);
+  stroke-width: 2;
+  stroke-dasharray: 7 4;
+  stroke-linecap: round;
+  font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Arial Nova", "Arial", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .colophon-home-copy {
-  grid-column: 8 / span 5;
+  grid-column: 4 / span 9;
   display: grid;
   align-content: start;
-  padding-top: 20px;
+  padding-top: 4px;
 }
 
 .colophon-home-intro {
   margin: 0;
   color: var(--fg);
-  font-size: 32px;
-  line-height: 1.14;
+  font-size: 28px;
+  line-height: 1.16;
   font-weight: 300;
-  max-width: 30ch;
-  text-wrap: balance;
+  max-width: 15ch;
 }
 
 .colophon-home-notes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 18px;
 }
 
 .colophon-home-note {
+  position: relative;
   min-height: 100%;
-  padding: 20px 22px 22px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
+  padding: 22px 24px 24px;
+  border: 1px solid var(--colophon-panel-line);
+  border-radius: 16px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0))
+    linear-gradient(var(--colophon-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--colophon-grid-line) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
     var(--colophon-surface);
-  box-shadow: 0 18px 48px var(--colophon-shadow);
+  background-size: 100% 34px, 34px 100%, 100% 100%, auto;
+  box-shadow: 0 10px 24px var(--colophon-shadow);
+  overflow: hidden;
+}
+
+.colophon-home-note::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed var(--colophon-panel-line);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.colophon-home-note::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--colophon-panel-line), transparent 72%);
+  pointer-events: none;
 }
 
 .colophon-home-note p {
@@ -1294,19 +1292,23 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-note-label {
-  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.2;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .colophon-home-note p:last-child {
+  position: relative;
+  z-index: 1;
   color: var(--muted);
-  font-size: 17px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.48;
   font-weight: 300;
 }
 
@@ -2150,36 +2152,21 @@ body.grid-hidden .grid-overlay > span {
   .colophon-home-heading {
     padding-top: 0;
     padding-right: 0;
-    gap: 24px;
-  }
-
-  .colophon-home-kicker {
-    margin-left: 0;
+    gap: 20px;
   }
 
   .colophon-home-title {
-    min-height: 236px;
-  }
-
-  .colophon-home-title-shadow,
-  .colophon-home-title-main {
-    font-size: clamp(90px, 11vw, 132px);
-  }
-
-  .colophon-home-title-accent {
-    margin-top: -14px;
-    margin-left: 102px;
-    font-size: clamp(82px, 10vw, 118px);
+    width: min(304px, 100%);
   }
 
   .colophon-home-copy {
     gap: 0;
-    padding-top: 0;
+    padding-top: 6px;
   }
 
   .colophon-home-intro {
-    max-width: 26ch;
-    font-size: 26px;
+    max-width: 14ch;
+    font-size: 24px;
   }
 
   .colophon-home-notes {
@@ -3036,29 +3023,8 @@ body.grid-hidden .grid-overlay > span {
     padding-right: 0;
   }
 
-  .colophon-home-kicker {
-    margin: 0 0 12px;
-    font-size: 12px;
-  }
-
   .colophon-home-title {
-    min-height: 164px;
-  }
-
-  .colophon-home-title-shadow,
-  .colophon-home-title-main {
-    font-size: clamp(66px, 19vw, 96px);
-  }
-
-  .colophon-home-title-shadow {
-    top: 12px;
-    left: 1px;
-  }
-
-  .colophon-home-title-accent {
-    margin-top: -8px;
-    margin-left: 64px;
-    font-size: clamp(56px, 17vw, 84px);
+    width: min(268px, 100%);
   }
 
   .colophon-home-copy {
@@ -3067,9 +3033,9 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-intro {
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.16;
-    max-width: 26ch;
+    max-width: 16ch;
   }
 
   .colophon-home-notes {
@@ -3079,7 +3045,7 @@ body.grid-hidden .grid-overlay > span {
 
   .colophon-home-note {
     padding: 18px 18px 20px;
-    border-radius: 22px;
+    border-radius: 14px;
   }
 
   .colophon-home-note p:last-child {
