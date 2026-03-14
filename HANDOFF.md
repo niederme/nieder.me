@@ -1,38 +1,38 @@
 # Handoff
 
 ## Branch
-- `codex/fix-work-breakpoint`
+- `codex/footer-sitemap`
 
 ## Current Focus
-- Land the compact desktop breakpoint fixes for homepage and `/work` under issue `#55`, covering sticky rail behavior, denser work-summary layout, and a grid-aligned About section.
+- Finalize and land the footer sitemap update for issue `#56`, including the expanded footer nav structure, the softer active-page treatment, and the increased spacing before the footer across all affected pages.
 
 ## Tracking
-- GitHub issue `#55` tracks the compact desktop breakpoint fixes.
+- GitHub issue `#56` tracks the footer sitemap work.
 
 ## What Changed
-- Added a compact desktop breakpoint on the homepage for widths between `960px` and `1500px`.
-- Kept the homepage left rail visible and sticky through that breakpoint by aligning the JS lock threshold with the desktop CSS breakpoint.
-- Reflowed homepage `Work Experience` into a denser two-column layout before the smaller-screen collapse.
-- Reworked the homepage `About` section so the portrait sits on the shared column grid, stays top-aligned, and the copy uses wider two-column text.
-- Tightened `/work` and related rail positioning behavior so the side nav stays within the viewport at the same breakpoint range.
+- Replaced the old single-column case-study footer with a sitemap-style footer on `/`, `/work`, `/work/resy-discovery/`, `/work/sendmoi/`, and `/work/somm-ai/`.
+- Added a `Site` column for homepage destinations and a `Work` column for `/work` plus all case-study pages.
+- Added `aria-current="page"` to the current destination in the footer and styled it with a quieter persistent underline instead of the accent-color treatment.
+- Doubled the vertical space above the footer across the shared home/work and case-study stylesheet breakpoints.
+- Updated `README.md` so the documented footer behavior matches the current branch state.
 
 ## Verification
 - `git diff --check`
-- Local preview running at `http://Niederbook-Air-M4.local:7777/`
-- Manual browser review against the homepage and `/work` preview with the column grid enabled at the target breakpoint
+- Manual HTML verification against the local preview for `/`, `/work/`, `/work/resy-discovery/`, `/work/sendmoi/`, and `/work/somm-ai/`
+- Local preview running at `http://localhost:7778/`
 
 ## Open Items
 - Rebase this branch onto `origin/main`.
-- Push `codex/fix-work-breakpoint`.
-- Open the PR with `Closes #55`.
+- Push `codex/footer-sitemap`.
+- Open the PR with `Closes #56`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
-3. Open `http://Niederbook-Air-M4.local:7777/` and review the homepage `Work Experience`, `About`, and `/work` sections at the compact desktop breakpoint
+3. Open `http://localhost:7778/` and review the footer on `/`, `/work/`, and the case-study pages
 4. Review `README.md` and `HANDOFF.md`
 5. Run `git diff --check`
 6. `git fetch origin`
 7. `git rebase origin/main`
-8. `git push -u origin codex/fix-work-breakpoint`
-9. Open the PR with `Closes #55`
+8. `git push -u origin codex/footer-sitemap`
+9. Open the PR with `Closes #56`
