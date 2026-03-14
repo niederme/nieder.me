@@ -1168,6 +1168,18 @@ body.grid-hidden .grid-overlay > span {
   font-weight: 300;
 }
 
+.about-home-body {
+  display: block;
+}
+
+.about-home-body p {
+  margin: 0 0 1em;
+}
+
+.about-home-body p:last-child {
+  margin-bottom: 0;
+}
+
 .about-home-copy .about-home-lead {
   color: var(--fg);
   font-size: 30px;
@@ -2089,13 +2101,22 @@ body.grid-hidden .grid-overlay > span {
 
   .about-home-copy {
     grid-column: 5 / span 8;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 32px;
+    gap: 20px;
     max-width: none;
   }
 
+  .about-home-body {
+    display: block;
+    columns: 2;
+    column-gap: 32px;
+    column-fill: balance;
+  }
+
+  .about-home-body p {
+    break-inside: avoid;
+  }
+
   .about-home-copy .about-home-lead {
-    grid-column: 1 / -1;
     max-width: 13ch;
     font-size: clamp(26px, 2.3vw, 30px);
   }
@@ -2205,6 +2226,12 @@ body.grid-hidden .grid-overlay > span {
 
   .about-home-copy {
     padding-top: 0;
+  }
+
+  .about-home-body {
+    columns: initial;
+    column-gap: normal;
+    column-fill: auto;
   }
 
   .about-home-copy p {
