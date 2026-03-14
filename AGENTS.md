@@ -54,6 +54,7 @@
   - `git branch -d codex/<short-slug>` (if this fails after squash merge, use `git branch -D codex/<short-slug>`)
   - `git push origin --delete codex/<short-slug>` (if remote branch exists)
 - Clean up parallel workspace metadata when used:
+  - `git worktree remove ../<repo-name>-<short-slug>` (if you created a dedicated worktree for the branch)
   - `git worktree prune`
 
 ## GitHub Issues Workflow
