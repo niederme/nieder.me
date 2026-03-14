@@ -51,7 +51,7 @@
   --about-surface: #f3eee5;
   --about-shadow: rgba(18, 18, 18, 0.1);
   --colophon-surface: #f5efe5;
-  --colophon-outline: rgba(18, 18, 18, 0.18);
+  --colophon-outline: #5f6670;
   --colophon-shadow: rgba(18, 18, 18, 0.08);
   --logo-filter: brightness(0) saturate(100%);
   --nav-icon-filter: brightness(0) saturate(100%);
@@ -692,6 +692,10 @@ body.grid-hidden .grid-overlay > span {
   padding-bottom: 22px;
 }
 
+.topper-rule-top {
+  margin-bottom: 18px;
+}
+
 .topper h1,
 .topper h2 {
   margin: 0;
@@ -1143,7 +1147,7 @@ body.grid-hidden .grid-overlay > span {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1313 / 1800;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 
@@ -1190,103 +1194,79 @@ body.grid-hidden .grid-overlay > span {
 
 .colophon-home-heading {
   position: relative;
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 3;
   display: grid;
   align-content: start;
-  gap: 30px;
+  gap: 22px;
   min-height: 0;
-  padding-top: 10px;
-  padding-right: 56px;
-}
-
-.colophon-home-kicker {
-  margin: 0 0 18px 10px;
-  color: var(--footer-heading);
-  font-size: 13px;
-  line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  padding-top: 0;
+  padding-right: 12px;
 }
 
 .colophon-home-title {
-  position: relative;
   display: block;
-  min-height: 328px;
   margin: 0;
+  width: min(352px, 100%);
 }
 
-.colophon-home-title-shadow,
-.colophon-home-title-main {
-  font-size: clamp(108px, 12vw, 176px);
-  line-height: 0.8;
-  letter-spacing: -0.08em;
-}
-
-.colophon-home-title-shadow {
-  position: absolute;
-  top: 18px;
-  left: 4px;
-  color: transparent;
-  font-weight: 700;
-  -webkit-text-stroke: 1px var(--colophon-outline);
-  opacity: 0.85;
-}
-
-.colophon-home-title-main {
-  position: relative;
+.colophon-home-title-art {
   display: block;
-  color: var(--fg);
-  font-weight: 700;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 
-.colophon-home-title-accent {
-  position: relative;
-  display: block;
-  margin-top: -18px;
-  margin-left: 126px;
-  color: var(--accent);
-  font-size: clamp(102px, 11vw, 154px);
-  line-height: 0.74;
-  letter-spacing: -0.09em;
-  font-style: italic;
-  font-weight: 400;
-  transform: rotate(-6deg);
-  transform-origin: left center;
+.colophon-home-title-art text {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 0.8;
+  stroke-dasharray: 6 4;
+  stroke-linecap: round;
+  font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Arial Nova", "Arial", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+:root[data-theme="light"] .colophon-home-title-art text {
+  stroke: var(--fg);
 }
 
 .colophon-home-copy {
-  grid-column: 8 / span 5;
+  grid-column: 4 / span 9;
   display: grid;
   align-content: start;
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .colophon-home-intro {
   margin: 0;
   color: var(--fg);
-  font-size: 32px;
-  line-height: 1.14;
-  font-weight: 300;
-  max-width: 30ch;
-  text-wrap: balance;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 400;
+  max-width: none;
+  width: 100%;
 }
 
 .colophon-home-notes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  column-gap: 40px;
+  row-gap: 28px;
+  align-items: start;
 }
 
 .colophon-home-note {
-  min-height: 100%;
-  padding: 20px 22px 22px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0))
-    var(--colophon-surface);
-  box-shadow: 0 18px 48px var(--colophon-shadow);
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
 }
 
 .colophon-home-note p {
@@ -1294,7 +1274,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .colophon-home-note-label {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--accent);
   font-size: 12px;
   line-height: 1.2;
@@ -2150,26 +2130,11 @@ body.grid-hidden .grid-overlay > span {
   .colophon-home-heading {
     padding-top: 0;
     padding-right: 0;
-    gap: 24px;
-  }
-
-  .colophon-home-kicker {
-    margin-left: 0;
+    gap: 20px;
   }
 
   .colophon-home-title {
-    min-height: 236px;
-  }
-
-  .colophon-home-title-shadow,
-  .colophon-home-title-main {
-    font-size: clamp(90px, 11vw, 132px);
-  }
-
-  .colophon-home-title-accent {
-    margin-top: -14px;
-    margin-left: 102px;
-    font-size: clamp(82px, 10vw, 118px);
+    width: min(320px, 100%);
   }
 
   .colophon-home-copy {
@@ -2178,12 +2143,15 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-intro {
-    max-width: 26ch;
-    font-size: 26px;
+    max-width: none;
+    font-size: 17px;
+    line-height: 1.45;
   }
 
   .colophon-home-notes {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+    row-gap: 24px;
   }
 
   .colophon-home + .site-footer {
@@ -3036,29 +3004,8 @@ body.grid-hidden .grid-overlay > span {
     padding-right: 0;
   }
 
-  .colophon-home-kicker {
-    margin: 0 0 12px;
-    font-size: 12px;
-  }
-
   .colophon-home-title {
-    min-height: 164px;
-  }
-
-  .colophon-home-title-shadow,
-  .colophon-home-title-main {
-    font-size: clamp(66px, 19vw, 96px);
-  }
-
-  .colophon-home-title-shadow {
-    top: 12px;
-    left: 1px;
-  }
-
-  .colophon-home-title-accent {
-    margin-top: -8px;
-    margin-left: 64px;
-    font-size: clamp(56px, 17vw, 84px);
+    width: min(272px, 100%);
   }
 
   .colophon-home-copy {
@@ -3067,19 +3014,19 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-intro {
-    font-size: 22px;
-    line-height: 1.16;
-    max-width: 26ch;
+    font-size: 16px;
+    line-height: 1.4;
+    max-width: 16ch;
   }
 
   .colophon-home-notes {
     grid-template-columns: 1fr;
-    gap: 14px;
+    column-gap: 0;
+    row-gap: 18px;
   }
 
   .colophon-home-note {
-    padding: 18px 18px 20px;
-    border-radius: 22px;
+    padding: 0;
   }
 
   .colophon-home-note p:last-child {
