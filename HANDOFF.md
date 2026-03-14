@@ -1,36 +1,38 @@
 # Handoff
 
 ## Branch
-- `codex/balance-about-columns`
+- `codex/preview-live-reload`
 
 ## Current Focus
-- Land the homepage About-section copy layout refinements under issue `#59`, covering paragraph rhythm, a six-column lead, and deterministic two-column body behavior across compact and wide desktop breakpoints.
+- Land preview-server live reload support under issue `#62`, so any local preview target can opt into BrowserSync with `LIVE=1`.
 
 ## Tracking
-- GitHub issue `#59` tracks the About-section column-balance fix.
+- GitHub issue `#62` tracks the preview live-reload workflow update.
 
 ## What Changed
-- Restored explicit paragraph spacing inside the homepage About bio copy.
-- Split the About body copy into explicit left and right stacks instead of relying on browser-driven multicolumn balancing.
-- Kept the lead sentence on a six-column span in desktop layouts.
-- Biased the desktop body layout so the left column is the slightly taller column when the two sides are not perfectly even.
-- Applied the same About layout treatment to the wide-desktop breakpoint (`1501px+`), which previously fell back to the base single-column copy layout.
+- Added `LIVE=1` support to `make dev`, `make dev-thread`, and `make dev-local`.
+- Kept `make dev-live` and `make dev-live-thread` as compatibility aliases that route through the same live mode.
+- Consolidated the live-reload startup logic into the existing preview targets instead of maintaining a separate command family.
+- Updated the BrowserSync watch list to follow the current site structure, including `work/**/*.html`.
+- Updated `README.md` to document the new `LIVE=1` usage and the current watched paths.
 
 ## Verification
 - `git diff --check`
-- Local preview running at `http://Niederbook-Air-M4.local:7779/#about-home`
-- Manual browser review of the homepage About section at compact desktop and wide desktop widths with the column grid enabled
-- Playwright screenshots captured during verification and removed after review
+- `make -n dev LIVE=1 PORT=7788 PORT_AUTO=0`
+- `make -n dev-thread LIVE=1 PORT_AUTO=0`
+- `make -n dev-local LIVE=1 PORT=7789 PORT_AUTO=0`
+- Started `make dev-thread LIVE=1 PORT=7790 PORT_AUTO=0` and confirmed BrowserSync served and watched successfully at `http://Niederbook-Air-M4.local:7790`
 
 ## Open Items
-- Push `codex/balance-about-columns`.
-- Open the PR with `Closes #59`.
+- Push `codex/preview-live-reload`.
+- Open the PR with `Closes #62`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
-3. Open `http://Niederbook-Air-M4.local:7779/#about-home` and review the homepage About section at compact desktop and wide desktop widths
-4. Review `README.md` and `HANDOFF.md`
-5. Run `git diff --check`
-6. `git push -u origin codex/balance-about-columns`
-7. Open the PR with `Closes #59`
+3. Review `README.md` and `HANDOFF.md`
+4. Run `git diff --check`
+5. `git fetch origin`
+6. `git rebase origin/main`
+7. `git push -u origin codex/preview-live-reload`
+8. Open the PR with `Closes #62`
