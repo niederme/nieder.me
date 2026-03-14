@@ -134,7 +134,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
 - The Somm AI CTA routes to `/work/somm-ai/`, an unshipped Resy concept case study about intent-led search and AI-guided dining discovery.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.
-- `/work` now acts as a work overview page with a smaller home-style two-line title treatment (`Work Experience` in white, `& Resume` in red), a reserved resume block, and a separate case-study section with a left-aligned `Case Studies` heading and a staggered two-column case-study layout for Resy, SendMoi, and Somm AI.
+- `/work` now acts as a full work overview page with the Figma resume layout: two-line title treatment (`Work Experience` in white, `& Resume` in red), seeking-status lead, resume download action, left-dated experience list, right-side contact/speaking/recognition/education rail, and a staggered two-column case-study layout for Resy, SendMoi, and Somm AI.
 - Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home/back nav icon set, `light` toggle, and `cols` toggle).
 - Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`, `/work/somm-ai/`) now keep the home-style rail/nav treatment, with a second temporary Resy `R` rail item used for `/work/somm-ai/`.
 - On article pages, the `Work Experience` rail item now links to `/work`.
