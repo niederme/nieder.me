@@ -1214,15 +1214,17 @@ body.grid-hidden .grid-overlay > span {
 
 .colophon-home-title-art text {
   fill: none;
-  stroke: var(--colophon-outline);
-  stroke-width: 2;
-  stroke-dasharray: 7 4;
-  stroke-linecap: round;
+  stroke: #ffffff;
+  stroke-width: 1.15;
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
   font-size: 58px;
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+
+:root[data-theme="light"] .colophon-home-title-art text {
+  stroke: var(--fg);
 }
 
 .colophon-home-copy {
@@ -1245,16 +1247,17 @@ body.grid-hidden .grid-overlay > span {
 .colophon-home-notes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  column-gap: 28px;
+  row-gap: 26px;
 }
 
 .colophon-home-note {
-  min-height: 100%;
-  padding: 22px 24px 24px;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: var(--colophon-surface);
-  box-shadow: 0 14px 34px var(--colophon-shadow);
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .colophon-home-note p {
@@ -3010,8 +3013,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .colophon-home-note {
-    padding: 18px 18px 20px;
-    border-radius: 20px;
+    padding: 0;
   }
 
   .colophon-home-note p:last-child {
