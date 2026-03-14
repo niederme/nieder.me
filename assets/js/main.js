@@ -208,7 +208,7 @@ if (caseNav) {
       caseNav.dataset.lockStartComputed || caseNav.dataset.lockStart || 1049
     );
 
-    if (window.innerWidth <= 1100) {
+    if (window.innerWidth <= 959) {
       caseNav.classList.remove("is-locked");
       return;
     }
