@@ -168,6 +168,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
 - The Somm AI CTA routes to `/work/somm-ai/`, an unshipped Resy concept case study about intent-led search and AI-guided dining discovery.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.
+- The homepage `Work Experience` section includes shortened role descriptions for SendMoi, the later Resy principal-design role, and BuzzFeed to keep the scan more concise.
 - `/work` now acts as a full work overview page with the Figma resume layout: two-line title treatment (`Work Experience` in white, `& Resume` in red), seeking-status lead, resume download action, left-dated experience list, right-side contact/speaking/recognition/education rail, and a staggered two-column case-study layout for Resy, SendMoi, and Somm AI.
 - Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home/back nav icon set, `light` toggle, and `cols` toggle).
 - Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`, `/work/somm-ai/`) now keep the home-style rail/nav treatment, with a second temporary Resy `R` rail item used for `/work/somm-ai/`.
@@ -175,8 +176,10 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
 - Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
 - Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, `SendMoi`, Somm AI, and `About`, with the Somm AI slot temporarily reusing the Resy `R` icon assets.
+- The homepage desktop rail now uses the refreshed `home-off.svg` and `home-on.svg` assets, and the repo also includes `icon-down-off.svg` / `icon-down-on.svg` for upcoming navigation work.
 - Viewports between `960px` and `1500px` now use a compact desktop treatment: the homepage rail remains sticky and on-screen, `Work Experience` reflows into a denser two-column layout, and the `About` section keeps its portrait on the shared grid while widening the two-column copy.
 - At the same compact desktop range, `/work` keeps the side rail within the viewport and tightens the resume layout before the existing sub-`1100px` stacked layout takes over.
+- Shared accent-link treatments on home now use `line-height: 1.2` instead of `1.08`, including the topper company links, work-experience company links, and resume link treatment.
 
 ## Homepage footer
 

@@ -1,37 +1,33 @@
 # Handoff
 
 ## Branch
-- `codex/styleguide`
+- `codex/home-work-experience-copy`
 
 ## Current Focus
-- Finalize and land the first-party `/styleguide/` page and its linked homepage colophon note.
+- Land a homepage polish pass covering `Work Experience` copy, shared accent-link line-height, and refreshed desktop home-nav icons.
 
 ## Tracking
-- GitHub issue `#64` tracks the style-guide work.
+- GitHub issue `#66` tracks this work.
 
 ## What Changed
-- Added `/styleguide/` as a working foundations page covering principles, typography, actions, color, grid, spacing, and patterns.
-- Added a dedicated stylesheet at `assets/css/styleguide.css` and reused the shared theme/grid controls so the page matches the live site behavior.
-- Added a style-guide-specific side rail with in-page section icons, back/home and back-to-top controls, and scroll-linked active-state behavior.
-- Added semantic color token documentation with restored large swatches and dark/light value pairs.
-- Tightened the typography section into three paired specimens and documented the primary CTA/button variants in the `Actions` section.
-- Updated the homepage `Colophon` section to link directly to `/styleguide/`.
-- Updated `README.md` so the documented style-guide behavior matches the branch.
+- Shortened three homepage `Work Experience` descriptions in `index.html` for SendMoi, the later Resy principal-design role, and BuzzFeed.
+- Updated the shared accent-link line-height treatment from `1.08` to `1.2` in `assets/css/styles.css`.
+- Kept `assets/css/styleguide.css` aligned with that typography change.
+- Replaced the desktop side-nav `home-off.svg` and `home-on.svg` assets with the newer versions from Desktop.
+- Added `assets/icons/side-nav/icon-down-off.svg` and `assets/icons/side-nav/icon-down-on.svg` for upcoming nav work.
+- Reconciled `README.md` and `HANDOFF.md` to reflect the current branch state.
 
 ## Verification
 - `git diff --check`
-- Manual browser verification against the local preview for `/styleguide/` and `/`
-- Local preview running at `http://Niederbook-Air-M4.local:7780/`
 
 ## Open Items
-- Push `codex/styleguide`.
-- Open the PR with `Closes #64`.
+- Push `codex/home-work-experience-copy`.
+- Open the PR with `Closes #66`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
 3. Review `README.md` and `HANDOFF.md`
-4. Open `http://Niederbook-Air-M4.local:7780/styleguide/` and `http://Niederbook-Air-M4.local:7780/`
-5. Run `git diff --check`
-6. `git push -u origin codex/styleguide`
-7. Open the PR with `Closes #64`
+4. Run `git diff --check`
+5. `git push -u origin codex/home-work-experience-copy`
+6. Open the PR with `Closes #66`
