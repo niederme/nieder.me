@@ -5,6 +5,7 @@ Put case-study images in slug folders:
 - `assets/images/case-studies/resy-consumer-app/`
 - `assets/images/case-studies/resy-legacy/`
 - `assets/images/case-studies/resy-web/`
+- `assets/images/case-studies/ai-quota/`
 
 Recommended naming:
 

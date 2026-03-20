@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark" />
-    <title>SendMoi Utility Case Study | John Niedermeyer</title>
+    <title>AIQuota Menubar Utility Case Study | John Niedermeyer</title>
     <meta
       name="description"
-      content="Standalone long-form case study on designing and building SendMoi, a durable send-to-self utility across Apple platforms."
+      content="Standalone long-form case study on designing and shipping AIQuota, a native macOS menu bar utility for monitoring Codex and Claude Code usage."
     />
     <script>
       (() => {
@@ -26,9 +26,9 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260313-001" />
+    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260320-002" />
   </head>
-  <body id="top" class="work-theme-sendmoi">
+  <body id="top" class="work-theme-aiquota">
     <div class="work-page">
       <aside class="rail" aria-label="Section navigation">
         <a class="logo-link" href="../../" aria-label="Back to homepage">
@@ -42,7 +42,7 @@
           <img class="icon-on" src="../../assets/icons/side-nav/icon-back-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-back-hover.svg" alt="" />
         </a>
-        <a class="work-case-anchor" href="../../work/" aria-label="Go to Work page">
+        <a class="work-case-anchor is-active" href="../../work/" aria-label="Go to Work page">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
@@ -52,7 +52,7 @@
           <img class="icon-on" src="../../assets/icons/side-nav/icon-work-resy-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-resy-hover.svg" alt="" />
         </a>
-        <a class="work-case-anchor work-case-anchor-sendmoi is-active" href="../../work/sendmoi/" aria-label="SendMoi case study">
+        <a class="work-case-anchor work-case-anchor-sendmoi" href="../../work/sendmoi/" aria-label="SendMoi case study">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-work-sendmoi-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-work-sendmoi-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-sendmoi-hover.svg" alt="" />
@@ -80,11 +80,11 @@
           <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <section class="work-article-hero" aria-labelledby="sendmoi-title">
+        <section class="work-article-hero" aria-labelledby="aiquota-title">
           <div class="work-article-hero-content">
-            <img class="work-article-logo" src="../../assets/images/home/case-study-promos/logo-SendMoi.svg" alt="SendMoi" />
-            <p class="work-article-eyebrow">SendMoi</p>
-            <h1 id="sendmoi-title">Designing a Durable Send-to-Self Utility</h1>
+            <img class="work-article-logo" src="../../assets/images/case-studies/ai-quota/logo.png" alt="AIQuota" />
+            <p class="work-article-eyebrow">AIQuota for macOS</p>
+            <h1 id="aiquota-title">Making AI Coding Quotas Glanceable</h1>
           </div>
         </section>
 
@@ -96,15 +96,19 @@
             </div>
             <div class="work-article-meta-card">
               <p class="work-article-meta-label">Organization</p>
-              <p class="work-article-meta-value">SendMoi</p>
+              <p class="work-article-meta-value">AIQuota</p>
             </div>
             <div class="work-article-meta-card">
               <p class="work-article-meta-label">Timeframe</p>
-              <p class="work-article-meta-value">February 2026 – Present</p>
+              <p class="work-article-meta-value">March 2026 – Present</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Status</p>
+              <p class="work-article-meta-value">Shipped, open source, actively iterating</p>
             </div>
             <div class="work-article-meta-card">
               <p class="work-article-meta-label">Platforms</p>
-              <p class="work-article-meta-value">iPhone, iPad, macOS Share Extension</p>
+              <p class="work-article-meta-value">macOS menu bar app, widgets, settings utility</p>
             </div>
           </aside>
 
@@ -112,22 +116,28 @@
             <section class="work-article-section">
               <h2>Context</h2>
               <p>
-                SendMoi is a focused utility for one recurring behavior: saving what matters by sending it to your own inbox.
-                The product had to stay intentionally narrow while still feeling production-grade and dependable.
+                AI-assisted coding became part of my daily workflow quickly, but the feedback loop around usage stayed oddly
+                primitive. Codex and Claude Code both meter access in ways that matter when you are mid-session, yet checking
+                that state usually means leaving your editor, opening a browser, and translating two very different quota
+                models by hand.
+              </p>
+              <p>
+                AIQuota started as a focused native utility idea: put the answer in the menu bar, make it understandable in a
+                glance, and keep setup lightweight enough that it feels like part of macOS rather than another dashboard.
               </p>
             </section>
 
             <section class="work-article-section">
               <h2>Challenge</h2>
               <p>
-                "Email this to myself later" is a tiny behavior, but the tooling around it is usually unreliable. The common
-                flow breaks across app switches, weak connectivity, and inconsistent share-sheet payloads, leaving users to
-                wonder whether the send actually happened.
+                The hard part was not just fetching data. OpenAI and Anthropic expose usage differently, with different
+                windows, terminology, and edge cases. Codex leans on a weekly cap plus approximate message counts, while
+                Claude mixes a 5-hour rate window, a 7-day allowance, and Max-plan overflow credits.
               </p>
               <p>
-                SendMoi needed to make that habit feel dependable on iPhone, iPad, and macOS without turning into a full
-                mail client. The product had to stay narrow, remove setup friction, and protect the send when the network
-                or share extension could not finish immediately.
+                The product had to normalize those differences without flattening away useful nuance. It also had to feel
+                trustworthy: browser-based sign-in, secure token storage, resilient refresh behavior, clear reset timing, and
+                notification thresholds all shape whether a utility like this feels dependable or disposable.
               </p>
             </section>
 
@@ -135,20 +145,22 @@
               <h2>Strategy</h2>
               <ul>
                 <li>
-                  <strong>Queue-first delivery:</strong> treated every outbound message as durable work by saving it locally
-                  before network delivery, so failed sends could retry later instead of disappearing.
+                  <strong>Menu bar first:</strong> treated quota as ambient system state, not a destination product surface,
+                  with a gauge icon that answers the core question before the popover is even opened.
                 </li>
                 <li>
-                  <strong>Native share surface:</strong> built the Share Extension as a first-class part of the product,
-                  allowing links, text, images, and app-provided metadata to be captured where the user already is.
+                  <strong>Shared visual grammar:</strong> used dual-arc gauges, plan badges, credits, and reset labels to
+                  make unlike provider models feel coherent while still preserving service-specific details.
                 </li>
                 <li>
-                  <strong>Fast repeat use:</strong> simplified repeat workflows with Gmail OAuth, a default-recipient
-                  setting, and an optional auto-send path for the common "send this to myself" case.
+                  <strong>Low-friction authentication:</strong> signed in through existing ChatGPT and Claude browser sessions,
+                  then stored the resulting state securely in Keychain so users did not have to manage API keys or custom auth
+                  flows.
                 </li>
                 <li>
-                  <strong>Content cleanup:</strong> normalized noisy share formats, improved metadata extraction, and
-                  rendered final emails as polished responsive cards instead of raw pasted links.
+                  <strong>Trust details over feature sprawl:</strong> added widgets, network recovery, threshold-based
+                  notifications, and silent auto-update behavior so the product behaved more like a calm utility than a noisy
+                  monitoring app.
                 </li>
               </ul>
             </section>
@@ -156,26 +168,30 @@
             <section class="work-article-section">
               <h2>Outcome</h2>
               <p>
-                The finished product behaves more like dependable infrastructure than a lightweight utility. Users can share
-                once, dismiss the sheet quickly, and trust that SendMoi will either deliver immediately or preserve the send
-                for retry when the app becomes active again or connectivity returns.
+                AIQuota shipped quickly as a notarized macOS app with menu bar monitoring, widgets, notifications, and support
+                for both Codex and Claude Code. The current release is available as an
+                <a href="https://github.com/niederme/ai-quota" target="_blank" rel="noopener noreferrer">open-source GitHub project</a>
+                with downloadable desktop builds, and it continues to evolve through small polish passes that improve clarity
+                rather than expanding scope for its own sake.
               </p>
               <p>
-                By keeping the scope intentionally tight, the app delivers a focused workflow across Apple platforms without
-                requiring a custom backend, while still supporting richer email formatting, image-only shares, and clean
-                state sharing between the main app and extension.
+                More importantly, the project validated a product pattern I care about: as AI tools become everyday
+                infrastructure, a whole layer of adjacent workflow problems appears around them. Some of the best opportunities
+                are not bigger assistants, but thinner native utilities that remove friction around the edges.
               </p>
             </section>
 
             <section class="work-article-section">
               <h2>Key Learnings</h2>
               <p>
-                Small utility products earn their value through trust. In SendMoi, technical decisions like App Group state
-                sharing, queue persistence, and careful share-sheet behavior are directly felt in the product experience.
+                Small utilities still require strong product judgment. The right answer was not maximum detail or a billing
+                dashboard; it was a calm, legible answer to “am I safe to keep going?” Choosing what not to show was as
+                important as the network and auth work underneath it.
               </p>
               <p>
-                The project reinforced the value of a narrow brief handled rigorously: when the promise is simple and edge
-                cases are respected, even a tiny workflow can feel essential.
+                AIQuota also reinforced how quickly AI-adjacent products can move when the brief is narrow and the trust
+                details are taken seriously. Much of the iteration happened in the last ten percent: arc hierarchy, reset
+                language, widget sync, and recovery behavior all mattered more than any single flashy feature.
               </p>
             </section>
 
@@ -184,27 +200,27 @@
               <div class="work-article-visuals">
                 <figure>
                   <img
-                    src="../../assets/images/sendmoi/turn-links-into-email.png"
-                    alt="SendMoi main app flow for turning a shared link into a polished email draft."
+                    src="../../assets/images/case-studies/ai-quota/widget-screenshot.png"
+                    alt="AIQuota macOS widgets showing Codex and Claude Code quota states side by side."
                     loading="lazy"
                   />
-                  <figcaption>Main app flow for turning a shared link into a polished email draft.</figcaption>
+                  <figcaption>The latest widget set makes both the 5-hour and 7-day windows readable at a glance, whether you want a combined view or a single-service focus.</figcaption>
                 </figure>
                 <figure>
                   <img
-                    src="../../assets/images/sendmoi/offline-queue.png"
-                    alt="SendMoi queue-first delivery keeps outbound mail safe when immediate network delivery fails."
+                    src="../../assets/images/case-studies/ai-quota/screenshot.png"
+                    alt="AIQuota menu bar popover showing Codex and Claude Code quota cards with reset timing and account details."
                     loading="lazy"
                   />
-                  <figcaption>Queue-first delivery keeps outbound mail safe when immediate network delivery fails.</figcaption>
+                  <figcaption>The current popover keeps the 5h and 7-day legend visible while summarizing credits, plan state, reset timing, and freshness in one compact surface.</figcaption>
                 </figure>
                 <figure>
                   <img
-                    src="../../assets/images/sendmoi/arrives-as-a-rich-email.png"
-                    alt="SendMoi final email output with rich structure and preview content."
+                    src="../../assets/images/case-studies/ai-quota/near-limit-screenshot.png"
+                    alt="AIQuota menu bar popover showing Claude Code nearing its 5-hour limit with the gauge shifted to amber."
                     loading="lazy"
                   />
-                  <figcaption>Final emails arrive as richer, more readable artifacts with structured preview content.</figcaption>
+                  <figcaption>As usage approaches the limit, the gauge shifts from purple to amber, making the status change legible before the quota is actually hit.</figcaption>
                 </figure>
               </div>
             </section>
@@ -264,9 +280,9 @@
               <ul class="site-footer-links">
                 <li><a href="../../work/">Resume &amp; Work</a></li>
                 <li><a href="../../work/resy-discovery/">Resy Discovery</a></li>
-                <li><a href="../../work/sendmoi/" aria-current="page">SendMoi</a></li>
+                <li><a href="../../work/sendmoi/">SendMoi</a></li>
                 <li><a href="../../work/somm-ai/">Somm AI</a></li>
-                <li><a href="../../work/ai-quota/">AIQuota</a></li>
+                <li><a href="../../work/ai-quota/" aria-current="page">AIQuota</a></li>
               </ul>
             </nav>
 
