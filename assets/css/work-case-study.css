@@ -177,10 +177,10 @@ body.work-theme-aiquota {
     rgba(0, 0, 0, 0.34) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/case-studies/ai-quota/hero-main-app-screenshot-current.png");
-  --work-hero-mobile-image: url("../images/case-studies/ai-quota/hero-main-app-screenshot-current.png");
-  --work-hero-focus-desktop: center top;
-  --work-hero-focus-mobile: center top;
+  --work-hero-desktop-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.png");
+  --work-hero-mobile-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.png");
+  --work-hero-focus-desktop: center center;
+  --work-hero-focus-mobile: center center;
   --work-logo-width-desktop: 72px;
   --work-logo-height-desktop: 72px;
   --work-logo-width-mobile: 54px;
