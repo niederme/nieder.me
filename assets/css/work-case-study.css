@@ -284,6 +284,12 @@ body.is-pulling-refresh .rail::after {
   width: 32px;
 }
 
+.work-case-anchor-aiquota img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
 .work-case-anchor .icon-on,
 .work-case-anchor .icon-hover {
   position: absolute;
@@ -906,10 +912,11 @@ body.grid-hidden .work-grid-overlay > span {
 
 .work-index-case-study-layout {
   align-items: start;
+  row-gap: 24px;
 }
 
 .work-index-case-study-heading {
-  grid-column: 1 / span 4;
+  grid-column: 1 / -1;
 }
 
 .work-index-case-study-heading h2 {
@@ -920,18 +927,18 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .work-index-case-studies {
-  grid-column: 5 / span 8;
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 396px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 40px;
+  row-gap: 56px;
   align-items: start;
-  justify-content: space-between;
 }
 
 .work-index-case-study-column {
   display: flex;
   flex-direction: column;
-  gap: 81px;
+  gap: 56px;
 }
 
 .work-index-card {
