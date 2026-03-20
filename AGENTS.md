@@ -3,7 +3,7 @@
 ## Delivery Lifecycle Workflow
 
 ### 1) Start New Feature/Fix Work
-- For feature/fix work, write or identify the GitHub issue first. Small doc-only or chore-only changes do not require an issue unless explicitly requested. Every non-doc/chore branch should map to one primary issue.
+- For feature/fix work, write or identify the GitHub issue first. Small doc-only or chore-only changes do not require an issue unless explicitly requested. Every non-doc/chore branch should map to one primary issue. When an issue is needed and no issue number is provided, do not ask which number to use. Look up the latest existing GitHub issue for this repo, create the next issue directly, and use the number GitHub assigns as the canonical reference.
 - Before writing code, editing files, or starting implementation work, run `git branch --show-current`.
 - If you are on `main`, create or switch to a feature branch before making changes.
 - Do not treat `main` as a working branch for active development, unless told explicitly to.
