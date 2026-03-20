@@ -168,6 +168,25 @@ body.work-theme-sommai {
   --work-logo-height-mobile: 22px;
 }
 
+body.work-theme-aiquota {
+  --work-hero-desktop-overlay: linear-gradient(95deg, rgba(0, 0, 0, 0.78) 12%, rgba(0, 0, 0, 0.5) 38%, rgba(0, 0, 0, 0.1) 72%);
+  --work-hero-mobile-overlay: linear-gradient(
+    0.03deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.76) 28%,
+    rgba(0, 0, 0, 0.34) 45%,
+    rgba(0, 0, 0, 0) 74%
+  );
+  --work-hero-desktop-image: url("../images/case-studies/ai-quota/hero-main-app-screenshot-current.png");
+  --work-hero-mobile-image: url("../images/case-studies/ai-quota/hero-main-app-screenshot-current.png");
+  --work-hero-focus-desktop: center top;
+  --work-hero-focus-mobile: center top;
+  --work-logo-width-desktop: 72px;
+  --work-logo-height-desktop: 72px;
+  --work-logo-width-mobile: 54px;
+  --work-logo-height-mobile: 54px;
+}
+
 .work-page {
   position: relative;
   min-height: 100vh;

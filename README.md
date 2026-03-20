@@ -169,7 +169,8 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
 - The Somm AI CTA routes to `/work/somm-ai/`, an unshipped Resy concept case study about intent-led search and AI-guided dining discovery.
 - The `Full Work Experience & Resume →` link on home now routes to `/work`.
 - The homepage `Work Experience` section includes shortened role descriptions for SendMoi, the later Resy principal-design role, and BuzzFeed to keep the scan more concise.
-- `/work` now acts as a full work overview page with the Figma resume layout: two-line title treatment (`Work Experience` in white, `& Resume` in red), seeking-status lead, resume download action, left-dated experience list, right-side contact/speaking/recognition/education rail, and a staggered two-column case-study layout for Resy, SendMoi, and Somm AI.
+- `/work` now acts as a full work overview page with the Figma resume layout: two-line title treatment (`Work Experience` in white, `& Resume` in red), seeking-status lead, resume download action, left-dated experience list, right-side contact/speaking/recognition/education rail, and a staggered two-column case-study layout for Resy, SendMoi, Somm AI, and AIQuota.
+- `/work/ai-quota/` is a standalone long-form article page about designing and shipping AIQuota, a native macOS menu bar utility for monitoring Codex and Claude Code usage.
 - Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home/back nav icon set, `light` toggle, and `cols` toggle).
 - Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`, `/work/somm-ai/`) now keep the home-style rail/nav treatment, with a second temporary Resy `R` rail item used for `/work/somm-ai/`.
 - On article pages, the `Work Experience` rail item now links to `/work`.
@@ -189,6 +190,7 @@ The deploy script stages a temporary copy of the managed site paths (`index.html
   - `/work/resy-discovery/`
   - `/work/sendmoi/`
   - `/work/somm-ai/`
+  - `/work/ai-quota/`
 - Footer composition:
   - left block with `John Niedermeyer`, `Product Design & Direction`, icon-based social row, and copyright
   - `Site` column linking to the homepage, `Work Experience`, `About`, and `Colophon`
