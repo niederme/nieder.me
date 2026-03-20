@@ -454,6 +454,12 @@ body.is-pulling-refresh .rail::after {
   width: 32px;
 }
 
+.case-anchor-aiquota img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
 .case-anchor .icon-on {
   position: absolute;
   opacity: 0;
@@ -1026,6 +1032,13 @@ body.grid-hidden .grid-overlay > span {
   object-fit: contain;
   object-position: left center;
   align-self: flex-start;
+}
+
+.case-study-promo-aiquota .case-study-promo-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 .case-study-promo + .case-study-promo {
@@ -3245,6 +3258,12 @@ body.grid-hidden .grid-overlay > span {
   .case-study-promo-sendmoi .case-study-promo-logo {
     width: 56px;
     height: 56px;
+  }
+
+  .case-study-promo-aiquota .case-study-promo-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
   }
 
   .case-study-promo + .case-study-promo {
