@@ -1,36 +1,37 @@
 # Handoff
 
 ## Branch
-- `codex/ai-quota-case-study`
+- `codex/fix-work-case-study-sizing`
 
 ## Current Focus
-- Expand the AIQuota case study across the site with homepage promo placement, side-nav placeholders, and a cleaner `/work` case-study layout.
+- Fix the `/work` case-study grid regression where longer card headlines caused only one column to grow and pushed the lower-right card out of row alignment.
 
 ## Tracking
-- GitHub issue `#69` tracks publishing AIQuota across the site surfaces.
+- GitHub issue `#71` tracks the `/work` case-study sizing and alignment fix.
 
 ## What Changed
-- Added a new standalone case-study page at `work/ai-quota/index.html`.
-- Added local AIQuota visuals under `assets/images/case-studies/ai-quota/` and `assets/images/work/ai-quota/`.
-- Added an AIQuota card to `/work`, switched it to the main-app screenshot, and updated shared footer work sitemaps across home and all case-study pages.
-- Added a placeholder AIQuota promo to the homepage plus temporary AIQuota side-nav icons on home and work/article pages.
-- Reworked the `/work` case-study section so the heading spans the full width and the four cards sit in a cleaner two-column grid.
-- Added a `work-theme-aiquota` hero treatment in `assets/css/work-case-study.css`, then updated the AIQuota hero/card/promo imagery to use the newer composite desktop shot.
-- Updated `README.md`, `assets/images/case-studies/README.md`, and this handoff to reflect the current repo state.
+- Updated `assets/css/work-case-study.css` so the desktop case-study section uses a true two-by-two grid with row gaps, instead of two independent vertical columns.
+- Preserved the intended Figma card sizing while making row alignment stable even when one case-study headline wraps to an extra line.
+- Bumped the shared `work-case-study.css` cache-busting query param to `20260320-006` in:
+  - `work/index.html`
+  - `work/resy-discovery/index.html`
+  - `work/sendmoi/index.html`
+  - `work/somm-ai/index.html`
+  - `work/ai-quota/index.html`
+- Reviewed `README.md`; it remains accurate and did not require changes for this fix.
 
 ## Verification
 - `git diff --check`
-- Preview `/work/ai-quota/`, `/work/`, and the homepage locally and review nav, promo placement, and card layout.
+- Preview `/work/` locally and confirm that the AIQuota card stays aligned with the Somm AI card even when the SendMoi headline wraps.
 
 ## Open Items
-- Replace the temporary AIQuota rail icon with a proper vector treatment if this case study graduates from placeholder status.
-- Open the PR with `Closes #69`.
+- Open the PR with `Closes #71`.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
 3. Review `README.md` and `HANDOFF.md`
 4. Run `git diff --check`
-5. Preview `/`, `/work/`, and `/work/ai-quota/`
-6. Push `codex/ai-quota-case-study`
-7. Open the PR with `Closes #69`
+5. Preview `/work/`
+6. Push `codex/fix-work-case-study-sizing`
+7. Open the PR with `Closes #71`
