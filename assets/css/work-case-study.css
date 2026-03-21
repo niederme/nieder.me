@@ -912,11 +912,10 @@ body.grid-hidden .work-grid-overlay > span {
 
 .work-index-case-study-layout {
   align-items: start;
-  row-gap: 24px;
 }
 
 .work-index-case-study-heading {
-  grid-column: 1 / -1;
+  grid-column: 1 / span 4;
 }
 
 .work-index-case-study-heading h2 {
@@ -927,18 +926,19 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .work-index-case-studies {
-  grid-column: 1 / -1;
+  grid-column: 5 / span 8;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 396px));
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
   column-gap: 40px;
-  row-gap: 56px;
+  row-gap: 81px;
   align-items: start;
+  justify-content: space-between;
 }
 
 .work-index-case-study-column {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+  display: contents;
 }
 
 .work-index-card {
@@ -1429,11 +1429,13 @@ body.grid-hidden .work-grid-overlay > span {
 
   .work-index-case-studies {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
     gap: 30px;
   }
 
   .work-index-case-study-column {
-    gap: 30px;
+    display: contents;
   }
 
   .work-index-card-copy {
