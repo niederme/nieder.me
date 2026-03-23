@@ -2,6 +2,8 @@
 
 Static portfolio site for John Niedermeyer. This repo holds the 2026 homepage, work index, case-study pages, shared assets, and lightweight local-preview/deploy tooling.
 
+Preview commands in this repo use the shared Codex helper at `/Users/niederme/.codex/bin/codex-preview-env` for hostname resolution, LAN URL discovery, and next-open-port selection. The canonical global convention lives at `/Users/niederme/.codex/docs/web-preview-convention.md`.
+
 ## What is in this repo
 
 Current site surfaces:
@@ -61,21 +63,16 @@ make dev-thread
 
 `make dev-thread` starts from `7778` so the main checkout can keep `7777`.
 
+Project worktrees should live under repo-local `.worktrees/`.
+
 ## Live reload
 
-Add `LIVE=1` to any preview target to use BrowserSync instead of the plain static server:
-
-```bash
-make dev LIVE=1
-make dev-thread LIVE=1
-make dev-local LIVE=1
-```
-
-Compatibility aliases:
+Use `make dev-live` for the standard live-reload preview. The underlying switch is `LIVE=1`, which is also available for the thread and local-only variants:
 
 ```bash
 make dev-live
 make dev-live-thread
+make dev-local LIVE=1
 ```
 
 Live reload currently watches:
