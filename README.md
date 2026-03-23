@@ -1,97 +1,77 @@
 # nieder.me
 
+Static portfolio site for John Niedermeyer. This repo holds the 2026 homepage, work index, case-study pages, shared assets, and lightweight local-preview/deploy tooling.
+
+## What is in this repo
+
+Current site surfaces:
+
+- `/` homepage with work highlights, About, and Colophon sections
+- `/work/` full work experience and resume page
+- `/work/resy-discovery/` Resy case study
+- `/work/sendmoi/` SendMoi case study
+- `/work/somm-ai/` Somm AI case study
+- `/work/ai-quota/` AIQuota case study
+- `/styleguide/` working foundations page for typography, color, spacing, and patterns
+
+Core project files:
+
+- `index.html` homepage entry point
+- `work/**/*.html` work index and case-study pages
+- `styleguide/index.html` style guide page
+- `assets/css/styles.css` homepage and shared site styles
+- `assets/css/work-case-study.css` work index and case-study styles
+- `assets/js/main.js` shared client-side behavior
+- `assets/` images, icons, fonts, and video
+- `scripts/` local helpers for deploy and GitHub issue creation
+- `Makefile` preview, live-reload, and helper commands
+
 ## Local dev
 
-Run this from the repo root:
+From the repo root:
 
 ```bash
 make
 ```
 
-That starts a static server on all interfaces (`0.0.0.0`), prints:
-- `http://<this-mac>.local:7777` for this Mac (derived from macOS `LocalHostName` with fallbacks to `HostName`, shell hostname, and sanitized `ComputerName` when needed; for example `http://niederstudio.local:7777`)
-- a LAN URL like `http://192.168.x.x:7777` for other devices on the same network (for example, Niederstudio)
+That starts a static server on all interfaces (`0.0.0.0`), opens the site locally, and prints:
 
-It also opens the `.local` URL on this Mac.
+- a `.local` URL for this Mac
+- a LAN URL for other devices on the same network
 
-If port `7777` is already in use, `make dev` automatically picks the next available port and prints the exact URLs.
+Default port is `7777`. If that port is already in use, `make dev` automatically picks the next available port.
 
-Use a different port if needed:
+Use a custom port when needed:
 
 ```bash
 make dev PORT=8080
 ```
 
-`make dev-lan` is available as an alias of `make dev`.
-
-To make any preview server use BrowserSync live reload instead of the plain static server, add `LIVE=1`:
+Localhost-only preview:
 
 ```bash
-make dev LIVE=1
+make dev-local
 ```
 
-For worktree-based feature threads, use:
+Worktree-friendly preview:
 
 ```bash
 make dev-thread
 ```
 
-That keeps `7777` available for the main checkout and starts worktree previews at `7778`, auto-cascading to `7779`, `7780`, and upward when other worktree previews are already running.
-
-For a live-reload worktree preview:
-
-```bash
-make dev-thread LIVE=1
-```
-
-## Development workflow
-
-Before starting implementation work:
-
-```bash
-git branch --show-current
-```
-
-- If you are on `main`, create or switch to a feature branch before editing files.
-- Do not use `main` as the active development branch.
-- Preferred workflow: use a dedicated `git worktree` per feature branch/thread.
-- For rendered site work in a worktree, start or reuse a preview there and surface the exact URL with the change.
-
-Example:
-
-```bash
-git switch -c codex/my-feature
-```
-
-Or, for isolated parallel work:
-
-```bash
-git worktree add ../nieder-me-my-feature -b codex/my-feature
-```
+`make dev-thread` starts from `7778` so the main checkout can keep `7777`.
 
 ## Live reload
 
-For auto-refresh in the browser on file save, add `LIVE=1` to any preview target:
+Add `LIVE=1` to any preview target to use BrowserSync instead of the plain static server:
 
 ```bash
 make dev LIVE=1
-```
-
-This uses BrowserSync to serve the repo and reload when HTML/CSS/JS files change. It opens the same resolved `<this-mac>.local` URL as `make dev` instead of BrowserSync's default `localhost`.
-
-For a worktree thread:
-
-```bash
 make dev-thread LIVE=1
-```
-
-For a localhost-only preview:
-
-```bash
 make dev-local LIVE=1
 ```
 
-Compatibility aliases remain available:
+Compatibility aliases:
 
 ```bash
 make dev-live
@@ -99,34 +79,86 @@ make dev-live-thread
 ```
 
 Live reload currently watches:
+
 - `index.html`
 - `work/**/*.html`
 - `assets/css/**/*.css`
 - `assets/js/**/*.js`
 
-Requirements:
-- Node.js with `npx` available (recommended: Node 20 via `nvm use 20`)
-- Runtime support for `node:path` (older Node 14 builds can fail)
+Requirements for live reload:
 
-## Local-only mode
+- Node.js with `npx` available
+- a Node runtime that supports `node:path`
+- recommended local version: Node 20
 
-Run:
+## Development workflow
+
+Before editing:
 
 ```bash
-make dev-local
+git branch --show-current
 ```
 
-That binds to localhost only.
+Repo convention:
 
-`make dev-local` also auto-selects the next available port when the requested one is already in use.
+- do not develop on `main`
+- prefer a dedicated feature branch
+- for parallel threads, prefer a dedicated `git worktree`
+- when working on rendered site changes, start or reuse a local preview and note the exact URL
 
-## GitHub issue workflow
+Example branch:
 
-To avoid shell-quoting problems with Markdown backticks in issue bodies, create issues with a file or stdin:
+```bash
+git switch -c codex/my-feature
+```
+
+Example worktree:
+
+```bash
+git worktree add ../nieder-me-my-feature -b codex/my-feature
+```
+
+## Deploy
+
+Primary deploy target is the `/2026` site:
+
+```bash
+./scripts/deploy-2026.sh
+```
+
+The deploy script:
+
+- stages a temporary copy of `index.html` and `assets/`
+- includes `work/` when present
+- rewrites the staged homepage site URL
+- cache-busts staged homepage CSS and JS asset URLs
+- syncs only the managed staged paths to the remote target
+
+Important default deploy settings live inside `scripts/deploy-2026.sh` and can be overridden with environment variables:
+
+- `DEPLOY_HOST`
+- `DEPLOY_USER`
+- `DEPLOY_PATH`
+- `DEPLOY_PORT`
+- `DRY_RUN=1`
+- `SITE_URL`
+
+Site URL helpers:
+
+```bash
+make site-url-stage
+make site-url-prod
+```
+
+## GitHub issue helper
+
+To avoid shell-quoting problems with Markdown-heavy issue bodies:
 
 ```bash
 make issue-create ISSUE_TITLE="Fix shell quoting" ISSUE_BODY_FILE=/tmp/issue.md
 ```
+
+Or use stdin directly:
 
 ```bash
 cat <<'EOF' | ./scripts/create-gh-issue.sh --title "Fix shell quoting"
@@ -134,95 +166,10 @@ Use `code` formatting safely in Markdown without zsh command substitution.
 EOF
 ```
 
-## Deploy (/2026)
+This helper requires the GitHub CLI (`gh`) to be installed and authenticated.
 
-Run:
+## Notes
 
-```bash
-./scripts/deploy-2026.sh
-```
-
-The deploy script stages a temporary copy of the managed site paths (`index.html`, `assets/`, and when present `work/` and `sendmoi/`), rewrites the site metadata and cache-busted asset URLs there, and syncs only those staged paths to the server. It does not mutate the tracked source files in your worktree or treat the remote root as fully managed.
-
-## SendMoi pages
-
-- `/sendmoi/` is the standalone SendMoi marketing page (system light/dark, hero product video, feature grid, and temporary `Coming soon` App Store treatment).
-- `/sendmoi/privacy/` is the SendMoi privacy policy page.
-- `/sendmoi/terms/` is the SendMoi terms page.
-- `/sendmoi/accessibility/` is the SendMoi accessibility statement page.
-
-## Style guide
-
-- `/styleguide/` is a working foundations page for the site, documenting typography, color, grid, spacing, and recurring interface patterns using the same live theme and column-grid controls as the main site.
-- The homepage `Colophon` section now includes a direct link to `/styleguide/`.
-
-## Home case-study promo and article
-
-- The homepage `index.html` now includes a reusable case-study promo block after `Work Experience`.
-- Current instances are Resy, SendMoi, Somm AI, and AIQuota, each with CTA text `View Case Study`.
-- The homepage now includes an `About` section after the case-study promos with a portrait image and editorial-style bio copy block.
-- The homepage now includes a `Colophon` section below `About`, with a large outlined heading and a two-column text layout covering type, build, preview, and deploy details.
-- Promo block configuration uses data attributes for logo, desktop/mobile backgrounds, and image focus anchoring (`left`, `center`, `right`).
-- Promo image references now use `*-promo.*` filenames to avoid production path mismatches observed on `nieder.me/2026` for earlier asset names.
-- The Resy CTA routes to `/work/resy-discovery/`, a standalone long-form article page.
-- The SendMoi CTA routes to `/work/sendmoi/`, a standalone long-form article page.
-- The Somm AI CTA routes to `/work/somm-ai/`, an unshipped Resy concept case study about intent-led search and AI-guided dining discovery.
-- The `Full Work Experience & Resume →` link on home now routes to `/work`.
-- The homepage `Work Experience` section includes shortened role descriptions for SendMoi, the later Resy principal-design role, and BuzzFeed to keep the scan more concise.
-- `/work` now acts as a full work overview page with the Figma resume layout: two-line title treatment (`Work Experience` in white, `& Resume` in red), seeking-status lead, resume download action, left-dated experience list, right-side contact/speaking/recognition/education rail, and a two-column case-study layout for Resy, SendMoi, Somm AI, and AIQuota.
-- `/work/ai-quota/` is a standalone long-form article page about designing and shipping AIQuota, a native macOS menu bar utility for monitoring Codex and Claude Code usage.
-- Child work pages now use the same desktop left rail treatment as home (spinning logo, left vertical rule, home/back nav icon set, `light` toggle, and `cols` toggle).
-- Work article pages (`/work/resy-discovery/`, `/work/sendmoi/`, `/work/somm-ai/`) now keep the home-style rail/nav treatment, with a second temporary Resy `R` rail item used for `/work/somm-ai/`.
-- On article pages, the `Work Experience` rail item now links to `/work`.
-- On article pages, the first rail item now uses a back icon (`icon-back-off/on/hover.svg`) instead of the home icon.
-- Promo cards use a `50px` corner radius and `50px` vertical spacing between cards.
-- Desktop rail nav on home now includes direct anchors for `Work Experience`, `Resy`, `SendMoi`, `Somm AI`, `AIQuota`, and `About`, with the Somm AI slot still temporarily reusing the Resy `R` icon assets and AIQuota using a temporary placeholder icon.
-- The homepage desktop rail now uses the refreshed `home-off.svg` and `home-on.svg` assets, and the repo also includes `icon-down-off.svg` / `icon-down-on.svg` for upcoming navigation work.
-- Viewports between `960px` and `1500px` now use a compact desktop treatment: the homepage rail remains sticky and on-screen, `Work Experience` reflows into a denser two-column layout, and the `About` section keeps its portrait on the shared grid while widening the two-column copy.
-- At the same compact desktop range, `/work` keeps the side rail within the viewport and tightens the resume layout before the existing sub-`1100px` stacked layout takes over.
-- Shared accent-link treatments on home now use `line-height: 1.2` instead of `1.08`, including the topper company links, work-experience company links, and resume link treatment.
-
-## Homepage footer
-
-- Footer is now present on:
-  - homepage `/`
-  - `/work`
-  - `/work/resy-discovery/`
-  - `/work/sendmoi/`
-  - `/work/somm-ai/`
-  - `/work/ai-quota/`
-- Footer composition:
-  - left block with `John Niedermeyer`, `Product Design & Direction`, icon-based social row, and copyright
-  - `Site` column linking to the homepage, `Work Experience`, `About`, and `Colophon`
-  - `Work` column linking to `/work` plus all case-study pages, with the current page highlighted
-- Footer links are white by default with animated underline on hover/focus; the current page link keeps the same text color with a softer persistent underline.
-- Footer social links are icon-based and reuse the same obfuscated email behavior (`data-email-link`) as the topper.
-- Footer spacing was expanded globally so the sitemap sits farther below the preceding content on home, `/work`, and all case-study pages.
-- Interactive focus states across home and work pages now use a shared subdued red `:focus-visible` outline with a separate soft red outer glow on control-style elements like the spinning logo, rail nav items, social icons, cards, CTAs, the `light` toggle, and the `cols` toggle.
-
-## Legacy removal
-
-- The old `mailmoi/` pages were removed from this branch as defunct content.
-
-## SendMoi launch-state notes
-
-- App Store badges on `/sendmoi/` are intentionally disabled and overlaid with hand-drawn `Coming soon` SVG assets.
-- When launch links are ready, remove the `store-actions--coming-soon` treatment in `sendmoi/index.html` and replace `href="#"` on badge links with the real App Store URLs.
-- SendMoi feature art lives in `assets/images/sendmoi/features/` with paired `*-Light.png` / `*-Dark.png` variants.
-- The hero video on `/sendmoi/` respects `prefers-reduced-motion`, supports click/keyboard play-pause toggling, and dims while paused.
-
-## Current mobile behavior
-
-- The mobile-specific section dropdown nav has been removed from the homepage.
-- The mobile topper and case-study stack now use responsive width rules between narrower and wider phone viewports instead of a fixed 375px-only layout.
-- The mobile topper carousel now uses responsive snap insets so cards 1, 2, and 3 align to the same left text edge, while the middle card still leaves a visible hint of the next card.
-- The homepage `Work Experience` section now collapses into a two-panel horizontal carousel on phones, with mobile page dots and a partial peek of the next column.
-- The homepage mobile carousels now compute their snap inset from the shared content width instead of a fixed left offset, which keeps alignment consistent across different phone widths.
-- Viewports between `521px` and `959px` wide now use a compact static homepage layout: the mobile logo/rule treatment is present, but the topper and `Work Experience` sections switch away from horizontal text carousels and into tighter fixed compositions.
-- The side-scrolling mobile homepage treatment now carries through `520px` wide before handing off to that composed mid-width layout.
-- The mobile horizontal scrollers no longer force `pan-x` only, which reduces vertical scroll lock/jumping during touch interactions.
-- Homepage company-link hover underlines now only apply on hover-capable devices, avoiding sticky touch hover states on iPhone.
-- The mobile top inset and logo-to-heading spacing were tightened to better match the Figma mobile frame.
-- Home and work pages now default to dark mode even when the visitor’s OS prefers light, and the left rail includes a persistent `light` toggle for manually switching themes.
-- Browser theme hints (`color-scheme` and `theme-color`) now switch between dark and light to match the active manual theme selection.
-- CSS and JS assets use deploy-time cache-busting query params in the staged homepage HTML; if Safari looks stale locally, do a hard refresh.
+- The site defaults to dark mode and includes a persistent manual `light` toggle.
+- Shared rail navigation and the column-grid toggle are used across the homepage and work pages.
+- The README should describe the current repo shape and workflows, not act as a running change log. If a feature ships, update the relevant section above instead of appending historical bullets.
