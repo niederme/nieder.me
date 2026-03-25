@@ -1,7 +1,7 @@
 const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
 const topLogoLinks = Array.from(
   document.querySelectorAll(
-    '.logo-link[href="#top"], .mobile-logo-link[href="#top"], .styleguide-top-anchor[href="#top"]'
+    '.logo-link[href="#top"], .mobile-logo-link[href="#top"], .styleguide-top-anchor[href="#top"], .global-nav-anchor[href="#top"]'
   )
 );
 const themeToggles = Array.from(document.querySelectorAll(".theme-toggle"));

@@ -33,6 +33,7 @@ REQUIRED_BOOTSTRAP_TOKENS = [
 ]
 REQUIRED_FILE_TOKENS = {
     ROOT / "assets" / "js" / "main.js": [
+        '.global-nav-anchor[href="#top"]',
         'const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";',
         'let isVisible = false;',
         'document.documentElement.dataset.grid = visible ? "visible" : "hidden";',
