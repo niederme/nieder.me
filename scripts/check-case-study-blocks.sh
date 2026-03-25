@@ -7,6 +7,12 @@ cd "$ROOT_DIR"
 PILOT_PAGE="work/resy-discovery/index.html"
 WORK_STYLESHEET="assets/css/work-case-study.css"
 MAIN_SCRIPT="assets/js/main.js"
+CASE_STUDY_PAGES=(
+  "work/resy-discovery/index.html"
+  "work/sendmoi/index.html"
+  "work/somm-ai/index.html"
+  "work/ai-quota/index.html"
+)
 
 expect_pattern() {
   local file="$1"
@@ -19,10 +25,18 @@ expect_pattern() {
   fi
 }
 
-expect_pattern "$PILOT_PAGE" 'class="case-study-story"' "Resy pilot should define the shared case-study story wrapper."
-expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-hero" "Resy pilot should use the hero block."
-expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-meta" "Resy pilot should use the meta block."
-expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-lede" "Resy pilot should use the lede block."
+for page in "${CASE_STUDY_PAGES[@]}"; do
+  expect_pattern "$page" 'class="case-study-story"' "${page} should define the shared case-study story wrapper."
+  expect_pattern "$page" "case-study-block case-study-block-hero" "${page} should use the hero block."
+  expect_pattern "$page" "case-study-block case-study-block-meta" "${page} should use the meta block."
+  expect_pattern "$page" "case-study-block case-study-block-lede" "${page} should use the lede block."
+
+  if rg -q --fixed-strings '.work-article-visuals' "$page"; then
+    echo "FAIL: ${page} should not keep the legacy visuals gallery once the block conversion lands."
+    exit 1
+  fi
+done
+
 expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-two-up" "Resy pilot should use the two-up block."
 expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-aside-media" "Resy pilot should use the aside-media block."
 expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-carousel" "Resy pilot should use the carousel block."
@@ -43,10 +57,5 @@ expect_pattern "$WORK_STYLESHEET" ".case-study-caption" "Work stylesheet should 
 expect_pattern "$MAIN_SCRIPT" '.case-study-block-carousel' "Main script should enhance case-study carousels when present."
 expect_pattern "$MAIN_SCRIPT" "data-carousel-prev" "Main script should look for case-study carousel previous controls."
 expect_pattern "$MAIN_SCRIPT" "data-carousel-next" "Main script should look for case-study carousel next controls."
-
-if rg -q --fixed-strings '.work-article-visuals' "$PILOT_PAGE"; then
-  echo "FAIL: Resy pilot should not keep the legacy visuals gallery once the full block conversion lands."
-  exit 1
-fi
 
 echo "case-study block checks passed"
