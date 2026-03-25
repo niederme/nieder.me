@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <title>Colophon | John Niedermeyer</title>
+    <meta
+      name="description"
+      content="Notes on the typography, build, preview, deploy workflow, and style guide behind John Niedermeyer's portfolio."
+    />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("nieder.theme");
+          const storedGrid = window.localStorage.getItem("nieder.cols-grid-visible");
+          document.documentElement.dataset.grid = storedGrid === "1" ? "visible" : "hidden";
+          if (storedTheme === "light") {
+            document.documentElement.dataset.theme = "light";
+            document.documentElement.style.colorScheme = "light";
+            const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+            const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+            if (themeColorMeta) themeColorMeta.setAttribute("content", "#ffffff");
+            if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
+          }
+        } catch (error) {
+          document.documentElement.dataset.grid = "hidden";
+          // Ignore storage access failures and keep the default state.
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/work-case-study.css?v=20260325-001" />
+  </head>
+  <body id="top">
+    <div class="work-page">
+      <aside class="rail">
+        <a class="logo-link" href="../" aria-label="Back to homepage">
+          <img class="logo-mark" src="../assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
+      </aside>
+
+      <nav class="global-nav" aria-label="Primary navigation">
+        <a class="global-nav-anchor" href="../" aria-label="Back to homepage">
+          <img class="icon-off" src="../assets/icons/side-nav/icon-back-off.svg" alt="" />
+          <img class="icon-on" src="../assets/icons/side-nav/icon-back-on.svg" alt="" />
+          <img class="icon-hover" src="../assets/icons/side-nav/icon-back-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Home</span>
+        </a>
+        <a class="global-nav-anchor" href="../work/" aria-label="Work">
+          <img class="icon-off" src="../assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
+          <img class="icon-on" src="../assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
+          <img class="icon-hover" src="../assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Work</span>
+        </a>
+        <a class="global-nav-anchor" href="../about/" aria-label="About/Bio">
+          <img class="icon-off" src="../assets/icons/side-nav/icon-work-about-off.svg" alt="" />
+          <img class="icon-on" src="../assets/icons/side-nav/icon-work-about-on.svg" alt="" />
+          <img class="icon-hover" src="../assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">About/Bio</span>
+        </a>
+        <a class="global-nav-anchor is-active" href="../colophon/" aria-label="Colophon">
+          <img class="icon-off" src="../assets/icons/side-nav/icon-colophon-off.svg" alt="" />
+          <img class="icon-on" src="../assets/icons/side-nav/icon-colophon-on.svg" alt="" />
+          <img class="icon-hover" src="../assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Colophon</span>
+        </a>
+        <div class="rail-controls-panel">
+          <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+            <span class="theme-toggle-switch" aria-hidden="true"></span>
+            <span class="theme-toggle-label">light</span>
+            <span class="theme-toggle-state" aria-live="polite">Off</span>
+          </button>
+          <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
+            <span class="cols-toggle-switch" aria-hidden="true"></span>
+            <span class="cols-toggle-label">cols</span>
+            <span class="cols-toggle-state" aria-live="polite">Off</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="work-article">
+        <div class="work-grid-overlay" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <section class="work-index-header" aria-labelledby="colophon-title">
+          <div class="rule"></div>
+          <div class="work-index-header-copy">
+            <h1 id="colophon-title">Colophon</h1>
+            <h2>&amp; Notes</h2>
+          </div>
+        </section>
+
+        <section class="work-article-grid" aria-labelledby="colophon-sections-title">
+          <h3 id="colophon-sections-title" class="visually-hidden">Colophon notes</h3>
+
+          <aside class="work-article-meta" aria-label="Colophon summary">
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Character</p>
+              <p class="work-article-meta-value">Hand-tuned, lightweight, and close to the material</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Stack</p>
+              <p class="work-article-meta-value">Semantic HTML, bespoke CSS, and minimal JavaScript</p>
+            </div>
+            <div class="work-article-meta-card">
+              <p class="work-article-meta-label">Workflow</p>
+              <p class="work-article-meta-value">Make-based preview and staged shell deploy</p>
+            </div>
+          </aside>
+
+          <article class="work-article-body">
+            <section class="work-article-section">
+              <h2>Type</h2>
+              <p>
+                The site is set in S&#246;hne, mostly in light, book, and halbfett cuts, with italics reserved for
+                contrast, emphasis, and a little mischief.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Build</h2>
+              <p>
+                It runs as a deliberately simple static site: semantic HTML, bespoke CSS, and just enough JavaScript to
+                handle theme state, navigation behavior, and a few quality-of-life details.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Preview</h2>
+              <p>
+                Local previews come up through the repo Make targets, which wrap a tiny Python server so the work can
+                stay inspectable in a browser without adding framework overhead.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Deploy</h2>
+              <p>
+                Shipping goes through a staged shell deploy that syncs the managed site files and refreshes cache-busted
+                asset URLs on the way out, keeping the source tree clean.
+              </p>
+            </section>
+
+            <section class="work-article-section">
+              <h2>Style Guide</h2>
+              <p>
+                Foundations, tokens, and recurring interface patterns live in the
+                <a href="../styleguide/">site style guide</a>.
+              </p>
+            </section>
+          </article>
+        </section>
+
+        <footer class="site-footer" aria-label="Site footer">
+          <div class="rule"></div>
+          <div class="site-footer-grid">
+            <div class="site-footer-brand">
+              <p class="site-footer-name">John Niedermeyer</p>
+              <p class="site-footer-role">Product Design &amp; Direction</p>
+              <nav class="site-footer-connect" aria-label="Connect links">
+                <ul class="site-footer-social">
+                  <li>
+                    <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                      <span class="social-icon social-icon-github" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                      <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                      <span class="social-icon social-icon-x" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                      <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-email-link aria-label="Send email">
+                      <span class="social-icon social-icon-email" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="site-footer-meta">© 2026 John Niedermeyer</p>
+            </div>
+
+            <nav class="site-footer-column site-footer-column-site" aria-label="Site sections">
+              <h3>Site</h3>
+              <ul class="site-footer-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../work/">Work</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../colophon/" aria-current="page">Colophon</a></li>
+              </ul>
+            </nav>
+
+            <nav class="site-footer-column site-footer-column-work" aria-label="Work sitemap">
+              <h3>Work</h3>
+              <ul class="site-footer-links">
+                <li><a href="../work/">Resume &amp; Work</a></li>
+                <li><a href="../work/resy-discovery/">Resy Discovery</a></li>
+                <li><a href="../work/sendmoi/">SendMoi</a></li>
+                <li><a href="../work/somm-ai/">Somm AI</a></li>
+                <li><a href="../work/ai-quota/">AIQuota</a></li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="../assets/js/main.js?v=20260325-004"></script>
+  </body>
+</html>

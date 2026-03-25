@@ -8,7 +8,9 @@ Preview commands in this repo use the shared Codex helper at `/Users/niederme/.c
 
 Current site surfaces:
 
-- `/` homepage with work highlights, About, and Colophon sections
+- `/` homepage with work highlights and a short About section
+- `/about/` full biography page
+- `/colophon/` standalone colophon page
 - `/work/` full work experience and resume page
 - `/work/resy-discovery/` Resy case study
 - `/work/sendmoi/` SendMoi case study
@@ -168,5 +170,5 @@ This helper requires the GitHub CLI (`gh`) to be installed and authenticated.
 ## Notes
 
 - The site defaults to dark mode and includes a persistent manual `light` toggle.
-- Shared rail navigation and the column-grid toggle are used across the homepage and work pages.
+- Shared rail navigation and the column-grid toggle are used across the homepage, About, Colophon, and work pages.
 - The README should describe the current repo shape and workflows, not act as a running change log. If a feature ships, update the relevant section above instead of appending historical bullets.
