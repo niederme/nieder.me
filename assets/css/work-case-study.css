@@ -764,6 +764,7 @@ body.grid-hidden .work-grid-overlay > span {
 
 .work-article-body {
   grid-column: 5 / span 8;
+  width: min(614px, 100%);
 }
 
 /* Case study block system */
@@ -793,6 +794,31 @@ body.grid-hidden .work-grid-overlay > span {
 .case-study-block-meta .case-study-block-inner {
   display: flex;
   flex-direction: column;
+}
+
+.case-study-block-meta {
+  position: relative;
+  padding-right: 22px;
+}
+
+.case-study-block-meta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.case-study-block-meta .work-article-meta-card {
+  border: 0;
+  padding: 10px 0 14px;
+}
+
+.case-study-block-meta .work-article-meta-card + .work-article-meta-card {
+  margin-top: 0;
+  border-top: 1px solid var(--line);
 }
 
 .case-study-block-lede {
@@ -827,6 +853,18 @@ body.grid-hidden .work-grid-overlay > span {
   border-top: 1px solid var(--line);
 }
 
+.case-study-block-full-media,
+.case-study-block-two-up,
+.case-study-block-carousel {
+  width: calc(100% + 248px);
+  margin-left: -124px;
+}
+
+.case-study-block-aside-media {
+  width: calc(100% + 196px);
+  margin-left: -56px;
+}
+
 .case-study-figure {
   margin: 0;
 }
@@ -855,7 +893,7 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .case-study-block-full-media .case-study-media {
-  border-radius: 28px;
+  border-radius: 22px;
 }
 
 .case-study-block-aside-media .case-study-block-inner {
@@ -960,6 +998,14 @@ body.grid-hidden .work-grid-overlay > span {
   font-size: 14px;
   line-height: 1.35;
   color: var(--figure-caption);
+}
+
+.case-study-block-hero .work-article-eyebrow {
+  margin-top: 34px;
+}
+
+.case-study-block-hero h1 {
+  font-size: clamp(52px, 5vw, 72px);
 }
 
 .work-index-header {
@@ -1527,6 +1573,26 @@ body.grid-hidden .work-grid-overlay > span {
     grid-column: 1;
   }
 
+  .work-article-body {
+    width: 100%;
+  }
+
+  .case-study-block-meta {
+    padding-right: 0;
+  }
+
+  .case-study-block-meta::after {
+    display: none;
+  }
+
+  .case-study-block-full-media,
+  .case-study-block-two-up,
+  .case-study-block-aside-media,
+  .case-study-block-carousel {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .case-study-block-aside-media .case-study-block-inner,
   .case-study-block-aside-media.case-study-block-aside-right .case-study-block-inner {
     grid-template-columns: 1fr;
@@ -1642,6 +1708,10 @@ body.grid-hidden .work-grid-overlay > span {
 
   .case-study-lede {
     font-size: 18px;
+  }
+
+  .case-study-block-hero h1 {
+    font-size: 42px;
   }
 
   .case-study-block-two-up .case-study-block-inner,
