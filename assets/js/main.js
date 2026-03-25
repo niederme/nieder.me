@@ -7,6 +7,7 @@ const topLogoLinks = Array.from(
 const themeToggles = Array.from(document.querySelectorAll(".theme-toggle"));
 const colsToggles = Array.from(document.querySelectorAll(".cols-toggle"));
 const emailLinks = Array.from(document.querySelectorAll("[data-email-link]"));
+const homeRailNav = document.querySelector(".global-nav-home");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
 const THEME_STORAGE_KEY = "nieder.theme";
@@ -166,6 +167,51 @@ if (colsToggles.length > 0) {
     toggle.addEventListener("click", () => {
       applyGridVisibility(document.body.classList.contains("grid-hidden"));
     });
+  });
+}
+
+if (homeRailNav) {
+  const lockTargetSelector = homeRailNav.dataset.lockTarget || "#work-experience";
+  const lockTarget = document.querySelector(lockTargetSelector);
+  let lockTop = 140;
+  const getPageTop = (element) =>
+    Math.round(element.getBoundingClientRect().top + window.scrollY);
+
+  const updateLockTop = () => {
+    const safeTopRaw = getComputedStyle(document.documentElement).getPropertyValue("--safe-top");
+    const safeTop = Number.parseFloat(safeTopRaw);
+    lockTop = 140 + (Number.isFinite(safeTop) ? safeTop : 0);
+  };
+
+  const setLockStart = () => {
+    updateLockTop();
+    const lockStart = lockTarget
+      ? getPageTop(lockTarget)
+      : Number(homeRailNav.dataset.navLockStart || 1049);
+    homeRailNav.dataset.lockStartComputed = String(lockStart);
+    homeRailNav.style.setProperty("--global-nav-start", `${lockStart}px`);
+  };
+
+  const updateHomeRailLock = () => {
+    const lockStart = Number(
+      homeRailNav.dataset.lockStartComputed || homeRailNav.dataset.navLockStart || 1049
+    );
+
+    if (window.innerWidth <= 959) {
+      homeRailNav.classList.remove("is-locked");
+      return;
+    }
+
+    const shouldLock = window.scrollY + lockTop >= lockStart;
+    homeRailNav.classList.toggle("is-locked", shouldLock);
+  };
+
+  setLockStart();
+  updateHomeRailLock();
+  window.addEventListener("scroll", updateHomeRailLock, { passive: true });
+  window.addEventListener("resize", () => {
+    setLockStart();
+    updateHomeRailLock();
   });
 }
 

@@ -278,6 +278,16 @@ body.is-pulling-refresh .rail::after {
   z-index: 26;
 }
 
+.global-nav-home {
+  position: absolute;
+  top: var(--global-nav-start, 1049px);
+}
+
+.global-nav-home.is-locked {
+  position: fixed;
+  top: calc(140px + var(--safe-top));
+}
+
 .rail-controls-panel {
   width: 90px;
   margin-top: 8px;

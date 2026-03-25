@@ -18,7 +18,7 @@ COLOPHON_ICONS = [
     ROOT / "assets" / "icons" / "side-nav" / "icon-colophon-on.svg",
     ROOT / "assets" / "icons" / "side-nav" / "icon-colophon-hover.svg",
 ]
-EXPECTED_CLASS = 'class="global-nav"'
+EXPECTED_CLASS = 'class="global-nav'
 LEGACY_TOKENS = [
     "case-nav",
     "case-anchor",
@@ -36,6 +36,8 @@ REQUIRED_FILE_TOKENS = {
         'const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";',
         'let isVisible = false;',
         'document.documentElement.dataset.grid = visible ? "visible" : "hidden";',
+        'const homeRailNav = document.querySelector(".global-nav-home");',
+        'homeRailNav.classList.toggle("is-locked", shouldLock);',
     ],
     ROOT / "assets" / "css" / "styles.css": [
         ':root[data-grid="hidden"] .grid-overlay',
