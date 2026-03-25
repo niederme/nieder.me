@@ -130,9 +130,8 @@ git commit -m "test: add global nav verification scaffold"
 - [ ] **Step 1: Extend the verifier to check for the new nav contract and legacy cleanup**
 
 ```python
-# Add this block to the Task 1 script after the missing-file definitions.
-# Replace the "expected missing files before implementation" early-exit with
-# conditional checks that only stop on truly missing required files.
+# Refactor the Task 1 script into a single-pass verifier. Do not leave the old
+# unconditional `sys.exit(1)` in place ahead of these checks.
 EXPECTED_CLASS = 'class="global-nav"'
 LEGACY_TOKENS = ["case-nav", "case-anchor", "work-side-nav", "work-case-anchor", "data-lock-start"]
 
@@ -147,6 +146,39 @@ for page in PUBLIC_PAGES:
         if token in html:
             print(f"legacy nav token {token!r} still present in {page.relative_to(ROOT)}")
             sys.exit(1)
+```
+
+Final script shape at the end of Task 2 should be:
+
+```python
+#!/usr/bin/env python3
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+PUBLIC_PAGES = [...]
+COLOPHON_ICONS = [...]
+EXPECTED_CLASS = 'class="global-nav"'
+LEGACY_TOKENS = ["case-nav", "case-anchor", "work-side-nav", "work-case-anchor", "data-lock-start"]
+
+missing = [path for path in PUBLIC_PAGES + COLOPHON_ICONS if not path.exists()]
+if missing:
+    print("missing required files:")
+    for path in missing:
+        print(f"- {path.relative_to(ROOT)}")
+    sys.exit(1)
+
+for page in PUBLIC_PAGES:
+    html = page.read_text()
+    if EXPECTED_CLASS not in html:
+        print(f"missing global nav in {page.relative_to(ROOT)}")
+        sys.exit(1)
+    for token in LEGACY_TOKENS:
+        if token in html:
+            print(f"legacy nav token {token!r} still present in {page.relative_to(ROOT)}")
+            sys.exit(1)
+
+print("global nav verifier passed")
 ```
 
 - [ ] **Step 2: Run the verifier and capture the expected failure**
