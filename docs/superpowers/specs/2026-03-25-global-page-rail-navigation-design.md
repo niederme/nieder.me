@@ -28,7 +28,7 @@ All public pages should expose the same four-item rail in the same order:
 3. `About/Bio`
 4. `Colophon`
 
-The rail remains icon-led visually, but each item should have a precise `aria-label`, and desktop hover/focus should expose a light/dark-aware label popover with the destination name.
+The rail remains icon-led visually, but each item should have a precise `aria-label`, and desktop hover/focus should expose a light/dark-aware label popover with the destination name. That popover should appear to the right of the rail item, should be suppressed on coarse-pointer/touch layouts, and should accompany the existing hover icon state rather than replace it.
 
 ### Active-state rules
 
@@ -76,6 +76,9 @@ The rail remains icon-led visually, but each item should have a precise `aria-la
 - Consolidate rail styling so homepage and work/subpages do not maintain parallel navigation systems unnecessarily.
 - Preserve the current icon treatment, hover behavior, spacing rhythm, and white active state.
 - Add styling for small hover/focus label popovers so destination names are available without changing the icon-led composition.
+- Position popovers to the right of the fixed left rail so they expand into page space rather than off-canvas.
+- Suppress popovers on coarse-pointer/touch layouts instead of trying to create a tap-based variant for mobile.
+- Keep the current off/on/hover icon-state behavior; the label popover is an additive desktop affordance, not a replacement for the hover SVG treatment.
 - Remove CSS that only exists to support homepage scroll-lock rail behavior or obsolete section-anchor states.
 - Ensure the global rail remains consistent across desktop and mobile layouts.
 - Keep existing `mobile-page-dots` behavior unless a specific layout regression appears; those dots are unrelated to the rail refactor.
