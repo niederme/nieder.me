@@ -76,6 +76,53 @@ if (emailLinks.length > 0) {
   });
 }
 
+{
+  const caseStudyCarousels = Array.from(document.querySelectorAll(".case-study-block-carousel"));
+
+  caseStudyCarousels.forEach((carousel) => {
+    const track = carousel.querySelector(".case-study-carousel-track");
+    const prev = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    const status = carousel.querySelector("[data-carousel-status]");
+    const controls = carousel.querySelector(".case-study-carousel-controls");
+
+    if (!track || !prev || !next || !status || !controls) {
+      return;
+    }
+
+    const slides = Array.from(track.querySelectorAll(".case-study-carousel-slide"));
+    if (slides.length < 2) {
+      return;
+    }
+
+    let index = 0;
+
+    const applySlide = () => {
+      slides.forEach((slide, slideIndex) => {
+        slide.hidden = slideIndex !== index;
+        slide.setAttribute("aria-hidden", String(slideIndex !== index));
+      });
+      prev.disabled = index === 0;
+      next.disabled = index === slides.length - 1;
+      status.textContent = `${index + 1} / ${slides.length}`;
+    };
+
+    controls.hidden = false;
+    carousel.dataset.carouselEnhanced = "true";
+    applySlide();
+
+    prev.addEventListener("click", () => {
+      index = Math.max(0, index - 1);
+      applySlide();
+    });
+
+    next.addEventListener("click", () => {
+      index = Math.min(slides.length - 1, index + 1);
+      applySlide();
+    });
+  });
+}
+
 if (themeToggles.length > 0) {
   const applyTheme = (theme, persist = true) => {
     const nextTheme = theme === "light" ? "light" : "dark";

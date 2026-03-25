@@ -821,6 +821,12 @@ body.grid-hidden .work-grid-overlay > span {
   gap: 16px;
 }
 
+.work-article-body > .case-study-block + .case-study-block {
+  margin-top: 38px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+
 .case-study-figure {
   margin: 0;
 }
@@ -871,6 +877,24 @@ body.grid-hidden .work-grid-overlay > span {
   order: 1;
 }
 
+.case-study-copy h2 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.case-study-copy p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.42;
+  color: var(--muted);
+}
+
+.case-study-copy p + p {
+  margin-top: 16px;
+}
+
 .case-study-block-two-up .case-study-block-inner {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -899,6 +923,14 @@ body.grid-hidden .work-grid-overlay > span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
+}
+
+.case-study-block-carousel[data-carousel-enhanced="true"] .case-study-carousel-track {
+  grid-template-columns: 1fr;
+}
+
+.case-study-block-carousel[data-carousel-enhanced="true"] .case-study-carousel-track > [hidden] {
+  display: none;
 }
 
 .case-study-carousel-controls {
@@ -1622,6 +1654,10 @@ body.grid-hidden .work-grid-overlay > span {
     font-size: 30px;
   }
 
+  .case-study-copy h2 {
+    font-size: 30px;
+  }
+
   .work-index-header {
     margin-top: 58px;
   }
@@ -1700,6 +1736,10 @@ body.grid-hidden .work-grid-overlay > span {
   .work-article-visuals {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  .case-study-copy p {
+    font-size: 17px;
   }
 
   .site-footer {
