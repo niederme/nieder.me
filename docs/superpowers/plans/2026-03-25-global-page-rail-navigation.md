@@ -4,7 +4,7 @@
 
 **Goal:** Replace the homepage's scroll-driven rail with a consistent four-item global page rail, add standalone `/about/` and `/colophon/` pages, and remove obsolete nav JS/CSS.
 
-**Architecture:** Introduce a shared `global-nav` / `global-nav-anchor` markup contract across all public pages and make active state explicit in HTML instead of deriving it from scroll position. Reuse existing content where possible: keep a shortened About block on `/`, move Colophon content into `/colophon/`, and keep work case studies grouped under the `Work` nav item rather than listing them individually in the rail. Add a lightweight Python verification script so the HTML contract and legacy-nav cleanup can be checked repeatedly during the refactor.
+**Architecture:** Introduce a shared `global-nav` / `global-nav-anchor` markup contract across all public pages and make active state explicit in HTML instead of deriving it from scroll position. Keep `aside.rail` as the visual/logo rail wrapper and place `global-nav` beside it as the only navigation landmark, avoiding duplicate navigation labels. Reuse existing content where possible: keep a shortened About block on `/`, move Colophon content into `/colophon/`, and keep work case studies grouped under the `Work` nav item rather than listing them individually in the rail. Add a lightweight Python verification script so the HTML contract and legacy-nav cleanup can be checked repeatedly during the refactor.
 
 **Tech Stack:** Static HTML, bespoke CSS, vanilla JavaScript, Python 3 standard library, repo `make dev-thread` preview workflow
 
@@ -21,7 +21,7 @@
 - `assets/icons/side-nav/icon-colophon-hover.svg`
   - New hover-state colophon rail icon.
 - `index.html`
-  - Homepage rail migration, homepage About bridge to `/about/`, Colophon removal, footer link updates.
+  - Homepage rail migration, homepage About bridge to `/about/`, Colophon removal, footer link updates, and `aside.rail` landmark cleanup.
 - `about/index.html`
   - New standalone About/Bio page using the global rail.
 - `colophon/index.html`
@@ -37,7 +37,7 @@
 - `work/ai-quota/index.html`
   - Case-study rail migration with `Work` active.
 - `assets/css/styles.css`
-  - Shared homepage/site rail styling, popover styling, homepage cleanup.
+  - Shared homepage/site rail styling, popover styling, homepage cleanup, and `aside.rail` / `global-nav` positioning.
 - `assets/css/work-case-study.css`
   - Work-page rail styling updated to the shared `global-nav` contract.
 - `assets/js/main.js`
@@ -130,6 +130,9 @@ git commit -m "test: add global nav verification scaffold"
 - [ ] **Step 1: Extend the verifier to check for the new nav contract and legacy cleanup**
 
 ```python
+# Add this block to the Task 1 script after the missing-file definitions.
+# Replace the "expected missing files before implementation" early-exit with
+# conditional checks that only stop on truly missing required files.
 EXPECTED_CLASS = 'class="global-nav"'
 LEGACY_TOKENS = ["case-nav", "case-anchor", "work-side-nav", "work-case-anchor", "data-lock-start"]
 
@@ -155,6 +158,12 @@ Expected: FAIL on missing `global-nav` markup and legacy nav tokens in the curre
 - [ ] **Step 3: Refactor the shared nav CSS selectors**
 
 ```css
+.rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 90px;
+}
+
 .global-nav {
   position: fixed;
   left: 0;
@@ -222,6 +231,9 @@ Expected: FAIL on missing `about/index.html`, `colophon/index.html`, and incorre
 - [ ] **Step 3: Replace the homepage rail and footer links**
 
 ```html
+<aside class="rail">
+  <a class="logo-link" href="./" aria-label="Home">…</a>
+</aside>
 <nav class="global-nav" aria-label="Primary navigation">
   <a class="global-nav-anchor is-active" href="./" aria-label="Home">
     <img class="icon-off" src="assets/icons/side-nav/home-off.svg" alt="" />
@@ -235,10 +247,12 @@ Expected: FAIL on missing `about/index.html`, `colophon/index.html`, and incorre
 </nav>
 ```
 
+Keep `aside.rail` as the logo host only. Do not give it `aria-label="Primary navigation"` once `global-nav` exists.
+
 - [ ] **Step 4: Shorten the homepage About block and remove the homepage Colophon section**
 
 ```html
-<p class="about-home-lead">Hi, I'm John Niedermeyer, a designer based in New York.</p>
+<p class="about-home-lead">Use the existing homepage About copy as source material and shorten it rather than shipping this placeholder sentence verbatim.</p>
 <p class="about-home-cta"><a href="about/">Read full bio</a></p>
 ```
 
@@ -247,7 +261,7 @@ Expected: FAIL on missing `about/index.html`, `colophon/index.html`, and incorre
 ```html
 <body id="top">
   <div class="work-page about-page">
-    <aside class="rail" aria-label="Primary navigation">…</aside>
+    <aside class="rail">…logo link…</aside>
     <nav class="global-nav" aria-label="Primary navigation">…</nav>
     <main class="work-article">…</main>
   </div>
@@ -305,6 +319,15 @@ Expected: FAIL because the work pages still contain per-case-study rails and inc
 - [ ] **Step 3: Replace each work-page rail with the shared four-item version**
 
 ```html
+<!-- work/index.html -->
+<nav class="global-nav" aria-label="Primary navigation">
+  <a class="global-nav-anchor" href="../" aria-label="Back to homepage">…back icon…</a>
+  <a class="global-nav-anchor is-active" href="../work/" aria-label="Work">…work icon…</a>
+  <a class="global-nav-anchor" href="../about/" aria-label="About/Bio">…about icon…</a>
+  <a class="global-nav-anchor" href="../colophon/" aria-label="Colophon">…colophon icon…</a>
+</nav>
+
+<!-- work case-study pages -->
 <nav class="global-nav" aria-label="Primary navigation">
   <a class="global-nav-anchor" href="../../" aria-label="Back to homepage">…back icon…</a>
   <a class="global-nav-anchor is-active" href="../../work/" aria-label="Work">…work icon…</a>
