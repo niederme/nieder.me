@@ -1,4 +1,3 @@
-const caseNav = document.querySelector(".case-nav");
 const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
 const topLogoLinks = Array.from(
   document.querySelectorAll(
@@ -130,6 +129,7 @@ if (themeToggles.length > 0) {
 
 if (colsToggles.length > 0) {
   const applyGridVisibility = (visible, persist = true) => {
+    document.documentElement.dataset.grid = visible ? "visible" : "hidden";
     document.body.classList.toggle("grid-hidden", !visible);
     colsToggles.forEach((toggle) => {
       toggle.classList.toggle("is-on", visible);
@@ -158,7 +158,7 @@ if (colsToggles.length > 0) {
     if (stored === "0") isVisible = false;
     if (stored === "1") isVisible = true;
   } catch (error) {
-    // Ignore storage access failures and keep default hidden state.
+    // Ignore storage access failures and keep the default hidden state.
   }
 
   applyGridVisibility(isVisible, false);
@@ -219,77 +219,6 @@ if (colsToggles.length > 0) {
     window.addEventListener("resize", updateStyleguideNav);
     window.addEventListener("hashchange", updateStyleguideNav);
   }
-}
-
-if (caseNav) {
-  const lockTarget = document.querySelector("#work-experience");
-  const anchors = Array.from(caseNav.querySelectorAll(".case-anchor"));
-  const topAnchor = anchors[0] || null;
-  const sections = anchors
-    .map((anchor) => {
-      const href = anchor.getAttribute("href");
-      return href ? document.querySelector(href) : null;
-    })
-    .filter(Boolean);
-  let lockTop = 140;
-  const getPageTop = (element) =>
-    Math.round(element.getBoundingClientRect().top + window.scrollY);
-
-  if (topAnchor) {
-    topAnchor.addEventListener("click", (event) => {
-      event.preventDefault();
-      scrollToPageTop();
-    });
-  }
-
-  const updateLockTop = () => {
-    const safeTopRaw = getComputedStyle(document.documentElement).getPropertyValue("--safe-top");
-    const safeTop = Number.parseFloat(safeTopRaw);
-    lockTop = 140 + (Number.isFinite(safeTop) ? safeTop : 0);
-  };
-
-  const setLockStart = () => {
-    updateLockTop();
-    const lockStart = lockTarget
-      ? getPageTop(lockTarget)
-      : Number(caseNav.dataset.lockStart || 1049);
-    caseNav.dataset.lockStartComputed = String(lockStart);
-    caseNav.style.setProperty("--case-nav-start", `${lockStart}px`);
-  };
-
-  const updateRailNav = () => {
-    const lockStart = Number(
-      caseNav.dataset.lockStartComputed || caseNav.dataset.lockStart || 1049
-    );
-
-    if (window.innerWidth <= 959) {
-      caseNav.classList.remove("is-locked");
-      return;
-    }
-
-    const shouldLock = window.scrollY + lockTop >= lockStart;
-    caseNav.classList.toggle("is-locked", shouldLock);
-
-    const activationLine = window.scrollY + 240;
-    let activeIndex = 0;
-    for (let i = 0; i < sections.length; i += 1) {
-      if (activationLine >= getPageTop(sections[i])) {
-        activeIndex = i;
-      }
-    }
-
-    anchors.forEach((anchor, index) => {
-      anchor.classList.toggle("is-active", index === activeIndex);
-    });
-  };
-
-  setLockStart();
-  window.addEventListener("scroll", updateRailNav, { passive: true });
-  window.addEventListener("resize", () => {
-    setLockStart();
-    updateRailNav();
-  });
-  updateRailNav();
 }
 
 if (topLogoLinks.length > 0) {

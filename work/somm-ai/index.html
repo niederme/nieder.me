@@ -10,50 +10,73 @@
       name="description"
       content="Standalone long-form case study on an unshipped Resy AI recommendations exploration for intent-led restaurant search."
     />
-    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260320-006" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("nieder.theme");
+          const storedGrid = window.localStorage.getItem("nieder.cols-grid-visible");
+          document.documentElement.dataset.grid = storedGrid === "1" ? "visible" : "hidden";
+          if (storedTheme === "light") {
+            document.documentElement.dataset.theme = "light";
+            document.documentElement.style.colorScheme = "light";
+            const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+            const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+            if (themeColorMeta) themeColorMeta.setAttribute("content", "#ffffff");
+            if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
+          }
+        } catch (error) {
+          document.documentElement.dataset.grid = "hidden";
+          // Ignore storage access failures and keep the default state.
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260325-001" />
   </head>
   <body id="top" class="work-theme-sommai">
     <div class="work-page">
-      <aside class="rail" aria-label="Section navigation">
-        <img class="logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
+      <aside class="rail">
+        <a class="logo-link" href="../../" aria-label="Back to homepage">
+          <img class="logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
       </aside>
 
-      <nav class="work-side-nav" aria-label="Section anchors">
-        <a class="work-case-anchor" href="../../" aria-label="Back to homepage">
+      <nav class="global-nav" aria-label="Primary navigation">
+        <a class="global-nav-anchor" href="../../" aria-label="Back to homepage">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-back-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-back-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-back-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Home</span>
         </a>
-        <a class="work-case-anchor" href="../../work/" aria-label="Go to Work page">
+        <a class="global-nav-anchor is-active" href="../../work/" aria-label="Work">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Work</span>
         </a>
-        <a class="work-case-anchor" href="../../work/resy-discovery/" aria-label="Resy case study">
-          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-resy-off.svg" alt="" />
-          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-resy-on.svg" alt="" />
-          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-resy-hover.svg" alt="" />
+        <a class="global-nav-anchor" href="../../about/" aria-label="About/Bio">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-about-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-about-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">About/Bio</span>
         </a>
-        <a class="work-case-anchor work-case-anchor-sendmoi" href="../../work/sendmoi/" aria-label="SendMoi case study">
-          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-sendmoi-off.svg" alt="" />
-          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-sendmoi-on.svg" alt="" />
-          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-sendmoi-hover.svg" alt="" />
+        <a class="global-nav-anchor" href="../../colophon/" aria-label="Colophon">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-colophon-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-colophon-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Colophon</span>
         </a>
-        <a class="work-case-anchor is-active" href="../../work/somm-ai/" aria-label="Somm AI case study">
-          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-resy-off.svg" alt="" />
-          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-resy-on.svg" alt="" />
-          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-resy-hover.svg" alt="" />
-        </a>
-        <a class="work-case-anchor work-case-anchor-aiquota" href="../../work/ai-quota/" aria-label="AIQuota case study">
-          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-aiquota-off.png" alt="" />
-          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-aiquota-on.png" alt="" />
-          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-aiquota-hover.png" alt="" />
-        </a>
-        <button class="cols-toggle is-on" type="button" aria-pressed="true" aria-label="Hide column grid">
-          <span class="cols-toggle-switch" aria-hidden="true"></span>
-          <span class="cols-toggle-label">cols</span>
-          <span class="cols-toggle-state" aria-live="polite">On</span>
-        </button>
+        <div class="rail-controls-panel">
+          <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+            <span class="theme-toggle-switch" aria-hidden="true"></span>
+            <span class="theme-toggle-label">light</span>
+            <span class="theme-toggle-state" aria-live="polite">Off</span>
+          </button>
+          <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
+            <span class="cols-toggle-switch" aria-hidden="true"></span>
+            <span class="cols-toggle-label">cols</span>
+            <span class="cols-toggle-state" aria-live="polite">Off</span>
+          </button>
+        </div>
       </nav>
 
       <main class="work-article">
@@ -246,9 +269,9 @@
               <h3>Site</h3>
               <ul class="site-footer-links">
                 <li><a href="../../">Home</a></li>
-                <li><a href="../../#work-experience">Work Experience</a></li>
-                <li><a href="../../#about-home">About</a></li>
-                <li><a href="../../#colophon-home">Colophon</a></li>
+                <li><a href="../../work/">Work</a></li>
+                <li><a href="../../about/">About</a></li>
+                <li><a href="../../colophon/">Colophon</a></li>
               </ul>
             </nav>
 
@@ -267,6 +290,6 @@
         </footer>
       </main>
     </div>
-    <script src="../../assets/js/main.js?v=20260310-020"></script>
+    <script src="../../assets/js/main.js?v=20260325-002"></script>
   </body>
 </html>

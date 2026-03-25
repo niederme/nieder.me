@@ -13,6 +13,10 @@
   --toggle-knob-on: #f2f2f2;
   --toggle-knob-off: #8e8f98;
   --toggle-label: #8e8f98;
+  --nav-popover-bg: rgba(255, 255, 255, 0.96);
+  --nav-popover-fg: #000000;
+  --nav-popover-border: rgba(255, 255, 255, 0.18);
+  --nav-popover-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
   --grid-overlay-fill: rgba(255, 255, 255, 0.08);
   --footer-meta: #8e8f98;
   --footer-heading: #8e8f98;
@@ -44,6 +48,10 @@
   --toggle-knob-on: #ffffff;
   --toggle-knob-off: #6f737a;
   --toggle-label: #5f6268;
+  --nav-popover-bg: rgba(18, 18, 18, 0.96);
+  --nav-popover-fg: #ffffff;
+  --nav-popover-border: rgba(18, 18, 18, 0.14);
+  --nav-popover-shadow: 0 8px 24px rgba(18, 18, 18, 0.12);
   --grid-overlay-fill: rgba(18, 18, 18, 0.08);
   --footer-meta: #5f6268;
   --footer-heading: #5f6268;
@@ -186,7 +194,7 @@ a:focus-visible {
 :where(
   .logo-mark,
   .mobile-logo-mark,
-  .case-anchor,
+  .global-nav-anchor,
   .social-links a,
   .site-footer-social a,
   .case-study-promo-cta,
@@ -262,36 +270,36 @@ body.is-pulling-refresh .rail::after {
   width: 26px;
 }
 
-.case-nav {
-  position: absolute;
+.global-nav {
+  position: fixed;
   left: 0;
-  top: var(--case-nav-start, 1049px);
+  top: calc(140px + var(--safe-top));
   width: 90px;
   z-index: 26;
 }
 
-.case-nav.is-locked {
-  position: fixed;
-  left: 0;
-  top: calc(140px + var(--safe-top));
+.rail-controls-panel {
+  width: 90px;
+  margin-top: 8px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
 }
 
 .theme-toggle {
   width: 90px;
-  min-height: 92px;
+  min-height: 62px;
   border: 0;
-  border-top: 1px solid var(--line);
   background: transparent;
   color: var(--fg);
   font: inherit;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing: -0.01em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 14px 0 16px;
+  gap: 5px;
+  padding: 8px 0 2px;
   cursor: pointer;
   transition: color 0.22s ease;
 }
@@ -351,20 +359,19 @@ body.is-pulling-refresh .rail::after {
 
 .cols-toggle {
   width: 90px;
-  min-height: 92px;
+  min-height: 62px;
   border: 0;
-  border-top: 1px solid var(--line);
   background: transparent;
   color: var(--fg);
   font: inherit;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing: -0.01em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 14px 0 16px;
+  gap: 5px;
+  padding: 2px 0 8px;
   cursor: pointer;
   transition: color 0.22s ease;
 }
@@ -422,7 +429,7 @@ body.is-pulling-refresh .rail::after {
   border: 0;
 }
 
-.case-anchor {
+.global-nav-anchor {
   position: relative;
   width: 90px;
   height: 76px;
@@ -432,11 +439,11 @@ body.is-pulling-refresh .rail::after {
   text-decoration: none;
 }
 
-.case-anchor:first-child {
+.global-nav-anchor:first-child {
   border-top: none;
 }
 
-.case-anchor img {
+.global-nav-anchor img {
   width: 26px;
   height: 26px;
   object-fit: contain;
@@ -444,57 +451,75 @@ body.is-pulling-refresh .rail::after {
   transition: opacity 0.18s ease;
 }
 
-.case-anchor .icon-off,
-.case-anchor .icon-on {
+.global-nav-anchor .icon-off,
+.global-nav-anchor .icon-on {
   filter: var(--nav-icon-filter);
   transition: opacity 0.18s ease, filter 0.22s ease;
 }
 
-.case-anchor-sendmoi img {
-  width: 32px;
-}
-
-.case-anchor-aiquota img {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-}
-
-.case-anchor .icon-on {
+.global-nav-anchor .icon-on {
   position: absolute;
   opacity: 0;
 }
 
-.case-anchor .icon-hover {
+.global-nav-anchor .icon-hover {
   position: absolute;
   opacity: 0;
+  z-index: 1;
 }
 
-.case-anchor .icon-off {
+.global-nav-anchor .icon-off {
   opacity: 1;
 }
 
-.case-anchor.is-active .icon-off {
+.global-nav-anchor.is-active .icon-off {
   opacity: 0;
 }
 
-.case-anchor.is-active .icon-on {
+.global-nav-anchor.is-active .icon-on {
   opacity: 1;
 }
 
-.case-anchor:hover .icon-off,
-.case-anchor:focus-visible .icon-off {
+.global-nav-anchor:hover .icon-off,
+.global-nav-anchor:focus-visible .icon-off {
   opacity: 0;
 }
 
-.case-anchor:hover .icon-on,
-.case-anchor:focus-visible .icon-on {
+.global-nav-anchor:hover .icon-on,
+.global-nav-anchor:focus-visible .icon-on {
   opacity: 0;
 }
 
-.case-anchor:hover .icon-hover,
-.case-anchor:focus-visible .icon-hover {
+.global-nav-anchor:hover .icon-hover,
+.global-nav-anchor:focus-visible .icon-hover {
   opacity: 1;
+}
+
+.global-nav-popover {
+  position: absolute;
+  left: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 10px;
+  border-radius: 999px;
+  z-index: 2;
+  background: var(--nav-popover-bg);
+  color: var(--nav-popover-fg);
+  border: 1px solid var(--nav-popover-border);
+  box-shadow: var(--nav-popover-shadow);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.global-nav-anchor:hover .global-nav-popover,
+.global-nav-anchor:focus-visible .global-nav-popover {
+  opacity: 1;
+  transform: translateY(-50%) translateX(2px);
 }
 
 .social-links {
@@ -676,11 +701,13 @@ body.is-pulling-refresh .rail::after {
   transition: opacity 0.24s ease, transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+:root[data-grid="hidden"] .grid-overlay,
 body.grid-hidden .grid-overlay {
   opacity: 0;
   visibility: hidden;
 }
 
+:root[data-grid="hidden"] .grid-overlay > span,
 body.grid-hidden .grid-overlay > span {
   opacity: 0;
   transform: translateY(8px) scaleY(0.96);
@@ -1150,7 +1177,6 @@ body.grid-hidden .grid-overlay > span {
 
 .about-home-portrait-frame {
   overflow: hidden;
-  border: 1px solid var(--line);
   border-radius: 36px;
   background: var(--about-surface);
   box-shadow: 0 24px 64px var(--about-shadow);
@@ -1204,124 +1230,12 @@ body.grid-hidden .grid-overlay > span {
   text-wrap: balance;
 }
 
-.colophon-home {
-  margin-top: 168px;
+.about-home-cta {
+  margin: 28px 0 0;
 }
 
-.colophon-home > .rule {
-  width: 100%;
-  margin-bottom: 38px;
-}
-
-.colophon-home-grid {
-  display: grid;
-  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
-  column-gap: var(--grid-gutter);
-  row-gap: 28px;
-  width: 100%;
-  align-items: start;
-}
-
-.colophon-home-heading {
-  position: relative;
-  grid-column: 1 / span 3;
-  display: grid;
-  align-content: start;
-  gap: 22px;
-  min-height: 0;
-  padding-top: 0;
-  padding-right: 12px;
-}
-
-.colophon-home-title {
-  display: block;
-  margin: 0;
-  width: min(352px, 100%);
-}
-
-.colophon-home-title-art {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.colophon-home-title-art text {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 0.8;
-  stroke-dasharray: 6 6;
-  stroke-linecap: round;
-  font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-    "Arial Nova", "Arial", sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-:root[data-theme="light"] .colophon-home-title-art text {
-  stroke: var(--fg);
-}
-
-.colophon-home-copy {
-  grid-column: 4 / span 9;
-  display: grid;
-  align-content: start;
-  padding-top: 0;
-}
-
-.colophon-home-intro {
-  margin: 0;
+.about-home-cta a {
   color: var(--fg);
-  font-size: 17px;
-  line-height: 1.45;
-  font-weight: 400;
-  max-width: none;
-  width: 100%;
-}
-
-.colophon-home-notes {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 40px;
-  row-gap: 28px;
-  align-items: start;
-}
-
-.colophon-home-note {
-  display: block;
-  min-height: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  margin: 0;
-}
-
-.colophon-home-note p {
-  margin: 0;
-}
-
-.colophon-home-note-label {
-  margin-bottom: 10px;
-  color: var(--accent);
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.colophon-home-note p:last-child {
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.45;
-  font-weight: 300;
-}
-
-.colophon-home + .site-footer {
-  margin-top: 336px;
 }
 
 .site-footer {
@@ -2202,7 +2116,7 @@ body.grid-hidden .grid-overlay > span {
     display: none;
   }
 
-  .case-nav,
+  .global-nav,
   .cols-toggle {
     display: none;
   }
@@ -2216,6 +2130,10 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .grid-overlay {
+    display: none;
+  }
+
+  .global-nav-popover {
     display: none;
   }
 
@@ -2300,52 +2218,6 @@ body.grid-hidden .grid-overlay > span {
 
   .about-home-copy .about-home-lead {
     font-size: 24px;
-  }
-
-  .colophon-home {
-    margin-top: 132px;
-  }
-
-  .colophon-home-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 36px;
-    row-gap: 36px;
-  }
-
-  .colophon-home-heading,
-  .colophon-home-copy {
-    grid-column: auto;
-  }
-
-  .colophon-home-heading {
-    padding-top: 0;
-    padding-right: 0;
-    gap: 20px;
-  }
-
-  .colophon-home-title {
-    width: min(320px, 100%);
-  }
-
-  .colophon-home-copy {
-    gap: 0;
-    padding-top: 0;
-  }
-
-  .colophon-home-intro {
-    max-width: none;
-    font-size: 17px;
-    line-height: 1.45;
-  }
-
-  .colophon-home-notes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 32px;
-    row-gap: 24px;
-  }
-
-  .colophon-home + .site-footer {
-    margin-top: 304px;
   }
 
   .case-study-promo-content {
@@ -3171,62 +3043,6 @@ body.grid-hidden .grid-overlay > span {
   .about-home-copy .about-home-lead {
     font-size: 22px;
     line-height: 1.2;
-  }
-
-  .colophon-home {
-    width: var(--mobile-content-width);
-    max-width: var(--mobile-content-width);
-    margin: 60px auto 0;
-  }
-
-  .colophon-home-grid {
-    grid-template-columns: 1fr;
-    row-gap: 26px;
-  }
-
-  .colophon-home-heading,
-  .colophon-home-copy {
-    grid-column: 1;
-  }
-
-  .colophon-home-heading {
-    padding-top: 0;
-    gap: 16px;
-    padding-right: 0;
-  }
-
-  .colophon-home-title {
-    width: min(272px, 100%);
-  }
-
-  .colophon-home-copy {
-    gap: 0;
-    padding-top: 0;
-  }
-
-  .colophon-home-intro {
-    font-size: 16px;
-    line-height: 1.4;
-    max-width: 16ch;
-  }
-
-  .colophon-home-notes {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-    row-gap: 18px;
-  }
-
-  .colophon-home-note {
-    padding: 0;
-  }
-
-  .colophon-home-note p:last-child {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  .colophon-home + .site-footer {
-    margin-top: 208px;
   }
 
   .case-study-promo {
