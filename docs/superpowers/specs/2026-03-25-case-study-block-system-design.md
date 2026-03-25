@@ -29,6 +29,7 @@ Even though phase 1 stays HTML-first, each block should be named and structured 
 - explicit asset references
 
 Human-facing language can stay editorial and design-oriented, but implementation naming should remain stable and machine-friendly.
+For consistency with the intended HTML/CSS naming, internal block type identifiers should use the same hyphenated vocabulary where practical, for example `two-up` alongside `case-study-block-two-up`.
 
 ## Page Architecture
 
@@ -127,8 +128,9 @@ Supported variants:
 
 Notes:
 - Best used for supporting screenshots, detail crops, or secondary examples.
+- On smaller screens, this block should collapse into a normal stacked media-plus-caption treatment rather than trying to preserve a side-by-side relationship with the reading column.
 
-### `two_up`
+### `two-up`
 
 Display/editor label:
 - `2-up`
@@ -155,6 +157,7 @@ Supported variants:
 
 Notes:
 - Includes caption support and should degrade gracefully if JavaScript is unavailable or limited.
+- The default no-JS fallback should render as a first-class static presentation, ideally showing all items in a simple vertical sequence or static grid rather than hiding content behind unavailable controls.
 
 ### `callout`
 
@@ -168,11 +171,16 @@ Supported variants:
 
 ### `results`
 
+Supported variants:
+- closing
+- inline
+
 Purpose:
 - Close or punctuate the story with outcomes, learnings, launch notes, metrics, or related links.
 
 Notes:
-- Can be used once near the end or in shorter form mid-story if needed.
+- `closing` is the default ending block near the bottom of the case study.
+- `inline` is a shorter in-story outcome or checkpoint block when a narrative section needs a compact outcome moment before the final close.
 
 ### `divider`
 
@@ -233,7 +241,7 @@ Each block should have a consistent internal structure so the HTML remains reada
 JavaScript should remain minimal.
 
 - Reuse existing page JS for theme toggle, grid toggle, and shared site behaviors.
-- Add only the smallest necessary interaction support for `carousel` if a static CSS-only treatment is insufficient.
+- Add only the smallest necessary interaction support for `carousel` if a static CSS-only treatment is insufficient; if JS is unavailable, all carousel content should remain visible in a static sequence or grid.
 - Do not introduce a client-side rendering layer or data-driven page assembly in phase 1.
 
 ## Content Portability to a Future CMS
@@ -259,6 +267,7 @@ This does not require implementing JSON or a renderer now. It only means the HTM
 - `work/ai-quota/index.html`
 
 Additional shared assets or lightweight JS may enter scope if the final `carousel` treatment requires them, but the redesign should avoid broad cross-site changes where possible.
+The active branch already contains unrelated in-progress edits outside this spec; implementation should treat files such as `work/ai-quota/index.html` as potentially touched surfaces and avoid reverting or opportunistically reshaping unrelated work.
 
 ## Risks and Guardrails
 
@@ -274,4 +283,5 @@ Additional shared assets or lightweight JS may enter scope if the final `carouse
 - Verify the rail, footer, theme toggle, and grid toggle continue to behave as they do now.
 - Verify new block layouts remain readable and stable on desktop and mobile widths.
 - Verify captions, spacing, and media alignment remain consistent across `full-media`, `aside-media`, `2-up`, and `carousel`.
+- Verify `carousel` degrades acceptably when JavaScript is unavailable, with all critical media still visible in a static sequence or grid.
 - Verify at least one converted case study demonstrates the intended editorial flexibility shown in Figma.
