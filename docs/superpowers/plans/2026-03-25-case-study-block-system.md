@@ -20,9 +20,10 @@
 - [ ] **Step 1: Write the failing structural check script**
 
 Create `scripts/check-case-study-blocks.sh` so it:
-- checks every case-study page for the shared block namespace marker, for example `case-study-story` and `case-study-block`
+- checks the pilot page for the shared block namespace marker, for example `case-study-story` and `case-study-block`
 - checks the pilot page (`work/resy-discovery/index.html`) for the required opening rhythm markers: `case-study-block-hero`, `case-study-block-meta`, `case-study-block-lede`
-- fails if the pilot page still uses the legacy `.work-article-visuals` gallery
+- allows the Resy pilot to remain in a mixed legacy/new state until Task 3 completes
+- allows the non-pilot case-study pages to remain on legacy markup until Task 4 completes
 - prints a short success message such as `case-study block checks passed`
 
 Suggested script shape:
@@ -84,7 +85,7 @@ Run:
 ./scripts/check-case-study-blocks.sh
 ```
 
-Expected: PASS for the new Resy skeleton, while the script still allows the other pages to remain on legacy markup until later migration steps.
+Expected: PASS for the new Resy skeleton, even though the pilot page may still contain legacy body sections until Task 3 and the other case-study pages remain on legacy markup until Task 4.
 
 - [ ] **Step 5: Commit the pilot guardrails**
 
@@ -92,7 +93,7 @@ Run:
 
 ```bash
 git add scripts/check-case-study-blocks.sh work/resy-discovery/index.html
-git commit -m "feat: scaffold case study block system"
+git commit -m "chore: scaffold case study block system"
 ```
 
 Expected: a commit containing the verification script and the Resy pilot skeleton only.
@@ -185,7 +186,7 @@ Expected:
 Refactor [work/resy-discovery/index.html](/Users/niederme/~Repos/nieder.me/work/resy-discovery/index.html) so it demonstrates the intended system:
 - keep the existing hero/media asset sources
 - add a stronger lede block
-- convert the narrative into a mix of `text`, `full-media`, `aside-media`, `two-up`, and `results`
+- convert the narrative into a mix of `text`, `full-media`, at least one explicit `aside-media`, `two-up`, and `results`
 - remove the old `.work-article-section` + `.work-article-visuals` pattern from the pilot page
 
 Target outcome:
@@ -267,6 +268,7 @@ Recommended composition:
 - lede
 - text
 - full-media
+- aside-media if one of the supporting screenshots benefits from an inset treatment instead of a full-width block
 - callout or inline results
 - carousel or two-up if the image sequence benefits from grouping
 
@@ -286,7 +288,7 @@ Refactor [work/ai-quota/index.html](/Users/niederme/~Repos/nieder.me/work/ai-quo
 
 Guardrail:
 - inspect `git status --short work/ai-quota/index.html` immediately before editing
-- if the file has unexpected user changes at implementation time, stop and reconcile before continuing
+- if the file has unexpected user changes at implementation time, stop and reconcile before continuing by either merging that unrelated work first or explicitly skipping AIQuota for the current rollout and noting the deferral in the handoff
 
 - [ ] **Step 4: Expand the structural check to cover all migrated pages, then run it**
 
@@ -334,6 +336,7 @@ Update every page that loads the changed shared assets so:
 - `main.js?v=...` receives a new version token if the carousel enhancement shipped
 
 Do not rewrite unrelated HTML while touching these files. Limit edits to the asset URLs unless a real regression is found.
+This scope intentionally includes `/work/`, `/about/`, `/colophon/`, and `/styleguide/` because they currently reference the same shared stylesheet and JS assets as the case-study pages.
 
 - [ ] **Step 2: Verify non-case-study pages that share the stylesheet**
 
@@ -351,6 +354,7 @@ Manual checks:
 - the work index grid still aligns
 - About and Colophon spacing does not regress
 - the styleguide still loads the updated assets
+- `/about/` and `/work/` show no console errors or broken interactions from the shared `main.js` carousel enhancement path
 
 - [ ] **Step 3: Re-run the structural check and a clean git diff review**
 
@@ -358,12 +362,13 @@ Run:
 
 ```bash
 ./scripts/check-case-study-blocks.sh
-git diff --stat HEAD~4..HEAD
+BRANCH_BASE=$(git merge-base HEAD main)
+git diff --stat "$BRANCH_BASE"..HEAD
 ```
 
 Expected:
 - the structural check passes
-- the diff stat is limited to the planned CSS, JS, script, and case-study/shared asset-link files
+- the diff stat is limited to the planned CSS, JS, script, and case-study/shared asset-link files relative to the feature branch base
 
 - [ ] **Step 4: Commit the cache-bust and shared-surface verification pass**
 
