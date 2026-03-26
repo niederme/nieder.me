@@ -233,10 +233,6 @@ body.work-theme-aiquota {
   pointer-events: none;
 }
 
-body.is-pulling-refresh .rail::after {
-  opacity: 0;
-}
-
 .logo-mark {
   position: fixed;
   left: 43.5px;
