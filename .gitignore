@@ -1,4 +1,5 @@
 .worktrees/
+.superpowers/
 _scss/.sass-cache/**/*
 _PSDs/*
 _PSDs/**/*

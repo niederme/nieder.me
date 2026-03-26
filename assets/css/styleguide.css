@@ -442,6 +442,22 @@
 
 .styleguide-element-body a {
   color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: transparent;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.styleguide-element-body a:visited {
+  color: var(--accent);
+}
+
+.styleguide-element-body a:hover,
+.styleguide-element-body a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--text-link-underline);
 }
 
 .styleguide-element-caption {

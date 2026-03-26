@@ -13,6 +13,15 @@ PUBLIC_PAGES = [
     ROOT / "work" / "somm-ai" / "index.html",
     ROOT / "work" / "ai-quota" / "index.html",
 ]
+WORK_SHELL_PAGES = [
+    ROOT / "about" / "index.html",
+    ROOT / "colophon" / "index.html",
+    ROOT / "work" / "index.html",
+    ROOT / "work" / "resy-discovery" / "index.html",
+    ROOT / "work" / "sendmoi" / "index.html",
+    ROOT / "work" / "somm-ai" / "index.html",
+    ROOT / "work" / "ai-quota" / "index.html",
+]
 COLOPHON_ICONS = [
     ROOT / "assets" / "icons" / "side-nav" / "icon-colophon-off.svg",
     ROOT / "assets" / "icons" / "side-nav" / "icon-colophon-on.svg",
@@ -30,6 +39,10 @@ REQUIRED_BOOTSTRAP_TOKENS = [
     "nieder.theme",
     "nieder.cols-grid-visible",
     "document.documentElement.dataset.grid",
+]
+REQUIRED_WORK_SHELL_MOBILE_LOGO_TOKENS = [
+    'class="mobile-logo-link',
+    'class="mobile-logo-mark"',
 ]
 REQUIRED_FILE_TOKENS = {
     ROOT / "assets" / "js" / "main.js": [
@@ -49,6 +62,8 @@ REQUIRED_FILE_TOKENS = {
         ':root[data-grid="hidden"] .work-grid-overlay',
         "--nav-popover-bg:",
         "--nav-popover-fg:",
+        ".mobile-logo-link",
+        ".mobile-logo-mark",
     ],
 }
 
@@ -77,6 +92,11 @@ for page in existing_pages:
         if token not in html:
             print(f"missing bootstrap token {token!r} in {page.relative_to(ROOT)}")
             sys.exit(1)
+    if page in WORK_SHELL_PAGES:
+        for token in REQUIRED_WORK_SHELL_MOBILE_LOGO_TOKENS:
+            if token not in html:
+                print(f"missing work-shell mobile logo token {token!r} in {page.relative_to(ROOT)}")
+                sys.exit(1)
 
 for path, tokens in REQUIRED_FILE_TOKENS.items():
     contents = path.read_text()

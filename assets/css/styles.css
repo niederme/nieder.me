@@ -21,6 +21,7 @@
   --footer-meta: #8e8f98;
   --footer-heading: #8e8f98;
   --footer-link-underline: rgba(255, 255, 255, 0.92);
+  --text-link-underline: rgba(255, 69, 58, 0.58);
   --about-surface: #111111;
   --about-shadow: rgba(0, 0, 0, 0.32);
   --colophon-surface: #121212;
@@ -176,6 +177,34 @@ a:visited {
 
 a:focus-visible {
   color: var(--accent-hover);
+}
+
+.text-link,
+.topper-company-link,
+.experience-item .experience-company a,
+.experience-bullets a {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: transparent;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.text-link:visited,
+.topper-company-link:visited,
+.experience-item .experience-company a:visited,
+.experience-bullets a:visited {
+  color: var(--accent);
+}
+
+.text-link:focus-visible,
+.topper-company-link:focus-visible,
+.experience-item .experience-company a:focus-visible,
+.experience-bullets a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--text-link-underline);
 }
 
 .logo-link,
@@ -816,19 +845,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .topper-company-link {
-  display: inline-block;
-  color: var(--accent);
   font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  line-height: 1.2;
-  padding-bottom: 0;
-  transition: border-color 0.18s ease;
-}
-
-.topper-company-link:focus-visible {
-  color: var(--accent);
-  border-bottom-color: rgba(255, 69, 58, 0.65);
 }
 
 .job-header {
@@ -937,18 +954,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .experience-item .experience-company a {
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  line-height: 1.2;
-  padding-bottom: 0;
-  transition: border-color 0.18s ease;
-}
-
-.experience-item .experience-company a:focus-visible {
-  color: inherit;
-  border-bottom-color: rgba(255, 69, 58, 0.65);
+  color: var(--accent);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -956,14 +962,16 @@ body.grid-hidden .grid-overlay > span {
     color: var(--accent-hover);
   }
 
+  .text-link:hover,
   .topper-company-link:hover {
     color: var(--accent);
-    border-bottom-color: rgba(255, 69, 58, 0.65);
+    text-decoration-color: var(--text-link-underline);
   }
 
-  .experience-item .experience-company a:hover {
-    color: inherit;
-    border-bottom-color: rgba(255, 69, 58, 0.65);
+  .experience-item .experience-company a:hover,
+  .experience-bullets a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--text-link-underline);
   }
 
   .resume-link:hover {
@@ -978,6 +986,19 @@ body.grid-hidden .grid-overlay > span {
 .experience-item .experience-date {
   margin-top: 2px;
   margin-bottom: 12px;
+}
+
+.experience-bullets {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.experience-bullets li + li {
+  margin-top: 10px;
+}
+
+.experience-bullets strong {
+  font-weight: 700;
 }
 
 .experience-item-current h4 {
@@ -2569,7 +2590,6 @@ body.grid-hidden .grid-overlay > span {
   body {
     overscroll-behavior-x: none;
     overscroll-behavior-y: contain;
-    touch-action: pan-y;
   }
 
   .content {
@@ -2823,7 +2843,6 @@ body.grid-hidden .grid-overlay > span {
   body {
     overscroll-behavior-x: none;
     overscroll-behavior-y: contain;
-    touch-action: pan-y;
   }
 
   .content {
