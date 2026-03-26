@@ -612,6 +612,22 @@ a:focus-visible {
   position: relative;
 }
 
+.work-index-page .work-article {
+  --work-index-top-mask-height: 134px;
+}
+
+.work-index-page .work-article::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--work-index-top-mask-height);
+  background: var(--bg);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .work-grid-overlay {
   position: absolute;
   inset: 0;
@@ -1298,6 +1314,9 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 @media (min-width: 960px) and (max-width: 1500px) {
+  .work-index-page .work-article {
+    --work-index-top-mask-height: 106px;
+  }
   .work-article {
     width: calc(100vw - 200px);
     max-width: none;
@@ -1440,6 +1459,10 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 @media (max-width: 700px) {
+  .work-index-page .work-article {
+    --work-index-top-mask-height: 78px;
+  }
+
   .work-article {
     width: calc(100vw - 24px);
     padding-top: 20px;
