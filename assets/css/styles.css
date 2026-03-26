@@ -708,8 +708,14 @@ body.is-pulling-refresh .rail::after {
 
   /* icon-hover is present in DOM for structural parity with .global-nav-anchor
      but intentionally has no :hover rule — iOS produces sticky hover after tap */
-  .mobile-nav-anchor .icon-off   { opacity: 1; transition: opacity 0.18s ease; }
-  .mobile-nav-anchor .icon-on    { position: absolute; opacity: 0; transition: opacity 0.18s ease; }
+  .mobile-nav-anchor .icon-off,
+  .mobile-nav-anchor .icon-on {
+    filter: var(--nav-icon-filter);
+    transition: opacity 0.18s ease, filter 0.22s ease;
+  }
+
+  .mobile-nav-anchor .icon-off   { opacity: 1; }
+  .mobile-nav-anchor .icon-on    { position: absolute; opacity: 0; }
   .mobile-nav-anchor .icon-hover { position: absolute; opacity: 0; }
 
   .mobile-nav-anchor.is-active .icon-off { opacity: 0; }
