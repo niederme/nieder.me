@@ -57,6 +57,31 @@ Inside the shell, the case-study content becomes an ordered sequence of reusable
 
 After that opening system, the body should be assembled from text, media, and callout blocks as needed.
 
+### 3. Bottom recirculation
+
+After the story body closes and before the site footer begins, each case study should include a dedicated recirculation surface.
+
+This is not the same thing as reusing the full `/work` index card grid. The purpose here is not to restart browsing; it is to keep momentum after a reader finishes one story and offer one clear step backward and one clear step forward.
+
+The recirculation surface should:
+
+- present two large visual promos:
+  - `Previous case study`
+  - `Next case study`
+- reuse the same image, eyebrow, title, and CTA language family as the `/work` case-study promos so the site feels coherent
+- keep the entire promo clickable
+- include one small tertiary link such as `See all case studies`
+- stack vertically on smaller screens
+
+For phase 1, the ordering should be fixed and editorial rather than algorithmic. The default sequence should be:
+
+1. `Resy Discovery`
+2. `SendMoi`
+3. `Somm AI`
+4. `AIQuota`
+
+At the ends of the sequence, the pattern should stop cleanly rather than wrap around. That means the first case study omits `Previous case study`, and the last case study omits `Next case study`.
+
 ## Block Library
 
 The first-pass library should stay intentionally small.
@@ -234,6 +259,7 @@ Each block should have a consistent internal structure so the HTML remains reada
 - Preserve the site's current typography, dark/light mode behavior, rail spacing, and overall visual language.
 - Add responsive layouts that preserve the editorial feel from the Figma frame while collapsing cleanly on smaller screens.
 - Ensure all media blocks share consistent caption, spacing, and alignment rules.
+- Add a dedicated recirculation module near the footer that feels visually larger and more directional than the `/work` index cards, while still reusing the same promo language.
 - Avoid introducing styling patterns that only work for one case study.
 
 ## JavaScript Strategy

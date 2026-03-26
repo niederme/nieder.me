@@ -4,7 +4,7 @@
 
 **Goal:** Replace the fixed case-study article template with a reusable block-based system that supports varied editorial layouts, lightweight carousel behavior, and future CMS-friendly structure without introducing a new framework or CMS.
 
-**Architecture:** Keep the existing static page shell and shared rail/footer behaviors intact, then refactor the case-study story surface into a semantic block namespace inside `assets/css/work-case-study.css` and the four `work/<slug>/index.html` pages. Use Resy as the canonical pilot because the approved Figma pattern already describes that story, then migrate the other case studies onto the same block vocabulary once the CSS and optional carousel enhancement are stable.
+**Architecture:** Keep the existing static page shell and shared rail/footer behaviors intact, then refactor the case-study story surface into a semantic block namespace inside `assets/css/work-case-study.css` and the four `work/<slug>/index.html` pages. Use Resy as the canonical pilot because the approved Figma pattern already describes that story, then migrate the other case studies onto the same block vocabulary once the CSS and optional carousel enhancement are stable. After the story body is stable, add a dedicated bottom recirculation surface with previous/next promos and a tertiary `See all case studies` link.
 
 **Tech Stack:** Static HTML, shared CSS in `assets/css/work-case-study.css`, shared vanilla JS in `assets/js/main.js`, shell-based structural checks, `make dev-thread` / `make dev-live-thread` preview workflow.
 
@@ -316,7 +316,76 @@ git commit -m "feat: migrate case studies to shared block layout"
 
 Expected: a single commit covering the non-pilot case-study migrations and the stricter structural check.
 
-### Task 5: Cache-Busting And Regression Verification Across Shared Consumers
+### Task 5: Add Case-Study Recirculation
+
+**Files:**
+- Modify: `assets/css/work-case-study.css`
+- Modify: `work/resy-discovery/index.html`
+- Modify: `work/sendmoi/index.html`
+- Modify: `work/somm-ai/index.html`
+- Modify: `work/ai-quota/index.html`
+- Test: `scripts/check-case-study-blocks.sh`
+
+- [ ] **Step 1: Add a recirculation guardrail to the check script**
+
+Update `scripts/check-case-study-blocks.sh` so all case-study pages must include:
+- a shared recirculation wrapper such as `case-study-recirculation`
+- at least one recirculation promo link
+- a `See all case studies` link
+
+Expected:
+- the check fails before the markup and CSS land
+
+- [ ] **Step 2: Build the shared recirculation styles**
+
+Extend [assets/css/work-case-study.css](/Users/niederme/~Repos/nieder.me/assets/css/work-case-study.css) with a dedicated recirculation module that:
+- sits between the story close and the footer
+- reuses the visual language of the `/work` case-study promos without simply duplicating the full work-index block
+- supports two large visual promos on desktop and stacked promos on mobile
+- supports optional `previous` or `next` omission at the ends of the sequence
+- includes a low-emphasis `See all case studies` link
+
+- [ ] **Step 3: Add recirculation markup to all four case studies**
+
+Add a `case-study-recirculation` section to each case study with a fixed editorial order:
+1. `Resy Discovery`
+2. `SendMoi`
+3. `Somm AI`
+4. `AIQuota`
+
+Requirements:
+- first page omits `Previous case study`
+- last page omits `Next case study`
+- intermediate pages show both
+- each promo uses project-specific imagery, eyebrow, title, and directional label
+
+- [ ] **Step 4: Re-run the structural check and verify visually**
+
+Run:
+
+```bash
+./scripts/check-case-study-blocks.sh
+make dev-thread
+```
+
+Manual checks:
+- recirculation appears above the footer on every case study
+- direction labels are correct for each page
+- desktop layout feels like an editorial continuation, not a mini `/work` index reset
+- mobile layout stacks cleanly
+
+- [ ] **Step 5: Commit the recirculation surface**
+
+Run:
+
+```bash
+git add assets/css/work-case-study.css scripts/check-case-study-blocks.sh work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html
+git commit -m "feat: add case study recirculation promos"
+```
+
+Expected: a single commit containing the shared recirculation system and page wiring.
+
+### Task 6: Cache-Busting And Regression Verification Across Shared Consumers
 
 **Files:**
 - Modify: `work/resy-discovery/index.html:33,286`
