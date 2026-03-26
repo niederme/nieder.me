@@ -1,37 +1,35 @@
 # Handoff
 
 ## Branch
-- `codex/fix-work-case-study-sizing`
+- `codex/ipad-nav-hover`
 
 ## Current Focus
-- Fix the `/work` case-study grid regression where longer card headlines caused only one column to grow and pushed the lower-right card out of row alignment.
+- Fix iPad interaction and layout regressions after the shared global rail navigation landed on the 2026 site.
 
 ## Tracking
-- GitHub issue `#71` tracks the `/work` case-study sizing and alignment fix.
+- GitHub issue `#74` tracks the sticky iPad hover state on the left/global rail navigation.
 
 ## What Changed
-- Updated `assets/css/work-case-study.css` so the desktop case-study section uses a true two-by-two grid with row gaps, instead of two independent vertical columns.
-- Preserved the intended Figma card sizing while making row alignment stable even when one case-study headline wraps to an extra line.
-- Bumped the shared `work-case-study.css` cache-busting query param to `20260320-006` in:
-  - `work/index.html`
-  - `work/resy-discovery/index.html`
-  - `work/sendmoi/index.html`
-  - `work/somm-ai/index.html`
-  - `work/ai-quota/index.html`
-- Reviewed `README.md`; it remains accurate and did not require changes for this fix.
+- Updated shared rail hover behavior in `assets/css/styles.css` and `assets/css/work-case-study.css` so hover-only icon art and rail popovers appear only on hover-capable pointers.
+- Preserved `:focus-visible` behavior for keyboard users so the rail still exposes clear focus states on desktop.
+- Added a compact desktop `/work` layout range for `960px` to `1500px` in `assets/css/work-case-study.css` so iPad landscape widths keep the new global rail visible while shifting and tightening the content grid beside it.
+- Narrowed the dated resume column spacing and widened the case-study section flow in that compact range to avoid the overlapping/oversized layout shown on iPad.
+- Reviewed `README.md`; it remains accurate after rebasing onto `origin/main` and did not need branch-specific updates.
 
 ## Verification
 - `git diff --check`
-- Preview `/work/` locally and confirm that the AIQuota card stays aligned with the Somm AI card even when the SendMoi headline wraps.
+- Playwright check at `1194x834` on `/work/` confirming the global rail is visible and content starts to the right of it.
+- Manual preview server on LAN via `make dev PORT=7777`
 
 ## Open Items
-- Open the PR with `Closes #71`.
+- PR `#75` should include `Closes #74` in the body.
+- Validate on physical iPad that the rail no longer sticks in hover state and `/work/` reads cleanly in landscape.
 
 ## Resume Checklist
 1. `git branch --show-current`
 2. `git status --short --branch`
 3. Review `README.md` and `HANDOFF.md`
 4. Run `git diff --check`
-5. Preview `/work/`
-6. Push `codex/fix-work-case-study-sizing`
-7. Open the PR with `Closes #71`
+5. Preview `/work/` and home on iPad or iPad-sized viewport
+6. Push `codex/ipad-nav-hover`
+7. Update PR `#75` with `Closes #74`
