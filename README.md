@@ -130,7 +130,7 @@ The deploy script:
 - stages a temporary copy of `index.html` and `assets/`
 - includes `work/` when present
 - rewrites the staged homepage site URL
-- cache-busts staged homepage CSS and JS asset URLs
+- cache-busts staged CSS and JS asset URLs across the staged HTML files, including the work-family pages
 - syncs only the managed staged paths to the remote target
 
 Important default deploy settings live inside `scripts/deploy-2026.sh` and can be overridden with environment variables:
