@@ -1,7 +1,7 @@
 const logoMarks = Array.from(document.querySelectorAll(".logo-mark, .mobile-logo-mark"));
 const topLogoLinks = Array.from(
   document.querySelectorAll(
-    '.logo-link[href="#top"], .mobile-logo-link[href="#top"], .styleguide-top-anchor[href="#top"], .global-nav-anchor[href="#top"]'
+    '.logo-link[href="#top"], .mobile-logo-link[href="#top"], .styleguide-top-anchor[href="#top"], .global-nav-anchor[href="#top"], .mobile-nav-anchor[href="#top"]'
   )
 );
 const themeToggles = Array.from(document.querySelectorAll(".theme-toggle"));
@@ -403,74 +403,6 @@ if (logoMarks.length > 0) {
   );
 }
 
-{
-  const pageDotGroups = Array.from(
-    document.querySelectorAll(".mobile-page-dots[data-scroll-target]")
-  );
-
-  pageDotGroups.forEach((dotGroup) => {
-    const selector = dotGroup.dataset.scrollTarget;
-    if (!selector) return;
-
-    const scroller = document.querySelector(selector);
-    if (!scroller) return;
-
-    const items = Array.from(scroller.children).filter(
-      (child) => child instanceof HTMLElement
-    );
-    if (items.length < 2) return;
-
-    const dots = items.map((_, index) => {
-      const dot = document.createElement("span");
-      dot.className = "mobile-page-dots-dot";
-      if (index === 0) dot.classList.add("is-active");
-      dot.setAttribute("aria-hidden", "true");
-      dotGroup.appendChild(dot);
-      return dot;
-    });
-    dotGroup.classList.add("has-dots");
-
-    const updateActiveDot = () => {
-      const scrollerRect = scroller.getBoundingClientRect();
-      let activeIndex = 0;
-      let bestDistance = Number.POSITIVE_INFINITY;
-
-      items.forEach((item, index) => {
-        const distance = Math.abs(
-          item.getBoundingClientRect().left - scrollerRect.left
-        );
-        if (distance < bestDistance) {
-          bestDistance = distance;
-          activeIndex = index;
-        }
-      });
-
-      dots.forEach((dot, index) => {
-        dot.classList.toggle("is-active", index === activeIndex);
-      });
-    };
-
-    let dotTicking = false;
-    const queueDotUpdate = () => {
-      if (dotTicking) return;
-      dotTicking = true;
-      window.requestAnimationFrame(() => {
-        updateActiveDot();
-        dotTicking = false;
-      });
-    };
-
-    scroller.addEventListener("scroll", queueDotUpdate, { passive: true });
-    window.addEventListener("resize", queueDotUpdate);
-    window.addEventListener("pageshow", () => {
-      scroller.scrollLeft = 0;
-      queueDotUpdate();
-    });
-    scroller.scrollLeft = 0;
-    queueDotUpdate();
-  });
-}
-
 const visualCarousels = Array.from(document.querySelectorAll(".case-visual[data-carousel]"));
 const lightbox = document.querySelector(".lightbox");
 
@@ -779,5 +711,16 @@ if (visualCarousels.length > 0) {
       if (event.key === "ArrowLeft" && !lbPrev?.disabled) lbPrev?.click();
       if (event.key === "ArrowRight" && !lbNext?.disabled) lbNext?.click();
     });
+  }
+}
+
+// Mobile nav sentinel — adds .is-locked when nav sticks to top (homepage only)
+{
+  const mobileNavSentinel = document.querySelector('.mobile-nav-sentinel');
+  const mobileNav = document.querySelector('.mobile-nav');
+  if (mobileNavSentinel && mobileNav) {
+    new IntersectionObserver(([entry]) => {
+      mobileNav.classList.toggle('is-locked', !entry.isIntersecting);
+    }).observe(mobileNavSentinel);
   }
 }
