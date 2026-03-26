@@ -634,28 +634,104 @@ body.is-pulling-refresh .rail::after {
   transition: filter 0.22s ease;
 }
 
-.mobile-page-dots {
+/* Mobile nav */
+.mobile-nav {
   display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 8px 0;
 }
 
-.mobile-page-dots-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--fg);
-  opacity: 0.3;
-  transition: opacity 0.2s ease;
+.mobile-nav-sentinel {
+  display: none;
 }
 
-.mobile-page-dots-dot.is-active {
-  opacity: 1;
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+    align-items: stretch;
+    position: sticky;
+    top: 0;
+    z-index: 26;
+    height: 56px;
+    width: 100%;
+    background: var(--bg);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav.is-locked {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="light"] .mobile-nav.is-locked {
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-nav-sentinel {
+    display: block;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .is-subpage .mobile-nav {
+    position: fixed;
+    top: var(--safe-top, 0);
+    left: 0;
+    right: 0;
+  }
+
+  .is-subpage .work-page {
+    padding-top: calc(56px + var(--safe-top, 0));
+  }
+
+  .mobile-nav-anchor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+
+  [data-theme="light"] .mobile-nav-anchor {
+    border-right-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-nav-anchor img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  /* icon-hover is present in DOM for structural parity with .global-nav-anchor
+     but intentionally has no :hover rule — iOS produces sticky hover after tap */
+  .mobile-nav-anchor .icon-off   { opacity: 1; transition: opacity 0.18s ease; }
+  .mobile-nav-anchor .icon-on    { position: absolute; opacity: 0; transition: opacity 0.18s ease; }
+  .mobile-nav-anchor .icon-hover { position: absolute; opacity: 0; }
+
+  .mobile-nav-anchor.is-active .icon-off { opacity: 0; }
+  .mobile-nav-anchor.is-active .icon-on  { opacity: 1; }
+
+  .mobile-nav-label {
+    font-size: 9px;
+    opacity: 0.45;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .mobile-nav-anchor.is-active .mobile-nav-label {
+    opacity: 1;
+  }
+
+  .mobile-nav-toggles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+  }
 }
 
 .case-visual-page-dots {
@@ -2642,11 +2718,6 @@ body.grid-hidden .grid-overlay > span {
     margin-bottom: 30px;
   }
 
-  .mobile-page-dots,
-  .mobile-page-dots.has-dots {
-    display: none;
-  }
-
   .topper-columns {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2909,33 +2980,6 @@ body.grid-hidden .grid-overlay > span {
 
   .topper h2 {
     margin-bottom: 70px;
-  }
-
-  .mobile-page-dots {
-    display: none;
-    height: 44px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    box-sizing: border-box;
-  }
-
-  .mobile-page-dots.has-dots {
-    display: flex;
-  }
-
-  .mobile-page-dots-topper {
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
-
-  .mobile-page-dots-experience {
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
-
-  .mobile-page-dots-strategy {
-    margin-top: 8px;
-    margin-bottom: 0;
   }
 
   .topper-columns {
