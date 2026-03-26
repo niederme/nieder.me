@@ -32,15 +32,13 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260326-001" />
   </head>
-  <body id="top" class="work-theme-aiquota">
+  <body id="top" class="case-study-page work-theme-aiquota">
     <div class="work-page">
-      <aside class="rail">
-        <a class="logo-link" href="../../" aria-label="Back to homepage">
-          <img class="logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
-        </a>
-      </aside>
+      <a class="logo-link case-study-logo-link" href="../../" aria-label="Back to homepage">
+        <img class="logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
+      </a>
 
-      <nav class="global-nav" aria-label="Primary navigation">
+      <nav class="global-nav case-study-side-nav" aria-label="Primary navigation">
         <a class="global-nav-anchor" href="../../" aria-label="Back to homepage">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-back-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-back-on.svg" alt="" />
@@ -84,152 +82,233 @@
           <span></span><span></span><span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
+        <a class="mobile-logo-link" href="../../" aria-label="Back to homepage">
+          <img class="mobile-logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
 
-        <section class="work-article-hero" aria-labelledby="aiquota-title">
-          <div class="work-article-hero-content">
-            <img class="work-article-logo" src="../../assets/images/case-studies/ai-quota/logo.png" alt="AIQuota" />
-            <p class="work-article-eyebrow">AIQuota for macOS</p>
-            <h1 id="aiquota-title">Making AI Coding Quotas Glanceable</h1>
-          </div>
-        </section>
-
-        <section class="work-article-grid">
-          <aside class="work-article-meta" aria-label="Project metadata">
-            <div class="work-article-meta-card">
-              <p class="work-article-meta-label">Role</p>
-              <p class="work-article-meta-value">Indie Product Designer / Engineer</p>
+        <div class="case-study-story">
+          <section class="work-article-hero case-study-block case-study-block-hero" aria-labelledby="aiquota-title">
+            <div class="work-article-hero-content case-study-block-inner">
+              <img class="work-article-logo" src="../../assets/images/case-studies/ai-quota/logo.png" alt="AIQuota" />
+              <p class="work-article-eyebrow">AIQuota for macOS</p>
+              <h1 id="aiquota-title">Making AI Coding Quotas Glanceable</h1>
             </div>
-            <div class="work-article-meta-card">
-              <p class="work-article-meta-label">Organization</p>
-              <p class="work-article-meta-value">AIQuota</p>
-            </div>
-            <div class="work-article-meta-card">
-              <p class="work-article-meta-label">Timeframe</p>
-              <p class="work-article-meta-value">March 2026 – Present</p>
-            </div>
-            <div class="work-article-meta-card">
-              <p class="work-article-meta-label">Status</p>
-              <p class="work-article-meta-value">Shipped, open source, actively iterating</p>
-            </div>
-            <div class="work-article-meta-card">
-              <p class="work-article-meta-label">Platforms</p>
-              <p class="work-article-meta-value">macOS menu bar app, widgets, settings utility</p>
-            </div>
-          </aside>
+          </section>
 
-          <article class="work-article-body">
-            <section class="work-article-section">
-              <h2>Context</h2>
-              <p>
-                AI-assisted coding became part of my daily workflow quickly, but the feedback loop around usage stayed oddly
-                primitive. Codex and Claude Code both meter access in ways that matter when you are mid-session, yet checking
-                that state usually means leaving your editor, opening a browser, and translating two very different quota
-                models by hand.
-              </p>
-              <p>
-                AIQuota started as a focused native utility idea: put the answer in the menu bar, make it understandable in a
-                glance, and keep setup lightweight enough that it feels like part of macOS rather than another dashboard.
-              </p>
-            </section>
-
-            <section class="work-article-section">
-              <h2>Challenge</h2>
-              <p>
-                The hard part was not just fetching data. OpenAI and Anthropic expose usage differently, with different
-                windows, terminology, and edge cases. Codex leans on a weekly cap plus approximate message counts, while
-                Claude mixes a 5-hour rate window, a 7-day allowance, and Max-plan overflow credits.
-              </p>
-              <p>
-                The product had to normalize those differences without flattening away useful nuance. It also had to feel
-                trustworthy: browser-based sign-in, secure token storage, resilient refresh behavior, clear reset timing, and
-                notification thresholds all shape whether a utility like this feels dependable or disposable.
-              </p>
-            </section>
-
-            <section class="work-article-section">
-              <h2>Strategy</h2>
-              <ul>
-                <li>
-                  <strong>Menu bar first:</strong> treated quota as ambient system state, not a destination product surface,
-                  with a gauge icon that answers the core question before the popover is even opened.
-                </li>
-                <li>
-                  <strong>Shared visual grammar:</strong> used dual-arc gauges, plan badges, credits, and reset labels to
-                  make unlike provider models feel coherent while still preserving service-specific details.
-                </li>
-                <li>
-                  <strong>Low-friction authentication:</strong> signed in through existing ChatGPT and Claude browser sessions,
-                  then stored the resulting state securely in Keychain so users did not have to manage API keys or custom auth
-                  flows.
-                </li>
-                <li>
-                  <strong>Trust details over feature sprawl:</strong> added widgets, network recovery, threshold-based
-                  notifications, and silent auto-update behavior so the product behaved more like a calm utility than a noisy
-                  monitoring app.
-                </li>
-              </ul>
-            </section>
-
-            <section class="work-article-section">
-              <h2>Outcome</h2>
-              <p>
-                AIQuota shipped quickly as a notarized macOS app with menu bar monitoring, widgets, notifications, and support
-                for both Codex and Claude Code. The current release is available as an
-                <a href="https://github.com/niederme/ai-quota" target="_blank" rel="noopener noreferrer">open-source GitHub project</a>
-                with downloadable desktop builds, and it continues to evolve through small polish passes that improve clarity
-                rather than expanding scope for its own sake.
-              </p>
-              <p>
-                More importantly, the project validated a product pattern I care about: as AI tools become everyday
-                infrastructure, a whole layer of adjacent workflow problems appears around them. Some of the best opportunities
-                are not bigger assistants, but thinner native utilities that remove friction around the edges.
-              </p>
-            </section>
-
-            <section class="work-article-section">
-              <h2>Key Learnings</h2>
-              <p>
-                Small utilities still require strong product judgment. The right answer was not maximum detail or a billing
-                dashboard; it was a calm, legible answer to “am I safe to keep going?” Choosing what not to show was as
-                important as the network and auth work underneath it.
-              </p>
-              <p>
-                AIQuota also reinforced how quickly AI-adjacent products can move when the brief is narrow and the trust
-                details are taken seriously. Much of the iteration happened in the last ten percent: arc hierarchy, reset
-                language, widget sync, and recovery behavior all mattered more than any single flashy feature.
-              </p>
-            </section>
-
-            <section class="work-article-section">
-              <h2>Visuals</h2>
-              <div class="work-article-visuals">
-                <figure>
-                  <img
-                    src="../../assets/images/case-studies/ai-quota/widget-screenshot.png"
-                    alt="AIQuota macOS widgets showing Codex and Claude Code quota states side by side."
-                    loading="lazy"
-                  />
-                  <figcaption>The latest widget set makes both the 5-hour and 7-day windows readable at a glance, whether you want a combined view or a single-service focus.</figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src="../../assets/images/case-studies/ai-quota/screenshot.png"
-                    alt="AIQuota menu bar popover showing Codex and Claude Code quota cards with reset timing and account details."
-                    loading="lazy"
-                  />
-                  <figcaption>The current popover keeps the 5h and 7-day legend visible while summarizing credits, plan state, reset timing, and freshness in one compact surface.</figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src="../../assets/images/case-studies/ai-quota/near-limit-screenshot.png"
-                    alt="AIQuota menu bar popover showing Claude Code nearing its 5-hour limit with the gauge shifted to amber."
-                    loading="lazy"
-                  />
-                  <figcaption>As usage approaches the limit, the gauge shifts from purple to amber, making the status change legible before the quota is actually hit.</figcaption>
-                </figure>
+          <section class="work-article-grid">
+            <aside class="work-article-meta case-study-block case-study-block-meta" aria-label="Project metadata">
+              <div class="case-study-block-inner">
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Role</p>
+                  <p class="work-article-meta-value">Indie Product Designer / Engineer</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Organization</p>
+                  <p class="work-article-meta-value">AIQuota</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Timeframe</p>
+                  <p class="work-article-meta-value">March 2026 – Present</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Status</p>
+                  <p class="work-article-meta-value">Shipped, open source, actively iterating</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Platforms</p>
+                  <p class="work-article-meta-value">macOS menu bar app, widgets, settings utility</p>
+                </div>
               </div>
-            </section>
-          </article>
+            </aside>
+
+            <article class="work-article-body">
+              <section class="case-study-block case-study-block-lede">
+                <div class="case-study-block-inner">
+                  <p class="case-study-lede">
+                    AI-assisted coding became part of my daily workflow quickly, but the feedback loop around usage stayed
+                    oddly primitive.
+                  </p>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-text">
+                <div class="case-study-block-inner">
+                  <h2>Context</h2>
+                  <p>
+                    Codex and Claude Code both meter access in ways that matter when you are mid-session, yet checking that
+                    state usually means leaving your editor, opening a browser, and translating two very different quota
+                    models by hand.
+                  </p>
+                  <p>
+                    AIQuota started as a focused native utility idea: put the answer in the menu bar, make it
+                    understandable in a glance, and keep setup lightweight enough that it feels like part of macOS rather
+                    than another dashboard.
+                  </p>
+                </div>
+              </section>
+
+              <section class="case-study-block case-study-block-full-media">
+                <div class="case-study-block-inner">
+                  <figure class="case-study-figure">
+                    <div class="case-study-media">
+                      <img
+                        src="../../assets/images/case-studies/ai-quota/screenshot.png"
+                        alt="AIQuota menu bar popover showing Codex and Claude Code quota cards with reset timing and account details."
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption class="case-study-caption">
+                      The current popover keeps the 5h and 7-day legend visible while summarizing credits, plan state,
+                      reset timing, and freshness in one compact surface.
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-text">
+                <div class="case-study-block-inner">
+                  <h2>Challenge</h2>
+                  <p>
+                    The hard part was not just fetching data. OpenAI and Anthropic expose usage differently, with
+                    different windows, terminology, and edge cases. Codex leans on a weekly cap plus approximate message
+                    counts, while Claude mixes a 5-hour rate window, a 7-day allowance, and Max-plan overflow credits.
+                  </p>
+                  <p>
+                    The product had to normalize those differences without flattening away useful nuance. It also had to
+                    feel trustworthy: browser-based sign-in, secure token storage, resilient refresh behavior, clear reset
+                    timing, and notification thresholds all shape whether a utility like this feels dependable or
+                    disposable.
+                  </p>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-text">
+                <div class="case-study-block-inner">
+                  <h2>Strategy</h2>
+                  <ul>
+                    <li>
+                      <strong>Menu bar first:</strong> treated quota as ambient system state, not a destination product
+                      surface, with a gauge icon that answers the core question before the popover is even opened.
+                    </li>
+                    <li>
+                      <strong>Shared visual grammar:</strong> used dual-arc gauges, plan badges, credits, and reset labels
+                      to make unlike provider models feel coherent while still preserving service-specific details.
+                    </li>
+                    <li>
+                      <strong>Low-friction authentication:</strong> signed in through existing ChatGPT and Claude browser
+                      sessions, then stored the resulting state securely in Keychain so users did not have to manage API
+                      keys or custom auth flows.
+                    </li>
+                    <li>
+                      <strong>Trust details over feature sprawl:</strong> added widgets, network recovery,
+                      threshold-based notifications, and silent auto-update behavior so the product behaved more like a
+                      calm utility than a noisy monitoring app.
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="case-study-block case-study-block-two-up">
+                <div class="case-study-block-inner">
+                  <figure class="case-study-figure">
+                    <div class="case-study-media">
+                      <img
+                        src="../../assets/images/case-studies/ai-quota/widget-screenshot.png"
+                        alt="AIQuota macOS widgets showing Codex and Claude Code quota states side by side."
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption class="case-study-caption">
+                      The latest widget set makes both the 5-hour and 7-day windows readable at a glance.
+                    </figcaption>
+                  </figure>
+                  <figure class="case-study-figure">
+                    <div class="case-study-media">
+                      <img
+                        src="../../assets/images/case-studies/ai-quota/near-limit-screenshot.png"
+                        alt="AIQuota menu bar popover showing Claude Code nearing its 5-hour limit with the gauge shifted to amber."
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption class="case-study-caption">
+                      As usage approaches the limit, the gauge shifts from purple to amber before the quota is actually hit.
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-results">
+                <div class="case-study-block-inner">
+                  <h2>Outcome</h2>
+                  <p>
+                    AIQuota shipped quickly as a notarized macOS app with menu bar monitoring, widgets, notifications, and
+                    support for both Codex and Claude Code. The current release is available as an
+                    <a href="https://github.com/niederme/ai-quota" target="_blank" rel="noopener noreferrer">open-source GitHub project</a>
+                    with downloadable desktop builds, and it continues to evolve through small polish passes that improve
+                    clarity rather than expanding scope for its own sake.
+                  </p>
+                  <p>
+                    More importantly, the project validated a product pattern I care about: as AI tools become everyday
+                    infrastructure, a whole layer of adjacent workflow problems appears around them. Some of the best
+                    opportunities are not bigger assistants, but thinner native utilities that remove friction around the
+                    edges.
+                  </p>
+                  <p>
+                    Small utilities still require strong product judgment. The right answer was not maximum detail or a
+                    billing dashboard; it was a calm, legible answer to “am I safe to keep going?”
+                  </p>
+                </div>
+              </section>
+            </article>
+          </section>
+        </div>
+
+        <section class="case-study-recirculation work-index-case-study-block" aria-labelledby="case-study-recirculation-title">
+          <div class="rule"></div>
+          <div class="work-article-grid work-index-case-study-layout">
+            <div class="work-index-case-study-heading">
+              <h2 id="case-study-recirculation-title">Case Studies</h2>
+            </div>
+
+            <div class="work-index-case-studies">
+              <div class="work-index-case-study-column">
+                <a class="work-index-card" href="../../work/resy-discovery/" aria-labelledby="case-study-resy-title">
+                  <figure class="work-index-card-media">
+                    <img src="../../assets/images/work/resy-discovery/resy-card-small.png" alt="Preview image for the Resy discovery case study" />
+                  </figure>
+                  <div class="work-index-card-copy">
+                    <p class="work-index-card-eyebrow">Resy Consumer App</p>
+                    <h4 id="case-study-resy-title">Evolving in-App Restaurant Discovery</h4>
+                    <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                  </div>
+                </a>
+
+                <a class="work-index-card" href="../../work/sendmoi/" aria-labelledby="case-study-sendmoi-title">
+                  <figure class="work-index-card-media">
+                    <img src="../../assets/images/sendmoi/sendmoi-card-small.png" alt="Preview image for the SendMoi case study" />
+                  </figure>
+                  <div class="work-index-card-copy">
+                    <p class="work-index-card-eyebrow">SendMoi for iOS &amp; MacOS</p>
+                    <h4 id="case-study-sendmoi-title">Designed &amp; Built With a Little Help From AI Coding Tools</h4>
+                    <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="work-index-case-study-column">
+                <a class="work-index-card" href="../../work/somm-ai/" aria-labelledby="case-study-sommai-title">
+                  <figure class="work-index-card-media">
+                    <img src="../../assets/images/case-studies/sommai/somm-ai-card-small.png" alt="Preview image for the Somm AI case study" />
+                  </figure>
+                  <div class="work-index-card-copy">
+                    <p class="work-index-card-eyebrow">Resy AI Recommendations Exploration</p>
+                    <h4 id="case-study-sommai-title">Beyond Filters: A More Intent-Led Search Experience</h4>
+                    <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
 
         <footer class="site-footer" aria-label="Site footer">
