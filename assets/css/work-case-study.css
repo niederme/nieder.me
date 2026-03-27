@@ -2266,12 +2266,11 @@ body.grid-hidden .work-grid-overlay > span {
   .mobile-nav-toggles .theme-toggle,
   .mobile-nav-toggles .cols-toggle {
     display: flex;
-    width: 48px;
-    min-width: 48px;
+    width: 40px;
     min-height: 56px;
-    gap: 4px;
-    padding: 4px 0 6px;
-    font-size: 8px;
+    gap: 3px;
+    padding: 14px 0;
+    font-size: 7px;
     flex-shrink: 0;
     touch-action: manipulation;
   }

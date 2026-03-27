@@ -764,9 +764,10 @@ body.is-pulling-refresh .rail::after {
   .mobile-nav-toggles .theme-toggle,
   .mobile-nav-toggles .cols-toggle {
     display: flex;
+    width: 40px;
     min-height: 56px;
     gap: 3px;
-    padding: 6px 0;
+    padding: 14px 0;
     font-size: 7px;
     flex-shrink: 0;
     touch-action: manipulation;
