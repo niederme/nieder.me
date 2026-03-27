@@ -2216,6 +2216,7 @@ body.grid-hidden .work-grid-overlay > span {
     text-decoration: none;
     color: inherit;
     position: relative;
+    touch-action: manipulation;
   }
 
   [data-theme="light"] .mobile-nav-anchor {
@@ -2270,6 +2271,7 @@ body.grid-hidden .work-grid-overlay > span {
     padding: 4px 0 6px;
     font-size: 8px;
     flex-shrink: 0;
+    touch-action: manipulation;
   }
 
   .mobile-nav-toggles .theme-toggle-switch,

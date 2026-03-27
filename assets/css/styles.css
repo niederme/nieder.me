@@ -714,6 +714,7 @@ body.is-pulling-refresh .rail::after {
     text-decoration: none;
     color: inherit;
     position: relative;
+    touch-action: manipulation;
   }
 
   [data-theme="light"] .mobile-nav-anchor {
@@ -766,6 +767,7 @@ body.is-pulling-refresh .rail::after {
     padding: 6px 0;
     font-size: 7px;
     flex-shrink: 0;
+    touch-action: manipulation;
   }
 
   .mobile-nav-toggles .theme-toggle-switch,
