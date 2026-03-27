@@ -708,7 +708,6 @@ body.is-pulling-refresh .rail::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
     color: inherit;
@@ -742,50 +741,40 @@ body.is-pulling-refresh .rail::after {
   .mobile-nav-anchor.is-active .icon-on  { opacity: 1; }
 
   .mobile-nav-label {
-    font-size: 8px;
-    opacity: 0.45;
-    letter-spacing: 0.02em;
-    color: var(--text);
-    white-space: nowrap;
-  }
-
-  .mobile-nav-anchor.is-active .mobile-nav-label {
-    opacity: 1;
+    display: none;
   }
 
   .mobile-nav-toggles {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 4px;
-    padding: 0 8px;
+    gap: 6px;
+    padding: 0 10px;
   }
 
   .mobile-nav-toggles .theme-toggle,
   .mobile-nav-toggles .cols-toggle {
     display: flex;
-    width: 48px;
-    min-width: 48px;
     min-height: 56px;
-    gap: 4px;
-    padding: 4px 0 6px;
-    font-size: 8px;
+    gap: 3px;
+    padding: 6px 0;
+    font-size: 7px;
     flex-shrink: 0;
   }
 
   .mobile-nav-toggles .theme-toggle-switch,
   .mobile-nav-toggles .cols-toggle-switch {
-    width: 34px;
-    height: 15px;
+    width: 28px;
+    height: 13px;
   }
 
   .mobile-nav-toggles .theme-toggle-switch::before,
   .mobile-nav-toggles .cols-toggle-switch::before {
     top: 1px;
     left: 1px;
-    width: 13px;
-    height: 13px;
-    transform: translateX(19px);
+    width: 11px;
+    height: 11px;
+    transform: translateX(15px);
   }
 
   .mobile-nav-toggles .theme-toggle.is-off .theme-toggle-switch::before,
@@ -795,7 +784,8 @@ body.is-pulling-refresh .rail::after {
 
   .mobile-nav-toggles .theme-toggle-label,
   .mobile-nav-toggles .cols-toggle-label {
-    font-size: 8px;
+    font-size: 7px;
+    letter-spacing: 0.02em;
   }
 }
 
