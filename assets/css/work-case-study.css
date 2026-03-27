@@ -134,6 +134,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+p,
+li {
+  text-wrap: pretty;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -155,7 +160,7 @@ body.work-theme-sendmoi {
     rgba(0, 0, 0, 0.28) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+  --work-hero-desktop-image: url("../images/home/case-study-promos/bg2-SendMoi.jpg");
   --work-hero-mobile-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
   --work-hero-focus-desktop: right center;
   --work-hero-focus-mobile: right center;
@@ -163,6 +168,10 @@ body.work-theme-sendmoi {
   --work-logo-height-desktop: 75px;
   --work-logo-width-mobile: 56px;
   --work-logo-height-mobile: 56px;
+  --sendmoi-stage-bg:
+    radial-gradient(circle at 32% 28%, rgba(43, 127, 255, 0.14), transparent 20%),
+    radial-gradient(circle at 68% 58%, rgba(152, 16, 250, 0.14), transparent 24%),
+    linear-gradient(135deg, rgba(28, 31, 43, 0.96), rgba(22, 24, 35, 0.94));
 }
 
 body.work-theme-sommai {
@@ -174,7 +183,7 @@ body.work-theme-sommai {
     rgba(0, 0, 0, 0.24) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/home/case-study-promos/bg-sommai-desktop.png");
+  --work-hero-desktop-image: url("../images/home/case-study-promos/bg-Resy-Somm-Ai.jpg");
   --work-hero-mobile-image: url("../images/home/case-study-promos/bg-sommai-mobile.png");
   --work-hero-focus-desktop: center center;
   --work-hero-focus-mobile: center center;
@@ -736,6 +745,8 @@ a:focus-visible {
   --case-study-column-width: calc((var(--case-study-shell-width) - (11 * var(--grid-gutter))) / 12);
   --case-study-edge-inset: calc(var(--case-study-column-width) + var(--grid-gutter));
   --case-study-hero-width: calc((10 * var(--case-study-column-width)) + (9 * var(--grid-gutter)));
+  --case-study-lede-width: calc((8 * var(--case-study-column-width)) + (7 * var(--grid-gutter)));
+  --case-study-callout-width: calc((7 * var(--case-study-column-width)) + (6 * var(--grid-gutter)));
   --case-study-body-width: calc((6 * var(--case-study-column-width)) + (5 * var(--grid-gutter)));
   --case-study-support-width: calc((3 * var(--case-study-column-width)) + (2 * var(--grid-gutter)));
   --case-study-body-offset: calc((3 * var(--case-study-column-width)) + (3 * var(--grid-gutter)));
@@ -973,8 +984,8 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .case-study-block-lede {
-  width: min(835px, calc(100% - 220px));
-  margin-left: 109px;
+  width: min(100%, var(--case-study-lede-width));
+  margin-left: var(--case-study-edge-inset);
   margin-top: 18px;
   margin-bottom: 50px;
 }
@@ -986,7 +997,6 @@ body.grid-hidden .work-grid-overlay > span {
   letter-spacing: -0.01em;
   font-weight: 300;
   color: var(--fg);
-  text-wrap: balance;
 }
 
 .case-study-block-text .case-study-block-inner,
@@ -1070,7 +1080,21 @@ body.grid-hidden .work-grid-overlay > span {
 .case-study-block-full-media .case-study-caption {
   position: relative;
   width: 198px;
-  padding: 10px 17px 15px 0;
+  padding: 26px 17px 15px 0;
+}
+
+.case-study-block-full-media .case-study-caption::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background-color: var(--fg);
+  -webkit-mask: url("../icons/arrow-case-study-red.svg") center / 18px 14px no-repeat;
+  mask: url("../icons/arrow-case-study-red.svg") center / 18px 14px no-repeat;
+  transform: rotate(90deg);
+  transform-origin: center;
 }
 
 .case-study-block-carousel .case-study-caption {
@@ -1093,7 +1117,7 @@ body.grid-hidden .work-grid-overlay > span {
 .case-study-block-full-media .case-study-media {
   min-height: clamp(420px, 50vw, 713px);
   padding: 0;
-  margin-bottom: 41px;
+  margin-bottom: 24px;
 }
 
 .case-study-block-full-media .case-study-media img,
@@ -1108,7 +1132,7 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-block-full-media .case-study-caption {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 0;
   float: none;
   margin-right: 0;
@@ -1117,6 +1141,66 @@ body.grid-hidden .work-grid-overlay > span {
 .work-article-body > .case-study-block-full-media + .case-study-block-text,
 .work-article-body > .case-study-block-full-media + .case-study-block-results {
   margin-top: 41px;
+}
+
+.case-study-block-sendmoi-demo .case-study-media {
+  min-height: clamp(420px, 50vw, 713px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 44px);
+  margin-bottom: 24px;
+  border-radius: 0;
+  background: var(--sendmoi-stage-bg);
+}
+
+.case-study-sendmoi-device-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 356px);
+  padding: 3px;
+  border-radius: 44px;
+  background: linear-gradient(155deg, #2b7fff 0%, #3872ff 42%, #9810fa 100%);
+  box-shadow:
+    0 28px 84px rgba(6, 10, 22, 0.38),
+    0 12px 42px rgba(43, 127, 255, 0.12);
+}
+
+.case-study-sendmoi-device-shell::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  z-index: -1;
+  border-radius: 56px;
+  background: radial-gradient(circle at 50% 34%, rgba(43, 127, 255, 0.28), rgba(152, 16, 250, 0.2) 46%, transparent 72%);
+  filter: blur(18px);
+  opacity: 0.9;
+}
+
+.case-study-sendmoi-device-bezel {
+  border-radius: 41px;
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(6, 9, 16, 0.98), rgba(18, 21, 32, 0.98));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.case-study-sendmoi-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1206 / 2622;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #000;
+}
+
+.case-study-sendmoi-video-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: inherit;
+  background: #000;
 }
 
 .case-study-block-aside-media .case-study-block-inner {
@@ -1212,7 +1296,12 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-block-callout .case-study-block-inner {
   position: relative;
+  width: 100%;
   padding-left: 0;
+}
+
+.case-study-block-callout {
+  width: var(--case-study-callout-width);
 }
 
 .case-study-block-callout .case-study-block-inner::before {
@@ -1237,7 +1326,7 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-callout-quote {
   margin: 0;
-  max-width: 24ch;
+  max-width: none;
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 300;
   line-height: 1.05;
@@ -1248,7 +1337,7 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-callout-attribution {
   margin: 14px 0 0;
-  max-width: 42ch;
+  max-width: none;
   font-size: 16px;
   line-height: 1.45;
   color: var(--meta-label);

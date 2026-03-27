@@ -169,21 +169,21 @@
                 <div class="case-study-block-inner">
                   <h2>A Utility I Missed Enough To Rebuild</h2>
                   <p>
-                    Part of the reason SendMoi exists is simple: I missed Mailo. It was a small mail-to-self utility I
-                    used constantly because it made an already durable habit feel fast, easy, and dependable. When
-                    something actually mattered, sending it to yourself by email was still one of the simplest and most
-                    durable behaviors available, and Mailo understood that workflow better than most tools did.
+                    SendMoi exists for a simple reason: I missed
+                    <a href="https://web.archive.org/web/20260115202628/https://mailo.ameba.co/" target="_blank" rel="noopener noreferrer">Mailo</a>.
+                    It was a small mail-to-self utility I used constantly because it made an existing habit feel fast,
+                    easy, and dependable. When something actually mattered, sending it to yourself by email was still one
+                    of the simplest ways to make sure it stayed yours, and Mailo understood that workflow better than most
+                    tools did.
                   </p>
                   <p>
                     Then it disappeared. As the archived
-                    <a href="https://web.archive.org/web/20260115202628/https://mailo.ameba.co/" target="_blank" rel="noopener noreferrer">homepage</a>
-                    and
                     <a href="https://web.archive.org/web/20250123191644/https://mailo.ameba.co/farewell/" target="_blank" rel="noopener noreferrer">farewell note</a>
                     explain, Mailo shut down after Google policy changes made its Gmail-native model impractical for a
                     small team. The product went away, but the behavior did not. I still wanted a dependable send-to-self
-                    path from Apple's share sheet. I still wanted links and snippets to arrive as readable emails instead
-                    of broken fragments. I still wanted the act of sending something to myself to feel trustworthy,
-                    especially when connectivity was weak.
+                    path from Apple's share sheet, one that turned links and snippets into readable emails instead of
+                    broken fragments and still felt trustworthy when connectivity was weak. Too often the default path
+                    meant a titleless URL, a clipped image, or a blob of text dropped into my inbox with no care at all.
                   </p>
                   <p>
                     That made the opportunity more interesting to me than a larger productivity concept. The goal was not
@@ -194,29 +194,38 @@
                   <p>
                     What changed for me on this project was execution. I am not a traditional iOS or macOS developer, but
                     Codex and Claude Code made it possible to close the gap between product judgment and native
-                    implementation quickly enough that the idea could be seriously explored. SendMoi became both a product
-                    exercise and a proof point: could a beloved discontinued workflow, paired with AI-assisted
-                    development, be rebuilt as a polished native app rather than stopping at a prototype?
+                    implementation quickly enough that the idea could be seriously explored. SendMoi became both a
+                    product exercise and a test: could a beloved discontinued workflow, paired with AI-assisted
+                    development, be rebuilt as a polished native app instead of stopping at a prototype?
                   </p>
                 </div>
               </section>
 
-              <section class="case-study-block case-study-block-full-media">
+              <section class="case-study-block case-study-block-full-media case-study-block-sendmoi-demo">
                 <div class="case-study-block-inner">
                   <figure class="case-study-figure">
-                    <div class="case-study-media">
-                      <img
-                        src="../../assets/images/sendmoi/turn-links-into-email.png"
-                        alt="SendMoi main app flow for turning a shared link into a polished email draft."
-                        loading="lazy"
-                      />
+                    <div class="case-study-media case-study-sendmoi-stage">
+                      <div class="case-study-sendmoi-device-shell">
+                        <div class="case-study-sendmoi-device-bezel">
+                          <div class="case-study-sendmoi-video-frame">
+                            <video
+                              class="case-study-sendmoi-video-player"
+                              src="../../assets/videos/sendmoi-demo-hero.mp4"
+                              autoplay
+                              muted
+                              loop
+                              playsinline
+                              preload="metadata"
+                              aria-label="SendMoi product demo video."
+                            >
+                              Your browser does not support embedded video.
+                            </video>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <figcaption class="case-study-caption">
-                      Early end-to-end app flow for turning a rough shared payload into a readable email artifact.
-                      <span class="case-study-caption-note">
-                        Placeholder visual suggestion: replace this with a tighter storyboard showing share sheet input,
-                        cleanup rules, preview state, and final inbox output in one horizontal narrative.
-                      </span>
+                      Live SendMoi demo, reframed inside the same device treatment used on the product’s landing page.
                     </figcaption>
                   </figure>
                 </div>
@@ -240,9 +249,9 @@
                   </p>
                   <p>
                     Those principles also created a practical way to work with Codex and Claude Code. The tools were most
-                    effective when the product intent was sharp. Instead of asking them to invent the app, I could use them
-                    to accelerate implementation paths, test interface ideas, explore system behavior, and move faster
-                    through the unknowns of native development while keeping the product bar intact.
+                    effective when the product intent was sharp. Instead of asking them to invent the app, I could use
+                    them to accelerate implementation paths, test interface ideas, explore system behavior, and move
+                    through the unknowns of native development faster while keeping the product bar intact.
                   </p>
                 </div>
               </section>
@@ -294,7 +303,7 @@
                     use? How aggressively could it infer a default recipient? Where did automation start to feel helpful
                     instead of presumptuous? The optional auto-send path came out of that thinking. For a user repeatedly
                     sending to the same address, the best version of the product is often the one that disappears into the
-                    action.
+                    action: share, confirm, move on.
                   </p>
                   <p>
                     I also spent time refining what the email should become once the send was safe. A lot of shared content
@@ -314,7 +323,7 @@
                   <p>
                     That is also where the principal-level value lives in a project like this. The work is not interesting
                     because it is large. It is interesting because the product judgment stays coherent across framing,
-                    interaction design, implementation constraints, content shaping, and system behavior, even when the
+                    interaction design, implementation constraints, content shaping, and system behavior, even while the
                     build process itself is being learned in real time.
                   </p>
                 </div>
@@ -389,7 +398,7 @@
                     needy. A polished final email feels respectful. The technology matters, but what the user perceives is
                     whether the product behaves like it has its act together. That is exactly why this project mattered to
                     me as an AI-assisted build: the standard was never "did the code compile?" It was "does this feel like
-                    a real product?"
+                    a real product someone could trust with something they did not want to lose?"
                   </p>
                 </div>
               </section>
@@ -398,7 +407,7 @@
                 <div class="case-study-block-inner">
                   <h2>What This Project Proved</h2>
                   <p>
-                    SendMoi now reads as a useful example of end-to-end product design at small scale. The scope is
+                    SendMoi is a useful example of end-to-end product design at small scale. The scope is
                     deliberately tight, but the work touches research, framing, ideation, systems thinking, interface
                     design, implementation, QA, and refinement. More specifically, it shows what can happen when a clear
                     product vision is paired with AI-assisted development in a disciplined way: not code for code's sake,
@@ -408,10 +417,10 @@
                     More concretely, the product delivers a dependable send-to-self workflow across Apple platforms without
                     pretending to be a larger productivity suite. Users can share once, move on quickly, and trust that the
                     app will either deliver immediately or preserve the work for retry. The output is cleaner, the setup is
-                    lighter, and the interaction feels more dependable than the default habit it replaces.
+                    lighter, and the interaction feels more dependable than the habit it replaces.
                   </p>
                   <p>
-                    The broader learning is one worth carrying forward: small utilities earn their place by being precise,
+                    The broader lesson is worth carrying forward: small utilities earn their place by being precise,
                     not by acting bigger than they are. And AI coding tools are at their best when they are used in service
                     of that precision, helping a strong product idea become a polished native app instead of a vague demo.
                   </p>
