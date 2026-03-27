@@ -2157,9 +2157,9 @@ body.grid-hidden .work-grid-overlay > span {
     z-index: 50;
     height: calc(56px + var(--safe-bottom, 0px));
     padding-bottom: var(--safe-bottom, 0px);
-    background: rgba(0, 0, 0, 0.0001);
-    -webkit-backdrop-filter: blur(12px) saturate(115%);
-    backdrop-filter: blur(12px) saturate(115%);
+    background: rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    backdrop-filter: blur(20px) saturate(120%);
     border-top: 1px solid transparent;
     box-sizing: border-box;
     overflow-x: auto;
