@@ -74,7 +74,7 @@ expect_pattern "$WORK_STYLESHEET" "width: var(--case-study-hero-width);" "Hero c
 expect_pattern "$WORK_STYLESHEET" "padding-top: 50px;" "Story grid should preserve the Figma spacing below the first horizontal rule."
 expect_pattern "$WORK_STYLESHEET" "margin-top: 18px;" "Lede block should own the tightened hero-to-lede spacing once the story wrapper gap is removed."
 expect_pattern "$WORK_STYLESHEET" "margin-bottom: 50px;" "Lede block should preserve the Figma spacing above the first horizontal rule."
-expect_pattern "$WORK_STYLESHEET" "top: calc(100% + 41px);" "Full-media captions should sit 41px below the image per the Figma layout."
+expect_pattern "$WORK_STYLESHEET" "top: calc(100% + 12px);" "Full-media captions should sit tight to the image rather than hanging too low."
 expect_pattern "$WORK_STYLESHEET" "margin-bottom: 41px;" "Full-media media blocks should preserve the Figma gap above the detached caption."
 expect_pattern "$WORK_STYLESHEET" "width: 198px;" "Full-media captions should use the narrow detached caption width from Figma."
 expect_pattern "$WORK_STYLESHEET" ".work-article-body > .case-study-block-full-media + .case-study-block-text," "Text blocks after full-media should resume beside the detached caption."

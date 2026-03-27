@@ -129,7 +129,7 @@
             <div class="work-article-hero-content case-study-block-inner">
               <img class="work-article-logo" src="../../assets/images/case-studies/ai-quota/logo.png" alt="AIQuota" />
               <p class="work-article-eyebrow">AIQuota for macOS</p>
-              <h1 id="aiquota-title">Making AI Coding Quotas Glanceable</h1>
+              <h1 id="aiquota-title">The Limits Were Real, The Signals Were Not: A Heads-Up Visualization of AI Tool Usage</h1>
             </div>
           </section>
 
@@ -173,11 +173,10 @@
                 <div class="case-study-block-inner">
                   <h2>A New Workflow Pain Was Showing Up Faster Than The Tooling</h2>
                   <p>
-                    AIQuota came out of a very current behavior shift: AI coding tools moved from novelty to daily
-                    infrastructure faster than the surrounding workflow matured. Once Codex and Claude Code became part of
-                    my normal practice, quota awareness stopped being an abstract billing detail and started shaping real
-                    decisions mid-session. Could I keep pushing on this thread? Should I switch tools? Was I about to hit a
-                    limit without realizing it?
+                    AIQuota came out of a very current kind of interruption. Once Codex and Claude Code became part of my
+                    normal practice, quota state started shaping decisions in the middle of active work. Could I keep
+                    pushing on this thread? Should I switch tools? Was I about to hit a limit without realizing it? What
+                    had looked like an account detail started behaving like workflow infrastructure.
                   </p>
                   <p>
                     The available answer was surprisingly clumsy. To understand my state, I usually had to leave the
@@ -292,6 +291,13 @@
                     "no," the user gets enough runway to decide whether to keep pushing, switch tools, or pause.
                   </p>
                   <p>
+                    That led to a few explicit product decisions. The gauges emphasize percent used rather than raw
+                    remaining credits because the primary question is risk, not accounting. Warning thresholds are early on
+                    purpose, so the app creates runway before exhaustion rather than simply confirming it. The menu bar owns
+                    the first answer because it is the lowest-friction checkpoint during active work, and widgets extend the
+                    same language into more ambient contexts without turning the product into a dashboard.
+                  </p>
+                  <p>
                     I also kept refining the boundary between useful specificity and clutter. The best version of this
                     product is not the one with the most fields. It is the one that makes the next decision obvious in a
                     glance, then rewards a closer look with just enough supporting context to feel trustworthy.
@@ -338,13 +344,15 @@
 
               <section class="case-study-block case-study-block-callout">
                 <div class="case-study-block-inner">
-                  <p class="case-study-callout-eyebrow">Qualitative Signal</p>
+                  <p class="case-study-callout-eyebrow">Outside Signal</p>
                   <p class="case-study-callout-quote">
-                    A stranger on LinkedIn praised the app for solving a clear problem, staying within its bounds, and not
-                    overreaching.
+                    “It solves a clear problem, stays within its bounds, and doesn’t overreach.”
                   </p>
                   <p class="case-study-callout-attribution">
-                    That kind of feedback mattered because product restraint was one of the core design goals from the start.
+                    Daniel Hairston, in a
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7442368599501115392/" target="_blank" rel="noopener noreferrer">LinkedIn post</a>
+                    about AIQuota. That response mattered because product restraint was one of the core goals from the
+                    start.
                   </p>
                 </div>
               </section>
@@ -358,6 +366,12 @@
                     contexts. Notifications became more useful as thresholds and language tightened. Network recovery and
                     refresh handling reduced the amount of babysitting the product required. Silent auto-update behavior
                     helped the app feel more like infrastructure and less like a hobby project demanding attention.
+                  </p>
+                  <p>
+                    A lot of that refinement work sat below the visual layer. Polling and cache freshness had to feel
+                    accurate without becoming noisy. Notifications needed enough lead time to be useful without turning into
+                    alert fatigue. Widgets, popover state, and settings all had to stay in sync across refreshes, failures,
+                    and recovery. In a utility this small, QA is product design.
                   </p>
                   <p>
                     That refinement loop is important to me because it reflects a specific product philosophy. Mature
