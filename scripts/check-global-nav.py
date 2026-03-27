@@ -44,11 +44,26 @@ REQUIRED_FILE_TOKENS = {
         ':root[data-grid="hidden"] .grid-overlay',
         "--nav-popover-bg:",
         "--nav-popover-fg:",
+        "flex: 1 1 0;",
+        ".mobile-nav-toggles .theme-toggle,",
+        "width: 48px;",
+        "font-size: 8px;",
+        ".mobile-nav-toggles .cols-toggle {\n    display: flex;",
     ],
     ROOT / "assets" / "css" / "work-case-study.css": [
         ':root[data-grid="hidden"] .work-grid-overlay',
         "--nav-popover-bg:",
         "--nav-popover-fg:",
+        "flex: 1 1 0;",
+        ".mobile-nav-toggles .theme-toggle,",
+        "width: 48px;",
+        "font-size: 8px;",
+        ".mobile-nav-toggles .cols-toggle {\n    display: flex;",
+    ],
+}
+FORBIDDEN_FILE_TOKENS = {
+    ROOT / "assets" / "css" / "styles.css": [
+        'body {\n    overscroll-behavior-x: none;\n    overscroll-behavior-y: contain;\n    touch-action: pan-y;\n  }',
     ],
 }
 
@@ -83,6 +98,13 @@ for path, tokens in REQUIRED_FILE_TOKENS.items():
     for token in tokens:
         if token not in contents:
             print(f"missing expected token {token!r} in {path.relative_to(ROOT)}")
+            sys.exit(1)
+
+for path, tokens in FORBIDDEN_FILE_TOKENS.items():
+    contents = path.read_text()
+    for token in tokens:
+        if token in contents:
+            print(f"forbidden token {token!r} still present in {path.relative_to(ROOT)}")
             sys.exit(1)
 
 print("global nav verifier passed")
