@@ -2145,7 +2145,7 @@ body.grid-hidden .work-grid-overlay > span {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 959px) {
   .mobile-nav {
     display: flex;
     align-items: stretch;
