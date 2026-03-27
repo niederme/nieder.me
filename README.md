@@ -43,7 +43,7 @@ That starts a static server on all interfaces (`0.0.0.0`), opens the site locall
 - a `.local` URL for this Mac
 - a LAN URL for other devices on the same network
 
-Default port is `7777`. If that port is already in use, `make dev` automatically picks the next available port.
+Default port is `7000`. If that port is already in use, `make dev` automatically picks the next available port.
 
 Use a custom port when needed:
 
@@ -63,7 +63,7 @@ Worktree-friendly preview:
 make dev-thread
 ```
 
-`make dev-thread` starts from `7778` so the main checkout can keep `7777`.
+`make dev-thread` starts from `7001` so the main checkout can keep `7000`.
 
 Project worktrees should live under repo-local `.worktrees/`.
 
