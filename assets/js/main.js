@@ -720,7 +720,14 @@ if (visualCarousels.length > 0) {
   const mobileNav = document.querySelector('.mobile-nav');
   if (mobileNavSentinel && mobileNav) {
     new IntersectionObserver(([entry]) => {
-      mobileNav.classList.toggle('is-visible', !entry.isIntersecting);
+      if (entry.isIntersecting) {
+        // Sentinel entered viewport from below — show nav
+        mobileNav.classList.add('is-visible');
+      } else if (entry.boundingClientRect.top > 0) {
+        // Sentinel is below viewport (user scrolled back up past it) — hide nav
+        mobileNav.classList.remove('is-visible');
+      }
+      // Sentinel above viewport (scrolled past) — nav stays visible
     }).observe(mobileNavSentinel);
   }
 }
