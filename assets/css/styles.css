@@ -651,12 +651,12 @@ body.is-pulling-refresh .rail::after {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 26;
+    z-index: 50;
     height: 56px;
-    background: var(--bg);
+    background-color: var(--bg);
     border-bottom: 1px solid transparent;
     box-sizing: border-box;
-    overflow: clip;
+    overflow: hidden;
     touch-action: pan-y;
     transform: translateY(calc(-100% - var(--safe-top, 0px)));
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
