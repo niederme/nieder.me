@@ -2158,8 +2158,10 @@ body.grid-hidden .work-grid-overlay > span {
     background-color: var(--bg);
     border-bottom: 1px solid transparent;
     box-sizing: border-box;
-    overflow: hidden;
-    touch-action: pan-y;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
     transform: translateY(calc(-100% - var(--safe-top, 0px)));
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
   }
@@ -2205,17 +2207,15 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .mobile-nav-anchor {
-    flex: 1 1 0;
+    flex: 0 0 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
     color: inherit;
     position: relative;
-    min-width: 0;
   }
 
   [data-theme="light"] .mobile-nav-anchor {
@@ -2244,23 +2244,20 @@ body.grid-hidden .work-grid-overlay > span {
   .mobile-nav-anchor.is-active .icon-on  { opacity: 1; }
 
   .mobile-nav-label {
-    font-size: 8px;
-    opacity: 0.45;
-    letter-spacing: 0.02em;
-    color: var(--text);
-    white-space: nowrap;
-  }
-
-  .mobile-nav-anchor.is-active .mobile-nav-label {
-    opacity: 1;
+    display: none;
   }
 
   .mobile-nav-toggles {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 4px;
-    padding: 0 8px;
+    gap: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 4px;
+  }
+
+  [data-theme="light"] .mobile-nav-toggles {
+    border-left-color: rgba(0, 0, 0, 0.08);
   }
 
   .mobile-nav-toggles .theme-toggle,
