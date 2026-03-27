@@ -1305,11 +1305,17 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .resume-summary,
-.resume-bullets li,
-.work-index-sidebar-section p {
+.resume-bullets li {
   margin: 0;
   font-size: 18px;
   line-height: 1.35;
+  color: var(--fg);
+}
+
+.work-index-sidebar-section p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
   color: var(--fg);
 }
 
