@@ -1667,11 +1667,11 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .site-footer-links a[aria-current="page"] {
-  color: var(--fg);
+  color: var(--label-secondary);
 }
 
 .site-footer-links a[aria-current="page"]:visited {
-  color: var(--fg);
+  color: var(--label-secondary);
 }
 
 .site-footer-links a::after {
@@ -1698,8 +1698,8 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .site-footer-links a[aria-current="page"]::after {
-  opacity: 0.45;
-  transform: scaleX(1);
+  opacity: 0;
+  transform: scaleX(0);
 }
 
 .site-footer-social {
@@ -1893,11 +1893,23 @@ body.grid-hidden .work-grid-overlay > span {
     grid-column: 1;
   }
 
+  .resume-job {
+    display: grid;
+    grid-template-columns: minmax(128px, 148px) minmax(0, 1fr);
+    column-gap: 24px;
+    align-items: start;
+  }
+
   .resume-job-date {
     position: static;
     width: auto;
-    margin: 0 0 8px;
+    margin: 0;
     text-align: left;
+    white-space: nowrap;
+  }
+
+  .resume-job-body {
+    min-width: 0;
   }
 
   .resume-job-date-punct {
@@ -2069,14 +2081,47 @@ body.grid-hidden .work-grid-overlay > span {
   .work-article-section p,
   .work-article-section li,
   .resume-summary,
-  .resume-bullets li,
+  .resume-bullets li {
+    font-size: 16px;
+  }
+
   .work-index-sidebar-section p {
     font-size: 17px;
   }
 
+  .resume-job-date {
+    width: 100%;
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .resume-job {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .resume-job-date-visual {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    gap: 0;
+    text-align: left;
+  }
+
+  .resume-job-date-line {
+    display: inline;
+  }
+
+  .resume-job-date-line + .resume-job-date-line {
+    margin-left: 0.12em;
+  }
+
   .resume-role {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.28;
   }
 
   .work-index-case-study-block {
@@ -2091,7 +2136,7 @@ body.grid-hidden .work-grid-overlay > span {
     grid-template-columns: 1fr;
     grid-template-rows: none;
     grid-auto-flow: row;
-    gap: 30px;
+    gap: 46px;
   }
 
   .work-index-case-study-column {
@@ -2100,6 +2145,7 @@ body.grid-hidden .work-grid-overlay > span {
 
   .work-index-card-copy {
     padding-top: 25px;
+    padding-bottom: 8px;
   }
 
   .work-index-card h4 {
@@ -2133,13 +2179,19 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .site-footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
     row-gap: 20px;
   }
 
   .site-footer-name,
   .site-footer-role {
     font-size: 17px;
+  }
+
+  .work-index-sidebar-section p {
+    font-size: 14px;
+    line-height: 1.35;
   }
 }
 
