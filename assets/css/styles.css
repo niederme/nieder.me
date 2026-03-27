@@ -2547,7 +2547,6 @@ body.grid-hidden .grid-overlay > span {
   .topper {
     margin-top: 28px;
     padding-bottom: 12px;
-    min-height: 100dvh;
   }
 
   .social-links {
