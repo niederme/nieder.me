@@ -66,6 +66,7 @@
   --grid-cols: 12;
   --grid-gutter: 40px;
   --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
   --work-hero-desktop-overlay: linear-gradient(95deg, rgba(0, 0, 0, 0.86) 12%, rgba(0, 0, 0, 0.68) 34%, rgba(0, 0, 0, 0.08) 72%);
   --work-hero-mobile-overlay: linear-gradient(
     0.03deg,
@@ -2150,40 +2151,36 @@ body.grid-hidden .work-grid-overlay > span {
     display: flex;
     align-items: stretch;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 50;
-    height: 56px;
-    background-color: var(--bg);
-    border-bottom: 1px solid transparent;
+    height: calc(56px + var(--safe-bottom, 0px));
+    padding-bottom: var(--safe-bottom, 0px);
+    background: rgba(0, 0, 0, 0.0001);
+    -webkit-backdrop-filter: blur(12px) saturate(115%);
+    backdrop-filter: blur(12px) saturate(115%);
+    border-top: 1px solid transparent;
     box-sizing: border-box;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-x pan-y;
-    transform: translateY(calc(-100% - var(--safe-top, 0px)));
+    transform: translateY(calc(100% + var(--safe-bottom, 0px)));
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
   }
 
-  .mobile-nav::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(-1 * var(--safe-top, 0px));
-    height: var(--safe-top, 0px);
-    background: var(--bg);
-    pointer-events: none;
+  [data-theme="light"] .mobile-nav {
+    background: rgba(255, 255, 255, 0.0001);
   }
 
   .mobile-nav.is-visible {
     transform: translateY(0);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.1);
   }
 
   [data-theme="light"] .mobile-nav.is-visible {
-    border-bottom-color: rgba(0, 0, 0, 0.08);
+    border-top-color: rgba(0, 0, 0, 0.08);
   }
 
   .mobile-nav-sentinel {
@@ -2194,16 +2191,16 @@ body.grid-hidden .work-grid-overlay > span {
 
   .is-subpage .mobile-nav {
     transform: translateY(0);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.1);
     transition: none;
   }
 
   [data-theme="light"] .is-subpage .mobile-nav {
-    border-bottom-color: rgba(0, 0, 0, 0.08);
+    border-top-color: rgba(0, 0, 0, 0.08);
   }
 
   .is-subpage .work-page {
-    padding-top: calc(56px + var(--safe-top, 0));
+    padding-bottom: calc(56px + var(--safe-bottom, 0px));
   }
 
   .mobile-nav-anchor {
