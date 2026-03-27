@@ -5,3 +5,4 @@ _PSDs/**/*
 .DS_Store
 **/.DS_Store
 config.codekit3
+.playwright-cli/
