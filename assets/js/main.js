@@ -714,13 +714,13 @@ if (visualCarousels.length > 0) {
   }
 }
 
-// Mobile nav sentinel — adds .is-locked when nav sticks to top (homepage only)
+// Mobile nav sentinel — slides nav in from top when topper exits viewport (homepage only)
 {
   const mobileNavSentinel = document.querySelector('.mobile-nav-sentinel');
   const mobileNav = document.querySelector('.mobile-nav');
   if (mobileNavSentinel && mobileNav) {
     new IntersectionObserver(([entry]) => {
-      mobileNav.classList.toggle('is-locked', !entry.isIntersecting);
+      mobileNav.classList.toggle('is-visible', !entry.isIntersecting);
     }).observe(mobileNavSentinel);
   }
 }
