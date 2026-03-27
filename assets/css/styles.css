@@ -2972,7 +2972,7 @@ body.grid-hidden .grid-overlay > span {
     max-width: 100%;
     margin: 0 auto;
     min-width: 0;
-    padding: max(44px, calc(var(--safe-top) + 8px)) 5px 88px;
+    padding: max(44px, calc(var(--safe-top) + 8px)) 5px max(88px, calc(66px + var(--safe-bottom, 0px)));
   }
 
   .grid-overlay {
