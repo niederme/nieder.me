@@ -1,7 +1,7 @@
 .PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod issue-create
 
-PORT ?= 7000
-THREAD_BASE_PORT ?= 7001
+PORT ?= 8000
+THREAD_BASE_PORT ?= 8001
 BIND ?= 0.0.0.0
 LOCAL_HOST ?= localhost
 PORT_AUTO ?= 1
@@ -51,7 +51,7 @@ dev:
 	fi; \
 	set -- --port "$(PORT)" --scan-limit "$(PORT_SCAN_LIMIT)" --local-host "$(LOCAL_HOST)"; \
 	if [ "$(PORT_AUTO)" != "1" ]; then set -- "$$@" --no-port-auto; fi; \
-	if ! PREVIEW_ENV_OUTPUT="$$($(PREVIEW_ENV) "$$@")"; then \
+	if ! PREVIEW_ENV_OUTPUT="$$("$(PREVIEW_ENV)" "$$@")"; then \
 		if [ "$(PORT_AUTO)" = "1" ]; then \
 			echo "Set PORT manually, for example: make dev PORT=8080"; \
 		else \
@@ -108,7 +108,7 @@ dev-local:
 	fi; \
 	set -- --port "$(PORT)" --scan-limit "$(PORT_SCAN_LIMIT)" --local-host "$(LOCAL_HOST)" --local-only; \
 	if [ "$(PORT_AUTO)" != "1" ]; then set -- "$$@" --no-port-auto; fi; \
-	if ! PREVIEW_ENV_OUTPUT="$$($(PREVIEW_ENV) "$$@")"; then \
+	if ! PREVIEW_ENV_OUTPUT="$$("$(PREVIEW_ENV)" "$$@")"; then \
 		if [ "$(PORT_AUTO)" = "1" ]; then \
 			echo "Set PORT manually, for example: make dev-local PORT=8080"; \
 		else \
