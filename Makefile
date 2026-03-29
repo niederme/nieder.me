@@ -1,7 +1,7 @@
 .PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod issue-create
 
-PORT ?= 7777
-THREAD_BASE_PORT ?= 7778
+PORT ?= 8000
+THREAD_BASE_PORT ?= 8001
 BIND ?= 0.0.0.0
 LOCAL_HOST ?= localhost
 PORT_AUTO ?= 1
