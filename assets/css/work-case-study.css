@@ -1980,6 +1980,18 @@ body.grid-hidden .work-grid-overlay > span {
   margin: 0;
 }
 
+@media (min-width: 1101px) {
+  .site-footer-column-work .site-footer-links {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    column-gap: 36px;
+    row-gap: 8px;
+    justify-content: start;
+    width: max-content;
+  }
+}
+
 .site-footer-links a {
   position: relative;
   display: inline-block;
