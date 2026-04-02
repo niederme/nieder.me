@@ -1116,7 +1116,7 @@ body.grid-hidden .grid-overlay > span {
 
 .experience-item .experience-date {
   margin-top: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .experience-item-current h4 {
@@ -1124,7 +1124,7 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .experience-item-current p {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .resume-link-wrap {
@@ -2206,7 +2206,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .experience-item-current p {
-    font-size: 17px;
+    font-size: 22px;
   }
 
   .about-home-grid {
@@ -2681,7 +2681,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .experience-item-current p {
-    font-size: 17px;
+    font-size: 22px;
   }
 
   .selected-work-item h4 {
@@ -2942,7 +2942,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .experience-item-current p {
-    font-size: 17px;
+    font-size: 22px;
   }
 }
 
