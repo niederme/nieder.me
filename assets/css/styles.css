@@ -3131,7 +3131,7 @@ body.grid-hidden .grid-overlay > span {
 
   .about-home-grid {
     grid-template-columns: 1fr;
-    row-gap: 22px;
+    row-gap: 34px;
     align-items: start;
   }
 
@@ -3139,6 +3139,11 @@ body.grid-hidden .grid-overlay > span {
   .about-home-copy {
     grid-column: 1;
     grid-row: auto;
+  }
+
+  .about-home-portrait {
+    width: min(calc(100% - 72px), 284px);
+    margin: 0 auto;
   }
 
   .about-home-portrait-frame {
@@ -3161,6 +3166,7 @@ body.grid-hidden .grid-overlay > span {
     align-items: flex-end;
     aspect-ratio: auto;
     height: 600px;
+    border-radius: 0;
     background-image: var(--case-study-promo-bg-mobile);
     background-size: auto 100%;
     background-position: var(--case-study-promo-focus-mobile);
