@@ -202,8 +202,8 @@ body.work-theme-aiquota {
     rgba(0, 0, 0, 0.34) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.png");
-  --work-hero-mobile-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.png");
+  --work-hero-desktop-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.jpg");
+  --work-hero-mobile-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.jpg");
   --work-hero-focus-desktop: center center;
   --work-hero-focus-mobile: center center;
   --work-logo-width-desktop: 72px;
@@ -766,6 +766,10 @@ a:focus-visible {
   margin: 0 auto;
   padding: 28px 0 72px;
   position: relative;
+}
+
+body.work-theme-aiquota .work-article {
+  --case-study-hero-height: calc(var(--case-study-shell-width) * 9 / 16);
 }
 
 .work-index-page .work-article {
@@ -2342,6 +2346,10 @@ body.grid-hidden .work-grid-overlay > span {
     width: calc(100vw - 24px);
     padding-top: 20px;
     padding-bottom: 54px;
+  }
+
+  body.work-theme-aiquota .work-article {
+    --case-study-hero-height: calc(var(--case-study-shell-width) * 9 / 16);
   }
 
   .mobile-logo-mark {

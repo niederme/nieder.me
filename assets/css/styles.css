@@ -1315,20 +1315,20 @@ body.grid-hidden .grid-overlay > span {
   column-gap: var(--grid-gutter);
   row-gap: 0;
   width: 100%;
-  align-items: center;
+  align-items: start;
 }
 
 .about-home-portrait {
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 3;
   margin: 0;
-  max-width: 500px;
+  max-width: none;
 }
 
 .about-home-portrait-frame {
   overflow: hidden;
-  border-radius: 36px;
-  background: var(--about-surface);
-  box-shadow: 0 24px 64px var(--about-shadow);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .about-home-portrait img {
@@ -1341,54 +1341,38 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .about-home-copy {
-  grid-column: 6 / span 5;
-  display: grid;
-  gap: 22px;
-  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: none;
   padding-top: 0;
 }
 
 .about-home-copy p {
   margin: 0;
-  color: var(--muted);
-  font-size: 19px;
-  line-height: 1.48;
+  color: var(--fg);
+  font-size: 18px;
+  line-height: 1.35;
   font-weight: 300;
 }
 
-.about-home-body {
-  display: block;
+.about-home-copy-primary {
+  grid-column: 5 / span 4;
 }
 
-.about-home-body-column + .about-home-body-column {
-  margin-top: 1em;
-}
-
-.about-home-body p {
-  margin: 0 0 1em;
-}
-
-.about-home-body p:last-child {
-  margin-bottom: 0;
+.about-home-copy-secondary {
+  grid-column: 9 / span 4;
 }
 
 .about-home-copy .about-home-lead {
   color: var(--fg);
-  font-size: 30px;
-  line-height: 1.16;
-  text-wrap: balance;
-}
-
-.about-home-cta {
-  margin: 28px 0 0;
-}
-
-.about-home-cta a {
-  color: var(--fg);
+  font-size: 24px;
+  line-height: 1.35;
+  text-wrap: pretty;
 }
 
 .site-footer {
-  margin-top: 440px;
+  margin-top: 296px;
   padding-bottom: 72px;
 }
 
@@ -2121,33 +2105,25 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .about-home-copy {
-    grid-column: 5 / span 8;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    column-gap: var(--grid-gutter);
-    row-gap: 20px;
-    max-width: none;
+    min-width: 0;
   }
 
-  .about-home-body {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-    column-gap: 32px;
+  .about-home-copy-primary {
+    grid-column: 5 / span 4;
   }
 
-  .about-home-body-column + .about-home-body-column {
-    margin-top: 0;
+  .about-home-copy-secondary {
+    grid-column: 9 / span 4;
   }
 
   .about-home-copy .about-home-lead {
-    grid-column: 1 / span 6;
     max-width: none;
-    font-size: clamp(30px, 2vw, 36px);
+    font-size: 24px;
   }
 
   .about-home-copy p {
-    font-size: clamp(18px, 1.05vw, 20px);
-    line-height: 1.45;
+    font-size: 18px;
+    line-height: 1.35;
   }
 }
 
@@ -2228,39 +2204,31 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .about-home-portrait {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 4;
     align-self: start;
     max-width: none;
   }
 
+  .about-home-copy-primary {
+    grid-column: 5 / span 4;
+  }
+
+  .about-home-copy-secondary {
+    grid-column: 9 / span 4;
+  }
+
   .about-home-copy {
-    grid-column: 5 / span 8;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    column-gap: var(--grid-gutter);
-    row-gap: 20px;
-    max-width: none;
-  }
-
-  .about-home-body {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-    column-gap: 32px;
-  }
-
-  .about-home-body-column + .about-home-body-column {
-    margin-top: 0;
+    min-width: 0;
   }
 
   .about-home-copy .about-home-lead {
-    grid-column: 1 / span 6;
     max-width: none;
-    font-size: clamp(26px, 2.3vw, 30px);
+    font-size: 22px;
   }
 
   .about-home-copy p {
     font-size: 18px;
-    line-height: 1.45;
+    line-height: 1.35;
   }
 }
 
@@ -2365,18 +2333,25 @@ body.grid-hidden .grid-overlay > span {
     align-items: start;
   }
 
-  .about-home-portrait,
-  .about-home-copy {
-    grid-column: auto;
+  .about-home-portrait {
+    grid-column: 1;
+    grid-row: 1 / span 2;
     max-width: none;
   }
 
-  .about-home-copy {
+  .about-home-copy-primary,
+  .about-home-copy-secondary {
+    grid-column: 2;
+    max-width: none;
     padding-top: 0;
   }
 
-  .about-home-body {
-    display: block;
+  .about-home-copy-primary {
+    grid-row: 1;
+  }
+
+  .about-home-copy-secondary {
+    grid-row: 2;
   }
 
   .about-home-copy p {
@@ -2401,7 +2376,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .site-footer {
-    margin-top: 368px;
+    margin-top: 248px;
     padding-bottom: 64px;
   }
 
@@ -2614,7 +2589,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .site-footer {
-    margin-top: 288px;
+    margin-top: 192px;
     padding-bottom: 54px;
   }
 
@@ -2881,37 +2856,35 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .resume-link {
-    display: inline-block;
-    white-space: nowrap;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.18s ease, color 0.2s ease;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    white-space: normal;
+    border-bottom: 0;
+    transition: color 0.2s ease;
   }
 
   .resume-link-line {
-    display: inline;
-    width: auto;
-    white-space: normal;
-    border-bottom: 0;
-  }
-
-  .resume-link-line + .resume-link-line::before {
-    content: " ";
+    display: block;
+    width: fit-content;
+    white-space: nowrap;
+    border-bottom: 1px solid transparent;
   }
 
   .resume-link:focus-visible {
-    border-bottom-color: rgba(255, 69, 58, 0.65);
+    border-bottom-color: transparent;
   }
 
   .resume-link:focus-visible .resume-link-line {
-    border-bottom-color: transparent;
-  }
-
-  .resume-link:hover {
     border-bottom-color: rgba(255, 69, 58, 0.65);
   }
 
-  .resume-link:hover .resume-link-line {
+  .resume-link:hover {
     border-bottom-color: transparent;
+  }
+
+  .resume-link:hover .resume-link-line {
+    border-bottom-color: rgba(255, 69, 58, 0.65);
   }
 
   .experience-columns-carousel {
@@ -3165,14 +3138,11 @@ body.grid-hidden .grid-overlay > span {
   .about-home-portrait,
   .about-home-copy {
     grid-column: 1;
+    grid-row: auto;
   }
 
   .about-home-portrait-frame {
-    border-radius: 24px;
-  }
-
-  .about-home-copy {
-    gap: 16px;
+    border-radius: 0;
   }
 
   .about-home-copy p {
@@ -3288,7 +3258,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .site-footer {
-    margin-top: 168px;
+    margin-top: 112px;
   }
 
   .resume-link-wrap {
