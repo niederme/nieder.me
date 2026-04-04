@@ -2371,7 +2371,7 @@ body.grid-hidden .work-grid-overlay > span {
 
 @media (max-width: 700px) {
   .work-index-page .work-article {
-    --work-index-top-mask-height: 78px;
+    --work-index-top-mask-height: 0px;
   }
 
   .work-article {
@@ -2381,7 +2381,7 @@ body.grid-hidden .work-grid-overlay > span {
     --case-study-heading-size: 20px;
     --case-study-section-gap: 36px;
     width: calc(100vw - 32px);
-    padding-top: 16px;
+    padding-top: max(44px, calc(var(--safe-top) + 8px));
     padding-bottom: 72px;
   }
 
@@ -2390,9 +2390,9 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .mobile-logo-mark {
-    width: 46px;
-    height: 46px;
-    margin-bottom: 22px;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 36px;
   }
 
   .work-article-back {
@@ -3021,9 +3021,9 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .mobile-logo-mark {
-    width: 42px;
-    height: 42px;
-    margin-bottom: 18px;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 36px;
   }
 
   .work-article-hero-content {
