@@ -1469,6 +1469,42 @@ body.grid-hidden .grid-overlay > span {
   line-height: 1.35;
 }
 
+.site-footer-utility-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 8px 0 0;
+  color: var(--footer-meta);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.site-footer-utility-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.site-footer-utility-links a:visited {
+  color: inherit;
+}
+
+.site-footer-utility-links a[aria-current="page"],
+.site-footer-utility-links a:hover,
+.site-footer-utility-links a:focus-visible {
+  color: var(--fg);
+}
+
+.site-footer-utility-links a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.site-footer-utility-separator {
+  opacity: 0.68;
+}
+
 .site-footer-column h3 {
   margin: 0;
   color: var(--footer-heading);
