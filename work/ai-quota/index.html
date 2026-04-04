@@ -129,7 +129,7 @@
             <div class="work-article-hero-content case-study-block-inner">
               <img class="work-article-logo" src="../../assets/images/case-studies/ai-quota/logo.png" alt="AIQuota" />
               <p class="work-article-eyebrow">AIQuota for macOS</p>
-              <h1 id="aiquota-title">The Limits Were Real, The Signals Were Not: A Heads-Up Visualization of AI Tool Usage</h1>
+              <h1 id="aiquota-title">Know Your Limits: A Heads-Up Visualization of AI Tool Usage</h1>
             </div>
           </section>
 
@@ -194,10 +194,33 @@
                 </div>
               </section>
 
-              <section class="case-study-block case-study-block-full-media">
+              <section class="case-study-block case-study-block-full-media case-study-block-aiquota-demo">
                 <div class="case-study-block-inner">
                   <figure class="case-study-figure">
-                    <div class="case-study-media">
+                    <div class="case-study-media case-study-aiquota-demo-desktop">
+                      <div class="case-study-aiquota-demo-shell">
+                        <div class="case-study-aiquota-demo-window">
+                          <div class="case-study-sendmoi-video-frame">
+                            <video
+                              class="case-study-sendmoi-video-player"
+                              src="../../assets/videos/aiquota-demo-inline.mp4"
+                              poster="../../assets/images/case-studies/ai-quota/screenshot.png"
+                              muted
+                              loop
+                              playsinline
+                              preload="metadata"
+                              aria-label="AIQuota product demo video. Click, tap, or press Space to play or pause."
+                              tabindex="0"
+                              data-case-study-demo-video
+                            >
+                              Your browser does not support embedded video.
+                            </video>
+                            <span class="case-study-sendmoi-video-playhead" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="case-study-media case-study-aiquota-demo-mobile">
                       <img
                         src="../../assets/images/case-studies/ai-quota/screenshot.png"
                         alt="AIQuota menu bar popover showing Codex and Claude Code quota cards with reset timing and account details."
@@ -205,12 +228,8 @@
                       />
                     </div>
                     <figcaption class="case-study-caption">
-                      Current popover design summarizing credits, plan state, reset timing, and data freshness in one
-                      compact surface.
-                      <span class="case-study-caption-note">
-                        Placeholder visual suggestion: replace this with a cleaner annotated hero showing the menu bar
-                        icon, the popover, and a few callouts to the translation decisions that matter most.
-                      </span>
+                      Live AIQuota demo showing the menu bar utility in motion, from glanceable status to the richer
+                      popover details that support the next decision.
                     </figcaption>
                   </figure>
                 </div>
@@ -426,7 +445,10 @@
               <div class="work-index-case-study-column">
                 <a class="work-index-card" href="../../work/resy-discovery/" aria-labelledby="case-study-resy-title">
                   <figure class="work-index-card-media">
-                    <img src="../../assets/images/work/resy-discovery/resy-card-small.png" alt="Preview image for the Resy discovery case study" />
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../../assets/images/home/case-study-promos/bg-Resy-mobile.png" />
+                      <img src="../../assets/images/home/case-study-promos/bg-Resy-desktop.png" alt="Preview image for the Resy discovery case study" />
+                    </picture>
                   </figure>
                   <div class="work-index-card-copy">
                     <p class="work-index-card-eyebrow">Resy Consumer App</p>
@@ -435,26 +457,32 @@
                   </div>
                 </a>
 
-                <a class="work-index-card" href="../../work/sendmoi/" aria-labelledby="case-study-sendmoi-title">
+                <a class="work-index-card" href="../../work/somm-ai/" aria-labelledby="case-study-sommai-title">
                   <figure class="work-index-card-media">
-                    <img src="../../assets/images/sendmoi/sendmoi-card-small.png" alt="Preview image for the SendMoi case study" />
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../../assets/images/home/case-study-promos/bg-sommai-mobile.png" />
+                      <img src="../../assets/images/home/case-study-promos/bg-sommai-desktop.png" alt="Preview image for the Somm AI case study" />
+                    </picture>
                   </figure>
                   <div class="work-index-card-copy">
-                    <p class="work-index-card-eyebrow">SendMoi for iOS &amp; macOS</p>
-                    <h4 id="case-study-sendmoi-title">From Product Vision to Polished App, With Help From Codex &amp; Claude Code</h4>
+                    <p class="work-index-card-eyebrow">Resy AI Recommendations Exploration</p>
+                    <h4 id="case-study-sommai-title">Beyond Filters: A More Intent-Led Search Experience</h4>
                     <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
                   </div>
                 </a>
               </div>
 
               <div class="work-index-case-study-column">
-                <a class="work-index-card" href="../../work/somm-ai/" aria-labelledby="case-study-sommai-title">
+                <a class="work-index-card" href="../../work/sendmoi/" aria-labelledby="case-study-sendmoi-title">
                   <figure class="work-index-card-media">
-                    <img src="../../assets/images/case-studies/sommai/somm-ai-card-small.png" alt="Preview image for the Somm AI case study" />
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../../assets/images/home/case-study-promos/bg-SendMoi-desktop.png" />
+                      <img src="../../assets/images/home/case-study-promos/bg-SendMoi-desktop.png" alt="Preview image for the SendMoi case study" />
+                    </picture>
                   </figure>
                   <div class="work-index-card-copy">
-                    <p class="work-index-card-eyebrow">Resy AI Recommendations Exploration</p>
-                    <h4 id="case-study-sommai-title">Beyond Filters: A More Intent-Led Search Experience</h4>
+                    <p class="work-index-card-eyebrow">SendMoi for iOS &amp; macOS</p>
+                    <h4 id="case-study-sendmoi-title">Reimagining a Beloved Utility, With Help From Codex &amp; Claude Code</h4>
                     <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
                   </div>
                 </a>
@@ -499,6 +527,11 @@
                 </ul>
               </nav>
               <p class="site-footer-meta">© 2026 John Niedermeyer</p>
+              <p class="site-footer-utility-links">
+                <a href="../../accessibility/">Accessibility</a>
+                <span class="site-footer-utility-separator" aria-hidden="true">/</span>
+                <a href="../../privacy/">Privacy</a>
+              </p>
             </div>
 
             <nav class="site-footer-column site-footer-column-site" aria-label="Site sections">
