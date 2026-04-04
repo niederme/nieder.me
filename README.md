@@ -11,6 +11,8 @@ Current site surfaces:
 - `/` homepage with work highlights and a short About section
 - `/about/` full biography page
 - `/colophon/` standalone colophon page
+- `/accessibility/` accessibility statement
+- `/privacy/` privacy notice
 - `/work/` full work experience and resume page
 - `/work/resy-discovery/` Resy case study
 - `/work/sendmoi/` SendMoi case study
