@@ -124,6 +124,109 @@ if (emailLinks.length > 0) {
 }
 
 {
+  const scrollCarousels = [
+    {
+      track: document.querySelector(".topper-columns"),
+      itemSelector: ":scope > p",
+      dotsClassName: "topper-carousel-dots",
+    },
+    {
+      track: document.querySelector(".experience-columns-carousel"),
+      itemSelector: ":scope > .experience-column",
+      dotsClassName: "experience-carousel-dots",
+    },
+  ].filter((entry) => entry.track);
+
+  if (scrollCarousels.length > 0) {
+    const mobileQuery = window.matchMedia("(max-width: 700px)");
+
+    const clampIndex = (index, length) => Math.max(0, Math.min(index, length - 1));
+
+    const getAnchorOffset = (track) => {
+      const styles = window.getComputedStyle(track);
+      const paddingLeft = Number.parseFloat(styles.paddingLeft) || 0;
+      return track.getBoundingClientRect().left + paddingLeft;
+    };
+
+    const updateDots = (state) => {
+      const anchorLeft = getAnchorOffset(state.track);
+      const nextIndex = state.items.reduce((bestIndex, item, itemIndex) => {
+        const distance = Math.abs(item.getBoundingClientRect().left - anchorLeft);
+        const bestDistance = Math.abs(state.items[bestIndex].getBoundingClientRect().left - anchorLeft);
+        return distance < bestDistance ? itemIndex : bestIndex;
+      }, 0);
+
+      state.dotNodes.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === nextIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-pressed", String(isActive));
+      });
+    };
+
+    const states = scrollCarousels
+      .map(({ track, itemSelector, dotsClassName }) => {
+        const items = Array.from(track.querySelectorAll(itemSelector));
+        if (items.length < 2) return null;
+
+        const dots = document.createElement("div");
+        dots.className = `carousel-page-dots ${dotsClassName}`;
+        dots.setAttribute("aria-label", "Carousel pages");
+
+        const dotNodes = items.map((item, index) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "carousel-page-dot";
+          dot.setAttribute("aria-label", `Go to page ${index + 1}`);
+          dot.setAttribute("aria-pressed", String(index === 0));
+          dot.addEventListener("click", () => {
+            const paddingLeft = Number.parseFloat(window.getComputedStyle(track).paddingLeft) || 0;
+            track.scrollTo({
+              left: Math.max(0, item.offsetLeft - paddingLeft),
+              behavior: "smooth",
+            });
+          });
+          dots.appendChild(dot);
+          return dot;
+        });
+
+        track.insertAdjacentElement("afterend", dots);
+        return { track, items, dots, dotNodes };
+      })
+      .filter(Boolean);
+
+    if (states.length > 0) {
+      const syncVisibility = () => {
+        const isMobile = mobileQuery.matches;
+        states.forEach((state) => {
+          state.dots.hidden = !isMobile;
+          if (isMobile) updateDots(state);
+        });
+      };
+
+      states.forEach((state) => {
+        let ticking = false;
+        state.track.addEventListener(
+          "scroll",
+          () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(() => {
+              updateDots(state);
+              ticking = false;
+            });
+          },
+          { passive: true }
+        );
+      });
+
+      mobileQuery.addEventListener("change", syncVisibility);
+      window.addEventListener("resize", syncVisibility);
+      syncVisibility();
+    }
+  }
+}
+
+{
   const demoVideos = Array.from(document.querySelectorAll("[data-case-study-demo-video]"));
 
   if (demoVideos.length > 0) {
@@ -784,20 +887,33 @@ if (visualCarousels.length > 0) {
   }
 }
 
-// Mobile nav sentinel — slides nav in from top when topper exits viewport (homepage only)
+// Mobile nav sentinel — keeps the homepage mobile nav in sync with the scroll-restored sentinel position
 {
   const mobileNavSentinel = document.querySelector('.mobile-nav-sentinel');
   const mobileNav = document.querySelector('.mobile-nav');
   if (mobileNavSentinel && mobileNav) {
-    new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        // Sentinel entered viewport from below — show nav
-        mobileNav.classList.add('is-visible');
-      } else if (entry.boundingClientRect.top > 0) {
-        // Sentinel is below viewport (user scrolled back up past it) — hide nav
-        mobileNav.classList.remove('is-visible');
-      }
-      // Sentinel above viewport (scrolled past) — nav stays visible
-    }).observe(mobileNavSentinel);
+    let mobileNavTicking = false;
+
+    const updateMobileNavVisibility = () => {
+      mobileNavTicking = false;
+      mobileNav.classList.toggle(
+        'is-visible',
+        mobileNavSentinel.getBoundingClientRect().top <= 0
+      );
+    };
+
+    const queueMobileNavVisibility = () => {
+      if (mobileNavTicking) return;
+      mobileNavTicking = true;
+      window.requestAnimationFrame(updateMobileNavVisibility);
+    };
+
+    new IntersectionObserver(queueMobileNavVisibility).observe(mobileNavSentinel);
+    window.addEventListener('scroll', queueMobileNavVisibility, { passive: true });
+    window.addEventListener('resize', queueMobileNavVisibility);
+    window.addEventListener('load', queueMobileNavVisibility);
+    window.addEventListener('pageshow', queueMobileNavVisibility);
+    queueMobileNavVisibility();
+    window.requestAnimationFrame(queueMobileNavVisibility);
   }
 }

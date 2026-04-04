@@ -413,71 +413,75 @@
             </div>
 
             <aside class="work-index-sidebar" aria-label="Additional resume details">
-              <section class="work-index-sidebar-section">
-                <h3>Contact</h3>
-                <p>
-                  <a href="mailto:john@nieder.me">john@nieder.me</a><br />
-                  +1 (617) 510-7504
-                </p>
-              </section>
+              <div class="work-index-sidebar-column">
+                <section class="work-index-sidebar-section">
+                  <h3>Contact</h3>
+                  <p>
+                    <a href="mailto:john@nieder.me">john@nieder.me</a><br />
+                    +1 (617) 510-7504
+                  </p>
+                </section>
 
-              <section class="work-index-sidebar-section">
-                <h3>Speaking</h3>
-                <p>
-                  <a href="https://youtu.be/9bSQmk8Y4vw?si=STmKe81-LUwoA9nH" target="_blank" rel="noopener noreferrer">Resy Product Summit</a><br />
-                  New York (2018)
-                </p>
-                <p>
-                  <a href="https://2016.designmatters.io" target="_blank" rel="noopener noreferrer">Design Matters</a
-                  ><br />
-                  Copenhagen (2016)
-                </p>
-                <p>
-                  <a
-                    href="https://snd.org/speakers-from-the-new-york-times-the-national-national-geographic-coming-to-snd-frankfurt/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Society for News Design</a
-                  ><br />
-                  Frankfurt (2014)
-                </p>
-                <p>
-                  <a
-                    href="https://snd.org/wan-ifra-and-snd-to-host-2nd-biennial-news-design-conference-in-india/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >WAN-IFRA &amp; SND News Design Conference &amp; Workshop</a
-                  ><br />
-                  Mumbai (2014)
-                </p>
-              </section>
+                <section class="work-index-sidebar-section">
+                  <h3>Speaking</h3>
+                  <p>
+                    <a href="https://youtu.be/9bSQmk8Y4vw?si=STmKe81-LUwoA9nH" target="_blank" rel="noopener noreferrer">Resy Product Summit</a><br />
+                    New York (2018)
+                  </p>
+                  <p>
+                    <a href="https://2016.designmatters.io" target="_blank" rel="noopener noreferrer">Design Matters</a
+                    ><br />
+                    Copenhagen (2016)
+                  </p>
+                  <p>
+                    <a
+                      href="https://snd.org/speakers-from-the-new-york-times-the-national-national-geographic-coming-to-snd-frankfurt/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Society for News Design</a
+                    ><br />
+                    Frankfurt (2014)
+                  </p>
+                  <p>
+                    <a
+                      href="https://snd.org/wan-ifra-and-snd-to-host-2nd-biennial-news-design-conference-in-india/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >WAN-IFRA &amp; SND News Design Conference &amp; Workshop</a
+                    ><br />
+                    Mumbai (2014)
+                  </p>
+                </section>
+              </div>
 
-              <section class="work-index-sidebar-section">
-                <h3>Recognition</h3>
-                <p><span class="work-index-sidebar-accent">Emmy Nominations</span><br />News &amp; Documentary (2014)</p>
-                <p>
-                  <a
-                    href="https://www.imdb.com/event/ev0000493/2012/1/#emmy_new_approaches_to_news_&_documentary_programming:_arts,_lifestyle_and_culture"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Emmy Award</a
-                  ><br />
-                  News &amp; Documentary (2012)
-                </p>
-                <p>Loeb Award Finalist<br />(2009)</p>
-              </section>
+              <div class="work-index-sidebar-column">
+                <section class="work-index-sidebar-section">
+                  <h3>Recognition</h3>
+                  <p><span class="work-index-sidebar-accent">Emmy Nominations</span><br />News &amp; Documentary (2014)</p>
+                  <p>
+                    <a
+                      href="https://www.imdb.com/event/ev0000493/2012/1/#emmy_new_approaches_to_news_&_documentary_programming:_arts,_lifestyle_and_culture"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Emmy Award</a
+                    ><br />
+                    News &amp; Documentary (2012)
+                  </p>
+                  <p>Loeb Award Finalist<br />(2009)</p>
+                </section>
 
-              <section class="work-index-sidebar-section">
-                <h3>Education</h3>
-                <p>
-                  B.A. in History &amp; Political Science, Cum Laude<br />
-                  Boston University, Boston, Mass.
-                </p>
-                <p>
-                  Co-President,<br />
-                  BU College Democrats
-                </p>
-              </section>
+                <section class="work-index-sidebar-section">
+                  <h3>Education</h3>
+                  <p>
+                    B.A. in History &amp; Political Science, Cum Laude<br />
+                    Boston University, Boston, Mass.
+                  </p>
+                  <p>
+                    Co-President,<br />
+                    BU College Democrats
+                  </p>
+                </section>
+              </div>
             </aside>
           </div>
         </section>
@@ -493,10 +497,13 @@
               <div class="work-index-case-study-column">
                 <a class="work-index-card" href="../work/resy-discovery/" aria-labelledby="work-index-resy-title">
                   <figure class="work-index-card-media">
-                    <img
-                      src="../assets/images/work/resy-discovery/resy-card-small.png"
-                      alt="Preview image for the Resy discovery case study"
-                    />
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../assets/images/home/case-study-promos/bg-Resy-mobile.png" />
+                      <img
+                        src="../assets/images/home/case-study-promos/bg-Resy-desktop.png"
+                        alt="Preview image for the Resy discovery case study"
+                      />
+                    </picture>
                   </figure>
                   <div class="work-index-card-copy">
                     <p class="work-index-card-eyebrow">Resy Consumer App</p>
@@ -505,12 +512,34 @@
                   </div>
                 </a>
 
+                <a class="work-index-card" href="../work/ai-quota/" aria-labelledby="work-index-aiquota-title">
+                  <figure class="work-index-card-media">
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../assets/images/home/case-study-promos/bg-aiquota-promo-mobile.jpg" />
+                      <img
+                        src="../assets/images/home/case-study-promos/bg-aiquota-promo-desktop.jpg"
+                        alt="Preview image for the AIQuota case study"
+                      />
+                    </picture>
+                  </figure>
+                  <div class="work-index-card-copy">
+                    <p class="work-index-card-eyebrow">AIQuota for macOS</p>
+                    <h4 id="work-index-aiquota-title">Know Your Limits: A Heads-Up Visualization of AI Tool Usage</h4>
+                    <span class="work-index-card-cta">View Case Study <img src="../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="work-index-case-study-column">
                 <a class="work-index-card" href="../work/somm-ai/" aria-labelledby="work-index-sommai-title">
                   <figure class="work-index-card-media">
-                    <img
-                      src="../assets/images/case-studies/sommai/somm-ai-card-small.png"
-                      alt="Preview image for the Somm AI case study"
-                    />
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../assets/images/home/case-study-promos/bg-sommai-mobile.png" />
+                      <img
+                        src="../assets/images/home/case-study-promos/bg-sommai-desktop.png"
+                        alt="Preview image for the Somm AI case study"
+                      />
+                    </picture>
                   </figure>
                   <div class="work-index-card-copy">
                     <p class="work-index-card-eyebrow">Resy AI Recommendations Exploration</p>
@@ -518,33 +547,20 @@
                     <span class="work-index-card-cta">View Case Study <img src="../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
                   </div>
                 </a>
-              </div>
 
-              <div class="work-index-case-study-column">
                 <a class="work-index-card" href="../work/sendmoi/" aria-labelledby="work-index-sendmoi-title">
                   <figure class="work-index-card-media">
-                    <img
-                      src="../assets/images/sendmoi/sendmoi-card-small.png"
-                      alt="Preview image for the SendMoi case study"
-                    />
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../assets/images/home/case-study-promos/bg-SendMoi-desktop.png" />
+                      <img
+                        src="../assets/images/home/case-study-promos/bg-SendMoi-desktop.png"
+                        alt="Preview image for the SendMoi case study"
+                      />
+                    </picture>
                   </figure>
                   <div class="work-index-card-copy">
                     <p class="work-index-card-eyebrow">SendMoi for iOS &amp; MacOS</p>
-                    <h4 id="work-index-sendmoi-title">Designed &amp; Built With a Little Help From AI Coding Tools</h4>
-                    <span class="work-index-card-cta">View Case Study <img src="../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
-                  </div>
-                </a>
-
-                <a class="work-index-card" href="../work/ai-quota/" aria-labelledby="work-index-aiquota-title">
-                  <figure class="work-index-card-media">
-                    <img
-                      src="../assets/images/work/ai-quota/aiquota-card-small.png"
-                      alt="Preview image for the AIQuota case study"
-                    />
-                  </figure>
-                  <div class="work-index-card-copy">
-                    <p class="work-index-card-eyebrow">AIQuota for macOS</p>
-                    <h4 id="work-index-aiquota-title">Making AI Coding Quotas Glanceable</h4>
+                    <h4 id="work-index-sendmoi-title">Reimagining a Beloved Utility, With Help From Codex &amp; Claude Code</h4>
                     <span class="work-index-card-cta">View Case Study <img src="../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
                   </div>
                 </a>
@@ -589,6 +605,11 @@
                 </ul>
               </nav>
               <p class="site-footer-meta">© 2026 John Niedermeyer</p>
+              <p class="site-footer-utility-links">
+                <a href="../accessibility/">Accessibility</a>
+                <span class="site-footer-utility-separator" aria-hidden="true">/</span>
+                <a href="../privacy/">Privacy</a>
+              </p>
             </div>
 
             <nav class="site-footer-column site-footer-column-site" aria-label="Site sections">
