@@ -757,7 +757,7 @@ a:focus-visible {
   --case-study-edge-inset: calc(var(--case-study-column-width) + var(--grid-gutter));
   --case-study-hero-width: calc((10 * var(--case-study-column-width)) + (9 * var(--grid-gutter)));
   --case-study-lede-width: calc((8 * var(--case-study-column-width)) + (7 * var(--grid-gutter)));
-  --case-study-callout-width: calc((7 * var(--case-study-column-width)) + (6 * var(--grid-gutter)));
+  --case-study-callout-width: calc((8 * var(--case-study-column-width)) + (7 * var(--grid-gutter)));
   --case-study-body-width: calc((6 * var(--case-study-column-width)) + (5 * var(--grid-gutter)));
   --case-study-support-width: calc((3 * var(--case-study-column-width)) + (2 * var(--grid-gutter)));
   --case-study-body-offset: calc((3 * var(--case-study-column-width)) + (3 * var(--grid-gutter)));
