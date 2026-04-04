@@ -38,6 +38,8 @@ expect_pattern "$STYLESHEET" 'width: min(100%, 460px);' \
   "AIQuota demo shell should stay close to the new source asset's native size on retina displays."
 expect_pattern "$STYLESHEET" 'aspect-ratio: 16 / 9;' \
   "AIQuota demo stage should keep a 16:9 footprint on desktop."
+expect_pattern "$STYLESHEET" 'aspect-ratio: 1534 / 862;' \
+  "AIQuota desktop video frame should match the current source asset's dimensions."
 
 first_text_line="$(rg -n 'case-study-block case-study-block-text' "$PAGE" | head -n1 | cut -d: -f1)"
 demo_line="$(rg -n 'case-study-block case-study-block-full-media case-study-block-aiquota-demo' "$PAGE" | head -n1 | cut -d: -f1)"
