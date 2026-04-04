@@ -3271,6 +3271,19 @@ body.grid-hidden .grid-overlay > span {
     margin-top: 112px;
   }
 
+  .site-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer-column-site,
+  .site-footer-column-work {
+    grid-column: auto;
+  }
+
   .resume-link-wrap {
     margin: 24px 0 40px;
     text-align: left;
