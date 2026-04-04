@@ -1182,7 +1182,7 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .case-study-aiquota-demo-shell {
-  width: min(100%, 460px);
+  width: min(100%, 1040px);
   padding: 14px;
   border-radius: 30px;
   background: var(--aiquota-shell-bg);
