@@ -3150,6 +3150,10 @@ body.grid-hidden .grid-overlay > span {
     border-radius: 0;
   }
 
+  .about-home-copy-secondary {
+    margin-top: calc(15px - 34px);
+  }
+
   .about-home-copy p {
     font-size: 17px;
     line-height: 1.4;
