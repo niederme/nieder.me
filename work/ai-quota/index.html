@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark" />
-    <title>AIQuota Menubar Utility Case Study | John Niedermeyer</title>
+    <title>AIQuota Menu Bar Utility Case Study | John Niedermeyer</title>
     <meta
       name="description"
-      content="Standalone long-form case study on designing and shipping AIQuota, a native macOS menu bar utility for monitoring Codex and Claude Code usage."
+      content="Case study on designing and shipping AIQuota, a native macOS menu bar utility that makes Codex and Claude Code usage legible at a glance."
     />
     <script>
       (() => {
@@ -136,8 +136,8 @@
           <section class="case-study-block case-study-block-lede">
             <div class="case-study-block-inner">
               <p class="case-study-lede">
-                AI-assisted coding became part of my daily workflow quickly, but the feedback loop around usage stayed
-                oddly primitive.
+                AI-assisted coding became part of my daily workflow fast. Understanding quota state still meant leaving
+                the editor, opening a browser, and piecing together an answer by hand.
               </p>
             </div>
           </section>
@@ -171,25 +171,23 @@
             <article class="work-article-body">
               <section class="work-article-section case-study-block case-study-block-text">
                 <div class="case-study-block-inner">
-                  <h2>A New Workflow Pain Was Showing Up Faster Than The Tooling</h2>
+                  <h2>A Glanceable Question Was Turning Into A Tab Hunt</h2>
                   <p>
-                    AIQuota came out of a new kind of interruption. Once Codex and Claude Code became part of my
-                    normal practice, quota state started shaping decisions in the middle of active work. Could I keep
-                    pushing on this thread? Should I switch tools? Was I about to hit a limit without realizing it? What
-                    had looked like an account detail started behaving like workflow infrastructure.
+                    AIQuota started with a small interruption that kept repeating. Once Codex and Claude Code became part
+                    of my daily practice, quota state began shaping real decisions in the middle of active work. Could I
+                    stay on this thread? Should I switch tools? Was I closer to a limit than I realized? What looked like
+                    an account detail started behaving like workflow infrastructure.
                   </p>
                   <p>
-                    The available answer was clumsy. To understand my state, I usually had to leave the
-                    editor, open a browser, navigate to account pages, and translate two very different usage models by
-                    hand. That friction felt out of proportion to the question. The need was lightweight and frequent. The
-                    existing solution was heavyweight and interruptive. A question that should have taken a glance was
-                    turning into a tab hunt.
+                    Getting that answer was disproportionately heavy. I had to leave the editor, open a browser, navigate
+                    to provider pages, and mentally translate two different systems by hand. The question was lightweight
+                    and frequent. The path to the answer was neither.
                   </p>
                   <p>
-                    That is what made the product direction clear so quickly. This did not need to be a dashboard. It
-                    needed to be a native utility that lived where the question actually appears: in the background of
-                    active work. Put the answer in the menu bar, make it legible at a glance, and keep the setup path calm
-                    enough that the product feels like part of macOS instead of a sidecar admin tool.
+                    That mismatch clarified the product quickly. This did not need to become a dashboard. It needed to be
+                    a native utility that lived where the question actually appears: in the background of active work. Put
+                    the answer in the menu bar, make it legible in a glance, and keep the setup calm enough that the
+                    product feels like part of macOS instead of a sidecar admin tool.
                   </p>
                 </div>
               </section>
@@ -228,8 +226,7 @@
                       />
                     </div>
                     <figcaption class="case-study-caption">
-                      Live AIQuota demo showing the menu bar utility in motion, from glanceable status to the richer
-                      popover details that support the next decision.
+                      Live AIQuota demo, from menu bar glance state to the richer popover that supports the next decision.
                     </figcaption>
                   </figure>
                 </div>
@@ -239,24 +236,28 @@
                 <div class="case-study-block-inner">
                   <h2>Research Started With Translation, Not Fetching</h2>
                   <p>
-                    The hard part was never just pulling usage data. The deeper design challenge was that OpenAI and
-                    Anthropic describe limits in fundamentally different ways, and those differences shape the user's mental
-                    model. Codex leans on a weekly cap with approximate message counts. Claude combines a 5-hour rate
-                    window, a 7-day allowance, and Max-plan overflow credits. A literal presentation of both would be
-                    accurate and cognitively noisy.
+                    The hard part was not fetching usage data. It was translating two unlike provider systems into one
+                    readable decision surface.
                   </p>
                   <p>
-                    So the first design task was comparative research and normalization. What is the common question across
-                    both systems? Which details are essential for quick decision-making, and which only matter after the
-                    user has opened the popover? How much provider-specific nuance should stay visible so the product feels
-                    trustworthy rather than falsely simplified? I treated that translation layer as core product design, not
-                    as presentation polish after the data model existed.
+                    Codex leans on a weekly cap with approximate message counts. Claude combines a rolling 5-hour window,
+                    a 7-day allowance, and Max-plan overflow credits. A literal presentation of both would have been
+                    technically accurate and mentally noisy. The job was to preserve the nuance without forcing the user to
+                    relearn each provider's logic every time they checked in.
                   </p>
                   <p>
-                    That framing also shaped trust decisions elsewhere. Authentication through an existing browser session,
-                    secure token storage in Keychain, resilient refresh behavior, clear reset timing, and threshold-based
-                    notifications all affect whether a utility like this feels dependable or disposable. In products this
-                    small, trust is often built from details users would struggle to name individually.
+                    So the early work centered on normalization. What is the common question across both systems? Which
+                    details matter before the popover opens, and which can wait until a closer look? How much
+                    provider-specific context has to stay visible for the product to feel trustworthy instead of falsely
+                    simplified? I treated that translation layer as the product, not as presentation polish after the data
+                    model was solved.
+                  </p>
+                  <p>
+                    That framing shaped the trust model too. Browser-session authentication, Keychain storage, resilient
+                    refresh behavior, clear reset timing, and threshold-based notifications were not implementation
+                    trivia. They determined whether the utility felt dependable enough to check casually and trust quickly.
+                    In products this small, trust is often built from details users could not list individually, but would
+                    notice immediately if they failed.
                   </p>
                 </div>
               </section>
@@ -264,16 +265,16 @@
               <section class="case-study-block case-study-block-aside-media case-study-block-aside-right">
                 <div class="case-study-block-inner">
                   <div class="case-study-copy">
-                    <h2>Glanceability Came Before Dashboard Thinking</h2>
+                    <h2>The First Surface Had To Answer Fast</h2>
                     <p>
-                      One of the key product choices was resisting the temptation to over-explain on the first surface. The
-                      menu bar icon should answer the ambient question before the popover even opens, and the popover should
-                      extend that answer rather than restart the story with a wall of detail.
+                      One of the most important product choices was resisting the urge to over-explain on the first
+                      surface. The menu bar icon should answer the ambient question before the popover opens, and the
+                      popover should extend that answer rather than restart the story with a wall of detail.
                     </p>
                     <p>
                       That led to a layered model: ambient status first, compact comparison second, richer account context
-                      third. It is a simple hierarchy, but it is what keeps the app feeling like a native utility instead of
-                      a miniature analytics product.
+                      third. That hierarchy is what keeps AIQuota feeling like a native utility instead of a shrunken
+                      analytics product.
                     </p>
                   </div>
                   <figure class="case-study-figure case-study-media-wrap">
@@ -285,11 +286,7 @@
                       />
                     </div>
                     <figcaption class="case-study-caption">
-                      Widget exploration extended the same glanceability principles beyond the menu bar.
-                      <span class="case-study-caption-note">
-                        Placeholder visual suggestion: use a more editorial crop that compares menu bar glance state with
-                        widget glance state side by side.
-                      </span>
+                      Widget exploration extended the same glanceability rules beyond the menu bar.
                     </figcaption>
                   </figure>
                 </div>
@@ -297,31 +294,28 @@
 
               <section class="work-article-section case-study-block case-study-block-text">
                 <div class="case-study-block-inner">
-                  <h2>Building A Visual Grammar For Unlike Systems</h2>
+                  <h2>A Visual Grammar For Unlike Systems</h2>
                   <p>
-                    Once the translation problem was clear, the interface needed a grammar that could make unlike provider
-                    models feel coherent without implying they were identical. Dual-arc gauges, plan badges, credits,
-                    window labels, reset times, and freshness indicators became the vocabulary. The point was not to make
-                    everything look the same. It was to make the act of reading the information feel consistent.
+                    Once the translation problem was clear, the interface needed a visual grammar that could make unlike
+                    provider systems feel coherent without pretending they were the same. Dual-arc gauges, plan badges,
+                    credit counts, window labels, reset times, and freshness indicators became the vocabulary. The goal
+                    was not visual sameness. It was reading consistency.
                   </p>
                   <p>
-                    Color and motion played a supporting role here. As usage approaches a limit, the gauge shifts from calm
-                    to warning states before the quota is actually exhausted. That sounds minor, but it changes the product
-                    from passive reporting into a more actionable system. Instead of learning only when the answer becomes
-                    "no," the user gets enough runway to decide whether to keep pushing, switch tools, or pause.
+                    Color and motion helped turn the app from passive reporting into a decision tool. As usage approaches a
+                    limit, the interface shifts from calm to warning states before exhaustion. That gives the user runway:
+                    keep going, switch tools, or pause before the answer becomes “no.”
                   </p>
                   <p>
-                    That led to a few explicit product decisions. The gauges emphasize percent used rather than raw
-                    remaining credits because the primary question is risk, not accounting. Warning thresholds are early on
-                    purpose, so the app creates runway before exhaustion rather than simply confirming it. The menu bar owns
-                    the first answer because it is the lowest-friction checkpoint during active work, and widgets extend the
-                    same language into more ambient contexts without turning the product into a dashboard. The point was to
-                    make "am I safe to keep going?" readable in a second.
+                    That led to a few explicit product choices. Gauges prioritize percent used over raw remaining credits
+                    because the real question is risk, not accounting. Warning thresholds fire early on purpose. The menu
+                    bar owns the first answer because it is the lowest-friction checkpoint during active work, and widgets
+                    extend the same language into more ambient contexts without pulling the product toward dashboard sprawl.
                   </p>
                   <p>
-                    I also kept refining the boundary between useful specificity and clutter. The best version of this
-                    product is not the one with the most fields. It is the one that makes the next decision obvious in a
-                    glance, then rewards a closer look with just enough supporting context to feel trustworthy.
+                    The boundary between specificity and clutter kept mattering. The best version of AIQuota is not the
+                    one with the most fields. It is the one that makes the next decision obvious in a second, then rewards
+                    a closer look with enough supporting context to feel trustworthy.
                   </p>
                 </div>
               </section>
@@ -338,10 +332,6 @@
                     </div>
                     <figcaption class="case-study-caption">
                       Widget system translated the same quota language into a calmer, more ambient surface.
-                      <span class="case-study-caption-note">
-                        Placeholder visual suggestion: replace with a crisper system shot that shows small, medium, and
-                        large widget hierarchy together.
-                      </span>
                     </figcaption>
                   </figure>
                   <figure class="case-study-figure">
@@ -353,11 +343,7 @@
                       />
                     </div>
                     <figcaption class="case-study-caption">
-                      Near-limit state using color shift and warning language to create decision runway before exhaustion.
-                      <span class="case-study-caption-note">
-                        Placeholder visual suggestion: pair this with a tiny annotation layer that explains the warning
-                        thresholds and why they matter.
-                      </span>
+                      Near-limit state uses color and warning language to create decision runway before exhaustion.
                     </figcaption>
                   </figure>
                 </div>
@@ -372,44 +358,44 @@
                   </p>
                   <p class="case-study-callout-attribution">
                     — <a href="https://www.linkedin.com/feed/update/urn:li:activity:7442368599501115392/" target="_blank" rel="noopener noreferrer"><strong>Daniel Hairston</strong></a>,
-                    praising AIQuota’s precision and restraint.
+                    on AIQuota’s precision and restraint.
                   </p>
                 </div>
               </section>
 
               <section class="work-article-section case-study-block case-study-block-text">
                 <div class="case-study-block-inner">
-                  <h2>Refinement After Launch Was About Calm, Not Expansion</h2>
+                  <h2>After Launch, The Work Was Mostly Subtraction</h2>
                   <p>
-                    Once the first version was working, the next phase was not about piling on adjacent features. It was
-                    about making the utility feel increasingly well-behaved. Widgets extended the product into more ambient
-                    contexts. Notifications became more useful as thresholds and language tightened. Network recovery and
-                    refresh handling reduced the amount of babysitting the product required. Silent auto-update behavior
-                    helped the app feel more like infrastructure and less like a hobby project demanding attention.
+                    Once the first release worked, the next phase was not about piling on adjacent features. It was about
+                    making the utility quieter, steadier, and easier to trust. Widgets extended the product into more
+                    ambient contexts. Notifications became more useful as thresholds and language tightened. Better
+                    recovery and refresh behavior reduced the amount of babysitting the app required. Silent auto-update
+                    behavior helped it feel more like infrastructure and less like a project asking for attention.
                   </p>
                   <p>
-                    A lot of that refinement work sat below the visual layer. Polling and cache freshness had to feel
-                    accurate without becoming noisy. Notifications needed enough lead time to be useful without turning into
-                    alert fatigue. Widgets, popover state, and settings all had to stay in sync across refreshes, failures,
-                    and recovery. In a utility this small, QA is product design.
+                    Much of that refinement sat below the visual layer. Polling and cache freshness had to feel accurate
+                    without becoming noisy. Notifications needed enough lead time to be helpful without turning into alert
+                    fatigue. Widgets, popover state, and settings had to stay in sync across refreshes, failures, and
+                    recovery. In a utility this small, QA is product design.
                   </p>
                   <p>
-                    That refinement loop is important to me because it reflects a specific product philosophy. Mature
-                    utility design is often about subtraction, sequencing, and restraint. You can feel whether a product is
-                    trying to be admired or trying to be relied on. AIQuota gets stronger each time it becomes easier to
-                    ignore until the moment it is needed.
+                    That loop matters to me because it reflects a broader product philosophy. Mature utility design is
+                    often about subtraction, sequencing, and restraint. You can feel whether a product is trying to be
+                    admired or trying to be relied on. AIQuota gets better each time it becomes easier to ignore until the
+                    moment it matters.
                   </p>
                   <p>
-                    The open-source release helped validate that direction as well. Shipping publicly created a tighter
-                    feedback loop around setup clarity, edge cases, and which details people actually cared about once the
-                    tool became part of their workflow.
+                    Shipping in the open sharpened that loop further. Public release created tighter feedback around setup
+                    clarity, edge cases, and which details people actually cared about once the tool became part of their
+                    working habits.
                   </p>
                 </div>
               </section>
 
               <section class="work-article-section case-study-block case-study-block-results">
                 <div class="case-study-block-inner">
-                  <h2>What Shipping AIQuota Taught Me</h2>
+                  <h2>What Shipping AIQuota Reinforced</h2>
                   <p>
                     AIQuota shipped as a notarized macOS app with menu bar monitoring, widgets, notifications, and support
                     for both Codex and Claude Code. The current release is available as an
@@ -419,14 +405,14 @@
                   </p>
                   <p>
                     More importantly, it validated a product pattern I care about. As AI tools become everyday
-                    infrastructure, a whole layer of adjacent workflow problems appears around them. Some of the best
-                    opportunities are not bigger assistants, but thinner native utilities that remove friction at the edges
-                    of real working habits.
+                    infrastructure, a layer of adjacent workflow problems emerges around them. Some of the best
+                    opportunities are not bigger assistants. They are thinner native utilities that remove friction at the
+                    edges of real working habits.
                   </p>
                   <p>
-                    This project also sharpened my belief that small utilities still demand strong product judgment. The
-                    right answer was not maximum detail, feature sprawl, or a billing-style dashboard. It was a calm,
-                    legible answer to a very human question in the middle of active work: am I safe to keep going?
+                    This project also reinforced something I believe strongly: small utilities still demand serious product
+                    judgment. The right answer was not more detail, feature sprawl, or a billing-style dashboard. It was a
+                    calm, legible answer to a human question in the middle of active work: am I safe to keep going?
                   </p>
                 </div>
               </section>
