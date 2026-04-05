@@ -257,6 +257,24 @@ if (emailLinks.length > 0) {
       video.pause();
     };
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            if (!reducedMotion && video.paused) {
+              playDemo(video);
+            }
+          } else {
+            if (!video.paused) {
+              video.pause();
+            }
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
     demoVideos.forEach((video) => {
       video.addEventListener("play", () => syncPausedState(video));
       video.addEventListener("pause", () => syncPausedState(video));
@@ -270,10 +288,7 @@ if (emailLinks.length > 0) {
         toggleDemoPlayback(video);
       });
 
-      if (!reducedMotion) {
-        playDemo(video);
-      }
-
+      observer.observe(video);
       syncPausedState(video);
     });
 
