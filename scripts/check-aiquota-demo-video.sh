@@ -32,6 +32,8 @@ expect_pattern "$PAGE" 'data-case-study-demo-video' \
   "AIQuota demo video should use the shared case-study demo video behavior."
 expect_pattern "$PAGE" 'case-study-aiquota-demo-mobile' \
   "AIQuota demo block should keep a mobile fallback treatment."
+expect_pattern "$PAGE" '<video' \
+  "AIQuota mobile demo should use a real video element."
 expect_pattern "$STYLESHEET" '--aiquota-stage-bg:' \
   "AIQuota demo stage should use the product-specific background treatment."
 expect_pattern "$STYLESHEET" 'width: min(100%, 1040px);' \
@@ -59,5 +61,41 @@ if [ "$first_text_line" -ge "$demo_line" ] || [ "$demo_line" -ge "$second_text_l
   echo "FAIL: AIQuota demo block should sit between the first and second text blocks."
   exit 1
 fi
+
+python3 - <<'PY'
+from pathlib import Path
+import sys
+import re
+
+page = Path("work/ai-quota/index.html").read_text()
+match = re.search(
+    r'<div class="case-study-media case-study-aiquota-demo-mobile">(.*?)</div>\s*<figcaption',
+    page,
+    re.S,
+)
+
+if not match:
+    print("FAIL: could not isolate AIQuota mobile demo block.")
+    sys.exit(1)
+
+mobile_block = match.group(1)
+
+def fail(message):
+    print(f"FAIL: {message}")
+    print(mobile_block.strip())
+    sys.exit(1)
+
+if "<video" not in mobile_block:
+    fail("AIQuota mobile demo should render a video element.")
+
+if "<img" in mobile_block:
+    fail("AIQuota mobile demo should no longer rely on a static image fallback.")
+
+if '../../assets/videos/aiquota-demo-inline.mp4' not in mobile_block:
+    fail("AIQuota mobile demo should use the shared inline MP4 asset.")
+
+if "autoplay" not in mobile_block:
+    fail("AIQuota mobile demo should be marked autoplay so phones treat it as motion, not a poster frame.")
+PY
 
 echo "aiquota demo video check passed"
