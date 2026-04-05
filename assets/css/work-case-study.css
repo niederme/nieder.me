@@ -628,71 +628,6 @@ a:focus-visible {
   transition: filter 0.22s ease;
 }
 
-.case-study-page .work-page::before {
-  display: none;
-}
-
-.case-study-page .case-study-logo-link {
-  position: fixed;
-  left: 12px;
-  top: calc(18px + var(--safe-top));
-  width: 76px;
-  height: 76px;
-  z-index: 25;
-}
-
-.case-study-page .logo-mark {
-  left: 12px;
-  top: calc(18px + var(--safe-top));
-  width: 76px;
-  height: 76px;
-}
-
-.case-study-page .case-study-side-nav {
-  left: 26px;
-  top: calc(140px + var(--safe-top));
-  width: 38px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
-}
-
-.case-study-page .global-nav-anchor {
-  width: 38px;
-  height: 38px;
-  border-top: none;
-}
-
-.case-study-page .rail-controls-panel {
-  width: 38px;
-  margin-top: 10px;
-  padding: 0;
-  border-top: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.case-study-page .theme-toggle,
-.case-study-page .cols-toggle {
-  width: 38px;
-  min-height: auto;
-  padding: 0;
-  gap: 4px;
-  font-size: 10px;
-}
-
-.case-study-page .theme-toggle-label,
-.case-study-page .cols-toggle-label {
-  font-size: 11px;
-}
-
-.case-study-page .global-nav-popover {
-  left: calc(100% + 10px);
-}
-
 .logo-link:focus-visible .logo-mark {
   border-radius: 10px;
   box-shadow: 0 0 0 3px var(--focus-shadow);
@@ -2244,8 +2179,6 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 @media (max-width: 1100px) {
-  .case-study-page .case-study-logo-link,
-  .case-study-page .case-study-side-nav,
   .work-page::before,
   .rail,
   .global-nav {
