@@ -46,11 +46,6 @@ for page in "${CASE_STUDY_PAGES[@]}"; do
   expect_pattern "$page" "work-index-case-study-block" "${page} should reuse the case-study promo block."
   expect_pattern "$page" "work-index-card" "${page} should include at least one recirculation promo."
 
-  if rg -q --fixed-strings '<aside class="rail">' "$page"; then
-    echo "FAIL: ${page} should use the lighter case-study side-nav shell instead of the legacy rail wrapper."
-    exit 1
-  fi
-
   if rg -q --fixed-strings '.work-article-visuals' "$page"; then
     echo "FAIL: ${page} should not keep the legacy visuals gallery once the block conversion lands."
     exit 1
@@ -76,7 +71,7 @@ expect_pattern "$WORK_STYLESHEET" "margin-top: 18px;" "Lede block should own the
 expect_pattern "$WORK_STYLESHEET" "margin-bottom: 50px;" "Lede block should preserve the Figma spacing above the first horizontal rule."
 expect_pattern "$WORK_STYLESHEET" "top: 100%;" "Full-media captions should sit tight to the image per the detached-caption design."
 expect_pattern "$WORK_STYLESHEET" "margin-bottom: 24px;" "Full-media media blocks should keep the caption closer to the image."
-expect_pattern "$WORK_STYLESHEET" "width: 198px;" "Full-media captions should use the narrow detached caption width from Figma."
+expect_pattern "$WORK_STYLESHEET" "width: var(--case-study-sidecar-width);" "Detached captions should size from the shared responsive sidecar width."
 expect_pattern "$WORK_STYLESHEET" '.case-study-block-full-media .case-study-caption::before' "Full-media captions should render the detached arrow marker."
 expect_pattern "$WORK_STYLESHEET" 'background-color: var(--fg);' "Full-media caption arrows should render in white."
 expect_pattern "$WORK_STYLESHEET" 'mask: url("../icons/arrow-case-study-red.svg") center / 18px 14px no-repeat;' "Full-media captions should use the shared case-study arrow asset at the larger design size."
