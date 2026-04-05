@@ -130,10 +130,11 @@ Primary deploy target is the `/2026` site:
 The deploy script:
 
 - stages a temporary copy of `index.html` and `assets/`
-- includes `work/` when present
+- includes the allowlisted top-level public sections when present
 - rewrites the staged homepage site URL
 - cache-busts staged CSS and JS asset URLs across the staged HTML files, including the work-family pages
 - syncs only the managed staged paths to the remote target
+- is checked by `scripts/check-deploy-2026.py`, which fails if a top-level `*/index.html` section exists but is missing from the deploy allowlist
 
 Important default deploy settings live inside `scripts/deploy-2026.sh` and can be overridden with environment variables:
 

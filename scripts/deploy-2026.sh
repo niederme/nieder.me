@@ -26,6 +26,16 @@ RSYNC_ARGS=(
   --exclude .DS_Store
 )
 
+# Keep every top-level public section here so deploy scope stays explicit.
+PUBLIC_DIRS=(
+  about
+  accessibility
+  colophon
+  privacy
+  styleguide
+  work
+)
+
 if [[ "$DRY_RUN" == "1" ]]; then
   RSYNC_ARGS+=(--dry-run)
 fi
@@ -38,15 +48,11 @@ trap cleanup EXIT
 
 cp index.html "$STAGING_DIR/"
 cp -R assets "$STAGING_DIR/"
-if [[ -d about ]]; then
-  cp -R about "$STAGING_DIR/"
-fi
-if [[ -d colophon ]]; then
-  cp -R colophon "$STAGING_DIR/"
-fi
-if [[ -d work ]]; then
-  cp -R work "$STAGING_DIR/"
-fi
+for dir in "${PUBLIC_DIRS[@]}"; do
+  if [[ -d "$dir" ]]; then
+    cp -R "$dir" "$STAGING_DIR/"
+  fi
+done
 
 ./scripts/set-site-url.sh "$SITE_URL" "$STAGING_DIR/index.html"
 
@@ -67,15 +73,11 @@ ssh -p "$DEPLOY_PORT" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/
 # Sync only the managed site paths from staging so deploy does not delete
 # unrelated root-level server files such as host-managed config.
 SYNC_PATHS=("$STAGING_DIR/index.html" "$STAGING_DIR/assets")
-if [[ -d "$STAGING_DIR/about" ]]; then
-  SYNC_PATHS+=("$STAGING_DIR/about")
-fi
-if [[ -d "$STAGING_DIR/colophon" ]]; then
-  SYNC_PATHS+=("$STAGING_DIR/colophon")
-fi
-if [[ -d "$STAGING_DIR/work" ]]; then
-  SYNC_PATHS+=("$STAGING_DIR/work")
-fi
+for dir in "${PUBLIC_DIRS[@]}"; do
+  if [[ -d "$STAGING_DIR/$dir" ]]; then
+    SYNC_PATHS+=("$STAGING_DIR/$dir")
+  fi
+done
 
 rsync "${RSYNC_ARGS[@]}" -e "ssh -p $DEPLOY_PORT" \
   "${SYNC_PATHS[@]}" \
