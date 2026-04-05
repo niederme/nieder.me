@@ -835,7 +835,7 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .policy-page .work-article-grid {
-  margin-top: 0;
+  margin-top: 38px;
   padding-top: 50px;
   border-top: 1px solid var(--line);
 }

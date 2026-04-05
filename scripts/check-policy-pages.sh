@@ -22,6 +22,25 @@ expect_pattern() {
   grep -q "$pattern" "$path" || fail "$message"
 }
 
+expect_multiline_pattern() {
+  local path="$1"
+  local pattern="$2"
+  local message="$3"
+  python3 - "$path" "$pattern" "$message" <<'PY'
+from pathlib import Path
+import re
+import sys
+
+path = Path(sys.argv[1])
+pattern = sys.argv[2]
+message = sys.argv[3]
+contents = path.read_text()
+if not re.search(pattern, contents, re.DOTALL):
+    print(f"FAIL: {message}", file=sys.stderr)
+    sys.exit(1)
+PY
+}
+
 expect_file "accessibility/index.html"
 expect_file "privacy/index.html"
 expect_file "assets/css/work-case-study.css"
@@ -83,5 +102,8 @@ expect_pattern "assets/css/work-case-study.css" '.policy-page .work-article-grid
   "Expected policy pages to add the case-study-style top rule and spacing in work-case-study.css."
 expect_pattern "assets/css/work-case-study.css" '.policy-page .work-article-body {' \
   "Expected policy pages to scope the matching article-body alignment in work-case-study.css."
+expect_multiline_pattern "assets/css/work-case-study.css" \
+  '\.policy-page \.work-article-grid \{[^}]*margin-top: 38px;[^}]*padding-top: 50px;[^}]*border-top: 1px solid var\(--line\);' \
+  "Expected policy pages to keep extra space above the ruled content row."
 
 echo "Policy pages and footer utility links look good."
