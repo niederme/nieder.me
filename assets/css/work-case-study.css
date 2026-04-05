@@ -2707,6 +2707,7 @@ body.grid-hidden .work-grid-overlay > span {
     padding: 0;
     margin-bottom: 12px;
     background: transparent;
+    aspect-ratio: auto;
   }
 
   .work-article-body > .case-study-block-full-media + .case-study-block-text,
