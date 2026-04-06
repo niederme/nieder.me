@@ -844,7 +844,7 @@ body.grid-hidden .work-grid-overlay > span {
 .work-article-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 40px;
+  column-gap: var(--grid-gutter);
   margin-top: 38px;
   align-items: start;
 }
