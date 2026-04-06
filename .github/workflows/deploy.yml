@@ -18,10 +18,10 @@ jobs:
       - name: Minify CSS and JS
         run: |
           npm install -g lightningcss-cli terser
-          lightningcss --minify assets/css/styles.css -o assets/css/styles.css
-          lightningcss --minify assets/css/work-case-study.css -o assets/css/work-case-study.css
-          lightningcss --minify assets/css/styleguide.css -o assets/css/styleguide.css
-          terser assets/js/main.js -o assets/js/main.js --compress --mangle
+          lightningcss --minify --source-map assets/css/styles.css -o assets/css/styles.css
+          lightningcss --minify --source-map assets/css/work-case-study.css -o assets/css/work-case-study.css
+          lightningcss --minify --source-map assets/css/styleguide.css -o assets/css/styleguide.css
+          terser assets/js/main.js -o assets/js/main.js --source-map "url='main.js.map'" --compress --mangle
 
       - name: Set up SSH
         run: |
