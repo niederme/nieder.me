@@ -6,4 +6,5 @@ _PSDs/**/*
 **/.DS_Store
 config.codekit3
 .playwright-cli/
+.claude/
 .tmp/
