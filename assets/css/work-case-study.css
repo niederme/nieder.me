@@ -313,6 +313,7 @@ body.is-pulling-refresh .rail::after {
   height: 26px;
   object-fit: contain;
   opacity: 1;
+  cursor: pointer;
   transition: opacity 0.18s ease;
 }
 
