@@ -121,22 +121,27 @@ git worktree add ../nieder-me-my-feature -b codex/my-feature
 
 ## Deploy
 
-Primary deploy target is the `/2026` site:
+Merging to `main` triggers the GitHub Actions deploy workflow automatically. The workflow:
+
+- installs `lightningcss` and `terser` and minifies all CSS and JS with source maps
+- syncs the managed site files to the server over SSH using the `SSH_PRIVATE_KEY` secret
+
+For manual or local deploys, use the shell script directly:
 
 ```bash
 ./scripts/deploy-2026.sh
 ```
 
-The deploy script:
+The script:
 
 - stages a temporary copy of `index.html` and `assets/`
-- includes the allowlisted top-level public sections when present
+- includes allowlisted top-level sections when present
 - rewrites the staged homepage site URL
-- cache-busts staged CSS and JS asset URLs across the staged HTML files, including the work-family pages
-- syncs only the managed staged paths to the remote target
-- is checked by `scripts/check-deploy-2026.py`, which fails if a top-level `*/index.html` section exists but is missing from the deploy allowlist
+- cache-busts staged CSS and JS asset URLs across all HTML files
+- syncs only managed paths to the remote target
+- is checked by `scripts/check-deploy-2026.py`, which fails if a top-level section exists but is missing from the allowlist
 
-Important default deploy settings live inside `scripts/deploy-2026.sh` and can be overridden with environment variables:
+Default settings in `scripts/deploy-2026.sh` can be overridden with environment variables:
 
 - `DEPLOY_HOST`
 - `DEPLOY_USER`
