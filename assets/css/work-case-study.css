@@ -1750,13 +1750,12 @@ body.grid-hidden .work-grid-overlay > span {
 .work-index-case-studies {
   grid-column: 5 / span 8;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 396px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, auto);
   grid-auto-flow: column;
-  column-gap: 40px;
+  column-gap: var(--grid-gutter);
   row-gap: 81px;
   align-items: start;
-  justify-content: space-between;
 }
 
 .work-index-case-study-column {
@@ -2213,7 +2212,7 @@ body.grid-hidden .work-grid-overlay > span {
   .work-index-case-studies {
     grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 32px;
+    column-gap: var(--grid-gutter);
   }
 
   .work-index-case-study-column {
