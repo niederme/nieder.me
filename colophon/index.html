@@ -149,7 +149,7 @@
             </div>
             <div class="work-article-meta-card">
               <p class="work-article-meta-label">Workflow</p>
-              <p class="work-article-meta-value">Make-based preview and staged shell deploy</p>
+              <p class="work-article-meta-value">Make-based local preview, GitHub Actions deploy</p>
             </div>
           </aside>
 
@@ -173,16 +173,16 @@
             <section class="work-article-section">
               <h2>Preview</h2>
               <p>
-                Local previews come up through the repo Make targets, which wrap a tiny Python server so the work can
-                stay inspectable in a browser without adding framework overhead.
+                Local previews run through a Make target — a small Python static server, no framework overhead,
+                inspectable in any browser on the local network.
               </p>
             </section>
 
             <section class="work-article-section">
               <h2>Deploy</h2>
               <p>
-                Shipping goes through a staged shell deploy that syncs the managed site files and refreshes cache-busted
-                asset URLs on the way out, keeping the source tree clean.
+                Pushing to main triggers a GitHub Actions workflow that minifies CSS and JS with source maps, then
+                syncs to the server over SSH. The source tree stays clean.
               </p>
             </section>
 
