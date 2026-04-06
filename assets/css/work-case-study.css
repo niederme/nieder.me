@@ -2145,6 +2145,11 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 @media (min-width: 1501px) {
+  :root {
+    --grid-width: min(1700px, calc(100vw - 220px));
+    --grid-gutter: 48px;
+  }
+
   .work-article {
     --case-study-shell-width: var(--grid-width);
     width: var(--grid-width);
