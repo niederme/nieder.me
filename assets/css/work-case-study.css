@@ -2144,6 +2144,16 @@ body.grid-hidden .work-grid-overlay > span {
   opacity: 0.68;
 }
 
+@media (min-width: 1501px) {
+  .work-article {
+    --case-study-shell-width: var(--grid-width);
+    width: var(--grid-width);
+    max-width: none;
+    margin-left: calc((100vw - var(--grid-width)) / 2 + 50px);
+    margin-right: calc((100vw - var(--grid-width)) / 2 - 50px);
+  }
+}
+
 @media (min-width: 960px) and (max-width: 1500px) {
   .work-index-page .work-article {
     --work-index-top-mask-height: 106px;
@@ -2162,7 +2172,7 @@ body.grid-hidden .work-grid-overlay > span {
   .work-article-grid,
   .work-index-resume-layout,
   .site-footer-grid {
-    column-gap: 32px;
+    column-gap: var(--grid-gutter);
   }
 
   .work-index-header {

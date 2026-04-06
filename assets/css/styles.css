@@ -184,6 +184,7 @@ a:focus-visible {
   display: block;
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo-link:focus-visible .logo-mark,
