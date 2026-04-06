@@ -1238,9 +1238,6 @@ body.grid-hidden .grid-overlay > span {
   align-self: flex-start;
 }
 
-.sendmoi-icon-light { display: none; }
-[data-theme="light"] .sendmoi-icon-dark { display: none; }
-[data-theme="light"] .sendmoi-icon-light { display: block; }
 
 .case-study-promo-aiquota .case-study-promo-logo {
   width: 72px;
@@ -1287,6 +1284,10 @@ body.grid-hidden .grid-overlay > span {
   width: 100px;
   height: 44px;
 }
+
+.case-study-promo-sendmoi .sendmoi-icon-light { display: none; }
+[data-theme="light"] .case-study-promo-sendmoi .sendmoi-icon-dark { display: none; }
+[data-theme="light"] .case-study-promo-sendmoi .sendmoi-icon-light { display: block; }
 
 .case-study-promo-inner {
   display: flex;

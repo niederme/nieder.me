@@ -828,9 +828,9 @@ body.grid-hidden .work-grid-overlay > span {
   display: block;
 }
 
-.sendmoi-icon-light { display: none; }
-[data-theme="light"] .sendmoi-icon-dark { display: none; }
-[data-theme="light"] .sendmoi-icon-light { display: block; }
+.work-theme-sendmoi .sendmoi-icon-light { display: none; }
+[data-theme="light"] .work-theme-sendmoi .sendmoi-icon-dark { display: none; }
+[data-theme="light"] .work-theme-sendmoi .sendmoi-icon-light { display: block; }
 
 .work-article-eyebrow {
   margin: 30px 0 10px;
