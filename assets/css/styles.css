@@ -1238,6 +1238,10 @@ body.grid-hidden .grid-overlay > span {
   align-self: flex-start;
 }
 
+.sendmoi-icon-light { display: none; }
+[data-theme="light"] .sendmoi-icon-dark { display: none; }
+[data-theme="light"] .sendmoi-icon-light { display: block; }
+
 .case-study-promo-aiquota .case-study-promo-logo {
   width: 72px;
   height: 72px;
