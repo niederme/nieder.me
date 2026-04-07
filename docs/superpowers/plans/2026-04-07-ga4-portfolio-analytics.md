@@ -107,7 +107,7 @@ If the first run fails because of a bad grep, quoting issue, or an ordering rege
 
 - [ ] **Step 1: Write the minimal privacy-copy implementation**
 
-Replace the current section around `privacy/index.html:207-213` so it no longer claims the site has no analytics. Keep the tone plain-language and lightweight.
+First verify the current location of the “What this site does not currently do” section in `privacy/index.html` rather than trusting a stale line reference, then replace that section so it no longer claims the site has no analytics. Keep the tone plain-language and lightweight.
 
 The updated section should say, in substance:
 
@@ -213,6 +213,16 @@ bash scripts/check-ga4-analytics.sh
 Expected: pass with a success message such as `GA4 analytics checks passed`.
 
 - [ ] **Step 3: Commit the green implementation**
+
+Run:
+
+```bash
+git status --short
+```
+
+Expected: only the planned analytics files are modified.
+
+Then run:
 
 Run:
 
