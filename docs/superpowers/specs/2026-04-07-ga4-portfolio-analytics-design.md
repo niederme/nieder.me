@@ -22,8 +22,9 @@ The site should not add Google Tag Manager, custom event plumbing, consent-banne
 ### Default GA4 collection
 
 - Use the standard Google tag snippet with measurement ID `G-DEFM9FZ25D`.
-- Install it directly in each page's `<head>` so page views are collected across the full public portfolio.
+- Install it directly in each page's `<head>` so page views are collected across the tagged public portfolio.
 - Keep the JavaScript footprint minimal and independent from `assets/js/main.js`.
+- Add `<link rel="preconnect" href="https://www.googletagmanager.com">` alongside the tag as a small performance optimization.
 
 ### Enhanced measurement
 
@@ -64,13 +65,18 @@ The site should not add Google Tag Manager, custom event plumbing, consent-banne
 - `accessibility/index.html`
 - `colophon/index.html`
 - `privacy/index.html`
-- `resy-ai-demo.html`
-- `styleguide/index.html`
 - `work/index.html`
 - `work/resy-discovery/index.html`
 - `work/sendmoi/index.html`
 - `work/somm-ai/index.html`
 - `work/ai-quota/index.html`
+
+## Explicitly Excluded Pages
+
+- `styleguide/index.html`
+  The style guide is currently treated as an internal or working reference page rather than a core portfolio destination, so it should stay out of the required analytics footprint to keep reporting focused on actual visitor traffic.
+- `resy-ai-demo.html`
+  This file is a standalone demo artifact with a different structure from the main site pages and is not part of the core portfolio information architecture. Exclude it from the initial GA4 rollout unless it becomes an intentionally promoted public destination later.
 
 ## Content And Privacy Direction
 
@@ -88,6 +94,7 @@ The revised privacy copy should:
 
 - Because the repo is composed of static HTML pages rather than a shared templating system, the Google tag will likely need to be inserted in multiple files.
 - The tag placement should be consistent across pages and should not disturb the existing inline theme/grid bootstrapping script.
+- The existing inline theme/grid bootstrapping script should remain first among the head scripts so it can continue to prevent flash-of-incorrect-theme behavior. The GA4 preconnect and Google tag should follow that script rather than moving ahead of it.
 - If a single reusable include mechanism does not already exist, prefer a straightforward direct insertion rather than inventing new build infrastructure just for analytics.
 
 ## Risks And Guardrails
@@ -101,9 +108,11 @@ The revised privacy copy should:
 ## Testing Expectations
 
 - Verify every public page includes the GA4 tag with measurement ID `G-DEFM9FZ25D`.
+- Verify `styleguide/index.html` and `resy-ai-demo.html` remain untagged in this first rollout.
 - Verify the privacy page no longer claims the site does not use analytics.
 - Verify existing local theme/grid preference behavior still works after the `<head>` edits.
 - Verify the site still renders normally in local preview across homepage and subpages.
+- Verify the tag fires using GA4 DebugView or another equivalent debug path before relying on GA4 Realtime alone.
 - After deploy or preview, verify GA4 Realtime can see a test visit.
 
 ## Success Criteria
