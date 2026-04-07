@@ -590,6 +590,7 @@ a:focus-visible {
 .resume-company a,
 .resume-bullets a,
 .work-index-sidebar-section a,
+.work-article-meta-value a,
 .work-article-body a {
   color: var(--accent);
   text-decoration-line: underline;
@@ -605,6 +606,7 @@ a:focus-visible {
 .resume-company a:visited,
 .resume-bullets a:visited,
 .work-index-sidebar-section a:visited,
+.work-article-meta-value a:visited,
 .work-article-body a:visited {
   color: var(--accent);
 }
@@ -614,6 +616,7 @@ a:focus-visible {
 .resume-company a:focus-visible,
 .resume-bullets a:focus-visible,
 .work-index-sidebar-section a:focus-visible,
+.work-article-meta-value a:focus-visible,
 .work-article-body a:focus-visible {
   color: var(--accent);
   text-decoration-color: var(--text-link-underline);
@@ -752,7 +755,7 @@ a:focus-visible {
   position: relative;
 }
 
-body.work-theme-aiquota .work-article {
+.case-study-page .work-article {
   --case-study-hero-height: calc(var(--case-study-shell-width) * 9 / 16);
 }
 
@@ -2541,7 +2544,7 @@ body.grid-hidden .work-grid-overlay > span {
     padding-bottom: 72px;
   }
 
-  body.work-theme-aiquota .work-article {
+  .case-study-page .work-article {
     --case-study-hero-height: calc(var(--case-study-shell-width) * 9 / 16);
   }
 
@@ -3190,6 +3193,10 @@ body.grid-hidden .work-grid-overlay > span {
     --case-study-heading-size: 18px;
     width: calc(100vw - 24px);
     padding-bottom: 64px;
+  }
+
+  .case-study-page .work-article {
+    --case-study-hero-height: calc(var(--case-study-shell-width) * 9 / 16);
   }
 
   .mobile-logo-mark {
