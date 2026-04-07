@@ -179,4 +179,5 @@ This helper requires the GitHub CLI (`gh`) to be installed and authenticated.
 
 - The site defaults to dark mode and includes a persistent manual `light` toggle.
 - Shared rail navigation and the column-grid toggle are used across the homepage, About, Colophon, and work pages.
+- For job-application attribution links, use `https://nieder.me/?utm_source=<company>&utm_medium=job_application&utm_campaign=portfolio`; add `&utm_content=<role_slug>` only when role-level detail is useful.
 - The README should describe the current repo shape and workflows, not act as a running change log. If a feature ships, update the relevant section above instead of appending historical bullets.
