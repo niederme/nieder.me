@@ -75,8 +75,8 @@
     rgba(0, 0, 0, 0.28) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/work/resy-discovery/Resy-Discovery-desktop.jpg");
-  --work-hero-mobile-image: url("../images/work/resy-discovery/Resy-Discovery-mobile.jpg");
+  --work-hero-desktop-image: url("../images/case-studies/resy-discovery/article/Resy-Discovery-desktop.jpg");
+  --work-hero-mobile-image: url("../images/case-studies/resy-discovery/article/Resy-Discovery-mobile.jpg");
   --work-hero-focus-desktop: right center;
   --work-hero-focus-mobile: right center;
   --work-logo-width-desktop: 100px;
@@ -160,8 +160,8 @@ body.work-theme-sendmoi {
     rgba(0, 0, 0, 0.28) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/home/case-study-promos/bg2-SendMoi.jpg");
-  --work-hero-mobile-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+  --work-hero-desktop-image: url("../images/case-studies/sendmoi/article/bg2-SendMoi.jpg");
+  --work-hero-mobile-image: url("../images/case-studies/sendmoi/article/bg-SendMoi-desktop.png");
   --work-hero-focus-desktop: right center;
   --work-hero-focus-mobile: right center;
   --work-logo-width-desktop: 75px;
@@ -183,8 +183,8 @@ body.work-theme-sommai {
     rgba(0, 0, 0, 0.24) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/home/case-study-promos/bg-Resy-Somm-Ai.jpg");
-  --work-hero-mobile-image: url("../images/home/case-study-promos/bg-sommai-mobile.png");
+  --work-hero-desktop-image: url("../images/case-studies/somm-ai/article/bg-Resy-Somm-Ai.jpg");
+  --work-hero-mobile-image: url("../images/case-studies/somm-ai/article/bg-sommai-mobile.png");
   --work-hero-focus-desktop: center center;
   --work-hero-focus-mobile: center center;
   --work-logo-width-desktop: 100px;
@@ -202,8 +202,8 @@ body.work-theme-aiquota {
     rgba(0, 0, 0, 0.34) 45%,
     rgba(0, 0, 0, 0) 74%
   );
-  --work-hero-desktop-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.jpg");
-  --work-hero-mobile-image: url("../images/case-studies/ai-quota/hero-composite-screenshot-current.jpg");
+  --work-hero-desktop-image: url("../images/case-studies/ai-quota/article/hero-composite-screenshot-current.jpg");
+  --work-hero-mobile-image: url("../images/case-studies/ai-quota/article/hero-composite-screenshot-current.jpg");
   --work-hero-focus-desktop: center center;
   --work-hero-focus-mobile: center center;
   --work-logo-width-desktop: 72px;

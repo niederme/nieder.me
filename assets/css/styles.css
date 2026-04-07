@@ -1250,17 +1250,17 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .case-study-promo-resy {
-  background-image: url("../images/home/case-study-promos/bg-Resy.jpg");
+  background-image: url("../images/case-studies/resy-discovery/promo/bg-Resy.jpg");
   background-position: right center;
 }
 
 .case-study-promo-sendmoi {
-  background-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+  background-image: url("../images/case-studies/sendmoi/promo/bg-SendMoi-desktop.png");
   background-position: right center;
 }
 
 .case-study-promo-sommai {
-  background-image: url("../images/home/case-study-promos/bg-Resy-Somm-Ai.jpg");
+  background-image: url("../images/case-studies/somm-ai/article/bg-Resy-Somm-Ai.jpg");
   background-position: center center;
 }
 
@@ -3312,17 +3312,17 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .case-study-promo-resy {
-    background-image: url("../images/home/case-study-promos/bg-Resy-mobile.png");
+    background-image: url("../images/case-studies/resy-discovery/promo/bg-Resy-mobile.png");
     background-position: right center;
   }
 
   .case-study-promo-sendmoi {
-    background-image: url("../images/home/case-study-promos/bg-SendMoi-desktop.png");
+    background-image: url("../images/case-studies/sendmoi/promo/bg-SendMoi-desktop.png");
     background-position: right center;
   }
 
   .case-study-promo-sommai {
-    background-image: url("../images/home/case-study-promos/bg-sommai-mobile.png");
+    background-image: url("../images/case-studies/somm-ai/promo/bg-sommai-mobile.png");
     background-position: center center;
   }
 

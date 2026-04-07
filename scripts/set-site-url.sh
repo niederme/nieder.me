@@ -9,7 +9,7 @@ fi
 site_url="${1%/}"
 html_file="${2:-index.html}"
 page_url="${site_url}/"
-image_url="${site_url}/assets/images/share/og-image-1200x630.png"
+image_url="${site_url}/assets/images/og/og-image-1200x630.png"
 
 perl -0pi -e "s#<link rel=\"canonical\" href=\"[^\"]*\" />#<link rel=\"canonical\" href=\"${page_url}\" />#g" "$html_file"
 perl -0pi -e "s#<meta property=\"og:url\" content=\"[^\"]*\" />#<meta property=\"og:url\" content=\"${page_url}\" />#g" "$html_file"
