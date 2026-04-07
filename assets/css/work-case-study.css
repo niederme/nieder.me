@@ -272,10 +272,15 @@ body.is-pulling-refresh .rail::after {
   transform: rotate(-72.79deg);
   transform-origin: 50% 50%;
   will-change: transform;
-  cursor: pointer;
+  cursor: inherit;
   pointer-events: auto;
   filter: var(--logo-filter);
   transition: filter 0.22s ease, opacity 0.18s ease;
+}
+
+.logo-mark.is-brand-hover,
+.mobile-logo-mark.is-brand-hover {
+  filter: none;
 }
 
 .global-nav {
@@ -375,11 +380,13 @@ body.is-pulling-refresh .rail::after {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
+  cursor: pointer;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .global-nav-anchor:focus-visible .global-nav-popover {
   opacity: 1;
+  pointer-events: auto;
   transform: translateY(-50%) translateX(2px);
 }
 
@@ -398,6 +405,7 @@ body.is-pulling-refresh .rail::after {
 
   .global-nav-anchor:hover .global-nav-popover {
     opacity: 1;
+    pointer-events: auto;
     transform: translateY(-50%) translateX(2px);
   }
 }
@@ -551,6 +559,14 @@ a {
   text-decoration: none;
 }
 
+a[href] {
+  cursor: pointer;
+}
+
+a[href] * {
+  cursor: inherit;
+}
+
 :where(a, button, [role="button"], input, select, textarea, summary):focus {
   outline: none;
 }
@@ -630,6 +646,17 @@ a:focus-visible {
   width: 93.832px;
   height: 93.832px;
   z-index: 25;
+  background: rgba(127, 127, 127, 0.001);
+  pointer-events: auto;
+}
+
+.global-nav-anchor {
+  background: rgba(127, 127, 127, 0.001);
+  pointer-events: auto;
+}
+
+:where(.logo-link, .mobile-logo-link, .global-nav-anchor, .mobile-nav-anchor) * {
+  cursor: inherit;
 }
 
 .mobile-logo-mark {
@@ -641,12 +668,6 @@ a:focus-visible {
 .logo-link:focus-visible .logo-mark {
   border-radius: 10px;
   box-shadow: 0 0 0 3px var(--focus-shadow);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .logo-link:hover .logo-mark {
-    opacity: 0.78;
-  }
 }
 
 :where(
@@ -733,22 +754,6 @@ a:focus-visible {
 
 body.work-theme-aiquota .work-article {
   --case-study-hero-height: calc(var(--case-study-shell-width) * 9 / 16);
-}
-
-.work-index-page .work-article {
-  --work-index-top-mask-height: 134px;
-}
-
-.work-index-page .work-article::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: var(--work-index-top-mask-height);
-  background: var(--bg);
-  z-index: 1;
-  pointer-events: none;
 }
 
 .work-grid-overlay {
@@ -1571,10 +1576,15 @@ body.grid-hidden .work-grid-overlay > span {
   line-height: 1.35;
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .work-index-download:visited {
   color: var(--accent);
+}
+
+.work-index-download * {
+  cursor: inherit;
 }
 
 .work-index-download img {
@@ -1772,10 +1782,15 @@ body.grid-hidden .work-grid-overlay > span {
   display: flex;
   flex-direction: column;
   color: var(--fg);
+  cursor: pointer;
 }
 
 .work-index-card:visited {
   color: var(--fg);
+}
+
+.work-index-card * {
+  cursor: inherit;
 }
 
 .work-index-card:hover,

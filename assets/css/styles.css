@@ -158,6 +158,14 @@ a {
   transition: color 0.2s ease;
 }
 
+a[href] {
+  cursor: pointer;
+}
+
+a[href] * {
+  cursor: inherit;
+}
+
 a:visited {
   color: var(--accent);
 }
@@ -185,6 +193,26 @@ a:focus-visible {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+}
+
+.logo-link {
+  position: fixed;
+  left: 43.5px;
+  top: calc(20px + var(--safe-top));
+  width: 93.832px;
+  height: 93.832px;
+  z-index: 25;
+  background: rgba(127, 127, 127, 0.001);
+  pointer-events: auto;
+}
+
+.global-nav-anchor {
+  background: rgba(127, 127, 127, 0.001);
+  pointer-events: auto;
+}
+
+:where(.logo-link, .mobile-logo-link, .global-nav-anchor, .mobile-nav-anchor) * {
+  cursor: inherit;
 }
 
 .logo-link:focus-visible .logo-mark,
@@ -251,18 +279,21 @@ body.is-pulling-refresh .rail::after {
 }
 
 .logo-mark {
-  position: fixed;
-  left: 43.5px;
-  top: calc(20px + var(--safe-top));
-  width: 93.832px;
-  height: 93.832px;
+  display: block;
+  width: 100%;
+  height: 100%;
   transform: rotate(-72.79deg);
   transform-origin: 50% 50%;
   will-change: transform;
-  cursor: pointer;
-  z-index: 25;
+  cursor: inherit;
   filter: var(--logo-filter);
+  pointer-events: auto;
   transition: filter 0.22s ease;
+}
+
+.logo-mark.is-brand-hover,
+.mobile-logo-mark.is-brand-hover {
+  filter: none;
 }
 
 .rail-nav {
@@ -524,11 +555,13 @@ body.is-pulling-refresh .rail::after {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
+  cursor: pointer;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .global-nav-anchor:focus-visible .global-nav-popover {
   opacity: 1;
+  pointer-events: auto;
   transform: translateY(-50%) translateX(2px);
 }
 
@@ -547,6 +580,7 @@ body.is-pulling-refresh .rail::after {
 
   .global-nav-anchor:hover .global-nav-popover {
     opacity: 1;
+    pointer-events: auto;
     transform: translateY(-50%) translateX(2px);
   }
 }
@@ -1331,6 +1365,7 @@ body.grid-hidden .grid-overlay > span {
   line-height: 1.35;
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer;
   transition: opacity 0.2s ease;
   pointer-events: auto;
 }

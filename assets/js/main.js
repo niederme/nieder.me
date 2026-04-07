@@ -570,6 +570,25 @@ if (logoMarks.length > 0) {
   const baseRotationDeg = -72.79;
   const rotationRate = 0.08;
   let ticking = false;
+  const logoHoverItems = logoMarks
+    .map((mark) => {
+      if (!(mark instanceof HTMLImageElement)) return null;
+      const link = mark.closest(".logo-link, .mobile-logo-link");
+      const defaultSrc = mark.getAttribute("src");
+
+      if (!link || !defaultSrc) return null;
+
+      const hoverSrc = defaultSrc.replace("logo-mark.svg", "logo-mark-red.svg");
+      if (hoverSrc === defaultSrc) return null;
+
+      return { link, mark, defaultSrc, hoverSrc };
+    })
+    .filter(Boolean);
+
+  const setLogoHoverState = (item, isHovered) => {
+    item.mark.src = isHovered ? item.hoverSrc : item.defaultSrc;
+    item.mark.classList.toggle("is-brand-hover", isHovered);
+  };
 
   const updateLogoRotation = () => {
     const rotation = baseRotationDeg + window.scrollY * rotationRate;
@@ -589,6 +608,13 @@ if (logoMarks.length > 0) {
     },
     { passive: true }
   );
+
+  logoHoverItems.forEach((item) => {
+    item.link.addEventListener("mouseenter", () => setLogoHoverState(item, true));
+    item.link.addEventListener("mouseleave", () => setLogoHoverState(item, false));
+    item.link.addEventListener("focusin", () => setLogoHoverState(item, true));
+    item.link.addEventListener("focusout", () => setLogoHoverState(item, false));
+  });
 }
 
 const visualCarousels = Array.from(document.querySelectorAll(".case-visual[data-carousel]"));
