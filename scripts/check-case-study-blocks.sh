@@ -101,6 +101,8 @@ expect_pattern "$WORK_STYLESHEET" ".case-study-block-meta" "Work stylesheet shou
 expect_pattern "$WORK_STYLESHEET" "--case-study-sidecar-width:" "Work stylesheet should define the shared sidecar width variable for left and right support modules."
 expect_pattern "$WORK_STYLESHEET" "width: var(--case-study-sidecar-width);" "Case-study sidecar modules should use the shared responsive sidecar width."
 expect_pattern "$WORK_STYLESHEET" ".case-study-block-lede" "Work stylesheet should style the lede block."
+expect_pattern "$WORK_STYLESHEET" ".case-study-block-intro-lede" "Work stylesheet should define the reusable intro-lede block."
+expect_pattern "$WORK_STYLESHEET" "--case-study-intro-width:" "Work stylesheet should define the shared intro-lede width token."
 expect_pattern "$WORK_STYLESHEET" ".case-study-block-text" "Work stylesheet should style the text block."
 expect_pattern "$WORK_STYLESHEET" ".case-study-block-results" "Work stylesheet should style the results block."
 expect_pattern "$WORK_STYLESHEET" ".case-study-block-full-media" "Work stylesheet should style the full-media block."
