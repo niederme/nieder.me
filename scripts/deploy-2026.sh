@@ -61,12 +61,14 @@ css_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/css/styles.css" | awk '{pri
 work_css_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/css/work-case-study.css" | awk '{print substr($1, 1, 12)}')"
 styleguide_css_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/css/styleguide.css" | awk '{print substr($1, 1, 12)}')"
 js_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/js/main.js" | awk '{print substr($1, 1, 12)}')"
+resume_pdf_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/files/John-Niedermeyer-Resume.pdf" | awk '{print substr($1, 1, 12)}')"
 find "$STAGING_DIR" -name '*.html' -print0 | xargs -0 perl -0pi -e \
   "s#href=\"((?:\\.\\./)*/?assets/css/styles\\.css)(?:\\?v=[^\"]+)?\"#href=\"\$1?v=${css_cache_bust}\"#g;
    s#href=\"((?:\\.\\./)*/?assets/css/work-case-study\\.css)(?:\\?v=[^\"]+)?\"#href=\"\$1?v=${work_css_cache_bust}\"#g;
    s#href=\"((?:\\.\\./)*/?assets/css/styleguide\\.css)(?:\\?v=[^\"]+)?\"#href=\"\$1?v=${styleguide_css_cache_bust}\"#g;
-   s#src=\"((?:\\.\\./)*/?assets/js/main\\.js)(?:\\?v=[^\"]+)?\"#src=\"\$1?v=${js_cache_bust}\"#g"
-echo "Using staged asset cache-bust versions: styles.css?v=${css_cache_bust}, work-case-study.css?v=${work_css_cache_bust}, styleguide.css?v=${styleguide_css_cache_bust}, main.js?v=${js_cache_bust}"
+   s#src=\"((?:\\.\\./)*/?assets/js/main\\.js)(?:\\?v=[^\"]+)?\"#src=\"\$1?v=${js_cache_bust}\"#g;
+   s#href=\"((?:\\.\\./)*/?assets/files/John-Niedermeyer-Resume\\.pdf)(?:\\?v=[^\"]+)?\"#href=\"\$1?v=${resume_pdf_cache_bust}\"#g"
+echo "Using staged asset cache-bust versions: styles.css?v=${css_cache_bust}, work-case-study.css?v=${work_css_cache_bust}, styleguide.css?v=${styleguide_css_cache_bust}, main.js?v=${js_cache_bust}, John-Niedermeyer-Resume.pdf?v=${resume_pdf_cache_bust}"
 
 REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH%/}/"
 SSH_CMD=(

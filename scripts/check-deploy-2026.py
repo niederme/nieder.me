@@ -18,6 +18,8 @@ required_tokens = [
     'cp -R "$dir" "$STAGING_DIR/"',
     'if [[ -d "$STAGING_DIR/$dir" ]]; then',
     'SYNC_PATHS+=("$STAGING_DIR/$dir")',
+    'resume_pdf_cache_bust=',
+    'assets/files/John-Niedermeyer-Resume.pdf',
 ]
 
 for token in required_tokens:
