@@ -322,66 +322,33 @@
                 <div class="case-study-block-inner">
                   <h2>After Launch, The Steady Work of Maturing the Experience</h2>
                   <p>
-                    Once the first release worked, the next phase was not about piling on adjacent features. It was about
-                    making the utility quieter, steadier, and easier to trust. Widgets extended the product into more
-                    ambient contexts. Notifications became more useful as thresholds and language tightened. Better
-                    recovery and refresh behavior reduced the amount of babysitting the app required. Silent auto-update
-                    behavior helped it feel more like infrastructure and less like a project asking for attention.
+                    Once the first release was live, the focus shifted from proving the concept to making the utility
+                    dependable in daily use. That meant improving auth reliability and smoothing the smaller frictions
+                    that only surfaced through repetition. Widgets became a more meaningful part of the product, but the
+                    harder work was making them stay in sync, recover cleanly after updates, and feel stable enough to
+                    serve as ambient context. Notifications also became more disciplined: thresholds were consolidated,
+                    warning language tightened, and low-quota alerts began carrying reset timing so they could help with
+                    planning rather than just interruption. Silent updates reinforced that shift, keeping the app current
+                    without turning maintenance into part of the job.
                   </p>
                   <p>
-                    Much of that refinement sat below the visual layer. Polling and cache freshness had to stay accurate
-                    without becoming noisy. Notifications needed enough lead time to be helpful without turning into alert
-                    fatigue. Widgets, popover state, and settings had to stay in sync across refreshes, failures, and
-                    recovery. In a utility this small, QA is product design.
+                    Much of that maturation happened below the visual layer. Refresh and cache behavior had to feel
+                    current without becoming noisy, while widget timelines, shared defaults, authentication state, and
+                    the popover all had to stay aligned across launches, reconnects, and network failures. In a utility
+                    this small, reliability is the design. If the data feels even slightly out of step, the product
+                    stops feeling trustworthy.
                   </p>
                   <p>
-                    That loop matters to me because it reflects a broader product philosophy. Mature utility design is
-                    often about subtraction, sequencing, and restraint. You can feel whether a product is trying to be
-                    admired or trying to be relied on. AIQuota gets better each time it becomes easier to ignore until the
-                    moment it matters.
+                    That work reinforced a broader product belief for me: mature utility design is rooted in restraint.
+                    The goal is not to invent new reasons to look at the product, but to make the existing moments
+                    clearer, calmer, and more dependable. AIQuota gets better each time it becomes easier to ignore
+                    until the exact moment it matters.
                   </p>
                   <p>
-                    Shipping in the open sharpened that loop further. Public release sharpened the feedback loop around setup
-                    clarity, edge cases, and which details people actually cared about once the tool became part of their
-                    working habits.
-                  </p>
-                </div>
-              </section>
-
-              <section class="case-study-block case-study-block-callout">
-                <div class="case-study-block-inner">
-                  <p class="case-study-callout-eyebrow">Outside Signal</p>
-                  <p class="case-study-callout-quote">
-                    “What stood out to me is how focused the experience is. It solves a clear problem, stays within its
-                    bounds, and doesn’t overreach.”
-                  </p>
-                  <p class="case-study-callout-attribution">
-                    — <a href="https://www.linkedin.com/feed/update/urn:li:activity:7442368599501115392/" target="_blank" rel="noopener noreferrer"><strong>Daniel Hairston</strong></a>,
-                    on AIQuota’s precision and restraint.
-                  </p>
-                </div>
-              </section>
-
-              <section class="work-article-section case-study-block case-study-block-results">
-                <div class="case-study-block-inner">
-                  <h2>What Shipping AIQuota Reinforced</h2>
-                  <p>
-                    AIQuota shipped as a notarized macOS app with menu bar monitoring, widgets, notifications, and support
-                    for both Codex and Claude Code. The current release is available as an
-                    <a href="https://github.com/niederme/ai-quota" target="_blank" rel="noopener noreferrer">open-source GitHub project</a>
-                    with downloadable desktop builds, and it continues to evolve through polish passes that improve clarity
-                    more than breadth.
-                  </p>
-                  <p>
-                    More importantly, it validated a product pattern I care about. As AI tools become everyday
-                    infrastructure, a layer of adjacent workflow problems emerges around them. Some of the best
-                    opportunities are not bigger assistants. They are thinner native utilities that remove friction at the
-                    edges of real working habits.
-                  </p>
-                  <p>
-                    This project also reinforced something I believe strongly: small utilities still demand serious product
-                    judgment. The right answer was not more detail, feature sprawl, or a billing-style dashboard. It was a
-                    calm, legible answer to a human question in the middle of active work: am I safe to keep going?
+                    Shipping in the open sharpened that loop further. Release by release, the feedback made it obvious
+                    which details actually shaped trust: setup clarity, stable widgets, cleaner notification language,
+                    and fewer edge-case failures after updates. Once the tool became part of someone’s working rhythm,
+                    those details mattered more than any new feature headline.
                   </p>
                 </div>
               </section>
@@ -437,6 +404,43 @@
                       Live AIQuota demo, from menu bar glance state to the richer popover that supports the next decision.
                     </figcaption>
                   </figure>
+                </div>
+              </section>
+
+              <section class="case-study-block case-study-block-callout">
+                <div class="case-study-block-inner">
+                  <p class="case-study-callout-eyebrow">Outside Signal</p>
+                  <p class="case-study-callout-quote">
+                    “What stood out to me is how focused the experience is. It solves a clear problem, stays within its
+                    bounds, and doesn’t overreach.”
+                  </p>
+                  <p class="case-study-callout-attribution">
+                    — <a href="https://www.linkedin.com/feed/update/urn:li:activity:7442368599501115392/" target="_blank" rel="noopener noreferrer"><strong>Daniel Hairston</strong></a>,
+                    on AIQuota’s precision and restraint.
+                  </p>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-results">
+                <div class="case-study-block-inner">
+                  <h2>The Case for Thin Utilities</h2>
+                  <p>
+                    AIQuota exists as a notarized macOS app with menu bar monitoring, desktop widgets, and native
+                    notifications. While it supports both Codex and Claude Code, the project continues to evolve through
+                    polish passes that prioritize clarity over breadth.
+                  </p>
+                  <p>
+                    The process validated a specific product pattern. As AI tools become everyday infrastructure, a layer
+                    of adjacent workflow problems emerges around them. Some of the most meaningful opportunities are not
+                    found in building bigger assistants, but in building thinner native utilities that remove friction at
+                    the edges of real working habits.
+                  </p>
+                  <p>
+                    This reinforced a core conviction: small utilities still demand serious product judgment. The right
+                    answer for AIQuota was not more detail, feature sprawl, or a billing-style dashboard. It was a calm,
+                    legible answer to a human question asked in the middle of active work:
+                    <strong>Do I have the runway to get this done?</strong>
+                  </p>
                 </div>
               </section>
             </article>
