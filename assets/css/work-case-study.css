@@ -1073,7 +1073,7 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .work-article-body > .case-study-block + .case-study-block {
-  margin-top: 74px;
+  margin-top: var(--case-study-section-gap);
   padding-top: 0;
   border-top: 0;
 }
@@ -2816,7 +2816,7 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .work-article-body > .case-study-block + .case-study-block {
-    margin-top: 54px;
+    margin-top: var(--case-study-section-gap);
   }
 
   .work-article-body > .case-study-block-intro-lede + .case-study-block-text,
@@ -3422,7 +3422,7 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .work-article-body > .case-study-block + .case-study-block {
-    margin-top: 46px;
+    margin-top: var(--case-study-section-gap);
   }
 
   .case-study-carousel-controls {
