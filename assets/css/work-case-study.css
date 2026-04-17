@@ -2497,6 +2497,10 @@ body.grid-hidden .work-grid-overlay > span {
   margin-top: 240px;
 }
 
+.case-study-recirculation .work-index-case-study-heading {
+  grid-column: 1 / span 3;
+}
+
 .case-study-recirculation .work-index-case-studies {
   grid-template-rows: none;
   grid-auto-flow: row;
