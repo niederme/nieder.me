@@ -12,8 +12,159 @@ const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
 const THEME_STORAGE_KEY = "nieder.theme";
 const COLS_TOGGLE_STORAGE_KEY = "nieder.cols-grid-visible";
+const SHARE_CONTEXT_STORAGE_KEY = "nieder.analytics.share_context";
 const LIGHT_THEME_COLOR = "#ffffff";
 const DARK_THEME_COLOR = "#000000";
+
+const safeParseJson = (value) => {
+  try {
+    return JSON.parse(value);
+  } catch (error) {
+    return null;
+  }
+};
+
+const getShareContext = () => {
+  const params = new URLSearchParams(window.location.search);
+  const shareId = String(params.get("share_id") || "").trim();
+
+  if (shareId) {
+    const nextContext = {
+      shareId,
+      source: String(params.get("utm_source") || "").trim(),
+      medium: String(params.get("utm_medium") || "").trim(),
+      campaign: String(params.get("utm_campaign") || "").trim(),
+      content: String(params.get("utm_content") || "").trim(),
+    };
+
+    try {
+      window.sessionStorage.setItem(SHARE_CONTEXT_STORAGE_KEY, JSON.stringify(nextContext));
+    } catch (error) {
+      // Ignore storage access failures and keep the current-page context only.
+    }
+
+    return nextContext;
+  }
+
+  try {
+    return safeParseJson(window.sessionStorage.getItem(SHARE_CONTEXT_STORAGE_KEY));
+  } catch (error) {
+    return null;
+  }
+};
+
+const shareContext = getShareContext();
+
+const getPageType = () => {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  if (path === "/") return "home";
+  if (path === "/about") return "about";
+  if (path === "/work") return "work_index";
+  if (path === "/privacy") return "privacy";
+  if (path === "/accessibility") return "accessibility";
+  if (path === "/colophon") return "colophon";
+  if (/^\/work\/[^/]+$/.test(path)) return "case_study";
+  return "site_page";
+};
+
+const trackEvent = (eventName, params = {}) => {
+  if (typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", eventName, {
+    page_path: window.location.pathname,
+    page_title: document.title,
+    share_id: shareContext?.shareId,
+    utm_source: shareContext?.source,
+    utm_medium: shareContext?.medium,
+    utm_campaign: shareContext?.campaign,
+    utm_content: shareContext?.content,
+    ...params,
+  });
+};
+
+{
+  if (shareContext?.shareId) {
+    trackEvent("shared_link_page_view", {
+      page_type: getPageType(),
+    });
+
+    let engagedTimer = null;
+    let engagedFired = false;
+
+    const queueEngagedTimer = () => {
+      if (engagedFired || document.visibilityState !== "visible") {
+        return;
+      }
+
+      window.clearTimeout(engagedTimer);
+      engagedTimer = window.setTimeout(() => {
+        engagedFired = true;
+        trackEvent("shared_link_engaged", {
+          page_type: getPageType(),
+          engaged_seconds: 20,
+        });
+      }, 20000);
+    };
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        queueEngagedTimer();
+        return;
+      }
+
+      window.clearTimeout(engagedTimer);
+    });
+
+    queueEngagedTimer();
+  }
+}
+
+{
+  const trackedAnchors = Array.from(document.querySelectorAll("a[href]"));
+
+  trackedAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", () => {
+      const rawHref = anchor.getAttribute("href");
+      if (!rawHref) {
+        return;
+      }
+
+      if (rawHref.startsWith("mailto:")) {
+        trackEvent("email_clicked", {
+          destination: rawHref,
+          link_label: anchor.textContent.trim() || anchor.getAttribute("aria-label") || "email",
+        });
+        return;
+      }
+
+      const isResumeDownload = anchor.hasAttribute("download") && /\.pdf($|\?)/i.test(rawHref);
+      if (isResumeDownload) {
+        trackEvent("resume_download_clicked", {
+          destination: rawHref,
+        });
+        return;
+      }
+
+      let destinationUrl;
+      try {
+        destinationUrl = new URL(rawHref, window.location.href);
+      } catch (error) {
+        return;
+      }
+
+      if (destinationUrl.origin !== window.location.origin) {
+        trackEvent("external_link_clicked", {
+          destination_host: destinationUrl.host,
+          destination_path: destinationUrl.pathname,
+          link_label: anchor.textContent.trim() || anchor.getAttribute("aria-label") || destinationUrl.host,
+        });
+      }
+    });
+  });
+}
+
 const scrollToPageTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
   if (window.location.hash) {
