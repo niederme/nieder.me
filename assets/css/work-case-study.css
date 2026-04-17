@@ -169,7 +169,7 @@ body.work-theme-sendmoi {
     rgba(0, 0, 0, 0) 74%
   );
   --work-hero-desktop-image: url("../images/case-studies/sendmoi/article/bg2-SendMoi.jpg");
-  --work-hero-mobile-image: url("../images/case-studies/sendmoi/article/bg-SendMoi-desktop.png");
+  --work-hero-mobile-image: url("../images/case-studies/sendmoi/article/bg-SendMoi-desktop.jpg");
   --work-hero-focus-desktop: right center;
   --work-hero-focus-mobile: right center;
   --work-logo-width-desktop: 75px;
