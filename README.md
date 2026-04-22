@@ -11,13 +11,16 @@ Current site surfaces:
 - `/` homepage with work highlights and a short About section
 - `/about/` full biography page
 - `/colophon-style-guide/` combined colophon and style guide
+- `/colophon/` legacy redirect to `/colophon-style-guide/`
+- `/styleguide/` legacy redirect to `/colophon-style-guide/#principles`
 - `/accessibility/` accessibility statement
 - `/privacy/` privacy notice
 - `/work/` full work experience and resume page
 - `/work/resy-discovery/` Resy case study
 - `/work/ai-quota/` AIQuota case study
-- `drafts/work/sendmoi/` preserved SendMoi case study draft, not deployed
-- `drafts/work/somm-ai/` preserved Somm AI case study draft, not deployed
+- public "Coming Soon" teaser cards for SendMoi and Somm AI on `/` and `/work/`
+- `drafts/work/sendmoi/` preserved SendMoi case study draft, not deployed or linked
+- `drafts/work/somm-ai/` preserved Somm AI case study draft, not deployed or linked
 
 Core project files:
 
@@ -25,9 +28,10 @@ Core project files:
 - `work/**/*.html` work index and case-study pages
 - `assets/css/styles.css` homepage and shared site styles
 - `assets/css/work-case-study.css` work index and case-study styles
+- `assets/css/styleguide.css` colophon and style-guide styles
 - `assets/js/main.js` shared client-side behavior
 - `assets/` images, icons, fonts, and video
-- `scripts/` local helpers for deploy and GitHub issue creation
+- `scripts/` local helpers for deploy, verification, and GitHub issue creation
 - `Makefile` preview, live-reload, and helper commands
 
 ## Local dev
@@ -113,7 +117,7 @@ git switch -c codex/my-feature
 Example worktree:
 
 ```bash
-git worktree add ../nieder-me-my-feature -b codex/my-feature
+git worktree add .worktrees/my-feature -b codex/my-feature
 ```
 
 ## Deploy
@@ -133,6 +137,8 @@ The script:
 
 - stages a temporary copy of `index.html` and `assets/`
 - includes allowlisted top-level sections when present
+- includes the legacy `colophon/` and `styleguide/` redirect pages
+- excludes `drafts/`
 - rewrites the staged homepage site URL
 - cache-busts staged CSS and JS asset URLs across all HTML files
 - syncs only managed paths to the remote target
