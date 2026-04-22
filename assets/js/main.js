@@ -633,35 +633,50 @@ if (homeRailNav) {
 
 {
   const colorSection = document.querySelector("#color");
+  const gridSection = document.querySelector("#grid");
 
-  if (colorSection) {
-    const setColorSectionActive = (isActive) => {
-      document.body.classList.toggle("is-color-section-active", isActive);
+  if (colorSection && gridSection) {
+    const cueClasses = ["is-color-section-active", "is-grid-section-active"];
+    const colorActivationOffset = 200;
+    const cueScrollWindow = 340;
+    const getPageTop = (element) =>
+      Math.round(element.getBoundingClientRect().top + window.scrollY);
+
+    let cueFrame = null;
+
+    const updateSectionCues = () => {
+      const colorStart = getPageTop(colorSection) - colorActivationOffset;
+      const gridStart = getPageTop(gridSection) - Math.round(window.innerHeight / 2);
+      const gridScrollWindow = window.matchMedia("(max-width: 700px)").matches
+        ? Math.max(cueScrollWindow, Math.round(window.innerHeight / 2) + 160)
+        : cueScrollWindow;
+      const isColorActive =
+        window.scrollY >= colorStart && window.scrollY < colorStart + cueScrollWindow;
+      const isGridActive =
+        window.scrollY >= gridStart && window.scrollY < gridStart + gridScrollWindow;
+      let activeClass = "";
+
+      if (isColorActive) {
+        activeClass = "is-color-section-active";
+      } else if (isGridActive) {
+        activeClass = "is-grid-section-active";
+      }
+
+      cueClasses.forEach((className) => {
+        document.body.classList.toggle(className, className === activeClass);
+      });
+      cueFrame = null;
     };
 
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          setColorSectionActive(entries.some((entry) => entry.isIntersecting));
-        },
-        {
-          rootMargin: "-34% 0px -38% 0px",
-          threshold: 0,
-        }
-      );
+    const queueSectionCueUpdate = () => {
+      if (cueFrame) return;
+      cueFrame = window.requestAnimationFrame(updateSectionCues);
+    };
 
-      observer.observe(colorSection);
-    } else {
-      const updateColorSectionActive = () => {
-        const rect = colorSection.getBoundingClientRect();
-        const activationY = window.innerHeight * 0.42;
-        setColorSectionActive(rect.top <= activationY && rect.bottom >= activationY);
-      };
-
-      updateColorSectionActive();
-      window.addEventListener("scroll", updateColorSectionActive, { passive: true });
-      window.addEventListener("resize", updateColorSectionActive);
-    }
+    updateSectionCues();
+    window.addEventListener("scroll", queueSectionCueUpdate, { passive: true });
+    window.addEventListener("resize", queueSectionCueUpdate);
+    window.addEventListener("hashchange", queueSectionCueUpdate);
   }
 }
 
