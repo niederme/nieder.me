@@ -1292,6 +1292,24 @@ body.grid-hidden .grid-overlay > span {
   pointer-events: none;
 }
 
+.case-study-promo.is-disabled {
+  cursor: not-allowed;
+}
+
+.case-study-promo.is-disabled::after {
+  background-color: rgba(0, 0, 0, 0.66);
+  backdrop-filter: saturate(0.45) brightness(0.72);
+}
+
+.case-study-promo.is-disabled .case-study-promo-content {
+  pointer-events: auto;
+}
+
+.case-study-promo.is-disabled .case-study-promo-logo,
+.case-study-promo.is-disabled .case-study-promo-inner {
+  opacity: 0.64;
+}
+
 .case-study-promo-link {
   position: absolute;
   inset: 0;
@@ -1374,12 +1392,31 @@ body.grid-hidden .grid-overlay > span {
   color: #000000;
 }
 
+.case-study-promo-status {
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--media-fg);
+  font-size: 18px;
+  opacity: 0.62;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .case-study-promo:hover .case-study-promo-cta,
 .case-study-promo:focus-within .case-study-promo-cta,
 .case-study-promo-cta:hover,
 .case-study-promo-cta:focus-visible {
   color: #000000;
   opacity: 0.75;
+}
+
+.case-study-promo.is-disabled:hover .case-study-promo-cta,
+.case-study-promo.is-disabled:focus-within .case-study-promo-cta {
+  color: var(--media-fg);
+  opacity: 0.62;
 }
 
 .about-home {

@@ -6,8 +6,6 @@ cd "$ROOT_DIR"
 
 CASE_STUDY_PAGES=(
   "work/resy-discovery/index.html"
-  "work/sendmoi/index.html"
-  "work/somm-ai/index.html"
   "work/ai-quota/index.html"
 )
 

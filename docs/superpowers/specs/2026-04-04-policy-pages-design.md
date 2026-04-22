@@ -67,7 +67,7 @@ The privacy page should reflect the actual repo and current site behavior. It sh
 - `assets/css/work-case-study.css`
 - `index.html`
 - `about/index.html`
-- `colophon/index.html`
+- `colophon-style-guide/index.html`
 - `work/index.html`
 - `work/resy-discovery/index.html`
 - `work/sendmoi/index.html`

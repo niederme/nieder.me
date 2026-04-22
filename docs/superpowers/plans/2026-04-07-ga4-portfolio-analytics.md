@@ -19,7 +19,7 @@
 | `index.html` | Add GA4 preconnect and tag after the existing theme/grid bootstrap script |
 | `about/index.html` | Add GA4 preconnect and tag after the existing theme/grid bootstrap script |
 | `accessibility/index.html` | Add GA4 preconnect and tag after the existing theme/grid bootstrap script |
-| `colophon/index.html` | Add GA4 preconnect and tag after the existing theme/grid bootstrap script |
+| `colophon-style-guide/index.html` | Add GA4 preconnect and tag after the existing theme/grid bootstrap script |
 | `privacy/index.html` | Add GA4 preconnect and tag, and replace the outdated “no analytics” copy |
 | `work/index.html` | Add GA4 preconnect and tag after the existing theme/grid bootstrap script |
 | `work/resy-discovery/index.html` | Add GA4 preconnect and tag after the existing theme/grid bootstrap script |
@@ -52,7 +52,7 @@ tagged_pages=(
   "index.html"
   "about/index.html"
   "accessibility/index.html"
-  "colophon/index.html"
+  "colophon-style-guide/index.html"
   "privacy/index.html"
   "work/index.html"
   "work/resy-discovery/index.html"
@@ -144,7 +144,7 @@ Expected: still `FAIL`, but now only because the GA4 snippet is still missing fr
 - Modify: `index.html`
 - Modify: `about/index.html`
 - Modify: `accessibility/index.html`
-- Modify: `colophon/index.html`
+- Modify: `colophon-style-guide/index.html`
 - Modify: `privacy/index.html`
 - Modify: `work/index.html`
 - Test: `scripts/check-ga4-analytics.sh`
@@ -170,7 +170,7 @@ Specific anchors to preserve:
 
 - `index.html:40-59` theme/grid bootstrap remains first among head scripts
 - `about/index.html:13-32` theme/grid bootstrap remains first among head scripts
-- the same ordering pattern should be followed in `accessibility/index.html`, `colophon/index.html`, `privacy/index.html`, and `work/index.html`
+- the same ordering pattern should be followed in `accessibility/index.html`, `colophon-style-guide/index.html`, `privacy/index.html`, and `work/index.html`
 
 - [ ] **Step 2: Re-run the regression check**
 
@@ -227,7 +227,7 @@ Then run:
 Run:
 
 ```bash
-git add scripts/check-ga4-analytics.sh README.md index.html about/index.html accessibility/index.html colophon/index.html privacy/index.html work/index.html work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html
+git add scripts/check-ga4-analytics.sh README.md index.html about/index.html accessibility/index.html colophon-style-guide/index.html privacy/index.html work/index.html work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html
 git commit -m "feat: add GA4 analytics tracking"
 ```
 

@@ -2,7 +2,7 @@
 
 **Date:** 2026-03-25
 
-**Goal:** Replace the homepage's section-scrolling rail behavior with a page-level global rail that uses the same navigation pattern across the site, adds real `/about/` and `/colophon/` pages, and simplifies obsolete scroll-based JS/CSS.
+**Goal:** Replace the homepage's section-scrolling rail behavior with a page-level global rail that uses the same navigation pattern across the site, adds real `/about/` and `/colophon-style-guide/` pages, and simplifies obsolete scroll-based JS/CSS.
 
 ## Summary
 
@@ -36,7 +36,7 @@ The rail remains icon-led visually, but each item should have a precise `aria-la
 - `/work/` keeps `Work` active.
 - `/work/...` case-study pages also keep `Work` active.
 - `/about/` keeps `About/Bio` active.
-- `/colophon/` keeps `Colophon` active.
+- `/colophon-style-guide/` keeps `Colophon` active.
 - No rail item should activate based on scroll position or hash position.
 
 ### First-item arrow behavior
@@ -49,7 +49,7 @@ The rail remains icon-led visually, but each item should have a precise `aria-la
 ### New standalone pages
 
 - Add `/about/` as a standalone page for the fuller biography.
-- Add `/colophon/` as a standalone page and move colophon content there.
+- Add `/colophon-style-guide/` as a standalone page and move colophon content there.
 
 ### Homepage content changes
 
@@ -66,7 +66,7 @@ The rail remains icon-led visually, but each item should have a precise `aria-la
   - nav container: `global-nav`
   - nav links: `global-nav-anchor`
 - Update the work index and all work case-study pages so they share the same four-item global rail structure.
-- Add matching rail markup to the new `/about/` and `/colophon/` pages.
+- Add matching rail markup to the new `/about/` and `/colophon-style-guide/` pages.
 - Remove the obsolete `data-lock-start` attribute from the homepage nav markup when the scroll-lock behavior is removed.
 - Keep theme and column-grid controls below the primary navigation, preserving the current interaction pattern.
 - Intentionally remove individual case-study rail items (`Resy`, `SendMoi`, `Somm AI`, `AIQuota`) from the work index and case-study pages in favor of the four-item global rail only.
@@ -113,7 +113,7 @@ The rail remains icon-led visually, but each item should have a precise `aria-la
 - `assets/css/work-case-study.css`
 - `assets/js/main.js`
 - `about/index.html` (new)
-- `colophon/index.html` (new)
+- `colophon-style-guide/index.html` (new)
 
 ## Risks and Guardrails
 
@@ -125,7 +125,7 @@ The rail remains icon-led visually, but each item should have a precise `aria-la
 ## Testing Expectations
 
 - Verify each public page shows the same four-item rail.
-- Verify the active item is correct on `/`, `/work/`, each `/work/...` case study, `/about/`, and `/colophon/`.
+- Verify the active item is correct on `/`, `/work/`, each `/work/...` case study, `/about/`, and `/colophon-style-guide/`.
 - Verify the first item is the home/up-arrow on `/` and the left-arrow back-to-home on subpages.
 - Verify theme toggle and column-grid toggle still work on all affected pages.
 - Verify no scroll-based rail highlight behavior remains on the homepage.

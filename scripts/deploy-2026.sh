@@ -32,6 +32,7 @@ PUBLIC_DIRS=(
   about
   accessibility
   colophon
+  colophon-style-guide
   privacy
   styleguide
   work

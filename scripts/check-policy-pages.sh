@@ -65,17 +65,14 @@ home_pages=(
 
 one_level_pages=(
   "about/index.html"
-  "colophon/index.html"
+  "colophon-style-guide/index.html"
   "work/index.html"
-  "styleguide/index.html"
   "accessibility/index.html"
   "privacy/index.html"
 )
 
 two_level_pages=(
   "work/resy-discovery/index.html"
-  "work/sendmoi/index.html"
-  "work/somm-ai/index.html"
   "work/ai-quota/index.html"
 )
 

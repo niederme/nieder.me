@@ -63,7 +63,7 @@
             <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
             <span class="mobile-nav-label">About</span>
           </a>
-          <a class="mobile-nav-anchor" href="../../colophon/" aria-label="Colophon">
+          <a class="mobile-nav-anchor" href="../../colophon-style-guide/" aria-label="Colophon and style guide">
             <img class="icon-off"   src="../../assets/icons/side-nav/icon-colophon-off.svg"   alt="" />
             <img class="icon-on"    src="../../assets/icons/side-nav/icon-colophon-on.svg"    alt="" />
             <img class="icon-hover" src="../../assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
@@ -107,7 +107,7 @@
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
           <span class="global-nav-popover" aria-hidden="true">About &amp; Bio</span>
         </a>
-        <a class="global-nav-anchor" href="../../colophon/" aria-label="Colophon">
+        <a class="global-nav-anchor" href="../../colophon-style-guide/" aria-label="Colophon and style guide">
           <img class="icon-off" src="../../assets/icons/side-nav/icon-colophon-off.svg" alt="" />
           <img class="icon-on" src="../../assets/icons/side-nav/icon-colophon-on.svg" alt="" />
           <img class="icon-hover" src="../../assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
@@ -466,7 +466,7 @@
                   </div>
                 </a>
 
-                <a class="work-index-card" href="../../work/somm-ai/" aria-labelledby="case-study-sommai-title">
+                <article class="work-index-card is-disabled" aria-labelledby="case-study-sommai-title" aria-describedby="case-study-sommai-status">
                   <figure class="work-index-card-media">
                     <picture>
                       <source media="(max-width: 700px)" srcset="../../assets/images/case-studies/somm-ai/article/hero-mobile.png" />
@@ -476,13 +476,11 @@
                   <div class="work-index-card-copy">
                     <p class="work-index-card-eyebrow">Resy AI Recommendations Exploration</p>
                     <h4 id="case-study-sommai-title">Beyond Filters: A More Intent-Led Search Experience</h4>
-                    <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                    <span id="case-study-sommai-status" class="work-index-card-cta work-index-card-status">Coming Soon</span>
                   </div>
-                </a>
-              </div>
+                </article>
 
-              <div class="work-index-case-study-column">
-                <a class="work-index-card" href="../../work/sendmoi/" aria-labelledby="case-study-sendmoi-title">
+                <article class="work-index-card is-disabled" aria-labelledby="case-study-sendmoi-title" aria-describedby="case-study-sendmoi-status">
                   <figure class="work-index-card-media">
                     <picture>
                       <source media="(max-width: 700px)" srcset="../../assets/images/case-studies/sendmoi/article/bg-SendMoi-desktop.jpg" />
@@ -492,9 +490,10 @@
                   <div class="work-index-card-copy">
                     <p class="work-index-card-eyebrow">SendMoi for iOS &amp; macOS</p>
                     <h4 id="case-study-sendmoi-title">Reimagining a Beloved Utility, With Help From Codex &amp; Claude Code</h4>
-                    <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                    <span id="case-study-sendmoi-status" class="work-index-card-cta work-index-card-status">Coming Soon</span>
                   </div>
-                </a>
+                </article>
+
               </div>
             </div>
           </div>
@@ -548,7 +547,7 @@
                 <li><a href="../../">Home</a></li>
                 <li><a href="../../work/">Work</a></li>
                 <li><a href="../../about/">About</a></li>
-                <li><a href="../../colophon/">Colophon</a></li>
+                <li><a href="../../colophon-style-guide/">Colophon &amp; Style Guide</a></li>
               </ul>
             </nav>
 
@@ -557,8 +556,6 @@
               <ul class="site-footer-links">
                 <li><a href="../../work/">Resume &amp; Work</a></li>
                 <li><a href="../../work/resy-discovery/">Resy Discovery</a></li>
-                <li><a href="../../work/sendmoi/">SendMoi</a></li>
-                <li><a href="../../work/somm-ai/">Somm AI</a></li>
                 <li><a href="../../work/ai-quota/" aria-current="page">AIQuota</a></li>
               </ul>
             </nav>

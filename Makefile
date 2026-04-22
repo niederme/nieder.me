@@ -1,4 +1,4 @@
-.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod issue-create
+.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod deploy-stage deploy-prod archive-root-2016 issue-create
 
 PORT ?= 8000
 THREAD_BASE_PORT ?= 8001
@@ -7,7 +7,7 @@ LOCAL_HOST ?= localhost
 PORT_AUTO ?= 1
 PORT_SCAN_LIMIT ?= 25
 LIVE ?= 0
-LIVE_FILES ?= index.html,work/**/*.html,assets/css/**/*.css,assets/js/**/*.js
+LIVE_FILES ?= **/*.html,assets/css/**/*.css,assets/js/**/*.js
 PREVIEW_ENV ?= $(HOME)/.codex/bin/codex-preview-env
 SITE_URL ?= https://nieder.me/2026
 ISSUE_TITLE ?=
@@ -23,6 +23,15 @@ site-url-stage: site-url
 
 site-url-prod: SITE_URL := https://nieder.me
 site-url-prod: site-url
+
+deploy-stage:
+	@./scripts/deploy-2026.sh
+
+deploy-prod:
+	@./scripts/deploy-prod.sh
+
+archive-root-2016:
+	@./scripts/archive-root-2016.sh
 
 dev:
 	@LIVE_MODE="$(LIVE)"; \

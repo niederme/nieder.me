@@ -24,7 +24,7 @@
 | `work/somm-ai/index.html` | Same |
 | `work/ai-quota/index.html` | Same |
 | `about/index.html` | Same pattern; About anchor is `is-active` |
-| `colophon/index.html` | Same pattern; Colophon anchor is `is-active` |
+| `colophon-style-guide/index.html` | Same pattern; Colophon anchor is `is-active` |
 
 ---
 
@@ -261,7 +261,7 @@ Find the closing `</nav>` of the `.social-links` block (currently around line 16
             <img class="icon-hover" src="assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
             <span class="mobile-nav-label">About</span>
           </a>
-          <a class="mobile-nav-anchor" href="colophon/" aria-label="Colophon">
+          <a class="mobile-nav-anchor" href="colophon-style-guide/" aria-label="Colophon and style guide">
             <img class="icon-off"   src="assets/icons/side-nav/icon-colophon-off.svg"   alt="" />
             <img class="icon-on"    src="assets/icons/side-nav/icon-colophon-on.svg"    alt="" />
             <img class="icon-hover" src="assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
@@ -357,7 +357,7 @@ Find `<div class="work-page">` and insert immediately after it:
             <img class="icon-hover" src="/assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
             <span class="mobile-nav-label">About</span>
           </a>
-          <a class="mobile-nav-anchor" href="/colophon/" aria-label="Colophon">
+          <a class="mobile-nav-anchor" href="/colophon-style-guide/" aria-label="Colophon and style guide">
             <img class="icon-off"   src="/assets/icons/side-nav/icon-colophon-off.svg"   alt="" />
             <img class="icon-on"    src="/assets/icons/side-nav/icon-colophon-on.svg"    alt="" />
             <img class="icon-hover" src="/assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
@@ -402,7 +402,7 @@ git commit -m "feat: add mobile-nav to work pages"
 
 **Files:**
 - Modify: `about/index.html`
-- Modify: `colophon/index.html`
+- Modify: `colophon-style-guide/index.html`
 
 Same pattern as Task 4 but with the respective active item.
 
@@ -417,23 +417,23 @@ Same pattern as Task 4 but with the respective active item.
 Use the same markup block as Task 4 Step 2, but change the active anchor:
 
 - `about/index.html` → `is-active` goes on the About anchor (not Work)
-- `colophon/index.html` → `is-active` goes on the Colophon anchor
+- `colophon-style-guide/index.html` → `is-active` goes on the Colophon anchor
 
 ```html
 <!-- about/index.html: About anchor gets is-active -->
 <a class="mobile-nav-anchor is-active" href="/about/" aria-label="About/Bio">
 
-<!-- colophon/index.html: Colophon anchor gets is-active -->
-<a class="mobile-nav-anchor is-active" href="/colophon/" aria-label="Colophon">
+<!-- colophon-style-guide/index.html: Colophon anchor gets is-active -->
+<a class="mobile-nav-anchor is-active" href="/colophon-style-guide/" aria-label="Colophon and style guide">
 ```
 
 - [ ] **Step 3: Verify both pages in mobile viewport**
 
-Open `/about/` then `/colophon/` in a mobile viewport.
+Open `/about/` then `/colophon-style-guide/` in a mobile viewport.
 
 Expected for each:
 - Nav pinned at top from page load
-- Correct item is active (About on /about/, Colophon on /colophon/)
+- Correct item is active (About on /about/, Colophon on /colophon-style-guide/)
 - First item is ← Home, links to `/`
 - Content not hidden under nav
 - Toggles work
@@ -441,7 +441,7 @@ Expected for each:
 - [ ] **Step 4: Commit**
 
 ```bash
-git add about/index.html colophon/index.html
+git add about/index.html colophon-style-guide/index.html
 git commit -m "feat: add mobile-nav to about and colophon pages"
 ```
 
@@ -462,7 +462,7 @@ Visit each page and confirm:
 | `/work/somm-ai/` | Work | ← Home | Yes |
 | `/work/ai-quota/` | Work | ← Home | Yes |
 | `/about/` | About | ← Home | Yes |
-| `/colophon/` | Colophon | ← Home | Yes |
+| `/colophon-style-guide/` | Colophon | ← Home | Yes |
 
 - [ ] **Step 2: Check desktop — nav must be invisible on all pages**
 

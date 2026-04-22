@@ -4,7 +4,7 @@
 
 **Goal:** Add lightweight accessibility and privacy pages and expose them as muted secondary footer utility links across the portfolio.
 
-**Architecture:** Reuse the existing subpage shell used by `/about/` and `/colophon/` for the two new policy pages so there is no new layout system to maintain. Add one small shared footer utility-link pattern to both site stylesheets, then update each static footer instance to render the new links with correct relative paths and `aria-current` on the current utility page.
+**Architecture:** Reuse the existing subpage shell used by `/about/` and `/colophon-style-guide/` for the two new policy pages so there is no new layout system to maintain. Add one small shared footer utility-link pattern to both site stylesheets, then update each static footer instance to render the new links with correct relative paths and `aria-current` on the current utility page.
 
 **Tech Stack:** Static HTML, custom CSS, shell-based regression checks, local preview via `make`.
 
@@ -21,7 +21,7 @@
 | `assets/css/work-case-study.css` | Footer utility-link styles for subpages and styleguide |
 | `index.html` | Add utility links to footer |
 | `about/index.html` | Add utility links to footer |
-| `colophon/index.html` | Add utility links to footer |
+| `colophon-style-guide/index.html` | Add utility links to footer |
 | `work/index.html` | Add utility links to footer |
 | `work/resy-discovery/index.html` | Add utility links to footer |
 | `work/sendmoi/index.html` | Add utility links to footer |
@@ -73,7 +73,7 @@ git commit -m "docs: define policy pages and add regression check"
 
 - [ ] **Step 1: Write the minimal implementation**
 
-Create both pages by adapting the current `/about/` and `/colophon/` shell:
+Create both pages by adapting the current `/about/` and `/colophon-style-guide/` shell:
 
 - keep the same head/bootstrap script pattern
 - keep the existing rail and mobile navigation
@@ -128,7 +128,7 @@ Mirror the same CSS in the subpage stylesheet so the footer pattern is consisten
 **Files:**
 - Modify: `index.html`
 - Modify: `about/index.html`
-- Modify: `colophon/index.html`
+- Modify: `colophon-style-guide/index.html`
 - Modify: `work/index.html`
 - Modify: `work/resy-discovery/index.html`
 - Modify: `work/sendmoi/index.html`
@@ -204,6 +204,6 @@ Verify:
 - [ ] **Step 3: Commit**
 
 ```bash
-git add accessibility/index.html privacy/index.html assets/css/styles.css assets/css/work-case-study.css index.html about/index.html colophon/index.html work/index.html work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html styleguide/index.html
+git add accessibility/index.html privacy/index.html assets/css/styles.css assets/css/work-case-study.css index.html about/index.html colophon-style-guide/index.html work/index.html work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html styleguide/index.html
 git commit -m "feat: add accessibility and privacy pages"
 ```

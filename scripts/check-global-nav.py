@@ -6,11 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_PAGES = [
     ROOT / "index.html",
     ROOT / "about" / "index.html",
-    ROOT / "colophon" / "index.html",
+    ROOT / "colophon-style-guide" / "index.html",
     ROOT / "work" / "index.html",
     ROOT / "work" / "resy-discovery" / "index.html",
-    ROOT / "work" / "sendmoi" / "index.html",
-    ROOT / "work" / "somm-ai" / "index.html",
     ROOT / "work" / "ai-quota" / "index.html",
 ]
 COLOPHON_ICONS = [
