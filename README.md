@@ -168,6 +168,30 @@ make site-url-stage
 make site-url-prod
 ```
 
+## Releases
+
+Website releases are production markers, not staging deploy markers. Use staging mode to preview the release notes and verify the staging URL, then create the GitHub release only after the production root deploy succeeds.
+
+Preview a release against staging:
+
+```bash
+make release-stage RELEASE_VERSION=2026.04.22 RELEASE_TITLE="2026 Portfolio Launch"
+```
+
+Create the production tag and GitHub release:
+
+```bash
+make release-prod RELEASE_VERSION=2026.04.22 RELEASE_TITLE="2026 Portfolio Launch"
+```
+
+The release helper:
+
+- normalizes `2026.04.22` to tag `v2026.04.22`
+- requires a clean, synced `main`
+- checks the target URL before continuing
+- refuses existing tags or releases
+- creates annotated tags and GitHub releases only in `--prod` mode
+
 ## GitHub issue helper
 
 To avoid shell-quoting problems with Markdown-heavy issue bodies:

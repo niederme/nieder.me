@@ -1,4 +1,4 @@
-.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod deploy-stage deploy-prod archive-root-2016 issue-create
+.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod deploy-stage deploy-prod archive-root-2016 release-stage release-prod issue-create
 
 PORT ?= 8000
 THREAD_BASE_PORT ?= 8001
@@ -12,6 +12,9 @@ PREVIEW_ENV ?= $(HOME)/.codex/bin/codex-preview-env
 SITE_URL ?= https://nieder.me/2026
 ISSUE_TITLE ?=
 ISSUE_BODY_FILE ?=
+RELEASE_VERSION ?=
+RELEASE_TITLE ?=
+RELEASE_NOTES_FILE ?=
 
 .DEFAULT_GOAL := dev
 
@@ -32,6 +35,26 @@ deploy-prod:
 
 archive-root-2016:
 	@./scripts/archive-root-2016.sh
+
+release-stage:
+	@if [ -z "$(RELEASE_VERSION)" ]; then \
+		echo "RELEASE_VERSION is required. Example: make release-stage RELEASE_VERSION=2026.04.22"; \
+		exit 1; \
+	fi
+	@set -- "$(RELEASE_VERSION)" --staging; \
+	if [ -n "$(RELEASE_TITLE)" ]; then set -- "$$@" --title "$(RELEASE_TITLE)"; fi; \
+	if [ -n "$(RELEASE_NOTES_FILE)" ]; then set -- "$$@" --notes-file "$(RELEASE_NOTES_FILE)"; fi; \
+	./scripts/release.sh "$$@"
+
+release-prod:
+	@if [ -z "$(RELEASE_VERSION)" ]; then \
+		echo "RELEASE_VERSION is required. Example: make release-prod RELEASE_VERSION=2026.04.22 RELEASE_TITLE='2026 Portfolio Launch'"; \
+		exit 1; \
+	fi
+	@set -- "$(RELEASE_VERSION)" --prod; \
+	if [ -n "$(RELEASE_TITLE)" ]; then set -- "$$@" --title "$(RELEASE_TITLE)"; fi; \
+	if [ -n "$(RELEASE_NOTES_FILE)" ]; then set -- "$$@" --notes-file "$(RELEASE_NOTES_FILE)"; fi; \
+	./scripts/release.sh "$$@"
 
 dev:
 	@LIVE_MODE="$(LIVE)"; \
