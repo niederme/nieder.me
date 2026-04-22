@@ -6,6 +6,7 @@ cd "$ROOT_DIR"
 
 SOURCE_PATHS=(
   "about/index.html"
+  "drafts"
   "index.html"
   "work"
   "assets/css"

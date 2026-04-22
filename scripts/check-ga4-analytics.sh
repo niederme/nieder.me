@@ -67,12 +67,10 @@ tagged_pages=(
   "index.html"
   "about/index.html"
   "accessibility/index.html"
-  "colophon/index.html"
+  "colophon-style-guide/index.html"
   "privacy/index.html"
   "work/index.html"
   "work/resy-discovery/index.html"
-  "work/sendmoi/index.html"
-  "work/somm-ai/index.html"
   "work/ai-quota/index.html"
 )
 

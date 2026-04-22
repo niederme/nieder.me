@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace the homepage's scroll-driven rail with a consistent four-item global page rail, add standalone `/about/` and `/colophon/` pages, and remove obsolete nav JS/CSS.
+**Goal:** Replace the homepage's scroll-driven rail with a consistent four-item global page rail, add standalone `/about/` and `/colophon-style-guide/` pages, and remove obsolete nav JS/CSS.
 
-**Architecture:** Introduce a shared `global-nav` / `global-nav-anchor` markup contract across all public pages and make active state explicit in HTML instead of deriving it from scroll position. Keep `aside.rail` as the visual/logo rail wrapper and place `global-nav` beside it as the only navigation landmark, avoiding duplicate navigation labels. Reuse existing content where possible: keep a shortened About block on `/`, move Colophon content into `/colophon/`, and keep work case studies grouped under the `Work` nav item rather than listing them individually in the rail. Add a lightweight Python verification script so the HTML contract and legacy-nav cleanup can be checked repeatedly during the refactor.
+**Architecture:** Introduce a shared `global-nav` / `global-nav-anchor` markup contract across all public pages and make active state explicit in HTML instead of deriving it from scroll position. Keep `aside.rail` as the visual/logo rail wrapper and place `global-nav` beside it as the only navigation landmark, avoiding duplicate navigation labels. Reuse existing content where possible: keep a shortened About block on `/`, move Colophon content into `/colophon-style-guide/`, and keep work case studies grouped under the `Work` nav item rather than listing them individually in the rail. Add a lightweight Python verification script so the HTML contract and legacy-nav cleanup can be checked repeatedly during the refactor.
 
 **Tech Stack:** Static HTML, bespoke CSS, vanilla JavaScript, Python 3 standard library, repo `make dev-thread` preview workflow
 
@@ -24,7 +24,7 @@
   - Homepage rail migration, homepage About bridge to `/about/`, Colophon removal, footer link updates, and `aside.rail` landmark cleanup.
 - `about/index.html`
   - New standalone About/Bio page using the global rail.
-- `colophon/index.html`
+- `colophon-style-guide/index.html`
   - New standalone Colophon page using the global rail.
 - `work/index.html`
   - Work index rail migration and footer/nav alignment.
@@ -65,7 +65,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_PAGES = [
     ROOT / "index.html",
     ROOT / "about" / "index.html",
-    ROOT / "colophon" / "index.html",
+    ROOT / "colophon-style-guide" / "index.html",
     ROOT / "work" / "index.html",
     ROOT / "work" / "resy-discovery" / "index.html",
     ROOT / "work" / "sendmoi" / "index.html",
@@ -93,7 +93,7 @@ sys.exit(1)
 
 Run: `python3 scripts/check-global-nav.py`
 
-Expected: FAIL, listing the missing `/about/`, `/colophon/`, and colophon icon files.
+Expected: FAIL, listing the missing `/about/`, `/colophon-style-guide/`, and colophon icon files.
 
 - [ ] **Step 3: Create minimal placeholder SVG assets**
 
@@ -110,7 +110,7 @@ Expected: FAIL, listing the missing `/about/`, `/colophon/`, and colophon icon f
 
 Run: `python3 scripts/check-global-nav.py`
 
-Expected: FAIL, but now only because `about/index.html` and `colophon/index.html` do not exist yet.
+Expected: FAIL, but now only because `about/index.html` and `colophon-style-guide/index.html` do not exist yet.
 
 - [ ] **Step 5: Commit**
 
@@ -240,7 +240,7 @@ git commit -m "refactor: add shared global nav foundation"
 **Files:**
 - Modify: `index.html`
 - Create: `about/index.html`
-- Create: `colophon/index.html`
+- Create: `colophon-style-guide/index.html`
 - Modify: `assets/css/styles.css`
 - Test: `scripts/check-global-nav.py`
 
@@ -250,7 +250,7 @@ git commit -m "refactor: add shared global nav foundation"
 EXPECTED_ACTIVE = {
     "index.html": "Home",
     "about/index.html": "About/Bio",
-    "colophon/index.html": "Colophon",
+    "colophon-style-guide/index.html": "Colophon",
 }
 ```
 
@@ -258,7 +258,7 @@ EXPECTED_ACTIVE = {
 
 Run: `python3 scripts/check-global-nav.py`
 
-Expected: FAIL on missing `about/index.html`, `colophon/index.html`, and incorrect active-state markup.
+Expected: FAIL on missing `about/index.html`, `colophon-style-guide/index.html`, and incorrect active-state markup.
 
 - [ ] **Step 3: Replace the homepage rail and footer links**
 
@@ -275,7 +275,7 @@ Expected: FAIL on missing `about/index.html`, `colophon/index.html`, and incorre
   </a>
   <a class="global-nav-anchor" href="work/" aria-label="Work">…</a>
   <a class="global-nav-anchor" href="about/" aria-label="About/Bio">…</a>
-  <a class="global-nav-anchor" href="colophon/" aria-label="Colophon">…</a>
+  <a class="global-nav-anchor" href="colophon-style-guide/" aria-label="Colophon and style guide">…</a>
 </nav>
 ```
 
@@ -304,7 +304,7 @@ Keep `aside.rail` as the logo host only. Do not give it `aria-label="Primary nav
 
 Run: `python3 scripts/check-global-nav.py`
 
-Expected: PASS for `index.html`, `about/index.html`, and `colophon/index.html`; work pages may still fail until Task 4 lands.
+Expected: PASS for `index.html`, `about/index.html`, and `colophon-style-guide/index.html`; work pages may still fail until Task 4 lands.
 
 - [ ] **Step 7: Start a preview for visual checks**
 
@@ -315,7 +315,7 @@ Expected: The command prints a local preview URL beginning with `http://localhos
 - [ ] **Step 8: Commit**
 
 ```bash
-git add index.html about/index.html colophon/index.html assets/css/styles.css scripts/check-global-nav.py
+git add index.html about/index.html colophon-style-guide/index.html assets/css/styles.css scripts/check-global-nav.py
 git commit -m "feat: add about and colophon pages"
 ```
 
@@ -356,7 +356,7 @@ Expected: FAIL because the work pages still contain per-case-study rails and inc
   <a class="global-nav-anchor" href="../" aria-label="Back to homepage">…back icon…</a>
   <a class="global-nav-anchor is-active" href="../work/" aria-label="Work">…work icon…</a>
   <a class="global-nav-anchor" href="../about/" aria-label="About/Bio">…about icon…</a>
-  <a class="global-nav-anchor" href="../colophon/" aria-label="Colophon">…colophon icon…</a>
+  <a class="global-nav-anchor" href="../colophon-style-guide/" aria-label="Colophon and style guide">…colophon icon…</a>
 </nav>
 
 <!-- work case-study pages -->
@@ -364,7 +364,7 @@ Expected: FAIL because the work pages still contain per-case-study rails and inc
   <a class="global-nav-anchor" href="../../" aria-label="Back to homepage">…back icon…</a>
   <a class="global-nav-anchor is-active" href="../../work/" aria-label="Work">…work icon…</a>
   <a class="global-nav-anchor" href="../../about/" aria-label="About/Bio">…about icon…</a>
-  <a class="global-nav-anchor" href="../../colophon/" aria-label="Colophon">…colophon icon…</a>
+  <a class="global-nav-anchor" href="../../colophon-style-guide/" aria-label="Colophon and style guide">…colophon icon…</a>
 </nav>
 ```
 
@@ -378,7 +378,7 @@ Expected: PASS across homepage, About, Colophon, work index, and all case-study 
 
 Run: `make dev-thread`
 
-Expected: Preview remains available. Visit `/`, `/work/`, `/work/resy-discovery/`, `/work/sendmoi/`, `/work/somm-ai/`, `/work/ai-quota/`, `/about/`, and `/colophon/` and confirm the rail order, active state, and first-item arrow behavior.
+Expected: Preview remains available. Visit `/`, `/work/`, `/work/resy-discovery/`, `/work/sendmoi/`, `/work/somm-ai/`, `/work/ai-quota/`, `/about/`, and `/colophon-style-guide/` and confirm the rail order, active state, and first-item arrow behavior.
 
 - [ ] **Step 6: Commit**
 
@@ -401,7 +401,7 @@ git commit -m "feat: unify work pages under global rail"
 ```md
 - `/` homepage with work highlights and a short About section
 - `/about/` full biography page
-- `/colophon/` standalone colophon page
+- `/colophon-style-guide/` combined colophon and style guide
 ```
 
 - [ ] **Step 2: Run the verifier as the final automated check**
@@ -433,7 +433,7 @@ Expected: Preview URL prints successfully. Check desktop and a narrow mobile vie
 - [ ] **Step 5: Commit**
 
 ```bash
-git add README.md index.html about/index.html colophon/index.html work/index.html work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html assets/css/styles.css assets/css/work-case-study.css assets/js/main.js assets/icons/side-nav/icon-colophon-off.svg assets/icons/side-nav/icon-colophon-on.svg assets/icons/side-nav/icon-colophon-hover.svg scripts/check-global-nav.py
+git add README.md index.html about/index.html colophon-style-guide/index.html work/index.html work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html assets/css/styles.css assets/css/work-case-study.css assets/js/main.js assets/icons/side-nav/icon-colophon-off.svg assets/icons/side-nav/icon-colophon-on.svg assets/icons/side-nav/icon-colophon-hover.svg scripts/check-global-nav.py
 git commit -m "feat: ship global page rail navigation"
 ```
 
@@ -442,7 +442,7 @@ git commit -m "feat: ship global page rail navigation"
 - `styleguide/index.html` is out of scope unless a shared selector change breaks it; keep its local navigation behavior intact.
 - Prefer reusing existing About and Colophon markup blocks rather than redesigning them during this refactor.
 - When updating relative links, verify each page depth carefully:
-  - homepage uses `work/`, `about/`, `colophon/`
-  - `/work/` pages use `../`, `../about/`, `../colophon/`
-  - `/work/...` case-study pages use `../../`, `../../about/`, `../../colophon/`
+  - homepage uses `work/`, `about/`, `colophon-style-guide/`
+  - `/work/` pages use `../`, `../about/`, `../colophon-style-guide/`
+  - `/work/...` case-study pages use `../../`, `../../about/`, `../../colophon-style-guide/`
 - Keep the icon-only rail composition intact. The popover is an additive desktop affordance, not a redesign of the rail.

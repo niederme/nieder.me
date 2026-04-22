@@ -63,7 +63,7 @@ The site should not add Google Tag Manager, custom event plumbing, consent-banne
 - `index.html`
 - `about/index.html`
 - `accessibility/index.html`
-- `colophon/index.html`
+- `colophon-style-guide/index.html`
 - `privacy/index.html`
 - `work/index.html`
 - `work/resy-discovery/index.html`

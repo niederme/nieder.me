@@ -10,21 +10,19 @@ Current site surfaces:
 
 - `/` homepage with work highlights and a short About section
 - `/about/` full biography page
-- `/colophon/` standalone colophon page
+- `/colophon-style-guide/` combined colophon and style guide
 - `/accessibility/` accessibility statement
 - `/privacy/` privacy notice
 - `/work/` full work experience and resume page
 - `/work/resy-discovery/` Resy case study
-- `/work/sendmoi/` SendMoi case study
-- `/work/somm-ai/` Somm AI case study
 - `/work/ai-quota/` AIQuota case study
-- `/styleguide/` working foundations page for typography, color, spacing, and patterns
+- `drafts/work/sendmoi/` preserved SendMoi case study draft, not deployed
+- `drafts/work/somm-ai/` preserved Somm AI case study draft, not deployed
 
 Core project files:
 
 - `index.html` homepage entry point
 - `work/**/*.html` work index and case-study pages
-- `styleguide/index.html` style guide page
 - `assets/css/styles.css` homepage and shared site styles
 - `assets/css/work-case-study.css` work index and case-study styles
 - `assets/js/main.js` shared client-side behavior
@@ -81,8 +79,7 @@ make dev-local LIVE=1
 
 Live reload currently watches:
 
-- `index.html`
-- `work/**/*.html`
+- `**/*.html`
 - `assets/css/**/*.css`
 - `assets/js/**/*.js`
 
@@ -121,15 +118,15 @@ git worktree add ../nieder-me-my-feature -b codex/my-feature
 
 ## Deploy
 
-Merging to `main` triggers the GitHub Actions deploy workflow automatically. The workflow:
+Merging to `main` triggers the GitHub Actions staging deploy workflow automatically. The workflow:
 
 - installs `lightningcss` and `terser` and minifies all CSS and JS with source maps
-- syncs the managed site files to the server over SSH using the `SSH_PRIVATE_KEY` secret
+- syncs the managed site files to `https://nieder.me/2026` over SSH using the `SSH_PRIVATE_KEY` secret
 
-For manual or local deploys, use the shell script directly:
+For manual or local staging deploys, use the shell script directly:
 
 ```bash
-./scripts/deploy-2026.sh
+make deploy-stage
 ```
 
 The script:
@@ -149,6 +146,20 @@ Default settings in `scripts/deploy-2026.sh` can be overridden with environment 
 - `DEPLOY_PORT`
 - `DRY_RUN=1`
 - `SITE_URL`
+
+Production is explicit. Use the manual GitHub Actions "Deploy Production" workflow, or run:
+
+```bash
+make deploy-prod
+```
+
+Before the first production cutover, preserve the current root site into `/2016`:
+
+```bash
+make archive-root-2016
+```
+
+The archive helper refuses to overwrite an existing `/2016` archive unless `FORCE=1` is provided.
 
 Site URL helpers:
 
@@ -178,7 +189,7 @@ This helper requires the GitHub CLI (`gh`) to be installed and authenticated.
 ## Notes
 
 - The site defaults to dark mode and includes a persistent manual `light` toggle.
-- Shared rail navigation and the column-grid toggle are used across the homepage, About, Colophon, and work pages.
+- Shared rail navigation and the column-grid toggle are used across the homepage, About, Colophon & Style Guide, and work pages.
 - For job-application attribution links, use `https://nieder.me/?utm_source=<company>&utm_medium=job_application&utm_campaign=portfolio`; add `&utm_content=<role_slug>` when role-level detail is useful, and add `&share_id=<opaque_link_id>` when you want to attribute a specific shared outreach link across the visit.
-- GA4 currently collects standard pageviews across the main public pages plus a small custom event layer in `assets/js/main.js`: `shared_link_page_view`, `shared_link_engaged`, `email_clicked`, `resume_download_clicked`, and `external_link_clicked`. The `styleguide/` page and `resy-ai-demo.html` stay out of the analytics footprint.
+- GA4 currently collects standard pageviews across the main public pages plus a small custom event layer in `assets/js/main.js`: `shared_link_page_view`, `shared_link_engaged`, `email_clicked`, `resume_download_clicked`, and `external_link_clicked`. The legacy `styleguide/` redirect and `resy-ai-demo.html` stay out of the analytics footprint.
 - The README should describe the current repo shape and workflows, not act as a running change log. If a feature ships, update the relevant section above instead of appending historical bullets.

@@ -1,12 +1,10 @@
-name: Deploy Staging
+name: Deploy Production
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy-production:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,5 +33,5 @@ jobs:
             StrictHostKeyChecking yes
           EOF
 
-      - name: Deploy
-        run: ./scripts/deploy-2026.sh
+      - name: Deploy production
+        run: ./scripts/deploy-prod.sh

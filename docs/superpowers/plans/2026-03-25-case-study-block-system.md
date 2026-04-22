@@ -394,7 +394,7 @@ Expected: a single commit containing the shared recirculation system and page wi
 - Modify: `work/ai-quota/index.html:33,298`
 - Modify: `work/index.html:33,578`
 - Modify: `about/index.html:33,215`
-- Modify: `colophon/index.html:33,219`
+- Modify: `colophon-style-guide/index.html:33,219`
 - Modify: `styleguide/index.html:29,636`
 - Test: `scripts/check-case-study-blocks.sh`
 
@@ -405,7 +405,7 @@ Update every page that loads the changed shared assets so:
 - `main.js?v=...` receives a new version token if the carousel enhancement shipped
 
 Do not rewrite unrelated HTML while touching these files. Limit edits to the asset URLs unless a real regression is found.
-This scope intentionally includes `/work/`, `/about/`, `/colophon/`, and `/styleguide/` because they currently reference the same shared stylesheet and JS assets as the case-study pages.
+This scope intentionally includes `/work/`, `/about/`, `/colophon-style-guide/`, and `/styleguide/` because they currently reference the same shared stylesheet and JS assets as the case-study pages.
 
 - [ ] **Step 2: Verify non-case-study pages that share the stylesheet**
 
@@ -417,7 +417,7 @@ make dev-thread
 
 Expected:
 - output includes `Serving on this Mac:` and `Serving on your network:`
-- `/work/`, `/about/`, `/colophon/`, and `/styleguide/` still render correctly after the shared CSS changes
+- `/work/`, `/about/`, `/colophon-style-guide/`, and `/styleguide/` still render correctly after the shared CSS changes
 
 Manual checks:
 - the work index grid still aligns
@@ -444,7 +444,7 @@ Expected:
 Run:
 
 ```bash
-git add work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html work/index.html about/index.html colophon/index.html styleguide/index.html
+git add work/resy-discovery/index.html work/sendmoi/index.html work/somm-ai/index.html work/ai-quota/index.html work/index.html about/index.html colophon-style-guide/index.html styleguide/index.html
 git commit -m "chore: refresh case study asset versions"
 ```
 
