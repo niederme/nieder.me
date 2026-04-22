@@ -132,10 +132,10 @@ expect_multiline_pattern "assets/css/work-case-study.css" \
   '\.logo-link \{[^}]*position: fixed;[^}]*width: 93\.832px;[^}]*height: 93\.832px;' \
   "Expected the desktop logo link to own the fixed clickable hit area."
 expect_multiline_pattern "assets/css/work-case-study.css" \
-  '\.logo-mark \{[^}]*cursor: pointer;[^}]*pointer-events: auto;' \
-  "Expected the visible desktop logo mark itself to remain an active hover target."
-expect_pattern "assets/css/work-case-study.css" '.logo-link:hover .logo-mark' \
-  "Expected the logo link to provide a visible hover cue."
+  '\.logo-mark \{[^}]*cursor: inherit;[^}]*pointer-events: auto;' \
+  "Expected the visible desktop logo mark to inherit the pointer cursor from the clickable logo link."
+expect_pattern "assets/css/work-case-study.css" '.logo-mark.is-brand-hover' \
+  "Expected the logo mark to provide a visible hover cue."
 expect_no_pattern "assets/css/work-case-study.css" 'site-footer-utility-separator' \
   "Expected footer utility links to use spacing instead of a slash separator style."
 
