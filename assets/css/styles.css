@@ -1137,6 +1137,10 @@ body.grid-hidden .grid-overlay > span {
   font-weight: 700;
 }
 
+.experience-item .experience-company-plain {
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+
 .experience-item .experience-company a {
   display: inline-block;
   color: inherit;
@@ -2384,6 +2388,30 @@ body.grid-hidden .grid-overlay > span {
   .about-home-copy p {
     font-size: 18px;
     line-height: 1.35;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1500px) {
+  .experience-grid {
+    grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+    column-gap: var(--grid-gutter);
+    row-gap: 0;
+  }
+
+  .experience-heading {
+    grid-column: 2 / span 3;
+  }
+
+  .experience-columns-carousel {
+    display: contents;
+  }
+
+  .experience-column:first-of-type {
+    grid-column: 5 / span 4;
+  }
+
+  .experience-column:last-of-type {
+    grid-column: 9 / span 4;
   }
 }
 
