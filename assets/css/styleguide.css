@@ -747,6 +747,10 @@
   gap: 12px;
 }
 
+#grid .styleguide-section-intro {
+  margin-bottom: 18px;
+}
+
 .styleguide-grid-demo span {
   height: 180px;
   background: color-mix(in srgb, var(--accent) 25%, transparent);
@@ -971,6 +975,15 @@
   .styleguide-patterns,
   .styleguide-responsive-specimen {
     grid-template-columns: 1fr;
+  }
+
+  .styleguide-color-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .styleguide-swatch-card {
+    min-width: 0;
   }
 
   .styleguide-token-table-head {

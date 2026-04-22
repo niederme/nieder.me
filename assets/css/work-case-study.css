@@ -497,7 +497,7 @@ body.is-pulling-refresh .rail::after {
   pointer-events: none;
   opacity: 0;
   overflow: visible;
-  width: 180px;
+  width: 220px;
   transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
@@ -510,7 +510,6 @@ body.is-pulling-refresh .rail::after {
   font-weight: 300;
   letter-spacing: 0;
   line-height: 1.35;
-  text-transform: lowercase;
   white-space: nowrap;
 }
 
@@ -527,11 +526,26 @@ body.is-pulling-refresh .rail::after {
   transform: translateX(8px);
 }
 
+.cols-toggle-cue-desktop {
+  left: 78px;
+  top: 88px;
+  transform: translateX(8px);
+}
+
 .theme-toggle-cue-mobile {
   display: none;
 }
 
-body.is-color-section-active .theme-toggle-cue-desktop {
+.cols-toggle-cue-mobile {
+  display: none;
+}
+
+body.is-color-section-active .theme-toggle.is-off + .theme-toggle-cue-desktop {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body.is-grid-section-active .cols-toggle-cue-desktop {
   opacity: 1;
   transform: translateX(0);
 }
@@ -4380,30 +4394,53 @@ body.grid-hidden .work-grid-overlay > span {
     display: none;
   }
 
+  .cols-toggle-cue-desktop {
+    display: none;
+  }
+
   .mobile-nav-toggles {
     position: relative;
   }
 
   .theme-toggle-cue-mobile {
     display: block;
-    right: 16px;
+    right: 74px;
     bottom: calc(100% + 4px);
-    width: 142px;
+    width: 174px;
     transform: translateY(8px);
   }
 
-  .theme-toggle-cue-mobile .theme-toggle-cue-text {
-    margin-left: 38px;
+  .cols-toggle-cue-mobile {
+    display: block;
+    right: 42px;
+    bottom: calc(100% + 4px);
+    width: 188px;
+    transform: translateY(8px);
+  }
+
+  .theme-toggle-cue-mobile .theme-toggle-cue-text,
+  .cols-toggle-cue-mobile .theme-toggle-cue-text {
+    margin-left: 0;
+    margin-right: 46px;
+    text-align: right;
     font-size: 18px;
   }
 
-  .theme-toggle-cue-mobile .theme-toggle-cue-arrow {
+  .theme-toggle-cue-mobile .theme-toggle-cue-arrow,
+  .cols-toggle-cue-mobile .theme-toggle-cue-arrow {
     width: 42px;
     height: auto;
+    margin-left: auto;
     margin-top: -5px;
+    transform: scale(-1);
   }
 
-  body.is-color-section-active .theme-toggle-cue-mobile {
+  body.is-color-section-active .theme-toggle.is-off + .theme-toggle-cue-mobile {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.is-grid-section-active .cols-toggle-cue-mobile {
     opacity: 1;
     transform: translateY(0);
   }
