@@ -3018,6 +3018,13 @@ body.grid-hidden .work-grid-overlay > span {
     margin-left: calc((100vw - var(--grid-width)) / 2 + 50px);
     margin-right: calc((100vw - var(--grid-width)) / 2 - 50px);
   }
+
+  .policy-page .work-index-header-copy,
+  .work-index-page .work-index-header-copy,
+  .work-index-page .work-index-lede,
+  .work-index-page .work-index-download-wrap {
+    margin-left: var(--case-study-edge-inset);
+  }
 }
 
 @media (min-width: 960px) and (max-width: 1500px) {
