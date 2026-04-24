@@ -9,6 +9,7 @@ WORK_STYLESHEET="assets/css/work-case-study.css"
 MAIN_SCRIPT="assets/js/main.js"
 CASE_STUDY_PAGES=(
   "work/resy-discovery/index.html"
+  "work/resy-search-ai/index.html"
   "work/ai-quota/index.html"
 )
 
@@ -57,9 +58,9 @@ for page in "${CASE_STUDY_PAGES[@]}"; do
   fi
 done
 
-expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-two-up" "Resy pilot should use the two-up block."
 expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-aside-media" "Resy pilot should use the aside-media block."
-expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-carousel" "Resy pilot should use the carousel block."
+expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-metrics" "Resy pilot should use the metrics block."
+expect_pattern "$PILOT_PAGE" "case-study-block case-study-block-reference-links" "Resy pilot should use the reference-links block."
 expect_pattern "$WORK_STYLESHEET" ".case-study-story" "Work stylesheet should define the shared case-study story namespace."
 expect_pattern "$WORK_STYLESHEET" ".case-study-story > .work-article-grid" "Case-study grid rule should apply only to the story grid, not recirculation grids."
 expect_regex "$WORK_STYLESHEET" "\\.case-study-story \\{[[:space:][:print:]]*gap: 0;" "Story wrapper should not add extra flex gap above the first article rule."
@@ -67,7 +68,7 @@ expect_pattern "$WORK_STYLESHEET" "width: var(--case-study-hero-width);" "Hero c
 expect_pattern "$WORK_STYLESHEET" "padding-top: 50px;" "Story grid should preserve the Figma spacing below the first horizontal rule."
 expect_pattern "$WORK_STYLESHEET" "margin-top: 18px;" "Lede block should own the tightened hero-to-lede spacing once the story wrapper gap is removed."
 expect_pattern "$WORK_STYLESHEET" "margin-bottom: 50px;" "Lede block should preserve the Figma spacing above the first horizontal rule."
-expect_pattern "$WORK_STYLESHEET" "top: 100%;" "Full-media captions should sit tight to the image per the detached-caption design."
+expect_pattern "$WORK_STYLESHEET" "top: calc(100% - 18px);" "Full-media captions should sit tight to the image per the detached-caption design."
 expect_pattern "$WORK_STYLESHEET" "margin-bottom: 24px;" "Full-media media blocks should keep the caption closer to the image."
 expect_pattern "$WORK_STYLESHEET" "width: var(--case-study-sidecar-width);" "Detached captions should size from the shared responsive sidecar width."
 expect_pattern "$WORK_STYLESHEET" '.case-study-block-full-media .case-study-caption::before' "Full-media captions should render the detached arrow marker."

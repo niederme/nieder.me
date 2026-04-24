@@ -9,6 +9,7 @@ PUBLIC_PAGES = [
     ROOT / "colophon-style-guide" / "index.html",
     ROOT / "work" / "index.html",
     ROOT / "work" / "resy-discovery" / "index.html",
+    ROOT / "work" / "resy-search-ai" / "index.html",
     ROOT / "work" / "ai-quota" / "index.html",
 ]
 COLOPHON_ICONS = [
@@ -42,20 +43,18 @@ REQUIRED_FILE_TOKENS = {
         ':root[data-grid="hidden"] .grid-overlay',
         "--nav-popover-bg:",
         "--nav-popover-fg:",
-        "flex: 1 1 0;",
         ".mobile-nav-toggles .theme-toggle,",
-        "width: 48px;",
-        "font-size: 8px;",
+        "width: 52px;",
+        "font-size: 10px;",
         ".mobile-nav-toggles .cols-toggle {\n    display: flex;",
     ],
     ROOT / "assets" / "css" / "work-case-study.css": [
         ':root[data-grid="hidden"] .work-grid-overlay',
         "--nav-popover-bg:",
         "--nav-popover-fg:",
-        "flex: 1 1 0;",
         ".mobile-nav-toggles .theme-toggle,",
-        "width: 48px;",
-        "font-size: 8px;",
+        "width: 52px;",
+        "font-size: 10px;",
         ".mobile-nav-toggles .cols-toggle {\n    display: flex;",
     ],
 }

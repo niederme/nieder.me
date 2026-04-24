@@ -415,10 +415,18 @@ if (emailLinks.length > 0) {
     let reducedMotion = motionQuery.matches;
 
     const syncPausedState = (video) => {
-      const frame = video.closest(".case-study-sendmoi-video-frame");
+      const frame = video.closest(".case-study-demo-frame, .case-study-sendmoi-video-frame");
       video.classList.toggle("is-paused", video.paused);
       if (frame) {
         frame.classList.toggle("is-paused", video.paused);
+      }
+    };
+
+    const syncUnavailableState = (video, unavailable) => {
+      const frame = video.closest(".case-study-demo-frame, .case-study-sendmoi-video-frame");
+      video.classList.toggle("is-unavailable", unavailable);
+      if (frame) {
+        frame.classList.toggle("is-unavailable", unavailable);
       }
     };
 
@@ -457,6 +465,8 @@ if (emailLinks.length > 0) {
     );
 
     demoVideos.forEach((video) => {
+      video.addEventListener("error", () => syncUnavailableState(video, true));
+      video.addEventListener("loadeddata", () => syncUnavailableState(video, false));
       video.addEventListener("play", () => syncPausedState(video));
       video.addEventListener("pause", () => syncPausedState(video));
       video.addEventListener("click", () => toggleDemoPlayback(video));
