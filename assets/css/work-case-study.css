@@ -1104,6 +1104,7 @@ body.grid-hidden .work-grid-overlay > span {
 .case-study-lede {
   margin: 0;
   color: var(--fg);
+  text-wrap: pretty;
 }
 
 .case-study-block-lede .case-study-lede,
@@ -3270,7 +3271,7 @@ body.grid-hidden .work-grid-overlay > span {
 
   .case-study-block-lede .case-study-lede {
     width: 100%;
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   .case-study-page .work-article-body {
