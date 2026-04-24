@@ -73,6 +73,7 @@ one_level_pages=(
 
 two_level_pages=(
   "work/resy-discovery/index.html"
+  "work/resy-search-ai/index.html"
   "work/ai-quota/index.html"
 )
 

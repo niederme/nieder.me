@@ -71,6 +71,7 @@ tagged_pages=(
   "privacy/index.html"
   "work/index.html"
   "work/resy-discovery/index.html"
+  "work/resy-search-ai/index.html"
   "work/ai-quota/index.html"
 )
 

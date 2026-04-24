@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <title>Beyond Filters | John Niedermeyer</title>
+    <meta
+      name="description"
+      content="Standalone long-form case study on an unshipped Resy AI recommendations exploration for intent-led restaurant search."
+    />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("nieder.theme");
+          const storedGrid = window.localStorage.getItem("nieder.cols-grid-visible");
+          document.documentElement.dataset.grid = storedGrid === "1" ? "visible" : "hidden";
+          if (storedTheme === "light") {
+            document.documentElement.dataset.theme = "light";
+            document.documentElement.style.colorScheme = "light";
+            const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+            const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+            if (themeColorMeta) themeColorMeta.setAttribute("content", "#ffffff");
+            if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
+          }
+        } catch (error) {
+          document.documentElement.dataset.grid = "hidden";
+          // Ignore storage access failures and keep the default state.
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEFM9FZ25D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-DEFM9FZ25D');
+    </script>
+    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260423-1248" />
+  </head>
+  <body id="top" class="case-study-page work-theme-sommai is-subpage">
+    <div class="work-page">
+        <nav class="mobile-nav" aria-label="Primary navigation">
+          <a class="mobile-nav-anchor" href="../../" aria-label="Home">
+            <img class="icon-off"   src="../../assets/icons/side-nav/icon-back-off.svg"   alt="" />
+            <img class="icon-on"    src="../../assets/icons/side-nav/icon-back-on.svg"    alt="" />
+            <img class="icon-hover" src="../../assets/icons/side-nav/icon-back-hover.svg" alt="" />
+            <span class="mobile-nav-label">Home</span>
+          </a>
+          <a class="mobile-nav-anchor is-active" href="../../work/" aria-label="Work">
+            <img class="icon-off"   src="../../assets/icons/side-nav/icon-work-experience-off.svg"   alt="" />
+            <img class="icon-on"    src="../../assets/icons/side-nav/icon-work-experience-on.svg"    alt="" />
+            <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+            <span class="mobile-nav-label">Work</span>
+          </a>
+          <a class="mobile-nav-anchor" href="../../about/" aria-label="About &amp; Biography">
+            <img class="icon-off"   src="../../assets/icons/side-nav/icon-work-about-off.svg"   alt="" />
+            <img class="icon-on"    src="../../assets/icons/side-nav/icon-work-about-on.svg"    alt="" />
+            <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
+            <span class="mobile-nav-label">About</span>
+          </a>
+          <a class="mobile-nav-anchor" href="../../colophon-style-guide/" aria-label="Colophon and style guide">
+            <img class="icon-off"   src="../../assets/icons/side-nav/icon-colophon-off.svg"   alt="" />
+            <img class="icon-on"    src="../../assets/icons/side-nav/icon-colophon-on.svg"    alt="" />
+            <img class="icon-hover" src="../../assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
+            <span class="mobile-nav-label">Colophon</span>
+          </a>
+          <div class="mobile-nav-toggles">
+            <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+              <span class="theme-toggle-switch" aria-hidden="true"></span>
+              <span class="theme-toggle-label">light</span>
+              <span class="theme-toggle-state" aria-live="polite">Off</span>
+            </button>
+            <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
+              <span class="cols-toggle-switch" aria-hidden="true"></span>
+              <span class="cols-toggle-label">cols</span>
+              <span class="cols-toggle-state" aria-live="polite">Off</span>
+            </button>
+          </div>
+        </nav>
+      <aside class="rail">
+        <a class="logo-link" href="../../" aria-label="Back to homepage">
+          <img class="logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
+      </aside>
+
+      <nav class="global-nav" aria-label="Primary navigation">
+        <a class="global-nav-anchor" href="../../" aria-label="Back to homepage">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-back-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-back-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-back-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Home</span>
+        </a>
+        <a class="global-nav-anchor is-active" href="../../work/" aria-label="Work">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Work Experience &amp; Resume</span>
+        </a>
+        <a class="global-nav-anchor" href="../../about/" aria-label="About &amp; Biography">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-work-about-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-work-about-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">About &amp; Biography</span>
+        </a>
+        <a class="global-nav-anchor" href="../../colophon-style-guide/" aria-label="Colophon and style guide">
+          <img class="icon-off" src="../../assets/icons/side-nav/icon-colophon-off.svg" alt="" />
+          <img class="icon-on" src="../../assets/icons/side-nav/icon-colophon-on.svg" alt="" />
+          <img class="icon-hover" src="../../assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Colophon &amp; Style Guide</span>
+        </a>
+        <div class="rail-controls-panel">
+          <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+            <span class="theme-toggle-switch" aria-hidden="true"></span>
+            <span class="theme-toggle-label">light</span>
+            <span class="theme-toggle-state" aria-live="polite">Off</span>
+          </button>
+          <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
+            <span class="cols-toggle-switch" aria-hidden="true"></span>
+            <span class="cols-toggle-label">cols</span>
+            <span class="cols-toggle-state" aria-live="polite">Off</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="work-article">
+        <div class="work-grid-overlay" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <a class="mobile-logo-link" href="../../" aria-label="Back to homepage">
+          <img class="mobile-logo-mark" src="../../assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
+
+        <div class="case-study-story">
+          <section class="work-article-hero case-study-block case-study-block-hero" aria-labelledby="sommai-title">
+            <div class="work-article-hero-content case-study-block-inner">
+              <img class="work-article-logo" src="../../assets/images/case-studies/somm-ai/promo/logo-brand.svg" alt="Resy" />
+              <p class="work-article-eyebrow">Resy AI Exploration</p>
+              <h1 id="sommai-title">Beyond Filters: Intent-Led Search</h1>
+            </div>
+          </section>
+
+          <section class="case-study-block case-study-block-lede">
+            <div class="case-study-block-inner">
+              <p class="case-study-lede">
+                What happens when diners stop thinking in filters and start describing what they want in plain language?
+              </p>
+            </div>
+          </section>
+
+          <section class="work-article-grid">
+            <aside class="work-article-meta case-study-block case-study-block-meta" aria-label="Project metadata">
+              <div class="case-study-block-inner">
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Role</p>
+                  <p class="work-article-meta-value">Principal Designer</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Organization</p>
+                  <p class="work-article-meta-value">Resy (American Express Global Dining Network)</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Timeframe</p>
+                  <p class="work-article-meta-value">May 2025</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Status</p>
+                  <p class="work-article-meta-value">Internal proof of concept; never shipped</p>
+                </div>
+                <div class="work-article-meta-card">
+                  <p class="work-article-meta-label">Platforms</p>
+                  <p class="work-article-meta-value">Consumer search concept across mobile and web</p>
+                </div>
+              </div>
+            </aside>
+
+            <article class="work-article-body">
+              <section class="work-article-section case-study-block case-study-block-text case-study-block-intro-lede">
+                <div class="case-study-block-inner">
+                  <p class="case-study-lede">
+                    Traditionally, listing apps rely on granular filtering (cuisine, time, rating, availability) and
+                    list-based discovery, but user intents are changing rapidly.
+                  </p>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-text">
+                <div class="case-study-block-inner">
+                  <p>
+                    First with the Google “omni-box” search box, where users expect to simply type what they want and get
+                    relevant results, and now increasingly toward direct, informed, conversational answers. Generative AI
+                    is shifting user expectations in real time, creating an opportunity to catch up and differentiate
+                    search through the use of LLMs.
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Speed:</strong> One-shot answers instead of filters (which few people use). A single,
+                      thoughtful response saves time and boosts satisfaction, especially on mobile.
+                    </li>
+                    <li>
+                      <strong>Context:</strong> People want expert (or social) curation. AI responses can mirror Resy’s
+                      editorial tone, helping users understand not just what’s available, but why it fits their vibe.
+                    </li>
+                    <li>
+                      <strong>Flexibility:</strong> Unlike filters that box users in, natural language queries allow
+                      broader exploration (“chill rooftop for date night”), helping users express intent with nuance.
+                    </li>
+                  </ul>
+                  <p>
+                    <strong>And mobile users are more likely to ask questions than use dropdowns.</strong> Google’s Head of Search,
+                    Elizabeth Reid, noted in a
+                    <a href="https://www.ft.com/content/decc6853-4fff-448c-b1c3-be8824ab511f?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">recent interview</a>
+                    that AI Overviews have led users, especially younger ones, to ask more and longer questions,
+                    including multimodal queries combining text and images.
+                  </p>
+                  <p>
+                    This indicates a significant shift in user behavior toward more natural, conversational interactions
+                    with search engines.
+                  </p>
+                </div>
+              </section>
+
+              <section class="case-study-block case-study-block-aside-media case-study-block-aside-right case-study-block-aside-float case-study-block-resy-editorial-rail case-study-block-full-gap">
+                <div class="case-study-block-inner">
+                  <div class="case-study-copy">
+                    <h2>A Modest Proposal</h2>
+                    <p>
+                      Given the internal sensitivities to generative AI and concerns about discarding what has proven
+                      effective in favor of a new, flashy technology, we adopted an experimental approach: pair traditional
+                      venue card results with dynamic, AI-powered summaries.
+                    </p>
+                    <p>
+                      <strong>Ask the LLM to answer the user&rsquo;s query, above the usual search results:</strong>
+                    </p>
+                    <ul>
+                      <li>
+                        3-5 editorial-quality suggestions, with source links;
+                      </li>
+                      <li>
+                        Contextual reasoning (e.g., neighborhood, availability, price tier, Resy links);
+                      </li>
+                      <li>
+                        Follow-up suggestion box, to build on the original query (&ldquo;Looking for a particular cuisine or
+                        neighborhood?&rdquo;).
+                      </li>
+                    </ul>
+                    <p>
+                      This approach aligned with our established workflows and brand positioning by crafting responses around
+                      Resy Guides, Collections, and curation, rather than providing generic summaries. This allowed us to
+                      explain not only what matched but also why.
+                    </p>
+                  </div>
+                  <figure class="case-study-figure case-study-media-wrap">
+                    <div class="case-study-media case-study-resy-stage">
+                      <div class="case-study-resy-device-shell">
+                        <div class="case-study-resy-device-bezel">
+                          <div class="case-study-demo-frame case-study-demo-frame-phone">
+                            <img
+                              src="../../assets/images/case-studies/resy-search-ai/article/resy-editorial-mobile-guide.png"
+                              alt="Resy editorial tasting menu guide on mobile web, showing how curated content could support AI-assisted discovery."
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <figcaption class="case-study-caption">
+                      This proposal built on Resy’s pre-existing Guides, Collections, and curation, like this tasting menu roundup.
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-text">
+                <div class="case-study-block-inner">
+                  <h2>Competitive Differentiation</h2>
+                  <p>
+                    The concept also clarified where Resy could differentiate:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>OpenTable:</strong> still relied heavily on traditional filtering and list-based discovery,
+                      with no real AI search layer to help diners describe what they wanted in plain language.
+                    </li>
+                    <li>
+                      <strong>Google Maps:</strong> moved faster on generative overlays, but its answers felt generic and
+                      noisy, mixing broad suggestions with ads, sponsored placements, and uneven crowd-sourced content.
+                    </li>
+                    <li>
+                      <strong>Yelp:</strong> offered plenty of opinions, but discovery was driven by reviews and
+                      popularity rather than real-time availability or booking intent.
+                    </li>
+                  </ul>
+                  <p>
+                    That gave Resy a more distinctive lane. It could combine editorial judgment, live inventory, and a
+                    clear booking path in one experience, giving users more than a summary and more than a filter stack.
+                  </p>
+                  <p>
+                    The result could feel specific and trustworthy while still staying close to action.
+                  </p>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-text">
+                <div class="case-study-block-inner">
+                  <h2>Strategic Opportunities</h2>
+                  <p>
+                    That framing also opened up a broader set of strategic opportunities. The AI layer could act as a
+                    gateway into Resy&rsquo;s editorial ecosystem, surfacing Guides and Collections at the moment a diner was
+                    trying to decide where to go. It also created a more natural foundation for personalization, whether
+                    that meant tailoring suggestions to a cuisine, a neighborhood, a specific restaurant, or eventually a
+                    user&rsquo;s own preferences and history.
+                  </p>
+                  <p>
+                    Most importantly, it expanded the kinds of questions Resy could answer well. Queries like
+                    &ldquo;romantic but not stuffy,&rdquo; &ldquo;birthday-friendly, below $100,&rdquo; or &ldquo;where can I walk in near me?&rdquo;
+                    are awkward fits for rigid filters, but they map cleanly to conversational search. That made the
+                    concept feel less like a novelty layer and more like a practical way to unlock higher-intent,
+                    harder-to-serve use cases.
+                  </p>
+                </div>
+              </section>
+
+              <section class="case-study-block case-study-block-image-medium case-study-block-demo-panel">
+                <div class="case-study-block-inner">
+                  <figure class="case-study-figure">
+                    <div class="case-study-media case-study-demo-surface">
+                      <div class="case-study-demo-frame">
+                        <video
+                          class="case-study-demo-player"
+                          src="../../assets/videos/somm-ai-demo-cropped.mp4?v=20260423-0938"
+                          autoplay
+                          muted
+                          loop
+                          playsinline
+                          preload="metadata"
+                          aria-label="Resy Search AI concept demo video. Click, tap, or press Space to play or pause."
+                          tabindex="0"
+                          data-case-study-demo-video
+                        >
+                          Your browser does not support embedded video.
+                        </video>
+                        <span class="case-study-demo-playhead" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                    <figcaption class="case-study-caption">
+                      Prototype click-through demonstrating multi-step AI steering “Tasting Menus” to more specific “Italian in the West Village or Chelsea tonight 7-9pm.”
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-results">
+                <div class="case-study-block-inner">
+                  <h2>Pointing Toward The Future Of Search</h2>
+                  <p>
+                    After some initial internal excitement, we shelved the concept, and I soon left the company. But the
+                    direction only became more obvious from there. User behavior kept moving toward longer, more
+                    conversational queries, while competitors continued to experiment with AI-assisted discovery. Resy
+                    could have occupied a warmer middle ground: not just a dining discovery tool, and not just a booking
+                    tool, but <strong>a dining concierge that brought discovery, curation, and booking into one place.</strong>
+                  </p>
+                  <p>
+                    Just as importantly, the concept proved the value of unshipped exploration. Somm AI helped define what
+                    an editorially grounded, availability-aware AI surface could look like inside Resy before that
+                    direction became table stakes across consumer products.
+                  </p>
+                </div>
+              </section>
+
+            </article>
+          </section>
+        </div>
+
+        <section class="case-study-recirculation work-index-case-study-block" aria-labelledby="case-study-recirculation-title">
+          <div class="rule"></div>
+          <div class="work-article-grid work-index-case-study-layout">
+            <div class="work-index-case-study-heading">
+              <h2 id="case-study-recirculation-title">More Case Studies</h2>
+            </div>
+
+            <div class="work-index-case-studies">
+              <div class="work-index-case-study-column">
+                <a class="work-index-card" href="../../work/resy-discovery/" aria-labelledby="case-study-resy-title">
+                  <figure class="work-index-card-media">
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../../assets/images/case-studies/resy-discovery/article/hero-mobile.jpg" />
+                      <img src="../../assets/images/case-studies/resy-discovery/article/hero-desktop.jpg" alt="Preview image for the Resy discovery case study" />
+                    </picture>
+                  </figure>
+                  <div class="work-index-card-copy">
+                    <p class="work-index-card-eyebrow">Resy Consumer App</p>
+                    <h4 id="case-study-resy-title">Evolving in-App Restaurant Discovery</h4>
+                    <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                  </div>
+                </a>
+
+                <a class="work-index-card" href="../../work/ai-quota/" aria-labelledby="case-study-aiquota-title">
+                  <figure class="work-index-card-media">
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../../assets/images/case-studies/ai-quota/article/hero-composite-screenshot-current.jpg" />
+                      <img src="../../assets/images/case-studies/ai-quota/article/hero-composite-screenshot-current.jpg" alt="Preview image for the AIQuota case study" />
+                    </picture>
+                  </figure>
+                  <div class="work-index-card-copy">
+                    <p class="work-index-card-eyebrow">AIQuota for macOS</p>
+                    <h4 id="case-study-aiquota-title">Know Your Limits: A Heads-Up Visualization of AI Tool Usage</h4>
+                    <span class="work-index-card-cta">View Case Study <img src="../../assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" /></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="work-index-case-study-column">
+                <article class="work-index-card is-disabled" aria-labelledby="case-study-sendmoi-title" aria-describedby="case-study-sendmoi-status">
+                  <figure class="work-index-card-media">
+                    <picture>
+                      <source media="(max-width: 700px)" srcset="../../assets/images/case-studies/sendmoi/article/bg-SendMoi-desktop.jpg" />
+                      <img src="../../assets/images/case-studies/sendmoi/article/bg2-SendMoi.jpg" alt="Preview image for the SendMoi case study" />
+                    </picture>
+                  </figure>
+                  <div class="work-index-card-copy">
+                    <p class="work-index-card-eyebrow">SendMoi for iOS &amp; macOS</p>
+                    <h4 id="case-study-sendmoi-title">Reimagining a Beloved Utility, With Help From Codex &amp; Claude Code</h4>
+                    <span id="case-study-sendmoi-status" class="work-index-card-cta work-index-card-status">Coming Soon</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer" aria-label="Site footer">
+          <div class="rule"></div>
+          <div class="site-footer-grid">
+            <div class="site-footer-brand">
+              <p class="site-footer-name">John Niedermeyer</p>
+              <p class="site-footer-role">Product Design &amp; Direction</p>
+              <nav class="site-footer-connect" aria-label="Connect links">
+                <ul class="site-footer-social">
+                  <li>
+                    <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                      <span class="social-icon social-icon-github" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                      <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                      <span class="social-icon social-icon-x" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                      <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-email-link aria-label="Send email">
+                      <span class="social-icon social-icon-email" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="site-footer-meta">© 2026 John Niedermeyer</p>
+              <p class="site-footer-utility-links">
+                <a href="../../accessibility/">Accessibility</a>
+                <a href="../../privacy/">Privacy</a>
+              </p>
+            </div>
+
+            <nav class="site-footer-column site-footer-column-site" aria-label="Site sections">
+              <h3>Site</h3>
+              <ul class="site-footer-links">
+                <li><a href="../../">Home</a></li>
+                <li><a href="../../work/">Work</a></li>
+                <li><a href="../../about/">About &amp; Biography</a></li>
+                <li><a href="../../colophon-style-guide/">Colophon &amp; Style Guide</a></li>
+              </ul>
+            </nav>
+
+            <nav class="site-footer-column site-footer-column-work" aria-label="Work sitemap">
+              <h3>Work</h3>
+              <ul class="site-footer-links">
+                <li><a href="../../work/">Resume &amp; Work</a></li>
+                <li><a href="../../work/resy-discovery/">Resy Discovery</a></li>
+                <li><a href="../../work/resy-search-ai/" aria-current="page">Somm AI</a></li>
+                <li><a href="../../work/ai-quota/">AIQuota</a></li>
+              </ul>
+            </nav>
+
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

@@ -17,10 +17,10 @@ Current site surfaces:
 - `/privacy/` privacy notice
 - `/work/` full work experience and resume page
 - `/work/resy-discovery/` Resy case study
+- `/work/resy-search-ai/` Resy AI case study
 - `/work/ai-quota/` AIQuota case study
-- public "Coming Soon" teaser cards for SendMoi and Somm AI on `/` and `/work/`
+- public "Coming Soon" teaser card for SendMoi on `/` and `/work/`
 - `drafts/work/sendmoi/` preserved SendMoi case study draft, not deployed or linked
-- `drafts/work/somm-ai/` preserved Somm AI case study draft, not deployed or linked
 
 Core project files:
 
