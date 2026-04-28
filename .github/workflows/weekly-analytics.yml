@@ -1,0 +1,26 @@
+name: Weekly Analytics Report
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"  # Mondays at 9am ET (13:00 UTC)
+  workflow_dispatch:       # allow manual runs
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install google-analytics-data google-auth
+
+      - name: Run analytics report
+        env:
+          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: "26108228"
+        run: python scripts/ga4-weekly-report.py
