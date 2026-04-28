@@ -16,9 +16,25 @@
 
 @font-face {
   font-family: "Sohne";
+  src: url("../fonts/soehne-buch-kursiv.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
   src: url("../fonts/soehne-halbfett.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("../fonts/soehne-halbfett-kursiv.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -1105,6 +1121,17 @@ body.grid-hidden .work-grid-overlay > span {
   margin: 0;
   color: var(--fg);
   text-wrap: pretty;
+}
+
+.case-study-preface {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  font-style: italic;
+}
+
+.work-article-body > .case-study-block-preface + .case-study-block-intro-lede {
+  margin-top: var(--case-study-paragraph-gap);
 }
 
 .case-study-block-lede .case-study-lede,
