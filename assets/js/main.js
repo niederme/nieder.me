@@ -413,6 +413,7 @@ if (emailLinks.length > 0) {
   if (demoVideos.length > 0) {
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     let reducedMotion = motionQuery.matches;
+    const visibleVideos = new Set();
 
     const syncPausedState = (video) => {
       const frame = video.closest(".case-study-demo-frame, .case-study-sendmoi-video-frame");
@@ -430,6 +431,8 @@ if (emailLinks.length > 0) {
       }
     };
 
+    const canAutoPlay = (video) => !reducedMotion && visibleVideos.has(video);
+
     const playDemo = (video) => {
       const playback = video.play();
       if (playback && typeof playback.catch === "function") {
@@ -446,25 +449,31 @@ if (emailLinks.length > 0) {
       video.pause();
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target;
-          if (entry.isIntersecting) {
-            if (!reducedMotion && video.paused) {
-              playDemo(video);
-            }
-          } else {
-            if (!video.paused) {
-              video.pause();
-            }
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
+    const observer =
+      "IntersectionObserver" in window
+        ? new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                  visibleVideos.add(video);
+                  if (video.paused && canAutoPlay(video)) {
+                    playDemo(video);
+                  }
+                } else {
+                  visibleVideos.delete(video);
+                  if (!video.paused) {
+                    video.pause();
+                  }
+                }
+              });
+            },
+            { threshold: 0.25 }
+          )
+        : null;
 
     demoVideos.forEach((video) => {
+      video.removeAttribute("autoplay");
       video.addEventListener("error", () => syncUnavailableState(video, true));
       video.addEventListener("loadeddata", () => syncUnavailableState(video, false));
       video.addEventListener("play", () => syncPausedState(video));
@@ -479,7 +488,9 @@ if (emailLinks.length > 0) {
         toggleDemoPlayback(video);
       });
 
-      observer.observe(video);
+      if (observer) {
+        observer.observe(video);
+      }
       syncPausedState(video);
     });
 
@@ -494,7 +505,7 @@ if (emailLinks.length > 0) {
           return;
         }
 
-        if (video.paused && video.currentTime === 0) {
+        if (video.paused && canAutoPlay(video)) {
           playDemo(video);
         }
       });
