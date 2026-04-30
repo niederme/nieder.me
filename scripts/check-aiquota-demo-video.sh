@@ -94,8 +94,8 @@ if "<img" in mobile_block:
 if '../../assets/videos/aiquota-demo-inline.mp4' not in mobile_block:
     fail("AIQuota mobile demo should use the shared inline MP4 asset.")
 
-if "autoplay" not in mobile_block:
-    fail("AIQuota mobile demo should be marked autoplay so phones treat it as motion, not a poster frame.")
+if "autoplay" in mobile_block:
+    fail("AIQuota mobile demo should not autoplay before the shared in-view video behavior starts it.")
 PY
 
 echo "aiquota demo video check passed"
