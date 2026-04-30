@@ -38,9 +38,20 @@ PUBLIC_DIRS=(
   work
 )
 
+ROOT_PUBLIC_FILES=(
+  apple-touch-icon-precomposed.png
+  apple-touch-icon.png
+  favicon.ico
+  favicon.png
+  robots.txt
+  sitemap.xml
+)
+
 if [[ "$DRY_RUN" == "1" ]]; then
   RSYNC_ARGS+=(--dry-run)
 fi
+
+./scripts/update-sitemap.py --check
 
 STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/deploy-2026.XXXXXX")"
 cleanup() {
@@ -50,6 +61,11 @@ trap cleanup EXIT
 
 cp index.html "$STAGING_DIR/"
 cp -R assets "$STAGING_DIR/"
+for file in "${ROOT_PUBLIC_FILES[@]}"; do
+  if [[ -f "$file" ]]; then
+    cp "$file" "$STAGING_DIR/"
+  fi
+done
 for dir in "${PUBLIC_DIRS[@]}"; do
   if [[ -d "$dir" ]]; then
     cp -R "$dir" "$STAGING_DIR/"
@@ -93,6 +109,11 @@ RSYNC_SSH_CMD="${RSYNC_SSH_CMD% }"
 # Sync only the managed site paths from staging so deploy does not delete
 # unrelated root-level server files such as host-managed config.
 SYNC_PATHS=("$STAGING_DIR/index.html" "$STAGING_DIR/assets")
+for file in "${ROOT_PUBLIC_FILES[@]}"; do
+  if [[ -f "$STAGING_DIR/$file" ]]; then
+    SYNC_PATHS+=("$STAGING_DIR/$file")
+  fi
+done
 for dir in "${PUBLIC_DIRS[@]}"; do
   if [[ -d "$STAGING_DIR/$dir" ]]; then
     SYNC_PATHS+=("$STAGING_DIR/$dir")

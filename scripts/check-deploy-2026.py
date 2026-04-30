@@ -13,6 +13,13 @@ required_tokens = [
     'cp index.html "$STAGING_DIR/"',
     'cp -R assets "$STAGING_DIR/"',
     'PUBLIC_DIRS=(',
+    'ROOT_PUBLIC_FILES=(',
+    'favicon.ico',
+    'robots.txt',
+    'sitemap.xml',
+    'for file in "${ROOT_PUBLIC_FILES[@]}"; do',
+    'cp "$file" "$STAGING_DIR/"',
+    'SYNC_PATHS+=("$STAGING_DIR/$file")',
     'for dir in "${PUBLIC_DIRS[@]}"; do',
     'if [[ -d "$dir" ]]; then',
     'cp -R "$dir" "$STAGING_DIR/"',
@@ -20,6 +27,7 @@ required_tokens = [
     'SYNC_PATHS+=("$STAGING_DIR/$dir")',
     'resume_pdf_cache_bust=',
     'assets/files/John-Niedermeyer-Resume.pdf',
+    './scripts/update-sitemap.py --check',
 ]
 
 for token in required_tokens:

@@ -1,4 +1,4 @@
-.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod deploy-stage deploy-prod archive-root-2016 release-stage release-prod issue-create
+.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod sitemap check-sitemap deploy-stage deploy-prod archive-root-2016 release-stage release-prod issue-create
 
 PORT ?= 8000
 THREAD_BASE_PORT ?= 8001
@@ -26,6 +26,12 @@ site-url-stage: site-url
 
 site-url-prod: SITE_URL := https://nieder.me
 site-url-prod: site-url
+
+sitemap:
+	@./scripts/update-sitemap.py
+
+check-sitemap:
+	@./scripts/update-sitemap.py --check
 
 deploy-stage:
 	@./scripts/deploy-2026.sh
