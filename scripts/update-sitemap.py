@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -38,6 +39,18 @@ def page_url(path: Path, site_url: str) -> str:
 
 
 def lastmod(path: Path) -> str:
+  relative = path.relative_to(ROOT).as_posix()
+  result = subprocess.run(
+    ["git", "-C", str(ROOT), "log", "-1", "--format=%cs", "--", relative],
+    check=False,
+    capture_output=True,
+    text=True,
+  )
+  if result.returncode == 0:
+    committed_date = result.stdout.strip()
+    if committed_date:
+      return committed_date
+
   timestamp = path.stat().st_mtime
   return datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat()
 
