@@ -22,6 +22,12 @@ Current site surfaces:
 - public "Coming Soon" teaser card for SendMoi on `/` and `/work/`
 - `drafts/work/sendmoi/` preserved SendMoi case study draft, not deployed or linked
 
+Draft work:
+
+- SendMoi is currently being refined in `drafts/work/sendmoi/`.
+- During local preview, review it at `/drafts/work/sendmoi/`.
+- Draft content stays out of deploys and should not be linked from public pages until intentionally promoted.
+
 Core project files:
 
 - `index.html` homepage entry point
