@@ -40,7 +40,7 @@
       gtag('js', new Date());
       gtag('config', 'G-DEFM9FZ25D');
     </script>
-    <link rel="stylesheet" href="../../../assets/css/work-case-study.css" />
+    <link rel="stylesheet" href="../../../assets/css/work-case-study.css?v=sendmoi-20260507-3" />
   </head>
   <body id="top" class="case-study-page work-theme-sendmoi is-subpage">
     <div class="work-page">
@@ -149,8 +149,8 @@
           <section class="case-study-block case-study-block-lede">
             <div class="case-study-block-inner">
               <p class="case-study-lede">
-                A focused send-to-self app for Apple platforms, built to replace a discontinued utility I loved and to
-                test whether AI coding tools could help carry a strong product vision into polished native software.
+                A focused send-to-self app for Apple platforms, created as an experiment in using AI coding tools to
+                turn a clear product concept into a tangible, polished app.
               </p>
             </div>
           </section>
@@ -192,38 +192,34 @@
             <article class="work-article-body">
               <section class="work-article-section case-study-block case-study-block-text">
                 <div class="case-study-block-inner">
-                  <h2>A Workflow I Missed Enough To Rebuild</h2>
+                  <h2>Reconstructing a Lost Workflow</h2>
                   <p>
                     SendMoi exists for a simple reason: I missed
                     <a href="https://web.archive.org/web/20260115202628/https://mailo.ameba.co/" target="_blank" rel="noopener noreferrer">Mailo</a>.
-                    It was a small mail-to-self utility I used constantly because it made an existing habit feel fast,
-                    dependable, and almost invisible. When something actually mattered, emailing it to yourself was still
-                    one of the simplest ways to make sure it stayed yours, and Mailo understood that workflow better than
-                    most tools did.
+                    It was a small mail-to-self utility I used constantly because it made email feel like a reliable
+                    save-for-later path, especially on the phone. When a link, note, image, or reference was worth
+                    keeping, Mailo kept it from disappearing into open tabs, share-sheet dead ends, or apps I would
+                    forget to check.
                   </p>
                   <p>
                     Then it disappeared. As the archived
                     <a href="https://web.archive.org/web/20250123191644/https://mailo.ameba.co/farewell/" target="_blank" rel="noopener noreferrer">farewell note</a>
-                    explain, Alex Mabe's
+                    explains, Alex Mabe's
                     <a href="https://ameba.co" target="_blank" rel="noopener noreferrer">Ameba</a>
-                    shut Mailo down after Google policy changes made its Gmail-native model impractical for a small team.
-                    The product went away, but the behavior did not. I still wanted a dependable send-to-self path from
-                    Apple's share sheet, one that turned links, text, and images into readable emails instead of broken
-                    fragments and still felt trustworthy when connectivity was weak. Too often the default path meant a
-                    titleless URL, a clipped image, or a blob of text dropped into the inbox with no care at all.
-                  </p>
+	                    shut Mailo down after Google policy changes made its Gmail-native model impractical for a small team.
+	                    I kept reaching for the same motion anyway: share from the phone, send to myself, trust that the
+	                    thing would arrive intact. The share sheet already had Mail, but it turned a simple
+	                    save-for-later task into too many taps: choose myself as the recipient, wait on a compose view,
+	                    review a draft, then send. Mailo's power was that the destination was already known, so one action
+	                    could package the thing cleanly, auto-send it, and get me back to whatever I was doing.
+	                  </p>
                   <p>
-                    That made the opportunity more interesting to me than a larger productivity concept. The goal was not
-                    to invent a new category or build another bloated capture app. It was to rebuild a narrow,
-                    high-frequency utility I already knew I wanted, then make it feel more intentional, trustworthy, and
-                    production-grade.
-                  </p>
-                  <p>
-                    The project also changed the way I thought about execution. I am not a traditional iOS or macOS
-                    developer, but Codex and Claude Code made it possible to close the gap between product judgment and
-                    native implementation quickly enough to seriously explore the idea. SendMoi became both a product
-                    exercise and a test: could a beloved discontinued workflow, paired with AI-assisted development,
-                    become a polished native app instead of stopping at a prototype?
+                    Rebuilding that workflow gave the project its shape, but the real question was whether I could execute
+                    it at the level it deserved. I am not a traditional iOS or macOS developer, but Codex and Claude Code
+                    made it possible to close the gap between product judgment and native implementation quickly enough to
+                    seriously explore the idea. SendMoi became both a product exercise and a test: could a beloved
+                    discontinued workflow, paired with AI-assisted development, become a polished native app instead of
+                    stopping at a prototype?
                   </p>
                 </div>
               </section>
@@ -254,7 +250,8 @@
                       </div>
                     </div>
                     <figcaption class="case-study-caption">
-                      Live SendMoi demo, reframed inside the same device treatment used on the product’s landing page.
+                      The core flow is intentionally small: choose SendMoi, confirm the saved recipient, and let the app
+                      send the item without opening a compose screen.
                     </figcaption>
                   </figure>
                 </div>
@@ -262,25 +259,21 @@
 
               <section class="work-article-section case-study-block case-study-block-text">
                 <div class="case-study-block-inner">
-                  <h2>The Product Got Better As The Brief Got Smaller</h2>
+                  <h2>Designing for One Job</h2>
                   <p>
-                    The fastest way to make the product worse would have been to broaden the brief too early. There were
-                    plenty of adjacent directions available: folders, collaboration, annotations, tagging, a fuller archive,
-                    maybe even a lightweight reading interface. All of them could have sounded strategic on paper and
-                    diluted the actual value. The core promise stayed simple: when something moves through SendMoi, it
-                    should feel safer, cleaner, and more dependable than the default path.
+                    Once the goal was clear, the biggest risk was adding too much. SendMoi did not need folders, tags,
+                    collaboration, a reading mode, or a fuller archive. It needed to make one familiar move faster and
+                    more trustworthy: share something, send it to myself, and know it landed cleanly.
                   </p>
                   <p>
-                    That led to a few design principles early. The share extension had to be treated as the real front
-                    door, not a satellite surface. Delivery could not be best effort; the moment the user committed, the
-                    work had to become durable. And the output itself had to earn the extra step. If the final email
-                    looked no better than a raw forwarded URL, the product would feel ornamental instead of useful.
+                    That kept the product decisions honest. The share extension had to be the main experience. The
+                    recipient had to be remembered. Sending had to survive dismissal, weak connectivity, and app handoff.
+                    And the email itself had to be worth receiving, not just a raw URL passed along with fewer taps.
                   </p>
                   <p>
-                    Those principles also created a practical way to work with Codex and Claude Code. The tools were most
-                    effective when the product intent stayed sharp. Instead of asking them to invent the app, I used them
-                    to accelerate implementation paths, test interface ideas, explore system behavior, and move through
-                    unfamiliar native details without lowering the product bar.
+                    It also made AI-assisted building more useful. I was not asking Codex and Claude Code to decide what
+                    the product should be. I used them to move faster through implementation details, test native
+                    behavior, and keep iterating without letting the concept sprawl.
                   </p>
                 </div>
               </section>
@@ -288,18 +281,17 @@
               <section class="case-study-block case-study-block-aside-media case-study-block-aside-right case-study-block-sendmoi-setup">
                 <div class="case-study-block-inner">
                   <div class="case-study-copy">
-                    <h2>Guided Setup Made The First Run Feel Calm</h2>
-                    <p>
-                      Because SendMoi depends on Gmail and a default recipient, the first-run experience had to explain just
-                      enough without turning a tiny utility into a configuration project. The setup flow became a short
-                      product promise: connect the inbox, choose where shared things should land, then get back to the action.
-                    </p>
-                    <p>
-                      That mattered because onboarding was not separate from the workflow. If the first screen felt heavy, the
-                      product would already be asking for more trust than it had earned. The guided flow kept the mental model
-                      plain: SendMoi turns shared links into clean Gmail cards, and the app handles the delivery details from
-                      there.
-                    </p>
+	                    <h2>Set It Once, Then Trust It</h2>
+	                    <p>
+	                      SendMoi needs two things before it can disappear into the share sheet: Gmail access and a default
+	                      recipient. The setup had to make that feel simple and friendly, not like plumbing: set it once,
+	                      understand what will happen, then trust the app to handle the rest.
+	                    </p>
+	                    <p>
+	                      I treated setup as part of the product, not a prelude to it. The screens had to make the model clear
+	                      before asking for trust: SendMoi turns shared links into clean Gmail cards, remembers the destination,
+	                      and handles the delivery work from there.
+	                    </p>
                   </div>
                   <figure class="case-study-figure case-study-media-wrap">
                     <div class="case-study-media">
