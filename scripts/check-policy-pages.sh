@@ -75,6 +75,7 @@ two_level_pages=(
   "work/resy-discovery/index.html"
   "work/resy-search-ai/index.html"
   "work/ai-quota/index.html"
+  "work/sendmoi/index.html"
 )
 
 for page in "${home_pages[@]}"; do

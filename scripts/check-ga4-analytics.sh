@@ -73,6 +73,7 @@ tagged_pages=(
   "work/resy-discovery/index.html"
   "work/resy-search-ai/index.html"
   "work/ai-quota/index.html"
+  "work/sendmoi/index.html"
 )
 
 excluded_pages=(
