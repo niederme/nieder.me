@@ -1,4 +1,4 @@
-.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod sitemap check-sitemap deploy-stage deploy-prod archive-root-2016 release-stage release-prod issue-create
+.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod sitemap check-sitemap check-social deploy-stage deploy-prod archive-root-2016 release-stage release-prod issue-create
 
 PORT ?= 8000
 THREAD_BASE_PORT ?= 8001
@@ -32,6 +32,9 @@ sitemap:
 
 check-sitemap:
 	@./scripts/update-sitemap.py --check
+
+check-social:
+	@./scripts/check-social-metadata.py
 
 deploy-stage:
 	@./scripts/deploy-2026.sh
