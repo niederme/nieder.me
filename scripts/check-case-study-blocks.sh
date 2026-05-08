@@ -11,6 +11,7 @@ CASE_STUDY_PAGES=(
   "work/resy-discovery/index.html"
   "work/resy-search-ai/index.html"
   "work/ai-quota/index.html"
+  "work/sendmoi/index.html"
 )
 
 expect_pattern() {

@@ -17,7 +17,10 @@ EXCLUDED_FILES = {"resy-ai-demo.html"}
 
 
 def is_excluded(path: Path) -> bool:
-  relative = path.relative_to(ROOT).as_posix()
+  relative_path = path.relative_to(ROOT)
+  relative = relative_path.as_posix()
+  if any(part.startswith(".") for part in relative_path.parts):
+    return True
   return relative in EXCLUDED_FILES or relative.startswith(EXCLUDED_PREFIXES)
 
 

@@ -19,14 +19,14 @@ Current site surfaces:
 - `/work/resy-discovery/` Resy case study
 - `/work/resy-search-ai/` Resy AI case study
 - `/work/ai-quota/` AIQuota case study
-- public "Coming Soon" teaser card for SendMoi on `/` and `/work/`
-- `drafts/work/sendmoi/` preserved SendMoi case study draft, not deployed or linked
+- `/work/sendmoi/` SendMoi case study
+- `drafts/` framework for unpublished future work, excluded from deploy and public navigation
 
 Draft work:
 
-- SendMoi is currently being refined in `drafts/work/sendmoi/`.
-- During local preview, review it at `/drafts/work/sendmoi/`.
-- Draft content stays out of deploys and should not be linked from public pages until intentionally promoted.
+- Keep in-progress case studies under `drafts/work/<slug>/`.
+- During local preview, review draft pages at `/drafts/work/<slug>/`.
+- Draft content stays out of deploys and should not be linked from public pages until intentionally promoted into `work/<slug>/`.
 
 Core project files:
 
@@ -178,6 +178,16 @@ Site URL helpers:
 ```bash
 make site-url-stage
 make site-url-prod
+```
+
+## Social metadata
+
+Every public HTML page should include a canonical URL, Open Graph metadata, and Twitter/X card metadata. Case studies should use the best available case-study promo image as the social image. Utility, policy, redirect, and index pages should fall back to `assets/images/og/og-image-1200x630.png`.
+
+Run this before publishing metadata-sensitive changes:
+
+```bash
+make check-social
 ```
 
 ## Releases

@@ -1173,9 +1173,6 @@ body.grid-hidden .grid-overlay > span {
 
   .resume-link:hover {
     color: var(--accent);
-  }
-
-  .resume-link:hover .resume-link-line {
     border-bottom-color: rgba(255, 69, 58, 0.65);
   }
 }
@@ -1199,31 +1196,21 @@ body.grid-hidden .grid-overlay > span {
 }
 
 .resume-link {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: inline;
   color: var(--accent);
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
   line-height: 1.2;
-  gap: 0;
-  transition: color 0.2s ease;
-}
-
-.resume-link-line {
-  display: block;
-  width: fit-content;
-  white-space: nowrap;
+  text-wrap: pretty;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.18s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.18s ease;
 }
 
 .resume-link:focus-visible {
   color: var(--accent);
-}
-
-.resume-link:focus-visible .resume-link-line {
   border-bottom-color: rgba(255, 69, 58, 0.65);
 }
 
@@ -3039,34 +3026,20 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .resume-link {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: inline;
     white-space: normal;
-    border-bottom: 0;
-    transition: color 0.2s ease;
-  }
-
-  .resume-link-line {
-    display: block;
-    width: fit-content;
-    white-space: nowrap;
     border-bottom: 1px solid transparent;
+    text-wrap: pretty;
+    transition:
+      color 0.2s ease,
+      border-color 0.18s ease;
   }
 
   .resume-link:focus-visible {
-    border-bottom-color: transparent;
-  }
-
-  .resume-link:focus-visible .resume-link-line {
     border-bottom-color: rgba(255, 69, 58, 0.65);
   }
 
   .resume-link:hover {
-    border-bottom-color: transparent;
-  }
-
-  .resume-link:hover .resume-link-line {
     border-bottom-color: rgba(255, 69, 58, 0.65);
   }
 
