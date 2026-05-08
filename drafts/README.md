@@ -8,6 +8,7 @@ Use `drafts/work/<slug>/` for unpublished case studies that need local preview a
 
 - Move finished case studies into `work/<slug>/`.
 - Update public promos, recirculation links, footers, validation scripts, and `sitemap.xml`.
+- Add page-specific social metadata and a `1200x630` share image under `assets/images/og/`.
 - Keep `drafts/` in place for future unpublished work.
 
 The deploy script does not copy this directory, and public pages should not link here.

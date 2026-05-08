@@ -36,6 +36,7 @@ Core project files:
 - `assets/css/work-case-study.css` work index and case-study styles
 - `assets/css/styleguide.css` colophon and style-guide styles
 - `assets/js/main.js` shared client-side behavior
+- `assets/images/og/` sitewide and page-specific social share images
 - `assets/` images, icons, fonts, and video
 - `scripts/` local helpers for deploy, verification, and GitHub issue creation
 - `Makefile` preview, live-reload, and helper commands
@@ -184,11 +185,15 @@ make site-url-prod
 
 Every public HTML page should include a canonical URL, Open Graph metadata, and Twitter/X card metadata. Case studies should use the best available case-study promo image as the social image. Utility, policy, redirect, and index pages should fall back to `assets/images/og/og-image-1200x630.png`.
 
+Case-study social images live in `assets/images/og/` and should be exported at `1200x630`. Keep the declared `og:image:width`, `og:image:height`, and `og:image:type` in sync with the real file. The checker verifies this, plus the presence of canonical URLs, OG tags, Twitter/X tags, local image files, and matching OG/Twitter image URLs.
+
 Run this before publishing metadata-sensitive changes:
 
 ```bash
 make check-social
 ```
+
+When promoting a draft page into the public site, add or update its social metadata at the same time.
 
 ## Releases
 
