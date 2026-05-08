@@ -3481,6 +3481,7 @@ body.grid-hidden .work-grid-overlay > span {
   .policy-page .work-article-body,
   .case-study-page .work-article-meta,
   .case-study-page .work-article-body {
+    grid-column: 1;
     width: 100%;
   }
 
@@ -3520,6 +3521,13 @@ body.grid-hidden .work-grid-overlay > span {
   .case-study-block-carousel {
     width: 100%;
     margin-left: 0;
+  }
+
+  .case-study-block-two-up .case-study-block-inner,
+  .case-study-block-two-up.case-study-block-two-up-asymmetric .case-study-block-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .case-study-block-full-media .case-study-figure {
