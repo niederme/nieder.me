@@ -180,6 +180,16 @@ make site-url-stage
 make site-url-prod
 ```
 
+## Social metadata
+
+Every public HTML page should include a canonical URL, Open Graph metadata, and Twitter/X card metadata. Case studies should use the best available case-study promo image as the social image. Utility, policy, redirect, and index pages should fall back to `assets/images/og/og-image-1200x630.png`.
+
+Run this before publishing metadata-sensitive changes:
+
+```bash
+make check-social
+```
+
 ## Releases
 
 Website releases are production markers, not staging deploy markers. Use staging mode to preview the release notes and verify the staging URL, then create the GitHub release only after the production root deploy succeeds.
