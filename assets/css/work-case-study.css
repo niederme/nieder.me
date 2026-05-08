@@ -3679,6 +3679,7 @@ body.grid-hidden .work-grid-overlay > span {
 
   .case-study-block-full-media,
   .case-study-block-two-up,
+  .case-study-block-two-up.case-study-block-two-up-contained,
   .case-study-block-aside-media,
   .case-study-block-carousel {
     width: 100%;
