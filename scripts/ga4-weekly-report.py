@@ -76,6 +76,8 @@ by_sessions = lambda name="sessions": [
     OrderBy(metric=OrderBy.MetricOrderBy(metric_name=name), desc=True)
 ]
 
+totals      = run_report(week_start, today, [],
+                         ["sessions", "activeUsers", "screenPageViews", "newUsers"])
 overview    = run_report(week_start, today, ["date"],
                          ["sessions", "activeUsers", "screenPageViews"], limit=7,
                          order_by=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))])
@@ -85,7 +87,8 @@ top_pages   = run_report(week_start, today, ["pagePath"],
                          ["screenPageViews", "activeUsers"], limit=10,
                          order_by=by_sessions("screenPageViews"))
 sources     = run_report(week_start, today, ["sessionSource", "sessionMedium"],
-                         ["sessions", "activeUsers"], limit=10, order_by=by_sessions())
+                         ["screenPageViews", "activeUsers"], limit=10,
+                         order_by=by_sessions("screenPageViews"))
 countries   = run_report(week_start, today, ["country"],
                          ["sessions", "activeUsers"], limit=8, order_by=by_sessions())
 devices     = run_report(week_start, today, ["deviceCategory"],
@@ -93,7 +96,8 @@ devices     = run_report(week_start, today, ["deviceCategory"],
 new_ret     = run_report(week_start, today, ["newVsReturning"],
                          ["sessions", "activeUsers"], order_by=by_sessions())
 landing     = run_report(week_start, today, ["landingPagePlusQueryString"],
-                         ["sessions", "bounceRate"], limit=8, order_by=by_sessions())
+                         ["sessions", "bounceRate", "screenPageViews"], limit=12,
+                         order_by=by_sessions())
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -106,19 +110,48 @@ def delta(now, prev):
     p = (now - prev) / prev * 100
     return f" ({'+' if p >= 0 else ''}{p:.0f}% vs last wk)"
 
+def clean_label(value, fallback="(not set)"):
+    value = value.strip()
+    return value if value else fallback
+
+def unit(value, singular, plural=None):
+    return singular if value == 1 else (plural or f"{singular}s")
+
 # ── totals ────────────────────────────────────────────────────────────────────
 
-tw_s = sum(int(r.metric_values[0].value) for r in overview.rows)
-tw_u = sum(int(r.metric_values[1].value) for r in overview.rows)
-tw_v = sum(int(r.metric_values[2].value) for r in overview.rows)
+tw_s = tw_u = tw_v = tw_new = 0
+if totals.rows:
+    tw_s, tw_u, tw_v, tw_new = (int(totals.rows[0].metric_values[i].value) for i in range(4))
 lw_s = lw_u = lw_v = 0
 if lw_overview.rows:
     lw_s, lw_u, lw_v = (int(lw_overview.rows[0].metric_values[i].value) for i in range(3))
 
 new_row = next((r for r in new_ret.rows if r.dimension_values[0].value == "new"), None)
 ret_row = next((r for r in new_ret.rows if r.dimension_values[0].value == "returning"), None)
-tw_new = int(new_row.metric_values[1].value) if new_row else 0
 tw_ret = int(ret_row.metric_values[1].value) if ret_row else 0
+
+source_rows = []
+for row in sources.rows:
+    src, med = row.dimension_values[0].value, row.dimension_values[1].value
+    views = int(row.metric_values[0].value)
+    users = int(row.metric_values[1].value)
+    if src == "(not set)" and med == "(not set)":
+        label = "unattributed in GA4"
+    else:
+        label = f"{src} / {med}"
+    source_rows.append((label, views, users))
+
+known_landing_rows = []
+unknown_landing_sessions = 0
+for row in landing.rows:
+    path = row.dimension_values[0].value
+    s = int(row.metric_values[0].value)
+    bounce = float(row.metric_values[1].value) * 100
+    views = int(row.metric_values[2].value)
+    if not path or views == 0:
+        unknown_landing_sessions += s
+        continue
+    known_landing_rows.append((path, s, bounce, views))
 
 # ── build report string ───────────────────────────────────────────────────────
 
@@ -141,16 +174,16 @@ for row in overview.rows:
     s, u = int(row.metric_values[0].value), int(row.metric_values[1].value)
     lines.append(f"  {d_fmt}  {pct_bar(s, tw_s)}  {s:>4} sess  {u:>4} users")
 
-lines += ["", "  Where they came from", f"  {'─'*40}"]
-for row in sources.rows:
-    src, med = row.dimension_values[0].value, row.dimension_values[1].value
-    s = int(row.metric_values[0].value)
-    label = f"{src} / {med}"
-    lines.append(f"  {pct_bar(s, tw_s)}  {label:<28} {s:>4}")
+lines += ["", "  Traffic sources (by views)", f"  {'─'*40}"]
+for label, views, users in source_rows:
+    lines.append(
+        f"  {pct_bar(views, tw_v)}  {label:<28} "
+        f"{views:>4} {unit(views, 'view'):<5}  {users:>4} {unit(users, 'user')}"
+    )
 
 lines += ["", "  Countries", f"  {'─'*40}"]
 for row in countries.rows:
-    country = row.dimension_values[0].value
+    country = clean_label(row.dimension_values[0].value)
     s = int(row.metric_values[0].value)
     lines.append(f"  {pct_bar(s, tw_s)}  {country:<22} {s:>4}")
 
@@ -161,11 +194,11 @@ for row in devices.rows:
     lines.append(f"  {pct_bar(s, tw_s)}  {dev:<14} {s:>4} sess  {u:>4} users")
 
 lines += ["", "  Top landing pages", f"  {'─'*40}"]
-for row in landing.rows:
-    path   = row.dimension_values[0].value[:42]
-    s      = int(row.metric_values[0].value)
-    bounce = float(row.metric_values[1].value) * 100
-    lines.append(f"  {path:<42}  {s:>3} sess  {bounce:.0f}% bounce")
+for path, s, bounce, views in known_landing_rows[:8]:
+    path = path[:42]
+    lines.append(f"  {path:<42}  {s:>3} sess  {views:>3} views  {bounce:.0f}% bounce")
+if unknown_landing_sessions:
+    lines.append(f"  {'unattributed by GA4':<42}  {unknown_landing_sessions:>3} sess    0 views")
 
 lines += ["", "  Top pages (by views)", f"  {'─'*40}"]
 for row in top_pages.rows:

@@ -185,7 +185,7 @@ body.work-theme-sendmoi {
     rgba(0, 0, 0, 0) 74%
   );
   --work-hero-desktop-image: url("../images/case-studies/sendmoi/article/bg2-SendMoi.jpg");
-  --work-hero-mobile-image: url("../images/case-studies/sendmoi/article/bg-SendMoi-desktop.jpg");
+  --work-hero-mobile-image: var(--work-hero-desktop-image);
   --work-hero-focus-desktop: right center;
   --work-hero-focus-mobile: right center;
   --work-logo-width-desktop: 75px;
@@ -3522,6 +3522,40 @@ body.grid-hidden .work-grid-overlay > span {
     margin-left: 0;
   }
 
+  .case-study-block-full-media .case-study-figure {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: static;
+  }
+
+  .case-study-block-full-media .case-study-caption,
+  .case-study-block-carousel .case-study-caption,
+  .case-study-block-two-up .case-study-caption {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .case-study-block-full-media .case-study-caption::before,
+  .case-study-block-full-media .case-study-caption::after,
+  .case-study-block-carousel .case-study-caption::before,
+  .case-study-block-carousel .case-study-caption::after {
+    display: none;
+  }
+
+  .case-study-block-full-media .case-study-media,
+  .case-study-block-carousel .case-study-media,
+  .case-study-block-two-up .case-study-media,
+  .case-study-block-aside-media .case-study-media {
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
   .case-study-block-aside-media .case-study-block-inner,
   .case-study-block-aside-media.case-study-block-aside-right .case-study-block-inner {
     display: flex;
@@ -3573,6 +3607,13 @@ body.grid-hidden .work-grid-overlay > span {
   .case-study-block-aside-media .case-study-media {
     width: min(100%, calc((4 * var(--case-study-column-width)) + (3 * var(--grid-gutter))));
     margin-inline: auto;
+  }
+
+  .work-theme-sendmoi .case-study-block-sendmoi-setup .case-study-media img,
+  .work-theme-sendmoi .case-study-block-sendmoi-autosend .case-study-media img {
+    width: auto;
+    max-width: min(100%, 360px);
+    max-height: min(720px, 180vw);
   }
 
   .case-study-block-image-medium .case-study-caption {
@@ -3905,6 +3946,13 @@ body.grid-hidden .work-grid-overlay > span {
   .case-study-figure video {
     width: 100%;
     max-height: none;
+  }
+
+  .work-theme-sendmoi .case-study-block-aside-media.case-study-block-sendmoi-setup .case-study-media img,
+  .work-theme-sendmoi .case-study-block-aside-media.case-study-block-sendmoi-autosend .case-study-media img {
+    width: auto;
+    max-width: min(100%, 360px);
+    max-height: min(720px, 180vw);
   }
 
   .work-article-section h2 {
