@@ -61,14 +61,36 @@
       })();
     </script>
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEFM9FZ25D"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-DEFM9FZ25D');
+      (() => {
+        const hostname = window.location.hostname;
+        const pathname = window.location.pathname;
+        const isLocalPreview =
+          hostname === "localhost" ||
+          hostname === "127.0.0.1" ||
+          hostname === "::1" ||
+          hostname.endsWith(".local") ||
+          /^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[0-1])\.|100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.)/.test(hostname);
+        const isDraftPath = pathname.startsWith("/drafts/");
+
+        if (isLocalPreview || isDraftPath) {
+          window.niederAnalyticsSuppressed = true;
+          return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        const googleTag = document.createElement("script");
+        googleTag.async = true;
+        googleTag.src = "https://www.googletagmanager.com/gtag/js?id=G-DEFM9FZ25D";
+        document.head.appendChild(googleTag);
+
+        window.gtag("js", new Date());
+        window.gtag("config", "G-DEFM9FZ25D");
+      })();
     </script>
     <link rel="stylesheet" href="../assets/css/work-case-study.css?v=20260509-footer-links" />
     <link rel="stylesheet" href="../assets/css/styleguide.css?v=20260314-001" />

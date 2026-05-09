@@ -89,8 +89,16 @@ for page in "${tagged_pages[@]}"; do
     "Expected '$page' to include measurement ID G-DEFM9FZ25D."
   expect_pattern "$page" "window.dataLayer = window.dataLayer || [];" \
     "Expected '$page' to initialize the GA dataLayer."
-  expect_pattern "$page" "gtag('config', 'G-DEFM9FZ25D');" \
+  expect_pattern "$page" 'window.gtag("config", "G-DEFM9FZ25D");' \
     "Expected '$page' to configure GA4 with the measurement ID."
+  expect_pattern "$page" "const isLocalPreview =" \
+    "Expected '$page' to suppress GA4 on local preview hosts."
+  expect_pattern "$page" 'hostname.endsWith(".local")' \
+    "Expected '$page' to suppress GA4 on .local preview hosts."
+  expect_pattern "$page" 'pathname.startsWith("/drafts/")' \
+    "Expected '$page' to suppress GA4 on draft paths."
+  expect_pattern "$page" "window.niederAnalyticsSuppressed = true;" \
+    "Expected '$page' to mark suppressed analytics contexts."
   expect_theme_bootstrap_before_ga "$page"
 done
 
