@@ -182,7 +182,7 @@ make site-url-prod
 
 ## Social metadata
 
-Every public HTML page should include a canonical URL, Open Graph metadata, and Twitter/X card metadata. Case studies should use the best available case-study promo image as the social image. Utility, policy, redirect, and index pages should fall back to `assets/images/og/og-image-1200x630.jpg`.
+Every public HTML page should include a canonical URL, Open Graph metadata, and Twitter/X card metadata. Case studies should use the best available case-study promo image as the social image. Utility, policy, redirect, and index pages should fall back to `assets/images/og/og-image-1200x630.png`.
 
 Run this before publishing metadata-sensitive changes:
 
