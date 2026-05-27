@@ -43,6 +43,7 @@ ROOT_PUBLIC_FILES=(
   apple-touch-icon.png
   favicon.ico
   favicon.png
+  llms.txt
   robots.txt
   sitemap.xml
 )
