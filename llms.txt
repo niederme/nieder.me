@@ -1,0 +1,17 @@
+# John Niedermeyer — Product Design & Direction
+# https://nieder.me
+
+> Portfolio of John Niedermeyer, a product design leader based in New York with
+> 20+ years shaping digital products at The New York Times, BuzzFeed, and Resy
+> (American Express Global Dining Network). Currently seeking a Staff or
+> Principal IC product design role, hybrid NYC.
+
+## Pages
+
+- [Home](https://nieder.me/): Introduction, work experience highlights, and case study promos
+- [Work Experience & Resume](https://nieder.me/work/): Full resume, case studies, and downloadable PDF resume
+- [About & Biography](https://nieder.me/about/): Background, design philosophy, and process
+- [Resy App Discovery Case Study](https://nieder.me/work/resy-discovery/): Evolving in-app restaurant discovery for Resy Consumer App
+- [AIQuota Case Study](https://nieder.me/work/ai-quota/): Native macOS menu bar app for tracking AI tool usage (Codex, Claude Code)
+- [Resy AI Search Case Study](https://nieder.me/work/resy-search-ai/): Intent-led restaurant search exploration using AI
+- [SendMoi Case Study](https://nieder.me/work/sendmoi/): iOS & macOS app designed and built with Codex and Claude Code

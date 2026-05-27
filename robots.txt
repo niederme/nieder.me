@@ -6,9 +6,10 @@
 # ai-train: training or fine-tuning AI models.
 
 User-agent: *
-Content-Signal: search=yes,ai-train=no
+Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
+# Block AI training crawlers
 User-agent: Amazonbot
 Disallow: /
 
@@ -21,19 +22,7 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-User-agent: ClaudeBot
-Disallow: /
-
 User-agent: CloudflareBrowserRenderingCrawler
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: meta-externalagent
 Disallow: /
 
 Sitemap: https://nieder.me/sitemap.xml
