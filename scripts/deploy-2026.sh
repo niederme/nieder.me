@@ -85,10 +85,12 @@ error_document_path="${site_path}/404.html"
 if [[ "$error_document_path" != /* ]]; then
   error_document_path="/${error_document_path}"
 fi
+colophon_redirect_path="${site_path}/colophon-style-guide/"
+styleguide_redirect_path="${site_path}/colophon-style-guide/#principles"
 cat > "$STAGING_DIR/.htaccess" <<HTACCESS
 RewriteEngine On
-RewriteRule ^colophon/?$ colophon-style-guide/ [R=301,L]
-RewriteRule ^styleguide/?$ colophon-style-guide/#principles [R=301,L,NE]
+RewriteRule ^colophon/?$ ${colophon_redirect_path} [R=301,L]
+RewriteRule ^styleguide/?$ ${styleguide_redirect_path} [R=301,L,NE]
 ErrorDocument 404 ${error_document_path}
 HTACCESS
 for file in "${ROOT_PUBLIC_FILES[@]}"; do
