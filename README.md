@@ -148,7 +148,14 @@ The script:
 - rewrites the staged homepage site URL
 - cache-busts staged CSS and JS asset URLs across all HTML files
 - syncs only managed paths to the remote target
+- preserves remote-only files under `/work/` even though the repo `work/` tree is deployed
 - is checked by `scripts/check-deploy-2026.py`, which fails if a top-level section exists but is missing from the allowlist
+
+Deploy delete contract:
+
+- `rsync --delete` is allowed for managed deploy paths so removed repo files disappear from staging and production.
+- Remote-only files under `/work/` are intentionally preserved with an rsync protect filter because `/work/` can contain non-repo material.
+- Do not remove that protect filter unless the remote `/work/` tree has first been audited and all non-repo files have been intentionally relocated or imported.
 
 Default settings in `scripts/deploy-2026.sh` can be overridden with environment variables:
 

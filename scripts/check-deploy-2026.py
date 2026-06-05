@@ -14,6 +14,7 @@ required_tokens = [
     'cp -R assets "$STAGING_DIR/"',
     'PUBLIC_DIRS=(',
     'ROOT_PUBLIC_FILES=(',
+    '--filter "P work/***"',
     'favicon.ico',
     'robots.txt',
     'sitemap.xml',

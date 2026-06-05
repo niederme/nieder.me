@@ -14,3 +14,9 @@
 - Prefer a dedicated `codex/*` branch per task.
 - For parallel work, prefer a repo-local worktree under `.worktrees/`.
 - When you change rendered site files, start or reuse a preview and include the exact URL when reporting the work.
+
+## Deploy safety
+
+- The deploy script uses `rsync --delete` for managed paths.
+- Do not remove the `work/***` rsync protect filter. Remote `/work/` may contain files that are intentionally not part of this repo.
+- If deploy scope changes, run `python3 scripts/check-deploy-2026.py` and verify that remote-only `/work/` files are still protected from deletion.
