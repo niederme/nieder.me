@@ -22,7 +22,11 @@ DEPLOY_IDENTITY_FILE="${DEPLOY_IDENTITY_FILE:-}"
 
 RSYNC_ARGS=(
   -avz
+  # Delete stale files from managed deploy paths, but never remote-only /work
+  # material. The protect filter below is deliberate; do not remove it just
+  # because work/ is in PUBLIC_DIRS.
   --delete
+  --filter "P work/***"
   --exclude .git/
   --exclude .DS_Store
 )
@@ -106,7 +110,8 @@ RSYNC_SSH_CMD="${RSYNC_SSH_CMD% }"
 "${SSH_CMD[@]}" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
 
 # Sync only the managed site paths from staging so deploy does not delete
-# unrelated root-level server files such as host-managed config.
+# unrelated root-level server files such as host-managed config. Remote-only
+# files under work/ are protected too; that tree can contain non-repo work.
 SYNC_PATHS=("$STAGING_DIR/index.html" "$STAGING_DIR/assets")
 for file in "${ROOT_PUBLIC_FILES[@]}"; do
   if [[ -f "$STAGING_DIR/$file" ]]; then
