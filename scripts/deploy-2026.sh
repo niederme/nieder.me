@@ -90,6 +90,11 @@ fi
 cat > "$STAGING_DIR/.htaccess" <<HTACCESS
 ErrorDocument 404 ${error_document_path}
 HTACCESS
+for file in "${ROOT_PUBLIC_FILES[@]}"; do
+  if [[ -f "$file" ]]; then
+    cp "$file" "$STAGING_DIR/"
+  fi
+done
 if [[ -n "$site_path" && -f "$STAGING_DIR/404.html" ]]; then
   python3 - "$STAGING_DIR/404.html" "$site_path" <<'PY'
 from pathlib import Path
@@ -112,11 +117,6 @@ html = html.replace('href="/"', f'href="{prefix}/"')
 path.write_text(html)
 PY
 fi
-for file in "${ROOT_PUBLIC_FILES[@]}"; do
-  if [[ -f "$file" ]]; then
-    cp "$file" "$STAGING_DIR/"
-  fi
-done
 for dir in "${PUBLIC_DIRS[@]}"; do
   if [[ -d "$dir" ]]; then
     cp -R "$dir" "$STAGING_DIR/"
