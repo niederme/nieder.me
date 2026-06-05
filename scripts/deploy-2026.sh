@@ -63,7 +63,11 @@ fi
 ./scripts/update-sitemap.py --check
 
 STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/deploy-2026.XXXXXX")"
+SSH_CONTROL_PATH="$STAGING_DIR/ssh-control-%C"
 cleanup() {
+  if [[ -n "${RSYNC_SSH_CMD:-}" ]]; then
+    "${SSH_CMD[@]}" -O exit "${DEPLOY_USER}@${DEPLOY_HOST}" >/dev/null 2>&1 || true
+  fi
   rm -rf "$STAGING_DIR"
 }
 trap cleanup EXIT
@@ -85,6 +89,28 @@ fi
 cat > "$STAGING_DIR/.htaccess" <<HTACCESS
 ErrorDocument 404 ${error_document_path}
 HTACCESS
+if [[ -n "$site_path" && -f "$STAGING_DIR/404.html" ]]; then
+  python3 - "$STAGING_DIR/404.html" "$site_path" <<'PY'
+from pathlib import Path
+import re
+import sys
+
+path = Path(sys.argv[1])
+prefix = sys.argv[2].rstrip("/")
+html = path.read_text()
+
+def prefix_root_url(match):
+    attr, url = match.groups()
+    if url.startswith(prefix + "/"):
+        return match.group(0)
+    return f'{attr}="{prefix}{url}"'
+
+html = re.sub(r'(href|src)="(/(?:assets|favicon|apple-touch-icon)[^"]*)"', prefix_root_url, html)
+html = re.sub(r'(href)="(/(?:work|about|colophon-style-guide)/?)"', prefix_root_url, html)
+html = html.replace('href="/"', f'href="{prefix}/"')
+path.write_text(html)
+PY
+fi
 for file in "${ROOT_PUBLIC_FILES[@]}"; do
   if [[ -f "$file" ]]; then
     cp "$file" "$STAGING_DIR/"
@@ -114,6 +140,9 @@ SSH_CMD=(
   ssh
   -p "$DEPLOY_PORT"
   -o IdentitiesOnly=yes
+  -o ControlMaster=auto
+  -o ControlPersist=120
+  -o ControlPath="$SSH_CONTROL_PATH"
 )
 
 if [[ -n "$DEPLOY_IDENTITY_FILE" ]]; then
