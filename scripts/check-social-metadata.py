@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://nieder.me"
-EXCLUDED_PREFIXES = (".git/", ".tmp/", ".worktrees/", "drafts/", "node_modules/")
+EXCLUDED_PREFIXES = (".git/", ".tmp/", ".worktrees/", "drafts/", "node_modules/", "work/resy-web-booking/prototype/")
 
 REQUIRED_OG = (
   "og:type",

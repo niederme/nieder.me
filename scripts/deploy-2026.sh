@@ -73,8 +73,6 @@ for dir in "${PUBLIC_DIRS[@]}"; do
   fi
 done
 
-./scripts/set-site-url.sh "$SITE_URL" "$STAGING_DIR/index.html"
-
 css_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/css/styles.css" | awk '{print substr($1, 1, 12)}')"
 work_css_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/css/work-case-study.css" | awk '{print substr($1, 1, 12)}')"
 styleguide_css_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/css/styleguide.css" | awk '{print substr($1, 1, 12)}')"
