@@ -20,13 +20,15 @@ DRY_RUN="${DRY_RUN:-0}"
 SITE_URL="${SITE_URL:-https://nieder.me/2026}"
 DEPLOY_IDENTITY_FILE="${DEPLOY_IDENTITY_FILE:-}"
 
-RSYNC_ARGS=(
+RSYNC_DELETE_ARGS=(
   -avz
-  # Delete stale files from managed deploy paths, but never remote-only /work
-  # material. The protect filter below is deliberate; do not remove it just
-  # because work/ is in PUBLIC_DIRS.
   --delete
-  --filter "P work/***"
+  --exclude .git/
+  --exclude .DS_Store
+)
+
+RSYNC_UPDATE_ARGS=(
+  -avz
   --exclude .git/
   --exclude .DS_Store
 )
@@ -54,7 +56,8 @@ ROOT_PUBLIC_FILES=(
 )
 
 if [[ "$DRY_RUN" == "1" ]]; then
-  RSYNC_ARGS+=(--dry-run)
+  RSYNC_DELETE_ARGS+=(--dry-run)
+  RSYNC_UPDATE_ARGS+=(--dry-run)
 fi
 
 ./scripts/update-sitemap.py --check
@@ -110,9 +113,8 @@ RSYNC_SSH_CMD="${RSYNC_SSH_CMD% }"
 # Ensure remote target exists.
 "${SSH_CMD[@]}" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
 
-# Sync only the managed site paths from staging so deploy does not delete
-# unrelated root-level server files such as host-managed config. Remote-only
-# files under work/ are protected too; that tree can contain non-repo work.
+# Sync managed site paths from staging so deploy does not delete unrelated
+# root-level server files such as host-managed config.
 SYNC_PATHS=("$STAGING_DIR/index.html" "$STAGING_DIR/assets")
 for file in "${ROOT_PUBLIC_FILES[@]}"; do
   if [[ -f "$STAGING_DIR/$file" ]]; then
@@ -120,13 +122,23 @@ for file in "${ROOT_PUBLIC_FILES[@]}"; do
   fi
 done
 for dir in "${PUBLIC_DIRS[@]}"; do
+  if [[ "$dir" == "work" ]]; then
+    continue
+  fi
   if [[ -d "$STAGING_DIR/$dir" ]]; then
     SYNC_PATHS+=("$STAGING_DIR/$dir")
   fi
 done
 
-rsync "${RSYNC_ARGS[@]}" -e "$RSYNC_SSH_CMD" \
+rsync "${RSYNC_DELETE_ARGS[@]}" -e "$RSYNC_SSH_CMD" \
   "${SYNC_PATHS[@]}" \
   "$REMOTE"
+
+if [[ -d "$STAGING_DIR/work" ]]; then
+  # Sync work/ without --delete so remote-only work material is preserved.
+  rsync "${RSYNC_UPDATE_ARGS[@]}" -e "$RSYNC_SSH_CMD" \
+    "$STAGING_DIR/work" \
+    "$REMOTE"
+fi
 
 echo "Deploy complete -> $REMOTE"
