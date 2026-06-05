@@ -3,10 +3,27 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import argparse
 import os
+from urllib.parse import urlsplit
+
+
+REDIRECTS = {
+    "/colophon": "/colophon-style-guide/",
+    "/colophon/": "/colophon-style-guide/",
+    "/styleguide": "/colophon-style-guide/#principles",
+    "/styleguide/": "/colophon-style-guide/#principles",
+}
 
 
 class SiteRequestHandler(SimpleHTTPRequestHandler):
     def send_head(self):
+        redirect_target = REDIRECTS.get(urlsplit(self.path).path)
+        if redirect_target:
+            self.send_response(301)
+            self.send_header("Location", redirect_target)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return None
+
         translated_path = Path(self.translate_path(self.path))
         if not translated_path.exists():
             return self.send_site_404()

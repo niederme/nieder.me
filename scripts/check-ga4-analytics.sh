@@ -77,7 +77,6 @@ tagged_pages=(
 )
 
 excluded_pages=(
-  "styleguide/index.html"
   "resy-ai-demo.html"
 )
 

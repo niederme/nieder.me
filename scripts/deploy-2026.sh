@@ -37,10 +37,8 @@ RSYNC_UPDATE_ARGS=(
 PUBLIC_DIRS=(
   about
   accessibility
-  colophon
   colophon-style-guide
   privacy
-  styleguide
   work
 )
 
@@ -88,6 +86,9 @@ if [[ "$error_document_path" != /* ]]; then
   error_document_path="/${error_document_path}"
 fi
 cat > "$STAGING_DIR/.htaccess" <<HTACCESS
+RewriteEngine On
+RewriteRule ^colophon/?$ colophon-style-guide/ [R=301,L]
+RewriteRule ^styleguide/?$ colophon-style-guide/#principles [R=301,L,NE]
 ErrorDocument 404 ${error_document_path}
 HTACCESS
 for file in "${ROOT_PUBLIC_FILES[@]}"; do
