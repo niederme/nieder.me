@@ -43,6 +43,7 @@ PUBLIC_DIRS=(
 )
 
 ROOT_PUBLIC_FILES=(
+  404.html
   apple-touch-icon-precomposed.png
   apple-touch-icon.png
   favicon.ico

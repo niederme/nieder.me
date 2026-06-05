@@ -114,7 +114,7 @@ dev:
 		echo "Serving on your network: $$LAN_URL"; \
 		echo "(Ctrl+C to stop)"; \
 		(sleep 0.8; open "$$LOCAL_URL/") >/dev/null 2>&1 & \
-		python3 -m http.server $$PORT_TO_USE --bind $(BIND); \
+		python3 scripts/serve-static.py $$PORT_TO_USE --bind $(BIND); \
 	fi
 
 dev-lan: dev
@@ -167,7 +167,7 @@ dev-local:
 	else \
 		echo "Serving local-only: $$LOCAL_URL (Ctrl+C to stop)"; \
 		(sleep 0.8; open "$$LOCAL_URL/") >/dev/null 2>&1 & \
-		python3 -m http.server $$PORT_TO_USE --bind localhost; \
+		python3 scripts/serve-static.py $$PORT_TO_USE --bind localhost; \
 	fi
 
 dev-live: LIVE := 1
