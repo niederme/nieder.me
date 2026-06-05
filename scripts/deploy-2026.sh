@@ -70,6 +70,21 @@ trap cleanup EXIT
 
 cp index.html "$STAGING_DIR/"
 cp -R assets "$STAGING_DIR/"
+site_path="$(python3 - "$SITE_URL" <<'PY'
+from urllib.parse import urlparse
+import sys
+
+path = urlparse(sys.argv[1]).path.rstrip("/")
+print(path)
+PY
+)"
+error_document_path="${site_path}/404.html"
+if [[ "$error_document_path" != /* ]]; then
+  error_document_path="/${error_document_path}"
+fi
+cat > "$STAGING_DIR/.htaccess" <<HTACCESS
+ErrorDocument 404 ${error_document_path}
+HTACCESS
 for file in "${ROOT_PUBLIC_FILES[@]}"; do
   if [[ -f "$file" ]]; then
     cp "$file" "$STAGING_DIR/"
@@ -115,7 +130,7 @@ RSYNC_SSH_CMD="${RSYNC_SSH_CMD% }"
 
 # Sync managed site paths from staging so deploy does not delete unrelated
 # root-level server files such as host-managed config.
-SYNC_PATHS=("$STAGING_DIR/index.html" "$STAGING_DIR/assets")
+SYNC_PATHS=("$STAGING_DIR/.htaccess" "$STAGING_DIR/index.html" "$STAGING_DIR/assets")
 for file in "${ROOT_PUBLIC_FILES[@]}"; do
   if [[ -f "$STAGING_DIR/$file" ]]; then
     SYNC_PATHS+=("$STAGING_DIR/$file")
