@@ -86,6 +86,8 @@ const getShareContext = () => {
 const shareContext = getShareContext();
 
 const getPageType = () => {
+  if (document.body.classList.contains("error-page")) return "not_found";
+
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/") return "home";
   if (path === "/about") return "about";

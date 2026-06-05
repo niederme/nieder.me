@@ -15,6 +15,7 @@ required_tokens = [
     'PUBLIC_DIRS=(',
     'ROOT_PUBLIC_FILES=(',
     '--filter "P work/***"',
+    '404.html',
     'favicon.ico',
     'robots.txt',
     'sitemap.xml',

@@ -2653,6 +2653,105 @@ body.grid-hidden .work-grid-overlay > span {
   color: var(--accent);
 }
 
+.error-article {
+  min-height: 100vh;
+}
+
+.error-shell {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(72px, 11vw, 148px) 0 clamp(84px, 12vw, 164px);
+}
+
+.error-copy {
+  width: 100%;
+  margin-top: clamp(28px, 4vw, 48px);
+  font-size: clamp(20px, 2.2vw, 32px);
+  line-height: 1.2;
+}
+
+.error-kicker {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.work-article .error-shell h1 {
+  margin: 0;
+  font-size: clamp(104px, 31vw, 390px);
+  line-height: 0.78;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.error-message {
+  margin: 6px 0 0;
+  font-weight: 300;
+}
+
+.error-message [data-error-quote]::before {
+  content: "\201C";
+}
+
+.error-message [data-error-quote]::after {
+  content: "\201D";
+}
+
+.error-message cite {
+  font-style: normal;
+}
+
+.error-message cite::before {
+  content: " \2014 ";
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin-top: 32px;
+}
+
+.error-actions a {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.error-actions a:visited {
+  color: var(--accent);
+}
+
+.error-actions a:hover,
+.error-actions a:focus-visible {
+  color: var(--accent-hover);
+}
+
+@media (min-width: 701px) {
+  .error-shell {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter);
+    align-content: center;
+    justify-content: stretch;
+  }
+
+  .error-shell > .rule,
+  .work-article .error-shell h1 {
+    grid-column: 1 / -1;
+  }
+
+  .error-copy {
+    grid-column: 1 / span 8;
+  }
+}
+
 .work-index-intro {
   margin-top: 84px;
 }
