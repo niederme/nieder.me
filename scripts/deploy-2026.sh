@@ -63,7 +63,8 @@ fi
 ./scripts/update-sitemap.py --check
 
 STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/deploy-2026.XXXXXX")"
-SSH_CONTROL_PATH="$STAGING_DIR/ssh-control-%C"
+ssh_control_id="$(printf '%s' "${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PORT}:${DEPLOY_PATH}" | shasum -a 256 | awk '{print substr($1, 1, 12)}')"
+SSH_CONTROL_PATH="${TMPDIR:-/tmp}/nieder-deploy-${ssh_control_id}.sock"
 cleanup() {
   if [[ -n "${RSYNC_SSH_CMD:-}" ]]; then
     "${SSH_CMD[@]}" -O exit "${DEPLOY_USER}@${DEPLOY_HOST}" >/dev/null 2>&1 || true

@@ -22,6 +22,7 @@ required_tokens = [
     'prefix_root_url',
     'href="{prefix}/"',
     'ControlMaster=auto',
+    'nieder-deploy-${ssh_control_id}.sock',
     '404.html',
     'favicon.ico',
     'robots.txt',
