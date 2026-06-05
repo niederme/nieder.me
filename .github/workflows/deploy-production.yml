@@ -15,6 +15,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Check social metadata
+        run: ./scripts/check-social-metadata.py
+
       - name: Minify CSS and JS
         run: |
           npm install -g lightningcss-cli terser
