@@ -19,7 +19,15 @@ required_tokens = [
     'RewriteEngine On',
     'RewriteCond %{HTTP_HOST} ^www\\.nieder\\.me$ [NC]',
     'RewriteRule ^ https://nieder.me%{REQUEST_URI} [R=301,L,NE]',
+    'RewriteRule ^portfolio/?$ /2016/portfolio/ [R=301,L]',
     'RewriteRule ^portfolio/nyt-invisible-child/?$ /2016/portfolio/nyt-invisible-child/ [R=301,L]',
+    'RewriteRule ^portfolio/buzzfeed-social-mission-control/?$ /2016/portfolio/buzzfeed-social-mission-control/ [R=301,L]',
+    'RewriteRule ^work/somm-ai/?$ ${site_path}/work/resy-search-ai/ [R=301,L]',
+    'RewriteRule ^resy-ai-demo\\.html$ ${site_path}/work/resy-search-ai/ [R=301,L]',
+    'RewriteRule ^sendmoi/?$ https://send.moi/ [R=301,L,NE]',
+    'RewriteRule ^sendmoi/(accessibility|privacy|terms)/?$ https://send.moi/\\$1/ [R=301,L,NE]',
+    'RewriteRule ^mailmoi/?$ https://send.moi/ [R=301,L,NE]',
+    'RewriteRule ^mailmoi/(accessibility|privacy|terms)/?$ https://send.moi/\\$1/ [R=301,L,NE]',
     'colophon_redirect_path="${site_path}/colophon-style-guide/"',
     'styleguide_redirect_path="${site_path}/colophon-style-guide/#principles"',
     'RewriteRule ^colophon/?$ ${colophon_redirect_path} [R=301,L]',
@@ -49,7 +57,7 @@ required_tokens = [
     'Sync work/ without --delete',
     'resume_pdf_cache_bust=',
     'assets/files/John-Niedermeyer-Resume.pdf',
-    './scripts/update-sitemap.py --check',
+    './scripts/update-sitemap.py --output "$STAGING_DIR/sitemap.xml"',
 ]
 
 for token in required_tokens:
