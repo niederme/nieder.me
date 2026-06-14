@@ -89,6 +89,9 @@ colophon_redirect_path="${site_path}/colophon-style-guide/"
 styleguide_redirect_path="${site_path}/colophon-style-guide/#principles"
 cat > "$STAGING_DIR/.htaccess" <<HTACCESS
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.nieder\.me$ [NC]
+RewriteRule ^ https://nieder.me%{REQUEST_URI} [R=301,L,NE]
+RewriteRule ^portfolio/nyt-invisible-child/?$ /2016/portfolio/nyt-invisible-child/ [R=301,L]
 RewriteRule ^colophon/?$ ${colophon_redirect_path} [R=301,L]
 RewriteRule ^styleguide/?$ ${styleguide_redirect_path} [R=301,L,NE]
 ErrorDocument 404 ${error_document_path}
