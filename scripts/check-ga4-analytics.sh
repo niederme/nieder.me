@@ -112,4 +112,11 @@ expect_pattern "privacy/index.html" "Google Analytics" \
 expect_no_pattern "privacy/index.html" "does not currently use advertising, analytics" \
   "Expected privacy/index.html to remove the outdated no-analytics claim."
 
+expect_pattern "scripts/ga4-weekly-report.py" 'field_name="hostName"' \
+  "Expected the weekly GA4 report to filter by production hostname."
+expect_pattern "scripts/ga4-weekly-report.py" 'value=r"^(www\.)?nieder\.me$"' \
+  "Expected the weekly GA4 report to include only nieder.me production hosts."
+expect_pattern "scripts/ga4-weekly-report.py" "dimension_filter=PRODUCTION_HOST_FILTER" \
+  "Expected every weekly GA4 query to use the production hostname filter."
+
 echo "GA4 analytics checks passed."

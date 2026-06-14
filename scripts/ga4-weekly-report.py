@@ -18,7 +18,8 @@ from pathlib import Path
 from google.oauth2 import service_account
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import (
-    DateRange, Dimension, Metric, RunReportRequest, OrderBy
+    DateRange, Dimension, Filter, FilterExpression, Metric, RunReportRequest,
+    OrderBy
 )
 
 # ── credentials ───────────────────────────────────────────────────────────────
@@ -61,10 +62,21 @@ week_start = today - timedelta(days=today.weekday())
 lw_start   = week_start - timedelta(days=7)
 lw_end     = week_start - timedelta(days=1)
 
+PRODUCTION_HOST_FILTER = FilterExpression(
+    filter=Filter(
+        field_name="hostName",
+        string_filter=Filter.StringFilter(
+            match_type=Filter.StringFilter.MatchType.FULL_REGEXP,
+            value=r"^(www\.)?nieder\.me$",
+        ),
+    )
+)
+
 def run_report(start, end, dimensions, metrics, limit=10, order_by=None):
     req = RunReportRequest(
         property=f"properties/{PROPERTY_ID}",
         date_ranges=[DateRange(start_date=str(start), end_date=str(end))],
+        dimension_filter=PRODUCTION_HOST_FILTER,
         dimensions=[Dimension(name=d) for d in dimensions],
         metrics=[Metric(name=m) for m in metrics],
         limit=limit,
