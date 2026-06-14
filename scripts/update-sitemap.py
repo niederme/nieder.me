@@ -89,10 +89,19 @@ def validate_xml(contents: str) -> None:
 def main() -> int:
   parser = argparse.ArgumentParser(description="Generate sitemap.xml from public index.html pages.")
   parser.add_argument("--site-url", default=DEFAULT_SITE_URL)
+  parser.add_argument(
+    "--output",
+    type=Path,
+    default=ROOT / "sitemap.xml",
+    help="Output path for the generated sitemap (default: repository sitemap.xml).",
+  )
   parser.add_argument("--check", action="store_true", help="Fail if sitemap.xml is not up to date.")
   args = parser.parse_args()
 
-  sitemap_path = ROOT / "sitemap.xml"
+  sitemap_path = args.output.expanduser()
+  if not sitemap_path.is_absolute():
+    sitemap_path = Path.cwd() / sitemap_path
+
   rendered = render_sitemap(discover_pages(args.site_url))
   validate_xml(rendered)
 
@@ -104,8 +113,13 @@ def main() -> int:
     print("sitemap.xml is up to date.")
     return 0
 
+  sitemap_path.parent.mkdir(parents=True, exist_ok=True)
   sitemap_path.write_text(rendered, encoding="utf-8")
-  print(f"Wrote {sitemap_path.relative_to(ROOT)}")
+  try:
+    display_path = sitemap_path.relative_to(ROOT)
+  except ValueError:
+    display_path = sitemap_path
+  print(f"Wrote {display_path}")
   return 0
 
 

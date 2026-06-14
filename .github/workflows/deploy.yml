@@ -28,9 +28,6 @@ jobs:
           lightningcss --minify --sourcemap assets/css/styleguide.css -o assets/css/styleguide.css
           terser assets/js/main.js -o assets/js/main.js --sourcemap "url='main.js.map'" --compress --mangle
 
-      - name: Refresh sitemap
-        run: ./scripts/update-sitemap.py
-
       - name: Set up SSH
         run: |
           install -m 700 -d ~/.ssh

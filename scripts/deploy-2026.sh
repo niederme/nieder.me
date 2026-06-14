@@ -58,8 +58,6 @@ if [[ "$DRY_RUN" == "1" ]]; then
   RSYNC_UPDATE_ARGS+=(--dry-run)
 fi
 
-./scripts/update-sitemap.py --check
-
 STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/deploy-2026.XXXXXX")"
 ssh_control_id="$(printf '%s' "${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PORT}:${DEPLOY_PATH}" | shasum -a 256 | awk '{print substr($1, 1, 12)}')"
 SSH_CONTROL_PATH="${TMPDIR:-/tmp}/nieder-deploy-${ssh_control_id}.sock"
@@ -91,7 +89,15 @@ cat > "$STAGING_DIR/.htaccess" <<HTACCESS
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.nieder\.me$ [NC]
 RewriteRule ^ https://nieder.me%{REQUEST_URI} [R=301,L,NE]
+RewriteRule ^portfolio/?$ /2016/portfolio/ [R=301,L]
 RewriteRule ^portfolio/nyt-invisible-child/?$ /2016/portfolio/nyt-invisible-child/ [R=301,L]
+RewriteRule ^portfolio/buzzfeed-social-mission-control/?$ /2016/portfolio/buzzfeed-social-mission-control/ [R=301,L]
+RewriteRule ^work/somm-ai/?$ ${site_path}/work/resy-search-ai/ [R=301,L]
+RewriteRule ^resy-ai-demo\.html$ ${site_path}/work/resy-search-ai/ [R=301,L]
+RewriteRule ^sendmoi/?$ https://send.moi/ [R=301,L,NE]
+RewriteRule ^sendmoi/(accessibility|privacy|terms)/?$ https://send.moi/\$1/ [R=301,L,NE]
+RewriteRule ^mailmoi/?$ https://send.moi/ [R=301,L,NE]
+RewriteRule ^mailmoi/(accessibility|privacy|terms)/?$ https://send.moi/\$1/ [R=301,L,NE]
 RewriteRule ^colophon/?$ ${colophon_redirect_path} [R=301,L]
 RewriteRule ^styleguide/?$ ${styleguide_redirect_path} [R=301,L,NE]
 ErrorDocument 404 ${error_document_path}
@@ -101,6 +107,9 @@ for file in "${ROOT_PUBLIC_FILES[@]}"; do
     cp "$file" "$STAGING_DIR/"
   fi
 done
+# Build deploy metadata in staging so routine sitemap drift never blocks a deploy
+# or modifies the working tree.
+./scripts/update-sitemap.py --output "$STAGING_DIR/sitemap.xml"
 if [[ -n "$site_path" && -f "$STAGING_DIR/404.html" ]]; then
   python3 - "$STAGING_DIR/404.html" "$site_path" <<'PY'
 from pathlib import Path
