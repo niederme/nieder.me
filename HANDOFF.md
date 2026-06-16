@@ -8,14 +8,16 @@
 
 ## Recent Shipped Work
 - Per-page canonical and OG/Twitter metadata across every public page, validated by `scripts/check-social-metadata.py` in CI.
+- JSON-LD Schema.org structured data: `Person` + `WebSite` graph on the homepage, plus `Article` + `BreadcrumbList` + `Person` on each case study (#129, #130).
 - Custom `404.html` wired through Apache via `ErrorDocument`, with deploy-time path rewriting so staging serves `/2026/404.html` and production serves `/404.html`.
-- Legacy `colophon/` and `styleguide/` redirects relocated into the generated `.htaccess`.
-- Sitemap submission verified in Google Search Console; sitemap regenerates automatically on every staging deploy.
+- Expanded `.htaccess` redirect set: canonical-host (`www.nieder.me` → `nieder.me`), legacy `/portfolio/*` → `/2016/portfolio/*`, `/work/somm-ai/` and `/resy-ai-demo.html` → `/work/resy-search-ai/`, `/sendmoi/*` and `/mailmoi/*` → `send.moi`, plus the original `/colophon` and `/styleguide` redirects.
+- Sitemap submission verified in Google Search Console. Deploy now writes a fresh `sitemap.xml` directly into the staging tree instead of comparing against the working tree, so routine `lastmod` drift never blocks a deploy (#132).
 - AIQuota hero logo recompressed (161 KB → 34 KB) and three orphaned side-nav PNGs removed.
 - Case-study teaser cards now use `loading="lazy"`, halving mobile LCP on case study pages.
 - `defer` added to every `<script src="main.js">`.
 - CI bumped to `actions/checkout@v6`, `actions/setup-node@v6`, `actions/setup-python@v6` so workflows run on Node 24.
 - Production deploys are gated on `scripts/check-social-metadata.py`.
+- GA4 weekly analytics report filters to production hosts only, so staging traffic stops skewing the numbers (#133).
 
 ## Open Follow-ups
 - Hero asset optimization on case studies: in-article hero images and demo videos still total several MB and dominate mobile bandwidth even after the lazy-load fix. Worth a focused sprint to compress and re-export.

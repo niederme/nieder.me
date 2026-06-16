@@ -20,6 +20,7 @@ Current site surfaces:
 - `/work/resy-search-ai/` Resy AI case study
 - `/work/ai-quota/` AIQuota case study
 - `/work/sendmoi/` SendMoi case study
+- `/work/resy-web-booking/prototype/` Resy web booking interactive prototype
 - `drafts/` framework for unpublished future work, excluded from deploy and public navigation
 
 Draft work:
@@ -149,7 +150,7 @@ The script:
 - stages a temporary copy of `index.html` and `assets/`
 - includes allowlisted top-level sections when present
 - generates a fresh `sitemap.xml` directly in the temporary staging tree
-- generates `.htaccess` with legacy `colophon/` and `styleguide/` 301 redirects plus an `ErrorDocument 404 /404.html` directive (env-aware, so staging serves `/2026/404.html`)
+- generates `.htaccess` with the canonical-host redirect (`www.nieder.me` → `nieder.me`), legacy `/portfolio/*` → `/2016/portfolio/*` redirects, `/work/somm-ai/` and `/resy-ai-demo.html` → `/work/resy-search-ai/`, `/sendmoi/*` and `/mailmoi/*` → `send.moi`, the `/colophon` and `/styleguide` → `/colophon-style-guide/` redirects, and the env-aware `ErrorDocument 404` directive (so staging serves `/2026/404.html`)
 - rewrites `404.html` asset paths to match the deploy prefix (staging vs prod)
 - excludes `drafts/`
 - rewrites the staged homepage site URL
@@ -161,9 +162,8 @@ The script:
 
 Deploy delete contract:
 
-- `rsync --delete` is allowed for managed deploy paths so removed repo files disappear from staging and production.
-- Remote-only files under `/work/` are intentionally preserved with an rsync protect filter because `/work/` can contain non-repo material.
-- Do not remove that protect filter unless the remote `/work/` tree has first been audited and all non-repo files have been intentionally relocated or imported.
+- The deploy runs two rsync passes. The first pass uses `--delete` on managed top-level paths so files removed from the repo disappear from the remote.
+- The second pass syncs `work/` without `--delete` so remote-only files under `/work/` are preserved. `/work/` can contain non-repo material; do not change that split unless the remote `/work/` tree has first been audited and all non-repo files have been intentionally relocated or imported.
 
 Default settings in `scripts/deploy-2026.sh` can be overridden with environment variables:
 
@@ -200,6 +200,8 @@ make site-url-prod
 Every public HTML page should include a canonical URL, Open Graph metadata, and Twitter/X card metadata. Case studies should use the best available case-study promo image as the social image. Utility, policy, redirect, and index pages should fall back to `assets/images/og/og-image-1200x630.png`.
 
 Case-study social images live in `assets/images/og/` and should be exported at `1200x630`. Keep the declared `og:image:width`, `og:image:height`, and `og:image:type` in sync with the real file. The checker verifies this, plus the presence of canonical URLs, OG tags, Twitter/X tags, local image files, and matching OG/Twitter image URLs.
+
+Every public HTML page also embeds JSON-LD Schema.org structured data: a shared `Person` and `WebSite` graph on the homepage, plus `Article` + `BreadcrumbList` + `Person` on each case study connected to the homepage `Person` and `WebSite` by `@id`. Update the `dateModified` and image fields when revising a case study.
 
 Run this before publishing metadata-sensitive changes:
 

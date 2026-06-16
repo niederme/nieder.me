@@ -17,6 +17,6 @@
 
 ## Deploy safety
 
-- The deploy script uses `rsync --delete` for managed paths.
-- Do not remove the `work/***` rsync protect filter. Remote `/work/` may contain files that are intentionally not part of this repo.
-- If deploy scope changes, run `python3 scripts/check-deploy-2026.py` and verify that remote-only `/work/` files are still protected from deletion.
+- The deploy script runs two rsync passes: a `--delete` pass on managed top-level paths, and a separate non-`--delete` pass for `work/`.
+- Do not change that split. Remote `/work/` may contain files that are intentionally not part of this repo and must not be deleted by the deploy.
+- If deploy scope changes, run `python3 scripts/check-deploy-2026.py` and verify that remote-only `/work/` files are still preserved.
