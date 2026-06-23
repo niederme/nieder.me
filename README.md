@@ -37,7 +37,7 @@ Core project files:
 - `work/**/*.html` work index and case-study pages
 - `assets/css/styles.css` homepage and shared site styles
 - `assets/css/work-case-study.css` work index and case-study styles
-- `assets/css/styleguide.css` colophon and style-guide styles
+- `assets/css/styleguide.css` design system page styles
 - `assets/js/main.js` shared client-side behavior
 - `assets/images/og/` sitewide and page-specific social share images
 - `assets/` images, icons, fonts, and video
@@ -151,7 +151,7 @@ The script:
 - stages a temporary copy of `index.html` and `assets/`
 - includes allowlisted top-level sections when present
 - generates a fresh `sitemap.xml` directly in the temporary staging tree
-- generates `.htaccess` with the canonical-host redirect (`www.nieder.me` → `nieder.me`), legacy `/portfolio/*` → `/2016/portfolio/*` redirects, `/work/somm-ai/` and `/resy-ai-demo.html` → `/work/resy-search-ai/`, `/sendmoi/*` and `/mailmoi/*` → `send.moi`, the `/colophon` and `/styleguide` → `/colophon-style-guide/` redirects, and the env-aware `ErrorDocument 404` directive (so staging serves `/2026/404.html`)
+- generates `.htaccess` with the canonical-host redirect (`www.nieder.me` → `nieder.me`), legacy `/portfolio/*` → `/2016/portfolio/*` redirects, `/work/somm-ai/` and `/resy-ai-demo.html` → `/work/resy-search-ai/`, `/sendmoi/*` and `/mailmoi/*` → `send.moi`, the `/colophon`, `/colophon-style-guide`, and `/styleguide` → `/design-system/` redirects, and the env-aware `ErrorDocument 404` directive (so staging serves `/2026/404.html`)
 - rewrites `404.html` asset paths to match the deploy prefix (staging vs prod)
 - excludes `drafts/`
 - rewrites the staged homepage site URL

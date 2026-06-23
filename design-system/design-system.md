@@ -2,7 +2,7 @@
 
 A portable spec for agentic design tools (Claude Design, Figma Make, v0, Lovable, Cursor, etc.).
 Values are extracted from the production CSS in `assets/css/styles.css` and the living style
-guide at `/colophon-style-guide/`. Machine-readable tokens live alongside this file in
+guide at `/design-system/`. Machine-readable tokens live alongside this file in
 `design-tokens.json` (W3C Design Tokens format).
 
 ## Principles
@@ -81,5 +81,5 @@ Step values observed across gaps/margins: `5, 8, 10, 12, 15, 20, 24, 28, 40` (px
 ## Source of truth
 
 - Tokens & component CSS: `assets/css/styles.css`, `assets/css/styleguide.css`, `assets/css/work-case-study.css`
-- Live specimen page: `colophon-style-guide/index.html`
+- Live specimen page: `design-system/index.html`
 - Fonts: `assets/fonts/soehne-*.woff2`
