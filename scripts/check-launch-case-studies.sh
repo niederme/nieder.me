@@ -13,7 +13,7 @@ public_pages=(
   "index.html"
   "about/index.html"
   "accessibility/index.html"
-  "colophon-style-guide/index.html"
+  "design-system/index.html"
   "privacy/index.html"
   "work/index.html"
   "work/resy-discovery/index.html"

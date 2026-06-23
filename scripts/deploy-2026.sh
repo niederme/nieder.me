@@ -37,7 +37,7 @@ RSYNC_UPDATE_ARGS=(
 PUBLIC_DIRS=(
   about
   accessibility
-  colophon-style-guide
+  design-system
   privacy
   work
 )
@@ -83,8 +83,8 @@ error_document_path="${site_path}/404.html"
 if [[ "$error_document_path" != /* ]]; then
   error_document_path="/${error_document_path}"
 fi
-colophon_redirect_path="${site_path}/colophon-style-guide/"
-styleguide_redirect_path="${site_path}/colophon-style-guide/#principles"
+design_system_redirect_path="${site_path}/design-system/"
+styleguide_redirect_path="${site_path}/design-system/#principles"
 cat > "$STAGING_DIR/.htaccess" <<HTACCESS
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.nieder\.me$ [NC]
@@ -98,7 +98,8 @@ RewriteRule ^sendmoi/?$ https://send.moi/ [R=301,L,NE]
 RewriteRule ^sendmoi/(accessibility|privacy|terms)/?$ https://send.moi/\$1/ [R=301,L,NE]
 RewriteRule ^mailmoi/?$ https://send.moi/ [R=301,L,NE]
 RewriteRule ^mailmoi/(accessibility|privacy|terms)/?$ https://send.moi/\$1/ [R=301,L,NE]
-RewriteRule ^colophon/?$ ${colophon_redirect_path} [R=301,L]
+RewriteRule ^colophon/?$ ${design_system_redirect_path} [R=301,L]
+RewriteRule ^colophon-style-guide/?$ ${design_system_redirect_path} [R=301,L]
 RewriteRule ^styleguide/?$ ${styleguide_redirect_path} [R=301,L,NE]
 ErrorDocument 404 ${error_document_path}
 HTACCESS
@@ -127,7 +128,7 @@ def prefix_root_url(match):
     return f'{attr}="{prefix}{url}"'
 
 html = re.sub(r'(href|src)="(/(?:assets|favicon|apple-touch-icon)[^"]*)"', prefix_root_url, html)
-html = re.sub(r'(href)="(/(?:work|about|colophon-style-guide)/?)"', prefix_root_url, html)
+html = re.sub(r'(href)="(/(?:work|about|design-system)/?)"', prefix_root_url, html)
 html = html.replace('href="/"', f'href="{prefix}/"')
 path.write_text(html)
 PY

@@ -65,7 +65,7 @@ home_pages=(
 
 one_level_pages=(
   "about/index.html"
-  "colophon-style-guide/index.html"
+  "design-system/index.html"
   "work/index.html"
   "accessibility/index.html"
   "privacy/index.html"

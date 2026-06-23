@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_PAGES = [
     ROOT / "index.html",
     ROOT / "about" / "index.html",
-    ROOT / "colophon-style-guide" / "index.html",
+    ROOT / "design-system" / "index.html",
     ROOT / "work" / "index.html",
     ROOT / "work" / "resy-discovery" / "index.html",
     ROOT / "work" / "resy-search-ai" / "index.html",
