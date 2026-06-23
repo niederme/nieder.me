@@ -7,10 +7,12 @@ from urllib.parse import urlsplit
 
 
 REDIRECTS = {
-    "/colophon": "/colophon-style-guide/",
-    "/colophon/": "/colophon-style-guide/",
-    "/styleguide": "/colophon-style-guide/#principles",
-    "/styleguide/": "/colophon-style-guide/#principles",
+    "/colophon": "/design-system/",
+    "/colophon/": "/design-system/",
+    "/colophon-style-guide": "/design-system/",
+    "/colophon-style-guide/": "/design-system/",
+    "/styleguide": "/design-system/#principles",
+    "/styleguide/": "/design-system/#principles",
 }
 
 

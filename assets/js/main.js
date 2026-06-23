@@ -94,7 +94,7 @@ const getPageType = () => {
   if (path === "/work") return "work_index";
   if (path === "/privacy") return "privacy";
   if (path === "/accessibility") return "accessibility";
-  if (path === "/colophon-style-guide") return "colophon";
+  if (path === "/design-system") return "design_system";
   if (/^\/work\/[^/]+$/.test(path)) return "case_study";
   return "site_page";
 };
