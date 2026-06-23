@@ -973,6 +973,14 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 /* About page */
+/* Opening paragraph: lede-scale type at normal body width (no width change). */
+.work-article-section p.about-lede {
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  font-weight: 300;
+}
+
 .about-portrait {
   grid-column: 10 / span 3;
   grid-row: 1;
