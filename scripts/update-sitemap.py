@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SITE_URL = "https://nieder.me"
-EXCLUDED_PREFIXES = (".git/", ".tmp/", ".worktrees/", "drafts/", "node_modules/")
+EXCLUDED_PREFIXES = (".git/", ".tmp/", ".worktrees/", "drafts/", "node_modules/", "_site/", "admin/")
 EXCLUDED_FILES = {"resy-ai-demo.html"}
 
 

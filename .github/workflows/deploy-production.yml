@@ -15,6 +15,13 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Build blog
+        run: |
+          npm ci
+          npm run build
+        env:
+          SITE_URL: https://nieder.me
+
       - name: Check social metadata
         run: ./scripts/check-social-metadata.py
 

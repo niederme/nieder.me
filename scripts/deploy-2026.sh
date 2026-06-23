@@ -37,6 +37,8 @@ RSYNC_UPDATE_ARGS=(
 PUBLIC_DIRS=(
   about
   accessibility
+  admin
+  blog
   design-system
   privacy
   work
@@ -48,6 +50,7 @@ ROOT_PUBLIC_FILES=(
   apple-touch-icon.png
   favicon.ico
   favicon.png
+  feed.xml
   llms.txt
   robots.txt
   sitemap.xml
@@ -110,7 +113,7 @@ for file in "${ROOT_PUBLIC_FILES[@]}"; do
 done
 # Build deploy metadata in staging so routine sitemap drift never blocks a deploy
 # or modifies the working tree.
-./scripts/update-sitemap.py --output "$STAGING_DIR/sitemap.xml"
+./scripts/update-sitemap.py --site-url "$SITE_URL" --output "$STAGING_DIR/sitemap.xml"
 if [[ -n "$site_path" && -f "$STAGING_DIR/404.html" ]]; then
   python3 - "$STAGING_DIR/404.html" "$site_path" <<'PY'
 from pathlib import Path
