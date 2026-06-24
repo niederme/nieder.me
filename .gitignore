@@ -13,8 +13,8 @@ config.codekit3
 node_modules/
 
 # Generated blog build artifacts (rebuilt locally and in CI; never hand-edited)
-_site/
-blog/
-admin/
-feed.xml
-sitemap.xml
+/_site/
+/blog/
+/admin/
+/feed.xml
+/sitemap.xml
