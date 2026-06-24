@@ -2,30 +2,41 @@
 layout: base.njk
 pageType: index
 title: "NiederBlog"
-description: "Writing on product design, process, and craft by John Niedermeyer."
+description: "Notes and essays on design by John Niedermeyer."
 permalink: /blog/index.html
 eleventyExcludeFromCollections: true
 ---
-<section class="work-index-header" aria-labelledby="blog-title">
-  <div class="rule"></div>
-  <div class="work-index-header-copy">
-    <h1 id="blog-title">NiederBlog</h1>
-    <h2>Notes on design &amp; craft</h2>
+<section class="work-index-header blog-index-header" aria-labelledby="blog-title">
+  <div class="work-index-header-copy blog-index-header-copy">
+    <h1 id="blog-title" class="blog-index-title">
+      <span class="blog-index-title-line"><span class="blog-index-title-accent">NiederBlog:</span> Notes &amp;</span>
+      <span class="blog-index-title-line">Essays on Design</span>
+    </h1>
   </div>
 </section>
 
-<section class="work-article-grid" aria-labelledby="blog-title">
-  <article class="work-article-body">
+<section class="blog-index-shell" aria-labelledby="blog-title">
+  <article class="blog-index-body">
     {% if collections.posts.length %}
     <ul class="blog-index-list">
       {%- for post in collections.posts %}
       <li class="blog-index-item">
-        <a class="blog-index-link" href="{{ post.url | relUrl(page.url) }}">
-          <p class="blog-post-meta">
-            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
-          </p>
-          <h3 class="blog-index-item-title">{{ post.data.title }}</h3>
-          <p class="blog-index-item-desc">{{ post.data.description }}</p>
+        <a class="blog-index-card" href="{{ post.url | relUrl(page.url) }}">
+          <span class="blog-index-card-copy">
+            <span class="blog-index-card-kicker">
+              <span>{{ post.data.category if post.data.category else "Notes" }}</span>
+              <span aria-hidden="true">|</span>
+              <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
+            </span>
+            <strong>{{ post.data.title }}</strong>
+            <em>{{ post.data.description }}</em>
+            <b>Read post →</b>
+          </span>
+          {% if post.data.socialImage %}
+          <span class="blog-index-card-media" aria-hidden="true">
+            <img src="{{ post.data.socialImage | relUrl(page.url) }}" alt="" loading="lazy" />
+          </span>
+          {% endif %}
         </a>
       </li>
       {%- endfor %}
@@ -36,4 +47,15 @@ eleventyExcludeFromCollections: true
     </section>
     {% endif %}
   </article>
+
+  {% if collections.tagList.length %}
+  <aside class="blog-index-topics" aria-label="Browse by topic">
+    <p class="work-article-meta-label">Topics</p>
+    <ul class="blog-tag-list">
+      {%- for tag in collections.tagList %}
+      <li><a class="blog-tag" href="{{ page.url | relRoot }}blog/tags/{{ tag | tagSlug }}/">#{{ tag }}</a></li>
+      {%- endfor %}
+    </ul>
+  </aside>
+  {% endif %}
 </section>

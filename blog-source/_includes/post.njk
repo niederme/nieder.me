@@ -2,41 +2,47 @@
 layout: base.njk
 ---
 {%- set root = page.url | relRoot -%}
-<section class="work-index-header" aria-labelledby="post-title">
-  <div class="rule"></div>
+{%- set displayTags = [] -%}
+{%- for tag in tags -%}{% if tag != "posts" %}{% set displayTags = (displayTags.push(tag), displayTags) %}{% endif %}{%- endfor -%}
+<nav class="blog-top-nav" aria-label="Blog navigation">
+  <a href="{{ root }}blog/">NiederBlog</a>
+</nav>
+
+<section class="work-index-header blog-post-header" aria-labelledby="post-title">
   <div class="work-index-header-copy">
+    <p class="blog-post-category">{{ category if category else "Notes" }}</p>
     <h1 id="post-title">{{ title }}</h1>
   </div>
 </section>
 
-<section class="work-article-grid" aria-labelledby="post-title">
+<section class="work-article-grid blog-post-layout" aria-labelledby="post-title">
+  <aside class="work-article-meta case-study-block case-study-block-meta blog-post-meta-panel" aria-label="Article metadata">
+    <div class="case-study-block-inner">
+      <div class="work-article-meta-card">
+        <p class="work-article-meta-label">Published</p>
+        <p class="work-article-meta-value">
+          <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
+          {%- if updated %}<br />Updated <time datetime="{{ updated | dateISO }}">{{ updated | dateDisplay }}</time>{% endif -%}
+        </p>
+      </div>
+      <div class="work-article-meta-card">
+        <p class="work-article-meta-label">Byline</p>
+        <p class="work-article-meta-value">John Niedermeyer</p>
+      </div>
+      {% if displayTags.length %}
+      <div class="work-article-meta-card">
+        <p class="work-article-meta-label">Tags</p>
+        <ul class="blog-tag-list">
+          {%- for tag in displayTags %}
+          <li><a class="blog-tag" href="{{ root }}blog/tags/{{ tag | tagSlug }}/">#{{ tag }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </aside>
+
   <article class="work-article-body blog-post-body">
-    <section class="work-article-section">
-      <p class="blog-post-meta">
-        <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
-        {%- if updated %} · Updated <time datetime="{{ updated | dateISO }}">{{ updated | dateDisplay }}</time>{% endif -%}
-      </p>
-    </section>
-
     {{ content | safe }}
-
-    {%- set displayTags = [] -%}
-    {%- for tag in tags -%}{% if tag != "posts" %}{% set displayTags = (displayTags.push(tag), displayTags) %}{% endif %}{%- endfor -%}
-    {% if displayTags.length %}
-    <section class="work-article-section blog-post-tags" aria-label="Tags">
-      <ul class="blog-tag-list">
-        {%- for tag in displayTags %}
-        <li><a class="blog-tag" href="{{ root }}blog/tags/{{ tag | tagSlug }}/">#{{ tag }}</a></li>
-        {%- endfor %}
-      </ul>
-    </section>
-    {% endif %}
-
-    <p class="about-recirc-wrap">
-      <a class="work-index-card-cta" href="{{ root }}blog/">
-        All writing
-        <img src="{{ root }}assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" />
-      </a>
-    </p>
   </article>
 </section>

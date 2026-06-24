@@ -1,8 +1,12 @@
-<section class="work-index-header" aria-labelledby="tag-title">
+<nav class="blog-top-nav" aria-label="Blog navigation">
+  <a href="{{ page.url | relRoot }}blog/">NiederBlog</a>
+</nav>
+
+<section class="work-index-header blog-post-header" aria-labelledby="tag-title">
   <div class="rule"></div>
   <div class="work-index-header-copy">
     <h1 id="tag-title">#{{ tag }}</h1>
-    <h2>Tagged writing</h2>
+    <h2>Tagged notes</h2>
   </div>
 </section>
 
@@ -25,7 +29,7 @@
     </ul>
     <p class="about-recirc-wrap">
       <a class="work-index-card-cta" href="{{ page.url | relRoot }}blog/">
-        All writing
+        Notes
         <img src="{{ page.url | relRoot }}assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" />
       </a>
     </p>
