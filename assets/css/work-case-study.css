@@ -4285,10 +4285,11 @@ body.grid-hidden .work-grid-overlay > span {
   .work-article-body .case-study-reference-card:hover,
   .work-article-body .case-study-reference-card:focus-visible,
   .work-article-body .case-study-reference-card:active {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(92px, 30%);
+    column-gap: 18px;
     justify-content: stretch;
+    align-items: start;
     border-radius: 25px;
-    row-gap: 16px;
     padding: 18px;
   }
 
@@ -4325,7 +4326,7 @@ body.grid-hidden .work-grid-overlay > span {
   .case-study-reference-card-media {
     width: 100%;
     border-radius: 12px;
-    aspect-ratio: 287 / 161;
+    aspect-ratio: 4 / 3;
   }
 
   .case-study-callout-eyebrow {
@@ -5320,8 +5321,14 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .blog-index-card {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+    grid-template-columns: minmax(0, 1fr) minmax(92px, 30%);
+    column-gap: 18px;
+    align-items: start;
+    padding: 18px;
+  }
+
+  .blog-index-card-media {
+    aspect-ratio: 4 / 3;
   }
 }
 
