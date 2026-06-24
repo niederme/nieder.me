@@ -1,4 +1,4 @@
-.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread site-url site-url-stage site-url-prod sitemap check-sitemap check-social design-tokens check-design-tokens deploy-stage deploy-prod archive-root-2016 release-stage release-prod issue-create
+.PHONY: dev dev-lan dev-local dev-live dev-thread dev-live-thread dev-blog build build-prod site-url site-url-stage site-url-prod sitemap check-sitemap check-social design-tokens check-design-tokens deploy-stage deploy-prod archive-root-2016 release-stage release-prod issue-create
 
 PORT ?= 8000
 THREAD_BASE_PORT ?= 8001
@@ -27,13 +27,28 @@ site-url-stage: site-url
 site-url-prod: SITE_URL := https://nieder.me
 site-url-prod: site-url
 
-sitemap:
-	@./scripts/update-sitemap.py
+# Build the blog (blog/, feed.xml, admin/) into the repo root. SITE_URL controls
+# the environment-aware URL base used in generated pages.
+build:
+	@SITE_URL="$(SITE_URL)" npm run build
 
-check-sitemap:
-	@./scripts/update-sitemap.py --check
+build-prod: SITE_URL := https://nieder.me
+build-prod: build
 
-check-social:
+# Live-rebuild authoring loop for posts/templates/CMS config (includes drafts).
+dev-blog:
+	@SITE_URL="$(SITE_URL)" npm run dev
+
+# Generated sitemap (gitignored output, like feed.xml). Built fresh; not committed.
+sitemap: build
+	@./scripts/update-sitemap.py --site-url https://nieder.me
+
+# Validates the generated sitemap (XML well-formedness + blog/admin scoping)
+# after a build, rather than diffing a committed byte-exact copy.
+check-sitemap: build
+	@./scripts/update-sitemap.py --site-url https://nieder.me
+
+check-social: build
 	@./scripts/check-social-metadata.py
 
 design-tokens:
@@ -42,10 +57,10 @@ design-tokens:
 check-design-tokens:
 	@./scripts/extract-design-tokens.py --check
 
-deploy-stage:
+deploy-stage: build
 	@./scripts/deploy-2026.sh
 
-deploy-prod:
+deploy-prod: build-prod
 	@./scripts/deploy-prod.sh
 
 archive-root-2016:

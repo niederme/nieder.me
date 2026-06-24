@@ -1,0 +1,277 @@
+{%- set root = page.url | relRoot -%}
+{%- set imgPath = socialImage if socialImage else site.fallbackImage -%}
+{%- set imgMeta = imgPath | imageMeta -%}
+{%- set imgAbs = imgPath | absUrl -%}
+{%- set imgAlt = socialImageAlt if socialImageAlt else site.fallbackImageAlt -%}
+{%- set pageUrlAbs = page.url | absUrl -%}
+{%- set ogType = "article" if pageType == "post" else "website" -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="{{ root }}favicon.ico?v={{ site.faviconVersion }}" sizes="any" />
+    <link rel="icon" type="image/png" href="{{ root }}favicon.png?v={{ site.faviconVersion }}" />
+    <link rel="apple-touch-icon" href="{{ root }}apple-touch-icon.png?v={{ site.faviconVersion }}" />
+    <title>{{ title }} | {{ site.name }}</title>
+    <meta name="description" content="{{ description }}" />
+    <link rel="canonical" href="{{ pageUrlAbs }}" />
+
+    <meta property="og:type" content="{{ ogType }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="{{ title }} | {{ site.name }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="{{ pageUrlAbs }}" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:image" content="{{ imgAbs }}" />
+    <meta property="og:image:secure_url" content="{{ imgAbs }}" />
+    <meta property="og:image:type" content="{{ imgMeta.type }}" />
+    <meta property="og:image:width" content="{{ imgMeta.width }}" />
+    <meta property="og:image:height" content="{{ imgMeta.height }}" />
+    <meta property="og:image:alt" content="{{ imgAlt }}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title }} | {{ site.name }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:url" content="{{ pageUrlAbs }}" />
+    <meta name="twitter:image" content="{{ imgAbs }}" />
+    <meta name="twitter:image:alt" content="{{ imgAlt }}" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("nieder.theme");
+          const storedGrid = window.localStorage.getItem("nieder.cols-grid-visible");
+          document.documentElement.dataset.grid = storedGrid === "1" ? "visible" : "hidden";
+          if (storedTheme === "light") {
+            document.documentElement.dataset.theme = "light";
+            document.documentElement.style.colorScheme = "light";
+            const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+            const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+            if (themeColorMeta) themeColorMeta.setAttribute("content", "#ffffff");
+            if (colorSchemeMeta) colorSchemeMeta.setAttribute("content", "light");
+          }
+        } catch (error) {
+          document.documentElement.dataset.grid = "hidden";
+          // Ignore storage access failures and keep the default state.
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <script>
+      (() => {
+        const hostname = window.location.hostname;
+        const pathname = window.location.pathname;
+        const isLocalPreview =
+          hostname === "localhost" ||
+          hostname === "127.0.0.1" ||
+          hostname === "::1" ||
+          hostname.endsWith(".local") ||
+          /^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[0-1])\.|100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.)/.test(hostname);
+        const isDraftPath = pathname.startsWith("/drafts/");
+
+        if (isLocalPreview || isDraftPath) {
+          window.niederAnalyticsSuppressed = true;
+          return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        const googleTag = document.createElement("script");
+        googleTag.async = true;
+        googleTag.src = "https://www.googletagmanager.com/gtag/js?id={{ site.ga4Id }}";
+        document.head.appendChild(googleTag);
+
+        window.gtag("js", new Date());
+        window.gtag("config", "{{ site.ga4Id }}");
+      })();
+    </script>
+    {% if pageType == "post" %}
+      {{ { pageType: "post", slug: slug, url: pageUrlAbs, title: title, description: description, image: imgAbs, datePublished: date | dateISO, dateModified: (updated if updated else date) | dateISO } | jsonLd | safe }}
+    {% else %}
+      {{ { pageType: pageType, path: page.url, url: pageUrlAbs, title: title, description: description } | jsonLd | safe }}
+    {% endif %}
+    <link rel="stylesheet" href="{{ root }}assets/css/work-case-study.css?v={{ site.cssVersion }}" />
+  </head>
+  <body id="top" class="policy-page is-subpage">
+    <div class="work-page">
+      <nav class="mobile-nav" aria-label="Primary navigation">
+        <a class="mobile-nav-anchor" href="{{ root }}" aria-label="Home">
+          <img class="icon-off"   src="{{ root }}assets/icons/side-nav/icon-back-off.svg"   alt="" />
+          <img class="icon-on"    src="{{ root }}assets/icons/side-nav/icon-back-on.svg"    alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-back-hover.svg" alt="" />
+          <span class="mobile-nav-label">Home</span>
+        </a>
+        <a class="mobile-nav-anchor" href="{{ root }}work/" aria-label="Work">
+          <img class="icon-off"   src="{{ root }}assets/icons/side-nav/icon-work-experience-off.svg"   alt="" />
+          <img class="icon-on"    src="{{ root }}assets/icons/side-nav/icon-work-experience-on.svg"    alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+          <span class="mobile-nav-label">Work</span>
+        </a>
+        <a class="mobile-nav-anchor" href="{{ root }}about/" aria-label="About &amp; Biography">
+          <img class="icon-off"   src="{{ root }}assets/icons/side-nav/icon-work-about-off.svg"   alt="" />
+          <img class="icon-on"    src="{{ root }}assets/icons/side-nav/icon-work-about-on.svg"    alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
+          <span class="mobile-nav-label">About</span>
+        </a>
+        <a class="mobile-nav-anchor" href="{{ root }}design-system/" aria-label="Design system">
+          <img class="icon-off"   src="{{ root }}assets/icons/side-nav/icon-colophon-off.svg"   alt="" />
+          <img class="icon-on"    src="{{ root }}assets/icons/side-nav/icon-colophon-on.svg"    alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
+          <span class="mobile-nav-label">Design</span>
+        </a>
+        <a class="mobile-nav-anchor is-active" href="{{ root }}blog/" aria-label="Blog">
+          <img class="icon-off"   src="{{ root }}assets/icons/side-nav/icon-blog-off.svg" alt="" />
+          <img class="icon-on"    src="{{ root }}assets/icons/side-nav/icon-blog-on.svg"  alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-blog-on.svg"  alt="" />
+          <span class="mobile-nav-label">Blog</span>
+        </a>
+        <div class="mobile-nav-toggles">
+          <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+            <span class="theme-toggle-switch" aria-hidden="true"></span>
+            <span class="theme-toggle-label">light</span>
+            <span class="theme-toggle-state" aria-live="polite">Off</span>
+          </button>
+          <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
+            <span class="cols-toggle-switch" aria-hidden="true"></span>
+            <span class="cols-toggle-label">cols</span>
+            <span class="cols-toggle-state" aria-live="polite">Off</span>
+          </button>
+        </div>
+      </nav>
+
+      <aside class="rail">
+        <a class="logo-link" href="{{ root }}" aria-label="Back to homepage">
+          <img class="logo-mark" src="{{ root }}assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
+      </aside>
+
+      <nav class="global-nav" aria-label="Primary navigation">
+        <a class="global-nav-anchor" href="{{ root }}" aria-label="Back to homepage">
+          <img class="icon-off" src="{{ root }}assets/icons/side-nav/icon-back-off.svg" alt="" />
+          <img class="icon-on" src="{{ root }}assets/icons/side-nav/icon-back-on.svg" alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-back-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Home</span>
+        </a>
+        <a class="global-nav-anchor" href="{{ root }}work/" aria-label="Work">
+          <img class="icon-off" src="{{ root }}assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
+          <img class="icon-on" src="{{ root }}assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Work Experience &amp; Resume</span>
+        </a>
+        <a class="global-nav-anchor" href="{{ root }}about/" aria-label="About &amp; Biography">
+          <img class="icon-off" src="{{ root }}assets/icons/side-nav/icon-work-about-off.svg" alt="" />
+          <img class="icon-on" src="{{ root }}assets/icons/side-nav/icon-work-about-on.svg" alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">About &amp; Biography</span>
+        </a>
+        <a class="global-nav-anchor" href="{{ root }}design-system/" aria-label="Design system">
+          <img class="icon-off" src="{{ root }}assets/icons/side-nav/icon-colophon-off.svg" alt="" />
+          <img class="icon-on" src="{{ root }}assets/icons/side-nav/icon-colophon-on.svg" alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Design System</span>
+        </a>
+        <a class="global-nav-anchor is-active" href="{{ root }}blog/" aria-label="Blog">
+          <img class="icon-off" src="{{ root }}assets/icons/side-nav/icon-blog-off.svg" alt="" />
+          <img class="icon-on" src="{{ root }}assets/icons/side-nav/icon-blog-on.svg" alt="" />
+          <img class="icon-hover" src="{{ root }}assets/icons/side-nav/icon-blog-on.svg" alt="" />
+          <span class="global-nav-popover" aria-hidden="true">Blog</span>
+        </a>
+        <div class="rail-controls-panel">
+          <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
+            <span class="theme-toggle-switch" aria-hidden="true"></span>
+            <span class="theme-toggle-label">light</span>
+            <span class="theme-toggle-state" aria-live="polite">Off</span>
+          </button>
+          <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
+            <span class="cols-toggle-switch" aria-hidden="true"></span>
+            <span class="cols-toggle-label">cols</span>
+            <span class="cols-toggle-state" aria-live="polite">Off</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="work-article">
+        <div class="work-grid-overlay" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <a class="mobile-logo-link" href="{{ root }}" aria-label="Back to homepage">
+          <img class="mobile-logo-mark" src="{{ root }}assets/icons/logo-mark.svg" alt="JN monogram" />
+        </a>
+
+        {{ content | safe }}
+
+        <footer class="site-footer" aria-label="Site footer">
+          <div class="rule"></div>
+          <div class="site-footer-grid">
+            <div class="site-footer-brand">
+              <p class="site-footer-name">John Niedermeyer</p>
+              <p class="site-footer-role">Product Design &amp; Direction</p>
+              <nav class="site-footer-connect" aria-label="Connect links">
+                <ul class="site-footer-social">
+                  <li>
+                    <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                      <span class="social-icon social-icon-github" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                      <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                      <span class="social-icon social-icon-x" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                      <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-email-link aria-label="Send email">
+                      <span class="social-icon social-icon-email" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="site-footer-meta">© 2026 John Niedermeyer</p>
+              <p class="site-footer-utility-links">
+                <a href="{{ root }}accessibility/">Accessibility</a>
+                <a href="{{ root }}privacy/">Privacy</a>
+              </p>
+            </div>
+
+            <nav class="site-footer-column site-footer-column-site" aria-label="Site sections">
+              <h3>Site</h3>
+              <ul class="site-footer-links">
+                <li><a href="{{ root }}">Home</a></li>
+                <li><a href="{{ root }}work/">Work Experience &amp; Resume</a></li>
+                <li><a href="{{ root }}about/">About &amp; Biography</a></li>
+                <li><a href="{{ root }}design-system/">Design System</a></li>
+                <li><a href="{{ root }}blog/" aria-current="page">Blog</a></li>
+              </ul>
+            </nav>
+
+            <nav class="site-footer-column site-footer-column-work" aria-label="Case studies sitemap">
+              <h3>Case Studies</h3>
+              <ul class="site-footer-links">
+                <li><a href="{{ root }}work/resy-discovery/">Resy App Discovery</a></li>
+                <li><a href="{{ root }}work/ai-quota/">AIQuota for macOS</a></li>
+                <li><a href="{{ root }}work/resy-search-ai/">Resy AI Exploration</a></li>
+                <li><a href="{{ root }}work/sendmoi/">SendMoi for iOS &amp; macOS</a></li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="{{ root }}assets/js/main.js" defer></script>
+  </body>
+</html>

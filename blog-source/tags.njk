@@ -1,0 +1,33 @@
+<section class="work-index-header" aria-labelledby="tag-title">
+  <div class="rule"></div>
+  <div class="work-index-header-copy">
+    <h1 id="tag-title">#{{ tag }}</h1>
+    <h2>Tagged writing</h2>
+  </div>
+</section>
+
+<section class="work-article-grid" aria-labelledby="tag-title">
+  <article class="work-article-body">
+    <ul class="blog-index-list">
+      {%- for post in collections.posts %}
+      {%- if tag in post.data.tags %}
+      <li class="blog-index-item">
+        <a class="blog-index-link" href="{{ post.url | relUrl(page.url) }}">
+          <p class="blog-post-meta">
+            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
+          </p>
+          <h3 class="blog-index-item-title">{{ post.data.title }}</h3>
+          <p class="blog-index-item-desc">{{ post.data.description }}</p>
+        </a>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+    <p class="about-recirc-wrap">
+      <a class="work-index-card-cta" href="{{ page.url | relRoot }}blog/">
+        All writing
+        <img src="{{ page.url | relRoot }}assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" />
+      </a>
+    </p>
+  </article>
+</section>

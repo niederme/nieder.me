@@ -8,3 +8,13 @@ config.codekit3
 .playwright-cli/
 .claude/
 .tmp/
+
+# Node / 11ty build layer
+node_modules/
+
+# Generated blog build artifacts (rebuilt locally and in CI; never hand-edited)
+_site/
+blog/
+admin/
+feed.xml
+sitemap.xml

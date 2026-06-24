@@ -58,7 +58,7 @@ required_tokens = [
     'Sync work/ without --delete',
     'resume_pdf_cache_bust=',
     'assets/files/John-Niedermeyer-Resume.pdf',
-    './scripts/update-sitemap.py --output "$STAGING_DIR/sitemap.xml"',
+    './scripts/update-sitemap.py --site-url "$SITE_URL" --output "$STAGING_DIR/sitemap.xml"',
 ]
 
 for token in required_tokens:

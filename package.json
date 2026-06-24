@@ -1,0 +1,16 @@
+{
+  "name": "nieder-me-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "11ty build layer for the nieder.me blog (blog/, feed.xml, admin/).",
+  "type": "module",
+  "scripts": {
+    "clean:blog": "node scripts/clean-blog-output.mjs",
+    "build": "npm run clean:blog && eleventy --config=.eleventy.cjs && node scripts/place-blog-output.mjs",
+    "dev": "npm run clean:blog && ELEVENTY_INCLUDE_DRAFTS=1 eleventy --config=.eleventy.cjs --serve --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2"
+  }
+}

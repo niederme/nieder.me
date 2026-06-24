@@ -1,0 +1,22 @@
+# 11ty input is content/articles (posts) + blog-source (templates) only.
+# templateFormats is njk/md, so hand-authored .html pages are never input.
+# These entries keep stray .md/.njk and tooling dirs out of the build.
+_site
+blog
+admin
+assets
+design-system
+docs
+drafts
+scripts
+node_modules
+.worktrees
+.tmp
+.playwright-cli
+.playwright-mcp
+.github
+.claude
+.figma
+README.md
+AGENTS.md
+HANDOFF.md

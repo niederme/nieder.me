@@ -5122,3 +5122,96 @@ body.grid-hidden .work-grid-overlay > span {
     display: none;
   }
 }
+
+/* ============================================================
+   Blog (NiederBlog) — index list, post meta, tags, media block
+   ============================================================ */
+.blog-index-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-index-item {
+  border-top: 1px solid var(--line);
+}
+
+.blog-index-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-index-link {
+  display: block;
+  padding: 22px 0;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.blog-post-meta {
+  margin: 0 0 6px;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.blog-index-item-title {
+  margin: 0 0 6px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--fg);
+  transition: color 0.18s ease;
+}
+
+.blog-index-link:hover .blog-index-item-title,
+.blog-index-link:focus-visible .blog-index-item-title {
+  color: var(--accent);
+}
+
+.blog-index-item-desc {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.blog-post-tags {
+  margin-top: 32px;
+}
+
+.blog-tag-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.blog-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.blog-tag:hover,
+.blog-tag:focus-visible {
+  color: var(--accent-hover);
+}
+
+.blog-media {
+  margin: 32px 0;
+}
+
+.blog-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.blog-media .case-study-caption {
+  margin-top: 10px;
+}

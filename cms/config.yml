@@ -1,0 +1,35 @@
+# Sveltia CMS configuration (Git-backed, GitHub). This file is copied to
+# /admin/config.yml at build time. Authentication uses an external OAuth relay
+# (Cloudflare Worker); set `backend.base_url` to that Worker's URL. No secrets
+# live in this file.
+backend:
+  name: github
+  repo: niederme/nieder.me
+  branch: main
+  # URL of the deployed sveltia-cms-auth Cloudflare Worker.
+  base_url: https://sveltia-cms-auth.niederblog.workers.dev
+
+# Editorial (PR) workflow is the review gate; `draft: true` is the build gate.
+publish_mode: editorial_workflow
+
+media_folder: assets/images/blog
+public_folder: /assets/images/blog
+
+collections:
+  - name: articles
+    label: Articles
+    folder: content/articles
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Updated", name: "updated", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "Social Image (PNG or JPEG)", name: "socialImage", widget: "image", required: false, hint: "Export at 1200×630 for best results." }
+      - { label: "Social Image Alt", name: "socialImageAlt", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
