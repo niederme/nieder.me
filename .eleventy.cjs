@@ -57,6 +57,27 @@ module.exports = function (eleventyConfig) {
   // Sveltia admin config ships next to the admin page.
   eleventyConfig.addPassthroughCopy({ "cms/config.yml": "admin/config.yml" });
 
+  // Eleventy serves from _site during `make dev-blog`; copy the hand-authored
+  // static shell so blog previews can load the same CSS, icons, and linked pages.
+  for (const entry of [
+    "assets",
+    "about",
+    "accessibility",
+    "design-system",
+    "privacy",
+    "work",
+    "index.html",
+    "404.html",
+    "apple-touch-icon-precomposed.png",
+    "apple-touch-icon.png",
+    "favicon.ico",
+    "favicon.png",
+    "llms.txt",
+    "robots.txt",
+  ]) {
+    eleventyConfig.addPassthroughCopy(entry);
+  }
+
   // Rebuild when content or CMS config changes during `npm run dev`.
   eleventyConfig.addWatchTarget("./content/articles/");
   eleventyConfig.addWatchTarget("./cms/config.yml");

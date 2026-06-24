@@ -28,6 +28,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Updated", name: "updated", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
       - { label: "Description", name: "description", widget: "text" }
+      - { label: "Category", name: "category", widget: "string", default: "Notes", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
       - { label: "Social Image (PNG or JPEG)", name: "socialImage", widget: "image", required: false, hint: "Export at 1200×630 for best results." }

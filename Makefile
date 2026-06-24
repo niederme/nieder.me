@@ -8,6 +8,7 @@ PORT_AUTO ?= 1
 PORT_SCAN_LIMIT ?= 25
 LIVE ?= 0
 LIVE_FILES ?= **/*.html,assets/css/**/*.css,assets/js/**/*.js
+BLOG_PORT ?= 8080
 PREVIEW_ENV ?= $(HOME)/.codex/bin/codex-preview-env
 SITE_URL ?= https://nieder.me/2026
 ISSUE_TITLE ?=
@@ -37,7 +38,42 @@ build-prod: build
 
 # Live-rebuild authoring loop for posts/templates/CMS config (includes drafts).
 dev-blog:
-	@SITE_URL="$(SITE_URL)" npm run dev
+	@if [ ! -x "$(PREVIEW_ENV)" ]; then \
+		echo "Missing preview helper: $(PREVIEW_ENV)"; \
+		echo "See /Users/niederme/.codex/docs/web-preview-convention.md"; \
+		exit 1; \
+	fi; \
+	set -- --port "$(BLOG_PORT)" --scan-limit "$(PORT_SCAN_LIMIT)" --local-host localhost; \
+	if [ "$(PORT_AUTO)" != "1" ]; then set -- "$$@" --no-port-auto; fi; \
+	if ! PREVIEW_ENV_OUTPUT="$$("$(PREVIEW_ENV)" "$$@")"; then \
+		if [ "$(PORT_AUTO)" = "1" ]; then \
+			echo "Set BLOG_PORT manually, for example: make dev-blog BLOG_PORT=8081"; \
+		else \
+			echo "Use a different port, for example: make dev-blog BLOG_PORT=8081"; \
+			echo "Or enable auto port selection: make dev-blog PORT_AUTO=1"; \
+		fi; \
+		exit 1; \
+	fi; \
+	eval "$$PREVIEW_ENV_OUTPUT"; \
+	if [ "$$PORT_WAS_BUSY" = "1" ]; then echo "Port $(BLOG_PORT) is already in use. Using $$PORT_TO_USE instead."; fi; \
+	echo "Opening blog preview after Eleventy starts…"; \
+	OPENED_BLOG_PREVIEW=0; \
+	SITE_URL="$(SITE_URL)" npm run dev -- --port=$$PORT_TO_USE 2>&1 | while IFS= read -r line; do \
+		echo "$$line"; \
+		case "$$line" in \
+			*"[11ty] Server at "*) \
+				if [ "$$OPENED_BLOG_PREVIEW" != "1" ]; then \
+					BLOG_PREVIEW_URL="$$(printf '%s\n' "$$line" | sed -n 's|.*Server at \(http://[^ ]*\).*|\1|p')"; \
+					if [ -n "$$BLOG_PREVIEW_URL" ]; then \
+						BLOG_PREVIEW_URL="$${BLOG_PREVIEW_URL%/}/blog/"; \
+						echo "Opening blog preview: $$BLOG_PREVIEW_URL"; \
+						open "$$BLOG_PREVIEW_URL" >/dev/null 2>&1; \
+						OPENED_BLOG_PREVIEW=1; \
+					fi; \
+				fi; \
+				;; \
+		esac; \
+	done
 
 # Generated sitemap (gitignored output, like feed.xml). Built fresh; not committed.
 sitemap: build
