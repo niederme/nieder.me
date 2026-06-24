@@ -5452,6 +5452,13 @@ body.grid-hidden .work-grid-overlay > span {
   margin: 0;
 }
 
+/* Body copy is weight 300, so the UA default `bolder` resolves to 400 (not bold).
+   Set an explicit bold weight; no color, so bold links keep their accent color. */
+.blog-post-body strong,
+.blog-post-body b {
+  font-weight: 700;
+}
+
 .blog-post-body > p + p,
 .blog-post-body > p + blockquote,
 .blog-post-body blockquote + p,
