@@ -1,6 +1,6 @@
 ---
 title: Now That Anyone Can Ship
-date: 2026-06-24
+date: 2026-06-24T22:26:00.000Z
 updated: ''
 description: 'Buzz Usborne’s distinction between discovery and delivery highlights a shift that AI may accelerate: as the cost of implementation falls, the value of identifying the right problems becomes harder to ignore.'
 category: Notes
