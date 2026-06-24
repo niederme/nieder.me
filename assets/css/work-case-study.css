@@ -5212,6 +5212,26 @@ body.grid-hidden .work-grid-overlay > span {
   height: auto;
 }
 
+/* Content images in post bodies cap at the column width. Scoped with
+   :not([aria-hidden]) so decorative icons (e.g. the CTA arrow) are untouched. */
+.blog-post-body img:not([aria-hidden="true"]) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 32px 0;
+}
+
+/* Wide desktop: content images break out to span 9 columns (the text column
+   plus the empty right gutter), reaching the right edge of the grid container.
+   Scoped to content images so decorative icons are never resized. */
+@media (min-width: 1501px) {
+  .blog-post-body img:not([aria-hidden="true"]),
+  .blog-post-body .blog-media {
+    width: calc(var(--case-study-body-width) + (3 * var(--case-study-column-width)) + (3 * var(--grid-gutter)));
+    max-width: none;
+  }
+}
+
 .blog-media .case-study-caption {
   margin-top: 10px;
 }
