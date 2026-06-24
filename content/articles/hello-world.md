@@ -22,7 +22,7 @@ Case studies are deliberate and infrequent. A blog gives room for the in-between
 process notes, craft details, and the small decisions that don't warrant a full case study
 but are worth writing down.
 
-![test](/assets/images/about/portrait_3_4_hp5_2400h.jpg "test")
+[![test](/assets/images/og/og-image-1200x630.png "test")](test)
 
 {% fullMedia {
   "src": "/assets/images/about/portrait_3_4_hp5_2400h.jpg",

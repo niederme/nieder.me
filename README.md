@@ -99,6 +99,8 @@ For normal images use Markdown (`![alt](/assets/images/blog/foo.jpg)`) — Svelt
 
 `src` and `alt` are required; `caption`, `layout` (default `full`), and `theme` (default `dark`) are optional. Use straight quotes — smart quotes break the shortcode.
 
+Image sizing: content images cap at the text-column width by default; on wide desktop (`min-width: 1501px`) they break out to span the full content width, reaching the grid's right edge. Decorative icons (anything `aria-hidden="true"`, e.g. the CTA arrow) are excluded from this and never resized.
+
 ### Build and preview
 
 ```bash
