@@ -6,6 +6,7 @@ layout: base.njk
 {%- for tag in tags -%}{% if tag != "posts" %}{% set displayTags = (displayTags.push(tag), displayTags) %}{% endif %}{%- endfor -%}
 <nav class="blog-top-nav" aria-label="Blog navigation">
   <a href="{{ root }}blog/">NiederBlog</a>
+  <span class="blog-top-nav-tagline">Notes &amp; Essays on Design</span>
 </nav>
 
 <section class="work-index-header blog-post-header" aria-labelledby="post-title">
