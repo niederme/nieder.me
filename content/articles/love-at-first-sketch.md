@@ -8,7 +8,7 @@ tags:
   - notes
   - product-design
 draft: false
-socialImage: /assets/images/blog/Love at First Sketch.jpg
+socialImage: /assets/images/blog/Love-at-First-Sketch.jpg
 socialImageAlt: ''
 ---
 
