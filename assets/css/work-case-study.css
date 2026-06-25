@@ -5147,6 +5147,10 @@ body.grid-hidden .work-grid-overlay > span {
   color: var(--fg);
 }
 
+.blog-index-title-line {
+  display: block;
+}
+
 .blog-index-title-accent {
   color: var(--accent);
 }
@@ -5339,11 +5343,16 @@ body.grid-hidden .work-grid-overlay > span {
 .blog-top-nav {
   display: flex;
   align-items: center;
+  gap: 0.6ch;
   min-height: 78px;
   margin: 0 0 0 var(--case-study-edge-inset);
   font-size: 22px;
   line-height: 1.2;
   font-weight: 700;
+}
+
+.blog-top-nav-tagline {
+  color: var(--fg);
 }
 
 .blog-top-nav a,
