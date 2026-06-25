@@ -5392,6 +5392,10 @@ body.grid-hidden .work-grid-overlay > span {
   .blog-top-nav a:visited {
     gap: 0.5ch;
   }
+
+  .blog-post-layout {
+    --case-study-text-size: clamp(16px, 4.6vw, 18px);
+  }
 }
 
 .blog-post-category {
