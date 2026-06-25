@@ -5531,9 +5531,10 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .blog-post-pager-title {
-  font-size: clamp(22px, 2.4vw, 28px);
-  line-height: 1.15;
-  font-weight: 700;
+  font-size: var(--case-study-heading-size);
+  line-height: var(--case-study-heading-line-height);
+  font-weight: var(--case-study-heading-weight);
+  letter-spacing: 0;
   color: var(--fg);
   text-wrap: pretty;
   transition: color 0.18s ease;
