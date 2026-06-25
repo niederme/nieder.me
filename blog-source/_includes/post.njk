@@ -4,10 +4,13 @@ layout: base.njk
 {%- set root = page.url | relRoot -%}
 {%- set displayTags = [] -%}
 {%- for tag in tags -%}{% if tag != "posts" %}{% set displayTags = (displayTags.push(tag), displayTags) %}{% endif %}{%- endfor -%}
-<nav class="blog-top-nav" aria-label="Blog navigation">
+<nav class="blog-top-nav blog-post-top-nav" aria-label="Blog navigation">
   <a href="{{ root }}blog/">
-    <span class="blog-top-nav-brand">NiederBlog</span>
-    <span class="blog-top-nav-tagline">Notes &amp; Essays on Design</span>
+    <span class="blog-top-nav-line">
+      <span class="blog-top-nav-brand">NiederBlog:</span>
+      <span class="blog-top-nav-tagline">Notes &amp;</span>
+    </span>
+    <span class="blog-top-nav-line blog-top-nav-tagline">Essays on Design</span>
   </a>
 </nav>
 

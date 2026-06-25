@@ -5355,6 +5355,13 @@ body.grid-hidden .work-grid-overlay > span {
   color: var(--fg);
 }
 
+.blog-top-nav-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  white-space: nowrap;
+}
+
 .blog-top-nav a,
 .blog-top-nav a:visited {
   display: inline-flex;
@@ -5395,6 +5402,28 @@ body.grid-hidden .work-grid-overlay > span {
 
   .blog-post-layout {
     --case-study-text-size: clamp(16px, 4.6vw, 18px);
+  }
+
+  .blog-post-top-nav {
+    box-sizing: border-box;
+    min-height: 55px;
+    margin: -91px 0 0;
+    padding: 0 0 30px 74px;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+    line-height: 1.08;
+  }
+
+  .blog-post-top-nav a,
+  .blog-post-top-nav a:visited {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    white-space: normal;
+  }
+
+  .blog-post-top-nav .blog-top-nav-line {
+    gap: 0.45ch;
   }
 }
 
