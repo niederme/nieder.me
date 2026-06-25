@@ -14,7 +14,7 @@ socialImageAlt: ''
 
 A small tidbit from [**Product Design Psychology**](https://productdesignpsychology.com), by Wouter de Bres: {.lede}
 
-> “The first idea that feels good is often the one that survives, not because it’s right, but because the team becomes emotionally attached to it.”
+> “The first idea that feels good is often the one that survives, not because it’s right, but because the team becomes emotionally attached to it.” {.lede}
 
 One of the most useful observations in the book is that many of the problems we describe as design challenges are actually human challenges. The tendency to become attached to an early idea isn’t unique to design teams, it’s just a form of _commitment bias_ that happens to show up around whiteboards and Figma files.
 
