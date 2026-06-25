@@ -12,7 +12,7 @@ socialImage: /assets/images/blog/Love at First Sketch.jpg
 socialImageAlt: ''
 ---
 
-A small tidbit from [**_Product Design Psychology_**](https://productdesignpsychology.com), _by_ _Wouter de Bres_:
+A small tidbit from [**Product Design Psychology**](https://productdesignpsychology.com), by Wouter de Bres:
 
 > “The first idea that feels good is often the one that survives, not because it’s right, but because the team becomes emotionally attached to it.”
 
