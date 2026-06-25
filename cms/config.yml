@@ -33,4 +33,4 @@ collections:
       - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
       - { label: "Social Image (PNG or JPEG)", name: "socialImage", widget: "image", required: false, hint: "Export at 1200×630 for best results." }
       - { label: "Social Image Alt", name: "socialImageAlt", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", hint: "Tag a paragraph as a lede by adding {.lede} at its end (easiest in the raw-markdown view)." }
