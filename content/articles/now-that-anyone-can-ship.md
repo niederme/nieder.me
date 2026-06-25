@@ -9,7 +9,7 @@ tags:
   - uxr
   - ai
 draft: false
-socialImage: /assets/images/blog/Now That Anyone Can Ship.jpg
+socialImage: /assets/images/blog/Now-That-Anyone-Can-Ship.jpg
 socialImageAlt: ''
 ---
 
