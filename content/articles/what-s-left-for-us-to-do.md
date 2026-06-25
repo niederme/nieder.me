@@ -4,7 +4,8 @@ date: 2026-06-25T13:33:00Z
 updated: ''
 description: "Airing's “After AI Takes Everything” on the question underneath the AI anxiety: once execution is fully handed off, what's left for us to do?"
 category: Notes
-tags: []
+tags:
+  - ai
 draft: false
 socialImage: ''
 socialImageAlt: ''
