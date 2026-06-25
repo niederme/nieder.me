@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
+const markdownItAttrs = require("markdown-it-attrs");
 
 const ROOT = __dirname;
 const PROD_URL = "https://nieder.me";
@@ -81,6 +82,10 @@ module.exports = function (eleventyConfig) {
   // Rebuild when content or CMS config changes during `npm run dev`.
   eleventyConfig.addWatchTarget("./content/articles/");
   eleventyConfig.addWatchTarget("./cms/config.yml");
+
+  // Let post Markdown tag a paragraph as a lede with a trailing `{.lede}`.
+  // Restricted to `class` so authoring can only attach styles, not arbitrary attributes.
+  eleventyConfig.amendLibrary("md", (md) => md.use(markdownItAttrs, { allowedAttributes: ["class"] }));
 
   eleventyConfig.addGlobalData("buildSiteUrl", siteUrl);
 

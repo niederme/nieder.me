@@ -5404,6 +5404,11 @@ body.grid-hidden .work-grid-overlay > span {
     --case-study-text-size: clamp(16px, 4.6vw, 18px);
   }
 
+  .blog-post-body > p.lede {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
   .blog-post-top-nav {
     box-sizing: border-box;
     min-height: 55px;
@@ -5546,6 +5551,16 @@ body.grid-hidden .work-grid-overlay > span {
 .blog-post-body > p + h2,
 .blog-post-body h2 + p {
   margin-top: var(--case-study-paragraph-gap);
+}
+
+/* Lede paragraph, authored as `Paragraph text… {.lede}` in Markdown. Matches
+   the case-study lede scale (.case-study-lede). */
+.blog-post-body > p.lede {
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  font-weight: 300;
+  text-wrap: pretty;
 }
 
 .blog-post-body h2 {
