@@ -31,7 +31,7 @@ Execution used to be the curtain that hid all of this, because that effort signa
 
 > **The second: taste.** A friend who couldn't write a line of code took her first freelance gig on the back of AI. The page worked, the client accepted it — but I took one look at her technical setup and it was a mess: it ran, but it was unmaintainable, structureless, just one step ahead of the wall. I didn't write a single line of code for her. I just told the AI two more things: what stack the backend should use, and where to deploy it. Those two sentences redirected the whole project. The AI took it from there and refactored the rest itself. Same functionality. Where's the difference? In those two sentences. Those two sentences are taste.
 
-Note what he fixed: not a color, the stack. Designers file taste under appearance. He means the structure that never shows in the render and shows up six months later, when someone has to change something.
+Here, Airing is defining taste in terms of direction rather than aesthetics, arguing that while AI naturally converges on what’s plausible and average, taste is what nudges it toward something specific.
 
 > **The third: derivation.** AI does addition; the human has to do subtraction. In a second it can give you ten reasons, twenty references, five options. Your work is to find the most solid point inside this lush field of relevance and rebuild the logical chain link by link, by hand: if we go down this road, what happens at step one? Where will the blocker appear? Is that blocker fundamental, or engineering? — build this logical tower in your head, on your own, brick by brick. A plan whose tower you can't build will collapse when you ship it.
 
