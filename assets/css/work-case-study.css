@@ -5464,6 +5464,10 @@ body.grid-hidden .work-grid-overlay > span {
     grid-row: auto;
     width: 100%;
   }
+
+  .blog-post-layout .blog-post-body {
+    margin-top: 12px;
+  }
 }
 
 .blog-post-body > p,
