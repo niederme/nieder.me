@@ -5556,6 +5556,13 @@ body.grid-hidden .work-grid-overlay > span {
   margin: 0;
 }
 
+/* Restore paragraph breaks within quotations: consecutive `>` blocks render as
+   adjacent blockquotes, and a single multi-paragraph quote nests several <p>. */
+.blog-post-body blockquote + blockquote,
+.blog-post-body blockquote p + p {
+  margin-top: var(--case-study-paragraph-gap);
+}
+
 .blog-post-tags {
   margin-top: 32px;
 }
