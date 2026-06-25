@@ -7,7 +7,7 @@ category: Notes
 tags:
   - ai
 draft: false
-socialImage: ''
+socialImage: /assets/images/blog/What's Left for Us to Do.jpg
 socialImageAlt: ''
 ---
 
