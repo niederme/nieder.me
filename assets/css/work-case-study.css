@@ -5357,14 +5357,28 @@ body.grid-hidden .work-grid-overlay > span {
 
 .blog-top-nav a,
 .blog-top-nav a:visited {
-  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  color: inherit;
   text-decoration: none;
-  transition: color 0.18s ease;
 }
 
-.blog-top-nav a:hover,
-.blog-top-nav a:focus-visible {
+/* Whole nav is clickable; only the brand picks up the link underline on hover. */
+.blog-top-nav-brand {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: transparent;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.blog-top-nav a:hover .blog-top-nav-brand,
+.blog-top-nav a:focus-visible .blog-top-nav-brand {
   color: var(--accent-hover);
+  text-decoration-color: var(--text-link-underline);
 }
 
 .blog-post-category {
