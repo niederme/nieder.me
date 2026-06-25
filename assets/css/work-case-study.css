@@ -5446,6 +5446,11 @@ body.grid-hidden .work-grid-overlay > span {
   max-width: none;
 }
 
+/* Match the case-study headline (.work-article h1) wrap behavior. */
+.blog-post-header h1 {
+  text-wrap: balance;
+}
+
 .blog-post-meta-panel .work-article-meta-value {
   color: var(--muted);
 }
@@ -5480,7 +5485,7 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .blog-post-layout .blog-post-body {
-  grid-column: 2 / span 7;
+  grid-column: 2 / span 6;
   grid-row: 1;
   width: auto;
   max-width: none;
