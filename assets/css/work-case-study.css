@@ -5147,10 +5147,6 @@ body.grid-hidden .work-grid-overlay > span {
   color: var(--fg);
 }
 
-.blog-index-title-line {
-  display: block;
-}
-
 .blog-index-title-accent {
   color: var(--accent);
 }
