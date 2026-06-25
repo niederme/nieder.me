@@ -21,7 +21,7 @@ layout: base.njk
       <div class="work-article-meta-card">
         <p class="work-article-meta-label">Published</p>
         <p class="work-article-meta-value">
-          <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
+          <time datetime="{{ date | dateISOFull }}">{{ date | dateTimeDisplay }}</time>
           {%- if updated %}<br />Updated <time datetime="{{ updated | dateISO }}">{{ updated | dateDisplay }}</time>{% endif -%}
         </p>
       </div>

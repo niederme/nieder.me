@@ -111,6 +111,22 @@ module.exports = function (eleventyConfig) {
     const d = value instanceof Date ? value : new Date(value);
     return d.toISOString().slice(0, 10);
   });
+  // Full ISO timestamp for the `datetime` attribute when a time is shown.
+  eleventyConfig.addFilter("dateISOFull", (value) => {
+    const d = value instanceof Date ? value : new Date(value);
+    return d.toISOString();
+  });
+  // New York Times-style date + time in Eastern Time, e.g. "June 24, 2026, 7:48 p.m. ET".
+  eleventyConfig.addFilter("dateTimeDisplay", (value) => {
+    const d = value instanceof Date ? value : new Date(value);
+    const date = d.toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric", timeZone: "America/New_York",
+    });
+    const time = d
+      .toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/New_York" })
+      .replace(/\bAM\b/, "a.m.").replace(/\bPM\b/, "p.m.");
+    return `${date}, ${time} ET`;
+  });
 
   eleventyConfig.addFilter("tagSlug", (tag) =>
     String(tag).toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")

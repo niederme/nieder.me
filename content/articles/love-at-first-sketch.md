@@ -1,6 +1,6 @@
 ---
 title: Love at First Sketch
-date: 2026-06-24
+date: 2026-06-24T17:00:00.000Z
 updated: ''
 description: In Product Design Psychology, Wouter de Bres describes how teams can become attached to the first idea that feels good, and quietly start defending it.
 category: Notes

@@ -1,6 +1,6 @@
 ---
 title: Now That Anyone Can Ship
-date: 2026-06-24
+date: 2026-06-24T23:48:00Z
 updated: ''
 description: 'Buzz Usborne’s distinction between discovery and delivery highlights a shift that AI may accelerate: as the cost of implementation falls, the value of identifying the right problems becomes harder to ignore.'
 category: Notes
@@ -13,7 +13,7 @@ socialImage: /assets/images/blog/Now That Anyone Can Ship.jpg
 socialImageAlt: ''
 ---
 
-Buzz Usborne in [Discovery vs Delivery](https://buzzusborne.com/writing/discovery-delivery/):
+Buzz Usborne in [**Discovery vs Delivery**](https://buzzusborne.com/writing/discovery-delivery/):
 
 > “The best product work rarely comes from executing a brief perfectly. It comes from realizing the brief itself was incomplete, shallow or asking the wrong question entirely.”
 
@@ -33,4 +33,4 @@ The irony is that the people who are best at discovery often have the least to s
 
 Those contributions have always been valuable. They may simply become easier to recognize, now that anyone can ship.
 
-_(Via_ [_Sidebar_](https://sidebar.io)_, which is excellent. You should subscribe!)_
+_(Via_ [**_Sidebar_**](https://sidebar.io)_, which is excellent. You should subscribe!)_
