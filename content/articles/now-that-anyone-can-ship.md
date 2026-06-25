@@ -15,7 +15,7 @@ socialImageAlt: ''
 
 Buzz Usborne in [**Discovery vs Delivery**](https://buzzusborne.com/writing/discovery-delivery/): {.lede}
 
-> “The best product work rarely comes from executing a brief perfectly. It comes from realizing the brief itself was incomplete, shallow or asking the wrong question entirely.”
+> “The best product work rarely comes from executing a brief perfectly. It comes from realizing the brief itself was incomplete, shallow or asking the wrong question entirely.” {.lede}
 
 And:
 
