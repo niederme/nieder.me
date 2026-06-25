@@ -5498,7 +5498,7 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .blog-post-layout .blog-post-body {
-    grid-column: 1 / span 8;
+    grid-column: 1 / span 9;
   }
 }
 
