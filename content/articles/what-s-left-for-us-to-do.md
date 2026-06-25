@@ -21,8 +21,6 @@ Airing’s [**After AI Takes Everything**](https://ursb.me/en/posts/after-ai-tak
 
 “Gatekeeping” is an interesting choice of words, since it usually suggests exclusion or obstruction. Here, though, Airing uses it more literally: if AI can produce nearly everything we ask of it, the human role shifts from making the thing to deciding what should be made, and whether the result is any good. In that world, taste is no longer a luxury layered on top of execution; it’s one of the things that determines what gets through the gate.
 
-![](/assets/images/blog/Whats-Left-for-Us-to-Do.jpg)
-
 He names three things that survive the cut: 
 
 > These three things sit _above_ the tool layer, and I’m fairly confident they are irreplaceable not because the machines are temporarily weak, but because of the technical structure of this generation of AI itself.
