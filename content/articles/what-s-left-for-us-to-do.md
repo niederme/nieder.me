@@ -11,7 +11,7 @@ socialImage: /assets/images/blog/Whats-Left-for-Us-to-Do.jpg
 socialImageAlt: ''
 ---
 
-Airing’s [**After AI Takes Everything**](https://ursb.me/en/posts/after-ai-takes-everything/) explores how AI changes the nature of knowledge work:
+Airing’s [**After AI Takes Everything**](https://ursb.me/en/posts/after-ai-takes-everything/) explores how AI changes the nature of knowledge work: {.lede}
 
 > “Over the past year, every piece of my work that I could hand off, I handed off to AI, piece by piece. The design doc — it wrote. The code — it wrote. The first drafts of documents and review comments — it wrote. What I can now run in parallel in one evening would have taken a full quarter two years ago. By rights I should be idle, but the truth is the opposite — I am busier than I have ever been. The content of “busy” has simply changed: I almost never produce anything with my own hands now. I spend the whole day reviewing what it produces.
 
