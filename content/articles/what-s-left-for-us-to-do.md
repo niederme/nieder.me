@@ -27,7 +27,7 @@ He names three things that survive the cut: 
 
 > **The first: judgment.** There is no shortcut to building judgment, but there is a clumsy method: lay out everything on your plate, prioritize them by hand, and then interrogate yourself about why this order — what makes this one come before that one? What's the business value? What's the cost of not doing it? The answers come from your feel for the business and your awareness of the technology — and both of those, conveniently, can only be obtained personally.
 
-Execution used to be the curtain. You looked busy building the thing, so no one could see whether it was worth building. AI pulled the curtain open.
+Execution used to be the curtain that hid all of this, because that effort signaled value. When the effort drops to nothing, the curtain drops with it.
 
 > **The second: taste.** A friend who couldn't write a line of code took her first freelance gig on the back of AI. The page worked, the client accepted it — but I took one look at her technical setup and it was a mess: it ran, but it was unmaintainable, structureless, just one step ahead of the wall. I didn't write a single line of code for her. I just told the AI two more things: what stack the backend should use, and where to deploy it. Those two sentences redirected the whole project. The AI took it from there and refactored the rest itself. Same functionality. Where's the difference? In those two sentences. Those two sentences are taste.
 
