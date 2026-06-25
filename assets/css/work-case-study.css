@@ -5505,16 +5505,16 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .blog-post-pager-rule {
-  grid-column: 2 / span 6;
+  grid-column: 2 / span 8;
   margin-bottom: 28px;
 }
 
 .blog-post-pager-prev {
-  grid-column: 2 / span 3;
+  grid-column: 2 / span 4;
 }
 
 .blog-post-pager-next {
-  grid-column: 5 / span 3;
+  grid-column: 6 / span 4;
   text-align: right;
 }
 
