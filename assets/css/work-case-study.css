@@ -5439,6 +5439,13 @@ body.grid-hidden .work-grid-overlay > span {
   margin-top: 84px;
 }
 
+/* The post masthead reuses .work-index-header-copy, whose 614px cap is meant for
+   the narrow blog-index intro. Let the post title run the full masthead width so
+   it reads like a case-study headline instead of wrapping early. */
+.blog-post-header .work-index-header-copy {
+  max-width: none;
+}
+
 .blog-post-meta-panel .work-article-meta-value {
   color: var(--muted);
 }
