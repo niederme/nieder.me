@@ -52,3 +52,24 @@ layout: base.njk
     {{ content | safe }}
   </article>
 </section>
+
+{#- posts is date-descending, so the next item is older and the previous item is newer. -#}
+{%- set olderPost = collections.posts | getNextCollectionItem -%}
+{%- set newerPost = collections.posts | getPreviousCollectionItem -%}
+{%- if olderPost or newerPost %}
+<nav class="work-article-grid blog-post-pager" aria-label="More posts">
+  <div class="rule blog-post-pager-rule"></div>
+  {%- if olderPost %}
+  <a class="blog-post-pager-link blog-post-pager-prev" href="{{ olderPost.url | relUrl(page.url) }}">
+    <span class="blog-post-pager-label">← Previous</span>
+    <span class="blog-post-pager-title">{{ olderPost.data.title }}</span>
+  </a>
+  {%- else %}<span class="blog-post-pager-prev" aria-hidden="true"></span>{% endif -%}
+  {%- if newerPost %}
+  <a class="blog-post-pager-link blog-post-pager-next" href="{{ newerPost.url | relUrl(page.url) }}">
+    <span class="blog-post-pager-label">Next →</span>
+    <span class="blog-post-pager-title">{{ newerPost.data.title }}</span>
+  </a>
+  {%- else %}<span class="blog-post-pager-next" aria-hidden="true"></span>{% endif -%}
+</nav>
+{% endif -%}
