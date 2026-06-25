@@ -3421,6 +3421,7 @@ body.grid-hidden .work-grid-overlay > span {
   }
 
   .policy-page .work-index-header-copy,
+  .blog-page .work-index-header-copy,
   .work-index-page .work-index-header-copy,
   .work-index-page .work-index-lede,
   .work-index-page .work-index-download-wrap {
