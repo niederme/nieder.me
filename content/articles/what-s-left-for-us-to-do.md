@@ -14,9 +14,9 @@ socialImageAlt: ''
 Airing’s [**After AI Takes Everything**](https://ursb.me/en/posts/after-ai-takes-everything/) explores how AI changes the nature of knowledge work: {.lede}
 
 > “Over the past year, every piece of my work that I could hand off, I handed off to AI, piece by piece. The design doc — it wrote. The code — it wrote. The first drafts of documents and review comments — it wrote. What I can now run in parallel in one evening would have taken a full quarter two years ago. By rights I should be idle, but the truth is the opposite — I am busier than I have ever been. The content of “busy” has simply changed: I almost never produce anything with my own hands now. I spend the whole day reviewing what it produces.
-
+> 
 > “This is the embryo of the end-state workflow. In it, there are only two things left for humans to do: review the design, and verify the result.
-
+> 
 > “Notice what these two have in common: neither of them is production. They are gatekeeping.”
 
 “Gatekeeping” is an interesting choice of words, since it usually suggests exclusion or obstruction. Here, though, Airing uses it more literally: if AI can produce nearly everything we ask of it, the human role shifts from making the thing to deciding what should be made, and whether the result is any good. In that world, taste is no longer a luxury layered on top of execution; it’s one of the things that determines what gets through the gate.
@@ -24,7 +24,7 @@ Airing’s [**After AI Takes Everything**](https://ursb.me/en/posts/after-ai-tak
 He names three things that survive the cut: 
 
 > These three things sit _above_ the tool layer, and I’m fairly confident they are irreplaceable not because the machines are temporarily weak, but because of the technical structure of this generation of AI itself.
-
+> 
 > **The first: judgment.** There is no shortcut to building judgment, but there is a clumsy method: lay out everything on your plate, prioritize them by hand, and then interrogate yourself about why this order — what makes this one come before that one? What’s the business value? What’s the cost of not doing it? The answers come from your feel for the business and your awareness of the technology — and both of those, conveniently, can only be obtained personally.
 
 Execution used to be the curtain that hid all of this, because that effort signaled value. When the effort drops to nothing, the curtain drops with it.
