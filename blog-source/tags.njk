@@ -10,18 +10,28 @@
   </div>
 </section>
 
-<section class="work-article-grid" aria-labelledby="tag-title">
-  <article class="work-article-body">
+<section class="blog-index-shell" aria-labelledby="tag-title">
+  <article class="blog-index-body">
     <ul class="blog-index-list">
       {%- for post in collections.posts %}
       {%- if tag in post.data.tags %}
       <li class="blog-index-item">
-        <a class="blog-index-link" href="{{ post.url | relUrl(page.url) }}">
-          <p class="blog-post-meta">
-            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
-          </p>
-          <h3 class="blog-index-item-title">{{ post.data.title }}</h3>
-          <p class="blog-index-item-desc">{{ post.data.description }}</p>
+        <a class="blog-index-card" href="{{ post.url | relUrl(page.url) }}">
+          <span class="blog-index-card-copy">
+            <span class="blog-index-card-kicker">
+              <span>{{ post.data.category if post.data.category else "Notes" }}</span>
+              <span aria-hidden="true">|</span>
+              <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
+            </span>
+            <strong>{{ post.data.title }}</strong>
+            <em>{{ post.data.description }}</em>
+            <b>Read post →</b>
+          </span>
+          {% if post.data.socialImage %}
+          <span class="blog-index-card-media" aria-hidden="true">
+            <img src="{{ post.data.socialImage | relUrl(page.url) }}" alt="" loading="lazy" />
+          </span>
+          {% endif %}
         </a>
       </li>
       {%- endif %}
@@ -29,7 +39,7 @@
     </ul>
     <p class="about-recirc-wrap">
       <a class="work-index-card-cta" href="{{ page.url | relRoot }}blog/">
-        Notes
+        All notes
         <img src="{{ page.url | relRoot }}assets/icons/arrow-case-study-red.svg" alt="" aria-hidden="true" />
       </a>
     </p>
