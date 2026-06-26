@@ -109,7 +109,7 @@ make build      # one-off build into blog/, feed.xml, admin/
 make dev        # static preview of the whole site (run make build first)
 ```
 
-`blog/`, `admin/`, `feed.xml`, and `sitemap.xml` are generated build output and are gitignored — never hand-edit them. CI runs `npm ci && npm run build` (with the environment-appropriate `SITE_URL`) before checks, minification, and deploy.
+`npm run dev` serves from `.eleventy-dev/` so it can keep running while one-off builds use `_site/`. `blog/`, `admin/`, `feed.xml`, and `sitemap.xml` are generated build output and are gitignored — never hand-edit them. CI runs `npm ci && npm run build` (with the environment-appropriate `SITE_URL`) before checks, minification, and deploy.
 
 ### Content manager (`/admin/`)
 
