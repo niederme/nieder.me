@@ -1,7 +1,7 @@
 ---
 title: What’s Left for Us to Do
 date: 2026-06-25T13:33:00Z
-updated: ''
+updated: 2026-06-26
 description: 'Airing’s “After AI Takes Everything” on the question underneath the AI anxiety: once execution is fully handed off, what’s left for us to do?'
 category: Notes
 tags:
