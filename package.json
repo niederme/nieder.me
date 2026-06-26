@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "clean:blog": "node scripts/clean-blog-output.mjs",
+    "clean:blog-dev": "node scripts/clean-blog-dev-output.mjs",
     "build": "npm run clean:blog && eleventy --config=.eleventy.cjs && node scripts/place-blog-output.mjs",
-    "dev": "npm run clean:blog && ELEVENTY_INCLUDE_DRAFTS=1 eleventy --config=.eleventy.cjs --serve --watch"
+    "dev": "npm run clean:blog-dev && ELEVENTY_INCLUDE_DRAFTS=1 eleventy --config=.eleventy.cjs --output=.eleventy-dev --serve --watch"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

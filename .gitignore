@@ -14,6 +14,7 @@ node_modules/
 
 # Generated blog build artifacts (rebuilt locally and in CI; never hand-edited)
 /_site/
+/.eleventy-dev/
 /blog/
 /admin/
 /feed.xml

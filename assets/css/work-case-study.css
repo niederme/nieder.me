@@ -5540,6 +5540,13 @@ body.grid-hidden .work-grid-overlay > span {
   transition: color 0.18s ease;
 }
 
+.blog-post-pager-date {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: var(--footer-meta);
+}
+
 a.blog-post-pager-link:hover .blog-post-pager-title,
 a.blog-post-pager-link:focus-visible .blog-post-pager-title {
   color: var(--accent);
