@@ -5522,6 +5522,10 @@ body.grid-hidden .work-grid-overlay > span {
   align-items: flex-end;
 }
 
+.blog-post-pager-next .blog-post-pager-kicker {
+  justify-content: flex-end;
+}
+
 .blog-post-pager-link {
   display: flex;
   flex-direction: column;
