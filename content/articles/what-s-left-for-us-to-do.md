@@ -35,4 +35,4 @@ Here, Airing is defining taste in terms of direction rather than aesthetics. AI 
 
 > **The third: derivation.** AI does addition; the human has to do subtraction. In a second it can give you ten reasons, twenty references, five options. Your work is to find the most solid point inside this lush field of relevance and rebuild the logical chain link by link, by hand: if we go down this road, what happens at step one? Where will the blocker appear? Is that blocker fundamental, or engineering? — build this logical tower in your head, on your own, brick by brick. A plan whose tower you can’t build will collapse when you ship it.
 
-An answer you were handed solves the problem in front of you. An answer you derived solves the next one, because what you built was the reasoning, and the reasoning travels.
+An answer you were handed gets you through the problem in front of you and nothing past it. Derive the same answer yourself and you can use it again next time, because what you actually kept was the reasoning.
