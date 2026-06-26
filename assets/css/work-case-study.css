@@ -5518,6 +5518,10 @@ body.grid-hidden .work-grid-overlay > span {
   text-align: right;
 }
 
+.blog-post-pager-next .blog-post-pager-link {
+  align-items: flex-end;
+}
+
 .blog-post-pager-link {
   display: flex;
   flex-direction: column;
@@ -5525,7 +5529,17 @@ body.grid-hidden .work-grid-overlay > span {
 }
 
 .blog-post-pager-label {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.blog-post-pager-kicker {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
   font-size: 16px;
+  line-height: 1.35;
   font-weight: 700;
   color: var(--accent);
 }
@@ -5538,13 +5552,6 @@ body.grid-hidden .work-grid-overlay > span {
   color: var(--fg);
   text-wrap: pretty;
   transition: color 0.18s ease;
-}
-
-.blog-post-pager-date {
-  font-size: 16px;
-  line-height: 1.35;
-  font-weight: 400;
-  color: var(--footer-meta);
 }
 
 a.blog-post-pager-link:hover .blog-post-pager-title,

@@ -62,15 +62,23 @@ layout: base.njk
   {%- if olderPost %}
   <a class="blog-post-pager-link blog-post-pager-prev" href="{{ olderPost.url | relUrl(page.url) }}">
     <span class="blog-post-pager-label">← Previous</span>
+    <span class="blog-post-pager-kicker">
+      <span>{{ olderPost.data.category if olderPost.data.category else "Notes" }}</span>
+      <span aria-hidden="true">|</span>
+      <time datetime="{{ olderPost.data.date | dateISO }}">{{ olderPost.data.date | dateDisplay }}</time>
+    </span>
     <span class="blog-post-pager-title">{{ olderPost.data.title }}</span>
-    <time class="blog-post-pager-date" datetime="{{ olderPost.data.date | dateISO }}">{{ olderPost.data.date | dateDisplay }}</time>
   </a>
   {%- else %}<span class="blog-post-pager-prev" aria-hidden="true"></span>{% endif -%}
   {%- if newerPost %}
   <a class="blog-post-pager-link blog-post-pager-next" href="{{ newerPost.url | relUrl(page.url) }}">
     <span class="blog-post-pager-label">Next →</span>
+    <span class="blog-post-pager-kicker">
+      <span>{{ newerPost.data.category if newerPost.data.category else "Notes" }}</span>
+      <span aria-hidden="true">|</span>
+      <time datetime="{{ newerPost.data.date | dateISO }}">{{ newerPost.data.date | dateDisplay }}</time>
+    </span>
     <span class="blog-post-pager-title">{{ newerPost.data.title }}</span>
-    <time class="blog-post-pager-date" datetime="{{ newerPost.data.date | dateISO }}">{{ newerPost.data.date | dateDisplay }}</time>
   </a>
   {%- else %}<span class="blog-post-pager-next" aria-hidden="true"></span>{% endif -%}
 </nav>
