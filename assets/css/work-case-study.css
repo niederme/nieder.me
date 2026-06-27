@@ -677,7 +677,8 @@ a:focus-visible {
 .resume-bullets a,
 .work-index-sidebar-section a,
 .work-article-meta-value a,
-.work-article-body a {
+.work-article-body a,
+.about-body a {
   color: var(--accent);
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
@@ -693,7 +694,8 @@ a:focus-visible {
 .resume-bullets a:visited,
 .work-index-sidebar-section a:visited,
 .work-article-meta-value a:visited,
-.work-article-body a:visited {
+.work-article-body a:visited,
+.about-body a:visited {
   color: var(--accent);
 }
 
@@ -703,7 +705,8 @@ a:focus-visible {
 .resume-bullets a:focus-visible,
 .work-index-sidebar-section a:focus-visible,
 .work-article-meta-value a:focus-visible,
-.work-article-body a:focus-visible {
+.work-article-body a:focus-visible,
+.about-body a:focus-visible {
   color: var(--accent);
   text-decoration-color: var(--text-link-underline);
 }
@@ -966,35 +969,68 @@ body.grid-hidden .work-grid-overlay > span {
 
 .policy-page .work-article-meta {
   grid-column: 2 / span 2;
-  width: var(--case-study-sidecar-width);
+  width: 100%;
   max-width: 100%;
 }
 
 .case-study-page .work-article-meta {
   grid-column: 2 / span 2;
-  width: var(--case-study-sidecar-width);
+  width: 100%;
   max-width: 100%;
 }
 
-/* About page */
-/* Opening paragraph: lede-scale type at normal body width (no width change). */
-.work-article-section p.about-lede {
+/* ===== About page ===== */
+
+/* Lede: oversized intro type. Lives in .about-intro (its own grid child). */
+.about-lede {
+  margin: 0;
   font-size: var(--case-study-lede-size);
   line-height: var(--case-study-lede-line-height);
   letter-spacing: var(--case-study-lede-tracking);
   font-weight: var(--case-study-lede-weight);
+  color: var(--fg);
 }
 
-.about-portrait {
-  grid-column: 10 / span 3;
+.about-intro .about-lede + .about-lede {
+  margin-top: var(--case-study-paragraph-gap);
+}
+
+/* Wide-desktop layout: meta (3) · intro (7) · portrait sidecar (2); body below the intro. */
+.about-page .work-article-grid {
+  row-gap: var(--case-study-section-gap);
+}
+
+body.about-page .work-article-meta {
+  grid-column: 1 / span 3;
   grid-row: 1;
-  align-self: stretch;
+  width: 100%;
+}
+
+.about-page .about-intro {
+  grid-column: 4 / span 9;
+  grid-row: 1;
+}
+
+.about-page .about-portrait {
+  grid-column: 10 / span 3;
+  grid-row: 2;
+  align-self: start;
+}
+
+.about-page .about-body {
+  grid-column: 4 / span 6;
+  grid-row: 2;
+}
+
+/* Portrait figure visuals */
+.about-portrait {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 18px;
   margin: 0;
   padding-left: 20px;
+  align-self: start;
 }
 
 .about-portrait::before {
@@ -1667,7 +1703,8 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-block-full-media .case-study-caption {
   position: relative;
-  width: var(--case-study-sidecar-width);
+  /* 3-col left caption (aligns with the meta column; no empty column before the body). */
+  width: calc((3 * var(--case-study-column-width)) + (2 * var(--grid-gutter)));
   padding: 26px 17px 15px 0;
 }
 
@@ -2307,8 +2344,9 @@ body.grid-hidden .work-grid-overlay > span {
 .case-study-block-aside-media.case-study-block-aside-right .case-study-media-wrap {
   position: absolute;
   top: 0;
+  /* Standard 2-col sidecar just right of the body. (md pushes it into the well via its own override.) */
   left: calc(var(--case-study-body-width) + var(--grid-gutter));
-  width: var(--case-study-support-width);
+  width: var(--case-study-sidecar-width);
 }
 
 .case-study-block-aside-media.case-study-block-aside-right .case-study-copy {
@@ -2351,8 +2389,9 @@ body.grid-hidden .work-grid-overlay > span {
 .case-study-block-aside-media.case-study-block-aside-right.case-study-block-aside-float .case-study-media-wrap {
   position: absolute;
   top: 0;
+  /* Standard 2-col sidecar just right of the body. (md pushes it into the well via its own override.) */
   left: calc(var(--case-study-body-width) + var(--grid-gutter));
-  width: var(--case-study-support-width);
+  width: var(--case-study-sidecar-width);
   overflow: visible;
 }
 
@@ -2405,20 +2444,26 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-block-image-medium .case-study-figure {
   margin: 0;
-  position: relative;
+  /* Break out to body + sidecar as a 2-track grid: image | caption.
+     The caption is a real column (not an absolute escapee), so image-span +
+     caption-span = the figure's span and it can never leave the 12-col grid. */
+  display: grid;
+  grid-template-columns: var(--case-study-body-width) var(--case-study-sidecar-width);
+  column-gap: var(--grid-gutter);
+  align-items: end;
 }
 
 .case-study-block-image-medium .case-study-figure img {
   display: block;
   width: 100%;
   height: auto;
+  grid-column: 1;
 }
 
 .case-study-block-image-medium .case-study-caption {
-  position: absolute;
-  bottom: 0;
-  left: calc(var(--case-study-body-width) + var(--grid-gutter));
-  width: var(--case-study-sidecar-width);
+  position: relative;
+  grid-column: 2;
+  align-self: end;
   color: var(--figure-caption);
   font-size: 14px;
   line-height: 1.4;
@@ -2436,7 +2481,6 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-block-image-medium .case-study-caption strong {
   color: var(--fg);
-  white-space: nowrap;
 }
 
 .case-study-block-resy-editorial-rail .case-study-media {
@@ -3440,7 +3484,9 @@ body.grid-hidden .work-grid-overlay > span {
   }
   .work-article {
     --case-study-support-width: calc((4 * var(--case-study-column-width)) + (3 * var(--grid-gutter)));
-    --case-study-sidecar-width: var(--case-study-support-width);
+    /* sidecar (caption column) stays a true 2-col width from the base definition;
+       do NOT couple it to the 4-col support track, or absolutely-positioned sidecar
+       captions on content-width image blocks overflow the grid and force a side-scroll. */
     --case-study-body-offset: calc((4 * var(--case-study-column-width)) + (4 * var(--grid-gutter)));
     --case-study-shell-width: calc(100vw - 200px);
     width: calc(100vw - 200px);
@@ -3552,13 +3598,6 @@ body.grid-hidden .work-grid-overlay > span {
     width: auto;
   }
 
-  /* About page: the portrait sits in cols 11–12 this band, but --case-study-body-width
-     is 7 cols while the body track is only 6 — the fixed-width body overflows into the
-     portrait. Let it fill its track instead (same approach as .case-study-page above). */
-  .work-article-grid:has(.about-portrait) .work-article-body {
-    width: auto;
-  }
-
   .case-study-block-meta {
     padding-right: 0;
   }
@@ -3630,6 +3669,18 @@ body.grid-hidden .work-grid-overlay > span {
     margin-right: auto;
   }
 
+  /* Aside float/inline: pin the media sidecar to the block's right edge (= grid edge),
+     one column into the well; right:0 contains it, margin:0 stops the static rule's leak. */
+  .case-study-block-aside-media.case-study-block-aside-right.case-study-block-aside-float .case-study-media-wrap,
+  .case-study-block-aside-media.case-study-block-aside-right.case-study-block-aside-inline .case-study-media-wrap {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    margin: 0;
+    width: calc(var(--case-study-sidecar-width) + var(--case-study-column-width) + var(--grid-gutter));
+  }
+
   .work-theme-sendmoi .case-study-block-sendmoi-autosend .case-study-media-wrap {
     top: auto;
   }
@@ -3638,8 +3689,27 @@ body.grid-hidden .work-grid-overlay > span {
     display: none;
   }
 
+  /* Keep the vertical rule for the float/inline phone sidecar (it sits in the gutter). */
+  .case-study-block-aside-media.case-study-block-aside-right.case-study-block-aside-float .case-study-media-wrap::before,
+  .case-study-block-aside-media.case-study-block-aside-right.case-study-block-aside-inline .case-study-media-wrap::before {
+    display: block;
+  }
+
   .case-study-block-aside-media.case-study-block-aside-right .case-study-copy {
     width: var(--case-study-body-width);
+  }
+
+  /* Float/inline aside: copy yields one column so the right figure clears the text. */
+  .case-study-block-aside-media.case-study-block-aside-right.case-study-block-aside-float .case-study-copy,
+  .case-study-block-aside-media.case-study-block-aside-right.case-study-block-aside-inline .case-study-copy {
+    width: calc(var(--case-study-body-width) - var(--case-study-column-width) - var(--grid-gutter));
+  }
+
+  /* Content-width image module: break out to 10 cols (cols 3–12, flush right); image | 3-col caption that wraps. */
+  .case-study-block-image-medium .case-study-figure {
+    width: calc((10 * var(--case-study-column-width)) + (9 * var(--grid-gutter)));
+    margin-left: calc(-1 * (var(--case-study-column-width) + var(--grid-gutter)));
+    grid-template-columns: minmax(0, 1fr) calc((3 * var(--case-study-column-width)) + (2 * var(--grid-gutter)));
   }
 
   .case-study-block-aside-media .case-study-caption {
@@ -3651,7 +3721,7 @@ body.grid-hidden .work-grid-overlay > span {
 
   .work-article-body > .case-study-block-aside-media + .case-study-block-text,
   .work-article-body > .case-study-block-aside-media + .case-study-block-results {
-    margin-top: clamp(88px, 9vw, 120px);
+    margin-top: var(--case-study-section-gap);
   }
 
   .work-theme-sendmoi .case-study-block-sendmoi-setup .case-study-media img,
@@ -3739,6 +3809,15 @@ body.grid-hidden .work-grid-overlay > span {
 
   .work-article-body {
     width: 100%;
+  }
+
+  /* About: stack meta → intro → portrait → body in one column (reset the wide-layout rows). */
+  body.about-page .work-article-meta,
+  body.about-page .about-intro,
+  body.about-page .about-portrait,
+  body.about-page .about-body {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .about-portrait {
@@ -3869,8 +3948,13 @@ body.grid-hidden .work-grid-overlay > span {
     max-height: min(720px, 180vw);
   }
 
+  .case-study-block-image-medium .case-study-figure {
+    display: block;
+  }
+
   .case-study-block-image-medium .case-study-caption {
     position: static;
+    grid-column: auto;
     top: auto;
     left: auto;
     width: 100%;
