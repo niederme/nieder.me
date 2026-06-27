@@ -832,6 +832,10 @@ a:focus-visible {
   --case-study-heading-line-height: 1.25;
   --case-study-heading-weight: 700;
   --case-study-heading-measure: 35ch;
+  --case-study-lede-size: 24px;
+  --case-study-lede-line-height: 1.35;
+  --case-study-lede-weight: 300;
+  --case-study-lede-tracking: -0.01em;
   --case-study-paragraph-gap: 12px;
   --case-study-heading-gap: 12px;
   --case-study-section-gap: 50px;
@@ -975,10 +979,10 @@ body.grid-hidden .work-grid-overlay > span {
 /* About page */
 /* Opening paragraph: lede-scale type at normal body width (no width change). */
 .work-article-section p.about-lede {
-  font-size: 24px;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  font-weight: 300;
+  font-size: var(--case-study-lede-size);
+  line-height: var(--case-study-lede-line-height);
+  letter-spacing: var(--case-study-lede-tracking);
+  font-weight: var(--case-study-lede-weight);
 }
 
 .about-portrait {
@@ -1190,10 +1194,10 @@ body.grid-hidden .work-grid-overlay > span {
 
 .case-study-block-lede .case-study-lede,
 .work-article-section.case-study-block-intro-lede .case-study-lede {
-  font-size: 24px;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  font-weight: 300;
+  font-size: var(--case-study-lede-size);
+  line-height: var(--case-study-lede-line-height);
+  letter-spacing: var(--case-study-lede-tracking);
+  font-weight: var(--case-study-lede-weight);
 }
 
 .case-study-block-text .case-study-block-inner,
@@ -3548,6 +3552,13 @@ body.grid-hidden .work-grid-overlay > span {
     width: auto;
   }
 
+  /* About page: the portrait sits in cols 11–12 this band, but --case-study-body-width
+     is 7 cols while the body track is only 6 — the fixed-width body overflows into the
+     portrait. Let it fill its track instead (same approach as .case-study-page above). */
+  .work-article-grid:has(.about-portrait) .work-article-body {
+    width: auto;
+  }
+
   .case-study-block-meta {
     padding-right: 0;
   }
@@ -5627,10 +5638,10 @@ a.blog-post-pager-link:focus-visible .blog-post-pager-title {
 /* Lede paragraph, authored as `Paragraph text… {.lede}` in Markdown. Matches
    the case-study lede scale (.case-study-lede). */
 .blog-post-body > p.lede {
-  font-size: 24px;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  font-weight: 300;
+  font-size: var(--case-study-lede-size);
+  line-height: var(--case-study-lede-line-height);
+  letter-spacing: var(--case-study-lede-tracking);
+  font-weight: var(--case-study-lede-weight);
   text-wrap: pretty;
 }
 
