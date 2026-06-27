@@ -3551,6 +3551,15 @@ body.about-page .work-article-meta {
     grid-column: 5 / span 6;
   }
 
+  .design-system-page .work-article-meta {
+    grid-column: 1 / span 3;
+  }
+
+  .design-system-page .work-article-body {
+    grid-column: 4 / span 7;
+    width: auto;
+  }
+
   .about-portrait {
     grid-column: 11 / span 2;
   }
