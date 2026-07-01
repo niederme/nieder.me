@@ -30,6 +30,9 @@ gets out of the way.
   `blog-source/_includes/post.njk` (rule + two-column Previous/Next with a
   "category | date" kicker and a title). Labeled "Older posts" / "Newer
   posts"; no numbered page list.
+- **Tag pages:** Left as-is — compact archive cards. The `/blog/` river is a
+  reading surface; tag pages (`blog-source/tags.njk`) are filter/archive views
+  where scannable cards beat full text. They keep using `.blog-index-card*`.
 
 ## Design
 
@@ -43,12 +46,13 @@ pagination:
   data: collections.posts
   size: 10
   alias: streamPosts
-  reverse: true        # newest first
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ```
 
-- `reverse: true` yields newest-first, matching the existing date-descending
-  `collections.posts` ordering used elsewhere.
+- **No `reverse: true`.** The `posts` collection is already sorted
+  date-descending (newest-first) in `.eleventy.cjs` (`addCollection("posts")`,
+  ~line 158). 11ty's `reverse` reverses the source array, so setting it would
+  flip page 1 to oldest-first. Paginating the collection as-is is correct.
 - Page 1 keeps the canonical `/blog/` URL; subsequent pages get
   `/blog/page/N/`.
 - The page header section and the Topics aside (`collections.tagList`) stay as
@@ -93,15 +97,20 @@ when that page exists. No numbered list.
 
 Add a small block of `.blog-stream-*` rules near the existing blog section
 (rules start ~line 5282). Reuse `.blog-post-body` typography for the rendered
-content so streamed essays look identical to their standalone pages. Remove
-`.blog-index-card*` rules that become unused so the file does not accrete dead
-CSS; keep any shared kicker styling that the stream still references.
+content so streamed essays look identical to their standalone pages.
+
+**Delete nothing.** The `.blog-index-card*` rules are still used by the tag
+archive pages (`blog-source/tags.njk`), which we are intentionally leaving as
+compact cards. Add the new stream styles alongside the existing card styles.
 
 ## Verification
 
 - `make dev-blog` (11ty `--serve --watch`, port 8080) live-reloads while
   editing templates/posts.
-- Page 1 renders all current posts in full, newest first, at `/blog/`.
+- Page 1 renders all current posts in full, **newest first** (confirm the
+  drop of `reverse: true` did not invert the order), at `/blog/`.
+- Tag archive pages (`/blog/tags/<tag>/`) still render compact cards and are
+  visually unchanged.
 - Each item's title links to its working standalone post page.
 - With only 3 posts, the bottom pager does not render (single page); confirm it
   appears and links correctly once post count exceeds 10 (temporarily lower
@@ -115,4 +124,5 @@ CSS; keep any shared kicker styling that the stream still references.
 - Link-blog / "linked list" post type.
 - Manual "more"/fold excerpt marker.
 - Numbered pagination controls.
+- Converting tag archive pages to full-text (they stay as compact cards).
 - RSS/feed changes — the feed already carries full post content independently.
