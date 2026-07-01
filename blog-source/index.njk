@@ -3,9 +3,17 @@ layout: base.njk
 pageType: index
 title: "NiederBlog"
 description: "Notes and essays on design by John Niedermeyer."
-permalink: /blog/index.html
 eleventyExcludeFromCollections: true
+pagination:
+  data: collections.posts
+  size: 10
+  alias: streamPosts
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
+{%- set olderHref = pagination.href.next -%}
+{%- set newerHref = pagination.href.previous -%}
+{%- set olderLead = pagination.pages[pagination.pageNumber + 1][0] if olderHref else null -%}
+{%- set newerLead = pagination.pages[pagination.pageNumber - 1][0] if newerHref else null -%}
 <section class="work-index-header blog-index-header" aria-labelledby="blog-title">
   <div class="work-index-header-copy blog-index-header-copy">
     <h1 id="blog-title" class="blog-index-title">
@@ -16,37 +24,34 @@ eleventyExcludeFromCollections: true
 </section>
 
 <section class="blog-index-shell" aria-labelledby="blog-title">
-  <article class="blog-index-body">
-    {% if collections.posts.length %}
-    <ul class="blog-index-list">
-      {%- for post in collections.posts %}
-      <li class="blog-index-item">
-        <a class="blog-index-card" href="{{ post.url | relUrl(page.url) }}">
-          <span class="blog-index-card-copy">
-            <span class="blog-index-card-kicker">
-              <span>{{ post.data.category if post.data.category else "Notes" }}</span>
-              <span aria-hidden="true">|</span>
-              <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
-            </span>
-            <strong>{{ post.data.title }}</strong>
-            <em>{{ post.data.description }}</em>
-            <b>Read post →</b>
-          </span>
-          {% if post.data.socialImage %}
-          <span class="blog-index-card-media" aria-hidden="true">
-            <img src="{{ post.data.socialImage | relUrl(page.url) }}" alt="" loading="lazy" />
-          </span>
-          {% endif %}
-        </a>
-      </li>
+  <div class="blog-index-body">
+    {% if streamPosts.length %}
+    <div class="blog-stream">
+      {%- for post in streamPosts %}
+      <article class="blog-stream-item">
+        <header class="blog-stream-head">
+          <p class="blog-stream-kicker">
+            <span>{{ post.data.category if post.data.category else "Notes" }}</span>
+            <span aria-hidden="true">|</span>
+            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
+          </p>
+          <h2 class="blog-stream-title">
+            <a href="{{ post.url | relUrl(page.url) }}">{{ post.data.title }}</a>
+          </h2>
+        </header>
+        <div class="blog-post-body blog-stream-body">
+          {{ post.templateContent | safe }}
+        </div>
+        {%- if not loop.last %}<div class="rule blog-stream-rule"></div>{% endif -%}
+      </article>
       {%- endfor %}
-    </ul>
+    </div>
     {% else %}
     <section class="work-article-section">
       <p>No posts yet. Check back soon.</p>
     </section>
     {% endif %}
-  </article>
+  </div>
 
   {% if collections.tagList.length %}
   <aside class="blog-index-topics" aria-label="Browse by topic">
@@ -59,3 +64,35 @@ eleventyExcludeFromCollections: true
   </aside>
   {% endif %}
 </section>
+
+{%- if olderHref or newerHref %}
+<nav class="work-article-grid blog-post-pager blog-stream-pager" aria-label="More posts">
+  <div class="rule blog-post-pager-rule"></div>
+  {%- if olderHref %}
+  <a class="blog-post-pager-link blog-post-pager-prev" href="{{ olderHref | relUrl(page.url) }}">
+    <span class="blog-post-pager-label">← Older posts</span>
+    {%- if olderLead %}
+    <span class="blog-post-pager-kicker">
+      <span>{{ olderLead.data.category if olderLead.data.category else "Notes" }}</span>
+      <span aria-hidden="true">|</span>
+      <time datetime="{{ olderLead.data.date | dateISO }}">{{ olderLead.data.date | dateDisplay }}</time>
+    </span>
+    <span class="blog-post-pager-title">{{ olderLead.data.title }}</span>
+    {%- endif %}
+  </a>
+  {%- else %}<span class="blog-post-pager-prev" aria-hidden="true"></span>{% endif -%}
+  {%- if newerHref %}
+  <a class="blog-post-pager-link blog-post-pager-next" href="{{ newerHref | relUrl(page.url) }}">
+    <span class="blog-post-pager-label">Newer posts →</span>
+    {%- if newerLead %}
+    <span class="blog-post-pager-kicker">
+      <span>{{ newerLead.data.category if newerLead.data.category else "Notes" }}</span>
+      <span aria-hidden="true">|</span>
+      <time datetime="{{ newerLead.data.date | dateISO }}">{{ newerLead.data.date | dateDisplay }}</time>
+    </span>
+    <span class="blog-post-pager-title">{{ newerLead.data.title }}</span>
+    {%- endif %}
+  </a>
+  {%- else %}<span class="blog-post-pager-next" aria-hidden="true"></span>{% endif -%}
+</nav>
+{% endif -%}

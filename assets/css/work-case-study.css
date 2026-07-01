@@ -5385,6 +5385,58 @@ body.about-page .work-article-meta {
   color: var(--accent);
 }
 
+/* Full-text stream (blog index river). Post bodies reuse .blog-post-body. */
+.blog-stream {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-stream-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-stream-head {
+  margin: 0 0 22px;
+}
+
+.blog-stream-kicker {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.blog-stream-title {
+  margin: 0;
+  font-size: var(--case-study-heading-size);
+  line-height: var(--case-study-heading-line-height);
+  font-weight: var(--case-study-heading-weight);
+  letter-spacing: 0;
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.blog-stream-title a,
+.blog-stream-title a:visited {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.blog-stream-title a:hover,
+.blog-stream-title a:focus-visible {
+  color: var(--accent);
+}
+
+.blog-stream-rule {
+  margin: 56px 0;
+}
+
 @media (min-width: 960px) and (max-width: 1320px) {
   .blog-index-body {
     grid-column: 1 / span 8;
