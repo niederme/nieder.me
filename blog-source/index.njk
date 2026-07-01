@@ -30,11 +30,7 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
       {%- for post in streamPosts %}
       <article class="blog-stream-item">
         <header class="blog-stream-head">
-          <p class="blog-stream-kicker">
-            <span>{{ post.data.category if post.data.category else "Notes" }}</span>
-            <span aria-hidden="true">|</span>
-            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
-          </p>
+          <p class="blog-stream-kicker">{{ post.data.category if post.data.category else "Notes" }}</p>
           <h2 class="blog-stream-title">
             <a href="{{ post.url | relUrl(page.url) }}">{{ post.data.title }}</a>
           </h2>
@@ -42,6 +38,12 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
         <div class="blog-post-body blog-stream-body">
           {{ post.templateContent | safe }}
         </div>
+        <p class="blog-stream-permalink">
+          <a href="{{ post.url | relUrl(page.url) }}">
+            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
+            <span aria-hidden="true"> →</span>
+          </a>
+        </p>
         {%- if not loop.last %}<div class="rule blog-stream-rule"></div>{% endif -%}
       </article>
       {%- endfor %}

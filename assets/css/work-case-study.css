@@ -5401,24 +5401,23 @@ body.about-page .work-article-meta {
 }
 
 .blog-stream-kicker {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   font-size: 16px;
   line-height: 1.35;
   font-weight: 700;
   color: var(--accent);
 }
 
+/* Enlarged, headline-scale title. White like the article masthead, accent on
+   hover; the size + hover pointer carry the clickable cue. */
 .blog-stream-title {
   margin: 0;
-  font-size: var(--case-study-heading-size);
-  line-height: var(--case-study-heading-line-height);
-  font-weight: var(--case-study-heading-weight);
-  letter-spacing: 0;
+  font-size: clamp(26px, 2.8vw, 36px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--fg);
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .blog-stream-title a,
@@ -5431,6 +5430,36 @@ body.about-page .work-article-meta {
 .blog-stream-title a:hover,
 .blog-stream-title a:focus-visible {
   color: var(--accent);
+}
+
+/* Foot permalink: muted date linking to the standalone post (DF-style). */
+.blog-stream-permalink {
+  margin: 24px 0 0;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.blog-stream-permalink a,
+.blog-stream-permalink a:visited {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.blog-stream-permalink a:hover,
+.blog-stream-permalink a:focus-visible {
+  color: var(--accent);
+}
+
+/* The lede scale belongs to the standalone article page only. In the stream,
+   render the lead paragraph at normal body size. Scoped tighter than
+   `.blog-post-body > p.lede` so it wins regardless of source order. */
+.blog-stream-item .blog-stream-body > p.lede {
+  font-size: var(--case-study-text-size);
+  line-height: var(--case-study-text-line-height);
+  font-weight: var(--case-study-text-weight);
+  letter-spacing: 0;
 }
 
 .blog-stream-rule {
