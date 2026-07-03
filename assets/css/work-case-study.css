@@ -1076,6 +1076,10 @@ body.about-page .work-article-meta {
   color: var(--fg);
 }
 
+.work-article-meta-label-note {
+  font-weight: 400;
+}
+
 .work-article-meta-value {
   margin: 0;
   font-size: 14px;
