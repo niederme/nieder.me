@@ -53,7 +53,7 @@
             "description": "Standalone long-form case study on evolving in-app restaurant discovery for the Resy consumer app.",
             "image": "https://nieder.me/assets/images/og/og-resy-discovery-1200x630.png",
             "datePublished": "2026-03-10",
-            "dateModified": "2026-07-03",
+            "dateModified": "2026-06-14",
             "author": {
               "@id": "https://nieder.me/#person"
             },
@@ -149,7 +149,7 @@
         window.gtag("config", "G-DEFM9FZ25D");
       })();
     </script>
-    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260703-meta-note" />
+    <link rel="stylesheet" href="../../assets/css/work-case-study.css?v=20260509-footer-links" />
   </head>
   <body id="top" class="case-study-page is-subpage">
     <div class="work-page">
@@ -269,8 +269,8 @@
           <section class="case-study-block case-study-block-lede">
             <div class="case-study-block-inner">
               <p class="case-study-lede">
-                Resy invested heavily in editorial, photography, and a distinctive brand voice, but diners still found
-                inspiration in other apps, before coming to book.
+                Resy had strong editorial content and an expanding booking toolkit, but the path from inspiration to
+                reservation still carried too much friction.
               </p>
             </div>
           </section>
@@ -287,7 +287,7 @@
                   <p class="work-article-meta-value">Resy (American Express Global Dining Network)</p>
                 </div>
                 <div class="work-article-meta-card">
-                  <p class="work-article-meta-label">Timeframe <span class="work-article-meta-label-note">(part-time)</span></p>
+                  <p class="work-article-meta-label">Timeframe</p>
                   <p class="work-article-meta-value">July 2024 – Nov. 2024<br />June 2025 – Aug. 2025</p>
                 </div>
                 <div class="work-article-meta-card">
@@ -314,18 +314,17 @@
 
               <section class="work-article-section case-study-block case-study-block-text">
                 <div class="case-study-block-inner">
-                  <h2>The Opportunity</h2>
+                  <h2>Defining the Opportunity</h2>
                   <p>
-                    Our research kept telling us that most diners arrived with a restaurant already in mind. They searched
-                    by name, went straight to the venue page, and booked. Restaurant discovery and validation were
-                    happening elsewhere, on Google Maps, Instagram, TikTok, and many other places. We had already spent a
-                    great deal of effort optimizing the booking flow, but it was increasingly important to step back up the
-                    funnel and focus on earlier parts of the journey.
+                    Our research showed that most users arrived on Resy ready to book. Discovery and validation were
+                    happening elsewhere: Google Maps, Instagram, TikTok, and a hundred other places. We had already spent a
+                    great deal of effort streamlining the booking flow, but it was becoming just as important to step back
+                    up the funnel and focus on earlier parts of the journey.
                   </p>
                   <p>
-                    So we asked ourselves, how do we get diners to come to us first for that next great meal? How do we
-                    better meet their needs and expectations earlier in the process? And how do we demonstrate that value
-                    clearly enough that they keep coming back?
+                    How do we get diners to come to us first for that next great meal? How do we better meet their needs
+                    and expectations earlier in the process? And how do we demonstrate that value clearly enough that they
+                    keep coming back?
                   </p>
                   <p>
                     Editorial features, lists, and guides had been core to the Resy brand since its founding. Research
@@ -334,15 +333,15 @@
                     recommendations, if they were aware that side of the brand existed at all.
                   </p>
                   <p>
-                    My early design explorations took an obvious path and borrowed the
-                    <a href="https://resy.com" target="_blank" rel="noopener noreferrer">Resy web strategy</a>, a handful
-                    of timely article promos above restaurant collections, full of blue booking buttons and pickers. As I
-                    iterated and gathered internal and user testing feedback, it became clear this approach was too muddled
-                    for diners at this stage of their journey.
+                    Our initial exploration was obvious and narrow in scope: put a handful of timely article promos above
+                    the restaurant list and open them in web views. But as I worked through the design, it became clear
+                    that longform articles and timely news reporting were a poor fit for the in-the-moment need for trusted
+                    dining options. We also worried they would get in the way for users who already knew what they wanted
+                    to book.
                   </p>
                   <p>
-                    I needed to better understand what diners needed in that moment and find the right balance to serve
-                    their needs.
+                    We needed to better understand what diners needed in that moment and find a format that could deliver
+                    that value more effectively.
                   </p>
                 </div>
               </section>
@@ -356,8 +355,8 @@
                       loading="lazy"
                     />
                     <figcaption class="case-study-caption">
-                      <strong>Cross-Functional Audit.</strong> Before design started, we mapped ideas and open questions
-                      as a post-it matrix with the broader team.
+                      <strong>Cross-Functional Audit.</strong> Early brainstorming around discovery concepts, structure,
+                      and navigation directions before the stronger model came into focus.
                     </figcaption>
                   </figure>
                 </div>
@@ -367,9 +366,9 @@
                 <div class="case-study-block-inner">
                   <h2>Navigation &amp; Architecture</h2>
                   <p>
-                    Up to this point, the Resy app was, at heart, a simple list of restaurants sorted by distance from the
-                    diner&rsquo;s phone. No fancy algorithms and very few filters. Before we could layer in discovery, we
-                    needed to modernize that foundation and give the new content somewhere to live.
+                    Though we iterated on the app during my first few years, at heart it was still a very simple list of
+                    restaurants, sorted by distance from the diner. No fancy algorithms, and very few filters. We needed to
+                    modernize the experience and build out scaffolding that we could fill with this new discovery paradigm.
                   </p>
                   <p>
                     Apple&rsquo;s HIG, at least when this work began, advised against a catch-all home page: a long-scrolling
@@ -397,20 +396,21 @@
               <section class="work-article-section case-study-block case-study-block-text">
                 <div class="case-study-block-inner">
                   <p>
-                    The impulse to pile everything into one long view is understandable, because you worry that anything
-                    tucked behind another tap will never be found. But a stack of unrelated modules puts a real cognitive
-                    load on the user, especially on a phone.
+                    This is a very natural impulse, to combine all functionality in one long view out of fear that users
+                    won&rsquo;t see it or tap other views. But it takes effort to mentally parse unrelated, disparate features,
+                    a high cognitive load, especially on mobile.
                   </p>
                   <p>
-                    By separating functions and user intents across tabs, we help users understand the app&rsquo;s hierarchy
-                    and functionality at a glance. Each tab communicates a distinct part of the product, and those sections
-                    should be meaningful and descriptive. Even without seeing the content,
-                    <strong>the navigation hints at what the app can do.</strong>
+                    By separating functions and user intents into tabs, we help the user understand the app&rsquo;s hierarchy
+                    and functionality at a glance. Each tab communicates the app&rsquo;s menu of options, and these sections
+                    should be meaningful and descriptive. Even without seeing the content of these apps, the tabs hint at
+                    functionality. <strong>They tell a story about what the app can do.</strong>
                   </p>
                   <p>
-                    This shift in information architecture also enabled a more modern interaction model. Replacing layers
-                    of cumbersome navigation with a quicker, gestural, sheet-based approach let diners dip in and out of
-                    restaurants while keeping booking just a tap away.
+                    This shift in information architecture also gave us room to modernize the interaction model itself. We
+                    moved the app toward a more gestural, sheet-based paradigm that felt lighter, faster, and more current
+                    than the older drill-down pattern. Venue details, browsing, and booking could stay much closer
+                    together, making discovery feel more fluid and less like a series of hard context switches.
                   </p>
                 </div>
               </section>
@@ -468,10 +468,9 @@
                       </div>
                     </div>
                     <figcaption class="case-study-caption">
-                      <strong>A New Navigation Model.</strong> Before this project, the app relied primarily on
-                      hierarchical (&ldquo;tree&rdquo;) navigation, with only a handful of full-screen modals. This
-                      redesign introduced a clearer tab-based hierarchy alongside a more gestural, sheet-based interaction
-                      model.
+                      <strong>A New Navigation Model.</strong> From 2014 to 2024, the app was
+                      essentially all &ldquo;tree&rdquo; navigation. This shift introduced clearer hierarchy through tabs
+                      and a more gestural model through sheets.
                     </figcaption>
                   </figure>
                 </div>
@@ -487,22 +486,26 @@
                 <div class="case-study-block-inner">
                   <div class="case-study-copy">
                     <p>
-                      Resy already had a respected editorial voice through
+                      Resy already had one powerful asset: a respected editorial voice. Through
                       <a href="https://blog.resy.com/" target="_blank" rel="noopener noreferrer">blog.resy.com</a>, powered by
-                      WordPress, where the team published guides, interviews, curated lists, and city recommendations that
-                      reflected the brand&rsquo;s point of view. The challenge was weaving that editorial perspective into the
-                      product experience.
+                      WordPress, the team published guides, lists, interviews, and city-specific recommendations that
+                      reflected the brand&rsquo;s taste and authority. We did not need to invent that layer of trust from scratch.
                     </p>
                     <p>
-                      Because the editorial system and web surface already existed, we could build on proven publishing
-                      workflows instead of creating a new CMS, content pipeline, or authoring model for the app. Rather
-                      than dropping users into the full website, we reframed editorial inside the in-app browser, stripping
-                      away global navigation, recirculation modules, and other web-specific chrome that distracted from the
-                      task at hand.
+                      That gave us a meaningful operational advantage. Because the editorial system and web surface already
+                      existed, we could build on proven publishing workflows instead of creating a brand-new CMS, content
+                      pipeline, or authoring model just for the app.
                     </p>
                     <p>
-                      Most importantly, each story hooked directly into native Venue sheets, where diners could browse the
-                      restaurant, save it to a list, or continue into the native app booking flow.
+                      It also gave us a strong product starting point. Rather than dropping users into the full web
+                      experience, we could make editorial feel much more app-like inside the in-app browser by removing
+                      elements that made sense on the open web but not in this moment: the top navigation, recirculation
+                      modules, and other competing exits.
+                    </p>
+                    <p>
+                      Most importantly, we could hook these stories into native Venue sheets, where diners could validate a
+                      restaurant, save it, or book immediately. That let us preserve the strengths of the existing WordPress
+                      and web ecosystem while tightening the path from inspiration to reservation.
                     </p>
                   </div>
                   <figure class="case-study-figure case-study-media-wrap">
@@ -530,8 +533,53 @@
                       </div>
                     </div>
                     <figcaption class="case-study-caption">
-                      <strong>Editorial, Reframed.</strong> Existing WordPress editorial adapted for the app, with web
-                      chrome removed and native Venue sheets one tap away.
+                      <strong>Editorial, Reframed.</strong> Existing WordPress editorial reframed inside the app browser,
+                      with web chrome stripped back so native venue actions stay close.
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="work-article-section case-study-block case-study-block-text">
+                <div class="case-study-block-inner">
+                  <h2>Designing for the Mobile Moment</h2>
+                  <p>
+                    Post-launch, one thing became clear: simply bringing long-form editorial into the app was not enough.
+                    Articles could inspire, but they were not always well suited to the way people use their phones in the
+                    moment: quickly, one-handed, and often while they were already narrowing in on where to eat.
+                  </p>
+                  <p>
+                    What many diners wanted was something more utilitarian. They were looking for fast validation, a strong
+                    point of view, and just enough context to feel confident about a place. They did not need a full story
+                    every time. They needed a sharp recommendation, a reason to care, and a clear path to act.
+                  </p>
+                  <p>
+                    That realization led me to envision a new app-only format: a bite-sized, swipeable “Not to Miss”
+                    module built specifically for mobile. Instead of opening a long article, diners could move through a
+                    stack of cards, each one focused on a single place or idea, with concise editorial framing and direct
+                    links into venue details.
+                  </p>
+                  <p>
+                    It felt like a better expression of what we were trying to build. The module preserved Resy&rsquo;s taste
+                    and curation, but packaged it in a format that matched the medium: lighter, faster, and easier to use
+                    when someone was actively deciding where to eat.
+                  </p>
+                </div>
+              </section>
+
+              <section class="case-study-block case-study-block-full-media case-study-block-full-media-mobile-pan">
+                <div class="case-study-block-inner">
+                  <figure class="case-study-figure">
+                    <div class="case-study-media case-study-media-glow">
+                      <img
+                        src="../../assets/images/case-studies/resy-discovery/article/final-app.png"
+                        alt="Final Resy app design showing the refined discovery experience."
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption class="case-study-caption">
+                      Final app design bringing editorial discovery, venue detail, and booking action into a more cohesive
+                      mobile flow.
                     </figcaption>
                   </figure>
                 </div>
@@ -541,25 +589,19 @@
                 <div class="case-study-block-inner">
                   <h2>Early Signals</h2>
                   <p>
-                    This was the largest user-facing change to the consumer app since its inception and diners responded
-                    immediately. Monthly active usage, booking conversion, and session duration all increased after
-                    launch, and app engagement reached an all-time high.
+                    This became the largest user-facing change to the consumer app in years, and the response was strong.
+                    The launch drove clear double-digit lifts in both monthly active usage and booking conversion, while
+                    helping push native engagement to a new high.
                   </p>
                   <p>
-                    The new content generated millions of interactions in its first months, and more of that discovery
-                    ended in a reservation instead of a detour to another app.
+                    Discovery behavior itself also moved in the right direction. The new surface generated millions of
+                    interactions, increased time spent in the app, and created a much healthier bridge from editorial
+                    curiosity to booking intent.
                   </p>
                   <p>
-                    Shortly after launch, we implemented Apple&rsquo;s
-                    <a
-                      href="https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Universal Links</a
-                    >, so Resy pages tapped from Google Search or social media opened directly in the app instead of the
-                    mobile website. Diners who opened those pages in the app booked at a higher rate than they had on the
-                    web, reinforcing what we had seen throughout the project. The fewer steps between discovery and
-                    reservation, the more often diners booked.
+                    Once we introduced deeper app links from editorial into native venue sheets, we saw another meaningful
+                    step up in active usage. That reinforced the core thesis: diners did not just want inspiration. They
+                    wanted inspiration that stayed connected to action.
                   </p>
                 </div>
               </section>
@@ -581,49 +623,6 @@
                       <p class="case-study-metric-label">Avg. Session Duration</p>
                     </article>
                   </div>
-                </div>
-              </section>
-
-              <section class="case-study-block case-study-block-full-media case-study-block-full-media-mobile-pan">
-                <div class="case-study-block-inner">
-                  <figure class="case-study-figure">
-                    <div class="case-study-media case-study-media-glow">
-                      <img
-                        src="../../assets/images/case-studies/resy-discovery/article/final-app.png"
-                        alt="Final Resy app design showing the refined discovery experience."
-                        loading="lazy"
-                      />
-                    </div>
-                    <figcaption class="case-study-caption">
-                      The final design, with editorial discovery, venue details, and booking in a single flow.
-                    </figcaption>
-                  </figure>
-                </div>
-              </section>
-
-              <section class="work-article-section case-study-block case-study-block-text">
-                <div class="case-study-block-inner">
-                  <h2>Evolving the Experience After Launch</h2>
-                  <p>
-                    The launch validated the direction, but watching people use the feature told a more nuanced story.
-                    Simply bringing existing editorial into the app wasn&rsquo;t enough to make Resy a more habitual
-                    starting point than Instagram or Google Maps.
-                  </p>
-                  <p>
-                    We found that articles and lists could inspire, but they weren&rsquo;t always the right format for the way
-                    people use their phones: quickly, one-handed, and often while deciding where to eat. Instead, many
-                    diners wanted fast validation and just enough context to feel confident, a sharp recommendation with a
-                    clear path to book.
-                  </p>
-                  <p>
-                    That led me to add a more bite-sized format to the editorial toolkit. &ldquo;Not to Miss&rdquo; distilled
-                    long-form editorial into a swipeable series of recommendations, each centered on a single restaurant
-                    and connected directly to a native Venue sheet.
-                  </p>
-                  <p>
-                    A diner could flip through a stack of recommendations one-handed while walking to the train, and book
-                    the moment something caught their eye.
-                  </p>
                 </div>
               </section>
 
