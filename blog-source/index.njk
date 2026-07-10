@@ -17,8 +17,8 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 <section class="work-index-header blog-index-header" aria-labelledby="blog-title">
   <div class="work-index-header-copy blog-index-header-copy">
     <h1 id="blog-title" class="blog-index-title">
-      <span class="blog-index-title-line"><span class="blog-index-title-accent">NiederBlog:</span> Notes &amp;</span>
-      <span class="blog-index-title-line">Essays on Design</span>
+      <span class="blog-index-title-line"><span class="blog-index-title-accent">NiederBlog:</span> Notes on</span>
+      <span class="blog-index-title-line">Design &amp; Miscellany</span>
     </h1>
   </div>
 </section>
@@ -38,12 +38,33 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
         <div class="blog-post-body blog-stream-body">
           {{ post.templateContent | safe }}
         </div>
-        <p class="blog-stream-permalink">
-          <a href="{{ post.url | relUrl(page.url) }}">
-            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
-            <span aria-hidden="true"> →</span>
-          </a>
-        </p>
+        {%- set displayTags = [] -%}
+        {%- for tag in post.data.tags -%}{% if tag != "posts" %}{% set displayTags = (displayTags.push(tag), displayTags) %}{% endif %}{%- endfor -%}
+        <footer class="blog-stream-foot" aria-label="Post metadata">
+          <div class="work-article-meta-card">
+            <p class="work-article-meta-label">Published</p>
+            <p class="work-article-meta-value">
+              <a href="{{ post.url | relUrl(page.url) }}">
+                <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | dateDisplay }}</time>
+                <span aria-hidden="true"> →</span>
+              </a>
+            </p>
+          </div>
+          <div class="work-article-meta-card">
+            <p class="work-article-meta-label">Byline</p>
+            <p class="work-article-meta-value">John Niedermeyer</p>
+          </div>
+          {%- if displayTags.length %}
+          <div class="work-article-meta-card">
+            <p class="work-article-meta-label">Tags</p>
+            <ul class="blog-tag-list">
+              {%- for tag in displayTags %}
+              <li><a class="blog-tag" href="{{ page.url | relRoot }}blog/tags/{{ tag | tagSlug }}/">#{{ tag }}</a></li>
+              {%- endfor %}
+            </ul>
+          </div>
+          {%- endif %}
+        </footer>
         {%- if not loop.last %}<div class="rule blog-stream-rule"></div>{% endif -%}
       </article>
       {%- endfor %}

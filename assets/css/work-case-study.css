@@ -5436,24 +5436,51 @@ body.about-page .work-article-meta {
   color: var(--accent);
 }
 
-/* Foot permalink: muted date linking to the standalone post (DF-style). */
-.blog-stream-permalink {
-  margin: 24px 0 0;
-  font-size: 15px;
-  line-height: 1.3;
-  font-weight: 400;
+/* Foot meta row: the article page's right-rail meta (Published / Byline /
+   Tags) laid out horizontally, without the card boxes. The date doubles as
+   the permalink. Groups are split by a hairline; each group hugs its rule,
+   with the gap before the rule breathing with the viewport. */
+.blog-stream-foot {
+  margin: 32px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px clamp(28px, 4vw, 64px);
 }
 
-.blog-stream-permalink a,
-.blog-stream-permalink a:visited {
+.blog-stream-foot .work-article-meta-card {
+  border: none;
+  padding: 0;
+}
+
+.blog-stream-foot .work-article-meta-card + .work-article-meta-card {
+  margin-top: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 20px;
+}
+
+/* At narrow widths, keep the same ruled horizontal layout, just tighter. */
+@media (max-width: 640px) {
+  .blog-stream-foot {
+    gap: 16px 20px;
+  }
+
+  .blog-stream-foot .work-article-meta-card + .work-article-meta-card {
+    padding-left: 14px;
+  }
+}
+
+.blog-stream-foot .work-article-meta-value {
   color: var(--muted);
-  text-decoration: none;
-  transition: color 0.18s ease;
 }
 
-.blog-stream-permalink a:hover,
-.blog-stream-permalink a:focus-visible {
-  color: var(--accent);
+/* Undo the rail's 8px tag-list offset so tags share the value baseline. */
+.blog-stream-foot .blog-tag-list {
+  margin-top: 0;
+  line-height: 1.35;
+}
+
+.blog-stream-foot .blog-tag {
+  line-height: 1.35;
 }
 
 /* The lede scale belongs to the standalone article page only. In the stream,
@@ -5660,6 +5687,14 @@ body.about-page .work-article-meta {
 .blog-index-topics .blog-tag {
   display: inline-block;
   line-height: 1.25;
+}
+
+.blog-stream-foot .blog-tag-list {
+  gap: 8px 12px;
+}
+
+.blog-stream-foot .blog-tag {
+  display: inline-block;
 }
 
 .blog-index-topics .blog-tag-list {
