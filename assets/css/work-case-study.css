@@ -5439,17 +5439,20 @@ body.about-page .work-article-meta {
 /* Foot meta row: the article page's right-rail meta (Published / Byline /
    Tags) laid out horizontally, without the card boxes. The date doubles as
    the permalink. Groups are split by a hairline; each group hugs its rule,
-   with the gap before the rule breathing with the viewport. */
+   with the gap before the rule breathing with the viewport. Grid (not flex)
+   so a long tag list wraps inside its own column while every group
+   stretches to the full row height, extending the rules with it. */
 .blog-stream-foot {
   margin: 32px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px clamp(28px, 4vw, 64px);
+  display: grid;
+  grid-template-columns: max-content max-content minmax(0, 1fr);
+  column-gap: clamp(28px, 4vw, 64px);
 }
 
 .blog-stream-foot .work-article-meta-card {
   border: none;
   padding: 0;
+  min-width: 0;
 }
 
 .blog-stream-foot .work-article-meta-card + .work-article-meta-card {
@@ -5458,14 +5461,23 @@ body.about-page .work-article-meta {
   padding-left: 20px;
 }
 
-/* At narrow widths, keep the same ruled horizontal layout, just tighter. */
+/* At narrow widths there isn't room for a tags column; keep Published and
+   Byline ruled side by side and give the tags their own full-width line. */
 @media (max-width: 640px) {
   .blog-stream-foot {
-    gap: 16px 20px;
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 20px;
+    row-gap: 16px;
   }
 
   .blog-stream-foot .work-article-meta-card + .work-article-meta-card {
     padding-left: 14px;
+  }
+
+  .blog-stream-foot .work-article-meta-card:nth-child(3) {
+    grid-column: 1 / -1;
+    border-left: none;
+    padding-left: 0;
   }
 }
 
@@ -5473,14 +5485,21 @@ body.about-page .work-article-meta {
   color: var(--muted);
 }
 
-/* Undo the rail's 8px tag-list offset so tags share the value baseline. */
+/* Tags sit on the value baseline (no rail offset) and wrap tight. The
+   font-size and line-height live on the list so the <li>s inherit them;
+   otherwise the items keep the article's larger inherited text metrics and
+   strut the rows apart despite the gap. */
 .blog-stream-foot .blog-tag-list {
   margin-top: 0;
-  line-height: 1.35;
+  gap: 4px 12px;
+  font-size: 14px;
+  line-height: 1.25;
 }
 
 .blog-stream-foot .blog-tag {
-  line-height: 1.35;
+  display: inline-block;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
 /* The lede scale belongs to the standalone article page only. In the stream,
@@ -5687,14 +5706,6 @@ body.about-page .work-article-meta {
 .blog-index-topics .blog-tag {
   display: inline-block;
   line-height: 1.25;
-}
-
-.blog-stream-foot .blog-tag-list {
-  gap: 8px 12px;
-}
-
-.blog-stream-foot .blog-tag {
-  display: inline-block;
 }
 
 .blog-index-topics .blog-tag-list {

@@ -38,8 +38,7 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
         <div class="blog-post-body blog-stream-body">
           {{ post.templateContent | safe }}
         </div>
-        {%- set displayTags = [] -%}
-        {%- for tag in post.data.tags -%}{% if tag != "posts" %}{% set displayTags = (displayTags.push(tag), displayTags) %}{% endif %}{%- endfor -%}
+        {%- set displayTags = post.data.tags | displayTags -%}
         <footer class="blog-stream-foot" aria-label="Post metadata">
           <div class="work-article-meta-card">
             <p class="work-article-meta-label">Published</p>
