@@ -137,6 +137,11 @@ module.exports = function (eleventyConfig) {
     String(tag).toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
   );
 
+  // Post tags minus the "posts" collection tag, deduped for display.
+  eleventyConfig.addFilter("displayTags", (tags) =>
+    [...new Set(tags || [])].filter((tag) => tag !== "posts")
+  );
+
   // Published, date-descending posts.
   eleventyConfig.addCollection("posts", (collectionApi) =>
     collectionApi
