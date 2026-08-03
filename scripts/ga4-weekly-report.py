@@ -57,10 +57,15 @@ credentials = service_account.Credentials.from_service_account_file(
 )
 client = BetaAnalyticsDataClient(credentials=credentials)
 
-today      = date.today()
-week_start = today - timedelta(days=today.weekday())
-lw_start   = week_start - timedelta(days=7)
-lw_end     = week_start - timedelta(days=1)
+today       = date.today()
+# The cron fires Monday morning, so "this week" is only a few hours old.
+# Report the last complete Mon–Sun window instead, and compare it against
+# the week before that.
+this_monday = today - timedelta(days=today.weekday())
+week_start  = this_monday - timedelta(days=7)
+week_end    = this_monday - timedelta(days=1)
+lw_start    = week_start - timedelta(days=7)
+lw_end      = week_start - timedelta(days=1)
 
 PRODUCTION_HOST_FILTER = FilterExpression(
     filter=Filter(
@@ -88,26 +93,26 @@ by_sessions = lambda name="sessions": [
     OrderBy(metric=OrderBy.MetricOrderBy(metric_name=name), desc=True)
 ]
 
-totals      = run_report(week_start, today, [],
+totals      = run_report(week_start, week_end, [],
                          ["sessions", "activeUsers", "screenPageViews", "newUsers"])
-overview    = run_report(week_start, today, ["date"],
+overview    = run_report(week_start, week_end, ["date"],
                          ["sessions", "activeUsers", "screenPageViews"], limit=7,
                          order_by=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))])
 lw_overview = run_report(lw_start, lw_end, [],
                          ["sessions", "activeUsers", "screenPageViews", "newUsers"])
-top_pages   = run_report(week_start, today, ["pagePath"],
+top_pages   = run_report(week_start, week_end, ["pagePath"],
                          ["screenPageViews", "activeUsers"], limit=10,
                          order_by=by_sessions("screenPageViews"))
-sources     = run_report(week_start, today, ["sessionSource", "sessionMedium"],
+sources     = run_report(week_start, week_end, ["sessionSource", "sessionMedium"],
                          ["screenPageViews", "activeUsers"], limit=10,
                          order_by=by_sessions("screenPageViews"))
-countries   = run_report(week_start, today, ["country"],
+countries   = run_report(week_start, week_end, ["country"],
                          ["sessions", "activeUsers"], limit=8, order_by=by_sessions())
-devices     = run_report(week_start, today, ["deviceCategory"],
+devices     = run_report(week_start, week_end, ["deviceCategory"],
                          ["sessions", "activeUsers"], order_by=by_sessions())
-new_ret     = run_report(week_start, today, ["newVsReturning"],
+new_ret     = run_report(week_start, week_end, ["newVsReturning"],
                          ["sessions", "activeUsers"], order_by=by_sessions())
-landing     = run_report(week_start, today, ["landingPagePlusQueryString"],
+landing     = run_report(week_start, week_end, ["landingPagePlusQueryString"],
                          ["sessions", "bounceRate", "screenPageViews"], limit=12,
                          order_by=by_sessions())
 
@@ -171,7 +176,7 @@ lines = []
 W = 52
 
 lines += [f"{'═'*W}",
-          f"  nieder.me  ·  {week_start} → {today}",
+          f"  nieder.me  ·  {week_start} → {week_end}",
           f"{'═'*W}", ""]
 
 lines += [f"  {'Sessions:':<14}{tw_s:>6,}{delta(tw_s, lw_s)}",

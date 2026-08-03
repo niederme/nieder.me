@@ -118,5 +118,9 @@ expect_pattern "scripts/ga4-weekly-report.py" 'value=r"^(www\.)?nieder\.me$"' \
   "Expected the weekly GA4 report to include only nieder.me production hosts."
 expect_pattern "scripts/ga4-weekly-report.py" "dimension_filter=PRODUCTION_HOST_FILTER" \
   "Expected every weekly GA4 query to use the production hostname filter."
+expect_pattern "scripts/ga4-weekly-report.py" "week_end    = this_monday - timedelta(days=1)" \
+  "Expected the weekly GA4 report to end on the last complete Sunday."
+expect_no_pattern "scripts/ga4-weekly-report.py" "run_report(week_start, today," \
+  "Expected the weekly GA4 report to query the last complete week, not the current partial one."
 
 echo "GA4 analytics checks passed."
