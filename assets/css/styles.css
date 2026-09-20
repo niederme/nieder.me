@@ -124,7 +124,7 @@ body {
 }
 
 body {
-  background: var(--accent);
+  background: var(--bg);
   color: var(--fg);
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
@@ -687,7 +687,7 @@ body.is-pulling-refresh .rail::after {
   display: none;
 }
 
-@media (max-width: 959px) {
+@media (max-width: 950px) {
   .mobile-nav {
     display: flex;
     align-items: stretch;
@@ -1414,7 +1414,7 @@ body.grid-hidden .grid-overlay > span {
   }
 }
 
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (min-width: 951px) and (max-width: 1279px) {
   .blog-home-heading {
     grid-column: 1 / -1;
   }
@@ -1428,7 +1428,7 @@ body.grid-hidden .grid-overlay > span {
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: 950px) {
   .blog-home {
     margin-top: 156px;
   }
@@ -2477,7 +2477,45 @@ body.grid-hidden .grid-overlay > span {
   }
 }
 
-@media (min-width: 960px) and (max-width: 1500px) {
+@media (min-width: 951px) and (max-width: 1500px) {
+  /* Scale every promo together across the compact desktop range. */
+  .case-study-promo {
+    --promo-inset: clamp(24px, calc(15vw - 119px), 106px);
+  }
+
+  .case-study-promo-content {
+    width: min(508px, calc(54% - var(--promo-inset)));
+    margin-left: var(--promo-inset);
+    gap: clamp(12px, 1.33vw, 20px);
+  }
+
+  .case-study-promo .case-study-promo-logo {
+    max-width: clamp(64px, 6.67vw, 100px);
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .case-study-promo-inner {
+    padding-top: clamp(8px, calc(4vw - 30px), 30px);
+    padding-bottom: clamp(8px, calc(2.2vw - 13px), 20px);
+  }
+
+  .case-study-promo-eyebrow {
+    font-size: clamp(16px, 1.6vw, 24px);
+  }
+
+  .case-study-promo h3 {
+    font-size: clamp(36px, calc(2.186vw + 15.21px), 48px);
+  }
+
+  .case-study-promo-cta {
+    min-height: 44px;
+    padding: 10px clamp(24px, 3.33vw, 50px) 12px;
+    font-size: clamp(16px, 1.2vw, 18px);
+  }
+
   .content {
     width: calc(100vw - 200px);
     margin-left: 160px;
@@ -2606,7 +2644,7 @@ body.grid-hidden .grid-overlay > span {
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: 950px) {
   .page {
     padding-left: 0;
   }
@@ -3059,7 +3097,7 @@ body.grid-hidden .grid-overlay > span {
   }
 }
 
-@media (min-width: 521px) and (max-width: 959px) {
+@media (min-width: 521px) and (max-width: 950px) {
   .page {
     overflow-x: clip;
     max-width: 100%;
