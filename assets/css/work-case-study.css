@@ -143,7 +143,7 @@ body {
 }
 
 body {
-  background: var(--accent);
+  background: var(--bg);
   color: var(--fg);
   font-family: "Sohne", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Arial Nova", "Arial", sans-serif;
@@ -3482,7 +3482,7 @@ body.about-page .work-article-meta {
 
 }
 
-@media (min-width: 960px) and (max-width: 1500px) {
+@media (min-width: 951px) and (max-width: 1500px) {
   .work-index-page .work-article {
     --work-index-top-mask-height: 106px;
   }
@@ -3573,7 +3573,7 @@ body.about-page .work-article-meta {
   }
 }
 
-@media (min-width: 960px) and (max-width: 1320px) {
+@media (min-width: 951px) and (max-width: 1320px) {
   .work-article {
     --case-study-body-width: calc((7 * var(--case-study-column-width)) + (6 * var(--grid-gutter)));
     --case-study-support-width: calc((2 * var(--case-study-column-width)) + var(--grid-gutter));
@@ -3764,7 +3764,7 @@ body.about-page .work-article-meta {
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: 950px) {
   .work-page::before,
   .rail,
   .global-nav {
@@ -4888,7 +4888,7 @@ body.about-page .work-article-meta {
   display: none;
 }
 
-@media (max-width: 959px) {
+@media (max-width: 950px) {
   .mobile-nav {
     display: flex;
     align-items: stretch;
@@ -5516,7 +5516,7 @@ body.about-page .work-article-meta {
   margin: 56px 0;
 }
 
-@media (min-width: 960px) and (max-width: 1320px) {
+@media (min-width: 951px) and (max-width: 1320px) {
   .blog-index-body {
     grid-column: 1 / span 8;
   }
@@ -5526,7 +5526,7 @@ body.about-page .work-article-meta {
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: 950px) {
   .blog-index-shell {
     grid-template-columns: 1fr;
   }
@@ -5798,7 +5798,7 @@ a.blog-post-pager-link:focus-visible .blog-post-pager-title {
   color: var(--accent);
 }
 
-@media (min-width: 960px) and (max-width: 1320px) {
+@media (min-width: 951px) and (max-width: 1320px) {
   .blog-post-layout .blog-post-meta-panel {
     grid-column: 10 / span 3;
     width: 100%;
@@ -5809,7 +5809,7 @@ a.blog-post-pager-link:focus-visible .blog-post-pager-title {
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: 950px) {
   .blog-post-layout .blog-post-meta-panel,
   .blog-post-layout .blog-post-body {
     grid-column: 1;
