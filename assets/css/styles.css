@@ -627,6 +627,11 @@ body.is-pulling-refresh .rail::after {
   mask-size: contain;
 }
 
+.social-icon-chatgpt {
+  -webkit-mask-image: url("../icons/social/chatgpt.svg");
+  mask-image: url("../icons/social/chatgpt.svg");
+}
+
 .social-icon-instagram {
   -webkit-mask-image: url("../icons/social/instagram.svg");
   mask-image: url("../icons/social/instagram.svg");
@@ -3505,6 +3510,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .social-links {
+    --social-link-gap: min(40px, calc((100vw - 186px) / 5));
     width: var(--mobile-content-width);
     max-width: 100%;
     justify-content: center;
@@ -3514,7 +3520,8 @@ body.grid-hidden .grid-overlay > span {
   .social-links a {
     width: 26px;
     height: 26px;
-    margin-right: 40px;
+    flex-shrink: 0;
+    margin-right: var(--social-link-gap);
   }
 
   .social-icon {
@@ -3523,7 +3530,7 @@ body.grid-hidden .grid-overlay > span {
   }
 
   .social-links a:not(:last-child)::after {
-    right: -20px;
+    right: calc(var(--social-link-gap) / -2);
     height: 40px;
   }
 

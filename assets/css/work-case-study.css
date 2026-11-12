@@ -790,6 +790,11 @@ a:focus-visible {
   mask-size: contain;
 }
 
+.social-icon-chatgpt {
+  -webkit-mask-image: url("../icons/social/chatgpt.svg");
+  mask-image: url("../icons/social/chatgpt.svg");
+}
+
 .social-icon-instagram {
   -webkit-mask-image: url("../icons/social/instagram.svg");
   mask-image: url("../icons/social/instagram.svg");
