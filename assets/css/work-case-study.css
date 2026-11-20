@@ -4906,7 +4906,10 @@ body.about-page .work-article-meta {
     padding-bottom: var(--safe-bottom, 0px);
     padding-left: env(safe-area-inset-left, 0px);
     padding-right: env(safe-area-inset-right, 0px);
-    background: rgba(0, 0, 0, 0.45);
+    /* Fade to the solid page colour at the bottom edge so the bar melts into
+       Safari's toolbar strip (tinted with theme-color) instead of ending in a
+       hard line. */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 35%, #000000 100%);
     -webkit-backdrop-filter: blur(20px) saturate(120%);
     backdrop-filter: blur(20px) saturate(120%);
     box-sizing: border-box;
@@ -4915,7 +4918,20 @@ body.about-page .work-article-meta {
   }
 
   [data-theme="light"] .mobile-nav {
-    background: rgba(255, 255, 255, 0.55);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55) 35%, #ffffff 100%);
+  }
+
+  /* Solid fill below the bar, for when the page draws under Safari's toolbar
+     or overscrolls past the bottom. */
+  .mobile-nav::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: var(--bg);
+    pointer-events: none;
   }
 
   .mobile-nav.is-visible {
