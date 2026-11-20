@@ -4850,7 +4850,7 @@ body.about-page .work-article-meta {
   }
 
   .mobile-nav {
-    height: calc(60px + var(--safe-bottom, 0px));
+    height: calc(60px + var(--safe-bottom, 0px) + var(--mobile-nav-bleed, 0px));
   }
 
   .is-subpage .work-page {
@@ -4898,12 +4898,19 @@ body.about-page .work-article-meta {
     display: flex;
     align-items: stretch;
     position: fixed;
-    bottom: 0;
+    /* Bleed the bar's own background past the bottom of the viewport so it
+       runs to the screen edge wherever the browser paints under its toolbar,
+       instead of stopping in a hard line. The extra height is padding, so the
+       icons stay put. */
+    --mobile-nav-bleed: 120px;
+    bottom: calc(-1 * var(--mobile-nav-bleed));
     left: 0;
     right: 0;
     z-index: 50;
-    height: calc(66px + var(--safe-bottom, 0px));
-    padding-bottom: var(--safe-bottom, 0px);
+    height: calc(66px + var(--safe-bottom, 0px) + var(--mobile-nav-bleed));
+    padding-bottom: calc(var(--safe-bottom, 0px) + var(--mobile-nav-bleed));
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
     background: rgba(0, 0, 0, 0.45);
     -webkit-backdrop-filter: blur(20px) saturate(120%);
     backdrop-filter: blur(20px) saturate(120%);
@@ -4941,7 +4948,10 @@ body.about-page .work-article-meta {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 14px 14px;
+    /* Let icons share leftover width instead of reserving 14px gutters, so the
+       toggles never get pushed past the right edge on narrow screens. */
+    min-width: 0;
+    padding: 14px 2px;
     box-sizing: border-box;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
