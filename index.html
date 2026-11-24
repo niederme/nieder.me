@@ -11,7 +11,7 @@
     <title>John Niedermeyer | Product Design &amp; Direction</title>
     <meta
       name="description"
-      content="Portfolio of John Niedermeyer, product design leader with 20+ years shaping digital products at The New York Times, BuzzFeed, and Resy."
+      content="Selected design work and side projects by John Niedermeyer, Design Director at Hearst Newspapers."
     />
     <link rel="canonical" href="https://nieder.me/" />
 
@@ -20,7 +20,7 @@
     <meta property="og:title" content="John Niedermeyer | Product Design &amp; Direction" />
     <meta
       property="og:description"
-      content="Portfolio of John Niedermeyer, product design leader with 20+ years shaping digital products at The New York Times, BuzzFeed, and Resy."
+      content="Selected design work and side projects by John Niedermeyer, Design Director at Hearst Newspapers."
     />
     <meta property="og:url" content="https://nieder.me/" />
     <meta property="og:site_name" content="John Niedermeyer" />
@@ -35,7 +35,7 @@
     <meta name="twitter:title" content="John Niedermeyer | Product Design &amp; Direction" />
     <meta
       name="twitter:description"
-      content="Portfolio of John Niedermeyer, product design leader with 20+ years shaping digital products at The New York Times, BuzzFeed, and Resy."
+      content="Selected design work and side projects by John Niedermeyer, Design Director at Hearst Newspapers."
     />
     <meta name="twitter:url" content="https://nieder.me/" />
     <meta name="twitter:image" content="https://nieder.me/assets/images/og/og-image-1200x630.png" />
@@ -50,8 +50,8 @@
             "name": "John Niedermeyer",
             "url": "https://nieder.me/",
             "image": "https://nieder.me/assets/images/about/portrait_3_4_hp5_2400h.jpg",
-            "jobTitle": "Product Design Leader",
-            "description": "Product design leader based in New York with more than 20 years of experience shaping digital products.",
+            "jobTitle": "Design Director",
+            "description": "Design Director at Hearst Newspapers. Builds independent apps and tools.",
             "sameAs": [
               "https://github.com/niederme/",
               "https://www.linkedin.com/in/niederme/",
@@ -64,7 +64,7 @@
             "@id": "https://nieder.me/#website",
             "url": "https://nieder.me/",
             "name": "John Niedermeyer",
-            "description": "Portfolio of John Niedermeyer, product design leader with 20+ years shaping digital products at The New York Times, BuzzFeed, and Resy.",
+            "description": "Selected design work and side projects by John Niedermeyer, Design Director at Hearst Newspapers.",
             "creator": {
               "@id": "https://nieder.me/#person"
             },
@@ -129,105 +129,52 @@
       })();
     </script>
     <link rel="stylesheet" href="assets/css/styles.css?v=20260625-blog-home-module" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/navigation.css" />
   </head>
-  <body id="top">
+  <body id="top" class="home">
     <div class="page">
       <aside class="rail">
         <a class="logo-link" href="#top" aria-label="Back to top">
           <img class="logo-mark" src="assets/icons/logo-mark.svg" alt="JN monogram" />
         </a>
-      </aside>
-
-      <nav
-        class="global-nav global-nav-home"
-        aria-label="Primary navigation"
-        data-lock-target="#case-study-promos"
-        data-nav-lock-start="1049"
-      >
-        <a class="global-nav-anchor is-active" href="#top" aria-label="Home">
-          <img class="icon-off" src="assets/icons/side-nav/home-off.svg" alt="" />
-          <img class="icon-on" src="assets/icons/side-nav/home-on.svg" alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/home-hover.svg" alt="" />
-          <span class="global-nav-popover" aria-hidden="true">Home</span>
-        </a>
-        <a class="global-nav-anchor" href="work/" aria-label="Work">
-          <img class="icon-off" src="assets/icons/side-nav/icon-work-experience-off.svg" alt="" />
-          <img class="icon-on" src="assets/icons/side-nav/icon-work-experience-on.svg" alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
-          <span class="global-nav-popover" aria-hidden="true">Work Experience &amp; Resume</span>
-        </a>
-        <a class="global-nav-anchor" href="about/" aria-label="About &amp; Biography">
-          <img class="icon-off" src="assets/icons/side-nav/icon-work-about-off.svg" alt="" />
-          <img class="icon-on" src="assets/icons/side-nav/icon-work-about-on.svg" alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
-          <span class="global-nav-popover" aria-hidden="true">About &amp; Biography</span>
-        </a>
-        <a class="global-nav-anchor" href="blog/" aria-label="Blog">
-          <img class="icon-off" src="assets/icons/side-nav/icon-blog-off.svg" alt="" />
-          <img class="icon-on" src="assets/icons/side-nav/icon-blog-on.svg" alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-blog-on.svg" alt="" />
-          <span class="global-nav-popover" aria-hidden="true">Blog</span>
-        </a>
-        <a class="global-nav-anchor" href="design-system/" aria-label="Design system">
-          <img class="icon-off" src="assets/icons/side-nav/icon-colophon-off.svg" alt="" />
-          <img class="icon-on" src="assets/icons/side-nav/icon-colophon-on.svg" alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
-          <span class="global-nav-popover" aria-hidden="true">Design System</span>
-        </a>
+        <nav class="global-nav" aria-label="Primary navigation">
+          <a class="global-nav-anchor is-active" aria-current="page" href="#top" aria-label="Home">
+            <span class="nav-glyph nav-glyph-home" aria-hidden="true"></span>
+            <span class="global-nav-popover" aria-hidden="true">Home</span>
+          </a>
+          <a class="global-nav-anchor" href="work/" aria-label="Work Experience &amp; Resume">
+            <span class="nav-glyph nav-glyph-work" aria-hidden="true"></span>
+            <span class="global-nav-popover" aria-hidden="true">Work Experience &amp; Resume</span>
+          </a>
+        </nav>
         <div class="rail-controls-panel">
           <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
-            <span class="theme-toggle-switch" aria-hidden="true"></span>
-            <span class="theme-toggle-label">light</span>
+            <span class="rail-theme-icon" aria-hidden="true"></span>
             <span class="theme-toggle-state" aria-live="polite">Off</span>
           </button>
           <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
-            <span class="cols-toggle-switch" aria-hidden="true"></span>
-            <span class="cols-toggle-label">cols</span>
+            <span class="rail-cols-icon" aria-hidden="true"></span>
             <span class="cols-toggle-state" aria-live="polite">Off</span>
           </button>
         </div>
-      </nav>
+      </aside>
 
       <nav class="mobile-nav" aria-label="Primary navigation">
-        <a class="mobile-nav-anchor is-active" href="#top" aria-label="Top">
-          <img class="icon-off"   src="assets/icons/side-nav/home-off.svg"   alt="" />
-          <img class="icon-on"    src="assets/icons/side-nav/home-on.svg"    alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/home-hover.svg" alt="" />
-          <span class="mobile-nav-label">Top</span>
+        <a class="mobile-nav-anchor is-active" href="#top" aria-label="Home" aria-current="page">
+          <span class="nav-glyph nav-glyph-home" aria-hidden="true"></span>
         </a>
         <a class="mobile-nav-anchor" href="work/" aria-label="Work">
-          <img class="icon-off"   src="assets/icons/side-nav/icon-work-experience-off.svg"   alt="" />
-          <img class="icon-on"    src="assets/icons/side-nav/icon-work-experience-on.svg"    alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-work-experience-hover.svg" alt="" />
+          <span class="nav-glyph nav-glyph-work" aria-hidden="true"></span>
           <span class="mobile-nav-label">Work</span>
-        </a>
-        <a class="mobile-nav-anchor" href="about/" aria-label="About &amp; Biography">
-          <img class="icon-off"   src="assets/icons/side-nav/icon-work-about-off.svg"   alt="" />
-          <img class="icon-on"    src="assets/icons/side-nav/icon-work-about-on.svg"    alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-work-about-hover.svg" alt="" />
-          <span class="mobile-nav-label">About</span>
-        </a>
-        <a class="mobile-nav-anchor" href="blog/" aria-label="Blog">
-          <img class="icon-off"   src="assets/icons/side-nav/icon-blog-off.svg" alt="" />
-          <img class="icon-on"    src="assets/icons/side-nav/icon-blog-on.svg"  alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-blog-on.svg"  alt="" />
-          <span class="mobile-nav-label">Blog</span>
-        </a>
-        <a class="mobile-nav-anchor" href="design-system/" aria-label="Design system">
-          <img class="icon-off"   src="assets/icons/side-nav/icon-colophon-off.svg"   alt="" />
-          <img class="icon-on"    src="assets/icons/side-nav/icon-colophon-on.svg"    alt="" />
-          <img class="icon-hover" src="assets/icons/side-nav/icon-colophon-hover.svg" alt="" />
-          <span class="mobile-nav-label">Design</span>
         </a>
         <div class="mobile-nav-toggles">
           <button class="theme-toggle is-off" type="button" aria-pressed="false" aria-label="Switch to light mode">
-            <span class="theme-toggle-switch" aria-hidden="true"></span>
-            <span class="theme-toggle-label">light</span>
+            <span class="rail-theme-icon" aria-hidden="true"></span>
             <span class="theme-toggle-state" aria-live="polite">Off</span>
           </button>
           <button class="cols-toggle is-off" type="button" aria-pressed="false" aria-label="Show column grid">
-            <span class="cols-toggle-switch" aria-hidden="true"></span>
-            <span class="cols-toggle-label">cols</span>
+            <span class="rail-cols-icon" aria-hidden="true"></span>
             <span class="cols-toggle-state" aria-live="polite">Off</span>
           </button>
         </div>
@@ -241,404 +188,406 @@
         <a class="mobile-logo-link" href="#top" aria-label="Back to top">
           <img class="mobile-logo-mark" src="assets/icons/logo-mark.svg" alt="JN monogram" />
         </a>
-        <section class="topper" id="topper">
-          <div class="rule topper-rule-top"></div>
-          <h1>John Niedermeyer</h1>
-          <h2>Product Design<br />&amp; Direction</h2>
-          <div class="rule"></div>
-
-          <div class="topper-columns">
-            <p class="topper-lead">
-              <span class="topper-lead-strong">Balancing the needs of design, business, and team.</span>
-              <span class="topper-lead-body">Scaling impact through crafted interfaces, hands-on mentorship, and the considered adoption of new tools and methods.</span>
-            </p>
-            <p>
-              Two decades steering design for industry-defining brands, including
-              <a class="topper-company-link" href="https://nytimes.com" target="_blank" rel="noopener noreferrer">The New York Times,</a>
-              <a class="topper-company-link" href="https://buzzfeed.com" target="_blank" rel="noopener noreferrer">BuzzFeed,</a> and
-              <a class="topper-company-link" href="https://resy.com" target="_blank" rel="noopener noreferrer">Resy (at American Express),</a>
-              adapting between high-growth startups and global enterprise platforms while consistently raising the bar.
-            </p>
-            <p>
-              Comfortable owning a large surface area, from first questions to measured outcomes. Turns research into clear direction, then into buildable decisions and shipped product. Stays close after launch to learn what changed and make the next iteration better.
-            </p>
+        <section class="home-intro" aria-labelledby="home-name">
+          <div class="home-name">
+            <h1 id="home-name">John Niedermeyer</h1>
+            <p>Product Design<br />&amp; Direction</p>
           </div>
-          <nav class="social-links" aria-label="Social links and tools">
-            <a href="https://chatgpt.com/?hints=search&amp;prompt=Who%20is%20John%20Niedermeyer%2C%20designer%3F" target="_blank" rel="noopener noreferrer" aria-label="Ask ChatGPT about John" title="Ask ChatGPT about John">
-              <span class="social-icon social-icon-chatgpt" aria-hidden="true"></span>
-            </a>
-            <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-              <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
-            </a>
-            <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-              <span class="social-icon social-icon-github" aria-hidden="true"></span>
-            </a>
-            <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-              <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
-            </a>
-            <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
-              <span class="social-icon social-icon-x" aria-hidden="true"></span>
-            </a>
-            <a data-email-link aria-label="Send email">
-              <span class="social-icon social-icon-email" aria-hidden="true"></span>
-            </a>
-          </nav>
+          <div>
+            <p>Design Director at <a href="https://www.hearst.com/newspapers" target="_blank" rel="noopener noreferrer">Hearst Newspapers</a>, shaping local news products with the designers who make them.</p>
+            <p>Before that, nearly two decades designing and leading at <a href="https://nytimes.com" target="_blank" rel="noopener noreferrer">The New York Times</a>, <a href="https://buzzfeed.com" target="_blank" rel="noopener noreferrer">BuzzFeed</a>, and <a href="https://resy.com" target="_blank" rel="noopener noreferrer">Resy (at American Express)</a>, moving between fast-growing startups and global platforms.</p>
+          </div>
+          <div>
+            <p>Originally from Buffalo, N.Y., with a stop in Boston for college and the start of my design career. Spent most of the past two decades living and working in New York City.</p>
+            <p>On nights and weekends, building apps and tools with my LLM friends. Here’s the list.</p>
+          </div>
         </section>
 
-        <div class="mobile-nav-sentinel" aria-hidden="true"></div>
-
-        <section class="case-study-promos" id="case-study-promos" aria-label="Case study promos">
-          <article
-            id="case-study-resy"
-            class="case-study-promo case-study-promo-resy"
-            data-logo="assets/images/case-studies/resy-discovery/promo/logo-promo.svg"
-            data-bg-desktop="assets/images/case-studies/resy-discovery/promo/card-desktop.png"
-            data-bg-mobile="assets/images/case-studies/resy-discovery/promo/card-mobile.png"
-            data-focus-desktop="right"
-            data-focus-mobile="right"
-            aria-labelledby="case-study-promo-resy-title"
-          >
-            <a
-              class="case-study-promo-link"
-              href="work/resy-discovery/"
-              aria-labelledby="case-study-promo-resy-title"
-              aria-hidden="true"
-              tabindex="-1"
-            ></a>
-            <div class="case-study-promo-content">
-              <img class="case-study-promo-logo" src="assets/images/case-studies/resy-discovery/promo/logo-promo.svg" alt="Resy" />
-              <div class="case-study-promo-inner">
-                <p class="case-study-promo-eyebrow">Resy Consumer App</p>
-                <h3 id="case-study-promo-resy-title">Evolving in-App Restaurant Discovery</h3>
-              </div>
-              <a class="case-study-promo-cta" href="work/resy-discovery/">View Case Study</a>
-            </div>
-          </article>
-          <article
-            id="case-study-aiquota"
-            class="case-study-promo case-study-promo-aiquota"
-            data-logo="assets/images/case-studies/ai-quota/promo/logo-aiquota-promo.png"
-            data-bg-desktop="assets/images/case-studies/ai-quota/promo/bg-aiquota-promo-desktop.jpg"
-            data-bg-mobile="assets/images/case-studies/ai-quota/promo/bg-aiquota-promo-mobile.jpg"
-            data-focus-desktop="center"
-            data-focus-mobile="center"
-            aria-labelledby="case-study-promo-aiquota-title"
-          >
-            <a
-              class="case-study-promo-link"
-              href="work/ai-quota/"
-              aria-labelledby="case-study-promo-aiquota-title"
-              aria-hidden="true"
-              tabindex="-1"
-            ></a>
-            <div class="case-study-promo-content">
-              <img class="case-study-promo-logo" src="assets/images/case-studies/ai-quota/promo/logo-aiquota-promo.png" alt="AIQuota" />
-              <div class="case-study-promo-inner">
-                <p class="case-study-promo-eyebrow">AIQuota for macOS</p>
-                <h3 id="case-study-promo-aiquota-title">Know Your Limits: A Heads-Up Visualization of AI Tool Usage</h3>
-              </div>
-              <a class="case-study-promo-cta" href="work/ai-quota/">View Case Study</a>
-            </div>
-          </article>
-          <article
-            id="case-study-sommai"
-            class="case-study-promo case-study-promo-sommai"
-            data-logo="assets/images/case-studies/somm-ai/promo/logo-promo.svg"
-            data-bg-desktop="assets/images/case-studies/somm-ai/promo/card-desktop.png"
-            data-bg-mobile="assets/images/case-studies/somm-ai/promo/card-mobile.png"
-            data-focus-desktop="center"
-            data-focus-mobile="center"
-            aria-labelledby="case-study-promo-sommai-title"
-          >
-            <a
-              class="case-study-promo-link"
-              href="work/resy-search-ai/"
-              aria-labelledby="case-study-promo-sommai-title"
-              aria-hidden="true"
-              tabindex="-1"
-            ></a>
-            <div class="case-study-promo-content">
-              <img class="case-study-promo-logo" src="assets/images/case-studies/somm-ai/promo/logo-promo.svg" alt="Resy" />
-              <div class="case-study-promo-inner">
-                <p class="case-study-promo-eyebrow">Resy AI Exploration</p>
-                <h3 id="case-study-promo-sommai-title">Beyond Filters: Intent-Led Search</h3>
-              </div>
-              <a class="case-study-promo-cta" href="work/resy-search-ai/">View Case Study</a>
-            </div>
-          </article>
-          <article
-            id="case-study-sendmoi"
-            class="case-study-promo case-study-promo-sendmoi"
-            data-logo="assets/images/case-studies/sendmoi/promo/icon-sendmoi-dark.png"
-            data-bg-desktop="assets/images/case-studies/sendmoi/promo/bg-SendMoi-desktop.jpg"
-            data-bg-mobile="assets/images/case-studies/sendmoi/promo/bg-SendMoi-desktop.jpg"
-            data-focus-desktop="right"
-            data-focus-mobile="right"
-            aria-labelledby="case-study-promo-sendmoi-title"
-          >
-            <a
-              class="case-study-promo-link"
-              href="work/sendmoi/"
-              aria-labelledby="case-study-promo-sendmoi-title"
-              aria-hidden="true"
-              tabindex="-1"
-            ></a>
-            <div class="case-study-promo-content">
-              <img class="case-study-promo-logo sendmoi-icon-dark" src="assets/images/case-studies/sendmoi/promo/icon-sendmoi-dark.png" alt="SendMoi" />
-              <img class="case-study-promo-logo sendmoi-icon-light" src="assets/images/case-studies/sendmoi/promo/icon-sendmoi-default.png" alt="" aria-hidden="true" />
-              <div class="case-study-promo-inner">
-                <p class="case-study-promo-eyebrow">SendMoi for iOS &amp; macOS</p>
-                <h3 id="case-study-promo-sendmoi-title">Reimagining a Beloved Utility, With Help From Codex &amp; Claude Code</h3>
-              </div>
-              <a class="case-study-promo-cta" href="work/sendmoi/">View Case Study</a>
-            </div>
-          </article>
+        <section class="home-selected" id="selected-work" aria-labelledby="selected-heading">
+          <h2 id="selected-heading">Selected work</h2>
+          <div class="featured-projects">
+            <a class="project" href="#gallery/aiquota" data-project="aiquota" aria-haspopup="dialog" aria-labelledby="aiquota-name">
+              <img class="project-cover" src="assets/images/projects/aiquota/aiquota-menu.jpg" alt="" />
+              <span class="project-details">
+                <span class="project-icon"><img src="assets/images/projects/aiquota/logo-aiquota.png" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="aiquota-name">AIQuota</strong>
+                  <span>A heads-up view of AI tool usage, sitting quietly in your menu bar.</span>
+                  <span class="project-meta">Design &amp; engineering · iOS, iPadOS, macOS</span>
+                </span>
+              </span>
+            </a>
+            <a class="project" href="#gallery/girolle" data-project="girolle" data-gallery-title="Girolle Brand Identity and Design System" aria-haspopup="dialog" aria-labelledby="girolle-name">
+              <img class="project-cover" src="assets/images/projects/girolle/cover-43.jpg" alt="" />
+              <span class="project-details">
+                <span class="project-icon"><img class="theme-light" src="assets/images/projects/girolle/girolle-app-icon-oat-256.png" alt="" /><img class="theme-dark" src="assets/images/projects/girolle/girolle-app-icon-forest-256.png" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="girolle-name">Girolle <span class="new-badge">New</span></strong>
+                  <span>A brand identity and design system for Girolle, a restaurant operating system built by chefs.</span>
+                  <span class="project-meta">Brand identity &amp; design system · Brand, digital, print</span>
+                </span>
+              </span>
+            </a>
+            <a class="project" href="#gallery/resy-discovery" data-project="resy-discovery" aria-haspopup="dialog" aria-labelledby="resy-discovery-name">
+              <img class="project-cover" src="assets/images/projects/resy-discovery/cover-43.jpg" alt="" />
+              <span class="project-details">
+                <span class="project-icon"><img src="assets/images/projects/resy-discovery/icon-r-256.png" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="resy-discovery-name">Resy App Discovery</strong>
+                  <span>Evolving in-app restaurant discovery for the Resy consumer app, so diners find their next meal before they book.</span>
+                  <span class="project-meta">Product design · iOS, Android, Web</span>
+                </span>
+              </span>
+            </a>
+            <a class="project" href="#gallery/sendmoi" data-project="sendmoi" aria-haspopup="dialog" aria-labelledby="sendmoi-name">
+              <img class="project-cover" src="assets/images/projects/sendmoi/sendmoi-cover.jpg" alt="" />
+              <span class="project-details">
+                <span class="project-icon"><img class="theme-light" src="assets/images/projects/sendmoi/app-icon-dark.png" alt="" /><img class="theme-dark" src="assets/images/projects/sendmoi/app-icon-light.png" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="sendmoi-name">SendMoi</strong>
+                  <span>A beloved share utility, rebuilt.</span>
+                  <span class="project-meta">Design &amp; engineering · iOS, iPadOS, macOS</span>
+                </span>
+              </span>
+            </a>
+          </div>
         </section>
 
-        <section class="blog-home" id="blog-home" aria-labelledby="blog-home-title">
-          <div class="rule"></div>
-          <div class="blog-home-grid">
-            <header class="blog-home-heading">
-              <h3 id="blog-home-title" class="blog-home-lockup">
-                <a class="blog-home-lockup-link" href="blog/">
-                  <span class="blog-home-lockup-line"><span class="blog-home-lockup-brand">NiederBlog:</span> Notes on</span>
-                  <span class="blog-home-lockup-line">Design &amp; Miscellany</span>
+        <section class="home-projects" aria-labelledby="projects-heading">
+          <h2 class="visually-hidden" id="projects-heading">Projects</h2>
+          <div class="project-list">
+            <a class="project" href="#gallery/note-ferry" data-project="note-ferry" aria-haspopup="dialog" aria-labelledby="note-ferry-name">
+              <span class="project-details">
+                <span class="project-icon"><img src="assets/images/projects/note-ferry/app-icon-256.png" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="note-ferry-name">Note Ferry</strong>
+                  <span>Turns any text into notes worth keeping, formatted for Apple Notes, with an optional summary from Apple Intelligence, Codex, or Claude.</span>
+                  <span class="project-meta">macOS</span>
+                </span>
+              </span>
+            </a>
+            <a class="project" href="#gallery/parcel-scanner" data-project="parcel-scanner" aria-haspopup="dialog" aria-labelledby="parcel-scanner-name">
+              <span class="project-details">
+                <span class="project-icon"><img src="assets/images/projects/parcel-scanner/icon.svg" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="parcel-scanner-name">Parcel Scanner</strong>
+                  <span>A small Swift helper that adds verified shipments from Gmail to Parcel, with careful guardrails around keys and personal data.</span>
+                  <span class="project-meta">macOS, command line</span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="project-list">
+            <a class="project" href="#gallery/daily-milly" data-project="daily-milly" aria-haspopup="dialog" aria-labelledby="daily-milly-name">
+              <span class="project-details">
+                <span class="project-icon"><img src="assets/images/projects/daily-milly/icon-256.png" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="daily-milly-name">Daily Milly</strong>
+                  <span>A family hub that brings scattered school data sources together in one place.</span>
+                  <span class="project-meta">Website, daily email</span>
+                </span>
+              </span>
+            </a>
+            <a class="project" href="#gallery/niederdaily" data-project="niederdaily" aria-haspopup="dialog" aria-labelledby="niederdaily-name">
+              <span class="project-details">
+                <span class="project-icon"><img src="assets/images/projects/niederdaily/icon.svg" alt="" /></span>
+                <span class="project-copy">
+                  <strong id="niederdaily-name">NiederDaily</strong>
+                  <span>A personal morning briefing from Calendar, Reminders, Photos, weather, and the news.</span>
+                  <span class="project-meta">Cloud, macOS</span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <footer class="home-footer" aria-label="Site footer">
+          <div class="home-footer-info">
+            <p>© 2026 John Niedermeyer</p>
+            <p class="site-footer-utility-links"><a href="accessibility/">Accessibility</a> <a href="privacy/">Privacy</a></p>
+          </div>
+          <nav class="site-footer-connect" aria-label="Connect links">
+            <ul class="site-footer-social">
+              <li>
+                <a href="https://chatgpt.com/?hints=search&amp;prompt=Who%20is%20the%20designer%20John%20Niedermeyer%3F" target="_blank" rel="noopener noreferrer" aria-label="Ask ChatGPT about John" title="Ask ChatGPT about John">
+                  <span class="social-icon social-icon-chatgpt" aria-hidden="true"></span>
                 </a>
-              </h3>
-            </header>
-
-            <a class="blog-home-featured" href="blog/what-s-left-for-us-to-do/" aria-labelledby="blog-home-featured-title">
-              <span class="blog-home-featured-media">
-                <img src="assets/images/blog/Whats-Left-for-Us-to-Do.jpg" alt="" loading="lazy" decoding="async" />
-              </span>
-              <span class="blog-home-featured-copy">
-                <span class="blog-home-kicker"><span>Notes</span><span aria-hidden="true">&middot;</span><span>June 25, 2026</span></span>
-                <span class="blog-home-featured-title" id="blog-home-featured-title">What&rsquo;s Left for Us to Do</span>
-                <span class="blog-home-featured-desc">Airing&rsquo;s &ldquo;After AI Takes Everything&rdquo; on the question underneath the AI anxiety: once execution is fully handed off, what&rsquo;s left for us to do?</span>
-                <span class="blog-home-cta">Read post &rarr;</span>
-              </span>
-            </a>
-
-            <div class="blog-home-aside">
-              <ul class="blog-home-list">
-                <li class="blog-home-list-item">
-                  <a class="blog-home-list-link" href="blog/now-that-anyone-can-ship/">
-                    <span class="blog-home-kicker"><span>Notes</span><span aria-hidden="true">&middot;</span><span>June 24, 2026</span></span>
-                    <span class="blog-home-list-title">Now That Anyone Can Ship</span>
-                  </a>
-                </li>
-                <li class="blog-home-list-item">
-                  <a class="blog-home-list-link" href="blog/love-at-first-sketch/">
-                    <span class="blog-home-kicker"><span>Notes</span><span aria-hidden="true">&middot;</span><span>June 24, 2026</span></span>
-                    <span class="blog-home-list-title">Love at First Sketch</span>
-                  </a>
-                </li>
-              </ul>
-              <a class="blog-home-all" href="blog/">All posts &rarr;</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="work-experience" id="work-experience">
-          <div class="rule"></div>
-          <div class="experience-grid">
-            <header class="experience-heading">
-              <h3>Work Experience</h3>
-              <p class="resume-link-wrap">
-                <a class="resume-link" href="work/">Full Work Experience &amp; Resume →</a>
-              </p>
-            </header>
-
-            <div class="experience-columns-carousel">
-              <div class="experience-column">
-                <article class="experience-item experience-item-current">
-                  <h4>Currently</h4>
-                  <p>Seeking a full-time Senior, Staff, or Principal IC Product Design role.</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Indie Product/Designer/Engineer</h4>
-                  <p class="experience-company experience-company-plain">Self</p>
-                  <p class="experience-date">Sept. 2025 - Present</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Principal Designer</h4>
-                  <p class="experience-company"><a href="https://resy.com" target="_blank" rel="noopener noreferrer">Resy (American Express Global Dining Network)</a></p>
-                  <p class="experience-date">Feb. 2022 - June 2025</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Head of Design / Design Lead</h4>
-                  <p class="experience-company"><a href="https://resy.com" target="_blank" rel="noopener noreferrer">Resy</a></p>
-                  <p class="experience-date">Feb. 2017 - Feb. 2022</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Head of Design</h4>
-                  <p class="experience-company"><a href="https://web.archive.org/web/20170122080526/https://waywardwild.com/" target="_blank" rel="noopener noreferrer">Wayward Wild</a></p>
-                  <p class="experience-date">Dec. 2016 - Feb. 2017 (Investment fell through)</p>
-                </article>
-              </div>
-
-              <div class="experience-column">
-                <article class="experience-item">
-                  <h4>Product Design Manager</h4>
-                  <p class="experience-company"><a href="https://buzzfeed.com" target="_blank" rel="noopener noreferrer">BuzzFeed</a></p>
-                  <p class="experience-date">April 2015 - Sept. 2016</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Deputy Editor, Digital News Design</h4>
-                  <p class="experience-company"><a href="https://nytimes.com" target="_blank" rel="noopener noreferrer">The New York Times</a></p>
-                  <p class="experience-date">Jan. 2014 - April 2015</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Design Lead, Digital News Design</h4>
-                  <p class="experience-company"><a href="https://nytimes.com" target="_blank" rel="noopener noreferrer">The New York Times</a></p>
-                  <p class="experience-date">Mar. 2012 - Jan. 2014</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Editorial Designer, Digital Design</h4>
-                  <p class="experience-company"><a href="https://nytimes.com" target="_blank" rel="noopener noreferrer">The New York Times</a></p>
-                  <p class="experience-date">Nov. 2007 - Mar. 2012</p>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Manager, Web &amp; Multimedia Services</h4>
-                  <p class="experience-company"><a href="https://www.lionbridge.com" target="_blank" rel="noopener noreferrer">Lionbridge, Framingham, Mass.</a></p>
-                  <p class="experience-date">Nov. 2006 - July 2007</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="about-home" id="about-home" aria-label="About John Niedermeyer">
-          <div class="rule"></div>
-          <div class="about-home-grid">
-            <figure class="about-home-portrait">
-              <a class="about-home-portrait-frame" href="about/">
-                <img
-                  src="assets/images/about/portrait_3_4_hp5_2400h.jpg"
-                  alt="Black-and-white portrait of John Niedermeyer"
-                  width="1600"
-                  height="2400"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-            </figure>
-
-            <div class="about-home-copy about-home-copy-primary">
-              <p class="about-home-lead">
-                Hi, I'm John Niedermeyer, a designer in New York.
-              </p>
-              <p>
-                My work has spanned startups, newsrooms, and fully-scaled platforms, shaping products and brands at the
-                intersection of technology, media, and culture.
-              </p>
-              <p>
-                Originally from Buffalo, N.Y., I started my career in Boston and have spent most of the past two
-                decades living and working in New York City.
-              </p>
-              <p>
-                Those experiences taught me to move comfortably between big-picture thinking and close attention to
-                detail.
-              </p>
-            </div>
-
-            <div class="about-home-copy about-home-copy-secondary">
-              <p>
-                I care as much about how work gets made as how it turns out. That means asking strong questions early,
-                building shared conviction around a direction, and refining the details that make a product feel
-                coherent.
-              </p>
-              <p>
-                I value a way of working that is clear, collaborative, and steady from first ideas through launch.
-              </p>
-              <p class="resume-link-wrap">
-                <a class="resume-link" href="about/">More About Me &amp; How I work &rarr;</a>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <footer class="site-footer" aria-label="Site footer">
-          <div class="rule"></div>
-          <div class="site-footer-grid">
-            <div class="site-footer-brand">
-              <p class="site-footer-name">John Niedermeyer</p>
-              <p class="site-footer-role">Product Design &amp; Direction</p>
-              <nav class="site-footer-connect" aria-label="Connect links">
-                <ul class="site-footer-social">
-                  <li>
-                    <a href="https://chatgpt.com/?hints=search&amp;prompt=Who%20is%20John%20Niedermeyer%2C%20designer%3F" target="_blank" rel="noopener noreferrer" aria-label="Ask ChatGPT about John" title="Ask ChatGPT about John">
-                      <span class="social-icon social-icon-chatgpt" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                      <span class="social-icon social-icon-github" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                      <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
-                      <span class="social-icon social-icon-x" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-                      <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-email-link aria-label="Send email">
-                      <span class="social-icon social-icon-email" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              <p class="site-footer-meta">© 2026 John Niedermeyer</p>
-              <p class="site-footer-utility-links">
-                <a href="accessibility/">Accessibility</a>
-                <a href="privacy/">Privacy</a>
-              </p>
-            </div>
-
-            <nav class="site-footer-column site-footer-column-site" aria-label="Site sections">
-              <h3>Site</h3>
-              <ul class="site-footer-links">
-                <li><a href="#top" aria-current="page">Home</a></li>
-                <li><a href="work/">Work Experience &amp; Resume</a></li>
-                <li><a href="about/">About &amp; Biography</a></li>
-                <li><a href="blog/">Blog</a></li>
-                <li><a href="design-system/">Design System</a></li>
-              </ul>
-            </nav>
-
-            <nav class="site-footer-column site-footer-column-work" aria-label="Case studies sitemap">
-              <h3>Case Studies</h3>
-              <ul class="site-footer-links">
-                <li><a href="work/resy-discovery/">Resy App Discovery</a></li>
-                <li><a href="work/ai-quota/">AIQuota for macOS</a></li>
-                <li><a href="work/resy-search-ai/">Resy AI Exploration</a></li>
-                <li><a href="work/sendmoi/">SendMoi for iOS &amp; macOS</a></li>
-              </ul>
-            </nav>
-
-          </div>
+              </li>
+              <li>
+                <a href="https://github.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                  <span class="social-icon social-icon-github" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/niederme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                  <span class="social-icon social-icon-linkedin" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                  <span class="social-icon social-icon-x" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/niederme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                  <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a data-email-link aria-label="Send email">
+                  <span class="social-icon social-icon-email" aria-hidden="true"></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </footer>
-
       </main>
     </div>
+    <dialog class="project-gallery" aria-labelledby="gallery-heading">
+      <button class="gallery-close" type="button" aria-label="Close gallery" autofocus>×</button>
+      <div class="gallery-sidebar">
+        <h2 id="gallery-heading"></h2>
+        <div class="gallery-description"></div>
+        <div class="gallery-thumbs" role="group" aria-label="Choose image"></div>
+      </div>
+      <div class="gallery-stage">
+        <div class="gallery-images"></div>
+        <div class="gallery-footer">
+          <div class="gallery-caption" aria-live="polite" aria-atomic="true">
+            <span class="gallery-counter"></span><p></p>
+          </div>
+          <div class="gallery-arrows" role="group" aria-label="Slide navigation">
+            <button type="button" class="gallery-prev" aria-label="Previous image"><img src="assets/icons/arrow-prev.svg" alt="" /></button>
+            <button type="button" class="gallery-next" aria-label="Next image"><img src="assets/icons/arrow-next.svg" alt="" /></button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <template id="gallery-aiquota">
+      <div class="gallery-info">
+        <p>Once AI-assisted coding became part of my daily practice, invisible limits and sudden warnings kept interrupting the flow. AIQuota is a menu bar utility that is legible at a glance and reveals more on click. Shipped and open source.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; engineering</dd></div>
+          <div><dt>Year</dt><dd>2025–</dd></div>
+          <div><dt>Platform</dt><dd>iOS, iPadOS, macOS</dd></div>
+        </dl>
+        <div class="gallery-links">
+          <a href="https://aiquota.app">Visit site <span aria-hidden="true">↗</span></a>
+          <a href="work/ai-quota/">Case study <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/niederme/ai-quota">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="gallery-slides">
+        <figure>
+          <img src="assets/images/projects/aiquota/menu-accounts.jpg" alt="Every Account, One Glance" />
+          <figcaption><strong>Every Account, One Glance.</strong> Personal and work plans for Codex and Claude side by side, with resets, credits, and spend.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/aiquota/cover.jpg" alt="Ambient Status" />
+          <figcaption><strong>Ambient Status.</strong> Codex and Claude Code usage side by side, one click from the menu bar.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/aiquota/hero.jpg" alt="Tiered Disclosure" />
+          <figcaption><strong>Tiered Disclosure.</strong> Ambient status in the menu bar, compact comparisons on click, richer context when you need it.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/aiquota/bar-exploration.png" alt="Bar Explorations" />
+          <figcaption><strong>Bar Explorations.</strong> Early studies for a menu bar glyph that stays legible at tiny sizes.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/aiquota/near-limit.png" alt="Near the Limit" />
+          <figcaption><strong>Near the Limit.</strong> Warnings that surface before you hit the wall.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/aiquota/widget.png" alt="Widgets" />
+          <figcaption><strong>Widgets.</strong> The same answer, on the desktop.</figcaption>
+        </figure>
+      </div>
+    </template>
+    <template id="gallery-girolle">
+      <div class="gallery-info">
+        <p>Ben designed and built Girolle. I developed the brand identity and the design system he now uses in the product, from the folded-paper wordmark and mushroom to the palette, typography, and illustration.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Brand identity &amp; design system</dd></div>
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Platform</dt><dd>Brand, digital, print</dd></div>
+        </dl>
+      </div>
+      <div class="gallery-slides">
+        <figure>
+          <img src="assets/images/projects/girolle/deck-01.jpg" alt="For the Work Behind Service" />
+          <figcaption><strong>For the Work Behind Service.</strong> The refined wordmark with the paper mushroom.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/girolle/deck-03.jpg" alt="The Lettering Folds, Too" />
+          <figcaption><strong>The Lettering Folds, Too.</strong> The r slips behind the o, the same gesture as the paper mark.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/girolle/deck-05.jpg" alt="Colourways" />
+          <figcaption><strong>Colourways.</strong> Forest on Oat for light, Oat on Forest for dark, with Sage and Straw in support.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/girolle/deck-09.jpg" alt="The Objects of the Job" />
+          <figcaption><strong>The Objects of the Job.</strong> One paper object per feature. Together they make the homepage hero.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/girolle/deck-17.jpg" alt="In Print" />
+          <figcaption><strong>In Print.</strong> Oat plus one accent across menus, cards, and signage.</figcaption>
+        </figure>
+      </div>
+    </template>
+    <template id="gallery-resy-discovery">
+      <div class="gallery-info">
+        <p>Resy invested heavily in editorial, photography, and a distinctive brand voice, but diners still found inspiration in other apps before coming to book. This work moved discovery up the funnel and into the app.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Product design</dd></div>
+          <div><dt>Year</dt><dd>2024–2025</dd></div>
+          <div><dt>Platform</dt><dd>iOS, Android, Web</dd></div>
+        </dl>
+      </div>
+      <div class="gallery-slides">
+        <figure>
+          <img src="assets/images/projects/resy-discovery/hero.jpg" alt="Discovery, Up Front" />
+          <figcaption><strong>Discovery, Up Front.</strong> Guides and recommendations where diners start looking, not only where they book.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/resy-discovery/final-app.jpg" alt="One Flow" />
+          <figcaption><strong>One Flow.</strong> Editorial discovery, venue details, and booking in a single flow.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/resy-discovery/nav-sheets.jpg" alt="A New Navigation Model" />
+          <figcaption><strong>A New Navigation Model.</strong> A clearer tab-based hierarchy alongside a more gestural, sheet-based interaction model.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/resy-discovery/editorial.jpg" alt="Editorial, Reframed" />
+          <figcaption><strong>Editorial, Reframed.</strong> Existing WordPress editorial adapted for the app, with web chrome removed and native venue sheets one tap away.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/resy-discovery/audit.jpg" alt="Cross-Functional Audit" />
+          <figcaption><strong>Cross-Functional Audit.</strong> Before design started, we mapped ideas and open questions as a post-it matrix with the broader team.</figcaption>
+        </figure>
+      </div>
+    </template>
+    <template id="gallery-sendmoi">
+      <div class="gallery-info">
+        <p>A focused send-to-self app for Apple platforms, created as an experiment in using AI coding tools to turn a clear product concept into a tangible, polished app.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; engineering</dd></div>
+          <div><dt>Year</dt><dd>2025–</dd></div>
+          <div><dt>Platform</dt><dd>iOS, iPadOS, macOS</dd></div>
+        </dl>
+        <div class="gallery-links">
+          <a href="https://send.moi">Visit site <span aria-hidden="true">↗</span></a>
+          <a href="work/sendmoi/">Case study <span aria-hidden="true">↗</span></a>
+          <a href="https://apps.apple.com/us/app/sendmoi-share-links-to-self/id6760132875">App Store <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="gallery-slides">
+        <figure>
+          <img src="assets/images/projects/sendmoi/hero.jpg" alt="Send to Self" />
+          <figcaption><strong>Send to Self.</strong> Links become clean, readable email.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/sendmoi/share-sheet.jpg" alt="From the Share Sheet" />
+          <figcaption><strong>From the Share Sheet.</strong> One tap from anywhere on iPhone, iPad, or Mac.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/sendmoi/ios-01.png" alt="Setup" />
+          <figcaption><strong>Setup.</strong> A short, focused first run.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/sendmoi/ios-03.png" alt="Sent" />
+          <figcaption><strong>Sent.</strong> Quiet confirmation, then out of the way.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/sendmoi/gmail.jpg" alt="In Your Inbox" />
+          <figcaption><strong>In Your Inbox.</strong> The output, as it lands.</figcaption>
+        </figure>
+      </div>
+    </template>
+    <template id="gallery-note-ferry">
+      <div class="gallery-info">
+        <p>A small native Mac app that formats any text for Apple Notes and puts it on the clipboard as rich text. For long material like a meeting transcript, it can write a scannable summary first with Apple Intelligence, Codex, or Claude.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; engineering</dd></div>
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Platform</dt><dd>macOS</dd></div>
+        </dl>
+        <div class="gallery-links">
+          <a href="https://github.com/niederme/note-ferry">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="gallery-slides">
+        <figure>
+          <img src="assets/images/projects/note-ferry/summary.jpg" alt="Notes Worth Keeping" />
+          <figcaption><strong>Notes Worth Keeping.</strong> A sample summary with headings, takeaways, and action items, ready to paste.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/note-ferry/controls.jpg" alt="Format or Summarize" />
+          <figcaption><strong>Format or Summarize.</strong> Keep your wording, or pick a summarizer before processing.</figcaption>
+        </figure>
+      </div>
+    </template>
+    <template id="gallery-parcel-scanner">
+      <div class="gallery-info">
+        <p>A small Swift helper that adds verified shipments from Gmail to Parcel, with careful guardrails around keys and personal data.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; engineering</dd></div>
+          <div><dt>Platform</dt><dd>macOS, command line</dd></div>
+        </dl>
+        <div class="gallery-links">
+          <a href="https://github.com/niederme/parcel-gmail-scanner">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="gallery-slides">
+        <figure><figcaption><strong>Imagery to come.</strong> Screens and process for Parcel Scanner are on the way.</figcaption></figure>
+      </div>
+    </template>
+    <template id="gallery-daily-milly">
+      <div class="gallery-info">
+        <p>School updates arrive from ParentSquare, Google Classroom, eSchoolData and a stack of emails, each with its own logic. The Daily Milly gathers them into one family view, a calendar for the next 30 days, a page per kid, and a 4 PM email. When something looks wrong, you flag it and Milly checks the sources and answers.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; engineering</dd></div>
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Platform</dt><dd>Website, daily email</dd></div>
+        </dl>
+      </div>
+      <div class="gallery-slides">
+        <figure>
+          <img src="assets/images/projects/daily-milly/family.jpg" alt="One Family View" />
+          <figcaption><strong>One Family View.</strong> A plain-language summary up top, then everything dated on a 30-day calendar.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/daily-milly/kid.jpg" alt="A Page per Kid" />
+          <figcaption><strong>A Page per Kid.</strong> Today, tonight and to do, each item linked back to its source.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/projects/daily-milly/flag.jpg" alt="Flags, Answered" />
+          <figcaption><strong>Flags, Answered.</strong> Question an item and Milly rechecks the sources, then says what it found.</figcaption>
+        </figure>
+      </div>
+    </template>
+    <template id="gallery-niederdaily">
+      <div class="gallery-info">
+        <p>A personal morning briefing that lands in my inbox before 6 AM: a short read on the day, the weather, and the calendar.</p>
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; engineering</dd></div>
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Platform</dt><dd>Cloud, macOS</dd></div>
+        </dl>
+        <div class="gallery-links">
+          <a href="https://github.com/niederme/NiederDaily">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="gallery-slides">
+        <figure>
+          <img src="assets/images/projects/niederdaily/email.jpg" alt="The Morning Email" />
+          <figcaption><strong>The Morning Email.</strong> The day in a paragraph, then weather and calendar.</figcaption>
+        </figure>
+      </div>
+    </template>
+    <script src="assets/js/home-gallery.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>

@@ -1179,33 +1179,30 @@ if (visualCarousels.length > 0) {
   }
 }
 
-// Mobile nav sentinel — keeps the homepage mobile nav in sync with the scroll-restored sentinel position
-{
-  const mobileNavSentinel = document.querySelector('.mobile-nav-sentinel');
-  const mobileNav = document.querySelector('.mobile-nav');
-  if (mobileNavSentinel && mobileNav) {
-    let mobileNavTicking = false;
+const mobileNav = document.querySelector(".mobile-nav");
+if (mobileNav) {
+  const mobileLayout = matchMedia("(max-width: 950px)");
+  let lastY = window.scrollY;
+  let frame = 0;
 
-    const updateMobileNavVisibility = () => {
-      mobileNavTicking = false;
-      mobileNav.classList.toggle(
-        'is-visible',
-        mobileNavSentinel.getBoundingClientRect().top <= 0
-      );
-    };
-
-    const queueMobileNavVisibility = () => {
-      if (mobileNavTicking) return;
-      mobileNavTicking = true;
-      window.requestAnimationFrame(updateMobileNavVisibility);
-    };
-
-    new IntersectionObserver(queueMobileNavVisibility).observe(mobileNavSentinel);
-    window.addEventListener('scroll', queueMobileNavVisibility, { passive: true });
-    window.addEventListener('resize', queueMobileNavVisibility);
-    window.addEventListener('load', queueMobileNavVisibility);
-    window.addEventListener('pageshow', queueMobileNavVisibility);
-    queueMobileNavVisibility();
-    window.requestAnimationFrame(queueMobileNavVisibility);
+  function resetMobileNav() {
+    lastY = window.scrollY;
+    mobileNav.classList.remove("is-scroll-hidden");
   }
+
+  function updateMobileNav() {
+    frame = 0;
+    const limit = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const y = Math.max(0, Math.min(window.scrollY, limit));
+    if (y === 0 || Math.abs(y - lastY) >= 10) {
+      mobileNav.classList.toggle("is-scroll-hidden", y > 0 && y > lastY);
+      lastY = y;
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    if (mobileLayout.matches && !frame) frame = requestAnimationFrame(updateMobileNav);
+  }, { passive: true });
+  window.addEventListener("pageshow", resetMobileNav);
+  mobileLayout.addEventListener("change", resetMobileNav);
 }

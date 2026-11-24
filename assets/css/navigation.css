@@ -1,0 +1,59 @@
+/* Shared primary navigation and display controls. */
+.nav-glyph {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--toggle-label);
+  mask: var(--nav-image) center / contain no-repeat;
+}
+.nav-glyph-home { --nav-image: url("../icons/side-nav/home-filled.svg"); }
+.nav-glyph-work { --nav-image: url("../icons/side-nav/icon-work-experience-off.svg"); }
+.is-active .nav-glyph-work { --nav-image: url("../icons/side-nav/icon-work-experience-on.svg"); }
+:is(.is-active, a:focus-visible) > .nav-glyph { background: var(--fg); }
+:is(.rail-controls-panel, .mobile-nav-toggles) button { color: var(--toggle-label); }
+:is(.rail-controls-panel, .mobile-nav-toggles) button:focus-visible { color: var(--fg); }
+.site-footer-social .social-icon { background-color: var(--toggle-label); }
+.site-footer-social a:focus-visible .social-icon { opacity: 1; background-color: var(--fg); }
+@media (hover: hover) {
+  a:hover > .nav-glyph { background: var(--fg); }
+  :is(.rail-controls-panel, .mobile-nav-toggles) button:hover { color: var(--fg); }
+  .site-footer-social a:hover .social-icon { opacity: 1; background-color: var(--fg); }
+}
+.rail-theme-icon, .rail-cols-icon { width: 20px; height: 20px; }
+.rail-theme-icon {
+  border: 1.75px solid currentColor;
+  border-radius: 50%;
+  background: linear-gradient(90deg, currentColor 50%, transparent 50%);
+}
+.is-on .rail-theme-icon { transform: rotate(180deg); }
+.rail-cols-icon {
+  background: repeating-linear-gradient(90deg, currentColor 0 2px, transparent 2px 6px);
+}
+.is-on .rail-cols-icon { color: var(--accent); }
+
+@media (max-width: 950px) {
+  .mobile-nav, .is-subpage .mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    transform: none;
+    transition: transform .22s ease;
+  }
+  .mobile-nav.is-scroll-hidden:not(:has(:focus-visible)) { transform: translateY(100%); }
+  .mobile-nav .mobile-nav-anchor { padding-inline: 0; }
+  .mobile-nav .mobile-nav-toggles { display: contents; }
+  .mobile-nav .mobile-nav-toggles button {
+    display: grid;
+    width: 100%;
+    min-height: 44px;
+    padding: 0;
+    place-items: center;
+    color: var(--toggle-label);
+    border-inline-end: 1px solid var(--line);
+  }
+  .mobile-nav .mobile-nav-toggles button:is(:hover, :focus-visible) { color: var(--fg); }
+  .mobile-nav .mobile-nav-toggles button:last-child { border: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav, .is-subpage .mobile-nav { transition: none; }
+}

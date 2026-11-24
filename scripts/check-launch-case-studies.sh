@@ -30,18 +30,14 @@ done
 [[ -d "drafts" ]] || fail "Expected preserved drafts framework."
 [[ -f "work/sendmoi/index.html" ]] || fail "Expected published SendMoi case study."
 
-for token in \
-  'id="case-study-sendmoi"' \
-  'class="case-study-promo case-study-promo-sendmoi"' \
-  'href="work/sendmoi/"' \
-  'id="case-study-sommai"' \
-  'href="work/resy-search-ai/"'; do
-  rg -q --fixed-strings "$token" index.html || fail "Expected homepage teaser token: $token"
+for project in aiquota girolle resy-discovery sendmoi note-ferry parcel-scanner daily-milly niederdaily; do
+  rg -q --fixed-strings "href=\"#gallery/$project\"" index.html || fail "Missing homepage gallery link for $project."
+  rg -q --fixed-strings "id=\"gallery-$project\"" index.html || fail "Missing homepage gallery for $project."
 done
 
-if rg -q --fixed-strings 'case-study-promo-sendmoi is-disabled' index.html; then
-  fail "Homepage SendMoi promo should be live, not disabled."
-fi
+for path in work/ai-quota/ work/sendmoi/; do
+  rg -q --fixed-strings "href=\"$path\"" index.html || fail "Missing case-study link in a project gallery: $path"
+done
 
 for token in \
   'href="../work/sendmoi/"' \
