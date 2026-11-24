@@ -13,6 +13,16 @@
   let index = 0;
   let opener;
 
+  // Dialog autofocus and focus restoration can match :focus-visible after a touch.
+  document.addEventListener("pointerdown", event => {
+    if (event.target.closest(".project, .project-gallery")) {
+      document.body.classList.add("gallery-pointer-input");
+    }
+  }, true);
+  document.addEventListener("keydown", () => {
+    document.body.classList.remove("gallery-pointer-input");
+  }, true);
+
   function selectSlide(position) {
     if (position < 0 || position >= slides.length) return;
     index = position;

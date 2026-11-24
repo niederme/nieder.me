@@ -1,7 +1,18 @@
 # Handoff
 
-## Branch
-- `main`
+## 2026B redesign
+
+**2026** is the current live site. **2026B** is the redesign in local preview on `codex/homepage-galleries`. Use **2026B** when referring to its future design system.
+
+The homepage, eight linkable galleries, and resume-only Work page are the references for the 2026B design system. Gallery URLs support individual slides, for example `/#gallery/girolle/3`.
+
+The public branch uses placeholders for the Daily Milly and NiederDaily screenshots. The local dev-live preview keeps the originals on `local/2026b-preview`. Keep that branch local.
+
+Before launch, reconcile the downloadable resume with the Work page (the PDF omits Hearst and gives a different start month for independent work). Parcel Scanner still uses the planned imagery placeholder. Girolle shows the brand deck and credits Ben for the product. Its gallery has no external link.
+
+## 2026 live site
+
+Branch `main`.
 
 ## Current Focus
 - **NiederBlog** (11ty + Sveltia static blog) shipped to staging via #137 and is live at `/2026/blog/`. Active design polish (image breakout, listing styles) ahead of the production cutover. The portfolio remains live across the homepage, work index, four case studies (Resy Discovery, Resy AI Search, AIQuota, SendMoi), and policy pages.

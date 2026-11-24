@@ -1,5 +1,4 @@
 /* Homepage and project galleries */
-.home { --rail-width: 44px; }
 .home .content {
   --grid-gutter: 40px;
   display: block;
@@ -13,7 +12,7 @@
 }
 .home-intro > div { grid-column: span 4; }
 .featured-projects .project { grid-column: span 3; }
-.home-intro p, .home-intro h1, .home-footer p, .project-gallery p { margin: 0; }
+.home-intro p, .home-intro h1, .project-gallery p { margin: 0; }
 .home-intro p {
   color: var(--muted);
   font-size: 18px;
@@ -21,6 +20,7 @@
   font-weight: 300;
 }
 .home-intro p + p { margin-top: 12px; }
+.home-intro strong { font-weight: 700; }
 .home-intro a, .gallery-links a {
   color: var(--accent);
   font-weight: 700;
@@ -28,7 +28,7 @@
 }
 .home-intro a:hover, .gallery-links a:hover { text-decoration: underline; }
 .home-name h1, .home-name p {
-  font-size: clamp(20px, 2vw, 26px);
+  font-size: var(--page-heading-size);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -.02em;
@@ -76,6 +76,14 @@
   overflow: hidden;
 }
 .project-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* These two exports inset the visible tile by about 12px on a 256px canvas. */
+.project:is([data-project="note-ferry"], [data-project="niederdaily"]) .project-icon img {
+  transform: scale(1.1);
+}
+[data-theme="light"] .project[data-project="daily-milly"] .project-icon {
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
+}
 .project-icon .theme-light, [data-theme="light"] .project-icon .theme-dark { display: none; }
 [data-theme="light"] .project-icon .theme-light { display: block; }
 .project-copy { display: grid; gap: 4px; font-size: 13px; line-height: 1.4; color: var(--muted); }
@@ -93,8 +101,14 @@
   mask: url("../icons/arrow-next.svg") center / contain no-repeat;
   opacity: 0;
 }
-.project:focus-visible strong { color: var(--accent); }
-.project:focus-visible strong::after { opacity: 1; }
+.project:focus-visible { outline: none; }
+body:not(.gallery-pointer-input) .project:focus-visible strong {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .2em;
+}
+body:not(.gallery-pointer-input) .project:focus-visible strong::after { opacity: 1; }
 @media (hover: hover) {
   .project:hover strong { color: var(--accent); }
   .project:hover strong::after { opacity: 1; }
@@ -119,35 +133,6 @@
 .project-list + .project-list { grid-column: 7 / span 5; }
 .project-list .project { padding: 16px 0; border-top: 1px solid var(--line); }
 .project-list .project:first-child { border: 0; padding-top: 4px; }
-.home-footer {
-  margin-top: clamp(56px, 10vh, 120px);
-  border-top: 1px solid var(--line);
-  min-height: var(--home-footer-height, 57px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) fit-content(48%);
-  align-items: center;
-  gap: 8px 20px;
-  padding: 6px 0;
-  color: var(--footer-meta);
-  font-size: 13px;
-}
-.home-footer-info { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; }
-.home-footer .site-footer-connect { margin: 0; }
-.home-footer .site-footer-social { justify-content: flex-end; gap: 4px; }
-.home-footer .site-footer-social a { display: flex; width: 44px; height: 44px; }
-.home-footer .site-footer-utility-links { font-size: 12px; }
-.home-footer .site-footer-utility-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  border: 0;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.home-footer .social-icon { background-color: var(--toggle-label); }
-.home-footer a:is(:hover, :focus-visible) .social-icon { opacity: 1; background-color: var(--fg); }
 html:has(.project-gallery[open]) { overflow: hidden; }
 .project-gallery {
   --inset: clamp(16px, 2.5vw, 32px);
@@ -188,6 +173,11 @@ html:has(.project-gallery[open]) { overflow: hidden; }
   line-height: 1;
   font-weight: 300;
 }
+.gallery-close:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+.gallery-pointer-input .gallery-close:focus-visible { outline: none; }
 .gallery-sidebar {
   container: gallery-sidebar / inline-size;
   display: flex;
@@ -270,81 +260,17 @@ html:has(.project-gallery[open]) { overflow: hidden; }
 }
 
 @media (min-width: 951px) {
-  .home { --home-footer-height: 57px; }
   .home .content {
-    --page-gutter: max(clamp(24px, 5vw, 72px), calc((100% - 1268px) / 2));
+    padding-bottom: calc(var(--portfolio-footer-height) + 48px);
     display: grid;
     width: auto;
     margin: 0 0 0 var(--rail-width);
     min-height: 100vh;
     min-height: 100dvh;
-    grid-template-rows: auto auto auto 1fr;
-    grid-template-columns: var(--page-gutter) minmax(0, 1fr) var(--page-gutter);
+    grid-template-columns: var(--portfolio-gutter) minmax(0, 1fr) var(--portfolio-gutter);
     column-gap: 0;
   }
   .home .content > section { grid-column: 2; }
   .home .content > .mobile-logo-link { display: none; }
-  .home .grid-overlay { inset-inline: var(--page-gutter); }
-  .home-footer { align-self: end; padding-inline: var(--page-gutter); }
-
-  .home .page::before {
-    left: var(--rail-width);
-    top: calc(116px + var(--safe-top));
-    bottom: var(--home-footer-height);
-  }
-  .home .rail {
-    width: var(--rail-width);
-    bottom: var(--home-footer-height);
-    align-items: stretch;
-    /* Reserve four 56px rows for the navigation and display controls. */
-    padding-top: clamp(104px, min(30vh, calc(100dvh - var(--home-footer-height) - 225px)), 300px);
-  }
-  .home .rail::after { content: none; }
-  .home .logo-link {
-    position: absolute;
-    top: calc(32px + var(--safe-top));
-    left: 16px;
-    width: 56px;
-    height: 56px;
-  }
-  .home .global-nav { position: static; width: 100%; border-bottom: 1px solid var(--line); }
-  .home .global-nav-anchor,
-  .home .rail-controls-panel button {
-    position: relative;
-    width: 100%;
-    height: 56px;
-    min-height: 0;
-    padding: 0;
-    border-top: 1px solid var(--line);
-    display: grid;
-    place-items: center;
-  }
-  .home .global-nav-anchor img { width: 24px; height: 24px; }
-  .home .rail-controls-panel {
-    width: 100%;
-    margin: auto 0 0;
-    padding: 0;
-    border: 0;
-  }
-  .home .rail-controls-panel button { color: var(--toggle-label); }
-  .home .rail-controls-panel button:is(:hover, :focus-visible) { color: var(--fg); }
-  .home .rail-controls-panel button:is(:hover, :focus-visible)::after {
-    content: attr(aria-label);
-    position: absolute;
-    left: calc(100% + 14px);
-    padding: 6px 10px;
-    border: 1px solid var(--nav-popover-border);
-    border-radius: 999px;
-    color: var(--nav-popover-fg);
-    background: var(--nav-popover-bg);
-    font-size: 12px;
-    white-space: nowrap;
-  }
-}
-@media (min-width: 951px) and (max-height: 540px) {
-  .home .rail { padding-top: 96px; }
-  .home .global-nav-anchor, .home .rail-controls-panel button { height: clamp(44px, calc((100dvh - var(--home-footer-height) - 97px) / 4), 56px); }
-}
-@media (min-width: 951px) and (max-height: 330px) {
-  .home .rail { overflow-y: auto; scrollbar-width: none; }
+  .home .grid-overlay { inset-inline: var(--portfolio-gutter); }
 }

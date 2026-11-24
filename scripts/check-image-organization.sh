@@ -72,7 +72,10 @@ expect_reference 'assets/images/case-studies/resy-discovery/promo/' "Expected re
 expect_reference 'assets/images/case-studies/somm-ai/article/' "Expected somm-ai article references."
 expect_reference 'assets/images/case-studies/somm-ai/promo/' "Expected somm-ai promo references."
 expect_reference 'assets/images/case-studies/ai-quota/article/' "Expected ai-quota article references."
-expect_reference 'assets/images/case-studies/ai-quota/promo/' "Expected ai-quota promo references."
+for project in aiquota girolle resy-discovery sendmoi note-ferry parcel-scanner daily-milly niederdaily; do
+  expect_path "assets/images/projects/$project" "Expected $project gallery assets."
+  expect_reference "assets/images/projects/$project/" "Expected $project gallery references."
+done
 expect_reference 'assets/images/case-studies/sendmoi/article/' "Expected sendmoi article references."
 expect_reference 'assets/images/case-studies/sendmoi/promo/' "Expected sendmoi promo references."
 

@@ -2817,29 +2817,41 @@ body.about-page .work-article-meta {
   }
 }
 
-.work-index-intro {
-  margin-top: 84px;
+.resume-intro {
+  margin-top: clamp(32px, 7vh, 72px);
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
 }
 
-.work-index-lede {
-  margin: 0;
-  max-width: 620px;
-  font-size: 24px;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
+.work-article .resume-intro h1 {
+  font-size: var(--page-heading-size);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.resume-intro h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.resume-intro p {
+  max-width: 48ch;
+  margin: 18px 0 0;
+  font-size: 18px;
   font-weight: 300;
-}
-
-.work-index-download-wrap {
-  margin: 28px 0 0;
+  line-height: 1.35;
+  color: var(--muted);
 }
 
 .work-index-download {
   display: inline-flex;
+  min-height: 44px;
+  margin-top: 4px;
   align-items: center;
   gap: 10px;
   color: var(--accent);
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.35;
   font-weight: 700;
   text-decoration: none;
@@ -2884,10 +2896,6 @@ body.about-page .work-article-meta {
   }
 }
 
-.work-index-intro > .rule {
-  margin-top: 37px;
-}
-
 .work-index-resume-block {
   margin-top: 67px;
 }
@@ -2895,26 +2903,32 @@ body.about-page .work-article-meta {
 .work-index-resume-layout {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 40px;
+  column-gap: var(--grid-gutter);
   align-items: start;
 }
 
 .work-index-resume-main {
-  grid-column: 3 / span 6;
+  grid-column: 1 / span 8;
   display: flex;
   flex-direction: column;
   gap: 35px;
 }
 
 .resume-job {
-  position: relative;
+  --resume-role-size: clamp(1.125rem, 1rem + 0.3vw, 1.25rem);
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+  align-items: start;
+}
+
+.resume-job-body {
+  grid-column: 3 / -1;
+  min-width: 0;
 }
 
 .resume-job-date {
-  position: absolute;
-  top: 8px;
-  right: calc(100% + 40px);
-  width: 178px;
+  grid-column: 1 / span 2;
   margin: 0;
   font-size: 16px;
   line-height: 1.35;
@@ -2932,13 +2946,7 @@ body.about-page .work-article-meta {
   display: block;
 }
 
-.resume-job-date-line-start {
-  position: relative;
-}
-
 .resume-job-date-punct {
-  position: absolute;
-  left: 100%;
   margin-left: 0.08em;
 }
 
@@ -2946,8 +2954,8 @@ body.about-page .work-article-meta {
   margin: 0 0 12px;
   display: flex;
   flex-direction: column;
-  font-size: 24px;
-  line-height: 1.35;
+  font-size: var(--resume-role-size);
+  line-height: 1.15;
   letter-spacing: -0.01em;
   font-weight: 700;
 }
@@ -2958,6 +2966,20 @@ body.about-page .work-article-meta {
 
 .resume-company {
   color: var(--label-secondary);
+}
+
+@media (min-width: 701px) {
+  .resume-job {
+    align-items: first baseline;
+  }
+
+  .resume-job-date, .resume-role {
+    line-height: calc(var(--resume-role-size) * 1.15);
+  }
+
+  .resume-job-date-visual { display: block; text-align: inherit; }
+  .resume-role { display: block; }
+  .resume-role > span { display: block; }
 }
 
 .resume-summary,
@@ -3478,10 +3500,7 @@ body.about-page .work-article-meta {
   }
 
   .policy-page .work-index-header-copy,
-  .blog-page .work-index-header-copy,
-  .work-index-page .work-index-header-copy,
-  .work-index-page .work-index-lede,
-  .work-index-page .work-index-download-wrap {
+  .blog-page .work-index-header-copy {
     margin-left: var(--case-study-edge-inset);
   }
 
@@ -3512,23 +3531,6 @@ body.about-page .work-article-meta {
 
   .work-index-header {
     margin-top: 78px;
-  }
-
-  .work-index-intro {
-    margin-top: 64px;
-  }
-
-  .resume-job-date {
-    right: calc(100% + 32px);
-    width: 148px;
-  }
-
-  .work-index-resume-main {
-    grid-column: 2 / span 7;
-  }
-
-  .work-index-sidebar {
-    grid-column: 10 / span 3;
   }
 
   .work-index-case-study-block {
@@ -3999,27 +4001,19 @@ body.about-page .work-article-meta {
   }
 
   .resume-job {
-    display: grid;
-    grid-template-columns: minmax(128px, 148px) minmax(0, 1fr);
-    column-gap: 24px;
-    align-items: start;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 12px;
   }
 
   .resume-job-date {
-    position: static;
-    width: auto;
+    grid-column: 1;
     margin: 0;
     text-align: left;
     white-space: nowrap;
   }
 
   .resume-job-body {
-    min-width: 0;
-  }
-
-  .resume-job-date-punct {
-    position: static;
-    margin-left: 0.08em;
+    grid-column: 2 / -1;
   }
 
   .work-index-sidebar {
@@ -4028,9 +4022,7 @@ body.about-page .work-article-meta {
     padding-top: 28px;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 24px;
-    row-gap: 0;
-    gap: 0 24px;
+    gap: 0 12px;
     align-items: start;
   }
 
@@ -4703,24 +4695,9 @@ body.about-page .work-article-meta {
     letter-spacing: -0.02em;
   }
 
-  .work-index-intro {
-    margin-top: 48px;
-  }
-
-  .work-index-lede {
-    font-size: 18px;
-  }
-
-  .work-index-download-wrap {
-    margin-top: 22px;
-  }
-
-  .work-index-download {
-    font-size: 16px;
-  }
-
-  .work-index-intro > .rule {
-    margin-top: 30px;
+  .resume-intro {
+    margin-top: 28px;
+    padding-bottom: 16px;
   }
 
   .work-index-resume-block {
@@ -4734,10 +4711,6 @@ body.about-page .work-article-meta {
     font-size: var(--case-study-text-size);
   }
 
-  .work-index-sidebar-section p {
-    font-size: 17px;
-  }
-
   .resume-job-date {
     width: 100%;
     margin: 0 0 10px;
@@ -4749,6 +4722,10 @@ body.about-page .work-article-meta {
   .resume-job {
     grid-template-columns: 1fr;
     row-gap: 0;
+  }
+
+  .resume-job-body {
+    grid-column: 1;
   }
 
   .resume-job-date-visual {
@@ -4769,8 +4746,6 @@ body.about-page .work-article-meta {
 
   .resume-role {
     margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 1.28;
   }
 
   .work-index-case-study-block {
@@ -4842,11 +4817,6 @@ body.about-page .work-article-meta {
   .site-footer-name,
   .site-footer-role {
     font-size: 17px;
-  }
-
-  .work-index-sidebar-section p {
-    font-size: 14px;
-    line-height: 1.35;
   }
 
   .mobile-nav {
@@ -5140,6 +5110,11 @@ body.about-page .work-article-meta {
 }
 
 @media (max-width: 420px) {
+  .work-index-sidebar-section p {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
   .work-article {
     --case-study-shell-width: calc(100vw - 24px);
     --case-study-hero-height: min(62vw, 232px);

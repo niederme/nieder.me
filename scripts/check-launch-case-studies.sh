@@ -39,18 +39,6 @@ for path in work/ai-quota/ work/sendmoi/; do
   rg -q --fixed-strings "href=\"$path\"" index.html || fail "Missing case-study link in a project gallery: $path"
 done
 
-for token in \
-  'href="../work/sendmoi/"' \
-  'href="../work/resy-search-ai/"' \
-  'id="work-index-sendmoi-title"' \
-  'id="work-index-sommai-title"'; do
-  rg -q --fixed-strings "$token" work/index.html || fail "Expected work-index teaser token: $token"
-done
-
-if rg -q --fixed-strings 'id="work-index-sendmoi-status"' work/index.html; then
-  fail "Work index SendMoi card should be live, not marked Coming Soon."
-fi
-
 for page in "work/resy-discovery/index.html" "work/ai-quota/index.html" "work/resy-search-ai/index.html"; do
   for token in \
     'href="../../work/sendmoi/"' \
